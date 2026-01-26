@@ -465,8 +465,15 @@ class SONavbar extends SOComponent {
 
     // Close dropdowns on outside click
     this.on('click', (e) => {
-      // Don't close if clicking inside a dropdown
-      if (!e.target.closest('.so-navbar-outlet-dropdown, .so-navbar-status-dropdown, .so-navbar-theme-dropdown, .so-navbar-user-dropdown, .so-navbar-apps-dropdown')) {
+      // Don't close if clicking inside any dropdown
+      const isInsideNavbarDropdown = e.target.closest('.so-navbar-outlet-dropdown, .so-navbar-status-dropdown, .so-navbar-theme-dropdown, .so-navbar-user-dropdown, .so-navbar-apps, .so-navbar-apps-dropdown');
+      const isInsideSODropdown = e.target.closest('.so-dropdown, .so-searchable-dropdown, .so-options-dropdown, .so-outlet-dropdown');
+
+      // Don't close if clicking on any dropdown trigger
+      const isNavbarTrigger = e.target.closest('.so-navbar-user-btn, .so-navbar-apps-btn, .so-navbar-outlet-btn, .so-navbar-status-btn, .so-navbar-theme-btn');
+      const isSODropdownTrigger = e.target.closest('.so-dropdown-trigger, .so-searchable-trigger, .so-options-trigger, .so-outlet-dropdown-trigger, .so-btn[data-so-toggle="dropdown"]');
+
+      if (!isInsideNavbarDropdown && !isInsideSODropdown && !isNavbarTrigger && !isSODropdownTrigger) {
         this.closeAllDropdowns();
       }
     }, document);
@@ -480,6 +487,9 @@ class SONavbar extends SOComponent {
 
     // Listen for global close event
     this.on('closeAllDropdowns', () => this.closeAllDropdowns(), document);
+
+    // Listen for close navbar dropdowns event (dispatched by SODropdown when opening)
+    this.on('closeNavbarDropdowns', () => this._closeNavbarDropdowns(), document);
   }
 
   /**
@@ -628,7 +638,7 @@ class SONavbar extends SOComponent {
   _toggleDropdown(dropdown, type, activeClass = 'active') {
     const isActive = dropdown.classList.contains(activeClass);
 
-    // Close all first
+    // Close all first (including SODropdowns)
     this.closeAllDropdowns();
 
     if (!isActive) {
@@ -659,10 +669,11 @@ class SONavbar extends SOComponent {
   }
 
   /**
-   * Close all dropdowns
+   * Close only navbar custom dropdowns (not SODropdown instances)
    * @returns {this} For chaining
+   * @private
    */
-  closeAllDropdowns() {
+  _closeNavbarDropdowns() {
     // Close user dropdown
     this.$$('.so-navbar-user-dropdown').forEach(dropdown => {
       dropdown.classList.remove('active');
@@ -693,6 +704,25 @@ class SONavbar extends SOComponent {
     });
 
     this._activeDropdown = null;
+    return this;
+  }
+
+  /**
+   * Close all dropdowns (navbar custom + SODropdown instances)
+   * @returns {this} For chaining
+   */
+  closeAllDropdowns() {
+    // Close navbar custom dropdowns
+    this._closeNavbarDropdowns();
+
+    // Close all SODropdown instances
+    this.$$('.so-dropdown.open').forEach(dropdown => {
+      const instance = SixOrbit.getInstance(dropdown, 'dropdown');
+      if (instance && typeof instance.close === 'function') {
+        instance.close();
+      }
+    });
+
     this.emit(SONavbar.EVENTS.DROPDOWN_CLOSE);
     return this;
   }

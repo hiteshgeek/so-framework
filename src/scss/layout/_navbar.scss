@@ -692,123 +692,28 @@
 }
 
 // ============================================
-// OUTLET SELECTOR
+// OUTLET SELECTOR (uses .so-dropdown component)
 // ============================================
 
-.#{$so-prefix}navbar-outlet-selector {
-  position: relative;
-}
-
-.#{$so-prefix}navbar-outlet-btn {
-  display: flex;
-  align-items: center;
-  gap: spacing('2');
-  padding: spacing('2') spacing('3');
-  background: transparent;
-  border: 1px solid css-var('navbar-border');
-  border-radius: radius('base');
-  cursor: pointer;
-  font-size: font-size('sm');
-  font-family: inherit;
-  color: css-var('navbar-text-color');
-  transition: all $so-transition-normal;
-  max-width: 200px;
-
-  &:hover {
-    background: alpha($so-grey-700, 0.04);
-    border-color: css-var('border-color');
-  }
-
-  .outlet-text {
+// Navbar-specific dropdown adjustments
+.#{$so-prefix}navbar-right .#{$so-prefix}dropdown {
+  // Ensure dropdown text truncates
+  .#{$so-prefix}dropdown-text {
     @include text-truncate;
+    max-width: 120px;
   }
 
-  .material-icons {
-    font-size: 18px;
-    color: css-var('navbar-icon-color');
-    transition: transform $so-transition-normal;
-  }
-
-  &.active .material-icons {
-    transform: rotate(180deg);
-  }
-}
-
-.#{$so-prefix}navbar-outlet-dropdown {
-  position: absolute;
-  top: calc(100% + 4px);
-  right: 0;
-  min-width: 220px;
-  background: css-var('card-bg');
-  border-radius: radius('lg');
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
-  display: none;
-  z-index: z-index('dropdown') + 10;
-  overflow: hidden;
-
-  &.active {
-    display: block;
-  }
-}
-
-.#{$so-prefix}navbar-outlet-search {
-  padding: spacing('2');
-  border-bottom: 1px solid css-var('border-color');
-
-  input {
-    width: 100%;
+  // Navbar dropdown trigger styling
+  .#{$so-prefix}dropdown-trigger {
     padding: spacing('2') spacing('3');
     font-size: font-size('sm');
-    font-family: inherit;
-    border: 1px solid css-var('form-border');
-    border-radius: radius('base');
-    outline: none;
-    background: css-var('form-bg');
-    color: css-var('form-text');
+    border-color: css-var('navbar-border');
+    color: css-var('navbar-text-color');
 
-    &::placeholder {
-      color: css-var('form-placeholder');
+    &:hover {
+      background: alpha($so-grey-700, 0.04);
+      border-color: css-var('border-color');
     }
-
-    &:focus {
-      border-color: css-var('form-border-focus');
-    }
-  }
-}
-
-.#{$so-prefix}navbar-outlet-list {
-  max-height: 240px;
-  overflow-y: auto;
-  @include custom-scrollbar;
-}
-
-.#{$so-prefix}navbar-outlet-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: spacing('2') + 2px spacing('4');
-  cursor: pointer;
-  font-size: font-size('sm');
-  color: css-var('text-primary');
-  transition: background $so-transition-base;
-
-  &:hover {
-    background: css-var('card-hover-bg');
-  }
-
-  &.selected {
-    background: css-var('dropdown-item-active');
-    color: css-var('dropdown-item-active-text');
-  }
-
-  .check-icon {
-    font-size: 18px;
-    color: css-var('dropdown-item-active-text');
-    visibility: hidden;
-  }
-
-  &.selected .check-icon {
-    visibility: visible;
   }
 }
 
@@ -898,173 +803,6 @@
   line-height: line-height('snug');
 }
 
-// ============================================
-// STATUS SELECTOR
-// ============================================
-
-.#{$so-prefix}navbar-status {
-  position: relative;
-}
-
-.#{$so-prefix}navbar-status-btn {
-  display: flex;
-  align-items: center;
-  gap: spacing('2');
-  height: 36px;
-  padding: 0 spacing('3');
-  background: transparent;
-  border: 1px solid css-var('navbar-border');
-  border-radius: 18px;
-  cursor: pointer;
-  font-size: font-size('sm');
-  font-weight: font-weight('medium');
-  font-family: inherit;
-  color: css-var('navbar-text-color');
-  transition: all $so-transition-base;
-
-  &:hover {
-    background: css-var('card-hover-bg');
-    border-color: css-var('text-secondary');
-  }
-}
-
-.#{$so-prefix}navbar-status.open .#{$so-prefix}navbar-status-btn {
-  background: css-var('card-hover-bg');
-}
-
-.#{$so-prefix}navbar-status-indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: radius('full');
-  flex-shrink: 0;
-  box-shadow: 0 0 0 2px css-var('navbar-bg');
-
-  &.available { background: $so-success; }
-  &.with-customer { background: $so-info; }
-  &.in-meeting { background: $so-warning; }
-  &.on-call { background: #9334e6; }
-  &.on-leave { background: $so-grey-500; }
-  &.away { background: $so-danger; }
-}
-
-.#{$so-prefix}navbar-status-text {
-  max-width: 100px;
-  @include text-truncate;
-}
-
-.#{$so-prefix}navbar-status-btn .material-icons {
-  font-size: 18px;
-  color: css-var('navbar-icon-color');
-  transition: transform $so-transition-normal;
-}
-
-.#{$so-prefix}navbar-status.open .#{$so-prefix}navbar-status-btn .material-icons {
-  transform: rotate(180deg);
-}
-
-// Status Dropdown
-.#{$so-prefix}navbar-status-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  min-width: 220px;
-  background: css-var('card-bg');
-  border-radius: radius('xl');
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid css-var('border-color');
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  transition: all $so-transition-normal;
-  z-index: z-index('dropdown') + 20;
-  overflow: hidden;
-}
-
-.#{$so-prefix}navbar-status.open .#{$so-prefix}navbar-status-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.#{$so-prefix}navbar-status-header {
-  padding: spacing('3') spacing('4');
-  font-size: font-size('xs');
-  font-weight: font-weight('semibold');
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: css-var('text-muted');
-  border-bottom: 1px solid css-var('border-color');
-  display: flex;
-  align-items: center;
-  gap: spacing('1') + 2px;
-
-  .material-icons {
-    font-size: 16px;
-  }
-}
-
-.#{$so-prefix}navbar-status-list {
-  padding: spacing('1') + 2px 0;
-}
-
-.#{$so-prefix}navbar-status-option {
-  display: flex;
-  align-items: center;
-  gap: spacing('3');
-  width: 100%;
-  padding: spacing('2') + 2px spacing('4');
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: font-size('base');
-  font-family: inherit;
-  color: css-var('text-primary');
-  text-align: left;
-  transition: background $so-transition-base;
-
-  &:hover {
-    background: css-var('card-hover-bg');
-  }
-
-  &.selected {
-    background: css-var('dropdown-item-active');
-  }
-}
-
-.#{$so-prefix}navbar-status-option-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: radius('full');
-  flex-shrink: 0;
-
-  &.available { background: $so-success; }
-  &.with-customer { background: $so-info; }
-  &.in-meeting { background: $so-warning; }
-  &.on-call { background: #9334e6; }
-  &.on-leave { background: $so-grey-500; }
-  &.away { background: $so-danger; }
-}
-
-.#{$so-prefix}navbar-status-option-text {
-  flex: 1;
-}
-
-.#{$so-prefix}navbar-status-option-desc {
-  font-size: font-size('xs');
-  color: css-var('text-muted');
-  margin-top: 2px;
-}
-
-.#{$so-prefix}navbar-status-option .check-icon {
-  font-size: 18px;
-  color: css-var('accent-primary');
-  opacity: 0;
-  transition: opacity $so-transition-base;
-}
-
-.#{$so-prefix}navbar-status-option.selected .check-icon {
-  opacity: 1;
-}
 
 // ============================================
 // MOBILE BOTTOM BAR
@@ -1281,7 +1019,8 @@
     display: none;
   }
 
-  .#{$so-prefix}navbar-outlet-selector {
+  // Hide outlet dropdown on mobile
+  .#{$so-prefix}navbar-right > .#{$so-prefix}dropdown {
     display: none;
   }
 
@@ -1292,27 +1031,6 @@
 
   .#{$so-prefix}navbar-divider {
     display: none;
-  }
-
-  // Status selector - icon only on mobile
-  .#{$so-prefix}navbar-status-text {
-    display: none;
-  }
-
-  .#{$so-prefix}navbar-status-btn {
-    width: 36px;
-    padding: 0;
-    justify-content: center;
-    border-radius: radius('full');
-
-    .material-icons {
-      display: none;
-    }
-  }
-
-  .#{$so-prefix}navbar-status-indicator {
-    width: 12px;
-    height: 12px;
   }
 }
 

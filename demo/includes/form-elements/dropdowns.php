@@ -1017,6 +1017,355 @@ dropdown.clearSelection();  // Clear all selections
                     </div>
                 </div>
 
+                <!-- Section 8b: Minimum Selection & Custom Text -->
+                <div class="so-card so-mb-4">
+                    <div class="so-card-header">
+                        <h3 class="so-card-title">Minimum Selection & Custom Display Text</h3>
+                    </div>
+                    <div class="so-card-body">
+                        <p class="so-demo-desc">
+                            Use <code>data-so-min-selections</code> to require at least N items selected (the last item cannot be deselected).
+                            Customize display text with <code>data-so-all-selected-text</code> and <code>data-so-multiple-selected-text</code>.
+                        </p>
+
+                        <div class="so-grid so-grid-cols-3 so-grid-cols-md-2 so-grid-cols-sm-1" class="so-demo-grid-gap">
+
+                            <!-- Min 1 Selection (like outlet selector) -->
+                            <div class="so-form-group">
+                                <label class="so-form-label">Min 1 Selection Required</label>
+                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown
+                                     data-so-multiple="true"
+                                     data-so-min-selections="1"
+                                     data-so-show-actions="true"
+                                     data-so-select-none-text=""
+                                     data-so-all-selected-text="All Outlets"
+                                     data-so-multiple-selected-text="{count} Outlets">
+                                    <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
+                                        <span class="material-icons">storefront</span>
+                                        <span class="so-dropdown-selected">All Outlets</span>
+                                        <span class="material-icons so-dropdown-arrow">expand_more</span>
+                                    </button>
+                                    <div class="so-dropdown-menu">
+                                        <div class="so-dropdown-search">
+                                            <input type="text" class="so-dropdown-search-input" placeholder="Search outlets...">
+                                        </div>
+                                        <div class="so-dropdown-items">
+                                            <div class="so-dropdown-item active" data-value="head-office">
+                                                Head Office
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="downtown">
+                                                Downtown Branch
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="mall">
+                                                Mall Location
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="airport">
+                                                Airport Store
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="so-demo-small-note">At least 1 must remain selected</small>
+                            </div>
+
+                            <!-- Min 2 Selections -->
+                            <div class="so-form-group">
+                                <label class="so-form-label">Min 2 Selections Required</label>
+                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown
+                                     data-so-multiple="true"
+                                     data-so-min-selections="2"
+                                     data-so-all-selected-text="All Categories"
+                                     data-so-multiple-selected-text="{count} Categories">
+                                    <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
+                                        <span class="material-icons">category</span>
+                                        <span class="so-dropdown-selected">All Categories</span>
+                                        <span class="material-icons so-dropdown-arrow">expand_more</span>
+                                    </button>
+                                    <div class="so-dropdown-menu">
+                                        <div class="so-dropdown-items">
+                                            <div class="so-dropdown-item active" data-value="electronics">
+                                                Electronics
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="clothing">
+                                                Clothing
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="food">
+                                                Food & Beverages
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="home">
+                                                Home & Garden
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="so-demo-small-note">At least 2 must remain selected</small>
+                            </div>
+
+                            <!-- Custom Display Text -->
+                            <div class="so-form-group">
+                                <label class="so-form-label">Custom Display Text</label>
+                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown
+                                     data-so-multiple="true"
+                                     data-so-show-actions="true"
+                                     data-so-all-selected-text="All Team Members"
+                                     data-so-multiple-selected-text="{count} people assigned">
+                                    <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
+                                        <span class="material-icons">group</span>
+                                        <span class="so-dropdown-selected placeholder">Assign team</span>
+                                        <span class="material-icons so-dropdown-arrow">expand_more</span>
+                                    </button>
+                                    <div class="so-dropdown-menu">
+                                        <div class="so-dropdown-items">
+                                            <div class="so-dropdown-item" data-value="john">John Doe</div>
+                                            <div class="so-dropdown-item" data-value="jane">Jane Smith</div>
+                                            <div class="so-dropdown-item" data-value="bob">Bob Wilson</div>
+                                            <div class="so-dropdown-item" data-value="alice">Alice Brown</div>
+                                            <div class="so-dropdown-item" data-value="charlie">Charlie Davis</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="so-demo-small-note">Shows "X people assigned" or "All Team Members"</small>
+                            </div>
+
+                        </div>
+
+                        <!-- Code Example -->
+                        <div class="so-code-block so-code-block-spaced">
+                            <div class="so-code-header">
+                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                                <button class="so-code-copy" onclick="copyCode(this)">
+                                    <span class="material-icons">content_copy</span>
+                                </button>
+                            </div>
+                            <pre class="so-code-content"><code class="language-html">&lt;!-- Minimum 1 selection required (outlet selector style) --&gt;
+&lt;div class="so-dropdown so-dropdown-searchable" data-so-dropdown
+     data-so-multiple="true"
+     data-so-min-selections="1"
+     data-so-show-actions="true"
+     data-so-select-none-text=""
+     data-so-all-selected-text="All Outlets"
+     data-so-multiple-selected-text="{count} Outlets"&gt;
+    &lt;button class="so-btn so-btn-light so-dropdown-trigger"&gt;
+        &lt;span class="material-icons"&gt;storefront&lt;/span&gt;
+        &lt;span class="so-dropdown-selected"&gt;All Outlets&lt;/span&gt;
+        &lt;span class="material-icons so-dropdown-arrow"&gt;expand_more&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="so-dropdown-menu"&gt;
+        &lt;div class="so-dropdown-items"&gt;
+            &lt;div class="so-dropdown-item active" data-value="hq"&gt;
+                Head Office
+                &lt;span class="material-icons so-dropdown-check"&gt;check&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;!-- More items... --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Configuration options explained --&gt;
+&lt;!-- data-so-min-selections="1"         - At least 1 item must stay selected --&gt;
+&lt;!-- data-so-select-none-text=""        - Hides the "None" action link --&gt;
+&lt;!-- data-so-all-selected-text="..."    - Text when all items are selected --&gt;
+&lt;!-- data-so-multiple-selected-text="..." - Template for multiple selections ({count} is replaced) --&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 8c: Multiple Selection Styles -->
+                <div class="so-card so-mb-4">
+                    <div class="so-card-header">
+                        <h3 class="so-card-title">Multiple Selection Styles</h3>
+                    </div>
+                    <div class="so-card-body">
+                        <p class="so-demo-desc">
+                            Use <code>data-so-multiple-style</code> to control how selected items are displayed.
+                            Use <code>"checkbox"</code> (default) for checkbox boxes, or <code>"check"</code> for checkmark icons only.
+                        </p>
+
+                        <div class="so-grid so-grid-cols-2 so-grid-cols-md-1" class="so-demo-grid-gap">
+
+                            <!-- Checkbox Style (default) - with pre-selected items -->
+                            <div class="so-form-group">
+                                <label class="so-form-label">Checkbox Style (default)</label>
+                                <div class="so-dropdown" data-so-dropdown
+                                     data-so-multiple="true"
+                                     data-so-multiple-style="checkbox"
+                                     data-so-show-actions="true">
+                                    <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
+                                        <span class="material-icons">label</span>
+                                        <span class="so-dropdown-selected">2 selected</span>
+                                        <span class="material-icons so-dropdown-arrow">expand_more</span>
+                                    </button>
+                                    <div class="so-dropdown-menu">
+                                        <div class="so-dropdown-items">
+                                            <div class="so-dropdown-item active" data-value="important">Important</div>
+                                            <div class="so-dropdown-item active" data-value="urgent">Urgent</div>
+                                            <div class="so-dropdown-item" data-value="review">Needs Review</div>
+                                            <div class="so-dropdown-item" data-value="approved">Approved</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="so-demo-small-note">Shows checkbox boxes with checkmarks</small>
+                            </div>
+
+                            <!-- Check Style (icon only) - with pre-selected items -->
+                            <div class="so-form-group">
+                                <label class="so-form-label">Check Style (icon only)</label>
+                                <div class="so-dropdown" data-so-dropdown
+                                     data-so-multiple="true"
+                                     data-so-multiple-style="check"
+                                     data-so-show-actions="true"
+                                     data-so-select-none-text="">
+                                    <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
+                                        <span class="material-icons">flag</span>
+                                        <span class="so-dropdown-selected">2 selected</span>
+                                        <span class="material-icons so-dropdown-arrow">expand_more</span>
+                                    </button>
+                                    <div class="so-dropdown-menu">
+                                        <div class="so-dropdown-items">
+                                            <div class="so-dropdown-item active" data-value="high">
+                                                High Priority
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="medium">
+                                                Medium Priority
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item" data-value="low">
+                                                Low Priority
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item" data-value="none">
+                                                No Priority
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="so-demo-small-note">Shows checkmark icons only (no checkbox boxes), "None" action hidden</small>
+                            </div>
+
+                            <!-- Check Style with Min Selection -->
+                            <div class="so-form-group">
+                                <label class="so-form-label">Check Style + Min Selection</label>
+                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown
+                                     data-so-multiple="true"
+                                     data-so-multiple-style="check"
+                                     data-so-min-selections="1"
+                                     data-so-show-actions="true"
+                                     data-so-select-none-text=""
+                                     data-so-all-selected-text="All Locations"
+                                     data-so-multiple-selected-text="{count} Locations">
+                                    <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
+                                        <span class="material-icons">location_on</span>
+                                        <span class="so-dropdown-selected">All Locations</span>
+                                        <span class="material-icons so-dropdown-arrow">expand_more</span>
+                                    </button>
+                                    <div class="so-dropdown-menu">
+                                        <div class="so-dropdown-search">
+                                            <input type="text" class="so-dropdown-search-input" placeholder="Search locations...">
+                                        </div>
+                                        <div class="so-dropdown-items">
+                                            <div class="so-dropdown-item active" data-value="new-york">
+                                                New York
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="los-angeles">
+                                                Los Angeles
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="chicago">
+                                                Chicago
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                            <div class="so-dropdown-item active" data-value="houston">
+                                                Houston
+                                                <span class="material-icons so-dropdown-check">check</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="so-demo-small-note">Outlet selector style with check icons</small>
+                            </div>
+
+                            <!-- Checkbox Style with Show Actions (All/None) -->
+                            <div class="so-form-group">
+                                <label class="so-form-label">Checkbox with All/None Actions</label>
+                                <div class="so-dropdown" data-so-dropdown
+                                     data-so-multiple="true"
+                                     data-so-multiple-style="checkbox"
+                                     data-so-show-actions="true">
+                                    <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
+                                        <span class="material-icons">folder</span>
+                                        <span class="so-dropdown-selected placeholder">Select folders</span>
+                                        <span class="material-icons so-dropdown-arrow">expand_more</span>
+                                    </button>
+                                    <div class="so-dropdown-menu">
+                                        <div class="so-dropdown-items">
+                                            <div class="so-dropdown-item" data-value="documents">Documents</div>
+                                            <div class="so-dropdown-item" data-value="images">Images</div>
+                                            <div class="so-dropdown-item" data-value="videos">Videos</div>
+                                            <div class="so-dropdown-item" data-value="archives">Archives</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="so-demo-small-note">Shows "All" and "None" action links</small>
+                            </div>
+
+                        </div>
+
+                        <!-- Code Example -->
+                        <div class="so-code-block so-code-block-spaced">
+                            <div class="so-code-header">
+                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                                <button class="so-code-copy" onclick="copyCode(this)">
+                                    <span class="material-icons">content_copy</span>
+                                </button>
+                            </div>
+                            <pre class="so-code-content"><code class="language-html">&lt;!-- Checkbox style (default) - adds checkbox boxes --&gt;
+&lt;div class="so-dropdown" data-so-dropdown
+     data-so-multiple="true"
+     data-so-multiple-style="checkbox"
+     data-so-show-actions="true"&gt;
+    ...
+&lt;/div&gt;
+
+&lt;!-- Check style - uses checkmark icons only (no checkbox boxes) --&gt;
+&lt;div class="so-dropdown" data-so-dropdown
+     data-so-multiple="true"
+     data-so-multiple-style="check"
+     data-so-show-actions="true"
+     data-so-select-none-text=""&gt;
+    &lt;button class="so-btn so-btn-light so-dropdown-trigger"&gt;
+        &lt;span class="so-dropdown-selected"&gt;Select items&lt;/span&gt;
+        &lt;span class="material-icons so-dropdown-arrow"&gt;expand_more&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="so-dropdown-menu"&gt;
+        &lt;div class="so-dropdown-items"&gt;
+            &lt;div class="so-dropdown-item" data-value="1"&gt;
+                Item 1
+                &lt;span class="material-icons so-dropdown-check"&gt;check&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;!-- More items with so-dropdown-check spans --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Configuration options --&gt;
+&lt;!-- data-so-multiple-style="checkbox" - Adds checkbox UI elements (default) --&gt;
+&lt;!-- data-so-multiple-style="check"    - Uses checkmark icons only --&gt;
+&lt;!-- data-so-select-none-text=""       - Hides the "None" action link --&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Section 9: Contextual Selection Colors -->
                 <div class="so-card">
                     <div class="so-card-header">

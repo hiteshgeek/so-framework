@@ -28,10 +28,14 @@ class SODropdown extends SOComponent {
     // Selection options
     selectionStyle: 'default', // 'default' (bg + check), 'highlight' (bg only), 'check' (check only)
     multiple: false,         // Allow multiple selections
+    multipleStyle: 'checkbox', // 'checkbox' (adds checkbox boxes), 'check' (uses checkmark icons)
     maxSelections: null,     // Max selections allowed (null = unlimited)
+    minSelections: null,     // Min selections required (null = 0, can deselect all)
     showActions: false,      // Show "Select All" / "Select None" links for multiple selection
     selectAllText: 'All',    // Text for select all link
     selectNoneText: 'None',  // Text for select none link
+    allSelectedText: null,   // Text to show when all items are selected (e.g., "All Outlets")
+    multipleSelectedText: '{count} selected', // Text template for multiple selections
   };
 
   static EVENTS = {
@@ -128,15 +132,30 @@ class SODropdown extends SOComponent {
       this.options.maxSelections = parseInt(el.getAttribute('data-so-max-selections'), 10) || null;
     }
 
+    // minSelections
+    if (el.hasAttribute('data-so-min-selections')) {
+      this.options.minSelections = parseInt(el.getAttribute('data-so-min-selections'), 10) || null;
+    }
+
+    // multipleStyle
+    if (el.hasAttribute('data-so-multiple-style')) {
+      this.options.multipleStyle = el.getAttribute('data-so-multiple-style');
+    }
+
     // Apply selection style class
     if (this.options.selectionStyle !== 'default') {
       this.addClass(`so-dropdown-selection-${this.options.selectionStyle}`);
     }
 
-    // Apply multiple class and initialize checkboxes
+    // Apply multiple class and initialize checkboxes (only if multipleStyle is 'checkbox')
     if (this.options.multiple) {
       this.addClass('so-dropdown-multiple');
-      this._initCheckboxes();
+      if (this.options.multipleStyle === 'checkbox') {
+        this._initCheckboxes();
+      } else if (this.options.multipleStyle === 'check') {
+        // Add multiple-check class to show check icons with background (not checkboxes)
+        this.addClass('so-dropdown-multiple-check');
+      }
     }
 
     // showActions
@@ -157,6 +176,16 @@ class SODropdown extends SOComponent {
     // Create actions bar for multiple selection if enabled
     if (this.options.multiple && this.options.showActions) {
       this._createActionsBar();
+    }
+
+    // allSelectedText
+    if (el.hasAttribute('data-so-all-selected-text')) {
+      this.options.allSelectedText = el.getAttribute('data-so-all-selected-text');
+    }
+
+    // multipleSelectedText
+    if (el.hasAttribute('data-so-multiple-selected-text')) {
+      this.options.multipleSelectedText = el.getAttribute('data-so-multiple-selected-text');
     }
   }
 
@@ -224,8 +253,12 @@ class SODropdown extends SOComponent {
     });
 
     actionsBar.appendChild(selectAllLink);
-    actionsBar.appendChild(separator);
-    actionsBar.appendChild(selectNoneLink);
+
+    // Only add separator and None link if selectNoneText is not empty
+    if (this.options.selectNoneText) {
+      actionsBar.appendChild(separator);
+      actionsBar.appendChild(selectNoneLink);
+    }
 
     // Insert actions bar at the beginning of menu (or after search if present)
     const searchBox = this._menu.querySelector('.so-searchable-search, .so-dropdown-search');
@@ -300,7 +333,7 @@ class SODropdown extends SOComponent {
     const selectedItems = this._menu?.querySelectorAll('.selected, .active') || [];
     selectedItems.forEach(item => {
       const value = item.dataset.value;
-      const text = item.textContent.trim();
+      const text = this._getItemText(item);
       if (value !== undefined) {
         this._selectedValues.push(value);
         this._selectedTexts.push(text);
@@ -421,8 +454,8 @@ class SODropdown extends SOComponent {
 
     // Other dropdowns handle selection
     const text = this._type === 'outlet'
-      ? item.querySelector('.outlet-item-text')?.textContent.trim() || item.textContent.trim()
-      : item.textContent.trim();
+      ? item.querySelector('.outlet-item-text')?.textContent.trim() || this._getItemText(item)
+      : this._getItemText(item);
     // Use data-value if present, otherwise fall back to text content
     const value = item.dataset.value !== undefined ? item.dataset.value : text;
 
@@ -468,21 +501,52 @@ class SODropdown extends SOComponent {
    */
   _filterItems(query) {
     this._originalItems.forEach(item => {
-      const text = item.textContent.toLowerCase();
+      const text = this._getItemText(item).toLowerCase();
       const matches = !query || text.includes(query);
       item.style.display = matches ? '' : 'none';
     });
   }
 
   /**
-   * Handle outside click based on autoClose option
+   * Get clean text from an item, excluding check icons and checkbox elements
+   * @param {Element} item - Item element
+   * @returns {string} Clean text content
    * @private
    */
-  _handleOutsideClick() {
+  _getItemText(item) {
+    // Clone the item to avoid modifying the original
+    const clone = item.cloneNode(true);
+
+    // Remove check icons
+    clone.querySelectorAll('.so-dropdown-check, .check-icon, .so-checkbox-box').forEach(el => el.remove());
+
+    // Return trimmed text
+    return clone.textContent.trim();
+  }
+
+  /**
+   * Handle outside click based on autoClose option
+   * @param {Event} e - Click event
+   * @private
+   */
+  _handleOutsideClick(e) {
     if (!this._isOpen) return;
 
     // Skip if flag is set (for programmatic open that triggers during click event)
     if (this._ignoreOutsideClick) return;
+
+    // Don't close if clicking inside this dropdown
+    if (this.element.contains(e.target)) return;
+
+    // Don't close if clicking on any dropdown trigger or dropdown element (let that component handle it)
+    const dropdownTrigger = e.target.closest('.so-dropdown-trigger, .so-searchable-trigger, .so-options-trigger, .so-outlet-dropdown-trigger, .so-btn[data-so-toggle="dropdown"]');
+    const dropdownElement = e.target.closest('.so-dropdown, .so-searchable-dropdown, .so-options-dropdown, .so-outlet-dropdown');
+    if (dropdownTrigger || dropdownElement) return;
+
+    // Don't close if clicking on navbar dropdown buttons or their dropdowns (let navbar handle it)
+    const navbarDropdownBtn = e.target.closest('.so-navbar-user-btn, .so-navbar-apps-btn, .so-navbar-outlet-btn, .so-navbar-status-btn, .so-navbar-theme-btn');
+    const navbarDropdown = e.target.closest('.so-navbar-user-dropdown, .so-navbar-apps, .so-navbar-outlet-dropdown, .so-navbar-status-dropdown, .so-navbar-theme-dropdown');
+    if (navbarDropdownBtn || navbarDropdown) return;
 
     const autoClose = this.options.autoClose;
 
@@ -611,6 +675,7 @@ class SODropdown extends SOComponent {
    * @private
    */
   _closeOtherDropdowns() {
+    // Close other SODropdown instances
     document.querySelectorAll('.so-dropdown.open, .so-searchable-dropdown.open, .so-options-dropdown.open, .so-outlet-dropdown.open').forEach(dropdown => {
       if (dropdown !== this.element) {
         dropdown.classList.remove('open', 'position-left', 'position-top');
@@ -618,6 +683,9 @@ class SODropdown extends SOComponent {
         dropdown.classList.remove('so-dropup', 'so-dropstart', 'so-dropend', 'so-dropdown-menu-end');
       }
     });
+
+    // Dispatch event to close navbar custom dropdowns (different event to avoid loops)
+    document.dispatchEvent(new CustomEvent('closeNavbarDropdowns'));
   }
 
   /**
@@ -789,7 +857,7 @@ class SODropdown extends SOComponent {
       // Otherwise fall back to value comparison (for programmatic selection)
       const isSelected = clickedItem
         ? item === clickedItem
-        : (item.dataset.value !== undefined ? item.dataset.value === value : item.textContent.trim() === value);
+        : (item.dataset.value !== undefined ? item.dataset.value === value : this._getItemText(item) === value);
       item.classList.toggle('selected', isSelected);
       item.classList.toggle('active', isSelected);
     });
@@ -818,6 +886,11 @@ class SODropdown extends SOComponent {
     const index = this._selectedValues.indexOf(value);
 
     if (index > -1) {
+      // Check minSelections before deselecting
+      const minSelections = this.options.minSelections || 0;
+      if (this._selectedValues.length <= minSelections) {
+        return this; // Don't allow deselecting below minimum
+      }
       // Deselect
       this._selectedValues.splice(index, 1);
       this._selectedTexts.splice(index, 1);
@@ -857,16 +930,37 @@ class SODropdown extends SOComponent {
     if (!this._selectedEl) return;
 
     const count = this._selectedValues.length;
+    const totalItems = this._getTotalSelectableItems();
+
     if (count === 0) {
       this._selectedEl.textContent = this.options.placeholder;
       this._selectedEl.classList.add('placeholder');
+    } else if (count === totalItems && this.options.allSelectedText) {
+      // All items selected and custom text provided
+      this._selectedEl.textContent = this.options.allSelectedText;
+      this._selectedEl.classList.remove('placeholder');
     } else if (count === 1) {
       this._selectedEl.textContent = this._selectedTexts[0];
       this._selectedEl.classList.remove('placeholder');
     } else {
-      this._selectedEl.textContent = `${count} selected`;
+      // Use template with {count} placeholder
+      this._selectedEl.textContent = this.options.multipleSelectedText.replace('{count}', count);
       this._selectedEl.classList.remove('placeholder');
     }
+  }
+
+  /**
+   * Get total number of selectable (non-disabled) items
+   * @returns {number} Total selectable items
+   * @private
+   */
+  _getTotalSelectableItems() {
+    const itemSelector = this._getItemSelector();
+    return this.$$(itemSelector).filter(item =>
+      !item.classList.contains('disabled') &&
+      !item.hasAttribute('disabled') &&
+      item.getAttribute('aria-disabled') !== 'true'
+    ).length;
   }
 
   /**
@@ -965,8 +1059,8 @@ class SODropdown extends SOComponent {
         return;
       }
 
-      const value = item.dataset.value !== undefined ? item.dataset.value : item.textContent.trim();
-      const text = item.textContent.trim();
+      const text = this._getItemText(item);
+      const value = item.dataset.value !== undefined ? item.dataset.value : text;
 
       // Check max selections
       if (this.options.maxSelections && this._selectedValues.length >= this.options.maxSelections) {
@@ -1000,6 +1094,12 @@ class SODropdown extends SOComponent {
    */
   selectNone() {
     if (!this.options.multiple) return this;
+
+    // Check minSelections - if set, don't allow selecting none
+    const minSelections = this.options.minSelections || 0;
+    if (minSelections > 0) {
+      return this; // Don't allow deselecting all when minSelections is set
+    }
 
     const previousValues = [...this._selectedValues];
 

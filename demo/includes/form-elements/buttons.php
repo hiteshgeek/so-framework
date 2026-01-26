@@ -966,3 +966,35 @@ document.getElementById('my-btn').addEventListener('so:progress:reset', (e) =&gt
                     </div>
                 </div>
             </div>
+
+<script>
+// Progress button demo helper function
+function simulateProgress(btn) {
+    // Reset if already completed
+    if (btn.classList.contains('completed')) {
+        btn.classList.remove('completed');
+        btn.style.setProperty('--progress', '0%');
+        return;
+    }
+
+    let progress = 0;
+    btn.disabled = true;
+
+    const interval = setInterval(() => {
+        progress += Math.random() * 15 + 5;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            btn.style.setProperty('--progress', '100%');
+
+            // Add completed class after a brief moment
+            setTimeout(() => {
+                btn.classList.add('completed');
+                btn.disabled = false;
+            }, 200);
+        } else {
+            btn.style.setProperty('--progress', progress + '%');
+        }
+    }, 150);
+}
+</script>

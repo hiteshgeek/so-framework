@@ -815,6 +815,120 @@ $includeSearch = $includeSearch ?? true;
         [data-theme="dark"] .so-code-content .token.string {
             color: #a6e3a1;
         }
+
+        /* ==============================================
+           PROJECT-SPECIFIC: Outlet Selector Dropdown
+           ============================================== */
+        #outletSelector .so-dropdown-menu {
+            min-width: 200px;
+            border-radius: 12px !important;
+            overflow: hidden;
+        }
+
+        #outletSelector .so-dropdown-item {
+            white-space: nowrap;
+        }
+
+        /* ==============================================
+           PROJECT-SPECIFIC: User Status Selector
+           ============================================== */
+        #userStatusSelector .so-dropdown-trigger {
+            border-radius: 999px !important;
+        }
+
+        #userStatusSelector .so-dropdown-menu {
+            min-width: 260px;
+            border-radius: 12px !important;
+            overflow: hidden;
+        }
+
+        #userStatusSelector .so-dropdown-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--so-text-muted);
+            border-radius: 12px 12px 0 0;
+            border-bottom: 1px solid var(--so-border-color);
+        }
+
+        #userStatusSelector .so-dropdown-header .material-icons {
+            font-size: 16px;
+        }
+
+        #userStatusSelector .so-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+        }
+
+        /* Status indicator dot - aligned with title */
+        #userStatusSelector .so-dropdown-item .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .status-indicator.available { background-color: #34a853; }
+        .status-indicator.with-customer { background-color: #1a73e8; }
+        .status-indicator.in-meeting { background-color: #9c27b0; }
+        .status-indicator.on-call { background-color: #ff9800; }
+        .status-indicator.on-leave { background-color: #757575; }
+        .status-indicator.away { background-color: #ea4335; }
+
+        /* Status option content */
+        .status-option-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .status-option-title {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--so-text-primary);
+            line-height: 1.4;
+        }
+
+        .status-option-desc {
+            font-size: 11px;
+            color: var(--so-text-muted);
+            margin-top: 2px;
+            line-height: 1.2;
+        }
+
+        /* Adjust check icon position */
+        #userStatusSelector .so-dropdown-check {
+            margin-left: auto;
+            color: var(--so-accent-primary);
+        }
+
+        /* ==============================================
+           PROJECT-SPECIFIC: Navbar Dropdown Triggers
+           ============================================== */
+        /* Remove focus/hover outline on these specific dropdowns */
+        #outletSelector .so-dropdown-trigger:hover,
+        #outletSelector .so-dropdown-trigger:focus,
+        #userStatusSelector .so-dropdown-trigger:hover,
+        #userStatusSelector .so-dropdown-trigger:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Status indicator in trigger */
+        #userStatusSelector .so-dropdown-trigger .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
     </style>
 
     <script>
