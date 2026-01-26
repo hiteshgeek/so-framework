@@ -21,13 +21,26 @@ class SODropdown extends SOComponent {
     placeholder: 'Select option',
     searchPlaceholder: 'Search...',
     noResultsText: 'No results found',
+    // New options
+    autoClose: true,         // true, false, 'inside', 'outside'
+    direction: 'down',       // down, up, start, end
+    alignment: 'start',      // start, end
+    // Selection options
+    selectionStyle: 'default', // 'default' (bg + check), 'highlight' (bg only), 'check' (check only)
+    multiple: false,         // Allow multiple selections
+    maxSelections: null,     // Max selections allowed (null = unlimited)
   };
 
   static EVENTS = {
-    OPEN: 'dropdown:open',
-    CLOSE: 'dropdown:close',
+    // Before/After show events (Bootstrap pattern)
+    SHOW: 'dropdown:show',       // Before opening (cancelable)
+    SHOWN: 'dropdown:shown',     // After opened
+    HIDE: 'dropdown:hide',       // Before closing (cancelable)
+    HIDDEN: 'dropdown:hidden',   // After closed
+    // Other events
     CHANGE: 'dropdown:change',
     SEARCH: 'dropdown:search',
+    ACTION: 'dropdown:action',
   };
 
   /**
@@ -43,20 +56,84 @@ class SODropdown extends SOComponent {
 
     // State
     this._isOpen = false;
-    this._selectedValue = null;
-    this._selectedText = null;
+    this._disabled = false;
+    this._selectedValues = [];  // Array for multiple selection support
+    this._selectedTexts = [];   // Array for multiple selection support
     this._originalItems = [];
+    this._focusedIndex = -1;
+
+    // Store original CSS classes for direction/alignment (set via HTML)
+    this._originalClasses = {
+      dropup: this.element.classList.contains('so-dropup'),
+      dropstart: this.element.classList.contains('so-dropstart'),
+      dropend: this.element.classList.contains('so-dropend'),
+      menuEnd: this.element.classList.contains('so-dropdown-menu-end'),
+    };
 
     // Store original items for filtering
     if (this._itemsList) {
       this._originalItems = Array.from(this._itemsList.children);
     }
 
+    // Parse data attributes for options
+    this._parseDataAttributes();
+
     // Get initial selection
     this._getInitialSelection();
 
     // Bind events
     this._bindEvents();
+  }
+
+  /**
+   * Parse data attributes for configuration
+   * @private
+   */
+  _parseDataAttributes() {
+    const el = this.element;
+
+    // autoClose
+    if (el.hasAttribute('data-so-auto-close')) {
+      const val = el.getAttribute('data-so-auto-close');
+      if (val === 'true') this.options.autoClose = true;
+      else if (val === 'false') this.options.autoClose = false;
+      else this.options.autoClose = val; // 'inside' or 'outside'
+    }
+
+    // direction
+    if (el.hasAttribute('data-so-direction')) {
+      this.options.direction = el.getAttribute('data-so-direction');
+    }
+
+    // alignment
+    if (el.hasAttribute('data-so-alignment')) {
+      this.options.alignment = el.getAttribute('data-so-alignment');
+    }
+
+    // selectionStyle
+    if (el.hasAttribute('data-so-selection-style')) {
+      this.options.selectionStyle = el.getAttribute('data-so-selection-style');
+    }
+
+    // multiple
+    if (el.hasAttribute('data-so-multiple')) {
+      this.options.multiple = el.getAttribute('data-so-multiple') !== 'false';
+    }
+
+    // maxSelections
+    if (el.hasAttribute('data-so-max-selections')) {
+      this.options.maxSelections = parseInt(el.getAttribute('data-so-max-selections'), 10) || null;
+    }
+
+    // Apply selection style class
+    if (this.options.selectionStyle !== 'default') {
+      this.addClass(`so-dropdown-selection-${this.options.selectionStyle}`);
+    }
+
+    // Apply multiple class
+    if (this.options.multiple) {
+      this.addClass('so-dropdown-multiple');
+    }
   }
 
   /**
@@ -78,6 +155,7 @@ class SODropdown extends SOComponent {
   _cacheElements() {
     switch (this._type) {
       case 'searchable':
+        // Legacy searchable classes
         this._trigger = this.$('.so-searchable-trigger');
         this._menu = this.$('.so-searchable-menu');
         this._searchInput = this.$('.so-searchable-input');
@@ -99,9 +177,13 @@ class SODropdown extends SOComponent {
         break;
 
       default:
-        this._trigger = this.$('.so-dropdown-trigger');
+        // Standard dropdown - trigger can be .so-dropdown-trigger or .so-btn with trigger class
+        this._trigger = this.$('.so-dropdown-trigger') || this.$('.so-btn');
         this._menu = this.$('.so-dropdown-menu');
         this._selectedEl = this.$('.so-dropdown-selected');
+        // For searchable modifier on standard dropdown
+        this._searchInput = this.$('.so-dropdown-search-input');
+        this._itemsList = this.$('.so-dropdown-items');
     }
   }
 
@@ -110,11 +192,15 @@ class SODropdown extends SOComponent {
    * @private
    */
   _getInitialSelection() {
-    const selectedItem = this._menu?.querySelector('.selected');
-    if (selectedItem) {
-      this._selectedValue = selectedItem.dataset.value;
-      this._selectedText = selectedItem.textContent.trim();
-    }
+    const selectedItems = this._menu?.querySelectorAll('.selected, .active') || [];
+    selectedItems.forEach(item => {
+      const value = item.dataset.value;
+      const text = item.textContent.trim();
+      if (value !== undefined) {
+        this._selectedValues.push(value);
+        this._selectedTexts.push(text);
+      }
+    });
   }
 
   /**
@@ -127,10 +213,19 @@ class SODropdown extends SOComponent {
       this.on('click', this._handleTriggerClick, this._trigger);
     }
 
-    // Item selection
+    // Item selection - bind directly to menu/items container to handle before stopPropagation
     const itemSelector = this._getItemSelector();
-    if (itemSelector) {
-      this.delegate('click', itemSelector, this._handleItemClick);
+    const itemsContainer = this._itemsList || this._menu;
+    if (itemSelector && itemsContainer) {
+      // Use direct event listener on the items container
+      this._itemClickHandler = (e) => {
+        const item = e.target.closest(itemSelector);
+        if (item && itemsContainer.contains(item)) {
+          this._handleItemClick(e, item);
+        }
+      };
+      this._itemsContainer = itemsContainer;
+      itemsContainer.addEventListener('click', this._itemClickHandler);
     }
 
     // Search input
@@ -139,9 +234,14 @@ class SODropdown extends SOComponent {
       this.on('click', (e) => e.stopPropagation(), this._searchInput);
     }
 
-    // Prevent menu from closing when clicking inside
+    // Prevent menu from closing when clicking inside (based on autoClose)
     if (this._menu) {
-      this.on('click', (e) => e.stopPropagation(), this._menu);
+      this.on('click', (e) => {
+        // Only stop propagation if autoClose is not 'outside'
+        if (this.options.autoClose !== 'outside') {
+          e.stopPropagation();
+        }
+      }, this._menu);
     }
 
     // Close on outside click
@@ -175,6 +275,8 @@ class SODropdown extends SOComponent {
   _handleTriggerClick(e) {
     e.stopPropagation();
 
+    if (this._disabled) return;
+
     // Close other dropdowns
     this._closeOtherDropdowns();
 
@@ -195,27 +297,51 @@ class SODropdown extends SOComponent {
   _handleItemClick(e, item) {
     e.stopPropagation();
 
+    // Check if item is disabled
+    if (item.classList.contains('disabled') || item.hasAttribute('disabled') || item.getAttribute('aria-disabled') === 'true') {
+      return;
+    }
+
     // Options dropdown emits action event
     if (this._type === 'options') {
       const action = item.dataset.action;
-      this.emit('action', { action, element: item });
-      if (this.options.closeOnSelect) {
+      this.emit(SODropdown.EVENTS.ACTION, { action, element: item });
+
+      // Check autoClose for options
+      if (this._shouldCloseOnItemClick()) {
         this.close();
       }
       return;
     }
 
     // Other dropdowns handle selection
-    const value = item.dataset.value;
     const text = this._type === 'outlet'
       ? item.querySelector('.outlet-item-text')?.textContent.trim() || item.textContent.trim()
       : item.textContent.trim();
+    // Use data-value if present, otherwise fall back to text content
+    const value = item.dataset.value !== undefined ? item.dataset.value : text;
 
-    this.select(value, text);
+    // Handle multiple selection
+    if (this.options.multiple) {
+      this.toggleSelect(value, text, item);
+    } else {
+      this.select(value, text, item);
+    }
 
-    if (this.options.closeOnSelect) {
+    // For multiple selection, don't close on item click by default
+    if (!this.options.multiple && this._shouldCloseOnItemClick()) {
       this.close();
     }
+  }
+
+  /**
+   * Check if dropdown should close on item click based on autoClose
+   * @returns {boolean}
+   * @private
+   */
+  _shouldCloseOnItemClick() {
+    const autoClose = this.options.autoClose;
+    return this.options.closeOnSelect && (autoClose === true || autoClose === 'inside');
   }
 
   /**
@@ -244,13 +370,22 @@ class SODropdown extends SOComponent {
   }
 
   /**
-   * Handle outside click
+   * Handle outside click based on autoClose option
    * @private
    */
   _handleOutsideClick() {
-    if (this._isOpen) {
-      this.close();
-    }
+    if (!this._isOpen) return;
+
+    const autoClose = this.options.autoClose;
+
+    // autoClose: false - never close on outside click
+    if (autoClose === false) return;
+
+    // autoClose: 'inside' - only close when clicking inside
+    if (autoClose === 'inside') return;
+
+    // autoClose: true or 'outside' - close on outside click
+    this.close();
   }
 
   /**
@@ -259,16 +394,108 @@ class SODropdown extends SOComponent {
    * @private
    */
   _handleKeydown(e) {
+    // Escape to close
     if (e.key === 'Escape' && this._isOpen) {
       e.preventDefault();
       this.close();
       this._trigger?.focus();
+      return;
     }
 
+    // ArrowDown to open when closed
     if (e.key === 'ArrowDown' && !this._isOpen) {
       e.preventDefault();
       this.open();
+      return;
     }
+
+    // Navigate items when open
+    if (this._isOpen) {
+      const items = this._getNavigableItems();
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        this._focusNextItem(items, 1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        this._focusNextItem(items, -1);
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (this._focusedIndex >= 0 && items[this._focusedIndex]) {
+          items[this._focusedIndex].click();
+        }
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        this._focusItem(items, 0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        this._focusItem(items, items.length - 1);
+      }
+    }
+  }
+
+  /**
+   * Get all navigable (non-disabled) items
+   * @returns {Element[]} Array of navigable items
+   * @private
+   */
+  _getNavigableItems() {
+    const selector = this._getItemSelector();
+    return this.$$(selector).filter(item =>
+      !item.classList.contains('disabled') &&
+      !item.hasAttribute('disabled') &&
+      item.getAttribute('aria-disabled') !== 'true' &&
+      !item.classList.contains('so-dropdown-header') &&
+      !item.classList.contains('so-dropdown-divider') &&
+      item.style.display !== 'none'
+    );
+  }
+
+  /**
+   * Focus next/previous item in the list
+   * @param {Element[]} items - Navigable items
+   * @param {number} direction - 1 for next, -1 for previous
+   * @private
+   */
+  _focusNextItem(items, direction) {
+    if (items.length === 0) return;
+
+    let newIndex = this._focusedIndex + direction;
+
+    // Wrap around
+    if (newIndex < 0) newIndex = items.length - 1;
+    if (newIndex >= items.length) newIndex = 0;
+
+    this._focusItem(items, newIndex);
+  }
+
+  /**
+   * Focus a specific item by index
+   * @param {Element[]} items - Navigable items
+   * @param {number} index - Item index
+   * @private
+   */
+  _focusItem(items, index) {
+    // Remove focus from all items
+    const allItems = this.$$(this._getItemSelector());
+    allItems.forEach(item => item.classList.remove('focused'));
+
+    // Set new focus
+    this._focusedIndex = index;
+    if (items[index]) {
+      items[index].classList.add('focused');
+      items[index].scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  /**
+   * Clear focused item state
+   * @private
+   */
+  _clearFocusedItem() {
+    const items = this.$$(this._getItemSelector());
+    items.forEach(item => item.classList.remove('focused'));
+    this._focusedIndex = -1;
   }
 
   /**
@@ -279,8 +506,39 @@ class SODropdown extends SOComponent {
     document.querySelectorAll('.so-dropdown.open, .so-searchable-dropdown.open, .so-options-dropdown.open, .so-outlet-dropdown.open').forEach(dropdown => {
       if (dropdown !== this.element) {
         dropdown.classList.remove('open', 'position-left', 'position-top');
+        // Also remove directional classes
+        dropdown.classList.remove('so-dropup', 'so-dropstart', 'so-dropend', 'so-dropdown-menu-end');
       }
     });
+  }
+
+  /**
+   * Apply direction and alignment classes
+   * @private
+   */
+  _applyDirectionClasses() {
+    const direction = this.options.direction;
+    const alignment = this.options.alignment;
+
+    // Direction classes (only add if not already present via HTML)
+    if (direction === 'up' && !this._originalClasses.dropup) this.addClass('so-dropup');
+    if (direction === 'start' && !this._originalClasses.dropstart) this.addClass('so-dropstart');
+    if (direction === 'end' && !this._originalClasses.dropend) this.addClass('so-dropend');
+
+    // Alignment class (only add if not already present via HTML)
+    if (alignment === 'end' && !this._originalClasses.menuEnd) this.addClass('so-dropdown-menu-end');
+  }
+
+  /**
+   * Remove direction and alignment classes (only those added dynamically, not via HTML)
+   * @private
+   */
+  _removeDirectionClasses() {
+    // Only remove classes that weren't originally set via HTML
+    if (!this._originalClasses.dropup) this.removeClass('so-dropup');
+    if (!this._originalClasses.dropstart) this.removeClass('so-dropstart');
+    if (!this._originalClasses.dropend) this.removeClass('so-dropend');
+    if (!this._originalClasses.menuEnd) this.removeClass('so-dropdown-menu-end');
   }
 
   /**
@@ -324,17 +582,29 @@ class SODropdown extends SOComponent {
    * @returns {this} For chaining
    */
   open() {
-    if (this._isOpen) return this;
+    if (this._isOpen || this._disabled) return this;
+
+    // Emit cancelable show event
+    const showAllowed = this.emit(SODropdown.EVENTS.SHOW, {}, true, true);
+    if (!showAllowed) return this;
 
     this._isOpen = true;
     this.addClass('open');
+    this._applyDirectionClasses();
+
+    // Reset keyboard navigation
+    this._focusedIndex = -1;
 
     // Focus search input if present
     if (this._searchInput) {
       setTimeout(() => this._searchInput.focus(), 50);
     }
 
-    this.emit(SODropdown.EVENTS.OPEN);
+    // Emit shown event after transition
+    setTimeout(() => {
+      this.emit(SODropdown.EVENTS.SHOWN);
+    }, 150);
+
     return this;
   }
 
@@ -345,8 +615,15 @@ class SODropdown extends SOComponent {
   close() {
     if (!this._isOpen) return this;
 
+    // Emit cancelable hide event
+    const hideAllowed = this.emit(SODropdown.EVENTS.HIDE, {}, true, true);
+    if (!hideAllowed) return this;
+
     this._isOpen = false;
-    this.removeClass('open', 'position-left', 'position-top');
+    this.removeClass('open');
+
+    // Clear focused item
+    this._clearFocusedItem();
 
     // Clear search
     if (this._searchInput) {
@@ -354,7 +631,13 @@ class SODropdown extends SOComponent {
       this._filterItems('');
     }
 
-    this.emit(SODropdown.EVENTS.CLOSE);
+    // Remove position classes AFTER transition completes to prevent jump
+    setTimeout(() => {
+      this.removeClass('position-left', 'position-top');
+      this._removeDirectionClasses();
+      this.emit(SODropdown.EVENTS.HIDDEN);
+    }, 150);
+
     return this;
   }
 
@@ -367,16 +650,18 @@ class SODropdown extends SOComponent {
   }
 
   /**
-   * Select an option
+   * Select an option (single selection mode)
    * @param {string} value - Option value
    * @param {string} [text] - Display text
+   * @param {Element} [clickedItem] - Clicked item element
    * @returns {this} For chaining
    */
-  select(value, text) {
-    const previousValue = this._selectedValue;
+  select(value, text, clickedItem = null) {
+    const previousValues = [...this._selectedValues];
 
-    this._selectedValue = value;
-    this._selectedText = text;
+    // Clear previous and set new
+    this._selectedValues = [value];
+    this._selectedTexts = [text];
 
     // Update display
     if (this._selectedEl) {
@@ -386,33 +671,157 @@ class SODropdown extends SOComponent {
     // Update selected state in menu
     const itemSelector = this._getItemSelector();
     this.$$(itemSelector).forEach(item => {
-      item.classList.toggle('selected', item.dataset.value === value);
+      // If we have the clicked item, use direct comparison
+      // Otherwise fall back to value comparison (for programmatic selection)
+      const isSelected = clickedItem
+        ? item === clickedItem
+        : (item.dataset.value !== undefined ? item.dataset.value === value : item.textContent.trim() === value);
+      item.classList.toggle('selected', isSelected);
+      item.classList.toggle('active', isSelected);
     });
 
     // Emit change event
     this.emit(SODropdown.EVENTS.CHANGE, {
       value,
       text,
-      previousValue,
+      values: this._selectedValues,
+      texts: this._selectedTexts,
+      previousValues,
     });
 
     return this;
   }
 
   /**
-   * Get selected value
-   * @returns {string|null} Selected value
+   * Toggle selection for multiple mode
+   * @param {string} value - Option value
+   * @param {string} text - Display text
+   * @param {Element} item - Item element
+   * @returns {this} For chaining
    */
-  getValue() {
-    return this._selectedValue;
+  toggleSelect(value, text, item) {
+    const previousValues = [...this._selectedValues];
+    const index = this._selectedValues.indexOf(value);
+
+    if (index > -1) {
+      // Deselect
+      this._selectedValues.splice(index, 1);
+      this._selectedTexts.splice(index, 1);
+      item.classList.remove('selected', 'active');
+    } else {
+      // Check max selections
+      if (this.options.maxSelections && this._selectedValues.length >= this.options.maxSelections) {
+        return this; // Don't allow more selections
+      }
+      // Select
+      this._selectedValues.push(value);
+      this._selectedTexts.push(text);
+      item.classList.add('selected', 'active');
+    }
+
+    // Update display
+    this._updateMultipleDisplay();
+
+    // Emit change event
+    this.emit(SODropdown.EVENTS.CHANGE, {
+      value,
+      text,
+      values: this._selectedValues,
+      texts: this._selectedTexts,
+      previousValues,
+      action: index > -1 ? 'deselect' : 'select',
+    });
+
+    return this;
   }
 
   /**
-   * Get selected text
+   * Update display text for multiple selection
+   * @private
+   */
+  _updateMultipleDisplay() {
+    if (!this._selectedEl) return;
+
+    const count = this._selectedValues.length;
+    if (count === 0) {
+      this._selectedEl.textContent = this.options.placeholder;
+      this._selectedEl.classList.add('placeholder');
+    } else if (count === 1) {
+      this._selectedEl.textContent = this._selectedTexts[0];
+      this._selectedEl.classList.remove('placeholder');
+    } else {
+      this._selectedEl.textContent = `${count} selected`;
+      this._selectedEl.classList.remove('placeholder');
+    }
+  }
+
+  /**
+   * Get selected value (returns first for multiple, or single value)
+   * @returns {string|null} Selected value
+   */
+  getValue() {
+    return this._selectedValues[0] || null;
+  }
+
+  /**
+   * Get all selected values (for multiple selection)
+   * @returns {string[]} Array of selected values
+   */
+  getValues() {
+    return [...this._selectedValues];
+  }
+
+  /**
+   * Get selected text (returns first for multiple, or single text)
    * @returns {string|null} Selected text
    */
   getText() {
-    return this._selectedText;
+    return this._selectedTexts[0] || null;
+  }
+
+  /**
+   * Get all selected texts (for multiple selection)
+   * @returns {string[]} Array of selected texts
+   */
+  getTexts() {
+    return [...this._selectedTexts];
+  }
+
+  /**
+   * Clear all selections
+   * @returns {this} For chaining
+   */
+  clearSelection() {
+    const previousValues = [...this._selectedValues];
+
+    this._selectedValues = [];
+    this._selectedTexts = [];
+
+    // Update UI
+    const itemSelector = this._getItemSelector();
+    this.$$(itemSelector).forEach(item => {
+      item.classList.remove('selected', 'active');
+    });
+
+    // Update display
+    if (this.options.multiple) {
+      this._updateMultipleDisplay();
+    } else if (this._selectedEl) {
+      this._selectedEl.textContent = this.options.placeholder;
+      this._selectedEl.classList.add('placeholder');
+    }
+
+    // Emit change event
+    this.emit(SODropdown.EVENTS.CHANGE, {
+      value: null,
+      text: null,
+      values: [],
+      texts: [],
+      previousValues,
+      action: 'clear',
+    });
+
+    return this;
   }
 
   /**
@@ -421,6 +830,79 @@ class SODropdown extends SOComponent {
    */
   isOpen() {
     return this._isOpen;
+  }
+
+  /**
+   * Update dropdown position (for dynamic content)
+   * @returns {this} For chaining
+   */
+  update() {
+    if (this._isOpen) {
+      this._positionMenu();
+    }
+    return this;
+  }
+
+  /**
+   * Disable the dropdown
+   * @returns {this} For chaining
+   */
+  disable() {
+    this._disabled = true;
+    this.addClass('disabled');
+    if (this._trigger) {
+      this._trigger.setAttribute('disabled', '');
+      this._trigger.setAttribute('aria-disabled', 'true');
+    }
+    if (this._isOpen) {
+      this.close();
+    }
+    return this;
+  }
+
+  /**
+   * Enable the dropdown
+   * @returns {this} For chaining
+   */
+  enable() {
+    this._disabled = false;
+    this.removeClass('disabled');
+    if (this._trigger) {
+      this._trigger.removeAttribute('disabled');
+      this._trigger.removeAttribute('aria-disabled');
+    }
+    return this;
+  }
+
+  /**
+   * Check if dropdown is disabled
+   * @returns {boolean} Disabled state
+   */
+  isDisabled() {
+    return this._disabled;
+  }
+
+  /**
+   * Enable or disable a specific item
+   * @param {string|number} identifier - Value or index of item
+   * @param {boolean} disabled - Whether to disable
+   * @returns {this} For chaining
+   */
+  setItemDisabled(identifier, disabled = true) {
+    const items = this.$$(this._getItemSelector());
+    const item = typeof identifier === 'number'
+      ? items[identifier]
+      : items.find(i => i.dataset.value === identifier);
+
+    if (item) {
+      item.classList.toggle('disabled', disabled);
+      if (disabled) {
+        item.setAttribute('aria-disabled', 'true');
+      } else {
+        item.removeAttribute('aria-disabled');
+      }
+    }
+    return this;
   }
 
   // ============================================
@@ -447,7 +929,10 @@ class SODropdown extends SOComponent {
       </button>
       <div class="so-dropdown-menu">
         ${items.map(item => `
-          <div class="so-dropdown-item ${item.selected ? 'selected' : ''}" data-value="${item.value}">
+          <div class="so-dropdown-item ${item.selected ? 'selected' : ''} ${item.disabled ? 'disabled' : ''}"
+               data-value="${item.value}"
+               ${item.disabled ? 'aria-disabled="true"' : ''}>
+            ${item.icon ? `<span class="material-icons">${item.icon}</span>` : ''}
             ${item.label}
           </div>
         `).join('')}
@@ -487,7 +972,9 @@ class SODropdown extends SOComponent {
         </div>
         <div class="so-searchable-items">
           ${items.map(item => `
-            <div class="so-searchable-item ${item.selected ? 'selected' : ''}" data-value="${item.value}">
+            <div class="so-searchable-item ${item.selected ? 'selected' : ''} ${item.disabled ? 'disabled' : ''}"
+                 data-value="${item.value}"
+                 ${item.disabled ? 'aria-disabled="true"' : ''}>
               ${item.label}
             </div>
           `).join('')}
@@ -518,8 +1005,13 @@ class SODropdown extends SOComponent {
           if (item.divider) {
             return '<div class="so-options-divider"></div>';
           }
+          if (item.header) {
+            return `<div class="so-dropdown-header">${item.header}</div>`;
+          }
           return `
-            <div class="so-options-item ${item.danger ? 'danger' : ''}" data-action="${item.action || ''}">
+            <div class="so-options-item ${item.danger ? 'danger' : ''} ${item.disabled ? 'disabled' : ''}"
+                 data-action="${item.action || ''}"
+                 ${item.disabled ? 'aria-disabled="true"' : ''}>
               ${item.icon ? `<span class="material-icons">${item.icon}</span>` : ''}
               <span>${item.label}</span>
             </div>

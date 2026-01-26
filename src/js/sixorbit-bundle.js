@@ -17,9 +17,11 @@
 // 6. components/so-modal.js
 // 7. components/so-ripple.js
 // 8. components/so-otp.js
-// 9. features/so-forms.js
-// 10. features/so-search.js
-// 11. features/so-auth.js
+// 9. components/so-tabs.js
+// 10. components/so-tooltip.js
+// 11. features/so-forms.js
+// 12. features/so-search.js
+// 13. features/so-auth.js
 
 // Auto-initialization
 (function() {
@@ -60,6 +62,11 @@
       document.querySelectorAll('.so-otp-group').forEach(function(el) {
         SOOtpInput.getInstance(el);
       });
+    }
+
+    // Initialize tooltips
+    if (typeof SOTooltip !== 'undefined') {
+      SOTooltip.initAll();
     }
 
     console.log('SixOrbit UI initialized');

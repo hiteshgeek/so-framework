@@ -645,15 +645,37 @@ $includeSearch = $includeSearch ?? true;
         var code = codeBlock.querySelector('code').innerText;
 
         navigator.clipboard.writeText(code).then(function() {
+            // Visual feedback
             button.classList.add('copied');
             button.querySelector('.material-icons').textContent = 'check';
 
+            // Show success tooltip
+            if (typeof SOTooltip !== 'undefined') {
+                SOTooltip.showTemporary(button, {
+                    content: 'Copied!',
+                    color: 'success',
+                    position: 'top',
+                    autoHide: 2000
+                });
+            }
+
+            // Reset after 2 seconds
             setTimeout(function() {
                 button.classList.remove('copied');
                 button.querySelector('.material-icons').textContent = 'content_copy';
             }, 2000);
         }).catch(function(err) {
             console.error('Failed to copy:', err);
+
+            // Show error tooltip
+            if (typeof SOTooltip !== 'undefined') {
+                SOTooltip.showTemporary(button, {
+                    content: 'Copy failed',
+                    color: 'danger',
+                    position: 'top',
+                    autoHide: 2000
+                });
+            }
         });
     }
     </script>

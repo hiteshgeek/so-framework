@@ -5,8 +5,7 @@
   "main": "dist/js/sixorbit-full.js",
   "scripts": {
     "build": "node build.js",
-    "build:prod": "node build.js",
-    "build:dev": "node build.js --dev",
+    "dev": "node build.js --dev",
     "watch": "node build.js --watch",
     "clean": "rm -rf dist/*"
   },

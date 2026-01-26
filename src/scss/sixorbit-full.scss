@@ -17,3 +17,6 @@
 
 // Section-specific styles
 @use 'sections';
+
+// Utility classes (should be last for highest specificity)
+@use 'utilities';

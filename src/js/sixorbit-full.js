@@ -14,6 +14,8 @@ import { SOSidebar, SONavbar } from './components/so-layout.js';
 import SOModal from './components/so-modal.js';
 import SORipple from './components/so-ripple.js';
 import SOOtpInput from './components/so-otp.js';
+import SOTabs from './components/so-tabs.js';
+import SOTooltip from './components/so-tooltip.js';
 
 // Features
 import SOForms from './features/so-forms.js';
@@ -54,6 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
     SOOtpInput.getInstance(el);
   });
 
+  // Initialize tooltips
+  SOTooltip.initAll();
+
+  // Initialize dropdowns
+  SODropdown.initAll();
+
+  // Initialize tabs
+  SOTabs.initAll();
+
   console.log('SixOrbit UI Full initialized');
 });
 
@@ -68,6 +79,8 @@ export {
   SOModal,
   SORipple,
   SOOtpInput,
+  SOTabs,
+  SOTooltip,
   SOForms,
   SOSearchOverlay,
   SOFeatureCarousel,

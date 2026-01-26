@@ -14,33 +14,28 @@
   display: inline-block;
 }
 
-// Dropdown Trigger
+// Dropdown Trigger - works with .so-btn
+// Usage: <button class="so-btn so-btn-light so-dropdown-trigger">
 .#{$so-prefix}dropdown-trigger {
+  .#{$so-prefix}dropdown-arrow {
+    transition: transform $so-transition-normal;
+    margin-left: spacing('1');
+  }
+}
+
+// When used with .so-btn, ensure proper alignment and white background
+.#{$so-prefix}btn.#{$so-prefix}dropdown-trigger {
   display: inline-flex;
   align-items: center;
   gap: spacing('2');
-  height: $so-form-height-md;
-  padding: 0 spacing('3');
-  font-size: font-size('base');
-  font-weight: font-weight('medium');
-  font-family: inherit;
-  color: css-var('text-secondary');
+  // Override btn-light background to use white/card-bg
   background: css-var('card-bg');
-  border: 1px solid css-var('border-color');
-  border-radius: radius('base');
-  cursor: pointer;
-  transition: all $so-transition-base;
+  border-color: css-var('border-color');
+  color: css-var('text-secondary');
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: css-var('card-hover-bg');
-  }
-
-  .material-icons {
-    font-size: 18px;
-  }
-
-  .#{$so-prefix}dropdown-arrow {
-    transition: transform $so-transition-normal;
+    border-color: css-var('border-color');
   }
 }
 
@@ -107,6 +102,15 @@
   background: css-var('dropdown-border');
 }
 
+// Danger item
+.#{$so-prefix}dropdown-item-danger {
+  color: css-var('accent-danger') !important;
+
+  .material-icons {
+    color: css-var('accent-danger') !important;
+  }
+}
+
 // Dropdown with Search
 .#{$so-prefix}dropdown-search {
   padding: spacing('2');
@@ -118,7 +122,83 @@
 }
 
 // ============================================
-// SEARCHABLE DROPDOWN
+// SEARCHABLE DROPDOWN (modifier of base dropdown)
+// Usage: .so-dropdown.so-dropdown-searchable
+// ============================================
+
+// Searchable modifier - adds search box to dropdown
+.#{$so-prefix}dropdown.#{$so-prefix}dropdown-searchable {
+  display: block; // Full width
+
+  .#{$so-prefix}dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .#{$so-prefix}dropdown-menu {
+    left: 0;
+    right: 0;
+    min-width: auto;
+  }
+}
+
+// Dropdown search box inside menu
+.#{$so-prefix}dropdown-search {
+  position: relative;
+  padding: spacing('2') spacing('3');
+  border-bottom: 1px solid css-var('dropdown-border');
+
+  .#{$so-prefix}dropdown-search-input {
+    width: 100%;
+    height: 32px;
+    padding: 0 spacing('2') 0 28px; // Left padding for icon
+    border: none;
+    border-radius: 0;
+    font-size: font-size('sm');
+    background: transparent;
+    color: css-var('text-primary');
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: css-var('text-secondary');
+    }
+  }
+
+  // Search icon inside input
+  &::before {
+    content: 'search';
+    font-family: 'Material Icons';
+    position: absolute;
+    left: spacing('3');
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: css-var('text-secondary');
+    pointer-events: none;
+  }
+}
+
+// Dropdown items container (scrollable)
+.#{$so-prefix}dropdown-items {
+  max-height: 240px;
+  overflow-y: auto;
+  @include custom-scrollbar;
+}
+
+// Empty state message
+.#{$so-prefix}dropdown-empty {
+  padding: spacing('4');
+  text-align: center;
+  color: css-var('text-secondary');
+  font-size: font-size('sm');
+}
+
+// ============================================
+// LEGACY SEARCHABLE DROPDOWN (for backwards compatibility)
 // ============================================
 
 .#{$so-prefix}searchable-dropdown {
@@ -126,25 +206,30 @@
   display: block;
 }
 
-.#{$so-prefix}searchable-dropdown-trigger {
+// Legacy trigger - now uses same styling as standard dropdown
+.#{$so-prefix}searchable-dropdown-trigger,
+.#{$so-prefix}searchable-trigger {
   display: flex;
   align-items: center;
   gap: spacing('2');
   width: 100%;
   height: $so-form-height-md;
-  padding: 0 36px 0 spacing('3');
+  padding: 0 spacing('3');
+  padding-right: 36px;
   font-size: font-size('base');
+  font-weight: font-weight('medium');
   font-family: inherit;
-  color: css-var('form-text');
-  background: css-var('form-bg');
-  border: 1px solid css-var('form-border');
+  color: css-var('text-secondary');
+  background: css-var('card-bg');
+  border: 1px solid css-var('border-color');
   border-radius: radius('base');
   cursor: pointer;
   text-align: left;
-  transition: border-color $so-transition-base;
+  transition: all $so-transition-base;
+  position: relative;
 
   &:hover {
-    border-color: css-var('form-border-hover');
+    background: css-var('card-hover-bg');
   }
 
   .placeholder {
@@ -160,71 +245,87 @@
 }
 
 .#{$so-prefix}searchable-dropdown.open {
-  .#{$so-prefix}searchable-dropdown-trigger {
-    border-color: css-var('form-border-focus');
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
+  .#{$so-prefix}searchable-dropdown-trigger,
+  .#{$so-prefix}searchable-trigger {
     .#{$so-prefix}dropdown-arrow {
       transform: rotate(180deg);
     }
   }
 }
 
-.#{$so-prefix}searchable-dropdown-menu {
-  position: absolute;
-  top: 100%;
+.#{$so-prefix}searchable-dropdown-menu,
+.#{$so-prefix}searchable-menu {
+  @include dropdown-menu;
   left: 0;
   right: 0;
-  background: css-var('dropdown-bg');
-  border: 1px solid css-var('form-border-focus');
-  border-top: none;
-  border-radius: 0 0 radius('base') radius('base');
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: z-index('dropdown');
-  display: none;
+  min-width: auto;
 }
 
-.#{$so-prefix}searchable-dropdown.open .#{$so-prefix}searchable-dropdown-menu {
-  display: block;
+.#{$so-prefix}searchable-dropdown.open .#{$so-prefix}searchable-dropdown-menu,
+.#{$so-prefix}searchable-dropdown.open .#{$so-prefix}searchable-menu {
+  @include dropdown-open;
 }
 
-.#{$so-prefix}searchable-dropdown-search {
-  padding: spacing('2');
+.#{$so-prefix}searchable-dropdown-search,
+.#{$so-prefix}searchable-search {
+  position: relative;
+  padding: spacing('2') spacing('3');
   border-bottom: 1px solid css-var('dropdown-border');
 
-  .#{$so-prefix}input {
-    height: 36px;
+  // Hide the external icon - we'll use icon inside input
+  > .material-icons {
+    display: none;
+  }
+
+  .#{$so-prefix}input,
+  .#{$so-prefix}searchable-input,
+  .#{$so-prefix}searchable-dropdown-input {
+    width: 100%;
+    height: 32px;
+    padding: 0 spacing('2') 0 28px; // Left padding for icon
+    border: none;
+    border-radius: 0;
+    font-size: font-size('sm');
+    background: transparent;
+    color: css-var('text-primary');
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: css-var('text-secondary');
+    }
+  }
+
+  // Search icon inside input
+  &::before {
+    content: 'search';
+    font-family: 'Material Icons';
+    position: absolute;
+    left: spacing('3');
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: css-var('text-secondary');
+    pointer-events: none;
   }
 }
 
-.#{$so-prefix}searchable-dropdown-list {
+.#{$so-prefix}searchable-dropdown-list,
+.#{$so-prefix}searchable-items {
   max-height: 240px;
   overflow-y: auto;
   @include custom-scrollbar;
 }
 
-.#{$so-prefix}searchable-dropdown-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: spacing('2') + 2px spacing('3');
-  font-size: font-size('base');
-  color: css-var('form-text');
-  cursor: pointer;
-  transition: background $so-transition-base;
-
-  &:hover {
-    background: css-var('dropdown-item-hover');
-  }
-
-  &.selected {
-    background: css-var('dropdown-item-active');
-    color: css-var('dropdown-item-active-text');
-  }
+.#{$so-prefix}searchable-dropdown-item,
+.#{$so-prefix}searchable-item {
+  @include dropdown-item;
 
   .check-icon {
     font-size: 18px;
+    margin-left: auto;
     visibility: hidden;
   }
 
@@ -289,8 +390,6 @@
 
 .#{$so-prefix}outlet-dropdown.open {
   .#{$so-prefix}outlet-dropdown-trigger {
-    border-color: css-var('form-border-focus');
-
     .outlet-arrow {
       transform: rotate(180deg);
     }
@@ -556,4 +655,591 @@
   height: 1px;
   margin: spacing('1') 0;
   background: css-var('dropdown-border');
+}
+
+// ============================================
+// DISABLED STATES
+// ============================================
+
+// Disabled dropdown
+.#{$so-prefix}dropdown.disabled,
+.#{$so-prefix}searchable-dropdown.disabled,
+.#{$so-prefix}options-dropdown.disabled,
+.#{$so-prefix}outlet-dropdown.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+
+  .#{$so-prefix}dropdown-trigger,
+  .#{$so-prefix}searchable-trigger,
+  .#{$so-prefix}options-trigger,
+  .#{$so-prefix}outlet-dropdown-trigger {
+    cursor: not-allowed;
+  }
+}
+
+// Disabled item state
+.#{$so-prefix}dropdown-item,
+.#{$so-prefix}searchable-item,
+.#{$so-prefix}options-item,
+.#{$so-prefix}outlet-dropdown-item {
+  &.disabled,
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  // Focused state (keyboard navigation)
+  &.focused {
+    background: css-var('dropdown-item-hover');
+    outline: none;
+  }
+}
+
+// ============================================
+// NON-INTERACTIVE TEXT ITEM
+// ============================================
+
+.#{$so-prefix}dropdown-item-text {
+  display: block;
+  padding: spacing('2') spacing('3');
+  font-size: font-size('sm');
+  color: css-var('text-secondary');
+  user-select: none;
+
+  &:hover {
+    background: transparent;
+    cursor: default;
+  }
+}
+
+// ============================================
+// DIRECTIONAL VARIANTS
+// ============================================
+
+// Dropup - Opens above trigger
+.#{$so-prefix}dropup {
+  .#{$so-prefix}dropdown-menu {
+    top: auto;
+    bottom: calc(100% + 4px);
+    transform-origin: bottom center;
+  }
+
+  .#{$so-prefix}dropdown-trigger .#{$so-prefix}dropdown-arrow {
+    transform: rotate(180deg);
+  }
+
+  &.open .#{$so-prefix}dropdown-trigger .#{$so-prefix}dropdown-arrow {
+    transform: rotate(0deg);
+  }
+}
+
+// Dropstart - Opens to the left
+.#{$so-prefix}dropstart {
+  .#{$so-prefix}dropdown-menu {
+    top: 0;
+    left: auto;
+    right: calc(100% + 4px);
+    transform-origin: right center;
+  }
+}
+
+// Dropend - Opens to the right
+.#{$so-prefix}dropend {
+  .#{$so-prefix}dropdown-menu {
+    top: 0;
+    left: calc(100% + 4px);
+    right: auto;
+    transform-origin: left center;
+  }
+}
+
+// ============================================
+// MENU ALIGNMENT
+// ============================================
+
+// Right-aligned menu - apply to dropdown container
+.#{$so-prefix}dropdown.#{$so-prefix}dropdown-menu-end,
+.#{$so-prefix}searchable-dropdown.#{$so-prefix}dropdown-menu-end,
+.#{$so-prefix}options-dropdown.#{$so-prefix}dropdown-menu-end {
+  .#{$so-prefix}dropdown-menu,
+  .#{$so-prefix}searchable-menu,
+  .#{$so-prefix}options-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
+// Also support as direct class on menu element
+.#{$so-prefix}dropdown-menu.#{$so-prefix}dropdown-menu-end,
+.#{$so-prefix}searchable-menu.#{$so-prefix}dropdown-menu-end,
+.#{$so-prefix}options-menu.#{$so-prefix}dropdown-menu-end {
+  left: auto;
+  right: 0;
+}
+
+// ============================================
+// SIZE VARIANTS
+// ============================================
+
+// Small dropdown
+.#{$so-prefix}dropdown-sm {
+  .#{$so-prefix}dropdown-trigger {
+    height: $so-form-height-sm;
+    padding: 0 spacing('2');
+    font-size: font-size('sm');
+  }
+
+  .#{$so-prefix}dropdown-menu {
+    min-width: 160px;
+  }
+
+  .#{$so-prefix}dropdown-item {
+    padding: spacing('1') + 2px spacing('2');
+    font-size: font-size('sm');
+  }
+
+  .#{$so-prefix}dropdown-header {
+    padding: spacing('1') + 2px spacing('2');
+    font-size: 10px;
+  }
+}
+
+// Large dropdown
+.#{$so-prefix}dropdown-lg {
+  .#{$so-prefix}dropdown-trigger {
+    height: $so-form-height-lg;
+    padding: 0 spacing('4');
+    font-size: font-size('md');
+  }
+
+  .#{$so-prefix}dropdown-menu {
+    min-width: 280px;
+  }
+
+  .#{$so-prefix}dropdown-item {
+    padding: spacing('3') spacing('4');
+    font-size: font-size('md');
+  }
+
+  .#{$so-prefix}dropdown-header {
+    padding: spacing('2') + 2px spacing('4');
+    font-size: font-size('xs');
+  }
+}
+
+// ============================================
+// SPLIT BUTTON DROPDOWN
+// ============================================
+
+.#{$so-prefix}btn-group {
+  display: inline-flex;
+
+  // Remove gap between buttons
+  > .#{$so-prefix}btn:not(:last-child),
+  > .#{$so-prefix}dropdown:not(:last-child) .#{$so-prefix}btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > .#{$so-prefix}btn:not(:first-child),
+  > .#{$so-prefix}dropdown:not(:first-child) .#{$so-prefix}btn,
+  > .#{$so-prefix}dropdown:not(:first-child) .#{$so-prefix}dropdown-trigger {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+  // Split dropdown trigger (caret only)
+  > .#{$so-prefix}dropdown {
+    position: relative;
+
+    .#{$so-prefix}dropdown-trigger {
+      padding: 0 spacing('2');
+
+      // Hide the selected text in split mode
+      .#{$so-prefix}dropdown-selected {
+        display: none;
+      }
+    }
+  }
+
+  // Separator line between buttons
+  > .#{$so-prefix}btn + .#{$so-prefix}dropdown .#{$so-prefix}dropdown-trigger,
+  > .#{$so-prefix}btn + .#{$so-prefix}dropdown .#{$so-prefix}btn {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+// ============================================
+// ACTIVE/SELECTED ITEM ENHANCEMENT
+// ============================================
+
+.#{$so-prefix}dropdown-item,
+.#{$so-prefix}searchable-item,
+.#{$so-prefix}outlet-dropdown-item {
+  &.active,
+  &.selected {
+    background: css-var('dropdown-item-active');
+    color: css-var('dropdown-item-active-text');
+    font-weight: font-weight('medium');
+
+    // Show checkmark if present
+    .#{$so-prefix}dropdown-check,
+    .check-icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// ============================================
+// DROPDOWN WITH ICONS
+// ============================================
+
+.#{$so-prefix}dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: spacing('2');
+
+  .material-icons:first-child {
+    flex-shrink: 0;
+  }
+}
+
+// ============================================
+// SELECTION STYLE VARIANTS
+// ============================================
+
+// Default: background + checkmark (default behavior, no extra class needed)
+
+// Highlight only: background color, no checkmark
+.#{$so-prefix}dropdown-selection-highlight {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    .#{$so-prefix}dropdown-check,
+    .check-icon {
+      display: none !important;
+    }
+  }
+}
+
+// Check only: checkmark only, no background
+.#{$so-prefix}dropdown-selection-check {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    &.active,
+    &.selected {
+      background: transparent;
+      color: inherit;
+      font-weight: inherit;
+
+      &:hover {
+        background: css-var('dropdown-item-hover');
+      }
+
+      .#{$so-prefix}dropdown-check,
+      .check-icon {
+        opacity: 1;
+        visibility: visible;
+        color: css-var('accent-primary');
+      }
+    }
+  }
+}
+
+// ============================================
+// MULTIPLE SELECTION STYLES
+// ============================================
+
+.#{$so-prefix}dropdown-multiple {
+  // Multiple selection badge in trigger
+  .#{$so-prefix}dropdown-selected,
+  .#{$so-prefix}searchable-selected {
+    &.placeholder {
+      color: css-var('form-placeholder');
+    }
+  }
+
+  // Items can have checkboxes - matching .so-checkbox-box style
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item {
+    // Override space-between to left-align content
+    justify-content: flex-start;
+
+    // Checkbox style indicator - matching .so-checkbox-box from _checkboxes.scss
+    &::before {
+      content: '';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border: 2px solid css-var('form-border');
+      border-radius: 3px;
+      background: transparent;
+      flex-shrink: 0;
+      margin-right: spacing('2');
+      transition: all $so-transition-base;
+    }
+
+    // Hover state - like .so-checkbox:hover .so-checkbox-box
+    &:hover::before {
+      border-color: css-var('accent-primary');
+    }
+
+    // Selected/checked state - like .so-checkbox input:checked + .so-checkbox-box
+    &.selected::before,
+    &.active::before {
+      background: css-var('accent-primary');
+      border-color: css-var('accent-primary');
+      // Checkmark icon matching the framework style
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+      background-size: 14px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    // Hide the default check icon when using checkbox style
+    .#{$so-prefix}dropdown-check,
+    .check-icon {
+      display: none;
+    }
+  }
+}
+
+// Multiple selection without checkbox (just highlights)
+.#{$so-prefix}dropdown-multiple.#{$so-prefix}dropdown-selection-highlight {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+// Multiple selection with check icons only
+.#{$so-prefix}dropdown-multiple.#{$so-prefix}dropdown-selection-check {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item {
+    &::before {
+      display: none;
+    }
+
+    .#{$so-prefix}dropdown-check,
+    .check-icon {
+      display: block;
+    }
+  }
+}
+
+// ============================================
+// CONTEXTUAL SELECTION VARIANTS
+// ============================================
+
+// Primary (default - same as base)
+.#{$so-prefix}dropdown-primary {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    &.active,
+    &.selected {
+      background: alpha($so-primary, 0.1);
+      color: css-var('accent-primary');
+
+      .#{$so-prefix}dropdown-check,
+      .check-icon {
+        color: css-var('accent-primary');
+      }
+    }
+  }
+
+  // Multiple selection checkbox color
+  &.#{$so-prefix}dropdown-multiple {
+    .#{$so-prefix}dropdown-item,
+    .#{$so-prefix}searchable-item {
+      &.selected::before,
+      &.active::before {
+        background: css-var('accent-primary');
+        border-color: css-var('accent-primary');
+      }
+    }
+  }
+}
+
+// Success
+.#{$so-prefix}dropdown-success {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    &.active,
+    &.selected {
+      background: alpha($so-success, 0.1);
+      color: css-var('accent-success');
+
+      .#{$so-prefix}dropdown-check,
+      .check-icon {
+        color: css-var('accent-success');
+      }
+    }
+  }
+
+  &.#{$so-prefix}dropdown-multiple {
+    .#{$so-prefix}dropdown-item,
+    .#{$so-prefix}searchable-item {
+      // Hover state - change checkbox border to contextual color
+      &:hover::before {
+        border-color: css-var('accent-success');
+      }
+
+      &.selected::before,
+      &.active::before {
+        background: css-var('accent-success');
+        border-color: css-var('accent-success');
+      }
+    }
+  }
+}
+
+// Danger
+.#{$so-prefix}dropdown-danger {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    &.active,
+    &.selected {
+      background: alpha($so-danger, 0.1);
+      color: css-var('accent-danger');
+
+      .#{$so-prefix}dropdown-check,
+      .check-icon {
+        color: css-var('accent-danger');
+      }
+    }
+  }
+
+  &.#{$so-prefix}dropdown-multiple {
+    .#{$so-prefix}dropdown-item,
+    .#{$so-prefix}searchable-item {
+      // Hover state - change checkbox border to contextual color
+      &:hover::before {
+        border-color: css-var('accent-danger');
+      }
+
+      &.selected::before,
+      &.active::before {
+        background: css-var('accent-danger');
+        border-color: css-var('accent-danger');
+      }
+    }
+  }
+}
+
+// Warning
+.#{$so-prefix}dropdown-warning {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    &.active,
+    &.selected {
+      background: alpha($so-warning, 0.15);
+      color: css-var('accent-warning');
+
+      .#{$so-prefix}dropdown-check,
+      .check-icon {
+        color: css-var('accent-warning');
+      }
+    }
+  }
+
+  &.#{$so-prefix}dropdown-multiple {
+    .#{$so-prefix}dropdown-item,
+    .#{$so-prefix}searchable-item {
+      // Hover state - change checkbox border to contextual color
+      &:hover::before {
+        border-color: css-var('accent-warning');
+      }
+
+      &.selected::before,
+      &.active::before {
+        background: css-var('accent-warning');
+        border-color: css-var('accent-warning');
+      }
+    }
+  }
+}
+
+// Info
+.#{$so-prefix}dropdown-info {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    &.active,
+    &.selected {
+      background: alpha($so-info, 0.1);
+      color: css-var('accent-info');
+
+      .#{$so-prefix}dropdown-check,
+      .check-icon {
+        color: css-var('accent-info');
+      }
+    }
+  }
+
+  &.#{$so-prefix}dropdown-multiple {
+    .#{$so-prefix}dropdown-item,
+    .#{$so-prefix}searchable-item {
+      // Hover state - change checkbox border to contextual color
+      &:hover::before {
+        border-color: css-var('accent-info');
+      }
+
+      &.selected::before,
+      &.active::before {
+        background: css-var('accent-info');
+        border-color: css-var('accent-info');
+      }
+    }
+  }
+}
+
+// Secondary
+.#{$so-prefix}dropdown-secondary {
+  .#{$so-prefix}dropdown-item,
+  .#{$so-prefix}searchable-item,
+  .#{$so-prefix}outlet-dropdown-item {
+    &.active,
+    &.selected {
+      background: css-var('card-hover-bg');
+      color: css-var('text-primary');
+
+      .#{$so-prefix}dropdown-check,
+      .check-icon {
+        color: css-var('text-secondary');
+      }
+    }
+  }
+
+  &.#{$so-prefix}dropdown-multiple {
+    .#{$so-prefix}dropdown-item,
+    .#{$so-prefix}searchable-item {
+      // Hover state - change checkbox border to contextual color
+      &:hover::before {
+        border-color: $so-secondary;
+      }
+
+      &.selected::before,
+      &.active::before {
+        background: $so-secondary;
+        border-color: $so-secondary;
+      }
+    }
+  }
 }

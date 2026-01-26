@@ -15,7 +15,11 @@
 
   // Icon inside button
   .material-icons {
-    font-size: 18px;
+    font-size: 21px;
+    line-height: 1;
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
   }
 }
 
@@ -598,6 +602,246 @@
 }
 
 // ============================================
+// HOVER STYLE MODIFIERS
+// Combine with any button variant to override hover behavior
+// ============================================
+
+// Soft Hover - Light tinted background (like ghost buttons)
+// Use: .so-btn-light-primary.btn-hover-soft
+.#{$so-prefix}btn.btn-hover-soft {
+  // Primary colors
+  &.#{$so-prefix}btn-primary,
+  &.#{$so-prefix}btn-outline-primary,
+  &.#{$so-prefix}btn-light-primary {
+    &:hover:not(:disabled) {
+      background: css-var('accent-primary-light', $so-primary-light) !important;
+      color: css-var('accent-primary') !important;
+      border-color: transparent !important;
+    }
+  }
+
+  // Success colors
+  &.#{$so-prefix}btn-success,
+  &.#{$so-prefix}btn-outline-success,
+  &.#{$so-prefix}btn-light-success {
+    &:hover:not(:disabled) {
+      background: css-var('accent-success-light', $so-success-light) !important;
+      color: css-var('accent-success') !important;
+      border-color: transparent !important;
+    }
+  }
+
+  // Danger colors
+  &.#{$so-prefix}btn-danger,
+  &.#{$so-prefix}btn-outline-danger,
+  &.#{$so-prefix}btn-light-danger {
+    &:hover:not(:disabled) {
+      background: css-var('accent-danger-light', $so-danger-light) !important;
+      color: css-var('accent-danger') !important;
+      border-color: transparent !important;
+    }
+  }
+
+  // Warning colors
+  &.#{$so-prefix}btn-warning,
+  &.#{$so-prefix}btn-outline-warning,
+  &.#{$so-prefix}btn-light-warning {
+    &:hover:not(:disabled) {
+      background: css-var('accent-warning-light', $so-warning-light) !important;
+      color: css-var('accent-warning-hover', $so-warning-dark) !important;
+      border-color: transparent !important;
+    }
+  }
+
+  // Info colors
+  &.#{$so-prefix}btn-info,
+  &.#{$so-prefix}btn-outline-info,
+  &.#{$so-prefix}btn-light-info {
+    &:hover:not(:disabled) {
+      background: css-var('accent-info-light', $so-info-light) !important;
+      color: css-var('accent-info') !important;
+      border-color: transparent !important;
+    }
+  }
+
+  // Secondary/Neutral colors
+  &.#{$so-prefix}btn-secondary,
+  &.#{$so-prefix}btn-outline-secondary,
+  &.#{$so-prefix}btn-outline,
+  &.#{$so-prefix}btn-ghost {
+    &:hover:not(:disabled) {
+      background: css-var('card-hover-bg') !important;
+      color: css-var('text-primary') !important;
+      border-color: transparent !important;
+    }
+  }
+}
+
+// Solid Hover - Fill with solid color (like outline buttons default)
+// Use: .so-btn-ghost.btn-hover-solid
+.#{$so-prefix}btn.btn-hover-solid {
+  // Primary colors
+  &.#{$so-prefix}btn-primary,
+  &.#{$so-prefix}btn-outline-primary,
+  &.#{$so-prefix}btn-light-primary,
+  &.#{$so-prefix}btn-ghost.#{$so-prefix}btn-primary {
+    &:hover:not(:disabled) {
+      background: css-var('accent-primary') !important;
+      color: $so-white !important;
+      border-color: css-var('accent-primary') !important;
+    }
+  }
+
+  // Success colors
+  &.#{$so-prefix}btn-success,
+  &.#{$so-prefix}btn-outline-success,
+  &.#{$so-prefix}btn-light-success,
+  &.#{$so-prefix}btn-ghost.#{$so-prefix}btn-success {
+    &:hover:not(:disabled) {
+      background: css-var('accent-success') !important;
+      color: $so-white !important;
+      border-color: css-var('accent-success') !important;
+    }
+  }
+
+  // Danger colors
+  &.#{$so-prefix}btn-danger,
+  &.#{$so-prefix}btn-outline-danger,
+  &.#{$so-prefix}btn-light-danger,
+  &.#{$so-prefix}btn-ghost.#{$so-prefix}btn-danger {
+    &:hover:not(:disabled) {
+      background: css-var('accent-danger') !important;
+      color: $so-white !important;
+      border-color: css-var('accent-danger') !important;
+    }
+  }
+
+  // Warning colors
+  &.#{$so-prefix}btn-warning,
+  &.#{$so-prefix}btn-outline-warning,
+  &.#{$so-prefix}btn-light-warning,
+  &.#{$so-prefix}btn-ghost.#{$so-prefix}btn-warning {
+    &:hover:not(:disabled) {
+      background: css-var('accent-warning') !important;
+      color: $so-grey-900 !important;
+      border-color: css-var('accent-warning') !important;
+    }
+  }
+
+  // Info colors
+  &.#{$so-prefix}btn-info,
+  &.#{$so-prefix}btn-outline-info,
+  &.#{$so-prefix}btn-light-info,
+  &.#{$so-prefix}btn-ghost.#{$so-prefix}btn-info {
+    &:hover:not(:disabled) {
+      background: css-var('accent-info') !important;
+      color: $so-white !important;
+      border-color: css-var('accent-info') !important;
+    }
+  }
+
+  // Secondary colors
+  &.#{$so-prefix}btn-secondary,
+  &.#{$so-prefix}btn-outline-secondary {
+    &:hover:not(:disabled) {
+      background: $so-secondary !important;
+      color: $so-white !important;
+      border-color: $so-secondary !important;
+    }
+  }
+}
+
+// Darken Hover - Slightly darker shade of current color
+// Use: .so-btn-light-primary.btn-hover-darken
+.#{$so-prefix}btn.btn-hover-darken {
+  // Light Primary
+  &.#{$so-prefix}btn-light-primary {
+    &:hover:not(:disabled) {
+      background: darken-color($so-primary-light, 8%) !important;
+      color: css-var('accent-primary') !important;
+    }
+  }
+
+  // Light Success
+  &.#{$so-prefix}btn-light-success {
+    &:hover:not(:disabled) {
+      background: darken-color($so-success-light, 8%) !important;
+      color: css-var('accent-success') !important;
+    }
+  }
+
+  // Light Danger
+  &.#{$so-prefix}btn-light-danger {
+    &:hover:not(:disabled) {
+      background: darken-color($so-danger-light, 8%) !important;
+      color: css-var('accent-danger') !important;
+    }
+  }
+
+  // Light Warning
+  &.#{$so-prefix}btn-light-warning {
+    &:hover:not(:disabled) {
+      background: darken-color($so-warning-light, 8%) !important;
+      color: css-var('accent-warning-hover', $so-warning-dark) !important;
+    }
+  }
+
+  // Light Info
+  &.#{$so-prefix}btn-light-info {
+    &:hover:not(:disabled) {
+      background: darken-color($so-info-light, 8%) !important;
+      color: css-var('accent-info') !important;
+    }
+  }
+
+  // Outline variants - darken background slightly
+  &.#{$so-prefix}btn-outline-primary,
+  &.#{$so-prefix}btn-outline-success,
+  &.#{$so-prefix}btn-outline-danger,
+  &.#{$so-prefix}btn-outline-warning,
+  &.#{$so-prefix}btn-outline-info {
+    &:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 0.05) !important;
+    }
+  }
+
+  // Ghost buttons - subtle darken
+  &.#{$so-prefix}btn-ghost {
+    &:hover:not(:disabled) {
+      background: rgba(0, 0, 0, 0.08) !important;
+    }
+  }
+}
+
+// None Hover - No hover effect (static appearance)
+// Use: .so-btn-light-primary.btn-hover-none
+.#{$so-prefix}btn.btn-hover-none {
+  &:hover:not(:disabled) {
+    background: inherit !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    transform: none !important;
+  }
+}
+
+// Lift Hover - Elevate with shadow on hover
+// Use: .so-btn-primary.btn-hover-lift
+.#{$so-prefix}btn.btn-hover-lift {
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: shadow('md');
+  }
+}
+
+// Scale Hover - Slightly grow on hover
+// Use: .so-btn-primary.btn-hover-scale
+.#{$so-prefix}btn.btn-hover-scale {
+  &:hover:not(:disabled) {
+    transform: scale(1.02);
+  }
+}
+
+// ============================================
 // BUTTON LOADING STATE
 // ============================================
 
@@ -686,7 +930,7 @@
     transition: opacity 0.3s ease 0.1s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
 
     .material-icons {
-      font-size: 20px;
+      font-size: 21px;
       line-height: 1;
     }
   }
@@ -769,5 +1013,187 @@
   &.#{$so-prefix}btn-danger {
     background: css-var('accent-danger');
     border-color: css-var('accent-danger');
+  }
+}
+
+// ============================================
+// PROGRESS BUTTON DONE STATE COLOR MODIFIERS
+// Override completed state color regardless of parent button
+// ============================================
+
+// Match parent button color (no transition to success)
+.#{$so-prefix}btn-progress.completed.btn-done-match {
+  &.#{$so-prefix}btn-primary {
+    background: css-var('accent-primary');
+    border-color: css-var('accent-primary');
+  }
+
+  &.#{$so-prefix}btn-secondary {
+    background: $so-secondary;
+    border-color: $so-secondary;
+  }
+
+  &.#{$so-prefix}btn-success {
+    background: css-var('accent-success');
+    border-color: css-var('accent-success');
+  }
+
+  &.#{$so-prefix}btn-danger {
+    background: css-var('accent-danger');
+    border-color: css-var('accent-danger');
+  }
+
+  &.#{$so-prefix}btn-warning {
+    background: css-var('accent-warning');
+    border-color: css-var('accent-warning');
+  }
+
+  &.#{$so-prefix}btn-info {
+    background: css-var('accent-info');
+    border-color: css-var('accent-info');
+  }
+
+  // Outline variants stay outline style
+  &.#{$so-prefix}btn-outline-primary,
+  &.#{$so-prefix}btn-outline {
+    background: css-var('accent-primary');
+    border-color: css-var('accent-primary');
+    color: $so-white;
+  }
+
+  &.#{$so-prefix}btn-outline-secondary {
+    background: $so-secondary;
+    border-color: $so-secondary;
+    color: $so-white;
+  }
+
+  &.#{$so-prefix}btn-outline-success {
+    background: css-var('accent-success');
+    border-color: css-var('accent-success');
+    color: $so-white;
+  }
+
+  &.#{$so-prefix}btn-outline-danger {
+    background: css-var('accent-danger');
+    border-color: css-var('accent-danger');
+    color: $so-white;
+  }
+
+  &.#{$so-prefix}btn-outline-warning {
+    background: css-var('accent-warning');
+    border-color: css-var('accent-warning');
+    color: $so-grey-900;
+  }
+
+  &.#{$so-prefix}btn-outline-info {
+    background: css-var('accent-info');
+    border-color: css-var('accent-info');
+    color: $so-white;
+  }
+
+  // Light variants stay light style
+  &.#{$so-prefix}btn-light-primary {
+    background: css-var('accent-primary-light', $so-primary-light);
+    color: css-var('accent-primary');
+  }
+
+  &.#{$so-prefix}btn-light-secondary {
+    background: $so-grey-200;
+    color: $so-secondary;
+  }
+
+  &.#{$so-prefix}btn-light-success {
+    background: css-var('accent-success-light', $so-success-light);
+    color: css-var('accent-success');
+  }
+
+  &.#{$so-prefix}btn-light-danger {
+    background: css-var('accent-danger-light', $so-danger-light);
+    color: css-var('accent-danger');
+  }
+
+  &.#{$so-prefix}btn-light-warning {
+    background: css-var('accent-warning-light', $so-warning-light);
+    color: css-var('accent-warning');
+  }
+
+  &.#{$so-prefix}btn-light-info {
+    background: css-var('accent-info-light', $so-info-light);
+    color: css-var('accent-info');
+  }
+}
+
+// Force specific done state colors (overrides parent button color)
+// Use: .btn-done-success, .btn-done-danger, etc.
+
+// Done state -> Primary
+.#{$so-prefix}btn-progress.completed.btn-done-primary {
+  background: css-var('accent-primary') !important;
+  border-color: css-var('accent-primary') !important;
+  color: $so-white !important;
+
+  &[class*="btn-light-"] {
+    background: css-var('accent-primary-light', $so-primary-light) !important;
+    color: css-var('accent-primary') !important;
+  }
+}
+
+// Done state -> Success (default, but can be explicit)
+.#{$so-prefix}btn-progress.completed.btn-done-success {
+  background: css-var('accent-success') !important;
+  border-color: css-var('accent-success') !important;
+  color: $so-white !important;
+
+  &[class*="btn-light-"] {
+    background: css-var('accent-success-light', $so-success-light) !important;
+    color: css-var('accent-success') !important;
+  }
+}
+
+// Done state -> Danger
+.#{$so-prefix}btn-progress.completed.btn-done-danger {
+  background: css-var('accent-danger') !important;
+  border-color: css-var('accent-danger') !important;
+  color: $so-white !important;
+
+  &[class*="btn-light-"] {
+    background: css-var('accent-danger-light', $so-danger-light) !important;
+    color: css-var('accent-danger') !important;
+  }
+}
+
+// Done state -> Warning
+.#{$so-prefix}btn-progress.completed.btn-done-warning {
+  background: css-var('accent-warning') !important;
+  border-color: css-var('accent-warning') !important;
+  color: $so-grey-900 !important;
+
+  &[class*="btn-light-"] {
+    background: css-var('accent-warning-light', $so-warning-light) !important;
+    color: css-var('accent-warning') !important;
+  }
+}
+
+// Done state -> Info
+.#{$so-prefix}btn-progress.completed.btn-done-info {
+  background: css-var('accent-info') !important;
+  border-color: css-var('accent-info') !important;
+  color: $so-white !important;
+
+  &[class*="btn-light-"] {
+    background: css-var('accent-info-light', $so-info-light) !important;
+    color: css-var('accent-info') !important;
+  }
+}
+
+// Done state -> Secondary
+.#{$so-prefix}btn-progress.completed.btn-done-secondary {
+  background: $so-secondary !important;
+  border-color: $so-secondary !important;
+  color: $so-white !important;
+
+  &[class*="btn-light-"] {
+    background: $so-grey-200 !important;
+    color: $so-secondary !important;
   }
 }

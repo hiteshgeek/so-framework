@@ -95,7 +95,7 @@ $so-theme-light: (
 ) !default;
 
 // ============================================
-// DARK THEME (Vuexy-inspired Purple)
+// DARK THEME (Blue accent - matching light mode)
 // ============================================
 $so-theme-dark: (
   // Background Colors
@@ -116,10 +116,10 @@ $so-theme-dark: (
   'text-muted': #6c7293,
   'text-disabled': #4a5068,
 
-  // Accent Colors (Purple-based for dark mode)
-  'accent-primary': #7367f0,
-  'accent-primary-hover': #9e95f5,
-  'accent-primary-light': rgba(115, 103, 240, 0.15),
+  // Accent Colors (Blue-based - matching light mode)
+  'accent-primary': #1a73e8,
+  'accent-primary-hover': #4a9af5,
+  'accent-primary-light': rgba(26, 115, 232, 0.15),
   'accent-success': #28c76f,
   'accent-success-hover': #48da89,
   'accent-success-light': rgba(40, 199, 111, 0.15),
@@ -142,7 +142,7 @@ $so-theme-dark: (
   'form-bg': #25293c,
   'form-border': #3b4056,
   'form-border-hover': #474d64,
-  'form-border-focus': #7367f0,
+  'form-border-focus': #1a73e8,
   'form-text': #d0d4e4,
   'form-placeholder': #6c7293,
   'form-disabled-bg': #2f3349,
@@ -153,17 +153,17 @@ $so-theme-dark: (
   'dropdown-border': #3b4056,
   'dropdown-shadow': 0 4px 16px rgba(0, 0, 0, 0.4),
   'dropdown-item-hover': #3b4056,
-  'dropdown-item-active': rgba(115, 103, 240, 0.15),
-  'dropdown-item-active-text': #7367f0,
+  'dropdown-item-active': rgba(26, 115, 232, 0.15),
+  'dropdown-item-active-text': #1a73e8,
 
   // Sidebar specific
   'sidebar-bg': #2f3349,
   'sidebar-text': #a3a8b8,
-  'sidebar-text-active': #7367f0,
+  'sidebar-text-active': #1a73e8,
   'sidebar-icon': #a3a8b8,
-  'sidebar-icon-active': #7367f0,
+  'sidebar-icon-active': #1a73e8,
   'sidebar-hover-bg': #3b4056,
-  'sidebar-active-bg': rgba(115, 103, 240, 0.15),
+  'sidebar-active-bg': rgba(26, 115, 232, 0.15),
 
   // Navbar specific
   'navbar-bg': #2f3349,
@@ -173,12 +173,12 @@ $so-theme-dark: (
   'navbar-icon-color': #a3a8b8,
   'navbar-icon-hover': #e7e9f0,
   'navbar-brand-color': #e7e9f0,
-  'navbar-brand-hover': #7367f0,
+  'navbar-brand-hover': #1a73e8,
   'navbar-search-bg': #25293c,
   'navbar-search-hover-bg': #3b4056,
   'navbar-search-focus-bg': #25293c,
   'navbar-search-border': transparent,
-  'navbar-search-focus-border': #7367f0,
+  'navbar-search-focus-border': #1a73e8,
   'navbar-search-placeholder': #6c7293,
 ) !default;
 
@@ -190,11 +190,11 @@ $so-theme-sidebar-dark: (
   // Sidebar overrides (dark sidebar on light page)
   'sidebar-bg': #2f3349,
   'sidebar-text': #a3a8b8,
-  'sidebar-text-active': #7367f0,
+  'sidebar-text-active': #1a73e8,
   'sidebar-icon': #a3a8b8,
-  'sidebar-icon-active': #7367f0,
+  'sidebar-icon-active': #1a73e8,
   'sidebar-hover-bg': #3b4056,
-  'sidebar-active-bg': rgba(115, 103, 240, 0.15),
+  'sidebar-active-bg': rgba(26, 115, 232, 0.15),
   'sidebar-border': #3b4056,
   'sidebar-section-text': #6c7293,
 ) !default;

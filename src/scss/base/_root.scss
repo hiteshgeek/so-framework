@@ -70,7 +70,8 @@
 // ============================================
 
 @if $so-enable-dark-mode {
-  [data-theme='dark'] {
+  :root[data-theme='dark'],
+  html[data-theme='dark'] {
     @include generate-theme-vars($so-theme-dark);
   }
 }

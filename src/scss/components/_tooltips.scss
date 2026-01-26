@@ -457,3 +457,406 @@
     transform: translateY(-50%) scale(1);
   }
 }
+
+// ============================================
+// TOOLTIP POPUP (JavaScript-controlled)
+// ============================================
+
+.#{$so-prefix}tooltip-popup {
+  position: absolute;
+  z-index: z-index('tooltip');
+  max-width: 320px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.#{$so-prefix}tooltip-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: spacing('2');
+  padding: spacing('2') spacing('2') + 2px;
+  font-size: font-size('xs');
+  font-weight: font-weight('medium');
+  line-height: line-height('snug');
+  white-space: nowrap;
+  color: $so-white;
+  background: $so-grey-800;
+  border-radius: radius('base');
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+// Text content
+.#{$so-prefix}tooltip-text {
+  display: inline;
+}
+
+// Divider between text and shortcut
+.#{$so-prefix}tooltip-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+// Keyboard shortcut styling
+.#{$so-prefix}tooltip-shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.#{$so-prefix}tooltip-inner kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  font-family: $so-font-family;
+  font-size: 10px;
+  font-weight: font-weight('semibold');
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: radius('sm');
+}
+
+// ============================================
+// POPUP ARROW
+// ============================================
+
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-arrow {
+  .#{$so-prefix}tooltip-inner::after {
+    content: '';
+    position: absolute;
+    border: 5px solid transparent;
+  }
+}
+
+// Arrow positions
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-top {
+  .#{$so-prefix}tooltip-inner {
+    position: relative;
+
+    &::after {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: $so-grey-800;
+    }
+  }
+}
+
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-bottom {
+  .#{$so-prefix}tooltip-inner {
+    position: relative;
+
+    &::after {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: $so-grey-800;
+    }
+  }
+}
+
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-left {
+  .#{$so-prefix}tooltip-inner {
+    position: relative;
+
+    &::after {
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+      border-left-color: $so-grey-800;
+    }
+  }
+}
+
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-right {
+  .#{$so-prefix}tooltip-inner {
+    position: relative;
+
+    &::after {
+      top: 50%;
+      right: 100%;
+      transform: translateY(-50%);
+      border-right-color: $so-grey-800;
+    }
+  }
+}
+
+// ============================================
+// POPUP SIZE VARIANTS
+// ============================================
+
+// Small size
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-sm {
+  .#{$so-prefix}tooltip-inner {
+    padding: spacing('1') spacing('2');
+    font-size: 11px;
+    gap: spacing('1') + 2px;
+  }
+
+  .#{$so-prefix}tooltip-divider {
+    height: 12px;
+  }
+
+  .#{$so-prefix}tooltip-inner kbd {
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    font-size: 9px;
+  }
+}
+
+// Large size
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-lg {
+  .#{$so-prefix}tooltip-inner {
+    padding: spacing('2') + 2px spacing('3');
+    font-size: font-size('sm');
+    gap: spacing('3');
+  }
+
+  .#{$so-prefix}tooltip-divider {
+    height: 16px;
+  }
+
+  .#{$so-prefix}tooltip-inner kbd {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    font-size: 11px;
+  }
+}
+
+// ============================================
+// POPUP COLOR VARIANTS
+// ============================================
+
+// Primary
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-primary {
+  .#{$so-prefix}tooltip-inner {
+    background: $so-primary;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-top .#{$so-prefix}tooltip-inner::after {
+    border-top-color: $so-primary;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-bottom .#{$so-prefix}tooltip-inner::after {
+    border-bottom-color: $so-primary;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-left .#{$so-prefix}tooltip-inner::after {
+    border-left-color: $so-primary;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-right .#{$so-prefix}tooltip-inner::after {
+    border-right-color: $so-primary;
+  }
+}
+
+// Success
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-success {
+  .#{$so-prefix}tooltip-inner {
+    background: $so-success;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-top .#{$so-prefix}tooltip-inner::after {
+    border-top-color: $so-success;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-bottom .#{$so-prefix}tooltip-inner::after {
+    border-bottom-color: $so-success;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-left .#{$so-prefix}tooltip-inner::after {
+    border-left-color: $so-success;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-right .#{$so-prefix}tooltip-inner::after {
+    border-right-color: $so-success;
+  }
+}
+
+// Danger
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-danger {
+  .#{$so-prefix}tooltip-inner {
+    background: $so-danger;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-top .#{$so-prefix}tooltip-inner::after {
+    border-top-color: $so-danger;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-bottom .#{$so-prefix}tooltip-inner::after {
+    border-bottom-color: $so-danger;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-left .#{$so-prefix}tooltip-inner::after {
+    border-left-color: $so-danger;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-right .#{$so-prefix}tooltip-inner::after {
+    border-right-color: $so-danger;
+  }
+}
+
+// Warning
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-warning {
+  .#{$so-prefix}tooltip-inner {
+    background: $so-warning;
+    color: $so-grey-900;
+
+    kbd {
+      color: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .#{$so-prefix}tooltip-divider {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-top .#{$so-prefix}tooltip-inner::after {
+    border-top-color: $so-warning;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-bottom .#{$so-prefix}tooltip-inner::after {
+    border-bottom-color: $so-warning;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-left .#{$so-prefix}tooltip-inner::after {
+    border-left-color: $so-warning;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-right .#{$so-prefix}tooltip-inner::after {
+    border-right-color: $so-warning;
+  }
+}
+
+// Info
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-info {
+  .#{$so-prefix}tooltip-inner {
+    background: $so-info;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-top .#{$so-prefix}tooltip-inner::after {
+    border-top-color: $so-info;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-bottom .#{$so-prefix}tooltip-inner::after {
+    border-bottom-color: $so-info;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-left .#{$so-prefix}tooltip-inner::after {
+    border-left-color: $so-info;
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-right .#{$so-prefix}tooltip-inner::after {
+    border-right-color: $so-info;
+  }
+}
+
+// ============================================
+// POPUP LIGHT THEME
+// ============================================
+
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-light {
+  .#{$so-prefix}tooltip-inner {
+    color: css-var('text-primary');
+    background: css-var('card-bg');
+    border: 1px solid css-var('border-color');
+    box-shadow: css-var('shadow');
+
+    kbd {
+      color: css-var('text-primary');
+      background: css-var('card-hover-bg');
+      border-color: css-var('border-color');
+    }
+  }
+
+  .#{$so-prefix}tooltip-divider {
+    background: css-var('border-color');
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-top .#{$so-prefix}tooltip-inner::after {
+    border-top-color: css-var('card-bg');
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-bottom .#{$so-prefix}tooltip-inner::after {
+    border-bottom-color: css-var('card-bg');
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-left .#{$so-prefix}tooltip-inner::after {
+    border-left-color: css-var('card-bg');
+  }
+
+  &.#{$so-prefix}tooltip-arrow.#{$so-prefix}tooltip-right .#{$so-prefix}tooltip-inner::after {
+    border-right-color: css-var('card-bg');
+  }
+}
+
+// ============================================
+// POPUP ANIMATION VARIANTS
+// ============================================
+
+// Fade animation
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-animate-fade {
+  transition: opacity $so-transition-fast, visibility $so-transition-fast;
+}
+
+// Scale animation (default)
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-animate-scale {
+  transform: scale(0.95);
+  transition: all $so-transition-fast;
+
+  &.show {
+    transform: scale(1);
+  }
+}
+
+// Slide animation
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-animate-slide {
+  transition: all $so-transition-fast;
+
+  &.#{$so-prefix}tooltip-top {
+    transform: translateY(8px);
+  }
+
+  &.#{$so-prefix}tooltip-bottom {
+    transform: translateY(-8px);
+  }
+
+  &.#{$so-prefix}tooltip-left {
+    transform: translateX(8px);
+  }
+
+  &.#{$so-prefix}tooltip-right {
+    transform: translateX(-8px);
+  }
+
+  &.show {
+    transform: translate(0);
+  }
+}
+
+// ============================================
+// MULTILINE POPUP
+// ============================================
+
+.#{$so-prefix}tooltip-popup.#{$so-prefix}tooltip-multiline {
+  .#{$so-prefix}tooltip-inner {
+    white-space: normal;
+    max-width: 240px;
+    text-align: center;
+  }
+}

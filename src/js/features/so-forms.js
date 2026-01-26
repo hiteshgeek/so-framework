@@ -54,8 +54,9 @@ class SOForms {
    */
   static _initCheckboxes() {
     // Style native checkboxes that aren't already wrapped
+    // Exclude checkboxes that are inside .so-checkbox, .so-toggle, .so-switch, or .so-btn-check
     document.querySelectorAll('input[type="checkbox"]:not(.so-checkbox input)').forEach(checkbox => {
-      if (checkbox.closest('.so-checkbox, .so-toggle')) return;
+      if (checkbox.closest('.so-checkbox, .so-toggle, .so-switch, .so-btn-check')) return;
 
       const wrapper = document.createElement('label');
       wrapper.className = 'so-checkbox';
