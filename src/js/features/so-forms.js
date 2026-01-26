@@ -7,6 +7,7 @@ import SixOrbit from '../core/so-config.js';
 import { SODropdown } from '../components/so-dropdown.js';
 import { SOOtpInput } from '../components/so-otp.js';
 import { SOButtonGroup } from '../components/so-button-group.js';
+import { SOProgressButton } from '../components/so-progress-button.js';
 
 /**
  * SOForms - Form utilities and validation
@@ -45,6 +46,11 @@ class SOForms {
     // Initialize toggle button groups
     document.querySelectorAll('[data-so-toggle="buttons"]').forEach(el => {
       SOButtonGroup.getInstance(el);
+    });
+
+    // Initialize progress buttons with data attribute
+    document.querySelectorAll('.so-btn-progress[data-so-progress]').forEach(el => {
+      SOProgressButton.getInstance(el);
     });
 
     // Initialize checkboxes styling
@@ -607,7 +613,8 @@ document.addEventListener('DOMContentLoaded', () => {
 window.SOForms = SOForms;
 window.SOTextareaAutosize = SOTextareaAutosize;
 window.SOButtonGroup = SOButtonGroup;
+window.SOProgressButton = SOProgressButton;
 
 // Export for ES modules
 export default SOForms;
-export { SOForms, SOTextareaAutosize, SOButtonGroup };
+export { SOForms, SOTextareaAutosize, SOButtonGroup, SOProgressButton };

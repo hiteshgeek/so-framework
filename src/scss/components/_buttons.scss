@@ -1232,7 +1232,56 @@
   .btn-text {
     position: relative;
     z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     transition: opacity 0.2s ease, transform 0.2s ease;
+
+    .material-icons {
+      font-size: 18px;
+      line-height: 1;
+    }
+  }
+
+  // Start label - hidden by default, visible only during progress, hides on complete
+  .btn-start {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 0; // Collapse width when hidden
+    margin-right: 0;
+    opacity: 0; // Hidden by default
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, max-width 0.2s ease, margin 0.2s ease;
+
+    .material-icons {
+      font-size: 18px;
+      line-height: 1;
+    }
+  }
+
+  // When progress is active, start label becomes visible and expands
+  &.progressing .btn-start {
+    max-width: 200px; // Large enough to fit content
+    margin-right: 8px;
+    opacity: 1;
+  }
+
+  // Icon in button text
+  .btn-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .material-icons {
+      font-size: 20px;
+      line-height: 1;
+    }
   }
 
   // Done state content
@@ -1266,6 +1315,15 @@
     }
 
     .btn-text {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .btn-start {
+      opacity: 0;
+    }
+
+    .btn-icon {
       opacity: 0;
       transform: scale(0.8);
     }
