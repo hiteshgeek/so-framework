@@ -95,6 +95,7 @@
                                     </label>
                                 </div>
                             </div>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -170,6 +171,7 @@
                                 </span>
                                 <span class="so-checkbox-label">Large</span>
                             </label>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -273,6 +275,7 @@
                                 </span>
                                 <span class="so-checkbox-label">Info</span>
                             </label>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -367,6 +370,7 @@
                                     </label>
                                 </div>
                             </div>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -418,6 +422,7 @@
                                 <span class="so-radio-circle"></span>
                                 <span class="so-radio-label">Large</span>
                             </label>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -499,6 +504,7 @@
                                 <span class="so-radio-circle"></span>
                                 <span class="so-radio-label">Info</span>
                             </label>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -725,6 +731,7 @@
                                 </span>
                                 <span class="so-switch-label">Large</span>
                             </label>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -786,6 +793,7 @@
     &lt;span class="so-switch-label"&gt;Icon + Text&lt;/span&gt;
 &lt;/label&gt;</code></pre>
                         </div>
+                    </div>
                 </div>
 
             </div>

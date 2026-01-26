@@ -21,7 +21,8 @@
                                     <div class="so-tab-pane fade" id="demo-default-3" role="tabpanel">
                                         <p>Settings tab content for configuration options.</p>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -71,7 +72,8 @@
                                     <div class="so-tab-pane fade" id="demo-pills-3" role="tabpanel">
                                         <p>Pricing information displayed here.</p>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -112,7 +114,8 @@
                                     <div class="so-tab-pane fade" id="demo-boxed-4" role="tabpanel">
                                         <p>Yearly view content.</p>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -150,7 +153,8 @@
                                     <div class="so-tab-pane fade" id="demo-ghost-3" role="tabpanel">
                                         <p>Completed items content.</p>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -187,7 +191,8 @@
                                     <div class="so-tab-pane fade" id="demo-bordered-3" role="tabpanel">
                                         <p>Frequently asked questions.</p>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -228,7 +233,8 @@
                                     <button class="so-tab active" role="tab" data-so-target="#demo-lg-1">Tab 1</button>
                                     <button class="so-tab" role="tab" data-so-target="#demo-lg-2">Tab 2</button>
                                     <button class="so-tab" role="tab" data-so-target="#demo-lg-3">Tab 3</button>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -296,7 +302,8 @@
                                             <button class="so-tab" role="tab">Tab 2</button>
                                         </div>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -350,7 +357,8 @@
                                     <div class="so-tab-pane fade" id="demo-icons-4" role="tabpanel">
                                         <p>Settings content.</p>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -402,7 +410,8 @@
                                             <p>Manage your privacy and data sharing preferences.</p>
                                         </div>
                                     </div>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -450,7 +459,8 @@
                                     <button class="so-tab active" role="tab">Tab 1</button>
                                     <button class="so-tab" role="tab">Tab 2</button>
                                     <button class="so-tab" role="tab">Tab 3</button>
-                                </div>                            <div class="so-code-block so-mt-4">
+                        </div>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">
@@ -499,7 +509,8 @@
                                     <button class="so-btn so-btn-outline so-btn-sm" onclick="demoTabsPrev()">Previous Tab</button>
                                     <button class="so-btn so-btn-outline so-btn-sm" onclick="demoTabsShowById()">Show Tab 3</button>
                                 </div>
-                                <p class="so-demo-note">Open browser console to see event logs</p>                            <div class="so-code-block so-mt-4">
+                                <p class="so-demo-note">Open browser console to see event logs</p>
+                        <div class="so-code-block so-mt-4">
                                 <div class="so-code-header">
                                     <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
                                     <button class="so-code-copy" onclick="copyCode(this)">

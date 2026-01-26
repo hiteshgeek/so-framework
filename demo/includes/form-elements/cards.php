@@ -37,6 +37,7 @@
                                     <p>Card header with a badge indicator.</p>
                                 </div>
                             </div>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -56,6 +57,7 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                         </div>
+                    </div>
                 </div>
             </div>
 

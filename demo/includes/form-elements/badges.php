@@ -28,6 +28,7 @@
                             <span class="so-badge so-badge-primary so-badge-sm">Small</span>
                             <span class="so-badge so-badge-primary">Default</span>
                             <span class="so-badge so-badge-primary so-badge-lg">Large</span>
+                        </div>
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -48,6 +49,7 @@
 &lt;span class="so-badge so-badge-primary so-badge-sm"&gt;Small&lt;/span&gt;
 &lt;span class="so-badge so-badge-primary so-badge-lg"&gt;Large&lt;/span&gt;</code></pre>
                         </div>
+                    </div>
                 </div>
             </div>
 
