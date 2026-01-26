@@ -580,6 +580,7 @@
 .#{$so-prefix}tabs-vertical {
   flex-direction: column;
   align-items: stretch;
+  flex-wrap: nowrap;
   border-bottom: none;
   border-right: 1px solid css-var("border-color");
   padding-right: 0;
@@ -704,8 +705,23 @@
       flex-shrink: 0;
       min-width: 180px;
       align-self: flex-start;
-      max-height: calc(100vh - spacing("8"));
+      max-height: calc(100vh - #{spacing("8")});
       overflow-y: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: css-var("border-color");
+        border-radius: radius("full");
+      }
     }
 
     .#{$so-prefix}tab-content {

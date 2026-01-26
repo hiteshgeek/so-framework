@@ -475,7 +475,12 @@ class SOScrollspy {
             }
         });
 
-        container.addEventListener('scroll', () => this._onScroll());
+        // Only add scroll listener once
+        if (!this._scrollBound) {
+            this._scrollHandler = () => this._onScroll();
+            container.addEventListener('scroll', this._scrollHandler);
+            this._scrollBound = true;
+        }
         this._onScroll(); // Initial check
     }
 
@@ -486,16 +491,17 @@ class SOScrollspy {
         const containerHeight = this.container.clientHeight;
         let activeSection = null;
 
+        // Find the section that is currently most visible in the viewport
         this.sections.forEach(({ link, target }) => {
             const targetTop = target.offsetTop - this.options.offset;
-            const targetBottom = targetTop + target.offsetHeight;
 
-            if (scrollTop >= targetTop && scrollTop < targetBottom) {
+            // A section is active if its top is at or above the scroll position
+            if (scrollTop >= targetTop - 20) {
                 activeSection = { link, target };
             }
         });
 
-        // Default to first section if none found
+        // Default to first section if at the very top
         if (!activeSection && this.sections.length) {
             activeSection = this.sections[0];
         }
@@ -540,5 +546,37 @@ class SOScrollspy {
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
     SOScrollspy.init();
+
+    // Re-initialize scrollspy when its tab becomes visible
+    const scrollspyPane = document.getElementById('pane-scrollspy');
+    if (scrollspyPane) {
+        // Use MutationObserver to detect when tab becomes visible
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    if (scrollspyPane.classList.contains('active')) {
+                        // Small delay to ensure layout is calculated
+                        setTimeout(() => {
+                            SOScrollspy.init();
+                            // Refresh all instances
+                            SOScrollspy.instances.forEach((spy) => spy.refresh());
+                        }, 100);
+                    }
+                }
+            });
+        });
+
+        observer.observe(scrollspyPane, { attributes: true });
+    }
+
+    // Also listen for tab shown event
+    document.addEventListener('so:tab:shown', function(e) {
+        if (e.target.dataset.soTarget === '#pane-scrollspy') {
+            setTimeout(() => {
+                SOScrollspy.init();
+                SOScrollspy.instances.forEach((spy) => spy.refresh());
+            }, 100);
+        }
+    });
 });
 </script>
