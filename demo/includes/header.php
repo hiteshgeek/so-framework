@@ -548,6 +548,184 @@ $includeSearch = $includeSearch ?? true;
             color: var(--so-text-secondary);
         }
 
+        .so-code-label .material-icons {
+            font-size: 14px;
+            margin-right: 4px;
+        }
+
+        /* Demo Section Utilities */
+        .so-demo-section-title {
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--so-text-secondary);
+        }
+
+        .so-demo-section-title-sm {
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: var(--so-text-secondary);
+        }
+
+        .so-demo-section-heading {
+            margin-bottom: 16px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .so-demo-hint {
+            font-size: 12px;
+            color: var(--so-text-muted);
+            margin-bottom: 12px;
+        }
+
+        .so-demo-small-note {
+            display: block;
+            margin-top: 8px;
+            color: var(--so-text-muted);
+        }
+
+        .so-demo-output {
+            padding: 12px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .so-demo-grid-gap {
+            gap: 24px;
+        }
+
+        .so-demo-grid-gap-sm {
+            gap: 16px;
+        }
+
+        .so-demo-icon-sm {
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        .so-demo-icon-inline {
+            font-size: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        /* Sticky sidebar tabs */
+        .so-tabs-sticky {
+            position: sticky;
+            top: calc(var(--so-navbar-height) + 16px);
+            align-self: flex-start;
+        }
+
+        /* Tab content margin */
+        .so-tab-content-spaced {
+            margin-top: 16px;
+        }
+
+        /* Code block spacing */
+        .so-code-block-spaced {
+            margin-top: 24px;
+        }
+
+        /* Dropdown item danger color */
+        .so-dropdown-item-danger {
+            color: var(--so-accent-danger);
+        }
+
+        /* Selection style icons */
+        .so-selection-icon-success {
+            color: var(--so-accent-success);
+        }
+
+        .so-selection-icon-warning {
+            color: var(--so-accent-warning);
+        }
+
+        .so-selection-icon-danger {
+            color: var(--so-accent-danger);
+        }
+
+        /* Tooltip demo icons */
+        .so-tooltip-demo-icon {
+            font-size: 18px;
+        }
+
+        /* Description text */
+        .so-demo-desc {
+            margin-bottom: 16px;
+            color: var(--so-text-secondary);
+            font-size: 14px;
+        }
+
+        .so-demo-desc-sm {
+            font-size: 12px;
+            color: var(--so-text-secondary);
+            margin: 0;
+        }
+
+        .so-demo-note {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--so-text-secondary);
+        }
+
+        /* Section heading with margin */
+        .so-demo-section-heading-spaced {
+            margin: 24px 0 16px 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Card simple text */
+        .so-demo-card-title {
+            margin-bottom: 8px;
+        }
+
+        .so-demo-card-text {
+            color: var(--so-text-secondary);
+        }
+
+        /* Terminal icon inline */
+        .so-demo-terminal-icon {
+            font-size: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        /* Event output panel */
+        .so-demo-event-output {
+            flex: 1;
+            padding: 12px;
+            font-size: 13px;
+            color: var(--so-text-secondary);
+        }
+
+        /* h4 badge section title */
+        .so-demo-badge-title {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--so-text-secondary);
+        }
+
+        /* h5 settings title */
+        .so-demo-settings-title {
+            margin-bottom: 8px;
+        }
+
+        /* Button progress hint */
+        .so-demo-progress-hint {
+            font-size: 12px;
+            color: var(--so-text-secondary);
+            margin: 0;
+        }
+
+        /* Done state title */
+        .so-demo-done-state-title {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: var(--so-text-secondary);
+        }
+
         .so-code-copy {
             display: flex;
             align-items: center;

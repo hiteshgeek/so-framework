@@ -559,8 +559,123 @@
     &.active {
       background: css-var('dropdown-item-active');
       color: css-var('dropdown-item-active-text');
-      border-color: css-var('dropdown-item-active-text');
+      border-color: css-var('border-color');
       z-index: 1;
+    }
+  }
+
+
+  // Ensure outline buttons maintain their border color in button groups
+  .#{$so-prefix}btn-outline {
+    border-color: css-var('border-color');
+  }
+
+  .#{$so-prefix}btn-outline-primary {
+    border-color: css-var('accent-primary');
+  }
+
+  .#{$so-prefix}btn-outline-success {
+    border-color: css-var('accent-success');
+  }
+
+  .#{$so-prefix}btn-outline-danger {
+    border-color: css-var('accent-danger');
+  }
+
+  .#{$so-prefix}btn-outline-warning {
+    border-color: css-var('accent-warning');
+  }
+
+  .#{$so-prefix}btn-outline-info {
+    border-color: css-var('accent-info');
+  }
+
+  .#{$so-prefix}btn-outline-secondary {
+    border-color: $so-secondary;
+  }
+
+  // Primary buttons
+  .#{$so-prefix}btn-primary + .#{$so-prefix}btn-primary {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Secondary buttons
+  .#{$so-prefix}btn-secondary + .#{$so-prefix}btn-secondary {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Success buttons
+  .#{$so-prefix}btn-success + .#{$so-prefix}btn-success {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Danger buttons
+  .#{$so-prefix}btn-danger + .#{$so-prefix}btn-danger {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Warning buttons - darker separator for visibility
+  .#{$so-prefix}btn-warning + .#{$so-prefix}btn-warning {
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  // Info buttons
+  .#{$so-prefix}btn-info + .#{$so-prefix}btn-info {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Light buttons - dark separator
+  .#{$so-prefix}btn-light + .#{$so-prefix}btn-light {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  // Dark buttons
+  .#{$so-prefix}btn-dark + .#{$so-prefix}btn-dark {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  // Outline buttons - use contextual border colors
+  .#{$so-prefix}btn-outline + .#{$so-prefix}btn-outline {
+    border-left: 1px solid css-var('border-color');
+  }
+
+  .#{$so-prefix}btn-outline-primary + .#{$so-prefix}btn-outline-primary {
+    border-left: 1px solid css-var('accent-primary');
+  }
+
+  .#{$so-prefix}btn-outline-success + .#{$so-prefix}btn-outline-success {
+    border-left: 1px solid css-var('accent-success');
+  }
+
+  .#{$so-prefix}btn-outline-danger + .#{$so-prefix}btn-outline-danger {
+    border-left: 1px solid css-var('accent-danger');
+  }
+
+  .#{$so-prefix}btn-outline-warning + .#{$so-prefix}btn-outline-warning {
+    border-left: 1px solid css-var('accent-warning');
+  }
+
+  .#{$so-prefix}btn-outline-info + .#{$so-prefix}btn-outline-info {
+    border-left: 1px solid css-var('accent-info');
+  }
+
+  .#{$so-prefix}btn-outline-secondary + .#{$so-prefix}btn-outline-secondary {
+    border-left: 1px solid $so-secondary;
+  }
+
+  // Handle dropdown as last child in button group (split button pattern)
+  .#{$so-prefix}dropdown:last-child {
+    .#{$so-prefix}btn {
+      border-radius: 0 radius('base') radius('base') 0;
+      margin-left: -1px;
+    }
+  }
+
+  // Handle dropdown as only child (single dropdown button)
+  .#{$so-prefix}dropdown:only-child {
+    .#{$so-prefix}btn {
+      border-radius: radius('base');
+      margin-left: 0;
     }
   }
 }
@@ -598,6 +713,213 @@
       border-color: css-var('dropdown-item-active-text');
       z-index: 1;
     }
+  }
+}
+
+// ============================================
+// TOGGLE BUTTONS (Radio/Checkbox)
+// Hidden inputs with label buttons for toggle behavior
+// ============================================
+
+// Hidden checkbox/radio that controls toggle state
+.#{$so-prefix}btn-check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+
+  // Checked state - applies to sibling button (default style)
+  &:checked + .#{$so-prefix}btn {
+    background: css-var('dropdown-item-active');
+    color: css-var('dropdown-item-active-text');
+    border-color: css-var('border-color');
+    z-index: 1;
+  }
+
+  // Focused state - keyboard navigation
+  &:focus + .#{$so-prefix}btn {
+    box-shadow: 0 0 0 3px alpha($so-primary, 0.2);
+  }
+
+  // Disabled state
+  &:disabled + .#{$so-prefix}btn {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  // Checked + Focused
+  &:checked:focus + .#{$so-prefix}btn {
+    box-shadow: 0 0 0 3px alpha($so-primary, 0.25);
+  }
+}
+
+// Contextual Toggle Variants - Outline buttons fill with color when checked
+
+// Primary toggle
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-primary {
+  background: css-var('accent-primary');
+  color: $so-white;
+  border-color: css-var('accent-primary');
+}
+
+// Secondary toggle
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-secondary {
+  background: $so-secondary;
+  color: $so-white;
+  border-color: $so-secondary;
+}
+
+// Success toggle
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-success {
+  background: css-var('accent-success');
+  color: $so-white;
+  border-color: css-var('accent-success');
+}
+
+// Danger toggle
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-danger {
+  background: css-var('accent-danger');
+  color: $so-white;
+  border-color: css-var('accent-danger');
+}
+
+// Warning toggle
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-warning {
+  background: css-var('accent-warning');
+  color: $so-grey-900;
+  border-color: css-var('accent-warning');
+}
+
+// Info toggle
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-info {
+  background: css-var('accent-info');
+  color: $so-white;
+  border-color: css-var('accent-info');
+}
+
+// Base outline toggle - subtle fill
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline {
+  background: css-var('card-hover-bg');
+  border-color: css-var('border-dark', $so-grey-400);
+}
+
+// Ghost button toggle
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-ghost {
+  background: css-var('card-hover-bg');
+}
+
+// Light button variants - darken on check
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-light-primary {
+  background: css-var('accent-primary');
+  color: $so-white;
+}
+
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-light-success {
+  background: css-var('accent-success');
+  color: $so-white;
+}
+
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-light-danger {
+  background: css-var('accent-danger');
+  color: $so-white;
+}
+
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-light-warning {
+  background: css-var('accent-warning');
+  color: $so-grey-900;
+}
+
+.#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-light-info {
+  background: css-var('accent-info');
+  color: $so-white;
+}
+
+// Toggle buttons in button groups
+.#{$so-prefix}btn-group,
+.#{$so-prefix}btn-group-vertical {
+  // Ensure proper stacking for checked buttons
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn {
+    z-index: 1;
+  }
+
+  // Handle border radius for toggle buttons in horizontal group
+  .#{$so-prefix}btn-check + .#{$so-prefix}btn {
+    border-radius: 0;
+  }
+
+  .#{$so-prefix}btn-check:first-of-type + .#{$so-prefix}btn {
+    border-radius: radius('base') 0 0 radius('base');
+  }
+
+  .#{$so-prefix}btn-check:last-of-type + .#{$so-prefix}btn {
+    border-radius: 0 radius('base') radius('base') 0;
+  }
+
+  // When there's only one toggle button
+  .#{$so-prefix}btn-check:only-of-type + .#{$so-prefix}btn {
+    border-radius: radius('base');
+  }
+
+  // Remove double borders between toggle buttons
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn {
+    margin-left: -1px;
+  }
+
+  // Separator lines for checked toggle buttons
+  // Default outline toggle separator - match the active background
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline {
+    border-left-color: css-var('dropdown-item-active');
+  }
+
+  // Primary toggle separator
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-primary {
+    border-left-color: css-var('accent-primary');
+  }
+
+  // Success toggle separator
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-success {
+    border-left-color: css-var('accent-success');
+  }
+
+  // Danger toggle separator
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-danger {
+    border-left-color: css-var('accent-danger');
+  }
+
+  // Warning toggle separator
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-warning {
+    border-left-color: css-var('accent-warning');
+  }
+
+  // Info toggle separator
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-info {
+    border-left-color: css-var('accent-info');
+  }
+
+  // Secondary toggle separator
+  .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline-secondary {
+    border-left-color: $so-secondary;
+  }
+
+  // First button should not have left separator
+  .#{$so-prefix}btn-check:first-of-type:checked + .#{$so-prefix}btn {
+    border-left-color: transparent;
+  }
+}
+
+// Vertical button group toggle adjustments
+.#{$so-prefix}btn-group-vertical {
+  .#{$so-prefix}btn-check:first-of-type + .#{$so-prefix}btn {
+    border-radius: radius('base') radius('base') 0 0;
+  }
+
+  .#{$so-prefix}btn-check:last-of-type + .#{$so-prefix}btn {
+    border-radius: 0 0 radius('base') radius('base');
+  }
+
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn {
+    margin-left: 0;
+    margin-top: -1px;
   }
 }
 

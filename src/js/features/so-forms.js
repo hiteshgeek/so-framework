@@ -6,6 +6,7 @@
 import SixOrbit from '../core/so-config.js';
 import { SODropdown } from '../components/so-dropdown.js';
 import { SOOtpInput } from '../components/so-otp.js';
+import { SOButtonGroup } from '../components/so-button-group.js';
 
 /**
  * SOForms - Form utilities and validation
@@ -39,6 +40,11 @@ class SOForms {
     // Initialize OTP inputs
     document.querySelectorAll('.so-otp-group').forEach(el => {
       SOOtpInput.getInstance(el);
+    });
+
+    // Initialize toggle button groups
+    document.querySelectorAll('[data-so-toggle="buttons"]').forEach(el => {
+      SOButtonGroup.getInstance(el);
     });
 
     // Initialize checkboxes styling
@@ -91,15 +97,29 @@ class SOForms {
 
     // Input clear buttons
     document.querySelectorAll('.so-input-clear').forEach(btn => {
+      const wrapper = btn.closest('.so-input-wrapper, .so-form-input-wrapper');
+      const input = wrapper?.querySelector('input');
+
+      // Click handler for clear button
       btn.addEventListener('click', () => {
-        const wrapper = btn.closest('.so-form-input-wrapper');
-        const input = wrapper?.querySelector('input');
         if (input) {
           input.value = '';
           input.focus();
           input.dispatchEvent(new Event('input', { bubbles: true }));
         }
       });
+
+      // Escape key handler on the input
+      if (input) {
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && input.value.trim() !== '') {
+            e.preventDefault();
+            e.stopPropagation();
+            input.value = '';
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+        });
+      }
     });
 
     // Floating labels
@@ -112,6 +132,27 @@ class SOForms {
       input.addEventListener('input', updateState);
       input.addEventListener('change', updateState);
       updateState();
+    });
+
+    // Initialize autosize textareas (including size variants)
+    document.querySelectorAll('.so-textarea-autosize, .so-textarea-autosize-sm, .so-textarea-autosize-lg').forEach(textarea => {
+      // Determine default min/max based on size variant
+      let defaultMinHeight = 80;
+      let defaultMaxHeight = 400;
+
+      if (textarea.classList.contains('so-textarea-autosize-sm')) {
+        defaultMinHeight = 60;
+        defaultMaxHeight = 200;
+      } else if (textarea.classList.contains('so-textarea-autosize-lg')) {
+        defaultMinHeight = 120;
+        defaultMaxHeight = 600;
+      }
+
+      const options = {
+        minHeight: parseInt(textarea.dataset.minHeight) || defaultMinHeight,
+        maxHeight: parseInt(textarea.dataset.maxHeight) || defaultMaxHeight
+      };
+      SOTextareaAutosize.getInstance(textarea, options);
     });
   }
 
@@ -221,10 +262,65 @@ class SOForms {
     const errorEl = document.getElementById(`${fieldId}Error`);
 
     if (group) {
+      group.classList.remove('has-success', 'has-warning', 'has-info');
       group.classList.add('has-error');
     }
-    if (errorEl) {
+    if (errorEl && message) {
       errorEl.textContent = message;
+    }
+  }
+
+  /**
+   * Show success state on a form group
+   * @param {string} fieldId - Field ID (without 'Group' suffix)
+   * @param {string} message - Success message (optional)
+   */
+  static showSuccess(fieldId, message = '') {
+    const group = document.getElementById(`${fieldId}Group`);
+    const successEl = document.getElementById(`${fieldId}Success`);
+
+    if (group) {
+      group.classList.remove('has-error', 'has-warning', 'has-info');
+      group.classList.add('has-success');
+    }
+    if (successEl && message) {
+      successEl.textContent = message;
+    }
+  }
+
+  /**
+   * Show warning state on a form group
+   * @param {string} fieldId - Field ID (without 'Group' suffix)
+   * @param {string} message - Warning message
+   */
+  static showWarning(fieldId, message) {
+    const group = document.getElementById(`${fieldId}Group`);
+    const warningEl = document.getElementById(`${fieldId}Warning`);
+
+    if (group) {
+      group.classList.remove('has-error', 'has-success', 'has-info');
+      group.classList.add('has-warning');
+    }
+    if (warningEl && message) {
+      warningEl.textContent = message;
+    }
+  }
+
+  /**
+   * Show info state on a form group
+   * @param {string} fieldId - Field ID (without 'Group' suffix)
+   * @param {string} message - Info message
+   */
+  static showInfo(fieldId, message) {
+    const group = document.getElementById(`${fieldId}Group`);
+    const infoEl = document.getElementById(`${fieldId}Info`);
+
+    if (group) {
+      group.classList.remove('has-error', 'has-success', 'has-warning');
+      group.classList.add('has-info');
+    }
+    if (infoEl && message) {
+      infoEl.textContent = message;
     }
   }
 
@@ -236,6 +332,17 @@ class SOForms {
     const group = document.getElementById(`${fieldId}Group`);
     if (group) {
       group.classList.remove('has-error');
+    }
+  }
+
+  /**
+   * Clear all validation states on a form group
+   * @param {string} fieldId - Field ID (without 'Group' suffix)
+   */
+  static clearValidation(fieldId) {
+    const group = document.getElementById(`${fieldId}Group`);
+    if (group) {
+      group.classList.remove('has-error', 'has-success', 'has-warning', 'has-info');
     }
   }
 
@@ -366,6 +473,131 @@ class SOForms {
   }
 }
 
+/**
+ * SOTextareaAutosize - Auto-expanding textarea
+ * Automatically adjusts height based on content
+ */
+class SOTextareaAutosize {
+  /**
+   * Create autosize textarea
+   * @param {HTMLTextAreaElement} element - The textarea element
+   * @param {Object} options - Configuration options
+   */
+  constructor(element, options = {}) {
+    this.element = element;
+    this.options = {
+      minHeight: options.minHeight || 80,
+      maxHeight: options.maxHeight || 400,
+      ...options
+    };
+
+    this._init();
+  }
+
+  /**
+   * Initialize the autosize functionality
+   * @private
+   */
+  _init() {
+    // Store original styles
+    this._originalStyles = {
+      height: this.element.style.height,
+      overflow: this.element.style.overflow,
+      resize: this.element.style.resize
+    };
+
+    // Apply autosize styles
+    this.element.style.overflow = 'hidden';
+    this.element.style.resize = 'none';
+    this.element.style.minHeight = `${this.options.minHeight}px`;
+    this.element.style.maxHeight = `${this.options.maxHeight}px`;
+
+    // Bind events
+    this._boundResize = this._resize.bind(this);
+    this.element.addEventListener('input', this._boundResize);
+    this.element.addEventListener('change', this._boundResize);
+
+    // Initial resize
+    this._resize();
+
+    // Handle window resize
+    this._boundWindowResize = this._resize.bind(this);
+    window.addEventListener('resize', this._boundWindowResize);
+  }
+
+  /**
+   * Resize the textarea based on content
+   * @private
+   */
+  _resize() {
+    // Reset height to auto to get the correct scrollHeight
+    this.element.style.height = 'auto';
+
+    // Calculate new height
+    const scrollHeight = this.element.scrollHeight;
+    const newHeight = Math.min(
+      Math.max(scrollHeight, this.options.minHeight),
+      this.options.maxHeight
+    );
+
+    this.element.style.height = `${newHeight}px`;
+
+    // Show scrollbar if content exceeds max height
+    if (scrollHeight > this.options.maxHeight) {
+      this.element.style.overflow = 'auto';
+    } else {
+      this.element.style.overflow = 'hidden';
+    }
+
+    // Dispatch custom event
+    this.element.dispatchEvent(new CustomEvent('so:autosize', {
+      detail: { height: newHeight, scrollHeight }
+    }));
+  }
+
+  /**
+   * Update the content and resize
+   * @param {string} value - New value
+   */
+  update(value) {
+    this.element.value = value;
+    this._resize();
+  }
+
+  /**
+   * Destroy the autosize instance
+   */
+  destroy() {
+    // Remove event listeners
+    this.element.removeEventListener('input', this._boundResize);
+    this.element.removeEventListener('change', this._boundResize);
+    window.removeEventListener('resize', this._boundWindowResize);
+
+    // Restore original styles
+    this.element.style.height = this._originalStyles.height;
+    this.element.style.overflow = this._originalStyles.overflow;
+    this.element.style.resize = this._originalStyles.resize;
+    this.element.style.minHeight = '';
+    this.element.style.maxHeight = '';
+
+    // Remove instance reference
+    delete this.element._soAutosize;
+  }
+
+  /**
+   * Get or create instance for element
+   * @param {HTMLTextAreaElement} element - The textarea element
+   * @param {Object} options - Configuration options
+   * @returns {SOTextareaAutosize}
+   */
+  static getInstance(element, options = {}) {
+    if (!element._soAutosize) {
+      element._soAutosize = new SOTextareaAutosize(element, options);
+    }
+    return element._soAutosize;
+  }
+}
+
 // Auto-initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   SOForms.initAll();
@@ -373,7 +605,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Expose to global scope
 window.SOForms = SOForms;
+window.SOTextareaAutosize = SOTextareaAutosize;
+window.SOButtonGroup = SOButtonGroup;
 
 // Export for ES modules
 export default SOForms;
-export { SOForms };
+export { SOForms, SOTextareaAutosize, SOButtonGroup };

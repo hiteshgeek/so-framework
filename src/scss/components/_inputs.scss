@@ -23,6 +23,70 @@
 }
 
 // ============================================
+// CONTEXTUAL INPUT VARIANTS
+// ============================================
+
+// Primary Input
+.#{$so-prefix}input-primary {
+  border-color: css-var('accent-primary');
+
+  &:focus {
+    border-color: css-var('accent-primary');
+    box-shadow: 0 0 0 3px alpha($so-primary, 0.2);
+  }
+}
+
+// Secondary Input
+.#{$so-prefix}input-secondary {
+  border-color: $so-secondary;
+
+  &:focus {
+    border-color: $so-secondary;
+    box-shadow: 0 0 0 3px alpha($so-secondary, 0.2);
+  }
+}
+
+// Success Input
+.#{$so-prefix}input-success {
+  border-color: css-var('accent-success');
+
+  &:focus {
+    border-color: css-var('accent-success');
+    box-shadow: 0 0 0 3px alpha($so-success, 0.2);
+  }
+}
+
+// Danger Input
+.#{$so-prefix}input-danger {
+  border-color: css-var('accent-danger');
+
+  &:focus {
+    border-color: css-var('accent-danger');
+    box-shadow: 0 0 0 3px alpha($so-danger, 0.2);
+  }
+}
+
+// Warning Input
+.#{$so-prefix}input-warning {
+  border-color: css-var('accent-warning');
+
+  &:focus {
+    border-color: css-var('accent-warning');
+    box-shadow: 0 0 0 3px alpha($so-warning, 0.2);
+  }
+}
+
+// Info Input
+.#{$so-prefix}input-info {
+  border-color: css-var('accent-info');
+
+  &:focus {
+    border-color: css-var('accent-info');
+    box-shadow: 0 0 0 3px alpha($so-info, 0.2);
+  }
+}
+
+// ============================================
 // INPUT WITH ICON
 // ============================================
 
@@ -139,6 +203,27 @@
 }
 
 // ============================================
+// TEXTAREA AUTOSIZE
+// ============================================
+
+.#{$so-prefix}textarea-autosize {
+  overflow: hidden;
+  resize: none;
+  min-height: 80px;
+  max-height: 400px;
+}
+
+.#{$so-prefix}textarea-autosize-sm {
+  min-height: 60px;
+  max-height: 200px;
+}
+
+.#{$so-prefix}textarea-autosize-lg {
+  min-height: 120px;
+  max-height: 600px;
+}
+
+// ============================================
 // SELECT (Native)
 // ============================================
 
@@ -217,45 +302,51 @@
     content: ' *';
     color: css-var('accent-danger');
   }
+
+  // When label contains inline hint, use flexbox for vertical alignment
+  &:has(.#{$so-prefix}form-hint-inline) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .#{$so-prefix}form-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: spacing('1');
   margin-top: spacing('1');
   font-size: font-size('xs') + 0.0625rem;
   color: css-var('text-secondary');
-}
+  line-height: line-height('relaxed');
 
-.#{$so-prefix}form-error {
-  margin-top: spacing('1');
-  font-size: font-size('xs') + 0.0625rem;
-  color: css-var('accent-danger');
-}
+  .material-icons {
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
 
-// Error State
-.#{$so-prefix}form-group.has-error {
-  .#{$so-prefix}input,
-  .#{$so-prefix}select,
-  .#{$so-prefix}textarea {
-    border-color: css-var('accent-danger');
+  // Character counter variant (right-aligned)
+  &.#{$so-prefix}form-hint-counter {
+    justify-content: flex-end;
+    color: css-var('text-muted');
+  }
 
-    &:focus {
-      box-shadow: 0 0 0 3px alpha($so-danger, 0.15);
+  // Inline hint (next to label)
+  &.#{$so-prefix}form-hint-inline {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0;
+    margin-left: spacing('2');
+
+    .material-icons {
+      margin-top: 0; // Reset margin for inline variant
     }
   }
 }
 
-// Success State
-.#{$so-prefix}form-group.has-success {
-  .#{$so-prefix}input,
-  .#{$so-prefix}select,
-  .#{$so-prefix}textarea {
-    border-color: css-var('accent-success');
-
-    &:focus {
-      box-shadow: 0 0 0 3px alpha($so-success, 0.15);
-    }
-  }
-}
+// Note: Validation states (.has-error, .has-success, .has-warning, .has-info)
+// and validation messages (.so-form-error, .so-form-success, etc.)
+// are defined in _validation.scss for reusability
 
 // ============================================
 // INPUT GROUP

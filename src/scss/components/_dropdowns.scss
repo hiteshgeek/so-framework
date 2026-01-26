@@ -21,6 +21,11 @@
     transition: transform $so-transition-normal;
     margin-left: spacing('1');
   }
+
+  // Icon-only button trigger (split button pattern) - remove margin for centering
+  &.#{$so-prefix}btn-icon .#{$so-prefix}dropdown-arrow {
+    margin-left: 0;
+  }
 }
 
 // When used with .so-btn, inherit button styles for focus/active
@@ -1006,10 +1011,74 @@
     }
   }
 
-  // Separator line between buttons
+  // Separator line between buttons - contextual colors
   > .#{$so-prefix}btn + .#{$so-prefix}dropdown .#{$so-prefix}dropdown-trigger,
   > .#{$so-prefix}btn + .#{$so-prefix}dropdown .#{$so-prefix}btn {
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  // Primary separator
+  > .#{$so-prefix}btn-primary + .#{$so-prefix}dropdown .#{$so-prefix}btn-primary {
+    border-left-color: rgba(255, 255, 255, 0.3);
+  }
+
+  // Secondary separator
+  > .#{$so-prefix}btn-secondary + .#{$so-prefix}dropdown .#{$so-prefix}btn-secondary {
+    border-left-color: rgba(255, 255, 255, 0.3);
+  }
+
+  // Success separator
+  > .#{$so-prefix}btn-success + .#{$so-prefix}dropdown .#{$so-prefix}btn-success {
+    border-left-color: rgba(255, 255, 255, 0.3);
+  }
+
+  // Danger separator
+  > .#{$so-prefix}btn-danger + .#{$so-prefix}dropdown .#{$so-prefix}btn-danger {
+    border-left-color: rgba(255, 255, 255, 0.3);
+  }
+
+  // Warning separator - darker for better visibility on yellow/orange
+  > .#{$so-prefix}btn-warning + .#{$so-prefix}dropdown .#{$so-prefix}btn-warning {
+    border-left-color: rgba(0, 0, 0, 0.15);
+  }
+
+  // Info separator
+  > .#{$so-prefix}btn-info + .#{$so-prefix}dropdown .#{$so-prefix}btn-info {
+    border-left-color: rgba(255, 255, 255, 0.3);
+  }
+
+  // Light separator - dark line for light buttons
+  > .#{$so-prefix}btn-light + .#{$so-prefix}dropdown .#{$so-prefix}btn-light {
+    border-left-color: rgba(0, 0, 0, 0.1);
+  }
+
+  // Outline separators - use border color
+  > .#{$so-prefix}btn-outline + .#{$so-prefix}dropdown .#{$so-prefix}btn-outline {
+    border-left-color: css-var('border-color');
+  }
+
+  > .#{$so-prefix}btn-outline-primary + .#{$so-prefix}dropdown .#{$so-prefix}btn-outline-primary {
+    border-left-color: css-var('accent-primary');
+  }
+
+  > .#{$so-prefix}btn-outline-success + .#{$so-prefix}dropdown .#{$so-prefix}btn-outline-success {
+    border-left-color: css-var('accent-success');
+  }
+
+  > .#{$so-prefix}btn-outline-danger + .#{$so-prefix}dropdown .#{$so-prefix}btn-outline-danger {
+    border-left-color: css-var('accent-danger');
+  }
+
+  > .#{$so-prefix}btn-outline-warning + .#{$so-prefix}dropdown .#{$so-prefix}btn-outline-warning {
+    border-left-color: css-var('accent-warning');
+  }
+
+  > .#{$so-prefix}btn-outline-info + .#{$so-prefix}dropdown .#{$so-prefix}btn-outline-info {
+    border-left-color: css-var('accent-info');
+  }
+
+  > .#{$so-prefix}btn-outline-secondary + .#{$so-prefix}dropdown .#{$so-prefix}btn-outline-secondary {
+    border-left-color: $so-secondary;
   }
 }
 
