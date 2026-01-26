@@ -130,6 +130,24 @@ $so-grey-900: #202124 !default;
 $so-white: #ffffff !default;
 $so-black: #000000 !default;
 
+// Light & Dark variants
+$so-light: $so-grey-100 !default;
+$so-dark: $so-grey-800 !default;
+
+// ============================================
+// COLOR MAP (for loops/iterations)
+// ============================================
+$so-colors: (
+  'primary': $so-primary,
+  'secondary': $so-secondary,
+  'success': $so-success,
+  'danger': $so-danger,
+  'warning': $so-warning,
+  'info': $so-info,
+  'light': $so-light,
+  'dark': $so-dark
+) !default;
+
 // ============================================
 // SEMANTIC COLORS - LIGHT MODE
 // ============================================

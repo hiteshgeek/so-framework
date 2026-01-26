@@ -87,6 +87,38 @@ require_once 'includes/navbar.php';
                     <span class="material-icons">open_in_new</span>
                     Modals
                 </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-navbar">
+                    <span class="material-icons">web</span>
+                    Navbar
+                </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-sliders">
+                    <span class="material-icons">tune</span>
+                    Sliders
+                </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-progress">
+                    <span class="material-icons">hourglass_empty</span>
+                    Progress
+                </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-list-group">
+                    <span class="material-icons">list</span>
+                    List Group
+                </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-accordion">
+                    <span class="material-icons">expand_more</span>
+                    Accordion
+                </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-breadcrumb">
+                    <span class="material-icons">chevron_right</span>
+                    Breadcrumb
+                </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-scrollspy">
+                    <span class="material-icons">visibility</span>
+                    Scrollspy
+                </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-collapse">
+                    <span class="material-icons">unfold_less</span>
+                    Collapse
+                </button>
             </div>
 
             <!-- Tab Content -->
@@ -106,6 +138,14 @@ require_once 'includes/navbar.php';
                 <?php include 'includes/form-elements/utilities.php'; ?>
                 <?php include 'includes/form-elements/alerts-toasts.php'; ?>
                 <?php include 'includes/form-elements/modals.php'; ?>
+                <?php include 'includes/form-elements/navbar.php'; ?>
+                <?php include 'includes/form-elements/sliders.php'; ?>
+                <?php include 'includes/form-elements/progress.php'; ?>
+                <?php include 'includes/form-elements/list-group.php'; ?>
+                <?php include 'includes/form-elements/accordion.php'; ?>
+                <?php include 'includes/form-elements/breadcrumb.php'; ?>
+                <?php include 'includes/form-elements/scrollspy.php'; ?>
+                <?php include 'includes/form-elements/collapse.php'; ?>
             </div>
         </div>
     </div>
