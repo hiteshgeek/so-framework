@@ -1431,8 +1431,9 @@ btn.classList.add('completed'); // Mark as complete
                                 </div>
                             </div>
 
-                            <div id="events-log" style="flex: 1; background: var(--so-bg-subtle); border-radius: 8px; padding: 12px; font-family: monospace; font-size: 12px; max-height: 150px; overflow-y: auto;">
-                                <div style="color: var(--so-text-muted);">Event log will appear here...</div>
+                            <div style="flex: 1; padding: 12px; font-size: 13px; color: var(--so-text-secondary);">
+                                <span class="material-icons" style="font-size: 16px; vertical-align: middle; margin-right: 4px;">terminal</span>
+                                Events are logged to browser console (F12)
                             </div>
                         </div>
 
@@ -1784,15 +1785,15 @@ dropdown.setItemDisabled('value', true); // Disable specific item</code></pre>
                     </div>
                     <div class="so-card-body">
                         <p style="margin-bottom: 16px; color: var(--so-text-secondary); font-size: 14px;">
-                            Enable multiple selection with <code>data-so-multiple</code>. Optionally limit selections with <code>data-so-max-selections</code>.
+                            Enable multiple selection with <code>data-so-multiple</code>. Add <code>data-so-show-actions</code> for All/None links. Optionally limit selections with <code>data-so-max-selections</code>.
                         </p>
 
                         <div class="so-grid so-grid-cols-3 so-grid-cols-md-2 so-grid-cols-sm-1" style="gap: 24px;">
 
-                            <!-- Multiple Selection (Checkbox style) -->
+                            <!-- Multiple with All/None actions -->
                             <div class="so-form-group">
-                                <label class="so-form-label">Multiple (checkbox style)</label>
-                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown data-so-multiple="true">
+                                <label class="so-form-label">With All/None Actions</label>
+                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown data-so-multiple="true" data-so-show-actions="true">
                                     <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
                                         <span class="so-dropdown-selected placeholder">Select items</span>
                                         <span class="material-icons so-dropdown-arrow">expand_more</span>
@@ -1807,16 +1808,18 @@ dropdown.setItemDisabled('value', true); // Disable specific item</code></pre>
                                             <div class="so-dropdown-item" data-value="cherry">Cherry</div>
                                             <div class="so-dropdown-item" data-value="date">Date</div>
                                             <div class="so-dropdown-item" data-value="elderberry">Elderberry</div>
+                                            <div class="so-dropdown-item" data-value="fig">Fig</div>
+                                            <div class="so-dropdown-item" data-value="grape">Grape</div>
                                         </div>
                                     </div>
                                 </div>
-                                <small style="display: block; margin-top: 8px; color: var(--so-text-muted);">Click multiple items to select</small>
+                                <small style="display: block; margin-top: 8px; color: var(--so-text-muted);">Click All/None to quick select</small>
                             </div>
 
-                            <!-- Multiple with Highlight style -->
+                            <!-- Multiple Selection (Checkbox style) -->
                             <div class="so-form-group">
-                                <label class="so-form-label">Multiple (highlight style)</label>
-                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown data-so-multiple="true" data-so-selection-style="highlight">
+                                <label class="so-form-label">Multiple (checkbox style)</label>
+                                <div class="so-dropdown so-dropdown-searchable" data-so-dropdown data-so-multiple="true">
                                     <button type="button" class="so-btn so-btn-light so-dropdown-trigger">
                                         <span class="so-dropdown-selected placeholder">Select items</span>
                                         <span class="material-icons so-dropdown-arrow">expand_more</span>
@@ -1834,7 +1837,7 @@ dropdown.setItemDisabled('value', true); // Disable specific item</code></pre>
                                         </div>
                                     </div>
                                 </div>
-                                <small style="display: block; margin-top: 8px; color: var(--so-text-muted);">Background highlight only</small>
+                                <small style="display: block; margin-top: 8px; color: var(--so-text-muted);">Click multiple items to select</small>
                             </div>
 
                             <!-- Multiple with Max Selections -->
@@ -1871,16 +1874,20 @@ dropdown.setItemDisabled('value', true); // Disable specific item</code></pre>
                                     <span class="material-icons">content_copy</span>
                                 </button>
                             </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Multiple selection --&gt;
-&lt;div class="so-dropdown so-dropdown-searchable" data-so-dropdown data-so-multiple="true"&gt;
+                            <pre class="so-code-content"><code class="language-html">&lt;!-- Multiple selection with All/None actions --&gt;
+&lt;div class="so-dropdown so-dropdown-searchable" data-so-dropdown
+     data-so-multiple="true"
+     data-so-show-actions="true"&gt;
     &lt;button class="so-btn so-btn-light so-dropdown-trigger"&gt;...&lt;/button&gt;
     &lt;div class="so-dropdown-menu"&gt;...&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;!-- Multiple with highlight style (no checkboxes) --&gt;
+&lt;!-- Custom action text --&gt;
 &lt;div class="so-dropdown so-dropdown-searchable" data-so-dropdown
      data-so-multiple="true"
-     data-so-selection-style="highlight"&gt;
+     data-so-show-actions="true"
+     data-so-select-all-text="Select All"
+     data-so-select-none-text="Clear"&gt;
     ...
 &lt;/div&gt;
 
@@ -1894,6 +1901,8 @@ dropdown.setItemDisabled('value', true); // Disable specific item</code></pre>
 &lt;!-- JavaScript API for multiple selection --&gt;
 &lt;script&gt;
 const dropdown = SODropdown.getInstance('#my-dropdown');
+dropdown.selectAll();       // Select all items
+dropdown.selectNone();      // Deselect all items
 dropdown.getValues();       // ['apple', 'banana']
 dropdown.getTexts();        // ['Apple', 'Banana']
 dropdown.clearSelection();  // Clear all selections
@@ -4093,30 +4102,22 @@ function simulateProgress(btn) {
 
 // Dropdown demo functions
 function logDropdownEvent(e) {
-    const log = document.getElementById('events-log');
-    if (!log) return;
-
     const eventName = e.type.replace('so:dropdown:', '');
-    const time = new Date().toLocaleTimeString();
-    let details = '';
+    let details = {};
 
     if (e.detail) {
-        if (e.detail.value) details = ` - value: "${e.detail.value}"`;
-        if (e.detail.text) details += `, text: "${e.detail.text}"`;
+        if (e.detail.value !== undefined) details.value = e.detail.value;
+        if (e.detail.text !== undefined) details.text = e.detail.text;
+        if (e.detail.values !== undefined) details.values = e.detail.values;
+        if (e.detail.action !== undefined) details.action = e.detail.action;
     }
 
-    const entry = document.createElement('div');
-    entry.style.color = 'var(--so-text-primary)';
-    entry.style.marginBottom = '4px';
-    entry.innerHTML = `<span style="color: var(--so-accent-primary)">[${time}]</span> <strong>${eventName}</strong>${details}`;
-
-    // Clear placeholder if first real entry
-    if (log.querySelector('[style*="text-muted"]')) {
-        log.innerHTML = '';
+    // Log to console
+    if (Object.keys(details).length > 0) {
+        console.log(`dropdown:${eventName}`, details);
+    } else {
+        console.log(`dropdown:${eventName}`);
     }
-
-    log.appendChild(entry);
-    log.scrollTop = log.scrollHeight;
 }
 
 // Tabs demo functions

@@ -29,6 +29,9 @@ class SODropdown extends SOComponent {
     selectionStyle: 'default', // 'default' (bg + check), 'highlight' (bg only), 'check' (check only)
     multiple: false,         // Allow multiple selections
     maxSelections: null,     // Max selections allowed (null = unlimited)
+    showActions: false,      // Show "Select All" / "Select None" links for multiple selection
+    selectAllText: 'All',    // Text for select all link
+    selectNoneText: 'None',  // Text for select none link
   };
 
   static EVENTS = {
@@ -130,10 +133,112 @@ class SODropdown extends SOComponent {
       this.addClass(`so-dropdown-selection-${this.options.selectionStyle}`);
     }
 
-    // Apply multiple class
+    // Apply multiple class and initialize checkboxes
     if (this.options.multiple) {
       this.addClass('so-dropdown-multiple');
+      this._initCheckboxes();
     }
+
+    // showActions
+    if (el.hasAttribute('data-so-show-actions')) {
+      this.options.showActions = el.getAttribute('data-so-show-actions') !== 'false';
+    }
+
+    // selectAllText
+    if (el.hasAttribute('data-so-select-all-text')) {
+      this.options.selectAllText = el.getAttribute('data-so-select-all-text');
+    }
+
+    // selectNoneText
+    if (el.hasAttribute('data-so-select-none-text')) {
+      this.options.selectNoneText = el.getAttribute('data-so-select-none-text');
+    }
+
+    // Create actions bar for multiple selection if enabled
+    if (this.options.multiple && this.options.showActions) {
+      this._createActionsBar();
+    }
+  }
+
+  /**
+   * Initialize checkbox elements for multiple selection items
+   * @private
+   */
+  _initCheckboxes() {
+    const itemSelector = this._getItemSelector();
+    const items = this.$$(itemSelector);
+
+    items.forEach(item => {
+      // Skip if checkbox already exists
+      if (item.querySelector('.so-checkbox-box')) return;
+
+      // Create checkbox box element matching .so-checkbox-box structure
+      const checkboxBox = document.createElement('span');
+      checkboxBox.className = 'so-checkbox-box';
+      checkboxBox.innerHTML = '<span class="material-icons">check</span>';
+
+      // Insert at the beginning of the item
+      item.insertBefore(checkboxBox, item.firstChild);
+    });
+  }
+
+  /**
+   * Create actions bar with Select All / Select None links
+   * @private
+   */
+  _createActionsBar() {
+    if (!this._menu) return;
+
+    // Check if actions bar already exists
+    if (this._menu.querySelector('.so-dropdown-actions')) return;
+
+    // Create actions bar
+    const actionsBar = document.createElement('div');
+    actionsBar.className = 'so-dropdown-actions';
+
+    // Select All link
+    const selectAllLink = document.createElement('button');
+    selectAllLink.type = 'button';
+    selectAllLink.className = 'so-dropdown-action so-dropdown-select-all';
+    selectAllLink.textContent = this.options.selectAllText;
+    selectAllLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.selectAll();
+    });
+
+    // Separator
+    const separator = document.createElement('span');
+    separator.className = 'so-dropdown-action-separator';
+    separator.textContent = '|';
+
+    // Select None link
+    const selectNoneLink = document.createElement('button');
+    selectNoneLink.type = 'button';
+    selectNoneLink.className = 'so-dropdown-action so-dropdown-select-none';
+    selectNoneLink.textContent = this.options.selectNoneText;
+    selectNoneLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this.selectNone();
+    });
+
+    actionsBar.appendChild(selectAllLink);
+    actionsBar.appendChild(separator);
+    actionsBar.appendChild(selectNoneLink);
+
+    // Insert actions bar at the beginning of menu (or after search if present)
+    const searchBox = this._menu.querySelector('.so-searchable-search, .so-dropdown-search');
+    if (searchBox) {
+      searchBox.after(actionsBar);
+    } else {
+      this._menu.insertBefore(actionsBar, this._menu.firstChild);
+    }
+
+    // Store references
+    this._actionsBar = actionsBar;
+    this._selectAllLink = selectAllLink;
+    this._selectNoneLink = selectNoneLink;
   }
 
   /**
@@ -376,6 +481,9 @@ class SODropdown extends SOComponent {
   _handleOutsideClick() {
     if (!this._isOpen) return;
 
+    // Skip if flag is set (for programmatic open that triggers during click event)
+    if (this._ignoreOutsideClick) return;
+
     const autoClose = this.options.autoClose;
 
     // autoClose: false - never close on outside click
@@ -594,6 +702,12 @@ class SODropdown extends SOComponent {
 
     // Reset keyboard navigation
     this._focusedIndex = -1;
+
+    // Set flag to ignore immediate outside clicks (for programmatic open)
+    this._ignoreOutsideClick = true;
+    setTimeout(() => {
+      this._ignoreOutsideClick = false;
+    }, 10);
 
     // Focus search input if present
     if (this._searchInput) {
@@ -819,6 +933,96 @@ class SODropdown extends SOComponent {
       texts: [],
       previousValues,
       action: 'clear',
+    });
+
+    return this;
+  }
+
+  /**
+   * Select all items (for multiple selection mode)
+   * @returns {this} For chaining
+   */
+  selectAll() {
+    if (!this.options.multiple) return this;
+
+    const previousValues = [...this._selectedValues];
+    const itemSelector = this._getItemSelector();
+    const items = this.$$(itemSelector);
+
+    this._selectedValues = [];
+    this._selectedTexts = [];
+
+    items.forEach(item => {
+      // Skip disabled items
+      if (item.classList.contains('disabled') ||
+          item.hasAttribute('disabled') ||
+          item.getAttribute('aria-disabled') === 'true') {
+        return;
+      }
+
+      // Skip hidden items (filtered out)
+      if (item.style.display === 'none') {
+        return;
+      }
+
+      const value = item.dataset.value !== undefined ? item.dataset.value : item.textContent.trim();
+      const text = item.textContent.trim();
+
+      // Check max selections
+      if (this.options.maxSelections && this._selectedValues.length >= this.options.maxSelections) {
+        return;
+      }
+
+      this._selectedValues.push(value);
+      this._selectedTexts.push(text);
+      item.classList.add('selected', 'active');
+    });
+
+    // Update display
+    this._updateMultipleDisplay();
+
+    // Emit change event
+    this.emit(SODropdown.EVENTS.CHANGE, {
+      value: this._selectedValues[0] || null,
+      text: this._selectedTexts[0] || null,
+      values: this._selectedValues,
+      texts: this._selectedTexts,
+      previousValues,
+      action: 'selectAll',
+    });
+
+    return this;
+  }
+
+  /**
+   * Deselect all items (alias for clearSelection, for multiple selection mode)
+   * @returns {this} For chaining
+   */
+  selectNone() {
+    if (!this.options.multiple) return this;
+
+    const previousValues = [...this._selectedValues];
+
+    this._selectedValues = [];
+    this._selectedTexts = [];
+
+    // Update UI
+    const itemSelector = this._getItemSelector();
+    this.$$(itemSelector).forEach(item => {
+      item.classList.remove('selected', 'active');
+    });
+
+    // Update display
+    this._updateMultipleDisplay();
+
+    // Emit change event
+    this.emit(SODropdown.EVENTS.CHANGE, {
+      value: null,
+      text: null,
+      values: [],
+      texts: [],
+      previousValues,
+      action: 'selectNone',
     });
 
     return this;
