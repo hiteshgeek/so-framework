@@ -28,9 +28,11 @@ $theme-colors: (
 // TEXT COLORS
 // ============================================
 
+// Text colors with opacity support (use .so-text-opacity-* to control opacity)
 @each $name, $color in $theme-colors {
   .#{$so-prefix}text-#{$name} {
-    color: $color !important;
+    --so-text-opacity: 1;
+    color: rgba($color, var(--so-text-opacity)) !important;
   }
 }
 
@@ -73,21 +75,15 @@ $text-opacities: (
   }
 }
 
-// Text colors with opacity support
-@each $name, $color in $theme-colors {
-  .#{$so-prefix}text-#{$name} {
-    --so-text-opacity: 1;
-    color: rgba($color, var(--so-text-opacity)) !important;
-  }
-}
-
 // ============================================
 // BACKGROUND COLORS
 // ============================================
 
+// Background colors with opacity support (use .so-bg-opacity-* to control opacity)
 @each $name, $color in $theme-colors {
   .#{$so-prefix}bg-#{$name} {
-    background-color: $color !important;
+    --so-bg-opacity: 1;
+    background-color: rgba($color, var(--so-bg-opacity)) !important;
   }
 }
 
@@ -124,14 +120,6 @@ $bg-opacities: (
 @each $name, $value in $bg-opacities {
   .#{$so-prefix}bg-opacity-#{$name} {
     --so-bg-opacity: #{$value};
-  }
-}
-
-// Background colors with opacity support
-@each $name, $color in $theme-colors {
-  .#{$so-prefix}bg-#{$name} {
-    --so-bg-opacity: 1;
-    background-color: rgba($color, var(--so-bg-opacity)) !important;
   }
 }
 
@@ -287,6 +275,18 @@ $bg-opacities: (
   box-shadow: 0 0 0 0.25rem rgba($so-info, 0.25) !important;
 }
 
+.#{$so-prefix}focus-ring-secondary:focus {
+  box-shadow: 0 0 0 0.25rem rgba($so-secondary, 0.25) !important;
+}
+
+.#{$so-prefix}focus-ring-light:focus {
+  box-shadow: 0 0 0 0.25rem rgba($so-grey-300, 0.25) !important;
+}
+
+.#{$so-prefix}focus-ring-dark:focus {
+  box-shadow: 0 0 0 0.25rem rgba($so-grey-900, 0.25) !important;
+}
+
 // ============================================
 // GRADIENTS
 // ============================================
@@ -313,4 +313,16 @@ $bg-opacities: (
 
 .#{$so-prefix}bg-gradient-info {
   background: linear-gradient(135deg, $so-info, color.adjust($so-info, $lightness: -15%)) !important;
+}
+
+.#{$so-prefix}bg-gradient-secondary {
+  background: linear-gradient(135deg, $so-secondary, color.adjust($so-secondary, $lightness: -15%)) !important;
+}
+
+.#{$so-prefix}bg-gradient-light {
+  background: linear-gradient(135deg, $so-grey-100, $so-grey-300) !important;
+}
+
+.#{$so-prefix}bg-gradient-dark {
+  background: linear-gradient(135deg, $so-grey-700, $so-grey-900) !important;
 }

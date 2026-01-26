@@ -67,6 +67,10 @@ require_once 'includes/navbar.php';
                     <span class="material-icons">info_outline</span>
                     Tooltips
                 </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-colors">
+                    <span class="material-icons">palette</span>
+                    Colors
+                </button>
             </div>
 
             <!-- Tab Content -->
@@ -81,6 +85,7 @@ require_once 'includes/navbar.php';
                 <?php include 'includes/form-elements/cards.php'; ?>
                 <?php include 'includes/form-elements/tabs.php'; ?>
                 <?php include 'includes/form-elements/tooltips.php'; ?>
+                <?php include 'includes/form-elements/colors.php'; ?>
             </div>
         </div>
     </div>

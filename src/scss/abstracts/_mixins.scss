@@ -326,13 +326,12 @@
 }
 
 /// Card styling
-/// @param {Number} $padding - Card padding
-@mixin card($padding: spacing('4')) {
+@mixin card {
+  display: flex;
+  flex-direction: column;
   background: css-var('card-bg');
   border-radius: radius('lg');
   box-shadow: css-var('shadow');
-  border: 1px solid css-var('card-border');
-  padding: $padding;
 }
 
 /// Absolute center
