@@ -71,6 +71,10 @@ require_once 'includes/navbar.php';
                     <span class="material-icons">palette</span>
                     Colors
                 </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-utilities">
+                    <span class="material-icons">build</span>
+                    Utilities
+                </button>
             </div>
 
             <!-- Tab Content -->
@@ -86,6 +90,7 @@ require_once 'includes/navbar.php';
                 <?php include 'includes/form-elements/tabs.php'; ?>
                 <?php include 'includes/form-elements/tooltips.php'; ?>
                 <?php include 'includes/form-elements/colors.php'; ?>
+                <?php include 'includes/form-elements/utilities.php'; ?>
             </div>
         </div>
     </div>
