@@ -19,12 +19,6 @@
 .#{$so-prefix}dropdown-trigger {
   .#{$so-prefix}dropdown-arrow {
     transition: transform $so-transition-normal;
-    margin-left: spacing('1');
-  }
-
-  // Icon-only button trigger (split button pattern) - remove margin for centering
-  &.#{$so-prefix}btn-icon .#{$so-prefix}dropdown-arrow {
-    margin-left: 0;
   }
 }
 

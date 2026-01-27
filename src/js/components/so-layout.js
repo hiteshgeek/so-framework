@@ -433,14 +433,18 @@ class SONavbar extends SOComponent {
    * @private
    */
   _bindEvents() {
-    // Search input focus - open search overlay
+    // Search input click - open search overlay
+    // Use click instead of focus to prevent unintended overlay opening
     const searchInput = this.$(this.options.searchInputSelector);
-    if (searchInput) {
-      this.on('focus', () => {
+    const searchWrapper = searchInput?.closest('.so-navbar-search-wrapper') || searchInput?.closest('.so-navbar-search');
+    if (searchWrapper) {
+      this.on('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         if (window.soSearchOverlay) {
           window.soSearchOverlay.open();
         }
-      }, searchInput);
+      }, searchWrapper);
     }
 
     // User dropdown

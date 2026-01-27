@@ -119,6 +119,10 @@ require_once 'includes/navbar.php';
                     <span class="material-icons">unfold_less</span>
                     Collapse
                 </button>
+                <button class="so-tab" role="tab" aria-selected="false" data-so-target="#pane-carousel">
+                    <span class="material-icons">view_carousel</span>
+                    Carousel
+                </button>
             </div>
 
             <!-- Tab Content -->
@@ -146,13 +150,14 @@ require_once 'includes/navbar.php';
                 <?php include 'includes/form-elements/breadcrumb.php'; ?>
                 <?php include 'includes/form-elements/scrollspy.php'; ?>
                 <?php include 'includes/form-elements/collapse.php'; ?>
+                <?php include 'includes/form-elements/carousel.php'; ?>
             </div>
         </div>
     </div>
 </main>
 
 <?php
-$pageScripts = <<<JS
+$inlineJs = <<<JS
 document.addEventListener('DOMContentLoaded', function() {
     // Progress button API demo
     const progressBtns = document.querySelectorAll('.so-btn-progress[data-so-progress]');
@@ -174,6 +179,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const disableDropdownEl = document.querySelector('#demo-disable-dropdown');
     if (disableDropdownEl && typeof SODropdown !== 'undefined') {
         window.disableDropdown = SODropdown.getInstance(disableDropdownEl);
+    }
+
+    // Initialize demo dropdown for API demo
+    const demoDropdownEl = document.querySelector('#demo-events-dropdown');
+    if (demoDropdownEl && typeof SODropdown !== 'undefined') {
+        window.demoDropdown = SODropdown.getInstance(demoDropdownEl);
     }
 
     // Set indeterminate state for demo checkboxes
