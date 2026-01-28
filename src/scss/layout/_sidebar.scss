@@ -326,7 +326,7 @@ html.sidebar-pinned .#{$so-prefix}main-content {
 }
 
 .#{$so-prefix}sidebar-item.#{$so-prefix}open > .#{$so-prefix}sidebar-submenu {
-  max-height: 500px;
+  max-height: 2000px;
   transition: max-height 0.3s ease-in;
 }
 
@@ -725,7 +725,11 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  transition: opacity 0.15s ease, visibility 0.15s ease;
+  transform: translateX(-12px);
+  transition:
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 // Section becomes a separator line in collapsed view
@@ -778,7 +782,11 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   visibility: visible;
   width: auto;
   overflow: visible;
-  transition: opacity 0.2s ease 0.15s, visibility 0.2s ease 0.15s;
+  transform: translateX(0);
+  transition:
+    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.15s,
+    visibility 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.15s,
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
 }
 
 .#{$so-prefix}sidebar.#{$so-prefix}collapsed:hover .#{$so-prefix}sidebar-text {
@@ -808,7 +816,7 @@ html.sidebar-pinned .#{$so-prefix}main-content {
 
 // Only show submenu if parent item is open (user clicked)
 .#{$so-prefix}sidebar.#{$so-prefix}collapsed:hover .#{$so-prefix}sidebar-item.#{$so-prefix}open > .#{$so-prefix}sidebar-submenu {
-  max-height: 500px !important;
+  max-height: 2000px !important;
   opacity: 1;
   visibility: visible;
   transition: max-height 0.3s ease-in, opacity 0.2s ease;
