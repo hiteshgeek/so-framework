@@ -12,5 +12,5 @@
 @forward 'css-grid';
 
 // Page Layout Components
-@forward 'sidebar';
+// Note: Sidebar styles moved to src/pages/global/global.scss
 @forward 'main-content';

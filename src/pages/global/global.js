@@ -1070,3 +1070,322 @@ document.addEventListener('DOMContentLoaded', () => {
 // Export for ES modules
 export default GlobalSearchController;
 export { GlobalSearchController };
+
+// ============================================
+// SIDEBAR CONTROLLER
+// Standalone sidebar component (extracted from framework)
+// ============================================
+
+/**
+ * SidebarController - Handles sidebar collapse/expand, pinning, mobile menu, and submenu navigation
+ */
+class SidebarController {
+  static DEFAULTS = {
+    mainContentSelector: '.so-main-content',
+    overlaySelector: '.so-sidebar-overlay',
+    toggleSelector: '.so-sidebar-toggle',
+    storageKey: 'so-sidebar-state',
+    breakpoint: 768,
+  };
+
+  constructor(element, options = {}) {
+    this.element = element;
+    this.options = { ...SidebarController.DEFAULTS, ...options };
+
+    if (!this.element) return;
+
+    // Cache DOM elements
+    this._mainContent = document.querySelector(this.options.mainContentSelector);
+    this._overlay = document.querySelector(this.options.overlaySelector);
+    this._toggle = this.element.querySelector(this.options.toggleSelector);
+
+    // State
+    this._isMobile = false;
+    this._isCollapsed = true;
+    this._isOpen = false;
+
+    // Disable transitions initially
+    this.element.classList.add('no-transition');
+
+    // Check viewport and restore state
+    this._checkMobile();
+    this._restoreState();
+
+    // Bind events
+    this._bindEvents();
+
+    // Initialize submenu state
+    this._initSubmenuArrows();
+    this._initSubmenuState();
+
+    // Update body class
+    this._updateBodyClass();
+
+    // Re-enable transitions after paint
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        this.element.classList.remove('no-transition');
+        document.documentElement.classList.remove('sidebar-collapsed', 'sidebar-pinned');
+      });
+    });
+  }
+
+  /**
+   * Debounce helper
+   */
+  static debounce(fn, delay) {
+    let timer = null;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
+  /**
+   * Bind event listeners
+   */
+  _bindEvents() {
+    // Window resize
+    window.addEventListener('resize', SidebarController.debounce(() => {
+      this._checkMobile();
+      if (this._isMobile) {
+        this._closeMobile();
+      }
+      this._updateBodyClass();
+    }, 150));
+
+    // Toggle button (pin/unpin)
+    if (this._toggle) {
+      this._toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.togglePinned();
+      });
+    }
+
+    // Mobile toggle buttons
+    document.querySelectorAll('[data-toggle="sidebar"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (this._isMobile) {
+          this.toggleMobile();
+        } else {
+          this.togglePinned();
+        }
+      });
+    });
+
+    // Overlay click
+    if (this._overlay) {
+      this._overlay.addEventListener('click', () => this._closeMobile());
+    }
+
+    // Submenu toggle
+    this.element.addEventListener('click', (e) => {
+      const link = e.target.closest('.so-sidebar-link');
+      if (link) {
+        const item = link.parentElement;
+        const submenu = item.querySelector('.so-sidebar-submenu');
+        if (submenu) {
+          e.preventDefault();
+          this._toggleSubmenu(item);
+        }
+      }
+    });
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this._isMobile && this._isOpen) {
+        this._closeMobile();
+      }
+    });
+  }
+
+  /**
+   * Check if viewport is mobile
+   */
+  _checkMobile() {
+    this._isMobile = window.innerWidth <= this.options.breakpoint;
+  }
+
+  /**
+   * Update body class based on sidebar state
+   */
+  _updateBodyClass() {
+    if (this._isCollapsed && !this._isMobile) {
+      document.body.classList.add('sidebar-collapsed');
+    } else {
+      document.body.classList.remove('sidebar-collapsed');
+    }
+  }
+
+  /**
+   * Toggle pinned state
+   */
+  togglePinned() {
+    this._isCollapsed = !this._isCollapsed;
+
+    if (this._isCollapsed) {
+      this.element.classList.add('so-collapsed');
+      this.element.classList.remove('pinned');
+    } else {
+      this.element.classList.remove('so-collapsed');
+      this.element.classList.add('pinned');
+    }
+
+    this._updateBodyClass();
+    this._saveState(this._isCollapsed ? 'collapsed' : 'pinned');
+
+    return this;
+  }
+
+  /**
+   * Pin the sidebar (expand)
+   */
+  pin() {
+    if (!this._isCollapsed) return this;
+    return this.togglePinned();
+  }
+
+  /**
+   * Unpin the sidebar (collapse)
+   */
+  unpin() {
+    if (this._isCollapsed) return this;
+    return this.togglePinned();
+  }
+
+  /**
+   * Check if sidebar is pinned
+   */
+  isPinned() {
+    return !this._isCollapsed;
+  }
+
+  /**
+   * Toggle mobile sidebar
+   */
+  toggleMobile() {
+    return this._isOpen ? this._closeMobile() : this._openMobile();
+  }
+
+  /**
+   * Open mobile sidebar
+   */
+  _openMobile() {
+    this._isOpen = true;
+    this.element.classList.add('so-open');
+    this._overlay?.classList.add('active');
+    document.body.classList.add('so-sidebar-open');
+    document.body.style.overflow = 'hidden';
+    return this;
+  }
+
+  /**
+   * Close mobile sidebar
+   */
+  _closeMobile() {
+    this._isOpen = false;
+    this.element.classList.remove('so-open');
+    this._overlay?.classList.remove('active');
+    document.body.classList.remove('so-sidebar-open');
+    document.body.style.overflow = '';
+    return this;
+  }
+
+  /**
+   * Toggle submenu
+   */
+  _toggleSubmenu(item) {
+    const isOpen = item.classList.contains('so-open');
+    const parent = item.parentElement;
+
+    // Close siblings
+    parent.querySelectorAll(':scope > .so-sidebar-item.so-open').forEach(sibling => {
+      if (sibling !== item) {
+        sibling.classList.remove('so-open');
+      }
+    });
+
+    // Toggle current
+    item.classList.toggle('so-open', !isOpen);
+  }
+
+  /**
+   * Initialize arrows for nested submenu items
+   */
+  _initSubmenuArrows() {
+    this.element.querySelectorAll('.so-sidebar-submenu .so-sidebar-item').forEach(item => {
+      const nestedSubmenu = item.querySelector(':scope > .so-sidebar-submenu');
+      if (nestedSubmenu) {
+        item.classList.add('has-children');
+
+        const link = item.querySelector(':scope > .so-sidebar-link');
+        if (link && !link.querySelector('.so-sidebar-arrow')) {
+          const arrow = document.createElement('span');
+          arrow.className = 'so-sidebar-arrow';
+          arrow.innerHTML = '<span class="material-icons">chevron_right</span>';
+          link.appendChild(arrow);
+        }
+      }
+    });
+  }
+
+  /**
+   * Initialize submenu state based on active items
+   */
+  _initSubmenuState() {
+    this.element.querySelectorAll('.so-sidebar-item.current, .so-sidebar-item.active').forEach(item => {
+      let parent = item.parentElement.closest('.so-sidebar-item');
+      while (parent) {
+        parent.classList.add('so-open');
+        parent = parent.parentElement.closest('.so-sidebar-item');
+      }
+    });
+  }
+
+  /**
+   * Save sidebar state to storage
+   */
+  _saveState(state) {
+    try {
+      localStorage.setItem(this.options.storageKey, state);
+    } catch (e) {
+      // Storage not available
+    }
+  }
+
+  /**
+   * Restore sidebar state from storage
+   */
+  _restoreState() {
+    if (this._isMobile) return;
+
+    try {
+      const state = localStorage.getItem(this.options.storageKey);
+      if (state === 'pinned') {
+        this._isCollapsed = false;
+        this.element.classList.remove('so-collapsed');
+        this.element.classList.add('pinned');
+      } else {
+        this._isCollapsed = true;
+        this.element.classList.add('so-collapsed');
+      }
+    } catch (e) {
+      // Storage not available
+      this._isCollapsed = true;
+      this.element.classList.add('so-collapsed');
+    }
+  }
+}
+
+// Initialize sidebar when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebarEl = document.querySelector('.so-sidebar');
+  if (sidebarEl) {
+    window.soSidebar = new SidebarController(sidebarEl);
+  }
+});
+
+// Export
+export { SidebarController };

@@ -21,11 +21,7 @@ import './features/so-chips.js';
 
 // Auto-initialize core components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize sidebar if present
-  const sidebar = document.querySelector('.so-sidebar');
-  if (sidebar) {
-    SOSidebar.getInstance(sidebar);
-  }
+  // Note: Sidebar initialization moved to src/pages/global/global.js
 
   // Initialize navbar if present
   const navbar = document.querySelector('.so-navbar');
