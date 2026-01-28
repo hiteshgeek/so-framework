@@ -772,6 +772,8 @@ class SOSelect extends SOComponent {
 
   _handleOutsideClick(e) {
     if (!this._isOpen) return;
+    // Skip if we just opened (prevents same-click-cycle closing from external triggers)
+    if (this._justOpened) return;
     if (this.element.contains(e.target)) return;
     this.close();
   }
@@ -1111,6 +1113,12 @@ class SOSelect extends SOComponent {
 
     this._isOpen = true;
     this.addClass('so-select-open');
+
+    // Prevent immediate close from same click event (for programmatic open)
+    this._justOpened = true;
+    requestAnimationFrame(() => {
+      this._justOpened = false;
+    });
 
     // Focus search input if present
     if (this._searchInput) {

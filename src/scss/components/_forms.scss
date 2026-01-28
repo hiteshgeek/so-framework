@@ -10,12 +10,11 @@
 // FORM LAYOUT VARIABLES
 // ============================================
 
-// Material Design Floating Label Variables
-$form-floating-height: 56px !default;
-$form-floating-height-sm: 48px !default;
-$form-floating-height-lg: 64px !default;
+// Floating Label Variables - Match framework input sizes
+$form-floating-height: $so-form-height-md !default; // 40px - matches framework
+$form-floating-height-sm: $so-form-height-sm !default; // 32px
+$form-floating-height-lg: $so-form-height-lg !default; // 48px
 $form-floating-label-scale: 0.75 !default;
-$form-floating-label-y-offset: -12px !default;
 
 $form-horizontal-label-width: 180px !default;
 $form-horizontal-label-width-narrow: 120px !default;
@@ -28,12 +27,15 @@ $form-horizontal-label-width-wide: 240px !default;
 .#{$so-prefix}form-floating {
   position: relative;
 
-  // The input/textarea/select
+  // The input/textarea/select - Matches framework input styles
   > .#{$so-prefix}form-control {
-    height: $form-floating-height;
-    padding: spacing('4') spacing('3') spacing('2');
-    font-size: font-size('base');
-    line-height: 1.5;
+    height: $form-floating-height; // 40px - matches framework
+    padding: spacing('4') spacing('3') spacing('2'); // 16px 16px 8px - balanced vertical spacing
+    font-size: font-size('base'); // 14px - matches framework
+    line-height: line-height('normal');
+    border-radius: radius('base');
+    border: 1px solid css-var('form-border');
+    background: css-var('form-bg');
 
     &::placeholder {
       color: transparent;
@@ -46,14 +48,18 @@ $form-horizontal-label-width-wide: 240px !default;
       transition-delay: 0.1s;
     }
 
-    // When focused or has value - move label up
+    &:focus {
+      border-color: css-var('accent-primary');
+      box-shadow: none;
+      outline: none;
+    }
+
+    // When focused or has value - move label up using transform scale
     &:focus ~ label,
     &:not(:placeholder-shown) ~ label {
-      top: $form-floating-label-y-offset;
-      left: spacing('2');
-      padding: 0 spacing('1');
-      font-size: font-size('xs');
-      font-weight: font-weight('medium');
+      top: 2px; // Align label center with border edge
+      transform: translateY(-50%) scale($form-floating-label-scale);
+      padding: 0 4px;
       background: css-var('form-bg');
       color: css-var('text-secondary');
     }
@@ -67,25 +73,26 @@ $form-horizontal-label-width-wide: 240px !default;
   > textarea.#{$so-prefix}form-control {
     height: auto;
     min-height: 100px;
-    padding-top: spacing('5');
+    padding-top: 24px;
     resize: vertical;
   }
 
-  // The floating label - Material Design style
+  // The floating label - Matches framework input styles
   > label {
     position: absolute;
     top: 50%;
-    left: spacing('3');
+    left: spacing('3'); // Matches input horizontal padding
     transform: translateY(-50%);
+    transform-origin: left top;
     padding: 0;
     margin: 0;
     pointer-events: none;
     color: css-var('text-muted');
-    font-size: font-size('base');
+    font-size: font-size('base'); // 14px - matches framework
     font-weight: font-weight('normal');
     line-height: 1;
     background: transparent;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 
     // Required asterisk
@@ -97,22 +104,22 @@ $form-horizontal-label-width-wide: 240px !default;
 
   // Textarea label positioning
   > textarea.#{$so-prefix}form-control ~ label {
-    top: spacing('4');
+    top: 20px;
     transform: none;
   }
 
   > textarea.#{$so-prefix}form-control:focus ~ label,
   > textarea.#{$so-prefix}form-control:not(:placeholder-shown) ~ label {
-    top: $form-floating-label-y-offset;
-    transform: none;
+    top: 2px;
+    transform: translateY(-50%) scale($form-floating-label-scale);
   }
 
-  // Size variants - Small
+  // Size variants - Small (32px height - matches framework)
   &.#{$so-prefix}form-floating-sm {
     > .#{$so-prefix}form-control {
-      height: $form-floating-height-sm;
-      padding: spacing('3') spacing('2') spacing('1');
-      font-size: $so-form-font-size-sm;
+      height: $form-floating-height-sm; // 32px
+      padding: 10px spacing('2') 2px;
+      font-size: $so-form-font-size-sm; // 13px
     }
 
     > label {
@@ -122,18 +129,17 @@ $form-horizontal-label-width-wide: 240px !default;
 
     > .#{$so-prefix}form-control:focus ~ label,
     > .#{$so-prefix}form-control:not(:placeholder-shown) ~ label {
-      top: -10px;
-      left: spacing('2');
-      font-size: font-size('xs') - 0.0625rem;
+      top: 1px; // Adjusted for smaller height
+      transform: translateY(-50%) scale($form-floating-label-scale);
     }
   }
 
-  // Size variants - Large
+  // Size variants - Large (48px height - matches framework)
   &.#{$so-prefix}form-floating-lg {
     > .#{$so-prefix}form-control {
-      height: $form-floating-height-lg;
-      padding: spacing('5') spacing('4') spacing('3');
-      font-size: $so-form-font-size-lg;
+      height: $form-floating-height-lg; // 48px
+      padding: 18px spacing('4') 6px;
+      font-size: $so-form-font-size-lg; // 15px
     }
 
     > label {
@@ -143,9 +149,8 @@ $form-horizontal-label-width-wide: 240px !default;
 
     > .#{$so-prefix}form-control:focus ~ label,
     > .#{$so-prefix}form-control:not(:placeholder-shown) ~ label {
-      top: -14px;
-      left: spacing('3');
-      font-size: font-size('sm');
+      top: 3px; // Adjusted for larger height
+      transform: translateY(-50%) scale($form-floating-label-scale);
     }
   }
 
@@ -198,12 +203,172 @@ $form-horizontal-label-width-wide: 240px !default;
       color: css-var('accent-warning');
     }
   }
+
+  // Disabled state
+  &.#{$so-prefix}disabled,
+  &:has(.#{$so-prefix}form-control:disabled) {
+    > .#{$so-prefix}form-control {
+      background: css-var('form-disabled-bg');
+      color: css-var('text-muted');
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    > label {
+      color: css-var('text-muted');
+    }
+  }
+
+  // Not tabbable (tabindex="-1") - skips in tab order
+  &.#{$so-prefix}form-floating-notab {
+    > .#{$so-prefix}form-control {
+      // Visual indicator that input is not in tab order
+      &:focus {
+        outline: 2px dashed css-var('form-border');
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  // Read-only state (non-editable but tabbable)
+  &:has(.#{$so-prefix}form-control:read-only),
+  &.#{$so-prefix}form-floating-readonly {
+    > .#{$so-prefix}form-control {
+      background: css-var('form-disabled-bg');
+      cursor: default;
+
+      &:focus {
+        border-color: css-var('form-border');
+        box-shadow: none;
+      }
+    }
+
+    > .#{$so-prefix}form-control:focus ~ label,
+    > .#{$so-prefix}form-control:not(:placeholder-shown) ~ label {
+      color: css-var('text-muted');
+    }
+  }
+
+  // Color variants (secondary border/focus color)
+  &.#{$so-prefix}form-floating-secondary {
+    > .#{$so-prefix}form-control:focus {
+      border-color: $so-secondary;
+      box-shadow: 0 0 0 3px alpha($so-secondary, 0.15);
+    }
+
+    > .#{$so-prefix}form-control:focus ~ label {
+      color: $so-secondary;
+    }
+  }
+
+  &.#{$so-prefix}form-floating-info {
+    > .#{$so-prefix}form-control:focus {
+      border-color: css-var('accent-info');
+      box-shadow: 0 0 0 3px alpha($so-info, 0.15);
+    }
+
+    > .#{$so-prefix}form-control:focus ~ label {
+      color: css-var('accent-info');
+    }
+  }
+
+  // With leading icon (adornment start)
+  &.#{$so-prefix}form-floating-icon-start {
+    > .#{$so-prefix}form-control {
+      padding-left: 40px; // Matches framework input-wrapper
+    }
+
+    > label {
+      left: 40px;
+    }
+
+    > .#{$so-prefix}form-control:focus ~ label,
+    > .#{$so-prefix}form-control:not(:placeholder-shown) ~ label {
+      left: spacing('2');
+    }
+
+    > .#{$so-prefix}input-icon {
+      position: absolute;
+      left: 12px; // Matches framework
+      top: 50%;
+      transform: translateY(-50%);
+      color: css-var('text-muted');
+      pointer-events: none;
+      z-index: 2;
+
+      .material-icons {
+        font-size: 20px;
+      }
+    }
+
+    // Icon color on focus
+    &:focus-within > .#{$so-prefix}input-icon {
+      color: css-var('accent-primary');
+    }
+  }
+
+  // With trailing icon (adornment end)
+  &.#{$so-prefix}form-floating-icon-end {
+    > .#{$so-prefix}form-control {
+      padding-right: 44px; // Matches framework input-action
+    }
+
+    > .#{$so-prefix}input-action,
+    > .#{$so-prefix}input-icon-end {
+      position: absolute;
+      right: 12px; // Matches framework
+      top: 50%;
+      transform: translateY(-50%);
+      color: css-var('text-muted');
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .material-icons {
+        font-size: 20px;
+      }
+    }
+
+    > .#{$so-prefix}input-action {
+      cursor: pointer;
+      padding: spacing('1');
+      background: transparent;
+      border: none;
+      border-radius: radius('md');
+      transition: color $so-transition-base, background $so-transition-base;
+
+      &:hover {
+        color: css-var('text-primary');
+        background: css-var('card-hover-bg');
+      }
+    }
+  }
+
+  // Both icons
+  &.#{$so-prefix}form-floating-icon-start.#{$so-prefix}form-floating-icon-end {
+    > .#{$so-prefix}form-control {
+      padding-left: 40px;
+      padding-right: 44px;
+    }
+  }
+
+  // Helper text integration
+  + .#{$so-prefix}form-hint {
+    margin-top: spacing('1');
+  }
+
+  + .#{$so-prefix}form-error,
+  + .#{$so-prefix}form-success,
+  + .#{$so-prefix}form-warning {
+    margin-top: spacing('1');
+  }
 }
 
 // Material Design Outlined variant
 .#{$so-prefix}form-floating-outlined {
   > .#{$so-prefix}form-control {
-    border-width: 2px;
+    border-width: 1px; // Matches framework inputs
 
     &:focus {
       border-color: css-var('accent-primary');
@@ -220,7 +385,7 @@ $form-horizontal-label-width-wide: 240px !default;
 .#{$so-prefix}form-floating-filled {
   > .#{$so-prefix}form-control {
     border: none;
-    border-bottom: 2px solid css-var('form-border');
+    border-bottom: 1px solid css-var('form-border');
     border-radius: radius('base') radius('base') 0 0;
     background: css-var('card-hover-bg');
 
@@ -240,7 +405,7 @@ $form-horizontal-label-width-wide: 240px !default;
 
   > .#{$so-prefix}form-control:focus ~ label,
   > .#{$so-prefix}form-control:not(:placeholder-shown) ~ label {
-    top: spacing('1');
+    top: 2px;
     left: spacing('3');
     background: transparent;
   }
@@ -271,10 +436,8 @@ $form-horizontal-label-width-wide: 240px !default;
     }
 
     &:focus {
-      border-bottom-width: 2px;
       border-bottom-color: css-var('accent-primary');
       box-shadow: none;
-      padding-bottom: spacing('2') - 1px; // Compensate for thicker border
     }
   }
 
@@ -284,7 +447,7 @@ $form-horizontal-label-width-wide: 240px !default;
 
   > .#{$so-prefix}form-control:focus ~ label,
   > .#{$so-prefix}form-control:not(:placeholder-shown) ~ label {
-    top: 0;
+    top: 2px;
     left: 0;
     background: transparent;
   }
@@ -296,7 +459,7 @@ $form-horizontal-label-width-wide: 240px !default;
     bottom: 0;
     left: 50%;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: css-var('accent-primary');
     transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1), left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
