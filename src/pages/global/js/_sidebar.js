@@ -3,6 +3,10 @@
 // Standalone sidebar component
 // ============================================
 
+// Use prefix from SixOrbit config (fallback to 'so' if not available)
+const PREFIX = (typeof window !== 'undefined' && window.SixOrbit?.PREFIX) || 'so';
+const cls = (...parts) => `${PREFIX}-${parts.join('-')}`;
+
 /**
  * SidebarController - Handles sidebar collapse/expand, pinning, mobile menu, and submenu navigation
  */
@@ -187,18 +191,18 @@ class SidebarController {
    * Toggle submenu in drawer
    */
   _toggleDrawerSubmenu(item) {
-    const isOpen = item.classList.contains('so-open');
+    const isOpen = item.classList.contains(cls('open'));
     const parent = item.parentElement;
 
     // Close siblings
     parent.querySelectorAll(':scope > .so-sidebar-item.so-open').forEach(sibling => {
       if (sibling !== item) {
-        sibling.classList.remove('so-open');
+        sibling.classList.remove(cls('open'));
       }
     });
 
     // Toggle current
-    item.classList.toggle('so-open', !isOpen);
+    item.classList.toggle(cls('open'), !isOpen);
   }
 
   /**
@@ -219,8 +223,8 @@ class SidebarController {
         if (sidebarItem.classList.contains('active')) {
           drawerItems[index].classList.add('active');
         }
-        if (sidebarItem.classList.contains('so-open')) {
-          drawerItems[index].classList.add('so-open');
+        if (sidebarItem.classList.contains(cls('open'))) {
+          drawerItems[index].classList.add(cls('open'));
         }
       }
     });
@@ -330,15 +334,19 @@ class SidebarController {
   togglePinned() {
     this._isCollapsed = !this._isCollapsed;
 
-    if (this._isCollapsed) {
-      this.element.classList.add('so-collapsed');
-      this.element.classList.remove('pinned');
-    } else {
-      this.element.classList.remove('so-collapsed');
-      this.element.classList.add('pinned');
-    }
+    // Batch all class changes in a single frame for synchronized animation
+    requestAnimationFrame(() => {
+      if (this._isCollapsed) {
+        this.element.classList.add('so-collapsed');
+        this.element.classList.remove('pinned');
+        document.body.classList.add('sidebar-collapsed');
+      } else {
+        this.element.classList.remove('so-collapsed');
+        this.element.classList.add('pinned');
+        document.body.classList.remove('sidebar-collapsed');
+      }
+    });
 
-    this._updateBodyClass();
     this._saveState(this._isCollapsed ? 'collapsed' : 'pinned');
 
     return this;
@@ -391,8 +399,8 @@ class SidebarController {
     }
     // Fallback to overlay pattern
     this._isOpen = true;
-    this.element.classList.add('so-open');
-    this._overlay?.classList.add('active');
+    this.element.classList.add(cls('open'));
+    this._overlay?.classList.add(cls('active'));
     document.body.classList.add('so-sidebar-open');
     document.body.style.overflow = 'hidden';
     return this;
@@ -410,8 +418,8 @@ class SidebarController {
     }
     // Fallback to overlay pattern
     this._isOpen = false;
-    this.element.classList.remove('so-open');
-    this._overlay?.classList.remove('active');
+    this.element.classList.remove(cls('open'));
+    this._overlay?.classList.remove(cls('active'));
     document.body.classList.remove('so-sidebar-open');
     document.body.style.overflow = '';
     return this;
@@ -421,18 +429,18 @@ class SidebarController {
    * Toggle submenu
    */
   _toggleSubmenu(item) {
-    const isOpen = item.classList.contains('so-open');
+    const isOpen = item.classList.contains(cls('open'));
     const parent = item.parentElement;
 
     // Close siblings
     parent.querySelectorAll(':scope > .so-sidebar-item.so-open').forEach(sibling => {
       if (sibling !== item) {
-        sibling.classList.remove('so-open');
+        sibling.classList.remove(cls('open'));
       }
     });
 
     // Toggle current
-    item.classList.toggle('so-open', !isOpen);
+    item.classList.toggle(cls('open'), !isOpen);
   }
 
   /**
@@ -462,7 +470,7 @@ class SidebarController {
     this.element.querySelectorAll('.so-sidebar-item.current, .so-sidebar-item.active').forEach(item => {
       let parent = item.parentElement.closest('.so-sidebar-item');
       while (parent) {
-        parent.classList.add('so-open');
+        parent.classList.add(cls('open'));
         parent = parent.parentElement.closest('.so-sidebar-item');
       }
     });

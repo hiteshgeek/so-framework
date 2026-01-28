@@ -20,7 +20,7 @@
   z-index: z-index("modal");
   display: none;
 
-  &.active {
+  &.#{$so-prefix}active {
     display: flex;
     flex-direction: column;
   }
@@ -312,7 +312,7 @@
   border-bottom: 1px solid css-var("border-color");
   flex-wrap: wrap;
 
-  &.visible {
+  &.#{$so-prefix}visible {
     display: flex;
   }
 }
@@ -336,7 +336,7 @@
   transition: all $so-transition-base;
 
   &:hover,
-  &.active {
+  &.#{$so-prefix}active {
     border-color: css-var("accent-primary");
     color: css-var("accent-primary");
   }
@@ -359,7 +359,7 @@
   z-index: z-index("dropdown") + 10;
   display: none;
 
-  &.open {
+  &.#{$so-prefix}open {
     display: block;
   }
 }
@@ -386,7 +386,7 @@
     background: css-var("card-hover-bg");
   }
 
-  &.selected {
+  &.#{$so-prefix}selected {
     color: css-var("accent-primary");
   }
 
@@ -411,7 +411,7 @@
   border-bottom: 1px solid css-var("border-color");
   overflow-x: auto;
 
-  &.visible {
+  &.#{$so-prefix}visible {
     display: flex;
   }
 }
@@ -433,7 +433,7 @@
     background: css-var("card-hover-bg");
   }
 
-  &.active {
+  &.#{$so-prefix}active {
     background: css-var("accent-primary");
     color: $so-white;
   }
@@ -491,7 +491,7 @@
     background: css-var("card-hover-bg");
   }
 
-  &.active {
+  &.#{$so-prefix}active {
     background: css-var("accent-primary");
     border-color: css-var("accent-primary");
     color: $so-white;
@@ -514,7 +514,7 @@
   gap: spacing("4");
   padding: spacing("5") spacing("6");
 
-  &.visible {
+  &.#{$so-prefix}visible {
     display: grid;
   }
 }
@@ -525,7 +525,7 @@
   flex-direction: column;
   padding: spacing("3") spacing("6");
 
-  &.visible {
+  &.#{$so-prefix}visible {
     display: flex;
   }
 }
@@ -587,7 +587,7 @@
   text-transform: uppercase;
   border-radius: radius("base");
 
-  &.active {
+  &.#{$so-prefix}active {
     background: rgba(40, 199, 111, 0.15);
     color: css-var("accent-success");
   }
@@ -732,7 +732,7 @@
   transition: background $so-transition-base;
 
   &:hover,
-  &.focused {
+  &.#{$so-prefix}focused {
     background: css-var("card-hover-bg");
     text-decoration: none;
   }
@@ -813,7 +813,7 @@
   transition: opacity $so-transition-base;
 
   .#{$so-prefix}search-overlay-item:hover &,
-  .#{$so-prefix}search-overlay-item.focused & {
+  .#{$so-prefix}search-overlay-item.#{$so-prefix}focused & {
     opacity: 1;
   }
 }
@@ -1007,7 +1007,7 @@
   padding: spacing("12") + 12px spacing("6");
   text-align: center;
 
-  &.visible {
+  &.#{$so-prefix}visible {
     display: flex;
   }
 }
@@ -1040,7 +1040,7 @@
   justify-content: center;
   padding: spacing("10") spacing("6");
 
-  &.visible {
+  &.#{$so-prefix}visible {
     display: flex;
   }
 }

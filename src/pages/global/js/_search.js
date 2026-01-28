@@ -3,6 +3,10 @@
 // Standalone search overlay functionality
 // ============================================
 
+// Use prefix from SixOrbit config (fallback to 'so' if not available)
+const PREFIX = (typeof window !== 'undefined' && window.SixOrbit?.PREFIX) || 'so';
+const cls = (...parts) => `${PREFIX}-${parts.join('-')}`;
+
 /**
  * GlobalSearchController - Standalone search overlay controller
  * This is independent of the SO Framework and can be configured
@@ -223,13 +227,13 @@ class GlobalSearchController {
       if (btn && menu) {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
-          menu.classList.toggle('open');
+          menu.classList.toggle(cls('open'));
         });
 
         menu.querySelectorAll('.so-search-filter-option').forEach(option => {
           option.addEventListener('click', () => {
             this._selectFilter(filterType, option.dataset.value);
-            menu.classList.remove('open');
+            menu.classList.remove(cls('open'));
           });
         });
       }
@@ -238,7 +242,7 @@ class GlobalSearchController {
     // Close dropdowns on outside click
     document.addEventListener('click', () => {
       this._overlay.querySelectorAll('.so-search-filter-menu').forEach(menu => {
-        menu.classList.remove('open');
+        menu.classList.remove(cls('open'));
       });
     });
   }
@@ -256,7 +260,7 @@ class GlobalSearchController {
     const dropdown = this._overlay.querySelector(`.so-search-filter-dropdown[data-filter="${type}"]`);
     if (dropdown) {
       dropdown.querySelectorAll('.so-search-filter-option').forEach(opt => {
-        opt.classList.toggle('selected', opt.dataset.value === value);
+        opt.classList.toggle(cls('selected'), opt.dataset.value === value);
       });
 
       const label = dropdown.querySelector('.filter-label');
@@ -283,7 +287,7 @@ class GlobalSearchController {
 
     // Update active state
     this._overlay.querySelectorAll('.so-search-category-tab').forEach(t => {
-      t.classList.toggle('active', t === tab);
+      t.classList.toggle(cls('active'), t === tab);
     });
 
     this.activeCategory = category;
@@ -305,17 +309,17 @@ class GlobalSearchController {
 
     // Update button states
     this._overlay.querySelectorAll('.so-search-view-btn').forEach(b => {
-      b.classList.toggle('active', b === btn);
+      b.classList.toggle(cls('active'), b === btn);
     });
 
     this.currentView = view;
 
     // Update results display
     if (this._resultsGrid) {
-      this._resultsGrid.classList.toggle('visible', view === 'grid');
+      this._resultsGrid.classList.toggle(cls('visible'), view === 'grid');
     }
     if (this._resultsList) {
-      this._resultsList.classList.toggle('visible', view === 'list');
+      this._resultsList.classList.toggle(cls('visible'), view === 'list');
     }
 
     // Re-render results in new view
@@ -376,10 +380,10 @@ class GlobalSearchController {
    */
   _updateSearchMode() {
     if (this._filterBar) {
-      this._filterBar.classList.toggle('visible', this.isISVSearch);
+      this._filterBar.classList.toggle(cls('visible'), this.isISVSearch);
     }
     if (this._categoryTabs) {
-      this._categoryTabs.classList.toggle('visible', !this.isISVSearch && this.searchQuery.length >= this.options.minSearchLength);
+      this._categoryTabs.classList.toggle(cls('visible'), !this.isISVSearch && this.searchQuery.length >= this.options.minSearchLength);
     }
   }
 
@@ -545,10 +549,10 @@ class GlobalSearchController {
     if (this.currentView === 'grid') {
       if (this._resultsGrid) {
         this._resultsGrid.innerHTML = results.map(item => this._renderItemCard(item)).join('');
-        this._resultsGrid.classList.add('visible');
+        this._resultsGrid.classList.add(cls('visible'));
       }
       if (this._resultsList) {
-        this._resultsList.classList.remove('visible');
+        this._resultsList.classList.remove(cls('visible'));
       }
     } else {
       if (this._resultsList) {
@@ -562,10 +566,10 @@ class GlobalSearchController {
           </div>
           ${results.map(item => this._renderItemRow(item)).join('')}
         `;
-        this._resultsList.classList.add('visible');
+        this._resultsList.classList.add(cls('visible'));
       }
       if (this._resultsGrid) {
-        this._resultsGrid.classList.remove('visible');
+        this._resultsGrid.classList.remove(cls('visible'));
       }
     }
 
@@ -746,7 +750,7 @@ class GlobalSearchController {
    */
   _updateFocus(items) {
     items.forEach((item, index) => {
-      item.classList.toggle('focused', index === this.focusedIndex);
+      item.classList.toggle(cls('focused'), index === this.focusedIndex);
     });
 
     // Scroll into view
@@ -760,7 +764,7 @@ class GlobalSearchController {
    * @private
    */
   _selectFocused() {
-    const focused = this._overlay.querySelector('.focused');
+    const focused = this._overlay.querySelector(`.${cls('focused')}`);
     if (focused) {
       focused.click();
     }
@@ -775,12 +779,12 @@ class GlobalSearchController {
    * @private
    */
   _showLoading() {
-    if (this._loading) this._loading.classList.add('visible');
-    if (this._empty) this._empty.classList.remove('visible');
+    if (this._loading) this._loading.classList.add(cls('visible'));
+    if (this._empty) this._empty.classList.remove(cls('visible'));
     if (this._quickLinks) this._quickLinks.style.display = 'none';
     if (this._resultsContainer) this._resultsContainer.style.display = 'none';
-    if (this._resultsGrid) this._resultsGrid.classList.remove('visible');
-    if (this._resultsList) this._resultsList.classList.remove('visible');
+    if (this._resultsGrid) this._resultsGrid.classList.remove(cls('visible'));
+    if (this._resultsList) this._resultsList.classList.remove(cls('visible'));
   }
 
   /**
@@ -788,7 +792,7 @@ class GlobalSearchController {
    * @private
    */
   _hideLoading() {
-    if (this._loading) this._loading.classList.remove('visible');
+    if (this._loading) this._loading.classList.remove(cls('visible'));
   }
 
   /**
@@ -808,11 +812,11 @@ class GlobalSearchController {
       if (titleEl) titleEl.textContent = title;
       if (textEl) textEl.textContent = text;
 
-      this._empty.classList.add('visible');
+      this._empty.classList.add(cls('visible'));
     }
     if (this._resultsContainer) this._resultsContainer.style.display = 'none';
-    if (this._resultsGrid) this._resultsGrid.classList.remove('visible');
-    if (this._resultsList) this._resultsList.classList.remove('visible');
+    if (this._resultsGrid) this._resultsGrid.classList.remove(cls('visible'));
+    if (this._resultsList) this._resultsList.classList.remove(cls('visible'));
   }
 
   /**
@@ -820,7 +824,7 @@ class GlobalSearchController {
    * @private
    */
   _hideEmpty() {
-    if (this._empty) this._empty.classList.remove('visible');
+    if (this._empty) this._empty.classList.remove(cls('visible'));
   }
 
   /**
@@ -832,10 +836,10 @@ class GlobalSearchController {
     this._hideEmpty();
     if (this._quickLinks) this._quickLinks.style.display = 'block';
     if (this._resultsContainer) this._resultsContainer.style.display = 'none';
-    if (this._resultsGrid) this._resultsGrid.classList.remove('visible');
-    if (this._resultsList) this._resultsList.classList.remove('visible');
-    if (this._categoryTabs) this._categoryTabs.classList.remove('visible');
-    if (this._filterBar) this._filterBar.classList.remove('visible');
+    if (this._resultsGrid) this._resultsGrid.classList.remove(cls('visible'));
+    if (this._resultsList) this._resultsList.classList.remove(cls('visible'));
+    if (this._categoryTabs) this._categoryTabs.classList.remove(cls('visible'));
+    if (this._filterBar) this._filterBar.classList.remove(cls('visible'));
   }
 
   // ============================================
@@ -1003,7 +1007,7 @@ class GlobalSearchController {
     if (this.isOpen) return;
 
     this.isOpen = true;
-    this._overlay.classList.add('active');
+    this._overlay.classList.add(cls('active'));
     document.body.style.overflow = 'hidden';
 
     // Focus input
@@ -1022,7 +1026,7 @@ class GlobalSearchController {
     if (!this.isOpen) return;
 
     this.isOpen = false;
-    this._overlay.classList.remove('active');
+    this._overlay.classList.remove(cls('active'));
     document.body.style.overflow = '';
 
     // Reset state

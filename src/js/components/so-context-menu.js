@@ -172,8 +172,8 @@ class SOContextMenu extends SOComponent {
     itemEl.className = 'so-context-menu-item';
     if (item.id) itemEl.dataset.id = item.id;
     if (item.disabled) itemEl.classList.add('so-disabled');
-    if (item.danger) itemEl.classList.add('so-danger');
-    if (item.checked) itemEl.classList.add('checked');
+    if (item.danger) itemEl.classList.add(SixOrbit.cls('danger'));
+    if (item.checked) itemEl.classList.add(SixOrbit.cls('checked'));
     if (item.data) itemEl.dataset.data = JSON.stringify(item.data);
 
     // Has submenu?
@@ -302,8 +302,8 @@ class SOContextMenu extends SOComponent {
         icon: iconEl ? iconEl.textContent.trim() : null,
         shortcut: shortcutEl ? shortcutEl.textContent.trim() : null,
         disabled: el.classList.contains('so-disabled'),
-        danger: el.classList.contains('danger'),
-        checked: el.classList.contains('checked'),
+        danger: el.classList.contains(SixOrbit.cls('danger')),
+        checked: el.classList.contains(SixOrbit.cls('checked')),
         data: el.dataset.data ? JSON.parse(el.dataset.data) : {},
         element: el,
         level,
@@ -412,9 +412,9 @@ class SOContextMenu extends SOComponent {
     };
 
     // Handle checkable items
-    if (itemEl.classList.contains('checked') || item.checkable) {
-      itemEl.classList.toggle('checked');
-      item.checked = itemEl.classList.contains('checked');
+    if (itemEl.classList.contains(SixOrbit.cls('checked')) || item.checkable) {
+      itemEl.classList.toggle(SixOrbit.cls('checked'));
+      item.checked = itemEl.classList.contains(SixOrbit.cls('checked'));
     }
 
     // Emit select event
@@ -1156,11 +1156,11 @@ class SOContextMenu extends SOComponent {
     }
 
     if (updates.danger !== undefined) {
-      el.classList.toggle('so-danger', updates.danger);
+      el.classList.toggle(SixOrbit.cls('danger'), updates.danger);
     }
 
     if (updates.checked !== undefined) {
-      el.classList.toggle('checked', updates.checked);
+      el.classList.toggle(SixOrbit.cls('checked'), updates.checked);
     }
 
     if (updates.shortcut !== undefined) {

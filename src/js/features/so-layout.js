@@ -7,6 +7,10 @@
 (function(global) {
     'use strict';
 
+    // Use prefix from SixOrbit config (fallback to 'so' if not available)
+    const PREFIX = (global.SixOrbit && global.SixOrbit.PREFIX) || 'so';
+    const cls = (...parts) => `${PREFIX}-${parts.join('-')}`;
+
     // ============================================
     // SIDEBAR MENU GENERATOR CLASS
     // ============================================
@@ -456,7 +460,7 @@
         openMobileSidebar() {
             this.sidebar.classList.add('so-open');
             if (this.overlay) {
-                this.overlay.classList.add('active');
+                this.overlay.classList.add('so-active');
             }
             document.body.classList.add('sidebar-open');
             document.body.style.overflow = 'hidden';
@@ -466,7 +470,7 @@
         closeMobileSidebar() {
             this.sidebar.classList.remove('so-open');
             if (this.overlay) {
-                this.overlay.classList.remove('active');
+                this.overlay.classList.remove('so-active');
             }
             document.body.classList.remove('sidebar-open');
             document.body.style.overflow = '';
@@ -669,7 +673,7 @@
             if (appsContainer && appsBtn) {
                 appsBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    appsContainer.classList.toggle('open');
+                    appsContainer.classList.toggle('so-open');
                 });
             }
 
@@ -692,7 +696,7 @@
         }
 
         toggleDropdown(btn, dropdown) {
-            const isActive = dropdown.classList.contains('active');
+            const isActive = dropdown.classList.contains('so-active');
 
             // Emit global event to close all dropdowns across all controllers
             document.dispatchEvent(new CustomEvent('closeAllDropdowns'));
@@ -701,8 +705,8 @@
             this.closeAllDropdowns();
 
             if (!isActive) {
-                btn.classList.add('active');
-                dropdown.classList.add('active');
+                btn.classList.add('so-active');
+                dropdown.classList.add('so-active');
                 this.activeDropdown = { btn, dropdown };
             }
         }
@@ -710,18 +714,18 @@
         closeAllDropdowns() {
             const dropdowns = this.navbar.querySelectorAll('.so-navbar-user-dropdown, .so-navbar-outlet-dropdown, .so-navbar-search-results');
             dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('active');
+                dropdown.classList.remove('so-active');
             });
 
             const btns = this.navbar.querySelectorAll('.so-navbar-user-btn, .so-navbar-outlet-btn');
             btns.forEach(btn => {
-                btn.classList.remove('active');
+                btn.classList.remove('so-active');
             });
 
             // Close apps menu
             const appsContainer = this.navbar.querySelector(this.options.appsContainerSelector);
             if (appsContainer) {
-                appsContainer.classList.remove('open');
+                appsContainer.classList.remove('so-open');
             }
 
             this.activeDropdown = null;
@@ -730,8 +734,8 @@
         selectOutlet(item, btn, dropdown) {
             // Update selected state
             const items = dropdown.querySelectorAll('.so-navbar-outlet-item');
-            items.forEach(i => i.classList.remove('selected'));
-            item.classList.add('selected');
+            items.forEach(i => i.classList.remove('so-selected'));
+            item.classList.add('so-selected');
 
             // Update button text
             const outletText = btn.querySelector('.outlet-text');
@@ -860,19 +864,19 @@
         }
 
         toggleDropdown() {
-            const isOpen = this.themeContainer.classList.contains('open');
+            const isOpen = this.themeContainer.classList.contains(cls('open'));
 
             // Emit global event to close all other dropdowns across all controllers
             if (!isOpen) {
                 document.dispatchEvent(new CustomEvent('closeAllDropdowns'));
             }
 
-            this.themeContainer.classList.toggle('open');
+            this.themeContainer.classList.toggle(cls('open'));
         }
 
         closeDropdown() {
             if (this.themeContainer) {
-                this.themeContainer.classList.remove('open');
+                this.themeContainer.classList.remove(cls('open'));
             }
         }
 
@@ -931,9 +935,9 @@
             const options = this.themeContainer.querySelectorAll(this.options.themeOptionSelector);
             options.forEach(option => {
                 if (option.dataset.theme === this.currentTheme) {
-                    option.classList.add('active');
+                    option.classList.add(cls('active'));
                 } else {
-                    option.classList.remove('active');
+                    option.classList.remove(cls('active'));
                 }
             });
         }
@@ -980,9 +984,9 @@
             options.forEach(option => {
                 if (option.dataset.fontsize) {
                     if (option.dataset.fontsize === this.currentFontSize) {
-                        option.classList.add('active');
+                        option.classList.add(cls('active'));
                     } else {
-                        option.classList.remove('active');
+                        option.classList.remove(cls('active'));
                     }
                 }
             });
@@ -1181,13 +1185,13 @@
 
         toggleInfoPopup() {
             if (this.infoPopup) {
-                this.infoPopup.classList.toggle('active');
+                this.infoPopup.classList.toggle(cls('active'));
             }
         }
 
         closeInfoPopup() {
             if (this.infoPopup) {
-                this.infoPopup.classList.remove('active');
+                this.infoPopup.classList.remove(cls('active'));
             }
         }
 

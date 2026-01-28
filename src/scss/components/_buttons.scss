@@ -1399,7 +1399,7 @@
 // BUTTON LOADING STATE
 // ============================================
 
-.#{$so-prefix}btn.loading {
+.#{$so-prefix}btn.#{$so-prefix}loading {
   position: relative;
   color: transparent !important;
   pointer-events: none;

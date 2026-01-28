@@ -261,7 +261,7 @@
   }
 }
 
-.#{$so-prefix}context-menu-item.checked {
+.#{$so-prefix}context-menu-item.#{$so-prefix}checked {
   .#{$so-prefix}context-menu-item-check {
     opacity: 1;
   }

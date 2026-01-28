@@ -31,7 +31,7 @@ require_once '../includes/navbar.php';
         <div class="so-card-body">
             <p class="so-text-secondary so-mb-4">A standard modal with header, body, and footer sections.</p>
 
-            <button type="button" class="so-btn so-btn-primary" onclick="document.getElementById('basicModal').classList.add('show'); document.querySelector('.so-modal-backdrop')?.classList.add('show') || createBackdrop();">
+            <button type="button" class="so-btn so-btn-primary" onclick="document.getElementById('basicModal').classList.add('so-show'); document.querySelector('.so-modal-backdrop')?.classList.add('so-show') || createBackdrop();">
                 Launch Basic Modal
             </button>
 
@@ -695,34 +695,34 @@ function createBackdrop() {
         backdrop.onclick = closeAllModals;
         document.body.appendChild(backdrop);
     }
-    setTimeout(() => backdrop.classList.add('show'), 10);
+    setTimeout(() => backdrop.classList.add('so-show'), 10);
     document.body.style.overflow = 'hidden';
 }
 
 function closeModal(id) {
     const modal = document.getElementById(id);
     if (modal) {
-        modal.classList.remove('show');
+        modal.classList.remove('so-show');
     }
     const backdrop = document.querySelector('.so-modal-backdrop');
     if (backdrop) {
-        backdrop.classList.remove('show');
+        backdrop.classList.remove('so-show');
     }
     document.body.style.overflow = '';
 }
 
 function closeAllModals() {
-    document.querySelectorAll('.so-modal.show').forEach(modal => {
-        modal.classList.remove('show');
+    document.querySelectorAll('.so-modal.so-show').forEach(modal => {
+        modal.classList.remove('so-show');
     });
     // Also close any open drawers
-    document.querySelectorAll('.so-drawer.show').forEach(drawer => {
-        drawer.classList.remove('show');
+    document.querySelectorAll('.so-drawer.so-show').forEach(drawer => {
+        drawer.classList.remove('so-show');
         setTimeout(() => drawer.remove(), 300);
     });
     const backdrop = document.querySelector('.so-modal-backdrop');
     if (backdrop) {
-        backdrop.classList.remove('show');
+        backdrop.classList.remove('so-show');
     }
     document.body.style.overflow = '';
 }
@@ -960,13 +960,13 @@ function showDrawer(position, size = 'default') {
     createBackdrop();
 
     // Trigger animation
-    setTimeout(() => drawer.classList.add('show'), 10);
+    setTimeout(() => drawer.classList.add('so-show'), 10);
 }
 
 function closeDrawer(btn) {
     const drawer = btn.closest('.so-drawer');
     if (drawer) {
-        drawer.classList.remove('show');
+        drawer.classList.remove('so-show');
         setTimeout(() => drawer.remove(), 300);
     }
     closeAllModals();
@@ -976,7 +976,7 @@ function closeDrawer(btn) {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         // Check for static modals first - don't close them, just shake
-        const staticModals = document.querySelectorAll('.so-modal-static.show');
+        const staticModals = document.querySelectorAll('.so-modal-static.so-show');
         if (staticModals.length > 0) {
             staticModals.forEach(modal => {
                 modal.classList.add('modal-static-shake');
@@ -987,19 +987,19 @@ document.addEventListener('keydown', (e) => {
 
         // Only close the static demo modal (basicModal)
         const basicModal = document.getElementById('basicModal');
-        if (basicModal && basicModal.classList.contains('show')) {
+        if (basicModal && basicModal.classList.contains('so-show')) {
             closeModal('basicModal');
         }
         // Close any drawers
-        document.querySelectorAll('.so-drawer.show').forEach(drawer => {
-            drawer.classList.remove('show');
+        document.querySelectorAll('.so-drawer.so-show').forEach(drawer => {
+            drawer.classList.remove('so-show');
             setTimeout(() => drawer.remove(), 300);
         });
         // Close demo backdrop if no modals are open
         const demoBackdrop = document.querySelector('.so-modal-backdrop');
-        const anyDemoModalOpen = document.querySelectorAll('.so-modal.show:not([data-so-component])').length > 0;
+        const anyDemoModalOpen = document.querySelectorAll('.so-modal.so-show:not([data-so-component])').length > 0;
         if (demoBackdrop && !anyDemoModalOpen) {
-            demoBackdrop.classList.remove('show');
+            demoBackdrop.classList.remove('so-show');
         }
     }
 });

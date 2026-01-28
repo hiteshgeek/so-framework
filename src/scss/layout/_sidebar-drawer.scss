@@ -225,7 +225,7 @@
 }
 
 .#{$so-prefix}drawer-sidebar .#{$so-prefix}sidebar-item.#{$so-prefix}open > .#{$so-prefix}sidebar-submenu {
-  max-height: 500px;
+  max-height: 3000px;
   transition: max-height 0.3s ease-in;
 }
 

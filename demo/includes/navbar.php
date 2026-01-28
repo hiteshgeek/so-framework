@@ -309,7 +309,7 @@
                     <span class="material-icons">expand_more</span>
                 </button>
                 <div class="so-search-filter-menu">
-                    <div class="so-search-filter-option selected" data-value="all">All Stock</div>
+                    <div class="so-search-filter-option so-selected" data-value="all">All Stock</div>
                     <div class="so-search-filter-option" data-value="in-stock">In Stock</div>
                     <div class="so-search-filter-option" data-value="low-stock">Low Stock</div>
                     <div class="so-search-filter-option" data-value="out-of-stock">Out of Stock</div>
@@ -324,7 +324,7 @@
                     <span class="material-icons">expand_more</span>
                 </button>
                 <div class="so-search-filter-menu">
-                    <div class="so-search-filter-option selected" data-value="all">All Status</div>
+                    <div class="so-search-filter-option so-selected" data-value="all">All Status</div>
                     <div class="so-search-filter-option" data-value="active">Active</div>
                     <div class="so-search-filter-option" data-value="liquidation">Liquidation</div>
                 </div>
@@ -332,7 +332,7 @@
 
             <!-- View Toggle -->
             <div class="so-search-view-toggle">
-                <button class="so-search-view-btn active" data-view="grid" title="Grid View">
+                <button class="so-search-view-btn so-active" data-view="grid" title="Grid View">
                     <span class="material-icons">grid_view</span>
                 </button>
                 <button class="so-search-view-btn" data-view="list" title="List View">
@@ -343,7 +343,7 @@
 
         <!-- Category Tabs (visible for normal search - not ISV) -->
         <div class="so-search-category-tabs">
-            <button class="so-search-category-tab active" data-category="all">
+            <button class="so-search-category-tab so-active" data-category="all">
                 All<span class="so-search-category-count">0</span>
             </button>
             <button class="so-search-category-tab" data-category="menus">

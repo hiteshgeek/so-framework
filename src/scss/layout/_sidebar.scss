@@ -21,7 +21,7 @@
   z-index: z-index('sidebar');
   display: flex;
   flex-direction: column;
-  transition: width $so-transition-material;
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: $so-font-family;
   -webkit-font-smoothing: antialiased;
 
@@ -549,7 +549,7 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   transition: all $so-transition-normal;
   z-index: z-index('dropdown') + 10;
 
-  &.active {
+  &.#{$so-prefix}active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -628,16 +628,11 @@ html.sidebar-pinned .#{$so-prefix}main-content {
 
 .#{$so-prefix}sidebar.#{$so-prefix}collapsed {
   width: css-var('sidebar-collapsed-width');
-  min-width: css-var('sidebar-collapsed-width');
-  max-width: css-var('sidebar-collapsed-width');
-  transition: width 0.2s ease-out, min-width 0.2s ease-out, max-width 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 // On hover, expand the mini sidebar
 .#{$so-prefix}sidebar.#{$so-prefix}collapsed:hover {
   width: css-var('sidebar-width');
-  min-width: css-var('sidebar-width');
-  max-width: css-var('sidebar-width');
   box-shadow: 4px 0 16px rgba(0, 0, 0, 0.08);
 }
 
@@ -663,7 +658,8 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  transition: none;
+  // Delay hiding until sidebar width transition completes
+  transition: opacity 0.1s ease 0.15s, visibility 0.1s ease 0.15s, width 0s ease 0.25s, flex 0s ease 0.25s;
 }
 
 .#{$so-prefix}sidebar.#{$so-prefix}collapsed:hover .#{$so-prefix}sidebar-header {
@@ -679,7 +675,8 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   width: auto;
   flex: 1;
   overflow: visible;
-  transition: opacity 0.2s ease 0.15s, visibility 0.2s ease 0.15s;
+  // Show immediately on hover
+  transition: opacity 0.15s ease, visibility 0.15s ease, width 0s ease, flex 0s ease;
 }
 
 .#{$so-prefix}sidebar.#{$so-prefix}collapsed:hover .#{$so-prefix}sidebar-toggle {
@@ -690,7 +687,8 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   height: 20px;
   flex: 0 0 20px;
   overflow: visible;
-  transition: opacity 0.2s ease 0.15s, visibility 0.2s ease 0.15s;
+  // Show immediately on hover
+  transition: opacity 0.15s ease, visibility 0.15s ease, width 0s ease, flex 0s ease;
 }
 
 // Menu items in collapsed state
@@ -725,11 +723,8 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  transform: translateX(-12px);
-  transition:
-    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  // Delay hiding until sidebar width transition completes
+  transition: opacity 0.1s ease 0.15s, visibility 0.1s ease 0.15s, width 0s ease 0.25s, flex 0s ease 0.25s;
 }
 
 // Section becomes a separator line in collapsed view
@@ -782,11 +777,8 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   visibility: visible;
   width: auto;
   overflow: visible;
-  transform: translateX(0);
-  transition:
-    opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.15s,
-    visibility 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.15s,
-    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+  // Show immediately on hover
+  transition: opacity 0.15s ease, visibility 0.15s ease, width 0s ease, flex 0s ease;
 }
 
 .#{$so-prefix}sidebar.#{$so-prefix}collapsed:hover .#{$so-prefix}sidebar-text {
@@ -981,7 +973,7 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   margin-left: css-var('sidebar-width');
   padding-top: css-var('navbar-height');
   min-height: 100vh;
-  transition: margin-left $so-transition-material;
+  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 // When sidebar is collapsed
@@ -1073,6 +1065,16 @@ body.sidebar-collapsed .#{$so-prefix}main-content {
       display: block !important;
     }
 
+    // Mobile submenu - allow full expansion for large menus
+    .#{$so-prefix}sidebar-item.#{$so-prefix}open > .#{$so-prefix}sidebar-submenu {
+      max-height: 3000px !important;
+    }
+
+    &.#{$so-prefix}collapsed .#{$so-prefix}sidebar-item.#{$so-prefix}open > .#{$so-prefix}sidebar-submenu {
+      max-height: 3000px !important;
+      overflow: visible !important;
+    }
+
     &.#{$so-prefix}collapsed .#{$so-prefix}sidebar-footer-item {
       justify-content: flex-start !important;
       padding: spacing('2') + 2px spacing('3') !important;
@@ -1103,7 +1105,7 @@ body.sidebar-collapsed .#{$so-prefix}main-content {
     z-index: z-index('modal-backdrop');
     display: none;
 
-    &.active {
+    &.#{$so-prefix}active {
       display: block;
     }
   }

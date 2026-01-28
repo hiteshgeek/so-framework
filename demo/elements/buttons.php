@@ -427,18 +427,18 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Loading Buttons</h3>
                     </div>
                     <div class="so-card-body">
-                        <p class="so-text-muted so-mb-3">Add the <code>.loading</code> class to show a spinner and disable interaction. Works with all button variants.</p>
+                        <p class="so-text-muted so-mb-3">Add the <code>.so-loading</code> class to show a spinner and disable interaction. Works with all button variants.</p>
 
                         <h5 class="so-mb-3">Solid Variants</h5>
                         <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-primary loading">Primary</button>
-                            <button class="so-btn so-btn-secondary loading">Secondary</button>
-                            <button class="so-btn so-btn-success loading">Success</button>
-                            <button class="so-btn so-btn-danger loading">Danger</button>
-                            <button class="so-btn so-btn-warning loading">Warning</button>
-                            <button class="so-btn so-btn-info loading">Info</button>
-                            <button class="so-btn so-btn-light loading">Light</button>
-                            <button class="so-btn so-btn-dark loading">Dark</button>
+                            <button class="so-btn so-btn-primary so-loading">Primary</button>
+                            <button class="so-btn so-btn-secondary so-loading">Secondary</button>
+                            <button class="so-btn so-btn-success so-loading">Success</button>
+                            <button class="so-btn so-btn-danger so-loading">Danger</button>
+                            <button class="so-btn so-btn-warning so-loading">Warning</button>
+                            <button class="so-btn so-btn-info so-loading">Info</button>
+                            <button class="so-btn so-btn-light so-loading">Light</button>
+                            <button class="so-btn so-btn-dark so-loading">Dark</button>
                         </div>
 
                         <h5 class="so-mb-3">Outline Variants</h5>
@@ -467,32 +467,32 @@ require_once '../includes/navbar.php';
 
                         <h5 class="so-mb-3">Ghost & Link Variants</h5>
                         <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-ghost so-btn-primary loading">Ghost Primary</button>
-                            <button class="so-btn so-btn-ghost so-btn-success loading">Ghost Success</button>
-                            <button class="so-btn so-btn-ghost so-btn-danger loading">Ghost Danger</button>
-                            <button class="so-btn so-btn-link loading">Link Button</button>
+                            <button class="so-btn so-btn-ghost so-btn-primary so-loading">Ghost Primary</button>
+                            <button class="so-btn so-btn-ghost so-btn-success so-loading">Ghost Success</button>
+                            <button class="so-btn so-btn-ghost so-btn-danger so-loading">Ghost Danger</button>
+                            <button class="so-btn so-btn-link so-loading">Link Button</button>
                         </div>
 
                         <h5 class="so-mb-3">Size Variants</h5>
                         <div class="so-flex so-gap-2 so-items-center so-flex-wrap so-mb-4">
                             <button class="so-btn so-btn-primary so-btn-xs loading">Extra Small</button>
                             <button class="so-btn so-btn-primary so-btn-sm loading">Small</button>
-                            <button class="so-btn so-btn-primary loading">Default</button>
+                            <button class="so-btn so-btn-primary so-loading">Default</button>
                             <button class="so-btn so-btn-primary so-btn-lg loading">Large</button>
                         </div>
 
                         <h5 class="so-mb-3">Icon Buttons</h5>
                         <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-icon so-btn-primary loading">
+                            <button class="so-btn so-btn-icon so-btn-primary so-loading">
                                 <span class="material-icons">add</span>
                             </button>
-                            <button class="so-btn so-btn-icon so-btn-success loading">
+                            <button class="so-btn so-btn-icon so-btn-success so-loading">
                                 <span class="material-icons">check</span>
                             </button>
                             <button class="so-btn so-btn-icon so-btn-outline-danger loading">
                                 <span class="material-icons">delete</span>
                             </button>
-                            <button class="so-btn so-btn-icon so-btn-ghost loading">
+                            <button class="so-btn so-btn-icon so-btn-ghost so-loading">
                                 <span class="material-icons">more_vert</span>
                             </button>
                         </div>
@@ -500,19 +500,19 @@ require_once '../includes/navbar.php';
                         <h5 class="so-mb-3">Interactive Demo</h5>
                         <p class="so-text-muted so-mb-3">Click buttons to toggle loading state</p>
                         <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-primary" onclick="this.classList.toggle('loading')">
+                            <button class="so-btn so-btn-primary" onclick="this.classList.toggle('so-loading')">
                                 <span class="material-icons">save</span>
                                 Save Changes
                             </button>
-                            <button class="so-btn so-btn-success" onclick="this.classList.toggle('loading')">
+                            <button class="so-btn so-btn-success" onclick="this.classList.toggle('so-loading')">
                                 <span class="material-icons">send</span>
                                 Submit
                             </button>
-                            <button class="so-btn so-btn-outline-primary" onclick="this.classList.toggle('loading')">
+                            <button class="so-btn so-btn-outline-primary" onclick="this.classList.toggle('so-loading')">
                                 <span class="material-icons">refresh</span>
                                 Refresh
                             </button>
-                            <button class="so-btn so-btn-light-danger" onclick="this.classList.toggle('loading')">
+                            <button class="so-btn so-btn-light-danger" onclick="this.classList.toggle('so-loading')">
                                 <span class="material-icons">delete</span>
                                 Delete
                             </button>
@@ -525,18 +525,18 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons">content_copy</span>
                                 </button>
                             </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Add .loading class to show spinner --&gt;
-&lt;button class="so-btn so-btn-primary loading"&gt;Loading...&lt;/button&gt;
+                            <pre class="so-code-content"><code class="language-html">&lt;!-- Add .so-loading class to show spinner --&gt;
+&lt;button class="so-btn so-btn-primary so-loading"&gt;Loading...&lt;/button&gt;
 
 &lt;!-- Works with all variants (8 contextual colors) --&gt;
-&lt;button class="so-btn so-btn-primary loading"&gt;Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-secondary loading"&gt;Secondary&lt;/button&gt;
-&lt;button class="so-btn so-btn-success loading"&gt;Success&lt;/button&gt;
-&lt;button class="so-btn so-btn-danger loading"&gt;Danger&lt;/button&gt;
-&lt;button class="so-btn so-btn-warning loading"&gt;Warning&lt;/button&gt;
-&lt;button class="so-btn so-btn-info loading"&gt;Info&lt;/button&gt;
-&lt;button class="so-btn so-btn-light loading"&gt;Light&lt;/button&gt;
-&lt;button class="so-btn so-btn-dark loading"&gt;Dark&lt;/button&gt;
+&lt;button class="so-btn so-btn-primary so-loading"&gt;Primary&lt;/button&gt;
+&lt;button class="so-btn so-btn-secondary so-loading"&gt;Secondary&lt;/button&gt;
+&lt;button class="so-btn so-btn-success so-loading"&gt;Success&lt;/button&gt;
+&lt;button class="so-btn so-btn-danger so-loading"&gt;Danger&lt;/button&gt;
+&lt;button class="so-btn so-btn-warning so-loading"&gt;Warning&lt;/button&gt;
+&lt;button class="so-btn so-btn-info so-loading"&gt;Info&lt;/button&gt;
+&lt;button class="so-btn so-btn-light so-loading"&gt;Light&lt;/button&gt;
+&lt;button class="so-btn so-btn-dark so-loading"&gt;Dark&lt;/button&gt;
 
 &lt;!-- Outline variants --&gt;
 &lt;button class="so-btn so-btn-outline-primary loading"&gt;Outline&lt;/button&gt;
@@ -545,13 +545,13 @@ require_once '../includes/navbar.php';
 &lt;button class="so-btn so-btn-light-primary loading"&gt;Light&lt;/button&gt;
 
 &lt;!-- Ghost variants --&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-primary loading"&gt;Ghost&lt;/button&gt;
+&lt;button class="so-btn so-btn-ghost so-btn-primary so-loading"&gt;Ghost&lt;/button&gt;
 
 &lt;!-- Link button --&gt;
-&lt;button class="so-btn so-btn-link loading"&gt;Link&lt;/button&gt;
+&lt;button class="so-btn so-btn-link so-loading"&gt;Link&lt;/button&gt;
 
 &lt;!-- Icon button --&gt;
-&lt;button class="so-btn so-btn-icon so-btn-primary loading"&gt;
+&lt;button class="so-btn so-btn-icon so-btn-primary so-loading"&gt;
     &lt;span class="material-icons"&gt;add&lt;/span&gt;
 &lt;/button&gt;
 
@@ -560,13 +560,13 @@ require_once '../includes/navbar.php';
 const btn = document.querySelector('.so-btn');
 
 // Start loading
-btn.classList.add('loading');
+btn.classList.add('so-loading');
 
 // Stop loading
-btn.classList.remove('loading');
+btn.classList.remove('so-loading');
 
 // Toggle loading
-btn.classList.toggle('loading');
+btn.classList.toggle('so-loading');
 &lt;/script&gt;</code></pre>
                         </div>
                     </div>

@@ -375,10 +375,10 @@ class SOForms {
     if (!btn) return;
 
     if (isLoading) {
-      btn.classList.add('loading');
+      btn.classList.add('so-loading');
       btn.disabled = true;
     } else {
-      btn.classList.remove('loading');
+      btn.classList.remove('so-loading');
       btn.disabled = false;
     }
   }

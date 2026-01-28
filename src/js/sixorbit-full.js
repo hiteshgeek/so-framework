@@ -31,6 +31,21 @@ import SOPagination from './components/so-pagination.js';
 import SOForms from './features/so-forms.js';
 import { SOFeatureCarousel, SOAuth } from './features/so-auth.js';
 
+// Expose components to global window for inline script usage
+window.SOModal = SOModal;
+window.SODrawer = SODrawer;
+window.SOToast = SOToast;
+window.SOAlert = SOAlert;
+window.SODropdown = SODropdown;
+window.SOTabs = SOTabs;
+window.SOTooltip = SOTooltip;
+window.SOSelect = SOSelect;
+window.SOTable = SOTable;
+window.SOPagination = SOPagination;
+window.SOTheme = SOTheme;
+window.SONavbar = SONavbar;
+window.SOContextMenu = SOContextMenu;
+
 // Auto-initialize all components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   // Note: Sidebar initialization moved to src/pages/global/global.js
