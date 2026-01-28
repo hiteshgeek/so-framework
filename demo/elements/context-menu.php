@@ -866,7 +866,6 @@ function demoEnableItem() {
 }
 </script>
 
-    </div>
 </main>
 
 <?php

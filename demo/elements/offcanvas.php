@@ -35,34 +35,26 @@ require_once '../includes/navbar.php';
                     Open Right Drawer
                 </button>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-drawer" id="myDrawer"&gt;
-    &lt;div class="so-drawer-header"&gt;
-        &lt;h5 class="so-drawer-title"&gt;Drawer Title&lt;/h5&gt;
-        &lt;button class="so-drawer-close" data-dismiss="drawer"&gt;
-            &lt;span class="material-icons"&gt;close&lt;/span&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="so-drawer-body"&gt;
+<?= so_code_block('<div class="so-drawer" id="myDrawer">
+    <div class="so-drawer-header">
+        <h5 class="so-drawer-title">Drawer Title</h5>
+        <button class="so-drawer-close" data-dismiss="drawer">
+            <span class="material-icons">close</span>
+        </button>
+    </div>
+    <div class="so-drawer-body">
         Drawer content goes here...
-    &lt;/div&gt;
-    &lt;div class="so-drawer-footer"&gt;
-        &lt;button class="so-btn so-btn-outline" data-dismiss="drawer"&gt;Cancel&lt;/button&gt;
-        &lt;button class="so-btn so-btn-primary"&gt;Save&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+    <div class="so-drawer-footer">
+        <button class="so-btn so-btn-outline" data-dismiss="drawer">Cancel</button>
+        <button class="so-btn so-btn-primary">Save</button>
+    </div>
+</div>
 
-&lt;script&gt;
-const drawer = SODrawer.getInstance('#myDrawer');
+<script>
+const drawer = SODrawer.getInstance(\'#myDrawer\');
 drawer.show();
-&lt;/script&gt;</code></pre>
-                </div>
+</script>', 'html') ?>
             </div>
         </div>
 
@@ -78,17 +70,9 @@ drawer.show();
                     Open Left Drawer
                 </button>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-drawer so-drawer-left" id="leftDrawer"&gt;
-    &lt;!-- Drawer content --&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-drawer so-drawer-left" id="leftDrawer">
+    <!-- Drawer content -->
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -107,25 +91,17 @@ drawer.show();
                     <button type="button" class="so-btn so-btn-outline" onclick="showSizeDrawer('xl')">Extra Large (720px)</button>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Small Drawer (320px) --&gt;
-&lt;div class="so-drawer so-drawer-sm"&gt;...&lt;/div&gt;
+<?= so_code_block('<!-- Small Drawer (320px) -->
+<div class="so-drawer so-drawer-sm">...</div>
 
-&lt;!-- Default Drawer (400px) --&gt;
-&lt;div class="so-drawer"&gt;...&lt;/div&gt;
+<!-- Default Drawer (400px) -->
+<div class="so-drawer">...</div>
 
-&lt;!-- Large Drawer (560px) --&gt;
-&lt;div class="so-drawer so-drawer-lg"&gt;...&lt;/div&gt;
+<!-- Large Drawer (560px) -->
+<div class="so-drawer so-drawer-lg">...</div>
 
-&lt;!-- Extra Large Drawer (720px) --&gt;
-&lt;div class="so-drawer so-drawer-xl"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+<!-- Extra Large Drawer (720px) -->
+<div class="so-drawer so-drawer-xl">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -141,31 +117,23 @@ drawer.show();
                     Open Static Drawer
                 </button>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Via class --&gt;
-&lt;div class="so-drawer so-drawer-static" id="staticDrawer"&gt;
-    &lt;!-- No close button shown --&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Via class -->
+<div class="so-drawer so-drawer-static" id="staticDrawer">
+    <!-- No close button shown -->
+</div>
 
-&lt;!-- Via data attribute --&gt;
-&lt;div class="so-drawer" data-so-static&gt;...&lt;/div&gt;
+<!-- Via data attribute -->
+<div class="so-drawer" data-so-static>...</div>
 
-&lt;!-- Via JavaScript --&gt;
-&lt;script&gt;
+<!-- Via JavaScript -->
+<script>
 SODrawer.create({
-    title: 'Confirm Action',
-    content: 'Please confirm to continue.',
+    title: \'Confirm Action\',
+    content: \'Please confirm to continue.\',
     static: true,
-    footer: '&lt;button class="so-btn so-btn-primary" data-dismiss="drawer"&gt;Confirm&lt;/button&gt;'
+    footer: \'<button class="so-btn so-btn-primary" data-dismiss="drawer">Confirm</button>\'
 }).show();
-&lt;/script&gt;</code></pre>
-                </div>
+</script>', 'html') ?>
             </div>
         </div>
 
@@ -181,22 +149,14 @@ SODrawer.create({
                     Open Scrollable Drawer
                 </button>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-drawer"&gt;
-    &lt;div class="so-drawer-header"&gt;...&lt;/div&gt;
-    &lt;div class="so-drawer-body"&gt;
-        &lt;!-- Long scrollable content --&gt;
-        &lt;!-- The .so-drawer-body has overflow-y: auto --&gt;
-    &lt;/div&gt;
-    &lt;div class="so-drawer-footer"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-drawer">
+    <div class="so-drawer-header">...</div>
+    <div class="so-drawer-body">
+        <!-- Long scrollable content -->
+        <!-- The .so-drawer-body has overflow-y: auto -->
+    </div>
+    <div class="so-drawer-footer">...</div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -212,33 +172,25 @@ SODrawer.create({
                     Create Drawer Dynamically
                 </button>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">const drawer = SODrawer.create({
-    title: 'Dynamic Drawer',
-    content: '&lt;p&gt;This drawer was created dynamically!&lt;/p&gt;',
-    position: 'right',  // 'left' or 'right'
-    size: 'default',    // 'sm', 'default', 'lg', 'xl'
+<?= so_code_block('const drawer = SODrawer.create({
+    title: \'Dynamic Drawer\',
+    content: \'<p>This drawer was created dynamically!</p>\',
+    position: \'right\',  // \'left\' or \'right\'
+    size: \'default\',    // \'sm\', \'default\', \'lg\', \'xl\'
     closable: true,
     static: false,
     footer: `
-        &lt;button class="so-btn so-btn-outline" data-dismiss="drawer"&gt;Cancel&lt;/button&gt;
-        &lt;button class="so-btn so-btn-primary"&gt;Save&lt;/button&gt;
+        <button class="so-btn so-btn-outline" data-dismiss="drawer">Cancel</button>
+        <button class="so-btn so-btn-primary">Save</button>
     `
 });
 
 drawer.show();
 
 // Listen to events
-drawer.element.addEventListener('drawer:hidden', () => {
-    console.log('Drawer was closed');
-});</code></pre>
-                </div>
+drawer.element.addEventListener(\'drawer:hidden\', () => {
+    console.log(\'Drawer was closed\');
+});', 'javascript') ?>
             </div>
         </div>
 

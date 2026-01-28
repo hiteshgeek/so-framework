@@ -30,7 +30,7 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Button Variants</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <div class="so-flex so-gap-2 so-flex-wrap">
+                                <div class="so-flex so-gap-2 so-flex-wrap">
                                     <button class="so-btn so-btn-primary">Primary</button>
                                     <button class="so-btn so-btn-secondary">Secondary</button>
                                     <button class="so-btn so-btn-success">Success</button>
@@ -39,22 +39,15 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-info">Info</button>
                                     <button class="so-btn so-btn-light">Light</button>
                                     <button class="so-btn so-btn-dark">Dark</button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="so-btn so-btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="so-btn so-btn-danger"&gt;Danger&lt;/button&gt;
-&lt;button class="so-btn so-btn-warning"&gt;Warning&lt;/button&gt;
-&lt;button class="so-btn so-btn-info"&gt;Info&lt;/button&gt;
-&lt;button class="so-btn so-btn-light"&gt;Light&lt;/button&gt;
-&lt;button class="so-btn so-btn-dark"&gt;Dark&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button class="so-btn so-btn-primary">Primary</button>
+<button class="so-btn so-btn-secondary">Secondary</button>
+<button class="so-btn so-btn-success">Success</button>
+<button class="so-btn so-btn-danger">Danger</button>
+<button class="so-btn so-btn-warning">Warning</button>
+<button class="so-btn so-btn-info">Info</button>
+<button class="so-btn so-btn-light">Light</button>
+<button class="so-btn so-btn-dark">Dark</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -64,7 +57,7 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Outline Buttons</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <div class="so-flex so-gap-2 so-flex-wrap">
+                                <div class="so-flex so-gap-2 so-flex-wrap">
                                     <button class="so-btn so-btn-outline-primary">Primary</button>
                                     <button class="so-btn so-btn-outline-secondary">Secondary</button>
                                     <button class="so-btn so-btn-outline-success">Success</button>
@@ -73,22 +66,15 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-outline-info">Info</button>
                                     <button class="so-btn so-btn-outline-light">Light</button>
                                     <button class="so-btn so-btn-outline-dark">Dark</button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-outline-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-success"&gt;Success&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-danger"&gt;Danger&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-warning"&gt;Warning&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-info"&gt;Info&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-light"&gt;Light&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-dark"&gt;Dark&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button class="so-btn so-btn-outline-primary">Primary</button>
+<button class="so-btn so-btn-outline-secondary">Secondary</button>
+<button class="so-btn so-btn-outline-success">Success</button>
+<button class="so-btn so-btn-outline-danger">Danger</button>
+<button class="so-btn so-btn-outline-warning">Warning</button>
+<button class="so-btn so-btn-outline-info">Info</button>
+<button class="so-btn so-btn-outline-light">Light</button>
+<button class="so-btn so-btn-outline-dark">Dark</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -98,7 +84,7 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Light Buttons (Soft Background)</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <div class="so-flex so-gap-2 so-flex-wrap">
+                                <div class="so-flex so-gap-2 so-flex-wrap">
                                     <button class="so-btn so-btn-light-primary">Primary</button>
                                     <button class="so-btn so-btn-light-secondary">Secondary</button>
                                     <button class="so-btn so-btn-light-success">Success</button>
@@ -107,22 +93,15 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-light-info">Info</button>
                                     <button class="so-btn so-btn-light-light">Light</button>
                                     <button class="so-btn so-btn-light-dark">Dark</button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-light-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-success"&gt;Success&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-danger"&gt;Danger&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-warning"&gt;Warning&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-info"&gt;Info&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-light"&gt;Light&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-dark"&gt;Dark&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button class="so-btn so-btn-light-primary">Primary</button>
+<button class="so-btn so-btn-light-secondary">Secondary</button>
+<button class="so-btn so-btn-light-success">Success</button>
+<button class="so-btn so-btn-light-danger">Danger</button>
+<button class="so-btn so-btn-light-warning">Warning</button>
+<button class="so-btn so-btn-light-info">Info</button>
+<button class="so-btn so-btn-light-light">Light</button>
+<button class="so-btn so-btn-light-dark">Dark</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -132,7 +111,7 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Ghost Buttons</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <div class="so-flex so-gap-2 so-flex-wrap">
+                                <div class="so-flex so-gap-2 so-flex-wrap">
                                     <button class="so-btn so-btn-ghost so-btn-primary">Primary</button>
                                     <button class="so-btn so-btn-ghost so-btn-secondary">Secondary</button>
                                     <button class="so-btn so-btn-ghost so-btn-success">Success</button>
@@ -141,22 +120,15 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-ghost so-btn-info">Info</button>
                                     <button class="so-btn so-btn-ghost so-btn-light">Light</button>
                                     <button class="so-btn so-btn-ghost so-btn-dark">Dark</button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-ghost so-btn-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-danger"&gt;Danger&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-warning"&gt;Warning&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-info"&gt;Info&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-light"&gt;Light&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-dark"&gt;Dark&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button class="so-btn so-btn-ghost so-btn-primary">Primary</button>
+<button class="so-btn so-btn-ghost so-btn-secondary">Secondary</button>
+<button class="so-btn so-btn-ghost so-btn-success">Success</button>
+<button class="so-btn so-btn-ghost so-btn-danger">Danger</button>
+<button class="so-btn so-btn-ghost so-btn-warning">Warning</button>
+<button class="so-btn so-btn-ghost so-btn-info">Info</button>
+<button class="so-btn so-btn-ghost so-btn-light">Light</button>
+<button class="so-btn so-btn-ghost so-btn-dark">Dark</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -167,76 +139,68 @@ require_once '../includes/navbar.php';
                     </div>
                     <div class="so-card-body">
                         <p class="so-text-muted so-mb-3">Link buttons look like text links but behave like buttons. Use text color helper classes for contextual colors.</p>
-                        <div class="so-flex so-gap-4 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-link">Default Link</button>
-                            <button class="so-btn so-btn-link so-text-primary">Primary</button>
-                            <button class="so-btn so-btn-link so-text-secondary">Secondary</button>
-                            <button class="so-btn so-btn-link so-text-success">Success</button>
-                            <button class="so-btn so-btn-link so-text-danger">Danger</button>
-                            <button class="so-btn so-btn-link so-text-warning">Warning</button>
-                            <button class="so-btn so-btn-link so-text-info">Info</button>
-                            <button class="so-btn so-btn-link so-text-dark">Dark</button>
-                        </div>
+                                <div class="so-flex so-gap-4 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-link">Default Link</button>
+                                    <button class="so-btn so-btn-link so-text-primary">Primary</button>
+                                    <button class="so-btn so-btn-link so-text-secondary">Secondary</button>
+                                    <button class="so-btn so-btn-link so-text-success">Success</button>
+                                    <button class="so-btn so-btn-link so-text-danger">Danger</button>
+                                    <button class="so-btn so-btn-link so-text-warning">Warning</button>
+                                    <button class="so-btn so-btn-link so-text-info">Info</button>
+                                    <button class="so-btn so-btn-link so-text-dark">Dark</button>
+                                </div>
 
-                        <h5 class="so-mb-3">Link Buttons with Icons</h5>
-                        <div class="so-flex so-gap-4 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-link so-text-primary">
-                                <span class="material-icons">edit</span>
-                                Edit
-                            </button>
-                            <button class="so-btn so-btn-link so-text-danger">
-                                <span class="material-icons">delete</span>
-                                Delete
-                            </button>
-                            <button class="so-btn so-btn-link so-text-success">
-                                <span class="material-icons">add</span>
-                                Add New
-                            </button>
-                            <button class="so-btn so-btn-link so-text-info">
-                                <span class="material-icons">visibility</span>
-                                View
-                            </button>
-                        </div>
+                                <h5 class="so-mb-3">Link Buttons with Icons</h5>
+                                <div class="so-flex so-gap-4 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-link so-text-primary">
+                                        <span class="material-icons">edit</span>
+                                        Edit
+                                    </button>
+                                    <button class="so-btn so-btn-link so-text-danger">
+                                        <span class="material-icons">delete</span>
+                                        Delete
+                                    </button>
+                                    <button class="so-btn so-btn-link so-text-success">
+                                        <span class="material-icons">add</span>
+                                        Add New
+                                    </button>
+                                    <button class="so-btn so-btn-link so-text-info">
+                                        <span class="material-icons">visibility</span>
+                                        View
+                                    </button>
+                                </div>
 
-                        <h5 class="so-mb-3">Link Button Sizes</h5>
-                        <div class="so-flex so-gap-4 so-items-center so-flex-wrap">
-                            <button class="so-btn so-btn-link so-btn-xs so-text-primary">Extra Small</button>
-                            <button class="so-btn so-btn-link so-btn-sm so-text-primary">Small</button>
-                            <button class="so-btn so-btn-link so-text-primary">Default</button>
-                            <button class="so-btn so-btn-link so-btn-lg so-text-primary">Large</button>
-                        </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Default Link Button --&gt;
-&lt;button class="so-btn so-btn-link"&gt;Default Link&lt;/button&gt;
+                                <h5 class="so-mb-3">Link Button Sizes</h5>
+                                <div class="so-flex so-gap-4 so-items-center so-flex-wrap">
+                                    <button class="so-btn so-btn-link so-btn-xs so-text-primary">Extra Small</button>
+                                    <button class="so-btn so-btn-link so-btn-sm so-text-primary">Small</button>
+                                    <button class="so-btn so-btn-link so-text-primary">Default</button>
+                                    <button class="so-btn so-btn-link so-btn-lg so-text-primary">Large</button>
+                                </div>
+                        <?= so_code_block('<!-- Default Link Button -->
+<button class="so-btn so-btn-link">Default Link</button>
 
-&lt;!-- Contextual Colors (use text helper classes) --&gt;
-&lt;button class="so-btn so-btn-link so-text-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-text-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-text-success"&gt;Success&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-text-danger"&gt;Danger&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-text-warning"&gt;Warning&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-text-info"&gt;Info&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-text-light"&gt;Light&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-text-dark"&gt;Dark&lt;/button&gt;
+<!-- Contextual Colors (use text helper classes) -->
+<button class="so-btn so-btn-link so-text-primary">Primary</button>
+<button class="so-btn so-btn-link so-text-secondary">Secondary</button>
+<button class="so-btn so-btn-link so-text-success">Success</button>
+<button class="so-btn so-btn-link so-text-danger">Danger</button>
+<button class="so-btn so-btn-link so-text-warning">Warning</button>
+<button class="so-btn so-btn-link so-text-info">Info</button>
+<button class="so-btn so-btn-link so-text-light">Light</button>
+<button class="so-btn so-btn-link so-text-dark">Dark</button>
 
-&lt;!-- With Icon --&gt;
-&lt;button class="so-btn so-btn-link so-text-danger"&gt;
-    &lt;span class="material-icons"&gt;delete&lt;/span&gt;
+<!-- With Icon -->
+<button class="so-btn so-btn-link so-text-danger">
+    <span class="material-icons">delete</span>
     Delete
-&lt;/button&gt;
+</button>
 
-&lt;!-- Sizes --&gt;
-&lt;button class="so-btn so-btn-link so-btn-xs"&gt;Extra Small&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-btn-sm"&gt;Small&lt;/button&gt;
-&lt;button class="so-btn so-btn-link"&gt;Default&lt;/button&gt;
-&lt;button class="so-btn so-btn-link so-btn-lg"&gt;Large&lt;/button&gt;</code></pre>
-                        </div>
+<!-- Sizes -->
+<button class="so-btn so-btn-link so-btn-xs">Extra Small</button>
+<button class="so-btn so-btn-link so-btn-sm">Small</button>
+<button class="so-btn so-btn-link">Default</button>
+<button class="so-btn so-btn-link so-btn-lg">Large</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -246,23 +210,16 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Button Sizes</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <div class="so-flex so-gap-2 so-items-center so-flex-wrap">
+                                <div class="so-flex so-gap-2 so-items-center so-flex-wrap">
                                     <button class="so-btn so-btn-primary so-btn-xs">Extra Small</button>
                                     <button class="so-btn so-btn-primary so-btn-sm">Small</button>
                                     <button class="so-btn so-btn-primary">Default</button>
                                     <button class="so-btn so-btn-primary so-btn-lg">Large</button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-primary so-btn-xs"&gt;Extra Small&lt;/button&gt;
-&lt;button class="so-btn so-btn-primary so-btn-sm"&gt;Small&lt;/button&gt;
-&lt;button class="so-btn so-btn-primary"&gt;Default&lt;/button&gt;
-&lt;button class="so-btn so-btn-primary so-btn-lg"&gt;Large&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button class="so-btn so-btn-primary so-btn-xs">Extra Small</button>
+<button class="so-btn so-btn-primary so-btn-sm">Small</button>
+<button class="so-btn so-btn-primary">Default</button>
+<button class="so-btn so-btn-primary so-btn-lg">Large</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -272,7 +229,7 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Buttons with Icons</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <div class="so-flex so-gap-2 so-flex-wrap">
+                                <div class="so-flex so-gap-2 so-flex-wrap">
                                     <button class="so-btn so-btn-primary">
                                         <span class="material-icons">add</span>
                                         Add New
@@ -289,18 +246,11 @@ require_once '../includes/navbar.php';
                                         <span class="material-icons">download</span>
                                         Export
                                     </button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-primary"&gt;
-    &lt;span class="material-icons"&gt;add&lt;/span&gt;
+                        <?= so_code_block('<button class="so-btn so-btn-primary">
+    <span class="material-icons">add</span>
     Add New
-&lt;/button&gt;</code></pre>
-                            </div>
+</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -310,7 +260,7 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Icon-Only Buttons</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <div class="so-flex so-gap-2 so-flex-wrap so-items-center">
+                                <div class="so-flex so-gap-2 so-flex-wrap so-items-center">
                                     <button class="so-btn so-btn-icon so-btn-primary">
                                         <span class="material-icons">add</span>
                                     </button>
@@ -326,17 +276,10 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-icon so-btn-ghost">
                                         <span class="material-icons">more_vert</span>
                                     </button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-icon so-btn-primary"&gt;
-    &lt;span class="material-icons"&gt;add&lt;/span&gt;
-&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button class="so-btn so-btn-icon so-btn-primary">
+    <span class="material-icons">add</span>
+</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -346,8 +289,7 @@ require_once '../includes/navbar.php';
                         <h3 class="so-card-title">Hover Style Modifiers</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <p class="so-demo-hint">Combine any button variant with a hover modifier to customize hover behavior</p>
-
+                        <p class="so-demo-hint">Combine any button variant with a hover modifier to customize hover behavior</p>
                                 <!-- Soft Hover -->
                                 <h5 class="so-demo-section-title-sm">.btn-hover-soft (Light tinted background)</h5>
                                 <div class="so-flex so-gap-2 so-flex-wrap so-mb-3">
@@ -384,40 +326,33 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-success btn-hover-scale">Scale Effect</button>
                                     <button class="so-btn so-btn-outline-danger btn-hover-lift">Outline + Lift</button>
                                     <button class="so-btn so-btn-light-info btn-hover-none">No Hover</button>
-                                </div>                            <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
                                 </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;!-- Soft Hover: Light tinted background on hover --&gt;
-&lt;button class="so-btn so-btn-outline-primary btn-hover-soft"&gt;Outline + Soft&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-primary btn-hover-soft"&gt;Light + Soft&lt;/button&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-primary btn-hover-soft"&gt;Ghost + Soft&lt;/button&gt;
+                        <?= so_code_block('<!-- Soft Hover: Light tinted background on hover -->
+<button class="so-btn so-btn-outline-primary btn-hover-soft">Outline + Soft</button>
+<button class="so-btn so-btn-light-primary btn-hover-soft">Light + Soft</button>
+<button class="so-btn so-btn-ghost so-btn-primary btn-hover-soft">Ghost + Soft</button>
 
-&lt;!-- Solid Hover: Fill with solid color on hover --&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-primary btn-hover-solid"&gt;Ghost + Solid&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-info btn-hover-solid"&gt;Light + Solid&lt;/button&gt;
+<!-- Solid Hover: Fill with solid color on hover -->
+<button class="so-btn so-btn-ghost so-btn-primary btn-hover-solid">Ghost + Solid</button>
+<button class="so-btn so-btn-light-info btn-hover-solid">Light + Solid</button>
 
-&lt;!-- Darken Hover: Subtle darkening on hover --&gt;
-&lt;button class="so-btn so-btn-light-primary btn-hover-darken"&gt;Light + Darken&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-primary btn-hover-darken"&gt;Outline + Darken&lt;/button&gt;
+<!-- Darken Hover: Subtle darkening on hover -->
+<button class="so-btn so-btn-light-primary btn-hover-darken">Light + Darken</button>
+<button class="so-btn so-btn-outline-primary btn-hover-darken">Outline + Darken</button>
 
-&lt;!-- Effect Modifiers --&gt;
-&lt;button class="so-btn so-btn-primary btn-hover-lift"&gt;Lift Effect&lt;/button&gt;
-&lt;button class="so-btn so-btn-success btn-hover-scale"&gt;Scale Effect&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-info btn-hover-none"&gt;No Hover&lt;/button&gt;
+<!-- Effect Modifiers -->
+<button class="so-btn so-btn-primary btn-hover-lift">Lift Effect</button>
+<button class="so-btn so-btn-success btn-hover-scale">Scale Effect</button>
+<button class="so-btn so-btn-light-info btn-hover-none">No Hover</button>
 
-&lt;!-- Available hover modifiers:
+<!-- Available hover modifiers:
   .btn-hover-soft   - Light tinted background (like ghost)
   .btn-hover-solid  - Fill with solid color (like outline default)
   .btn-hover-darken - Slightly darker shade
   .btn-hover-lift   - Elevate with shadow
   .btn-hover-scale  - Slight scale up
   .btn-hover-none   - Disable hover effects
---&gt;</code></pre>
-                            </div>
+-->', 'html') ?>
                     </div>
                 </div>
 
@@ -428,197 +363,176 @@ require_once '../includes/navbar.php';
                     </div>
                     <div class="so-card-body">
                         <p class="so-text-muted so-mb-3">Add the <code>.so-loading</code> class to show a spinner and disable interaction. Works with all button variants.</p>
+                                <h5 class="so-mb-3">Solid Variants</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-primary so-loading">Primary</button>
+                                    <button class="so-btn so-btn-secondary so-loading">Secondary</button>
+                                    <button class="so-btn so-btn-success so-loading">Success</button>
+                                    <button class="so-btn so-btn-danger so-loading">Danger</button>
+                                    <button class="so-btn so-btn-warning so-loading">Warning</button>
+                                    <button class="so-btn so-btn-info so-loading">Info</button>
+                                    <button class="so-btn so-btn-light so-loading">Light</button>
+                                    <button class="so-btn so-btn-dark so-loading">Dark</button>
+                                </div>
 
-                        <h5 class="so-mb-3">Solid Variants</h5>
-                        <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-primary so-loading">Primary</button>
-                            <button class="so-btn so-btn-secondary so-loading">Secondary</button>
-                            <button class="so-btn so-btn-success so-loading">Success</button>
-                            <button class="so-btn so-btn-danger so-loading">Danger</button>
-                            <button class="so-btn so-btn-warning so-loading">Warning</button>
-                            <button class="so-btn so-btn-info so-loading">Info</button>
-                            <button class="so-btn so-btn-light so-loading">Light</button>
-                            <button class="so-btn so-btn-dark so-loading">Dark</button>
-                        </div>
+                                <h5 class="so-mb-3">Outline Variants</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-outline-primary so-loading">Primary</button>
+                                    <button class="so-btn so-btn-outline-secondary so-loading">Secondary</button>
+                                    <button class="so-btn so-btn-outline-success so-loading">Success</button>
+                                    <button class="so-btn so-btn-outline-danger so-loading">Danger</button>
+                                    <button class="so-btn so-btn-outline-warning so-loading">Warning</button>
+                                    <button class="so-btn so-btn-outline-info so-loading">Info</button>
+                                    <button class="so-btn so-btn-outline-light so-loading">Light</button>
+                                    <button class="so-btn so-btn-outline-dark so-loading">Dark</button>
+                                </div>
 
-                        <h5 class="so-mb-3">Outline Variants</h5>
-                        <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-outline-primary so-loading">Primary</button>
-                            <button class="so-btn so-btn-outline-secondary so-loading">Secondary</button>
-                            <button class="so-btn so-btn-outline-success so-loading">Success</button>
-                            <button class="so-btn so-btn-outline-danger so-loading">Danger</button>
-                            <button class="so-btn so-btn-outline-warning so-loading">Warning</button>
-                            <button class="so-btn so-btn-outline-info so-loading">Info</button>
-                            <button class="so-btn so-btn-outline-light so-loading">Light</button>
-                            <button class="so-btn so-btn-outline-dark so-loading">Dark</button>
-                        </div>
+                                <h5 class="so-mb-3">Light (Soft) Variants</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-light-primary so-loading">Primary</button>
+                                    <button class="so-btn so-btn-light-secondary so-loading">Secondary</button>
+                                    <button class="so-btn so-btn-light-success so-loading">Success</button>
+                                    <button class="so-btn so-btn-light-danger so-loading">Danger</button>
+                                    <button class="so-btn so-btn-light-warning so-loading">Warning</button>
+                                    <button class="so-btn so-btn-light-info so-loading">Info</button>
+                                    <button class="so-btn so-btn-light-light so-loading">Light</button>
+                                    <button class="so-btn so-btn-light-dark so-loading">Dark</button>
+                                </div>
 
-                        <h5 class="so-mb-3">Light (Soft) Variants</h5>
-                        <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-light-primary so-loading">Primary</button>
-                            <button class="so-btn so-btn-light-secondary so-loading">Secondary</button>
-                            <button class="so-btn so-btn-light-success so-loading">Success</button>
-                            <button class="so-btn so-btn-light-danger so-loading">Danger</button>
-                            <button class="so-btn so-btn-light-warning so-loading">Warning</button>
-                            <button class="so-btn so-btn-light-info so-loading">Info</button>
-                            <button class="so-btn so-btn-light-light so-loading">Light</button>
-                            <button class="so-btn so-btn-light-dark so-loading">Dark</button>
-                        </div>
+                                <h5 class="so-mb-3">Ghost & Link Variants</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-ghost so-btn-primary so-loading">Ghost Primary</button>
+                                    <button class="so-btn so-btn-ghost so-btn-success so-loading">Ghost Success</button>
+                                    <button class="so-btn so-btn-ghost so-btn-danger so-loading">Ghost Danger</button>
+                                    <button class="so-btn so-btn-link so-loading">Link Button</button>
+                                </div>
 
-                        <h5 class="so-mb-3">Ghost & Link Variants</h5>
-                        <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-ghost so-btn-primary so-loading">Ghost Primary</button>
-                            <button class="so-btn so-btn-ghost so-btn-success so-loading">Ghost Success</button>
-                            <button class="so-btn so-btn-ghost so-btn-danger so-loading">Ghost Danger</button>
-                            <button class="so-btn so-btn-link so-loading">Link Button</button>
-                        </div>
+                                <h5 class="so-mb-3">Size Variants</h5>
+                                <div class="so-flex so-gap-2 so-items-center so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-primary so-btn-xs so-loading">Extra Small</button>
+                                    <button class="so-btn so-btn-primary so-btn-sm so-loading">Small</button>
+                                    <button class="so-btn so-btn-primary so-loading">Default</button>
+                                    <button class="so-btn so-btn-primary so-btn-lg so-loading">Large</button>
+                                </div>
 
-                        <h5 class="so-mb-3">Size Variants</h5>
-                        <div class="so-flex so-gap-2 so-items-center so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-primary so-btn-xs so-loading">Extra Small</button>
-                            <button class="so-btn so-btn-primary so-btn-sm so-loading">Small</button>
-                            <button class="so-btn so-btn-primary so-loading">Default</button>
-                            <button class="so-btn so-btn-primary so-btn-lg so-loading">Large</button>
-                        </div>
-
-                        <h5 class="so-mb-3">Icon Buttons</h5>
-                        <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-icon so-btn-primary so-loading">
-                                <span class="material-icons">add</span>
-                            </button>
-                            <button class="so-btn so-btn-icon so-btn-success so-loading">
-                                <span class="material-icons">check</span>
-                            </button>
-                            <button class="so-btn so-btn-icon so-btn-outline-danger so-loading">
-                                <span class="material-icons">delete</span>
-                            </button>
-                            <button class="so-btn so-btn-icon so-btn-ghost so-loading">
-                                <span class="material-icons">more_vert</span>
-                            </button>
-                        </div>
-
-                        <h5 class="so-mb-3">Interactive Demo</h5>
-                        <p class="so-text-muted so-mb-3">Click buttons to toggle loading state</p>
-                        <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
-                            <button class="so-btn so-btn-primary" onclick="this.classList.toggle('so-loading')">
-                                <span class="material-icons">save</span>
-                                Save Changes
-                            </button>
-                            <button class="so-btn so-btn-success" onclick="this.classList.toggle('so-loading')">
-                                <span class="material-icons">send</span>
-                                Submit
-                            </button>
-                            <button class="so-btn so-btn-outline-primary" onclick="this.classList.toggle('so-loading')">
-                                <span class="material-icons">refresh</span>
-                                Refresh
-                            </button>
-                            <button class="so-btn so-btn-light-danger" onclick="this.classList.toggle('so-loading')">
-                                <span class="material-icons">delete</span>
-                                Delete
-                            </button>
-                        </div>
-
-                        <div class="so-code-block so-code-block-tabbed so-mt-4">
-                            <div class="so-code-header">
-                                <div class="so-code-tabs">
-                                    <button class="so-code-tab so-active" data-so-target="#loading-btn-html">
-                                        <span class="material-icons">code</span> HTML
+                                <h5 class="so-mb-3">Icon Buttons</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-primary so-loading">
+                                        <span class="material-icons">add</span>
                                     </button>
-                                    <button class="so-code-tab" data-so-target="#loading-btn-js">
-                                        <span class="material-icons">javascript</span> JavaScript
+                                    <button class="so-btn so-btn-icon so-btn-success so-loading">
+                                        <span class="material-icons">check</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-outline-danger so-loading">
+                                        <span class="material-icons">delete</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-ghost so-loading">
+                                        <span class="material-icons">more_vert</span>
                                     </button>
                                 </div>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <div class="so-code-body">
-                                <div class="so-code-pane so-active" id="loading-btn-html">
-                                    <pre class="so-code-content"><code class="language-html">&lt;!-- Add .so-loading class to show spinner --&gt;
-&lt;button class="so-btn so-btn-primary so-loading"&gt;Loading...&lt;/button&gt;
 
-&lt;!-- Works with all variants (8 contextual colors) --&gt;
-&lt;button class="so-btn so-btn-primary so-loading"&gt;Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-secondary so-loading"&gt;Secondary&lt;/button&gt;
-&lt;button class="so-btn so-btn-success so-loading"&gt;Success&lt;/button&gt;
-&lt;button class="so-btn so-btn-danger so-loading"&gt;Danger&lt;/button&gt;
-&lt;button class="so-btn so-btn-warning so-loading"&gt;Warning&lt;/button&gt;
-&lt;button class="so-btn so-btn-info so-loading"&gt;Info&lt;/button&gt;
-&lt;button class="so-btn so-btn-light so-loading"&gt;Light&lt;/button&gt;
-&lt;button class="so-btn so-btn-dark so-loading"&gt;Dark&lt;/button&gt;
+                                <h5 class="so-mb-3">Interactive Demo</h5>
+                                <p class="so-text-muted so-mb-3">Click buttons to toggle loading state</p>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-primary" onclick="this.classList.toggle('so-loading')">
+                                        <span class="material-icons">save</span>
+                                        Save Changes
+                                    </button>
+                                    <button class="so-btn so-btn-success" onclick="this.classList.toggle('so-loading')">
+                                        <span class="material-icons">send</span>
+                                        Submit
+                                    </button>
+                                    <button class="so-btn so-btn-outline-primary" onclick="this.classList.toggle('so-loading')">
+                                        <span class="material-icons">refresh</span>
+                                        Refresh
+                                    </button>
+                                    <button class="so-btn so-btn-light-danger" onclick="this.classList.toggle('so-loading')">
+                                        <span class="material-icons">delete</span>
+                                        Delete
+                                    </button>
+                                </div>
+                        <?= so_code_tabs('loading-btn', [
+                            ['language' => 'html', 'code' => '<!-- Add .so-loading class to show spinner -->
+<button class="so-btn so-btn-primary so-loading">Loading...</button>
 
-&lt;!-- Outline variants --&gt;
-&lt;button class="so-btn so-btn-outline-primary so-loading"&gt;Outline&lt;/button&gt;
+<!-- Works with all variants (8 contextual colors) -->
+<button class="so-btn so-btn-primary so-loading">Primary</button>
+<button class="so-btn so-btn-secondary so-loading">Secondary</button>
+<button class="so-btn so-btn-success so-loading">Success</button>
+<button class="so-btn so-btn-danger so-loading">Danger</button>
+<button class="so-btn so-btn-warning so-loading">Warning</button>
+<button class="so-btn so-btn-info so-loading">Info</button>
+<button class="so-btn so-btn-light so-loading">Light</button>
+<button class="so-btn so-btn-dark so-loading">Dark</button>
 
-&lt;!-- Light (soft) variants --&gt;
-&lt;button class="so-btn so-btn-light-primary so-loading"&gt;Light&lt;/button&gt;
+<!-- Outline variants -->
+<button class="so-btn so-btn-outline-primary so-loading">Outline</button>
 
-&lt;!-- Ghost variants --&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-primary so-loading"&gt;Ghost&lt;/button&gt;
+<!-- Light (soft) variants -->
+<button class="so-btn so-btn-light-primary so-loading">Light</button>
 
-&lt;!-- Link button --&gt;
-&lt;button class="so-btn so-btn-link so-loading"&gt;Link&lt;/button&gt;
+<!-- Ghost variants -->
+<button class="so-btn so-btn-ghost so-btn-primary so-loading">Ghost</button>
 
-&lt;!-- Icon button --&gt;
-&lt;button class="so-btn so-btn-icon so-btn-primary so-loading"&gt;
-    &lt;span class="material-icons"&gt;add&lt;/span&gt;
-&lt;/button&gt;
+<!-- Link button -->
+<button class="so-btn so-btn-link so-loading">Link</button>
 
-&lt;!-- Button with icon and text --&gt;
-&lt;button class="so-btn so-btn-primary so-loading"&gt;
-    &lt;span class="material-icons"&gt;save&lt;/span&gt;
+<!-- Icon button -->
+<button class="so-btn so-btn-icon so-btn-primary so-loading">
+    <span class="material-icons">add</span>
+</button>
+
+<!-- Button with icon and text -->
+<button class="so-btn so-btn-primary so-loading">
+    <span class="material-icons">save</span>
     Save Changes
-&lt;/button&gt;</code></pre>
-                                </div>
-                                <div class="so-code-pane" id="loading-btn-js">
-                                    <pre class="so-code-content"><code class="language-javascript">// Get button element
-const btn = document.querySelector('.so-btn');
+</button>'],
+                            ['language' => 'javascript', 'code' => '// Get button element
+const btn = document.querySelector(\'.so-btn\');
 
 // Start loading
-btn.classList.add('so-loading');
+btn.classList.add(\'so-loading\');
 
 // Stop loading
-btn.classList.remove('so-loading');
+btn.classList.remove(\'so-loading\');
 
 // Toggle loading
-btn.classList.toggle('so-loading');
+btn.classList.toggle(\'so-loading\');
 
 // Example: Form submission with loading state
-const submitBtn = document.querySelector('#submit-btn');
-const form = document.querySelector('#my-form');
+const submitBtn = document.querySelector(\'#submit-btn\');
+const form = document.querySelector(\'#my-form\');
 
-form.addEventListener('submit', async (e) =&gt; {
+form.addEventListener(\'submit\', async (e) => {
     e.preventDefault();
 
     // Show loading state
-    submitBtn.classList.add('so-loading');
+    submitBtn.classList.add(\'so-loading\');
     submitBtn.disabled = true;
 
     try {
         // Simulate API call
-        await fetch('/api/submit', {
-            method: 'POST',
+        await fetch(\'/api/submit\', {
+            method: \'POST\',
             body: new FormData(form)
         });
 
         // Success handling
-        console.log('Form submitted!');
+        console.log(\'Form submitted!\');
     } catch (error) {
-        console.error('Error:', error);
+        console.error(\'Error:\', error);
     } finally {
         // Remove loading state
-        submitBtn.classList.remove('so-loading');
+        submitBtn.classList.remove(\'so-loading\');
         submitBtn.disabled = false;
     }
 });
 
 // Example: Toggle loading on click
-document.querySelector('.toggle-btn').addEventListener('click', function() {
-    this.classList.toggle('so-loading');
-});</code></pre>
-                                </div>
-                            </div>
-                        </div>
+document.querySelector(\'.toggle-btn\').addEventListener(\'click\', function() {
+    this.classList.toggle(\'so-loading\');
+});']
+                        ]) ?>
                     </div>
                 </div>
 
@@ -628,7 +542,7 @@ document.querySelector('.toggle-btn').addEventListener('click', function() {
                         <h3 class="so-card-title">Progress Buttons</h3>
                     </div>
                     <div class="so-card-body">
-                                                        <!-- Solid Variants -->
+                                <!-- Solid Variants -->
                                 <h5 class="so-demo-section-title">Solid Variants</h5>
                                 <div class="so-flex so-gap-3 so-flex-wrap so-items-center so-mb-4">
                                     <button class="so-btn so-btn-primary so-btn-progress" onclick="simulateProgress(this)">
@@ -820,7 +734,7 @@ document.querySelector('.toggle-btn').addEventListener('click', function() {
                                     <!-- Default: Primary -> Success -->
                                     <button class="so-btn so-btn-primary so-btn-progress" onclick="simulateProgress(this)">
                                         <span class="so-btn-progress-bar"></span>
-                                        <span class="so-btn-text">Default (→ Success)</span>
+                                        <span class="so-btn-text">Default (-> Success)</span>
                                         <span class="so-btn-done"><span class="material-icons">check</span> Done</span>
                                     </button>
                                     <!-- Match Parent Color -->
@@ -838,7 +752,7 @@ document.querySelector('.toggle-btn').addEventListener('click', function() {
                                     <!-- Force Info -->
                                     <button class="so-btn so-btn-warning so-btn-progress so-btn-done-info" onclick="simulateProgress(this)">
                                         <span class="so-btn-progress-bar"></span>
-                                        <span class="so-btn-text">Warning → Info</span>
+                                        <span class="so-btn-text">Warning -> Info</span>
                                         <span class="so-btn-done"><span class="material-icons">info</span> Complete</span>
                                     </button>
                                 </div>
@@ -852,7 +766,7 @@ document.querySelector('.toggle-btn').addEventListener('click', function() {
                                     <!-- Outline Force Success -->
                                     <button class="so-btn so-btn-outline-secondary so-btn-progress so-btn-done-success" onclick="simulateProgress(this)">
                                         <span class="so-btn-progress-bar"></span>
-                                        <span class="so-btn-text">Secondary → Success</span>
+                                        <span class="so-btn-text">Secondary -> Success</span>
                                         <span class="so-btn-done"><span class="material-icons">check</span> Done</span>
                                     </button>
                                     <!-- Light with Match -->
@@ -864,7 +778,7 @@ document.querySelector('.toggle-btn').addEventListener('click', function() {
                                     <!-- Light Force Primary -->
                                     <button class="so-btn so-btn-light-danger so-btn-progress so-btn-done-primary" onclick="simulateProgress(this)">
                                         <span class="so-btn-progress-bar"></span>
-                                        <span class="so-btn-text">Light → Primary</span>
+                                        <span class="so-btn-text">Light -> Primary</span>
                                         <span class="so-btn-done"><span class="material-icons">check</span> Done</span>
                                     </button>
                                 </div>
@@ -927,74 +841,48 @@ document.querySelector('.toggle-btn').addEventListener('click', function() {
                                     });
                                 });
                                 </script>
+                        <?= so_code_tabs('progress-btn', [
+                            ['language' => 'html', 'code' => '<!-- Text Only -->
+<button class="so-btn so-btn-primary so-btn-progress">
+    <span class="so-btn-progress-bar"></span>
+    <span class="so-btn-text">Upload File</span>
+    <span class="so-btn-done">Done!</span>
+</button>
 
-                                <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;!-- Text Only --&gt;
-&lt;button class="so-btn so-btn-primary so-btn-progress"&gt;
-    &lt;span class="so-btn-progress-bar"&gt;&lt;/span&gt;
-    &lt;span class="so-btn-text"&gt;Upload File&lt;/span&gt;
-    &lt;span class="so-btn-done"&gt;Done!&lt;/span&gt;
-&lt;/button&gt;
+<!-- Icon Only -->
+<button class="so-btn so-btn-primary so-btn-icon so-btn-progress">
+    <span class="so-btn-progress-bar"></span>
+    <span class="so-btn-text"><span class="material-icons">cloud_upload</span></span>
+    <span class="so-btn-done"><span class="material-icons">check</span></span>
+</button>
 
-&lt;!-- Icon Only --&gt;
-&lt;button class="so-btn so-btn-primary so-btn-icon so-btn-progress"&gt;
-    &lt;span class="so-btn-progress-bar"&gt;&lt;/span&gt;
-    &lt;span class="so-btn-text"&gt;&lt;span class="material-icons"&gt;cloud_upload&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="so-btn-done"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt;&lt;/span&gt;
-&lt;/button&gt;
+<!-- Icon + Label -->
+<button class="so-btn so-btn-success so-btn-progress">
+    <span class="so-btn-progress-bar"></span>
+    <span class="so-btn-text"><span class="material-icons">save</span> Save</span>
+    <span class="so-btn-done"><span class="material-icons">check</span> Saved</span>
+</button>
 
-&lt;!-- Icon + Label --&gt;
-&lt;button class="so-btn so-btn-success so-btn-progress"&gt;
-    &lt;span class="so-btn-progress-bar"&gt;&lt;/span&gt;
-    &lt;span class="so-btn-text"&gt;&lt;span class="material-icons"&gt;save&lt;/span&gt; Save&lt;/span&gt;
-    &lt;span class="so-btn-done"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt; Saved&lt;/span&gt;
-&lt;/button&gt;
+<!-- Start Content (hidden by default, appears only during progress) -->
+<button class="so-btn so-btn-primary so-btn-progress">
+    <span class="so-btn-progress-bar"></span>
+    <span class="so-btn-start"><span class="material-icons">cloud_upload</span></span>
+    <span class="so-btn-text">Uploading...</span>
+    <span class="so-btn-done"><span class="material-icons">check</span> Uploaded</span>
+</button>
 
-&lt;!-- Start Content (hidden by default, appears only during progress) --&gt;
-&lt;!-- Start with Icon only --&gt;
-&lt;button class="so-btn so-btn-primary so-btn-progress"&gt;
-    &lt;span class="so-btn-progress-bar"&gt;&lt;/span&gt;
-    &lt;span class="so-btn-start"&gt;&lt;span class="material-icons"&gt;cloud_upload&lt;/span&gt;&lt;/span&gt;
-    &lt;span class="so-btn-text"&gt;Uploading...&lt;/span&gt;
-    &lt;span class="so-btn-done"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt; Uploaded&lt;/span&gt;
-&lt;/button&gt;
+<!-- Done State Color Modifiers -->
+<button class="so-btn so-btn-primary so-btn-progress so-btn-done-match">...</button>
+<button class="so-btn so-btn-primary so-btn-progress so-btn-done-danger">...</button>
 
-&lt;!-- Start with Icon + Text --&gt;
-&lt;button class="so-btn so-btn-outline-primary so-btn-progress"&gt;
-    &lt;span class="so-btn-progress-bar"&gt;&lt;/span&gt;
-    &lt;span class="so-btn-start"&gt;&lt;span class="material-icons"&gt;folder&lt;/span&gt; docs/&lt;/span&gt;
-    &lt;span class="so-btn-text"&gt;Syncing...&lt;/span&gt;
-    &lt;span class="so-btn-done"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt; Synced&lt;/span&gt;
-&lt;/button&gt;
-
-&lt;!-- Start with Text only --&gt;
-&lt;button class="so-btn so-btn-success so-btn-progress"&gt;
-    &lt;span class="so-btn-progress-bar"&gt;&lt;/span&gt;
-    &lt;span class="so-btn-start"&gt;Step 1:&lt;/span&gt;
-    &lt;span class="so-btn-text"&gt;Processing...&lt;/span&gt;
-    &lt;span class="so-btn-done"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt; Done&lt;/span&gt;
-&lt;/button&gt;
-
-&lt;!-- Done State Color Modifiers --&gt;
-&lt;button class="so-btn so-btn-primary so-btn-progress so-btn-done-match"&gt;...&lt;/button&gt;
-&lt;button class="so-btn so-btn-primary so-btn-progress so-btn-done-danger"&gt;...&lt;/button&gt;
-
-&lt;!-- Programmatic Control with SOProgressButton --&gt;
-&lt;button id="my-btn" class="so-btn so-btn-primary so-btn-progress" data-so-progress&gt;
-    &lt;span class="so-btn-progress-bar"&gt;&lt;/span&gt;
-    &lt;span class="so-btn-text"&gt;Upload&lt;/span&gt;
-    &lt;span class="so-btn-done"&gt;Done&lt;/span&gt;
-&lt;/button&gt;
-
-&lt;script&gt;
-// Get instance
-const btn = SOProgressButton.getInstance('#my-btn');
+<!-- Programmatic Control -->
+<button id="my-btn" class="so-btn so-btn-primary so-btn-progress" data-so-progress>
+    <span class="so-btn-progress-bar"></span>
+    <span class="so-btn-text">Upload</span>
+    <span class="so-btn-done">Done</span>
+</button>'],
+                            ['language' => 'javascript', 'code' => '// Get instance
+const btn = SOProgressButton.getInstance(\'#my-btn\');
 
 // API Methods
 btn.start();              // Start progress (enters progressing state)
@@ -1007,39 +895,37 @@ btn.simulate();           // Auto-simulate progress animation
 
 // Getters
 btn.getProgress();        // Returns current progress (0-100)
-btn.getState();           // Returns 'idle', 'progressing', or 'completed'
+btn.getState();           // Returns \'idle\', \'progressing\', or \'completed\'
 btn.isProgressing();      // Returns true if in progress
 btn.isCompleted();        // Returns true if completed
 btn.isIdle();             // Returns true if idle
 
 // Content manipulation
-btn.setText('&lt;span class="material-icons"&gt;save&lt;/span&gt; Save');
-btn.setStartContent('&lt;span class="material-icons"&gt;sync&lt;/span&gt;');
-btn.setDoneContent('&lt;span class="material-icons"&gt;check&lt;/span&gt; Saved');
+btn.setText(\'<span class="material-icons">save</span> Save\');
+btn.setStartContent(\'<span class="material-icons">sync</span>\');
+btn.setDoneContent(\'<span class="material-icons">check</span> Saved\');
 
 // Events
-document.getElementById('my-btn').addEventListener('so:progress:start', (e) =&gt; {
-    console.log('Started:', e.detail.progress, e.detail.state);
+btn.element.addEventListener(\'so:progress:start\', (e) => {
+    console.log(\'Started:\', e.detail.progress, e.detail.state);
 });
-document.getElementById('my-btn').addEventListener('so:progress:update', (e) =&gt; {
-    console.log('Progress:', e.detail.progress, e.detail.previousProgress);
+btn.element.addEventListener(\'so:progress:update\', (e) => {
+    console.log(\'Progress:\', e.detail.progress, e.detail.previousProgress);
 });
-document.getElementById('my-btn').addEventListener('so:progress:complete', (e) =&gt; {
-    console.log('Completed:', e.detail.state);
+btn.element.addEventListener(\'so:progress:complete\', (e) => {
+    console.log(\'Completed:\', e.detail.state);
 });
-document.getElementById('my-btn').addEventListener('so:progress:reset', (e) =&gt; {
-    console.log('Reset:', e.detail.state);
+btn.element.addEventListener(\'so:progress:reset\', (e) => {
+    console.log(\'Reset:\', e.detail.state);
 });
 
 // Options (via data attributes)
 // data-auto-disable="true"     - Disable button during progress (default: true)
 // data-auto-reset="3000"       - Auto reset after complete (ms, 0 = disabled)
-// data-simulate-on-click="true" - Auto-simulate on click
-&lt;/script&gt;</code></pre>
-                            </div>
+// data-simulate-on-click="true" - Auto-simulate on click']
+                        ]) ?>
                     </div>
                 </div>
-            </div>
 
 <script>
 // Progress button demo helper function

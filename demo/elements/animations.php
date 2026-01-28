@@ -32,8 +32,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Fade in/out animations with directional variants. Click boxes to replay.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4 so-col-lg-2">
                         <div class="animation-demo-box so-animate so-animate-fade-in" onclick="replayAnimation(this, 'so-animate-fade-in')">
@@ -61,7 +59,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -78,7 +75,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-animate so-animate-fade-in so-animate-duration-500"&gt;Fast (500ms)&lt;/div&gt;
 &lt;div class="so-animate so-animate-fade-in so-animate-delay-300"&gt;Delayed (300ms)&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -90,8 +86,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Slide in/out animations from different directions.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-3">
                         <div class="animation-demo-box so-animate so-animate-slide-in-up" onclick="replayAnimation(this, 'so-animate-slide-in-up')">
@@ -114,7 +108,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -125,7 +118,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-animate so-animate-slide-in-left"&gt;Slide In Left&lt;/div&gt;
 &lt;div class="so-animate so-animate-slide-in-right"&gt;Slide In Right&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -137,8 +129,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Scale and zoom animations for emphasis.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-3">
                         <div class="animation-demo-box so-animate so-animate-scale-in" onclick="replayAnimation(this, 'so-animate-scale-in')">
@@ -161,7 +151,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -172,7 +161,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-animate so-animate-zoom-in"&gt;Zoom In&lt;/div&gt;
 &lt;div class="so-animate so-animate-scale-down"&gt;Scale Down&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -184,8 +172,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Bouncy animations for playful interactions.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4">
                         <div class="animation-demo-box so-animate so-animate-bounce so-animate-duration-700" onclick="replayAnimation(this, 'so-animate-bounce')">
@@ -203,7 +189,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -213,7 +198,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-animate so-animate-bounce-in"&gt;Bounce In&lt;/div&gt;
 &lt;div class="so-animate so-animate-rubber-band"&gt;Rubber Band&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -225,8 +209,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Shake animations for errors, alerts, or attention.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4 so-col-lg-2">
                         <div class="animation-demo-box so-animate so-animate-shake so-animate-duration-500" onclick="replayAnimation(this, 'so-animate-shake')">
@@ -254,7 +236,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -266,7 +247,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-animate so-animate-wobble"&gt;Wobble&lt;/div&gt;
 &lt;div class="so-animate so-animate-jello"&gt;Jello&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -278,8 +258,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Unique animations for special effects.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4 so-col-lg-2">
                         <div class="animation-demo-box so-animate so-animate-swing so-animate-duration-700" onclick="replayAnimation(this, 'so-animate-swing')">
@@ -307,7 +285,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -319,7 +296,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-animate so-animate-flip-y"&gt;Flip Y&lt;/div&gt;
 &lt;div class="so-animate so-animate-flash"&gt;Flash&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -331,8 +307,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Looping animations for loading states and attention grabbers.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4 so-col-lg-2">
                         <div class="animation-demo-box so-attention-pulse">
@@ -365,7 +339,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -379,7 +352,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-attention-glow"&gt;Glow&lt;/div&gt;
 &lt;div class="so-attention-blink"&gt;Blink&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -391,8 +363,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Rotation and loading state animations.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4 so-align-items-center">
                     <div class="so-col-6 so-col-md-3">
                         <div class="so-d-flex so-flex-column so-align-items-center so-gap-2">
@@ -423,7 +393,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -445,7 +414,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Loading pulse --&gt;
 &lt;div class="so-loading-pulse"&gt;&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -457,8 +425,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Animations triggered on mouse hover.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4 so-col-lg-2">
                         <div class="animation-demo-box so-hover-animate-pulse">
@@ -491,7 +457,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -505,7 +470,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-hover-animate-jello"&gt;Jello on hover&lt;/div&gt;
 &lt;div class="so-hover-animate-wobble"&gt;Wobble on hover&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -517,8 +481,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Transition effects for hover states.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4">
                         <div class="animation-demo-box so-hover-scale-up">
@@ -536,7 +498,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -547,7 +508,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-hover-scale-down"&gt;Scale down on hover&lt;/div&gt;
 &lt;div class="so-hover-lift"&gt;Lift on hover (with shadow)&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -559,8 +519,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Control animation speed with duration modifiers.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4 so-col-lg-2">
                         <div class="animation-demo-box so-animate so-animate-bounce-in so-animate-faster" onclick="replayAnimation(this, 'so-animate-bounce-in')">
@@ -593,7 +551,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -609,7 +566,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Custom duration --&gt;
 &lt;div class="so-animate so-animate-bounce-in so-animate-duration-700"&gt;700ms&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -621,8 +577,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Stagger animations with delay classes.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4 so-col-lg-2">
                         <div class="animation-demo-box so-animate so-animate-fade-in-up so-animate-duration-500" onclick="replayAnimationGroup()">
@@ -658,7 +612,6 @@ require_once '../includes/navbar.php';
                 <button class="so-btn so-btn-primary so-mt-4" onclick="replayAnimationGroup()">
                     <span class="material-icons">replay</span> Replay Staggered
                 </button>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -672,7 +625,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-animate so-animate-fade-in-up so-animate-delay-400"&gt;400ms delay&lt;/div&gt;
 &lt;div class="so-animate so-animate-fade-in-up so-animate-delay-500"&gt;500ms delay&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -684,8 +636,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Animations that trigger when elements enter the viewport. Scroll down to see them animate.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-6 so-col-md-4">
                         <div class="animation-demo-box so-scroll-fade-in" data-scroll-animate>
@@ -721,7 +671,6 @@ require_once '../includes/navbar.php';
                 <button class="so-btn so-btn-outline-primary so-mt-4" onclick="resetScrollAnimations()">
                     <span class="material-icons">refresh</span> Reset Scroll Animations
                 </button>
-            </div>
             <div class="so-tabs so-tabs-code so-mt-3">
                 <button class="so-tab so-tab-active" onclick="switchCodeTab(this, 'html-scroll')">HTML</button>
                 <button class="so-tab" onclick="switchCodeTab(this, 'js-scroll')">JavaScript</button>
@@ -762,7 +711,6 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollElements.forEach(el => observer.observe(el));
 });</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -774,8 +722,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Apply animations to buttons, cards, and other components.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <h6 class="so-mb-3">Animated Buttons</h6>
                 <div class="so-d-flex so-flex-wrap so-gap-3 so-mb-5">
                     <button class="so-btn so-btn-primary so-hover-animate-pulse">Pulse</button>
@@ -824,7 +770,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="so-badge so-badge-success so-attention-heartbeat">Live</span>
                     <span class="so-badge so-badge-info so-attention-glow">Update</span>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -849,7 +794,6 @@ document.addEventListener('DOMContentLoaded', function() {
 &lt;span class="so-badge so-badge-success so-attention-heartbeat"&gt;Live&lt;/span&gt;
 &lt;span class="so-badge so-badge-info so-attention-glow"&gt;Update&lt;/span&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 

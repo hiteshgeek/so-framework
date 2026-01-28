@@ -74,25 +74,17 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Navigation --&gt;
-&lt;nav class="so-scrollspy-nav so-scrollspy-bordered" id="myScrollspy" data-so-scrollspy&gt;
-    &lt;a class="so-scrollspy-link" href="#section1"&gt;Section 1&lt;/a&gt;
-    &lt;a class="so-scrollspy-link" href="#section2"&gt;Section 2&lt;/a&gt;
-&lt;/nav&gt;
+<?= so_code_block('<!-- Navigation -->
+<nav class="so-scrollspy-nav so-scrollspy-bordered" id="myScrollspy" data-so-scrollspy>
+    <a class="so-scrollspy-link" href="#section1">Section 1</a>
+    <a class="so-scrollspy-link" href="#section2">Section 2</a>
+</nav>
 
-&lt;!-- Scrollable Content --&gt;
-&lt;div data-so-spy="scroll" data-so-target="#myScrollspy"&gt;
-    &lt;section id="section1" data-so-scrollspy-section&gt;...&lt;/section&gt;
-    &lt;section id="section2" data-so-scrollspy-section&gt;...&lt;/section&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<!-- Scrollable Content -->
+<div data-so-spy="scroll" data-so-target="#myScrollspy">
+    <section id="section1" data-so-scrollspy-section>...</section>
+    <section id="section2" data-so-scrollspy-section>...</section>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -150,18 +142,10 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;nav class="so-scrollspy-nav"&gt;...&lt;/nav&gt;
-&lt;nav class="so-scrollspy-nav so-scrollspy-bordered"&gt;...&lt;/nav&gt;
-&lt;nav class="so-scrollspy-nav so-scrollspy-pills"&gt;...&lt;/nav&gt;
-&lt;nav class="so-scrollspy-nav so-scrollspy-numbered"&gt;...&lt;/nav&gt;</code></pre>
-                </div>
+<?= so_code_block('<nav class="so-scrollspy-nav">...</nav>
+<nav class="so-scrollspy-nav so-scrollspy-bordered">...</nav>
+<nav class="so-scrollspy-nav so-scrollspy-pills">...</nav>
+<nav class="so-scrollspy-nav so-scrollspy-numbered">...</nav>', 'html') ?>
             </div>
         </div>
 
@@ -195,16 +179,8 @@ require_once '../includes/navbar.php';
                     </nav>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;nav class="so-scrollspy-nav so-scrollspy-underline"&gt;...&lt;/nav&gt;
-&lt;nav class="so-scrollspy-nav so-scrollspy-horizontal"&gt;...&lt;/nav&gt;</code></pre>
-                </div>
+<?= so_code_block('<nav class="so-scrollspy-nav so-scrollspy-underline">...</nav>
+<nav class="so-scrollspy-nav so-scrollspy-horizontal">...</nav>', 'html') ?>
             </div>
         </div>
 
@@ -235,18 +211,10 @@ require_once '../includes/navbar.php';
                     </a>
                 </nav>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;a class="so-scrollspy-link" href="#"&gt;
-    &lt;span class="material-icons"&gt;home&lt;/span&gt;
+<?= so_code_block('<a class="so-scrollspy-link" href="#">
+    <span class="material-icons">home</span>
     Overview
-&lt;/a&gt;</code></pre>
-                </div>
+</a>', 'html') ?>
             </div>
         </div>
 
@@ -285,16 +253,8 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;nav class="so-scrollspy-nav so-scrollspy-bordered so-scrollspy-primary"&gt;...&lt;/nav&gt;
-&lt;nav class="so-scrollspy-nav so-scrollspy-pills so-scrollspy-success"&gt;...&lt;/nav&gt;</code></pre>
-                </div>
+<?= so_code_block('<nav class="so-scrollspy-nav so-scrollspy-bordered so-scrollspy-primary">...</nav>
+<nav class="so-scrollspy-nav so-scrollspy-pills so-scrollspy-success">...</nav>', 'html') ?>
             </div>
         </div>
 
@@ -311,14 +271,7 @@ require_once '../includes/navbar.php';
                     <span>Scroll the content in the Basic Scrollspy section above to see events fire here.</span>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">// Initialize scrollspy
+<?= so_code_block('// Initialize scrollspy
 SOScrollspy.init();
 
 // Get instance
@@ -328,14 +281,13 @@ const scrollspy = SOScrollspy.getInstance(element);
 scrollspy.refresh();
 
 // Events
-element.addEventListener('so:scrollspy:activate', (e) => {
-    console.log('Activated section:', e.detail.relatedTarget);
+element.addEventListener(\'so:scrollspy:activate\', (e) => {
+    console.log(\'Activated section:\', e.detail.relatedTarget);
 });
 
-element.addEventListener('so:scrollspy:change', (e) => {
-    console.log('Active link changed:', e.detail.target);
-});</code></pre>
-                </div>
+element.addEventListener(\'so:scrollspy:change\', (e) => {
+    console.log(\'Active link changed:\', e.detail.target);
+});', 'javascript') ?>
 
                 <h5 class="so-mt-6 so-mb-3">Available Events</h5>
                 <div class="so-table-responsive">
@@ -430,7 +382,6 @@ element.addEventListener('so:scrollspy:change', (e) => {
         </div>
 
     </div>
-</div>
 
 <script>
 // SOScrollspy Class

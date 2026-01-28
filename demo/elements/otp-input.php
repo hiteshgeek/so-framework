@@ -42,42 +42,23 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-code-block-tabbed so-mt-4">
-                    <div class="so-code-header">
-                        <div class="so-code-tabs">
-                            <button class="so-code-tab so-active" data-so-target="#basic-html">
-                                <span class="material-icons">code</span> HTML
-                            </button>
-                            <button class="so-code-tab" data-so-target="#basic-js">
-                                <span class="material-icons">javascript</span> JavaScript
-                            </button>
-                        </div>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <div class="so-code-body">
-                        <div class="so-code-pane so-active" id="basic-html">
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group" id="otpInput"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]"&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="so-code-pane" id="basic-js">
-                            <pre class="so-code-content"><code class="language-javascript">// Get or create instance
-const otp = SOOtpInput.getInstance('#otpInput');
+                <?= so_code_tabs('basic', [
+                    ['label' => 'HTML', 'language' => 'html', 'icon' => 'code', 'code' => '<div class="so-otp-group" id="otpInput">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+    </div>
+</div>'],
+                    ['label' => 'JavaScript', 'language' => 'javascript', 'icon' => 'javascript', 'code' => '// Get or create instance
+const otp = SOOtpInput.getInstance(\'#otpInput\');
 
 // Get the entered value
-const value = otp.getValue();</code></pre>
-                        </div>
-                    </div>
-                </div>
+const value = otp.getValue();']
+                ]) ?>
             </div>
         </div>
 
@@ -100,22 +81,14 @@ const value = otp.getValue();</code></pre>
                             <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
                         </div>
                     </div>
-                    <div class="so-code-block so-mt-3">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)">
-                                <span class="material-icons">content_copy</span>
-                            </button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group" id="pin4"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
+                    <?= so_code_block('<div class="so-otp-group" id="pin4">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+    </div>
+</div>', 'html') ?>
                 </div>
 
                 <!-- 6-Digit OTP -->
@@ -131,20 +104,12 @@ const value = otp.getValue();</code></pre>
                             <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
                         </div>
                     </div>
-                    <div class="so-code-block so-mt-3">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)">
-                                <span class="material-icons">content_copy</span>
-                            </button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group" id="otp6"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... 6 inputs total ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
+                    <?= so_code_block('<div class="so-otp-group" id="otp6">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... 6 inputs total ... -->
+    </div>
+</div>', 'html') ?>
                 </div>
 
                 <!-- 8-Digit Code -->
@@ -162,20 +127,12 @@ const value = otp.getValue();</code></pre>
                             <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
                         </div>
                     </div>
-                    <div class="so-code-block so-mt-3">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)">
-                                <span class="material-icons">content_copy</span>
-                            </button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group" id="code8"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... 8 inputs total ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
+                    <?= so_code_block('<div class="so-otp-group" id="code8">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... 8 inputs total ... -->
+    </div>
+</div>', 'html') ?>
                 </div>
             </div>
         </div>
@@ -201,20 +158,12 @@ const value = otp.getValue();</code></pre>
                             <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
                         </div>
                     </div>
-                    <div class="so-code-block so-mt-3">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)">
-                                <span class="material-icons">content_copy</span>
-                            </button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group so-otp-group-sm"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
+                    <?= so_code_block('<div class="so-otp-group so-otp-group-sm">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>', 'html') ?>
                 </div>
 
                 <!-- Default Size -->
@@ -230,20 +179,12 @@ const value = otp.getValue();</code></pre>
                             <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
                         </div>
                     </div>
-                    <div class="so-code-block so-mt-3">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)">
-                                <span class="material-icons">content_copy</span>
-                            </button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
+                    <?= so_code_block('<div class="so-otp-group">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>', 'html') ?>
                 </div>
 
                 <!-- Large Size -->
@@ -259,20 +200,12 @@ const value = otp.getValue();</code></pre>
                             <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
                         </div>
                     </div>
-                    <div class="so-code-block so-mt-3">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)">
-                                <span class="material-icons">content_copy</span>
-                            </button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group so-otp-group-lg"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
+                    <?= so_code_block('<div class="so-otp-group so-otp-group-lg">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>', 'html') ?>
                 </div>
             </div>
         </div>
@@ -301,40 +234,21 @@ const value = otp.getValue();</code></pre>
                     <button type="button" class="so-btn so-btn-outline" onclick="setErrorState(false)">Clear Error</button>
                 </div>
 
-                <div class="so-code-block so-code-block-tabbed so-mt-4">
-                    <div class="so-code-header">
-                        <div class="so-code-tabs">
-                            <button class="so-code-tab so-active" data-so-target="#error-html">
-                                <span class="material-icons">code</span> HTML
-                            </button>
-                            <button class="so-code-tab" data-so-target="#error-js">
-                                <span class="material-icons">javascript</span> JavaScript
-                            </button>
-                        </div>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <div class="so-code-body">
-                        <div class="so-code-pane so-active" id="error-html">
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group" id="errorOtp"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="so-code-pane" id="error-js">
-                            <pre class="so-code-content"><code class="language-javascript">const otp = SOOtpInput.getInstance('#errorOtp');
+                <?= so_code_tabs('error', [
+                    ['label' => 'HTML', 'language' => 'html', 'icon' => 'code', 'code' => '<div class="so-otp-group" id="errorOtp">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>'],
+                    ['label' => 'JavaScript', 'language' => 'javascript', 'icon' => 'javascript', 'code' => 'const otp = SOOtpInput.getInstance(\'#errorOtp\');
 
 // Show error state
 otp.setError(true);
 
 // Clear error state
-otp.setError(false);</code></pre>
-                        </div>
-                    </div>
-                </div>
+otp.setError(false);']
+                ]) ?>
             </div>
         </div>
 
@@ -364,46 +278,27 @@ otp.setError(false);</code></pre>
                     </div>
                 </div>
 
-                <div class="so-code-block so-code-block-tabbed so-mt-4">
-                    <div class="so-code-header">
-                        <div class="so-code-tabs">
-                            <button class="so-code-tab so-active" data-so-target="#event-html">
-                                <span class="material-icons">code</span> HTML
-                            </button>
-                            <button class="so-code-tab" data-so-target="#event-js">
-                                <span class="material-icons">javascript</span> JavaScript
-                            </button>
-                        </div>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <div class="so-code-body">
-                        <div class="so-code-pane so-active" id="event-html">
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group" id="eventOtp"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
-                        <div class="so-code-pane" id="event-js">
-                            <pre class="so-code-content"><code class="language-javascript">const otp = SOOtpInput.getInstance('#eventOtp');
+                <?= so_code_tabs('event', [
+                    ['label' => 'HTML', 'language' => 'html', 'icon' => 'code', 'code' => '<div class="so-otp-group" id="eventOtp">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>'],
+                    ['label' => 'JavaScript', 'language' => 'javascript', 'icon' => 'javascript', 'code' => 'const otp = SOOtpInput.getInstance(\'#eventOtp\');
 
 // Listen for value changes
-otp.element.addEventListener('otp:change', (e) => {
-    console.log('Current value:', e.detail.value);
-    console.log('Changed index:', e.detail.index);
+otp.element.addEventListener(\'otp:change\', (e) => {
+    console.log(\'Current value:\', e.detail.value);
+    console.log(\'Changed index:\', e.detail.index);
 });
 
 // Listen for completion
-otp.element.addEventListener('otp:complete', (e) => {
-    console.log('OTP complete:', e.detail.value);
+otp.element.addEventListener(\'otp:complete\', (e) => {
+    console.log(\'OTP complete:\', e.detail.value);
     // Submit form or validate
-});</code></pre>
-                        </div>
-                    </div>
-                </div>
+});']
+                ]) ?>
             </div>
         </div>
 
@@ -433,46 +328,27 @@ otp.element.addEventListener('otp:complete', (e) => {
 
                 <div id="validationResult" class="so-mt-4" style="display: none;"></div>
 
-                <div class="so-code-block so-code-block-tabbed so-mt-4">
-                    <div class="so-code-header">
-                        <div class="so-code-tabs">
-                            <button class="so-code-tab so-active" data-so-target="#validate-html">
-                                <span class="material-icons">code</span> HTML
-                            </button>
-                            <button class="so-code-tab" data-so-target="#validate-js">
-                                <span class="material-icons">javascript</span> JavaScript
-                            </button>
-                        </div>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <div class="so-code-body">
-                        <div class="so-code-pane so-active" id="validate-html">
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-otp-group" id="validateOtp"&gt;
-    &lt;div class="so-otp-inputs"&gt;
-        &lt;input type="text" class="so-otp-input" maxlength="1" inputmode="numeric"&gt;
-        &lt;!-- ... --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+                <?= so_code_tabs('validate', [
+                    ['label' => 'HTML', 'language' => 'html', 'icon' => 'code', 'code' => '<div class="so-otp-group" id="validateOtp">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>
 
-&lt;button class="so-btn so-btn-primary" onclick="validateOtp()"&gt;Validate&lt;/button&gt;</code></pre>
-                        </div>
-                        <div class="so-code-pane" id="validate-js">
-                            <pre class="so-code-content"><code class="language-javascript">const otp = SOOtpInput.getInstance('#validateOtp');
+<button class="so-btn so-btn-primary" onclick="validateOtp()">Validate</button>'],
+                    ['label' => 'JavaScript', 'language' => 'javascript', 'icon' => 'javascript', 'code' => 'const otp = SOOtpInput.getInstance(\'#validateOtp\');
 
 // Validate against expected value
-const isValid = otp.validate('123456');
+const isValid = otp.validate(\'123456\');
 
 if (isValid) {
-    console.log('OTP is correct!');
+    console.log(\'OTP is correct!\');
 } else {
-    console.log('Invalid OTP');
+    console.log(\'Invalid OTP\');
     // Error state is automatically set
-}</code></pre>
-                        </div>
-                    </div>
-                </div>
+}']
+                ]) ?>
             </div>
         </div>
 
@@ -674,17 +550,10 @@ if (isValid) {
                     <div id="controlOutputText"></div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">const otp = SOOtpInput.getInstance('#controlOtp');
+                <?= so_code_block('const otp = SOOtpInput.getInstance(\'#controlOtp\');
 
 // Set value programmatically
-otp.setValue('123456');
+otp.setValue(\'123456\');
 
 // Get current value
 const value = otp.getValue();
@@ -699,8 +568,7 @@ if (otp.isComplete()) {
 otp.focus();
 
 // Clear all inputs
-otp.clear();</code></pre>
-                </div>
+otp.clear();', 'javascript') ?>
             </div>
         </div>
     </div>

@@ -45,17 +45,9 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-primary"&gt;
-    &lt;div class="so-progress-bar" style="width: 60%"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-primary">
+    <div class="so-progress-bar" style="width: 60%"></div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -93,19 +85,11 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-lg so-progress-primary"&gt;
-    &lt;div class="so-progress-bar" style="width: 50%"&gt;
-        &lt;span class="so-progress-label"&gt;50%&lt;/span&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-lg so-progress-primary">
+    <div class="so-progress-bar" style="width: 50%">
+        <span class="so-progress-label">50%</span>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -137,23 +121,15 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress-wrapper"&gt;
-    &lt;div class="so-progress-header"&gt;
-        &lt;span class="so-progress-title"&gt;Uploading file...&lt;/span&gt;
-        &lt;span class="so-progress-value"&gt;68%&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="so-progress so-progress-primary"&gt;
-        &lt;div class="so-progress-bar" style="width: 68%"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress-wrapper">
+    <div class="so-progress-header">
+        <span class="so-progress-title">Uploading file...</span>
+        <span class="so-progress-value">68%</span>
+    </div>
+    <div class="so-progress so-progress-primary">
+        <div class="so-progress-bar" style="width: 68%"></div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -202,19 +178,11 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-xs"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-progress"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-lg"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-xl"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-xs">...</div>
+<div class="so-progress so-progress-sm">...</div>
+<div class="so-progress">...</div>
+<div class="so-progress so-progress-lg">...</div>
+<div class="so-progress so-progress-xl">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -260,22 +228,14 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-primary"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-secondary"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-success"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-danger"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-warning"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-info"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-light"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-dark"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-primary">...</div>
+<div class="so-progress so-progress-secondary">...</div>
+<div class="so-progress so-progress-success">...</div>
+<div class="so-progress so-progress-danger">...</div>
+<div class="so-progress so-progress-warning">...</div>
+<div class="so-progress so-progress-info">...</div>
+<div class="so-progress so-progress-light">...</div>
+<div class="so-progress so-progress-dark">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -305,17 +265,9 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-striped so-progress-primary"&gt;
-    &lt;div class="so-progress-bar" style="width: 60%"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-striped so-progress-primary">
+    <div class="so-progress-bar" style="width: 60%"></div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -341,17 +293,9 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-striped so-progress-animated so-progress-primary"&gt;
-    &lt;div class="so-progress-bar" style="width: 75%"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-striped so-progress-animated so-progress-primary">
+    <div class="so-progress-bar" style="width: 75%"></div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -379,24 +323,16 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Single bar indeterminate --&gt;
-&lt;div class="so-progress so-progress-indeterminate so-progress-primary"&gt;
-    &lt;div class="so-progress-bar"&gt;&lt;/div&gt;
-&lt;/div&gt;
+                <?= so_code_block('<!-- Single bar indeterminate -->
+<div class="so-progress so-progress-indeterminate so-progress-primary">
+    <div class="so-progress-bar"></div>
+</div>
 
-&lt;!-- Dual bar indeterminate (Material Design style) --&gt;
-&lt;div class="so-progress so-progress-indeterminate so-progress-success"&gt;
-    &lt;div class="so-progress-bar"&gt;&lt;/div&gt;
-    &lt;div class="so-progress-bar so-progress-bar-secondary"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<!-- Dual bar indeterminate (Material Design style) -->
+<div class="so-progress so-progress-indeterminate so-progress-success">
+    <div class="so-progress-bar"></div>
+    <div class="so-progress-bar so-progress-bar-secondary"></div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -425,18 +361,10 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-buffer so-progress-primary"&gt;
-    &lt;div class="so-progress-bar" style="width: 45%"&gt;&lt;/div&gt;
-    &lt;div class="so-progress-buffer-bar" style="width: 70%"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-buffer so-progress-primary">
+    <div class="so-progress-bar" style="width: 45%"></div>
+    <div class="so-progress-buffer-bar" style="width: 70%"></div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -483,25 +411,17 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-stacked"&gt;
-    &lt;div class="so-progress so-progress-success" style="width: 25%"&gt;
-        &lt;div class="so-progress-bar" style="width: 100%"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-progress so-progress-warning" style="width: 35%"&gt;
-        &lt;div class="so-progress-bar" style="width: 100%"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-progress so-progress-danger" style="width: 15%"&gt;
-        &lt;div class="so-progress-bar" style="width: 100%"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-stacked">
+    <div class="so-progress so-progress-success" style="width: 25%">
+        <div class="so-progress-bar" style="width: 100%"></div>
+    </div>
+    <div class="so-progress so-progress-warning" style="width: 35%">
+        <div class="so-progress-bar" style="width: 100%"></div>
+    </div>
+    <div class="so-progress so-progress-danger" style="width: 15%">
+        <div class="so-progress-bar" style="width: 100%"></div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -531,18 +451,10 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-gradient"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-gradient-success"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-gradient-danger"&gt;...&lt;/div&gt;
-&lt;div class="so-progress so-progress-gradient-rainbow"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress so-progress-gradient">...</div>
+<div class="so-progress so-progress-gradient-success">...</div>
+<div class="so-progress so-progress-gradient-danger">...</div>
+<div class="so-progress so-progress-gradient-rainbow">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -593,30 +505,22 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress so-progress-stepped so-progress-primary"&gt;
-    &lt;div class="so-progress-step so-active"&gt;
-        &lt;div class="so-progress-step-fill"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-progress-step so-active"&gt;
-        &lt;div class="so-progress-step-fill"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-progress-step"&gt;
-        &lt;div class="so-progress-step-fill"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+                <?= so_code_block('<div class="so-progress so-progress-stepped so-progress-primary">
+    <div class="so-progress-step so-active">
+        <div class="so-progress-step-fill"></div>
+    </div>
+    <div class="so-progress-step so-active">
+        <div class="so-progress-step-fill"></div>
+    </div>
+    <div class="so-progress-step">
+        <div class="so-progress-step-fill"></div>
+    </div>
+</div>
 
-&lt;!-- Partial step --&gt;
-&lt;div class="so-progress-step partial" style="--step-progress: 60%"&gt;
-    &lt;div class="so-progress-step-fill"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<!-- Partial step -->
+<div class="so-progress-step partial" style="--step-progress: 60%">
+    <div class="so-progress-step-fill"></div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -682,26 +586,18 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress-circular so-progress-circular-primary"&gt;
-    &lt;svg class="so-progress-ring" viewBox="0 0 48 48"&gt;
-        &lt;circle class="so-progress-ring-bg" cx="24" cy="24" r="20" fill="none"&gt;&lt;/circle&gt;
-        &lt;circle class="so-progress-ring-fill" cx="24" cy="24" r="20" fill="none"
-                stroke-dasharray="125.6" stroke-dashoffset="31.4"&gt;&lt;/circle&gt;
-    &lt;/svg&gt;
-    &lt;span class="so-progress-text"&gt;75%&lt;/span&gt;
-&lt;/div&gt;
+                <?= so_code_block('<div class="so-progress-circular so-progress-circular-primary">
+    <svg class="so-progress-ring" viewBox="0 0 48 48">
+        <circle class="so-progress-ring-bg" cx="24" cy="24" r="20" fill="none"></circle>
+        <circle class="so-progress-ring-fill" cx="24" cy="24" r="20" fill="none"
+                stroke-dasharray="125.6" stroke-dashoffset="31.4"></circle>
+    </svg>
+    <span class="so-progress-text">75%</span>
+</div>
 
-&lt;!-- Formula: stroke-dashoffset = circumference * (1 - progress) --&gt;
-&lt;!-- circumference = 2 * PI * r = 2 * 3.14 * 20 = 125.6 --&gt;
-&lt;!-- For 75%: 125.6 * (1 - 0.75) = 31.4 --&gt;</code></pre>
-                </div>
+<!-- Formula: stroke-dashoffset = circumference * (1 - progress) -->
+<!-- circumference = 2 * PI * r = 2 * 3.14 * 20 = 125.6 -->
+<!-- For 75%: 125.6 * (1 - 0.75) = 31.4 -->', 'html') ?>
             </div>
         </div>
 
@@ -778,19 +674,11 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress-circular so-progress-circular-xs"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-lg"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-xl"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress-circular so-progress-circular-xs">...</div>
+<div class="so-progress-circular so-progress-circular-sm">...</div>
+<div class="so-progress-circular">...</div>
+<div class="so-progress-circular so-progress-circular-lg">...</div>
+<div class="so-progress-circular so-progress-circular-xl">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -821,22 +709,14 @@ require_once '../includes/navbar.php';
                     <?php endforeach; ?>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress-circular so-progress-circular-primary"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-secondary"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-success"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-danger"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-warning"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-info"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-light"&gt;...&lt;/div&gt;
-&lt;div class="so-progress-circular so-progress-circular-dark"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress-circular so-progress-circular-primary">...</div>
+<div class="so-progress-circular so-progress-circular-secondary">...</div>
+<div class="so-progress-circular so-progress-circular-success">...</div>
+<div class="so-progress-circular so-progress-circular-danger">...</div>
+<div class="so-progress-circular so-progress-circular-warning">...</div>
+<div class="so-progress-circular so-progress-circular-info">...</div>
+<div class="so-progress-circular so-progress-circular-light">...</div>
+<div class="so-progress-circular so-progress-circular-dark">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -890,20 +770,12 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-progress-circular so-progress-circular-indeterminate so-progress-circular-primary"&gt;
-    &lt;svg class="so-progress-ring" viewBox="0 0 48 48"&gt;
-        &lt;circle class="so-progress-ring-bg" cx="24" cy="24" r="20" fill="none"&gt;&lt;/circle&gt;
-        &lt;circle class="so-progress-ring-fill" cx="24" cy="24" r="20" fill="none"&gt;&lt;/circle&gt;
-    &lt;/svg&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-progress-circular so-progress-circular-indeterminate so-progress-circular-primary">
+    <svg class="so-progress-ring" viewBox="0 0 48 48">
+        <circle class="so-progress-ring-bg" cx="24" cy="24" r="20" fill="none"></circle>
+        <circle class="so-progress-ring-fill" cx="24" cy="24" r="20" fill="none"></circle>
+    </svg>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -933,20 +805,13 @@ require_once '../includes/navbar.php';
                     <button class="so-btn so-btn-sm so-btn-outline-secondary" onclick="animateProgress()">Animate</button>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">// Set progress value
+                <?= so_code_block('// Set progress value
 function setProgress(element, percentage) {
-    const bar = element.querySelector('.so-progress-bar');
-    const label = element.querySelector('.so-progress-label');
+    const bar = element.querySelector(\'.so-progress-bar\');
+    const label = element.querySelector(\'.so-progress-label\');
 
-    bar.style.width = percentage + '%';
-    if (label) label.textContent = percentage + '%';
+    bar.style.width = percentage + \'%\';
+    if (label) label.textContent = percentage + \'%\';
 }
 
 // Animate progress
@@ -970,17 +835,16 @@ function animateProgress(element, from, to, duration) {
 
 // Circular progress
 function setCircularProgress(element, percentage) {
-    const fill = element.querySelector('.so-progress-ring-fill');
-    const text = element.querySelector('.so-progress-text');
-    const r = parseFloat(fill.getAttribute('r'));
+    const fill = element.querySelector(\'.so-progress-ring-fill\');
+    const text = element.querySelector(\'.so-progress-text\');
+    const r = parseFloat(fill.getAttribute(\'r\'));
     const circumference = 2 * Math.PI * r;
     const offset = circumference * (1 - percentage / 100);
 
-    fill.setAttribute('stroke-dasharray', circumference);
-    fill.setAttribute('stroke-dashoffset', offset);
-    if (text) text.textContent = percentage + '%';
-}</code></pre>
-                </div>
+    fill.setAttribute(\'stroke-dasharray\', circumference);
+    fill.setAttribute(\'stroke-dashoffset\', offset);
+    if (text) text.textContent = percentage + \'%\';
+}', 'javascript') ?>
             </div>
         </div>
 
@@ -1101,7 +965,6 @@ function setCircularProgress(element, percentage) {
         </div>
 
     </div>
-</div>
 
 <script>
 // Progress API demo functions

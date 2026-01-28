@@ -33,67 +33,58 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Collapsible content panels. By default, only one panel can be open at a time.</p>
 
-                <div class="so-accordion so-mb-6" id="basicAccordion" data-so-accordion>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#collapse1">
-                                Accordion Item #1
-                            </button>
-                        </h2>
-                        <div id="collapse1" class="so-accordion-collapse so-show" data-so-parent="#basicAccordion">
-                            <div class="so-accordion-body">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        <div class="so-accordion" id="basicAccordion" data-so-accordion>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#collapse1">
+                                        Accordion Item #1
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="so-accordion-collapse so-show" data-so-parent="#basicAccordion">
+                                    <div class="so-accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#collapse2">
+                                        Accordion Item #2
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="so-accordion-collapse" data-so-parent="#basicAccordion">
+                                    <div class="so-accordion-body">
+                                        <strong>This is the second item's accordion body.</strong> Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#collapse3">
+                                        Accordion Item #3
+                                    </button>
+                                </h2>
+                                <div id="collapse3" class="so-accordion-collapse" data-so-parent="#basicAccordion">
+                                    <div class="so-accordion-body">
+                                        <strong>This is the third item's accordion body.</strong> Aenean lacinia bibendum nulla sed consectetur.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#collapse2">
-                                Accordion Item #2
-                            </button>
-                        </h2>
-                        <div id="collapse2" class="so-accordion-collapse" data-so-parent="#basicAccordion">
-                            <div class="so-accordion-body">
-                                <strong>This is the second item's accordion body.</strong> Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#collapse3">
-                                Accordion Item #3
-                            </button>
-                        </h2>
-                        <div id="collapse3" class="so-accordion-collapse" data-so-parent="#basicAccordion">
-                            <div class="so-accordion-body">
-                                <strong>This is the third item's accordion body.</strong> Aenean lacinia bibendum nulla sed consectetur.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-accordion" id="myAccordion" data-so-accordion&gt;
-    &lt;div class="so-accordion-item"&gt;
-        &lt;h2 class="so-accordion-header"&gt;
-            &lt;button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#collapse1"&gt;
+                    <?= so_code_block('<div class="so-accordion" id="myAccordion" data-so-accordion>
+    <div class="so-accordion-item">
+        <h2 class="so-accordion-header">
+            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#collapse1">
                 Accordion Item #1
-            &lt;/button&gt;
-        &lt;/h2&gt;
-        &lt;div id="collapse1" class="so-accordion-collapse so-show" data-so-parent="#myAccordion"&gt;
-            &lt;div class="so-accordion-body"&gt;
+            </button>
+        </h2>
+        <div id="collapse1" class="so-accordion-collapse so-show" data-so-parent="#myAccordion">
+            <div class="so-accordion-body">
                 Content here...
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+            </div>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -105,45 +96,36 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Omit <code>data-so-parent</code> to allow multiple panels to be open simultaneously.</p>
 
-                <div class="so-accordion so-mb-6" id="alwaysOpenAccordion" data-so-accordion>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#openCollapse1">
-                                Accordion Item #1
-                            </button>
-                        </h2>
-                        <div id="openCollapse1" class="so-accordion-collapse so-show">
-                            <div class="so-accordion-body">
-                                <strong>First panel.</strong> This accordion allows multiple panels to be open at the same time.
+                        <div class="so-accordion" id="alwaysOpenAccordion" data-so-accordion>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#openCollapse1">
+                                        Accordion Item #1
+                                    </button>
+                                </h2>
+                                <div id="openCollapse1" class="so-accordion-collapse so-show">
+                                    <div class="so-accordion-body">
+                                        <strong>First panel.</strong> This accordion allows multiple panels to be open at the same time.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#openCollapse2">
+                                        Accordion Item #2
+                                    </button>
+                                </h2>
+                                <div id="openCollapse2" class="so-accordion-collapse so-show">
+                                    <div class="so-accordion-body">
+                                        <strong>Second panel.</strong> Both can be open without closing the other.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#openCollapse2">
-                                Accordion Item #2
-                            </button>
-                        </h2>
-                        <div id="openCollapse2" class="so-accordion-collapse so-show">
-                            <div class="so-accordion-body">
-                                <strong>Second panel.</strong> Both can be open without closing the other.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- No data-so-parent attribute allows multiple open --&gt;
-&lt;div id="openCollapse1" class="so-accordion-collapse so-show"&gt;
-    &lt;!-- No data-so-parent here --&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                    <?= so_code_block('<!-- No data-so-parent attribute allows multiple open -->
+<div id="openCollapse1" class="so-accordion-collapse so-show">
+    <!-- No data-so-parent here -->
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -155,42 +137,33 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Remove borders and rounded corners with <code>.so-accordion-flush</code>.</p>
 
-                <div class="so-accordion so-accordion-flush so-mb-6" id="flushAccordion" data-so-accordion>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#flushCollapse1">
-                                Accordion Item #1
-                            </button>
-                        </h2>
-                        <div id="flushCollapse1" class="so-accordion-collapse so-show" data-so-parent="#flushAccordion">
-                            <div class="so-accordion-body">
-                                Content for the first flush accordion item.
+                        <div class="so-accordion so-accordion-flush" id="flushAccordion" data-so-accordion>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#flushCollapse1">
+                                        Accordion Item #1
+                                    </button>
+                                </h2>
+                                <div id="flushCollapse1" class="so-accordion-collapse so-show" data-so-parent="#flushAccordion">
+                                    <div class="so-accordion-body">
+                                        Content for the first flush accordion item.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#flushCollapse2">
+                                        Accordion Item #2
+                                    </button>
+                                </h2>
+                                <div id="flushCollapse2" class="so-accordion-collapse" data-so-parent="#flushAccordion">
+                                    <div class="so-accordion-body">
+                                        Content for the second flush accordion item.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#flushCollapse2">
-                                Accordion Item #2
-                            </button>
-                        </h2>
-                        <div id="flushCollapse2" class="so-accordion-collapse" data-so-parent="#flushAccordion">
-                            <div class="so-accordion-body">
-                                Content for the second flush accordion item.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-accordion so-accordion-flush"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                    <?= so_code_block('<div class="so-accordion so-accordion-flush">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -202,44 +175,35 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Apply color themes to accordions.</p>
 
-                <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4 so-mb-6">
-                    <div class="so-accordion so-accordion-primary" data-so-accordion>
-                        <div class="so-accordion-item">
-                            <h2 class="so-accordion-header">
-                                <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#colorPrimary">
-                                    Primary Accordion
-                                </button>
-                            </h2>
-                            <div id="colorPrimary" class="so-accordion-collapse so-show">
-                                <div class="so-accordion-body">Primary color theme content.</div>
+                        <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4">
+                            <div class="so-accordion so-accordion-primary" data-so-accordion>
+                                <div class="so-accordion-item">
+                                    <h2 class="so-accordion-header">
+                                        <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#colorPrimary">
+                                            Primary Accordion
+                                        </button>
+                                    </h2>
+                                    <div id="colorPrimary" class="so-accordion-collapse so-show">
+                                        <div class="so-accordion-body">Primary color theme content.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="so-accordion so-accordion-success" data-so-accordion>
+                                <div class="so-accordion-item">
+                                    <h2 class="so-accordion-header">
+                                        <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#colorSuccess">
+                                            Success Accordion
+                                        </button>
+                                    </h2>
+                                    <div id="colorSuccess" class="so-accordion-collapse so-show">
+                                        <div class="so-accordion-body">Success color theme content.</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="so-accordion so-accordion-success" data-so-accordion>
-                        <div class="so-accordion-item">
-                            <h2 class="so-accordion-header">
-                                <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#colorSuccess">
-                                    Success Accordion
-                                </button>
-                            </h2>
-                            <div id="colorSuccess" class="so-accordion-collapse so-show">
-                                <div class="so-accordion-body">Success color theme content.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-accordion so-accordion-primary"&gt;...&lt;/div&gt;
-&lt;div class="so-accordion so-accordion-success"&gt;...&lt;/div&gt;
-&lt;div class="so-accordion so-accordion-danger"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                    <?= so_code_block('<div class="so-accordion so-accordion-primary">...</div>
+<div class="so-accordion so-accordion-success">...</div>
+<div class="so-accordion so-accordion-danger">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -251,88 +215,79 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Different icon styles for the accordion toggle.</p>
 
-                <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4 so-mb-6">
-                    <!-- Plus/Minus -->
-                    <div>
-                        <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Plus/Minus (.so-accordion-plus-minus)</label>
-                        <div class="so-accordion so-accordion-plus-minus" data-so-accordion>
-                            <div class="so-accordion-item">
-                                <h2 class="so-accordion-header">
-                                    <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#plusMinusCollapse">
-                                        Plus/Minus Icon
-                                    </button>
-                                </h2>
-                                <div id="plusMinusCollapse" class="so-accordion-collapse so-show">
-                                    <div class="so-accordion-body">Content with plus/minus icon.</div>
+                        <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4">
+                            <!-- Plus/Minus -->
+                            <div>
+                                <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Plus/Minus (.so-accordion-plus-minus)</label>
+                                <div class="so-accordion so-accordion-plus-minus" data-so-accordion>
+                                    <div class="so-accordion-item">
+                                        <h2 class="so-accordion-header">
+                                            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#plusMinusCollapse">
+                                                Plus/Minus Icon
+                                            </button>
+                                        </h2>
+                                        <div id="plusMinusCollapse" class="so-accordion-collapse so-show">
+                                            <div class="so-accordion-body">Content with plus/minus icon.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Arrow -->
+                            <div>
+                                <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Arrow (.so-accordion-arrow)</label>
+                                <div class="so-accordion so-accordion-arrow" data-so-accordion>
+                                    <div class="so-accordion-item">
+                                        <h2 class="so-accordion-header">
+                                            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#arrowCollapse">
+                                                Arrow Icon
+                                            </button>
+                                        </h2>
+                                        <div id="arrowCollapse" class="so-accordion-collapse so-show">
+                                            <div class="so-accordion-body">Content with arrow icon.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Icon Left -->
+                            <div>
+                                <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Icon Left (.so-accordion-icon-left)</label>
+                                <div class="so-accordion so-accordion-icon-left" data-so-accordion>
+                                    <div class="so-accordion-item">
+                                        <h2 class="so-accordion-header">
+                                            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#iconLeftCollapse">
+                                                Icon on Left
+                                            </button>
+                                        </h2>
+                                        <div id="iconLeftCollapse" class="so-accordion-collapse so-show">
+                                            <div class="so-accordion-body">Content with icon on the left.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- No Icon -->
+                            <div>
+                                <label class="so-d-block so-mb-2 so-text-sm so-font-medium">No Icon (.so-accordion-no-icon)</label>
+                                <div class="so-accordion so-accordion-no-icon" data-so-accordion>
+                                    <div class="so-accordion-item">
+                                        <h2 class="so-accordion-header">
+                                            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#noIconCollapse">
+                                                No Icon
+                                            </button>
+                                        </h2>
+                                        <div id="noIconCollapse" class="so-accordion-collapse so-show">
+                                            <div class="so-accordion-body">Content without any icon.</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Arrow -->
-                    <div>
-                        <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Arrow (.so-accordion-arrow)</label>
-                        <div class="so-accordion so-accordion-arrow" data-so-accordion>
-                            <div class="so-accordion-item">
-                                <h2 class="so-accordion-header">
-                                    <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#arrowCollapse">
-                                        Arrow Icon
-                                    </button>
-                                </h2>
-                                <div id="arrowCollapse" class="so-accordion-collapse so-show">
-                                    <div class="so-accordion-body">Content with arrow icon.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Icon Left -->
-                    <div>
-                        <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Icon Left (.so-accordion-icon-left)</label>
-                        <div class="so-accordion so-accordion-icon-left" data-so-accordion>
-                            <div class="so-accordion-item">
-                                <h2 class="so-accordion-header">
-                                    <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#iconLeftCollapse">
-                                        Icon on Left
-                                    </button>
-                                </h2>
-                                <div id="iconLeftCollapse" class="so-accordion-collapse so-show">
-                                    <div class="so-accordion-body">Content with icon on the left.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- No Icon -->
-                    <div>
-                        <label class="so-d-block so-mb-2 so-text-sm so-font-medium">No Icon (.so-accordion-no-icon)</label>
-                        <div class="so-accordion so-accordion-no-icon" data-so-accordion>
-                            <div class="so-accordion-item">
-                                <h2 class="so-accordion-header">
-                                    <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#noIconCollapse">
-                                        No Icon
-                                    </button>
-                                </h2>
-                                <div id="noIconCollapse" class="so-accordion-collapse so-show">
-                                    <div class="so-accordion-body">Content without any icon.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-accordion so-accordion-plus-minus"&gt;...&lt;/div&gt;
-&lt;div class="so-accordion so-accordion-arrow"&gt;...&lt;/div&gt;
-&lt;div class="so-accordion so-accordion-icon-left"&gt;...&lt;/div&gt;
-&lt;div class="so-accordion so-accordion-no-icon"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                    <?= so_code_block('<div class="so-accordion so-accordion-plus-minus">...</div>
+<div class="so-accordion so-accordion-arrow">...</div>
+<div class="so-accordion so-accordion-icon-left">...</div>
+<div class="so-accordion so-accordion-no-icon">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -344,49 +299,40 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Small and large accordion sizes.</p>
 
-                <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4 so-mb-6">
-                    <div>
-                        <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Small (.so-accordion-sm)</label>
-                        <div class="so-accordion so-accordion-sm" data-so-accordion>
-                            <div class="so-accordion-item">
-                                <h2 class="so-accordion-header">
-                                    <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#smCollapse">
-                                        Small Accordion
-                                    </button>
-                                </h2>
-                                <div id="smCollapse" class="so-accordion-collapse so-show">
-                                    <div class="so-accordion-body">Compact content.</div>
+                        <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4">
+                            <div>
+                                <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Small (.so-accordion-sm)</label>
+                                <div class="so-accordion so-accordion-sm" data-so-accordion>
+                                    <div class="so-accordion-item">
+                                        <h2 class="so-accordion-header">
+                                            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#smCollapse">
+                                                Small Accordion
+                                            </button>
+                                        </h2>
+                                        <div id="smCollapse" class="so-accordion-collapse so-show">
+                                            <div class="so-accordion-body">Compact content.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Large (.so-accordion-lg)</label>
+                                <div class="so-accordion so-accordion-lg" data-so-accordion>
+                                    <div class="so-accordion-item">
+                                        <h2 class="so-accordion-header">
+                                            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#lgCollapse">
+                                                Large Accordion
+                                            </button>
+                                        </h2>
+                                        <div id="lgCollapse" class="so-accordion-collapse so-show">
+                                            <div class="so-accordion-body">More spacious content area.</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Large (.so-accordion-lg)</label>
-                        <div class="so-accordion so-accordion-lg" data-so-accordion>
-                            <div class="so-accordion-item">
-                                <h2 class="so-accordion-header">
-                                    <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#lgCollapse">
-                                        Large Accordion
-                                    </button>
-                                </h2>
-                                <div id="lgCollapse" class="so-accordion-collapse so-show">
-                                    <div class="so-accordion-body">More spacious content area.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-accordion so-accordion-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-accordion so-accordion-lg"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                    <?= so_code_block('<div class="so-accordion so-accordion-sm">...</div>
+<div class="so-accordion so-accordion-lg">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -398,61 +344,52 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Control accordions programmatically and listen to events.</p>
 
-                <div class="so-accordion so-mb-4" id="apiAccordion" data-so-accordion>
-                    <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" data-so-toggle="collapse" data-so-target="#apiCollapse1">
-                                API Demo Panel
-                            </button>
-                        </h2>
-                        <div id="apiCollapse1" class="so-accordion-collapse" data-so-parent="#apiAccordion">
-                            <div class="so-accordion-body">
-                                This panel can be controlled via JavaScript API.
+                        <div class="so-accordion so-mb-4" id="apiAccordion" data-so-accordion>
+                            <div class="so-accordion-item">
+                                <h2 class="so-accordion-header">
+                                    <button class="so-accordion-button so-collapsed" data-so-toggle="collapse" data-so-target="#apiCollapse1">
+                                        API Demo Panel
+                                    </button>
+                                </h2>
+                                <div id="apiCollapse1" class="so-accordion-collapse" data-so-parent="#apiAccordion">
+                                    <div class="so-accordion-body">
+                                        This panel can be controlled via JavaScript API.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="so-d-flex so-flex-wrap so-gap-2 so-mb-4">
-                    <button class="so-btn so-btn-sm so-btn-primary" onclick="SOAccordion.show(document.getElementById('apiCollapse1'))">Show</button>
-                    <button class="so-btn so-btn-sm so-btn-secondary" onclick="SOAccordion.hide(document.getElementById('apiCollapse1'))">Hide</button>
-                    <button class="so-btn so-btn-sm so-btn-outline-primary" onclick="SOAccordion.toggle(document.getElementById('apiCollapse1'))">Toggle</button>
-                </div>
+                        <div class="so-d-flex so-flex-wrap so-gap-2 so-mb-4">
+                            <button class="so-btn so-btn-sm so-btn-primary" onclick="SOAccordion.show(document.getElementById('apiCollapse1'))">Show</button>
+                            <button class="so-btn so-btn-sm so-btn-secondary" onclick="SOAccordion.hide(document.getElementById('apiCollapse1'))">Hide</button>
+                            <button class="so-btn so-btn-sm so-btn-outline-primary" onclick="SOAccordion.toggle(document.getElementById('apiCollapse1'))">Toggle</button>
+                        </div>
 
-                <div class="so-alert so-alert-info so-mb-4" id="accordion-event-log">
-                    <span class="material-icons">info</span>
-                    <span>Event log will appear here. Interact with the accordion above.</span>
-                </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">// Programmatic control
+                        <div class="so-alert so-alert-info so-mb-4" id="accordion-event-log">
+                            <span class="material-icons">info</span>
+                            <span>Event log will appear here. Interact with the accordion above.</span>
+                        </div>
+                    <?= so_code_block('// Programmatic control
 SOAccordion.show(element);   // Open panel
 SOAccordion.hide(element);   // Close panel
 SOAccordion.toggle(element); // Toggle panel
 
 // Events
-element.addEventListener('so:accordion:show', (e) => {
-    console.log('About to show');
+element.addEventListener(\'so:accordion:show\', (e) => {
+    console.log(\'About to show\');
 });
 
-element.addEventListener('so:accordion:shown', (e) => {
-    console.log('Shown');
+element.addEventListener(\'so:accordion:shown\', (e) => {
+    console.log(\'Shown\');
 });
 
-element.addEventListener('so:accordion:hide', (e) => {
-    console.log('About to hide');
+element.addEventListener(\'so:accordion:hide\', (e) => {
+    console.log(\'About to hide\');
 });
 
-element.addEventListener('so:accordion:hidden', (e) => {
-    console.log('Hidden');
-});</code></pre>
-                </div>
+element.addEventListener(\'so:accordion:hidden\', (e) => {
+    console.log(\'Hidden\');
+});', 'javascript') ?>
 
                 <h5 class="so-mt-6 so-mb-3">Available Events</h5>
                 <div class="so-table-responsive">
@@ -560,7 +497,6 @@ element.addEventListener('so:accordion:hidden', (e) => {
         </div>
 
     </div>
-</div>
 
 <script>
 // SOAccordion Class
@@ -580,7 +516,7 @@ class SOAccordion {
     }
 
     static toggle(element) {
-        if (element.classList.contains('show')) {
+        if (element.classList.contains('so-show')) {
             SOAccordion.hide(element);
         } else {
             SOAccordion.show(element);
@@ -593,7 +529,7 @@ class SOAccordion {
 
         // Close siblings if parent exists
         if (parent) {
-            parent.querySelectorAll('.so-accordion-collapse.show').forEach(sibling => {
+            parent.querySelectorAll('.so-accordion-collapse.so-show').forEach(sibling => {
                 if (sibling !== element) {
                     SOAccordion.hide(sibling);
                 }
@@ -604,8 +540,8 @@ class SOAccordion {
         element.dispatchEvent(new CustomEvent('so:accordion:show', { bubbles: true }));
 
         // Show element
-        element.classList.add('collapsing');
-        element.classList.remove('show');
+        element.classList.add('so-collapsing');
+        element.classList.remove('so-show');
         element.style.display = 'block';
         const height = element.scrollHeight;
         element.style.height = '0px';
@@ -616,13 +552,13 @@ class SOAccordion {
         element.style.height = height + 'px';
 
         if (button) {
-            button.classList.remove('collapsed');
+            button.classList.remove('so-collapsed');
             button.setAttribute('aria-expanded', 'true');
         }
 
         setTimeout(() => {
-            element.classList.remove('collapsing');
-            element.classList.add('show');
+            element.classList.remove('so-collapsing');
+            element.classList.add('so-show');
             element.style.height = '';
             element.dispatchEvent(new CustomEvent('so:accordion:shown', { bubbles: true }));
         }, 350);
@@ -636,17 +572,17 @@ class SOAccordion {
 
         element.style.height = element.scrollHeight + 'px';
         element.offsetHeight; // Force reflow
-        element.classList.add('collapsing');
-        element.classList.remove('show');
+        element.classList.add('so-collapsing');
+        element.classList.remove('so-show');
         element.style.height = '0px';
 
         if (button) {
-            button.classList.add('collapsed');
+            button.classList.add('so-collapsed');
             button.setAttribute('aria-expanded', 'false');
         }
 
         setTimeout(() => {
-            element.classList.remove('collapsing');
+            element.classList.remove('so-collapsing');
             element.style.display = '';
             element.style.height = '';
             element.dispatchEvent(new CustomEvent('so:accordion:hidden', { bubbles: true }));
@@ -677,6 +613,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function copyCode(button) {
+    const codeBlock = button.closest('.so-code-block');
+    const activePane = codeBlock.querySelector('.so-code-pane.so-active') || codeBlock;
+    const code = activePane.querySelector('.so-code-content code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        button.innerHTML = '<span class="material-icons">check</span>';
+        setTimeout(() => {
+            button.innerHTML = '<span class="material-icons">content_copy</span>';
+        }, 2000);
+    });
+}
 </script>
 
     </div>

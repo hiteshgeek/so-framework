@@ -43,21 +43,13 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider so-slider-primary" data-so-slider&gt;
-    &lt;input type="range" class="so-slider-input" min="0" max="100" value="50"&gt;
-    &lt;div class="so-slider-track"&gt;
-        &lt;div class="so-slider-fill"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-thumb"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider so-slider-primary" data-so-slider>
+    <input type="range" class="so-slider-input" min="0" max="100" value="50">
+    <div class="so-slider-track">
+        <div class="so-slider-fill"></div>
+        <div class="so-slider-thumb"></div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -119,25 +111,17 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Extra Small --&gt;
-&lt;div class="so-slider so-slider-xs so-slider-primary" data-so-slider&gt;...&lt;/div&gt;
+<?= so_code_block('<!-- Extra Small -->
+<div class="so-slider so-slider-xs so-slider-primary" data-so-slider>...</div>
 
-&lt;!-- Small --&gt;
-&lt;div class="so-slider so-slider-sm so-slider-primary" data-so-slider&gt;...&lt;/div&gt;
+<!-- Small -->
+<div class="so-slider so-slider-sm so-slider-primary" data-so-slider>...</div>
 
-&lt;!-- Default --&gt;
-&lt;div class="so-slider so-slider-primary" data-so-slider&gt;...&lt;/div&gt;
+<!-- Default -->
+<div class="so-slider so-slider-primary" data-so-slider>...</div>
 
-&lt;!-- Large --&gt;
-&lt;div class="so-slider so-slider-lg so-slider-primary" data-so-slider&gt;...&lt;/div&gt;</code></pre>
-                </div>
+<!-- Large -->
+<div class="so-slider so-slider-lg so-slider-primary" data-so-slider>...</div>', 'html') ?>
             </div>
         </div>
 
@@ -247,22 +231,14 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider so-slider-primary" data-so-slider&gt;...&lt;/div&gt;
-&lt;div class="so-slider so-slider-secondary" data-so-slider&gt;...&lt;/div&gt;
-&lt;div class="so-slider so-slider-success" data-so-slider&gt;...&lt;/div&gt;
-&lt;div class="so-slider so-slider-danger" data-so-slider&gt;...&lt;/div&gt;
-&lt;div class="so-slider so-slider-warning" data-so-slider&gt;...&lt;/div&gt;
-&lt;div class="so-slider so-slider-info" data-so-slider&gt;...&lt;/div&gt;
-&lt;div class="so-slider so-slider-light" data-so-slider&gt;...&lt;/div&gt;
-&lt;div class="so-slider so-slider-dark" data-so-slider&gt;...&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider so-slider-primary" data-so-slider>...</div>
+<div class="so-slider so-slider-secondary" data-so-slider>...</div>
+<div class="so-slider so-slider-success" data-so-slider>...</div>
+<div class="so-slider so-slider-danger" data-so-slider>...</div>
+<div class="so-slider so-slider-warning" data-so-slider>...</div>
+<div class="so-slider so-slider-info" data-so-slider>...</div>
+<div class="so-slider so-slider-light" data-so-slider>...</div>
+<div class="so-slider so-slider-dark" data-so-slider>...</div>', 'html') ?>
             </div>
         </div>
 
@@ -291,22 +267,14 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider so-slider-discrete so-slider-primary" data-so-slider data-so-ticks="11"&gt;
-    &lt;input type="range" class="so-slider-input" min="0" max="100" value="40" step="10"&gt;
-    &lt;div class="so-slider-track"&gt;
-        &lt;div class="so-slider-fill"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-thumb"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-ticks"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider so-slider-discrete so-slider-primary" data-so-slider data-so-ticks="11">
+    <input type="range" class="so-slider-input" min="0" max="100" value="40" step="10">
+    <div class="so-slider-track">
+        <div class="so-slider-fill"></div>
+        <div class="so-slider-thumb"></div>
+        <div class="so-slider-ticks"></div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -330,23 +298,15 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider so-slider-labeled so-slider-primary" data-so-slider&gt;
-    &lt;input type="range" class="so-slider-input" min="0" max="100" value="65"&gt;
-    &lt;div class="so-slider-track"&gt;
-        &lt;div class="so-slider-fill"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-thumb"&gt;
-            &lt;span class="so-slider-tooltip"&gt;65&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider so-slider-labeled so-slider-primary" data-so-slider>
+    <input type="range" class="so-slider-input" min="0" max="100" value="65">
+    <div class="so-slider-track">
+        <div class="so-slider-fill"></div>
+        <div class="so-slider-thumb">
+            <span class="so-slider-tooltip">65</span>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -381,24 +341,16 @@ require_once '../includes/navbar.php';
                     <span class="so-slider-value">$1000</span>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider-inline"&gt;
-    &lt;div class="so-slider so-slider-primary" data-so-slider data-so-output="#my-value"&gt;
-        &lt;input type="range" class="so-slider-input" min="0" max="100" value="70"&gt;
-        &lt;div class="so-slider-track"&gt;
-            &lt;div class="so-slider-fill"&gt;&lt;/div&gt;
-            &lt;div class="so-slider-thumb"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;span class="so-slider-value" id="my-value"&gt;70&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider-inline">
+    <div class="so-slider so-slider-primary" data-so-slider data-so-output="#my-value">
+        <input type="range" class="so-slider-input" min="0" max="100" value="70">
+        <div class="so-slider-track">
+            <div class="so-slider-fill"></div>
+            <div class="so-slider-thumb"></div>
+        </div>
+    </div>
+    <span class="so-slider-value" id="my-value">70</span>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -462,21 +414,13 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider so-slider-vertical so-slider-primary" data-so-slider&gt;
-    &lt;input type="range" class="so-slider-input" min="0" max="100" value="60"&gt;
-    &lt;div class="so-slider-track"&gt;
-        &lt;div class="so-slider-fill"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-thumb"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider so-slider-vertical so-slider-primary" data-so-slider>
+    <input type="range" class="so-slider-input" min="0" max="100" value="60">
+    <div class="so-slider-track">
+        <div class="so-slider-fill"></div>
+        <div class="so-slider-thumb"></div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -506,23 +450,15 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider so-slider-range so-slider-primary" data-so-slider-range&gt;
-    &lt;input type="range" class="so-slider-input so-slider-input-min" min="0" max="1000" value="200"&gt;
-    &lt;input type="range" class="so-slider-input so-slider-input-max" min="0" max="1000" value="800"&gt;
-    &lt;div class="so-slider-track"&gt;
-        &lt;div class="so-slider-fill"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-thumb so-slider-thumb-min"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-thumb so-slider-thumb-max"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider so-slider-range so-slider-primary" data-so-slider-range>
+    <input type="range" class="so-slider-input so-slider-input-min" min="0" max="1000" value="200">
+    <input type="range" class="so-slider-input so-slider-input-max" min="0" max="1000" value="800">
+    <div class="so-slider-track">
+        <div class="so-slider-fill"></div>
+        <div class="so-slider-thumb so-slider-thumb-min"></div>
+        <div class="so-slider-thumb so-slider-thumb-max"></div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -558,21 +494,13 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-slider so-slider-primary so-disabled" data-so-slider&gt;
-    &lt;input type="range" class="so-slider-input" min="0" max="100" value="40" disabled&gt;
-    &lt;div class="so-slider-track"&gt;
-        &lt;div class="so-slider-fill"&gt;&lt;/div&gt;
-        &lt;div class="so-slider-thumb"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-slider so-slider-primary so-disabled" data-so-slider>
+    <input type="range" class="so-slider-input" min="0" max="100" value="40" disabled>
+    <div class="so-slider-track">
+        <div class="so-slider-fill"></div>
+        <div class="so-slider-thumb"></div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -606,14 +534,7 @@ require_once '../includes/navbar.php';
                     <button class="so-btn so-btn-sm so-btn-outline-info" onclick="alert('Value: ' + demoSlider.getValue())">Get Value</button>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">// Get slider instance
+<?= so_code_block("// Get slider instance
 const slider = SOSlider.getInstance(document.getElementById('my-slider'));
 
 // Set value programmatically
@@ -632,8 +553,7 @@ slider.on('change', (value) => {
 });
 
 // Destroy instance
-slider.destroy();</code></pre>
-                </div>
+slider.destroy();", 'javascript') ?>
             </div>
         </div>
 
@@ -661,14 +581,7 @@ slider.destroy();</code></pre>
                     <span>Event log will appear here. Drag the slider above.</span>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">const sliderEl = document.getElementById('my-slider');
+<?= so_code_block("const sliderEl = document.getElementById('my-slider');
 
 // Native input event (fires continuously while dragging)
 sliderEl.addEventListener('so:slider:input', (e) => {
@@ -688,8 +601,7 @@ sliderEl.addEventListener('so:slider:start', (e) => {
 // Stop dragging
 sliderEl.addEventListener('so:slider:end', (e) => {
     console.log('Stopped dragging at:', e.detail.value);
-});</code></pre>
-                </div>
+});", 'javascript') ?>
 
                 <h5 class="so-mt-6 so-mb-3">Available Events</h5>
                 <div class="so-table-responsive">
@@ -787,29 +699,21 @@ sliderEl.addEventListener('so:slider:end', (e) => {
                     </table>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">// Initialize with options
+<?= so_code_block("// Initialize with options
 const slider = new SOSlider(element, {
     output: '#value-display',
-    prefix: '$',
+    prefix: '\$',
     suffix: '',
     ticks: 11
 });
 
 // Or use data attributes
-&lt;div class="so-slider so-slider-primary"
+<div class=\"so-slider so-slider-primary\"
      data-so-slider
-     data-so-output="#value-display"
-     data-so-prefix="$"&gt;
+     data-so-output=\"#value-display\"
+     data-so-prefix=\"\$\">
     ...
-&lt;/div&gt;</code></pre>
-                </div>
+</div>", 'javascript') ?>
             </div>
         </div>
 
@@ -1349,7 +1253,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-    </div>
 </main>
 
 <?php

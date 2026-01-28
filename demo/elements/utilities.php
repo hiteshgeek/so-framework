@@ -1745,7 +1745,7 @@ require_once '../includes/navbar.php';
             </div>
         </div>
     </div>
-    
+    </div>
 </main>
 
 <?php

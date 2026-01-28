@@ -50,23 +50,15 @@ require_once '../includes/navbar.php';
                                 <input type="password" id="input-password" class="so-form-control" placeholder="Enter password">
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label" for="my-input"&gt;Default Input&lt;/label&gt;
-    &lt;input type="text" id="my-input" class="so-form-control" placeholder="Enter text..."&gt;
-&lt;/div&gt;
+                        <?= so_code_block('<div class="so-form-group">
+    <label class="so-form-label" for="my-input">Default Input</label>
+    <input type="text" id="my-input" class="so-form-control" placeholder="Enter text...">
+</div>
 
-&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label so-required" for="required-input"&gt;Required Field&lt;/label&gt;
-    &lt;input type="text" id="required-input" class="so-form-control" placeholder="This field is required" required&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<div class="so-form-group">
+    <label class="so-form-label so-required" for="required-input">Required Field</label>
+    <input type="text" id="required-input" class="so-form-control" placeholder="This field is required" required>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -92,22 +84,14 @@ require_once '../includes/navbar.php';
                                 <input type="text" id="input-large" class="so-form-control so-form-control-lg" placeholder="Large input">
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;label class="so-form-label" for="small"&gt;Small&lt;/label&gt;
-&lt;input type="text" id="small" class="so-form-control so-form-control-sm" placeholder="Small"&gt;
+                        <?= so_code_block('<label class="so-form-label" for="small">Small</label>
+<input type="text" id="small" class="so-form-control so-form-control-sm" placeholder="Small">
 
-&lt;label class="so-form-label" for="default"&gt;Default&lt;/label&gt;
-&lt;input type="text" id="default" class="so-form-control" placeholder="Default"&gt;
+<label class="so-form-label" for="default">Default</label>
+<input type="text" id="default" class="so-form-control" placeholder="Default">
 
-&lt;label class="so-form-label" for="large"&gt;Large&lt;/label&gt;
-&lt;input type="text" id="large" class="so-form-control so-form-control-lg" placeholder="Large"&gt;</code></pre>
-                        </div>
+<label class="so-form-label" for="large">Large</label>
+<input type="text" id="large" class="so-form-control so-form-control-lg" placeholder="Large">', 'html') ?>
                     </div>
                 </div>
 
@@ -183,43 +167,35 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Left Icon --&gt;
-&lt;div class="so-input-wrapper"&gt;
-    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;search&lt;/span&gt;&lt;/span&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Search..."&gt;
-&lt;/div&gt;
+                        <?= so_code_block('<!-- Left Icon -->
+<div class="so-input-wrapper">
+    <span class="so-input-icon"><span class="material-icons">search</span></span>
+    <input type="text" class="so-form-control" placeholder="Search...">
+</div>
 
-&lt;!-- Right Icon (static) --&gt;
-&lt;div class="so-input-wrapper icon-right"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Email"&gt;
-    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;email&lt;/span&gt;&lt;/span&gt;
-&lt;/div&gt;
+<!-- Right Icon (static) -->
+<div class="so-input-wrapper icon-right">
+    <input type="text" class="so-form-control" placeholder="Email">
+    <span class="so-input-icon"><span class="material-icons">email</span></span>
+</div>
 
-&lt;!-- Dual Icons: Left Icon + Right Action (password toggle) --&gt;
-&lt;div class="so-input-wrapper"&gt;
-    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;lock&lt;/span&gt;&lt;/span&gt;
-    &lt;input type="password" class="so-form-control" placeholder="Enter password"&gt;
-    &lt;button type="button" class="so-input-action" aria-label="Toggle password"&gt;
-        &lt;span class="material-icons"&gt;visibility&lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;
+<!-- Dual Icons: Left Icon + Right Action (password toggle) -->
+<div class="so-input-wrapper">
+    <span class="so-input-icon"><span class="material-icons">lock</span></span>
+    <input type="password" class="so-form-control" placeholder="Enter password">
+    <button type="button" class="so-input-action" aria-label="Toggle password">
+        <span class="material-icons">visibility</span>
+    </button>
+</div>
 
-&lt;!-- Dual Icons: Search with Clear --&gt;
-&lt;div class="so-input-wrapper"&gt;
-    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;search&lt;/span&gt;&lt;/span&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Search..."&gt;
-    &lt;button type="button" class="so-input-action" aria-label="Clear"&gt;
-        &lt;span class="material-icons"&gt;close&lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Dual Icons: Search with Clear -->
+<div class="so-input-wrapper">
+    <span class="so-input-icon"><span class="material-icons">search</span></span>
+    <input type="text" class="so-form-control" placeholder="Search...">
+    <button type="button" class="so-input-action" aria-label="Clear">
+        <span class="material-icons">close</span>
+    </button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -270,37 +246,29 @@ require_once '../includes/navbar.php';
                                 <input type="text" id="input-ctx-dark" class="so-form-control so-form-control-dark" placeholder="Dark input">
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;label class="so-form-label" for="primary"&gt;Primary&lt;/label&gt;
-&lt;input type="text" id="primary" class="so-form-control so-form-control-primary" placeholder="Primary"&gt;
+                        <?= so_code_block('<label class="so-form-label" for="primary">Primary</label>
+<input type="text" id="primary" class="so-form-control so-form-control-primary" placeholder="Primary">
 
-&lt;label class="so-form-label" for="secondary"&gt;Secondary&lt;/label&gt;
-&lt;input type="text" id="secondary" class="so-form-control so-form-control-secondary" placeholder="Secondary"&gt;
+<label class="so-form-label" for="secondary">Secondary</label>
+<input type="text" id="secondary" class="so-form-control so-form-control-secondary" placeholder="Secondary">
 
-&lt;label class="so-form-label" for="success"&gt;Success&lt;/label&gt;
-&lt;input type="text" id="success" class="so-form-control so-form-control-success" placeholder="Success"&gt;
+<label class="so-form-label" for="success">Success</label>
+<input type="text" id="success" class="so-form-control so-form-control-success" placeholder="Success">
 
-&lt;label class="so-form-label" for="danger"&gt;Danger&lt;/label&gt;
-&lt;input type="text" id="danger" class="so-form-control so-form-control-danger" placeholder="Danger"&gt;
+<label class="so-form-label" for="danger">Danger</label>
+<input type="text" id="danger" class="so-form-control so-form-control-danger" placeholder="Danger">
 
-&lt;label class="so-form-label" for="warning"&gt;Warning&lt;/label&gt;
-&lt;input type="text" id="warning" class="so-form-control so-form-control-warning" placeholder="Warning"&gt;
+<label class="so-form-label" for="warning">Warning</label>
+<input type="text" id="warning" class="so-form-control so-form-control-warning" placeholder="Warning">
 
-&lt;label class="so-form-label" for="info"&gt;Info&lt;/label&gt;
-&lt;input type="text" id="info" class="so-form-control so-form-control-info" placeholder="Info"&gt;
+<label class="so-form-label" for="info">Info</label>
+<input type="text" id="info" class="so-form-control so-form-control-info" placeholder="Info">
 
-&lt;label class="so-form-label" for="light"&gt;Light&lt;/label&gt;
-&lt;input type="text" id="light" class="so-form-control so-form-control-light" placeholder="Light"&gt;
+<label class="so-form-label" for="light">Light</label>
+<input type="text" id="light" class="so-form-control so-form-control-light" placeholder="Light">
 
-&lt;label class="so-form-label" for="dark"&gt;Dark&lt;/label&gt;
-&lt;input type="text" id="dark" class="so-form-control so-form-control-dark" placeholder="Dark"&gt;</code></pre>
-                        </div>
+<label class="so-form-label" for="dark">Dark</label>
+<input type="text" id="dark" class="so-form-control so-form-control-dark" placeholder="Dark">', 'html') ?>
                     </div>
                 </div>
 
@@ -475,52 +443,44 @@ SOForms.clearError('email');</code></pre>
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Basic Help Text --&gt;
-&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label" for="username"&gt;Username&lt;/label&gt;
-    &lt;input type="text" id="username" class="so-form-control" placeholder="Enter username" aria-describedby="username-hint"&gt;
-    &lt;div class="so-form-hint" id="username-hint"&gt;
-        &lt;span class="material-icons"&gt;help_outline&lt;/span&gt;
+                        <?= so_code_block('<!-- Basic Help Text -->
+<div class="so-form-group">
+    <label class="so-form-label" for="username">Username</label>
+    <input type="text" id="username" class="so-form-control" placeholder="Enter username" aria-describedby="username-hint">
+    <div class="so-form-hint" id="username-hint">
+        <span class="material-icons">help_outline</span>
         Username must be 3-20 characters long
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
 
-&lt;!-- Character Counter --&gt;
-&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label" for="bio"&gt;Bio&lt;/label&gt;
-    &lt;input type="text" id="bio" class="so-form-control" maxlength="100" aria-describedby="bio-hint"&gt;
-    &lt;div class="so-form-hint so-form-hint-counter" id="bio-hint"&gt;
+<!-- Character Counter -->
+<div class="so-form-group">
+    <label class="so-form-label" for="bio">Bio</label>
+    <input type="text" id="bio" class="so-form-control" maxlength="100" aria-describedby="bio-hint">
+    <div class="so-form-hint so-form-hint-counter" id="bio-hint">
         0 / 100 characters
-    &lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
 
-&lt;!-- Inline Hint --&gt;
-&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label" for="middle-name"&gt;
+<!-- Inline Hint -->
+<div class="so-form-group">
+    <label class="so-form-label" for="middle-name">
         Middle Name
-        &lt;span class="so-form-hint so-form-hint-inline"&gt;
-            &lt;span class="material-icons"&gt;info&lt;/span&gt;
+        <span class="so-form-hint so-form-hint-inline">
+            <span class="material-icons">info</span>
             Optional
-        &lt;/span&gt;
-    &lt;/label&gt;
-    &lt;input type="text" id="middle-name" class="so-form-control"&gt;
-&lt;/div&gt;
+        </span>
+    </label>
+    <input type="text" id="middle-name" class="so-form-control">
+</div>
 
-&lt;!-- Multiple Hints --&gt;
-&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label" for="password"&gt;Password&lt;/label&gt;
-    &lt;input type="password" id="password" class="so-form-control" aria-describedby="hint-1 hint-2"&gt;
-    &lt;div class="so-form-hint" id="hint-1"&gt;Must contain at least 8 characters&lt;/div&gt;
-    &lt;div class="so-form-hint" id="hint-2"&gt;Include uppercase, lowercase, and numbers&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Multiple Hints -->
+<div class="so-form-group">
+    <label class="so-form-label" for="password">Password</label>
+    <input type="password" id="password" class="so-form-control" aria-describedby="hint-1 hint-2">
+    <div class="so-form-hint" id="hint-1">Must contain at least 8 characters</div>
+    <div class="so-form-hint" id="hint-2">Include uppercase, lowercase, and numbers</div>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -541,19 +501,11 @@ SOForms.clearError('email');</code></pre>
                                 <input type="text" id="input-readonly" class="so-form-control" value="Read only value" readonly>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;label class="so-form-label" for="disabled"&gt;Disabled&lt;/label&gt;
-&lt;input type="text" id="disabled" class="so-form-control" value="Cannot edit" disabled&gt;
+                        <?= so_code_block('<label class="so-form-label" for="disabled">Disabled</label>
+<input type="text" id="disabled" class="so-form-control" value="Cannot edit" disabled>
 
-&lt;label class="so-form-label" for="readonly"&gt;Readonly&lt;/label&gt;
-&lt;input type="text" id="readonly" class="so-form-control" value="Read only" readonly&gt;</code></pre>
-                        </div>
+<label class="so-form-label" for="readonly">Readonly</label>
+<input type="text" id="readonly" class="so-form-control" value="Read only" readonly>', 'html') ?>
                     </div>
                 </div>
 
@@ -1864,123 +1816,84 @@ const select = SOSelect.getInstance(selectEl, {
                     </div>
                     <div class="so-card-body">
                         <h4 class="so-mb-3">Initialization</h4>
-                        <div class="so-code-block so-mt-2">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-javascript">// Auto-initialize via data attribute (done automatically)
+                        <?= so_code_block('// Auto-initialize via data attribute (done automatically)
 // Or manually get/create instance:
-const selectEl = document.querySelector('.so-select');
+const selectEl = document.querySelector(\'.so-select\');
 const select = SOSelect.getInstance(selectEl, {
     searchable: true,
     multiple: true,
-    displayMode: 'chips',
+    displayMode: \'chips\',
     showActions: true,
-    selectAllText: 'Select All',
-    selectNoneText: 'Clear All',
-    multipleSelectedText: '{count} items selected',
-    allSelectedText: 'All items selected'
-});</code></pre>
-                        </div>
+    selectAllText: \'Select All\',
+    selectNoneText: \'Clear All\',
+    multipleSelectedText: \'{count} items selected\',
+    allSelectedText: \'All items selected\'
+});', 'javascript') ?>
 
                         <h4 class="so-mt-4 so-mb-3">Value Management</h4>
-                        <div class="so-code-block so-mt-2">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-javascript">// Get values
+                        <?= so_code_block('// Get values
 const value = select.getValue();    // Single value or first
 const values = select.getValues();  // Array of all selected
 const text = select.getText();      // Display text
 const texts = select.getTexts();    // Array of texts
 
 // Set values
-select.setValue('us');              // Single value
-select.setValues(['us', 'uk']);     // Multiple values
-select.addValue('de');              // Add to selection
-select.removeValue('us');           // Remove from selection
+select.setValue(\'us\');              // Single value
+select.setValues([\'us\', \'uk\']);     // Multiple values
+select.addValue(\'de\');              // Add to selection
+select.removeValue(\'us\');           // Remove from selection
 select.clear();                     // Clear all
 select.selectAll();                 // Select all (multi)
-select.selectNone();                // Deselect all (multi)</code></pre>
-                        </div>
+select.selectNone();                // Deselect all (multi)', 'javascript') ?>
 
                         <h4 class="so-mt-4 so-mb-3">Programmatic Option Management</h4>
-                        <div class="so-code-block so-mt-2">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-javascript">// Add options
-select.addOption({ value: 'new', label: 'New Option' });
-select.prependOption({ value: 'first', label: 'First' });
-select.addOptionAt({ value: 'mid', label: 'Middle' }, 2);
-select.addOptionBefore({ value: 'x', label: 'Before UK' }, 'uk');
-select.addOptionAfter({ value: 'y', label: 'After US' }, 'us');
+                        <?= so_code_block('// Add options
+select.addOption({ value: \'new\', label: \'New Option\' });
+select.prependOption({ value: \'first\', label: \'First\' });
+select.addOptionAt({ value: \'mid\', label: \'Middle\' }, 2);
+select.addOptionBefore({ value: \'x\', label: \'Before UK\' }, \'uk\');
+select.addOptionAfter({ value: \'y\', label: \'After US\' }, \'us\');
 
 // Add to groups
-select.addOptionToGroup({ value: 'fr', label: 'France' }, 'Europe');
-select.addGroup('Oceania', [
-    { value: 'au', label: 'Australia' },
-    { value: 'nz', label: 'New Zealand' }
+select.addOptionToGroup({ value: \'fr\', label: \'France\' }, \'Europe\');
+select.addGroup(\'Oceania\', [
+    { value: \'au\', label: \'Australia\' },
+    { value: \'nz\', label: \'New Zealand\' }
 ]);
 
 // Remove options
-select.removeOption('us');
-select.removeGroup('Europe');
+select.removeOption(\'us\');
+select.removeGroup(\'Europe\');
 select.clearOptions();
 
 // Update options
-select.updateOption('uk', { label: 'United Kingdom (Updated)' });</code></pre>
-                        </div>
+select.updateOption(\'uk\', { label: \'United Kingdom (Updated)\' });', 'javascript') ?>
 
                         <h4 class="so-mt-4 so-mb-3">Events</h4>
-                        <div class="so-code-block so-mt-2">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-javascript">const selectEl = document.querySelector('.so-select');
+                        <?= so_code_block('const selectEl = document.querySelector(\'.so-select\');
 
 // Change event
-selectEl.addEventListener('so:select:change', (e) => {
-    console.log('Selected value:', e.detail.value);
-    console.log('All values:', e.detail.values);
-    console.log('Previous values:', e.detail.previousValues);
-    console.log('Action:', e.detail.action); // 'select', 'deselect', 'clear', 'selectAll'
+selectEl.addEventListener(\'so:select:change\', (e) => {
+    console.log(\'Selected value:\', e.detail.value);
+    console.log(\'All values:\', e.detail.values);
+    console.log(\'Previous values:\', e.detail.previousValues);
+    console.log(\'Action:\', e.detail.action); // \'select\', \'deselect\', \'clear\', \'selectAll\'
 });
 
 // Search event
-selectEl.addEventListener('so:select:search', (e) => {
-    console.log('Search query:', e.detail.query);
+selectEl.addEventListener(\'so:select:search\', (e) => {
+    console.log(\'Search query:\', e.detail.query);
 });
 
 // Open/Close events
-selectEl.addEventListener('so:select:open', () => console.log('Opening'));
-selectEl.addEventListener('so:select:opened', () => console.log('Opened'));
-selectEl.addEventListener('so:select:close', () => console.log('Closing'));
-selectEl.addEventListener('so:select:closed', () => console.log('Closed'));
-selectEl.addEventListener('so:select:clear', () => console.log('Cleared'));</code></pre>
-                        </div>
+selectEl.addEventListener(\'so:select:open\', () => console.log(\'Opening\'));
+selectEl.addEventListener(\'so:select:opened\', () => console.log(\'Opened\'));
+selectEl.addEventListener(\'so:select:close\', () => console.log(\'Closing\'));
+selectEl.addEventListener(\'so:select:closed\', () => console.log(\'Closed\'));
+selectEl.addEventListener(\'so:select:clear\', () => console.log(\'Cleared\'));', 'javascript') ?>
 
                         <h4 class="so-mt-4 so-mb-3">Control Methods</h4>
-                        <div class="so-code-block so-mt-2">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-javascript">// Dropdown control
+                        <?= so_code_block('// Dropdown control
 select.open();
 select.close();
 select.toggle();
@@ -1988,14 +1901,13 @@ select.toggle();
 // State control
 select.enable();
 select.disable();
-select.setOptionDisabled('us', true);  // Disable specific option
+select.setOptionDisabled(\'us\', true);  // Disable specific option
 
 // Check state
 select.isOpen();
 select.isDisabled();
-select.hasOption('us');
-select.getOption('us');  // Returns option object</code></pre>
-                        </div>
+select.hasOption(\'us\');
+select.getOption(\'us\');  // Returns option object', 'javascript') ?>
                     </div>
                 </div>
     </div>

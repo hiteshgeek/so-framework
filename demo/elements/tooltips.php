@@ -38,18 +38,10 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-primary" data-so-tooltip="Tooltip on left" data-so-tooltip-position="left">Left</button>
                                     <button class="so-btn so-btn-primary" data-so-tooltip="Tooltip on right" data-so-tooltip-position="right">Right</button>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button data-so-tooltip="Tooltip on top"&gt;Top&lt;/button&gt;
-&lt;button data-so-tooltip="Tooltip on bottom" data-so-tooltip-position="bottom"&gt;Bottom&lt;/button&gt;
-&lt;button data-so-tooltip="Tooltip on left" data-so-tooltip-position="left"&gt;Left&lt;/button&gt;
-&lt;button data-so-tooltip="Tooltip on right" data-so-tooltip-position="right"&gt;Right&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button data-so-tooltip="Tooltip on top">Top</button>
+<button data-so-tooltip="Tooltip on bottom" data-so-tooltip-position="bottom">Bottom</button>
+<button data-so-tooltip="Tooltip on left" data-so-tooltip-position="left">Left</button>
+<button data-so-tooltip="Tooltip on right" data-so-tooltip-position="right">Right</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -84,19 +76,11 @@ require_once '../includes/navbar.php';
                                         Commands
                                     </button>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button data-so-tooltip="Copy" data-so-shortcut="Ctrl+C"&gt;Copy&lt;/button&gt;
-&lt;button data-so-tooltip="Paste" data-so-shortcut="Ctrl+V"&gt;Paste&lt;/button&gt;
-&lt;button data-so-tooltip="Save" data-so-shortcut="Ctrl+S"&gt;Save&lt;/button&gt;
-&lt;button data-so-tooltip="Undo" data-so-shortcut="Ctrl+Z"&gt;Undo&lt;/button&gt;
-&lt;button data-so-tooltip="Command Palette" data-so-shortcut="Ctrl+Shift+P"&gt;Commands&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button data-so-tooltip="Copy" data-so-shortcut="Ctrl+C">Copy</button>
+<button data-so-tooltip="Paste" data-so-shortcut="Ctrl+V">Paste</button>
+<button data-so-tooltip="Save" data-so-shortcut="Ctrl+S">Save</button>
+<button data-so-tooltip="Undo" data-so-shortcut="Ctrl+Z">Undo</button>
+<button data-so-tooltip="Command Palette" data-so-shortcut="Ctrl+Shift+P">Commands</button>', 'html') ?>
 
                         <!-- Shortcut-only tooltip -->
                         <h4 class="so-demo-section-heading-spaced">Shortcut Only</h4>
@@ -111,18 +95,10 @@ require_once '../includes/navbar.php';
                                         <span class="material-icons" class="so-tooltip-demo-icon">keyboard_tab</span>
                                     </button>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;!-- Shortcut only (no text) --&gt;
-&lt;button data-so-shortcut="Escape"&gt;...&lt;/button&gt;
-&lt;button data-so-shortcut="Enter"&gt;...&lt;/button&gt;
-&lt;button data-so-shortcut="Tab"&gt;...&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<!-- Shortcut only (no text) -->
+<button data-so-shortcut="Escape">...</button>
+<button data-so-shortcut="Enter">...</button>
+<button data-so-shortcut="Tab">...</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -177,34 +153,26 @@ require_once '../includes/navbar.php';
                             <button class="so-btn so-btn-dark" data-so-tooltip="Dark tooltip" data-so-tooltip-color="dark">Dark</button>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Solid (filled background) --&gt;
-&lt;button data-so-tooltip="Primary" data-so-tooltip-color="primary"&gt;Primary&lt;/button&gt;
-&lt;button data-so-tooltip="Success" data-so-tooltip-color="success"&gt;Success&lt;/button&gt;
-&lt;button data-so-tooltip="Danger" data-so-tooltip-color="danger"&gt;Danger&lt;/button&gt;
-&lt;button data-so-tooltip="Warning" data-so-tooltip-color="warning"&gt;Warning&lt;/button&gt;
-&lt;button data-so-tooltip="Info" data-so-tooltip-color="info"&gt;Info&lt;/button&gt;
+                        <?= so_code_block('<!-- Solid (filled background) -->
+<button data-so-tooltip="Primary" data-so-tooltip-color="primary">Primary</button>
+<button data-so-tooltip="Success" data-so-tooltip-color="success">Success</button>
+<button data-so-tooltip="Danger" data-so-tooltip-color="danger">Danger</button>
+<button data-so-tooltip="Warning" data-so-tooltip-color="warning">Warning</button>
+<button data-so-tooltip="Info" data-so-tooltip-color="info">Info</button>
 
-&lt;!-- Outline (bordered) --&gt;
-&lt;button data-so-tooltip="Primary" data-so-tooltip-color="outline-primary"&gt;Outline&lt;/button&gt;
-&lt;button data-so-tooltip="Success" data-so-tooltip-color="outline-success"&gt;Outline&lt;/button&gt;
-&lt;button data-so-tooltip="Danger" data-so-tooltip-color="outline-danger"&gt;Outline&lt;/button&gt;
+<!-- Outline (bordered) -->
+<button data-so-tooltip="Primary" data-so-tooltip-color="outline-primary">Outline</button>
+<button data-so-tooltip="Success" data-so-tooltip-color="outline-success">Outline</button>
+<button data-so-tooltip="Danger" data-so-tooltip-color="outline-danger">Outline</button>
 
-&lt;!-- Soft (pastel background) --&gt;
-&lt;button data-so-tooltip="Primary" data-so-tooltip-color="soft-primary"&gt;Soft&lt;/button&gt;
-&lt;button data-so-tooltip="Success" data-so-tooltip-color="soft-success"&gt;Soft&lt;/button&gt;
-&lt;button data-so-tooltip="Danger" data-so-tooltip-color="soft-danger"&gt;Soft&lt;/button&gt;
+<!-- Soft (pastel background) -->
+<button data-so-tooltip="Primary" data-so-tooltip-color="soft-primary">Soft</button>
+<button data-so-tooltip="Success" data-so-tooltip-color="soft-success">Soft</button>
+<button data-so-tooltip="Danger" data-so-tooltip-color="soft-danger">Soft</button>
 
-&lt;!-- Other options --&gt;
-&lt;button data-so-tooltip="Light theme" data-so-tooltip-color="light"&gt;Light&lt;/button&gt;
-&lt;button data-so-tooltip="Dark theme" data-so-tooltip-color="dark"&gt;Dark&lt;/button&gt;</code></pre>
-                        </div>
+<!-- Other options -->
+<button data-so-tooltip="Light theme" data-so-tooltip-color="light">Light</button>
+<button data-so-tooltip="Dark theme" data-so-tooltip-color="dark">Dark</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -219,17 +187,9 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-secondary" data-so-tooltip="Default tooltip size">Default</button>
                                     <button class="so-btn so-btn-secondary so-btn-lg" data-so-tooltip="Large tooltip" data-so-tooltip-size="lg">Large</button>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button data-so-tooltip="Small tooltip" data-so-tooltip-size="sm"&gt;Small&lt;/button&gt;
-&lt;button data-so-tooltip="Default tooltip size"&gt;Default&lt;/button&gt;
-&lt;button data-so-tooltip="Large tooltip" data-so-tooltip-size="lg"&gt;Large&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button data-so-tooltip="Small tooltip" data-so-tooltip-size="sm">Small</button>
+<button data-so-tooltip="Default tooltip size">Default</button>
+<button data-so-tooltip="Large tooltip" data-so-tooltip-size="lg">Large</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -246,16 +206,8 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-light" data-so-tooltip="Light themed tooltip" data-so-tooltip-theme="light">Light Theme</button>
                                     <button class="so-btn so-btn-light" data-so-tooltip="With shortcut" data-so-shortcut="Ctrl+L" data-so-tooltip-theme="light">Light + Shortcut</button>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button data-so-tooltip="Light themed tooltip" data-so-tooltip-theme="light"&gt;Light Theme&lt;/button&gt;
-&lt;button data-so-tooltip="With shortcut" data-so-shortcut="Ctrl+L" data-so-tooltip-theme="light"&gt;Light + Shortcut&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button data-so-tooltip="Light themed tooltip" data-so-tooltip-theme="light">Light Theme</button>
+<button data-so-tooltip="With shortcut" data-so-shortcut="Ctrl+L" data-so-tooltip-theme="light">Light + Shortcut</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -270,17 +222,9 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-outline" data-so-tooltip="Scale animation (default)" data-so-tooltip-animation="scale">Scale</button>
                                     <button class="so-btn so-btn-outline" data-so-tooltip="Slide animation" data-so-tooltip-animation="slide">Slide</button>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;button data-so-tooltip="Fade animation" data-so-tooltip-animation="fade"&gt;Fade&lt;/button&gt;
-&lt;button data-so-tooltip="Scale animation (default)" data-so-tooltip-animation="scale"&gt;Scale&lt;/button&gt;
-&lt;button data-so-tooltip="Slide animation" data-so-tooltip-animation="slide"&gt;Slide&lt;/button&gt;</code></pre>
-                            </div>
+                        <?= so_code_block('<button data-so-tooltip="Fade animation" data-so-tooltip-animation="fade">Fade</button>
+<button data-so-tooltip="Scale animation (default)" data-so-tooltip-animation="scale">Scale</button>
+<button data-so-tooltip="Slide animation" data-so-tooltip-animation="slide">Slide</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -393,75 +337,67 @@ require_once '../includes/navbar.php';
                             </button>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Basic rich text --&gt;
-&lt;button
-    data-so-tooltip="&lt;strong&gt;Bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; text"
-    data-so-tooltip-html="true"&gt;
+                        <?= so_code_block('<!-- Basic rich text -->
+<button
+    data-so-tooltip="<strong>Bold</strong> and <em>italic</em> text"
+    data-so-tooltip-html="true">
     Rich Text
-&lt;/button&gt;
+</button>
 
-&lt;!-- With icon --&gt;
-&lt;button
-    data-so-tooltip="&lt;span class='material-icons' style='font-size:14px;vertical-align:middle;margin-right:4px;'&gt;info&lt;/span&gt; Helpful info"
-    data-so-tooltip-html="true"&gt;
+<!-- With icon -->
+<button
+    data-so-tooltip="<span class=\'material-icons\' style=\'font-size:14px;vertical-align:middle;margin-right:4px;\'>info</span> Helpful info"
+    data-so-tooltip-html="true">
     With Icon
-&lt;/button&gt;
+</button>
 
-&lt;!-- User profile card --&gt;
-&lt;button
-    data-so-tooltip="&lt;div style='display:flex;align-items:center;gap:8px;'&gt;
-        &lt;img src='avatar.jpg' style='width:32px;height:32px;border-radius:50%;'&gt;
-        &lt;div&gt;
-            &lt;div style='font-weight:600;'&gt;John Doe&lt;/div&gt;
-            &lt;div style='font-size:11px;opacity:0.8;'&gt;Product Designer&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;"
+<!-- User profile card -->
+<button
+    data-so-tooltip="<div style=\'display:flex;align-items:center;gap:8px;\'>
+        <img src=\'avatar.jpg\' style=\'width:32px;height:32px;border-radius:50%;\'>
+        <div>
+            <div style=\'font-weight:600;\'>John Doe</div>
+            <div style=\'font-size:11px;opacity:0.8;\'>Product Designer</div>
+        </div>
+    </div>"
     data-so-tooltip-html="true"
     data-so-tooltip-color="light"
-    data-so-tooltip-size="lg"&gt;
+    data-so-tooltip-size="lg">
     User Card
-&lt;/button&gt;
+</button>
 
-&lt;!-- Feature list --&gt;
-&lt;button
-    data-so-tooltip="&lt;div style='text-align:left;'&gt;
-        &lt;div style='font-weight:600;margin-bottom:6px;'&gt;Features:&lt;/div&gt;
-        &lt;div style='font-size:12px;'&gt;
-            ✓ Unlimited projects&lt;br&gt;
-            ✓ Priority support&lt;br&gt;
+<!-- Feature list -->
+<button
+    data-so-tooltip="<div style=\'text-align:left;\'>
+        <div style=\'font-weight:600;margin-bottom:6px;\'>Features:</div>
+        <div style=\'font-size:12px;\'>
+            ✓ Unlimited projects<br>
+            ✓ Priority support<br>
             ✓ Advanced analytics
-        &lt;/div&gt;
-    &lt;/div&gt;"
+        </div>
+    </div>"
     data-so-tooltip-html="true"
     data-so-tooltip-color="light"
-    data-so-tooltip-size="lg"&gt;
+    data-so-tooltip-size="lg">
     Features
-&lt;/button&gt;
+</button>
 
-&lt;!-- Statistics with mini progress bar --&gt;
-&lt;button
-    data-so-tooltip="&lt;div style='width:120px;'&gt;
-        &lt;div style='display:flex;justify-content:space-between;margin-bottom:4px;'&gt;
-            &lt;span style='font-size:11px;'&gt;Progress&lt;/span&gt;
-            &lt;span style='font-size:11px;font-weight:600;'&gt;75%&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;div style='height:6px;background:rgba(99,102,241,0.2);border-radius:3px;'&gt;
-            &lt;div style='width:75%;height:100%;background:#6366f1;border-radius:3px;'&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;"
+<!-- Statistics with mini progress bar -->
+<button
+    data-so-tooltip="<div style=\'width:120px;\'>
+        <div style=\'display:flex;justify-content:space-between;margin-bottom:4px;\'>
+            <span style=\'font-size:11px;\'>Progress</span>
+            <span style=\'font-size:11px;font-weight:600;\'>75%</span>
+        </div>
+        <div style=\'height:6px;background:rgba(99,102,241,0.2);border-radius:3px;\'>
+            <div style=\'width:75%;height:100%;background:#6366f1;border-radius:3px;\'></div>
+        </div>
+    </div>"
     data-so-tooltip-html="true"
     data-so-tooltip-color="light"
-    data-so-tooltip-size="lg"&gt;
+    data-so-tooltip-size="lg">
     Progress
-&lt;/button&gt;</code></pre>
-                        </div>
+</button>', 'html') ?>
                     </div>
                 </div>
 
@@ -488,23 +424,16 @@ require_once '../includes/navbar.php';
                                 Show Error
                             </button>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-javascript">// Get or create tooltip instance
+                        <?= so_code_block('// Get or create tooltip instance
 const tooltip = SOTooltip.getInstance(element, {
-    content: 'Tooltip text',
-    shortcut: 'Ctrl+S',
-    position: 'top',
-    color: 'primary',
-    size: 'sm',
-    theme: 'light',
-    animation: 'scale',
-    trigger: 'hover'
+    content: \'Tooltip text\',
+    shortcut: \'Ctrl+S\',
+    position: \'top\',
+    color: \'primary\',
+    size: \'sm\',
+    theme: \'light\',
+    animation: \'scale\',
+    trigger: \'hover\'
 });
 
 // Manual show/hide
@@ -513,10 +442,10 @@ tooltip.hide();
 tooltip.toggle();
 
 // Update content dynamically
-tooltip.setContent('New content');
-tooltip.setShortcut('Ctrl+N');
-tooltip.setColor('success');
-tooltip.setPosition('bottom');
+tooltip.setContent(\'New content\');
+tooltip.setShortcut(\'Ctrl+N\');
+tooltip.setColor(\'success\');
+tooltip.setPosition(\'bottom\');
 
 // Enable/disable
 tooltip.enable();
@@ -524,30 +453,29 @@ tooltip.disable();
 
 // Show temporary feedback tooltip (auto-hides)
 SOTooltip.showTemporary(button, {
-    content: 'Copied!',
-    color: 'success',
-    position: 'top',
+    content: \'Copied!\',
+    color: \'success\',
+    position: \'top\',
     autoHide: 2000
 });
 
 // Events
-element.addEventListener('so:tooltip:show', (e) => {
-    console.log('Showing via:', e.detail.trigger);
+element.addEventListener(\'so:tooltip:show\', (e) => {
+    console.log(\'Showing via:\', e.detail.trigger);
     // e.preventDefault(); // Cancel show
 });
 
-element.addEventListener('so:tooltip:shown', (e) => {
-    console.log('Tooltip visible:', e.detail.tooltipEl);
+element.addEventListener(\'so:tooltip:shown\', (e) => {
+    console.log(\'Tooltip visible:\', e.detail.tooltipEl);
 });
 
-element.addEventListener('so:tooltip:hide', (e) => {
-    console.log('Hiding via:', e.detail.trigger);
+element.addEventListener(\'so:tooltip:hide\', (e) => {
+    console.log(\'Hiding via:\', e.detail.trigger);
 });
 
-element.addEventListener('so:tooltip:hidden', (e) => {
-    console.log('Tooltip hidden');
-});</code></pre>
-                            </div>
+element.addEventListener(\'so:tooltip:hidden\', (e) => {
+    console.log(\'Tooltip hidden\');
+});', 'javascript') ?>
 
                     </div>
                 </div>
@@ -713,14 +641,7 @@ element.addEventListener('so:tooltip:hidden', (e) => {
                             Clear Log
                         </button>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                <button class="so-code-copy" onclick="copyCode(this)" data-so-tooltip="Copy code" data-so-shortcut="Ctrl+C">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-javascript">// Get tooltip instance
+                        <?= so_code_block('// Get tooltip instance
 const tooltip = SOTooltip.getInstance(element);
 
 // Show/Hide/Toggle
@@ -729,10 +650,10 @@ tooltip.hide();
 tooltip.toggle();
 
 // Update content dynamically
-tooltip.setContent('New content');
-tooltip.setShortcut('Ctrl+N');
-tooltip.setPosition('bottom');  // top, bottom, left, right
-tooltip.setColor('success');    // default, primary, success, danger, warning, info
+tooltip.setContent(\'New content\');
+tooltip.setShortcut(\'Ctrl+N\');
+tooltip.setPosition(\'bottom\');  // top, bottom, left, right
+tooltip.setColor(\'success\');    // default, primary, success, danger, warning, info
 
 // Enable/Disable
 tooltip.enable();
@@ -740,18 +661,17 @@ tooltip.disable();
 
 // Show temporary feedback tooltip
 SOTooltip.showTemporary(element, {
-    content: 'Saved!',
-    color: 'success',
-    position: 'top',
+    content: \'Saved!\',
+    color: \'success\',
+    position: \'top\',
     autoHide: 2000  // milliseconds
 });
 
 // Listen to events
-element.addEventListener('so:tooltip:show', (e) => {});
-element.addEventListener('so:tooltip:shown', (e) => {});
-element.addEventListener('so:tooltip:hide', (e) => {});
-element.addEventListener('so:tooltip:hidden', (e) => {});</code></pre>
-                        </div>
+element.addEventListener(\'so:tooltip:show\', (e) => {});
+element.addEventListener(\'so:tooltip:shown\', (e) => {});
+element.addEventListener(\'so:tooltip:hide\', (e) => {});
+element.addEventListener(\'so:tooltip:hidden\', (e) => {});', 'javascript') ?>
 
                         <script>
                         // Initialize demo tooltip

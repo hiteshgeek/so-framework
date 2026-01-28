@@ -784,7 +784,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById('keyboardShortcutsModal');
 
-        if (modal) {
+        if (modal && typeof SOModal !== 'undefined') {
             // Initialize modal instance
             const modalInstance = SOModal.getInstance(modal) || new SOModal(modal);
 

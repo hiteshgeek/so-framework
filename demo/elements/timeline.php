@@ -32,55 +32,52 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Simple vertical timeline with left-aligned content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
-                <div class="so-timeline">
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">Today</div>
-                            <div class="so-timeline-title">Project Completed</div>
-                            <div class="so-timeline-body">
-                                <p>The final deliverables were submitted and approved by the client.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">Yesterday</div>
-                            <div class="so-timeline-title">Code Review</div>
-                            <div class="so-timeline-body">
-                                <p>Final code review completed with all changes approved.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">3 days ago</div>
-                            <div class="so-timeline-title">Testing Phase</div>
-                            <div class="so-timeline-body">
-                                <p>QA testing completed successfully with no critical bugs found.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">1 week ago</div>
-                            <div class="so-timeline-title">Project Started</div>
-                            <div class="so-timeline-body">
-                                <p>Initial project kickoff meeting and requirements gathering.</p>
-                            </div>
-                        </div>
+        <div class="so-timeline">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">Today</div>
+                    <div class="so-timeline-title">Project Completed</div>
+                    <div class="so-timeline-body">
+                        <p>The final deliverables were submitted and approved by the client.</p>
                     </div>
                 </div>
             </div>
-            <div class="so-code-block">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">Yesterday</div>
+                    <div class="so-timeline-title">Code Review</div>
+                    <div class="so-timeline-body">
+                        <p>Final code review completed with all changes approved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">3 days ago</div>
+                    <div class="so-timeline-title">Testing Phase</div>
+                    <div class="so-timeline-body">
+                        <p>QA testing completed successfully with no critical bugs found.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">1 week ago</div>
+                    <div class="so-timeline-title">Project Started</div>
+                    <div class="so-timeline-body">
+                        <p>Initial project kickoff meeting and requirements gathering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -103,7 +100,6 @@ require_once '../includes/navbar.php';
         &lt;div class="so-timeline-content"&gt;...&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            </div>
         </div>
     </div>
 </div>
@@ -116,63 +112,60 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Timeline with custom icons for each event.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
-                <div class="so-timeline so-timeline-icons">
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-success">
-                            <span class="material-icons">check_circle</span>
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">2:30 PM</div>
-                            <div class="so-timeline-title">Order Delivered</div>
-                            <div class="so-timeline-body">
-                                <p>Package was delivered to the recipient.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-primary">
-                            <span class="material-icons">local_shipping</span>
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">10:15 AM</div>
-                            <div class="so-timeline-title">Out for Delivery</div>
-                            <div class="so-timeline-body">
-                                <p>Package is with the courier and on its way.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-info">
-                            <span class="material-icons">warehouse</span>
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">Yesterday, 8:00 PM</div>
-                            <div class="so-timeline-title">Arrived at Local Facility</div>
-                            <div class="so-timeline-body">
-                                <p>Package arrived at the distribution center.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-warning">
-                            <span class="material-icons">inventory_2</span>
-                        </div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">2 days ago</div>
-                            <div class="so-timeline-title">Order Shipped</div>
-                            <div class="so-timeline-body">
-                                <p>Seller has shipped your order.</p>
-                            </div>
-                        </div>
+        <div class="so-timeline so-timeline-icons">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-success">
+                    <span class="material-icons">check_circle</span>
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">2:30 PM</div>
+                    <div class="so-timeline-title">Order Delivered</div>
+                    <div class="so-timeline-body">
+                        <p>Package was delivered to the recipient.</p>
                     </div>
                 </div>
             </div>
-            <div class="so-code-block">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-primary">
+                    <span class="material-icons">local_shipping</span>
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">10:15 AM</div>
+                    <div class="so-timeline-title">Out for Delivery</div>
+                    <div class="so-timeline-body">
+                        <p>Package is with the courier and on its way.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-info">
+                    <span class="material-icons">warehouse</span>
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">Yesterday, 8:00 PM</div>
+                    <div class="so-timeline-title">Arrived at Local Facility</div>
+                    <div class="so-timeline-body">
+                        <p>Package arrived at the distribution center.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-warning">
+                    <span class="material-icons">inventory_2</span>
+                </div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">2 days ago</div>
+                    <div class="so-timeline-title">Order Shipped</div>
+                    <div class="so-timeline-body">
+                        <p>Seller has shipped your order.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -192,7 +185,6 @@ require_once '../includes/navbar.php';
 &lt;/div&gt;
 
 &lt;!-- Color variants: so-timeline-marker-primary, -success, -danger, -warning, -info --&gt;</code></pre>
-            </div>
         </div>
     </div>
 </div>
@@ -205,55 +197,52 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Timeline with centered line and alternating content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
-                <div class="so-timeline so-timeline-centered">
-                    <div class="so-timeline-item so-timeline-left">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">2024</div>
-                            <div class="so-timeline-title">Series B Funding</div>
-                            <div class="so-timeline-body">
-                                <p>Raised $50M in Series B funding to expand operations.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item so-timeline-right">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">2023</div>
-                            <div class="so-timeline-title">Product Launch</div>
-                            <div class="so-timeline-body">
-                                <p>Successfully launched our flagship product to the market.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item so-timeline-left">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">2022</div>
-                            <div class="so-timeline-title">Series A Funding</div>
-                            <div class="so-timeline-body">
-                                <p>Secured $10M in Series A to build our core team.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item so-timeline-right">
-                        <div class="so-timeline-marker"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-time">2021</div>
-                            <div class="so-timeline-title">Company Founded</div>
-                            <div class="so-timeline-body">
-                                <p>Started with a vision to transform the industry.</p>
-                            </div>
-                        </div>
+        <div class="so-timeline so-timeline-centered">
+            <div class="so-timeline-item so-timeline-left">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">2024</div>
+                    <div class="so-timeline-title">Series B Funding</div>
+                    <div class="so-timeline-body">
+                        <p>Raised $50M in Series B funding to expand operations.</p>
                     </div>
                 </div>
             </div>
-            <div class="so-code-block">
+            <div class="so-timeline-item so-timeline-right">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">2023</div>
+                    <div class="so-timeline-title">Product Launch</div>
+                    <div class="so-timeline-body">
+                        <p>Successfully launched our flagship product to the market.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="so-timeline-item so-timeline-left">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">2022</div>
+                    <div class="so-timeline-title">Series A Funding</div>
+                    <div class="so-timeline-body">
+                        <p>Secured $10M in Series A to build our core team.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="so-timeline-item so-timeline-right">
+                <div class="so-timeline-marker"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-time">2021</div>
+                    <div class="so-timeline-title">Company Founded</div>
+                    <div class="so-timeline-body">
+                        <p>Started with a vision to transform the industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -272,7 +261,6 @@ require_once '../includes/navbar.php';
     &lt;!-- Right-aligned item --&gt;
     &lt;div class="so-timeline-item so-timeline-right"&gt;...&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            </div>
         </div>
     </div>
 </div>
@@ -285,51 +273,48 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Dense timeline with minimal spacing.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
-                <div class="so-timeline so-timeline-compact">
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-sm"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <span class="so-text-muted so-text-sm">10:45 AM</span>
-                            <span class="so-ms-2">File uploaded successfully</span>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-sm"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <span class="so-text-muted so-text-sm">10:42 AM</span>
-                            <span class="so-ms-2">Processing started</span>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-sm"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <span class="so-text-muted so-text-sm">10:40 AM</span>
-                            <span class="so-ms-2">Validation complete</span>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-sm"></div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <span class="so-text-muted so-text-sm">10:38 AM</span>
-                            <span class="so-ms-2">File received</span>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-sm"></div>
-                        <div class="so-timeline-content">
-                            <span class="so-text-muted so-text-sm">10:35 AM</span>
-                            <span class="so-ms-2">Upload initiated</span>
-                        </div>
-                    </div>
+        <div class="so-timeline so-timeline-compact">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-sm"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <span class="so-text-muted so-text-sm">10:45 AM</span>
+                    <span class="so-ms-2">File uploaded successfully</span>
                 </div>
             </div>
-            <div class="so-code-block">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-sm"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <span class="so-text-muted so-text-sm">10:42 AM</span>
+                    <span class="so-ms-2">Processing started</span>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-sm"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <span class="so-text-muted so-text-sm">10:40 AM</span>
+                    <span class="so-ms-2">Validation complete</span>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-sm"></div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <span class="so-text-muted so-text-sm">10:38 AM</span>
+                    <span class="so-ms-2">File received</span>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-sm"></div>
+                <div class="so-timeline-content">
+                    <span class="so-text-muted so-text-sm">10:35 AM</span>
+                    <span class="so-ms-2">Upload initiated</span>
+                </div>
+            </div>
+        </div>
+        <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -345,7 +330,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
     &lt;!-- More items... --&gt;
 &lt;/div&gt;</code></pre>
-            </div>
         </div>
     </div>
 </div>
@@ -358,66 +342,63 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Social media style activity feed.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
-                <div class="so-timeline so-timeline-feed">
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-avatar">
-                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=667eea&color=fff" alt="John Doe">
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-header">
-                                <strong>John Doe</strong>
-                                <span class="so-text-muted">commented on your post</span>
-                            </div>
-                            <div class="so-timeline-body">
-                                <p class="so-text-muted">"Great work on this project! The design looks amazing."</p>
-                            </div>
-                            <div class="so-timeline-time">2 hours ago</div>
-                        </div>
+        <div class="so-timeline so-timeline-feed">
+            <div class="so-timeline-item">
+                <div class="so-timeline-avatar">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=667eea&color=fff" alt="John Doe">
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-header">
+                        <strong>John Doe</strong>
+                        <span class="so-text-muted">commented on your post</span>
                     </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-avatar">
-                            <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=f093fb&color=fff" alt="Jane Smith">
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-header">
-                                <strong>Jane Smith</strong>
-                                <span class="so-text-muted">liked your photo</span>
-                            </div>
-                            <div class="so-timeline-time">4 hours ago</div>
-                        </div>
+                    <div class="so-timeline-body">
+                        <p class="so-text-muted">"Great work on this project! The design looks amazing."</p>
                     </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-avatar">
-                            <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=4facfe&color=fff" alt="Mike Johnson">
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-header">
-                                <strong>Mike Johnson</strong>
-                                <span class="so-text-muted">started following you</span>
-                            </div>
-                            <div class="so-timeline-time">Yesterday</div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-avatar">
-                            <span class="material-icons">notifications</span>
-                        </div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-header">
-                                <strong>System</strong>
-                                <span class="so-text-muted">Your account was verified</span>
-                            </div>
-                            <div class="so-timeline-time">2 days ago</div>
-                        </div>
-                    </div>
+                    <div class="so-timeline-time">2 hours ago</div>
                 </div>
             </div>
-            <div class="so-code-block">
+            <div class="so-timeline-item">
+                <div class="so-timeline-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=f093fb&color=fff" alt="Jane Smith">
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-header">
+                        <strong>Jane Smith</strong>
+                        <span class="so-text-muted">liked your photo</span>
+                    </div>
+                    <div class="so-timeline-time">4 hours ago</div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=4facfe&color=fff" alt="Mike Johnson">
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-header">
+                        <strong>Mike Johnson</strong>
+                        <span class="so-text-muted">started following you</span>
+                    </div>
+                    <div class="so-timeline-time">Yesterday</div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-avatar">
+                    <span class="material-icons">notifications</span>
+                </div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-header">
+                        <strong>System</strong>
+                        <span class="so-text-muted">Your account was verified</span>
+                    </div>
+                    <div class="so-timeline-time">2 days ago</div>
+                </div>
+            </div>
+        </div>
+        <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -445,7 +426,6 @@ require_once '../includes/navbar.php';
         &lt;div class="so-timeline-content"&gt;...&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            </div>
         </div>
     </div>
 </div>
@@ -458,48 +438,45 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Horizontal layout for process or roadmap display.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
-                <div class="so-timeline so-timeline-horizontal">
-                    <div class="so-timeline-item so-timeline-item-completed">
-                        <div class="so-timeline-marker">
-                            <span class="material-icons">check</span>
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-title">Q1 2024</div>
-                            <div class="so-timeline-body">Research</div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item so-timeline-item-completed">
-                        <div class="so-timeline-marker">
-                            <span class="material-icons">check</span>
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-title">Q2 2024</div>
-                            <div class="so-timeline-body">Design</div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item so-timeline-item-active">
-                        <div class="so-timeline-marker">3</div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-title">Q3 2024</div>
-                            <div class="so-timeline-body">Development</div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker">4</div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-timeline-title">Q4 2024</div>
-                            <div class="so-timeline-body">Launch</div>
-                        </div>
-                    </div>
+        <div class="so-timeline so-timeline-horizontal">
+            <div class="so-timeline-item so-timeline-item-completed">
+                <div class="so-timeline-marker">
+                    <span class="material-icons">check</span>
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-title">Q1 2024</div>
+                    <div class="so-timeline-body">Research</div>
                 </div>
             </div>
-            <div class="so-code-block">
+            <div class="so-timeline-item so-timeline-item-completed">
+                <div class="so-timeline-marker">
+                    <span class="material-icons">check</span>
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-title">Q2 2024</div>
+                    <div class="so-timeline-body">Design</div>
+                </div>
+            </div>
+            <div class="so-timeline-item so-timeline-item-active">
+                <div class="so-timeline-marker">3</div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-title">Q3 2024</div>
+                    <div class="so-timeline-body">Development</div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker">4</div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-timeline-title">Q4 2024</div>
+                    <div class="so-timeline-body">Launch</div>
+                </div>
+            </div>
+        </div>
+        <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -520,7 +497,6 @@ require_once '../includes/navbar.php';
 &lt;/div&gt;
 
 &lt;!-- States: so-timeline-item-completed, so-timeline-item-active --&gt;</code></pre>
-            </div>
         </div>
     </div>
 </div>
@@ -533,66 +509,63 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Timeline items displayed as cards.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
-                <div class="so-timeline so-timeline-cards">
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-primary">
-                            <span class="material-icons">event</span>
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-card so-card-bordered">
-                                <div class="so-card-body">
-                                    <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
-                                        <h6 class="so-mb-0">Team Meeting</h6>
-                                        <span class="so-badge so-badge-primary">Upcoming</span>
-                                    </div>
-                                    <p class="so-text-muted so-mb-2">Weekly standup with the development team to discuss progress and blockers.</p>
-                                    <div class="so-d-flex so-gap-3 so-text-sm so-text-muted">
-                                        <span><span class="material-icons so-text-sm">schedule</span> 10:00 AM</span>
-                                        <span><span class="material-icons so-text-sm">people</span> 8 attendees</span>
-                                    </div>
-                                </div>
+        <div class="so-timeline so-timeline-cards">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-primary">
+                    <span class="material-icons">event</span>
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-card so-card-bordered">
+                        <div class="so-card-body">
+                            <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
+                                <h6 class="so-mb-0">Team Meeting</h6>
+                                <span class="so-badge so-badge-primary">Upcoming</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-success">
-                            <span class="material-icons">task_alt</span>
-                        </div>
-                        <div class="so-timeline-connector"></div>
-                        <div class="so-timeline-content">
-                            <div class="so-card so-card-bordered">
-                                <div class="so-card-body">
-                                    <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
-                                        <h6 class="so-mb-0">Sprint Completed</h6>
-                                        <span class="so-badge so-badge-success">Done</span>
-                                    </div>
-                                    <p class="so-text-muted so-mb-0">Sprint 14 was completed with all user stories delivered on time.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="so-timeline-item">
-                        <div class="so-timeline-marker so-timeline-marker-warning">
-                            <span class="material-icons">warning</span>
-                        </div>
-                        <div class="so-timeline-content">
-                            <div class="so-card so-card-bordered">
-                                <div class="so-card-body">
-                                    <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
-                                        <h6 class="so-mb-0">Deadline Approaching</h6>
-                                        <span class="so-badge so-badge-warning">Alert</span>
-                                    </div>
-                                    <p class="so-text-muted so-mb-0">Project milestone deadline is in 3 days. Review required tasks.</p>
-                                </div>
+                            <p class="so-text-muted so-mb-2">Weekly standup with the development team to discuss progress and blockers.</p>
+                            <div class="so-d-flex so-gap-3 so-text-sm so-text-muted">
+                                <span><span class="material-icons so-text-sm">schedule</span> 10:00 AM</span>
+                                <span><span class="material-icons so-text-sm">people</span> 8 attendees</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="so-code-block">
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-success">
+                    <span class="material-icons">task_alt</span>
+                </div>
+                <div class="so-timeline-connector"></div>
+                <div class="so-timeline-content">
+                    <div class="so-card so-card-bordered">
+                        <div class="so-card-body">
+                            <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
+                                <h6 class="so-mb-0">Sprint Completed</h6>
+                                <span class="so-badge so-badge-success">Done</span>
+                            </div>
+                            <p class="so-text-muted so-mb-0">Sprint 14 was completed with all user stories delivered on time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="so-timeline-item">
+                <div class="so-timeline-marker so-timeline-marker-warning">
+                    <span class="material-icons">warning</span>
+                </div>
+                <div class="so-timeline-content">
+                    <div class="so-card so-card-bordered">
+                        <div class="so-card-body">
+                            <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
+                                <h6 class="so-mb-0">Deadline Approaching</h6>
+                                <span class="so-badge so-badge-warning">Alert</span>
+                            </div>
+                            <p class="so-text-muted so-mb-0">Project milestone deadline is in 3 days. Review required tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -613,7 +586,6 @@ require_once '../includes/navbar.php';
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            </div>
         </div>
     </div>
 </div>

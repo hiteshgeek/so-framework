@@ -32,8 +32,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Standard media object with image and text content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-media">
                     <div class="so-media-left">
                         <img src="https://ui-avatars.com/api/?name=John+Doe&background=667eea&color=fff&size=64" alt="John Doe" class="so-media-image">
@@ -43,7 +41,6 @@ require_once '../includes/navbar.php';
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -59,7 +56,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -71,8 +67,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Media positioned on the right side.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-media">
                     <div class="so-media-body">
                         <h5 class="so-media-heading">Featured Article</h5>
@@ -83,7 +77,6 @@ require_once '../includes/navbar.php';
                         <img src="https://ui-avatars.com/api/?name=Featured&background=f093fb&color=fff&size=80" alt="Featured" class="so-media-image">
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -99,7 +92,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -111,8 +103,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Control vertical alignment of media elements.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-flex-column so-gap-4">
                     <div>
                         <h6 class="so-text-muted so-mb-2">Top Aligned (Default)</h6>
@@ -153,7 +143,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -168,7 +157,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Bottom aligned --&gt;
 &lt;div class="so-media so-media-bottom"&gt;...&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -180,8 +168,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Use icons instead of images.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-flex-column so-gap-4">
                     <div class="so-media">
                         <div class="so-media-left">
@@ -231,7 +217,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -251,7 +236,6 @@ require_once '../includes/navbar.php';
 
 &lt;!-- Icon color variants: so-media-icon-success, so-media-icon-warning, so-media-icon-danger --&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -263,8 +247,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Create threaded comments or nested replies.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-media">
                     <div class="so-media-left">
                         <img src="https://ui-avatars.com/api/?name=Alice&background=667eea&color=fff&size=48" alt="Alice" class="so-media-image">
@@ -307,7 +289,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -330,7 +311,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -342,8 +322,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Multiple media objects in a list.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-media-list">
                     <div class="so-media so-media-list-item">
                         <div class="so-media-left">
@@ -384,7 +362,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -403,7 +380,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -415,8 +391,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Include action buttons or links.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-media">
                     <div class="so-media-left">
                         <img src="https://ui-avatars.com/api/?name=Product&background=667eea&color=fff&size=80" alt="Product" class="so-media-image so-media-image-rounded">
@@ -455,7 +429,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -475,7 +448,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -487,8 +459,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Smaller variant for dense layouts.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-flex-column so-gap-3">
                     <div class="so-media so-media-sm">
                         <div class="so-media-left">
@@ -520,7 +490,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -536,7 +505,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 

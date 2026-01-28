@@ -33,27 +33,18 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">A simple list group with static items.</p>
 
-                <ul class="so-list-group so-mb-6" style="max-width: 400px;">
+                <ul class="so-list-group" style="max-width: 400px;">
                     <li class="so-list-group-item">First item</li>
                     <li class="so-list-group-item">Second item</li>
                     <li class="so-list-group-item">Third item</li>
                     <li class="so-list-group-item">Fourth item</li>
                     <li class="so-list-group-item">Fifth item</li>
                 </ul>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ul class="so-list-group"&gt;
-    &lt;li class="so-list-group-item"&gt;First item&lt;/li&gt;
-    &lt;li class="so-list-group-item"&gt;Second item&lt;/li&gt;
-    &lt;li class="so-list-group-item"&gt;Third item&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ul class="so-list-group">
+    <li class="so-list-group-item">First item</li>
+    <li class="so-list-group-item">Second item</li>
+    <li class="so-list-group-item">Third item</li>
+</ul>', 'html') ?>
             </div>
         </div>
 
@@ -65,24 +56,15 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Add <code>.active</code> or <code>.disabled</code> classes to indicate state.</p>
 
-                <ul class="so-list-group so-mb-6" style="max-width: 400px;">
+                <ul class="so-list-group" style="max-width: 400px;">
                     <li class="so-list-group-item so-active">Active item</li>
                     <li class="so-list-group-item">Normal item</li>
                     <li class="so-list-group-item">Normal item</li>
                     <li class="so-list-group-item so-disabled">Disabled item</li>
                     <li class="so-list-group-item">Normal item</li>
                 </ul>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;li class="so-list-group-item so-active"&gt;Active item&lt;/li&gt;
-&lt;li class="so-list-group-item so-disabled"&gt;Disabled item&lt;/li&gt;</code></pre>
-                </div>
+                <?= so_code_block('<li class="so-list-group-item so-active">Active item</li>
+<li class="so-list-group-item so-disabled">Disabled item</li>', 'html') ?>
             </div>
         </div>
 
@@ -94,7 +76,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Use <code>.so-list-group-item-action</code> for clickable items with hover states.</p>
 
-                <div class="so-list-group so-mb-6" style="max-width: 400px;">
+                <div class="so-list-group" style="max-width: 400px;">
                     <a href="#" class="so-list-group-item so-list-group-item-action so-active">
                         Active link item
                     </a>
@@ -108,23 +90,14 @@ require_once '../includes/navbar.php';
                         Disabled link item
                     </a>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-list-group"&gt;
-    &lt;a href="#" class="so-list-group-item so-list-group-item-action so-active"&gt;
+                <?= so_code_block('<div class="so-list-group">
+    <a href="#" class="so-list-group-item so-list-group-item-action so-active">
         Active link item
-    &lt;/a&gt;
-    &lt;button class="so-list-group-item so-list-group-item-action"&gt;
+    </a>
+    <button class="so-list-group-item so-list-group-item-action">
         Button item
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+    </button>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -136,7 +109,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Contextual color classes for list items.</p>
 
-                <ul class="so-list-group so-mb-6" style="max-width: 400px;">
+                <ul class="so-list-group" style="max-width: 400px;">
                     <li class="so-list-group-item so-list-group-item-primary">Primary item</li>
                     <li class="so-list-group-item so-list-group-item-secondary">Secondary item</li>
                     <li class="so-list-group-item so-list-group-item-success">Success item</li>
@@ -146,18 +119,9 @@ require_once '../includes/navbar.php';
                     <li class="so-list-group-item so-list-group-item-light">Light item</li>
                     <li class="so-list-group-item so-list-group-item-dark">Dark item</li>
                 </ul>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;li class="so-list-group-item so-list-group-item-primary"&gt;Primary&lt;/li&gt;
-&lt;li class="so-list-group-item so-list-group-item-success"&gt;Success&lt;/li&gt;
-&lt;li class="so-list-group-item so-list-group-item-danger"&gt;Danger&lt;/li&gt;</code></pre>
-                </div>
+                <?= so_code_block('<li class="so-list-group-item so-list-group-item-primary">Primary</li>
+<li class="so-list-group-item so-list-group-item-success">Success</li>
+<li class="so-list-group-item so-list-group-item-danger">Danger</li>', 'html') ?>
             </div>
         </div>
 
@@ -169,25 +133,16 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Remove borders and rounded corners with <code>.so-list-group-flush</code>.</p>
 
-                <ul class="so-list-group so-list-group-flush so-mb-6" style="max-width: 400px;">
+                <ul class="so-list-group so-list-group-flush" style="max-width: 400px;">
                     <li class="so-list-group-item">First item</li>
                     <li class="so-list-group-item">Second item</li>
                     <li class="so-list-group-item">Third item</li>
                     <li class="so-list-group-item">Fourth item</li>
                 </ul>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ul class="so-list-group so-list-group-flush"&gt;
-    &lt;li class="so-list-group-item"&gt;First item&lt;/li&gt;
-    &lt;li class="so-list-group-item"&gt;Second item&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ul class="so-list-group so-list-group-flush">
+    <li class="so-list-group-item">First item</li>
+    <li class="so-list-group-item">Second item</li>
+</ul>', 'html') ?>
             </div>
         </div>
 
@@ -199,25 +154,16 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Automatically numbered items with <code>.so-list-group-numbered</code>.</p>
 
-                <ol class="so-list-group so-list-group-numbered so-mb-6" style="max-width: 400px;">
+                <ol class="so-list-group so-list-group-numbered" style="max-width: 400px;">
                     <li class="so-list-group-item">Install the package</li>
                     <li class="so-list-group-item">Import the styles</li>
                     <li class="so-list-group-item">Configure your settings</li>
                     <li class="so-list-group-item">Start building</li>
                 </ol>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ol class="so-list-group so-list-group-numbered"&gt;
-    &lt;li class="so-list-group-item"&gt;Install the package&lt;/li&gt;
-    &lt;li class="so-list-group-item"&gt;Import the styles&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ol class="so-list-group so-list-group-numbered">
+    <li class="so-list-group-item">Install the package</li>
+    <li class="so-list-group-item">Import the styles</li>
+</ol>', 'html') ?>
             </div>
         </div>
 
@@ -229,30 +175,21 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Display items horizontally with <code>.so-list-group-horizontal</code>.</p>
 
-                <ul class="so-list-group so-list-group-horizontal so-mb-6">
+                <ul class="so-list-group so-list-group-horizontal so-mb-4">
                     <li class="so-list-group-item">First</li>
                     <li class="so-list-group-item">Second</li>
                     <li class="so-list-group-item">Third</li>
                 </ul>
 
                 <p class="so-text-muted so-mb-2">Responsive horizontal (horizontal on md and up):</p>
-                <ul class="so-list-group so-list-group-horizontal-md so-mb-6">
+                <ul class="so-list-group so-list-group-horizontal-md">
                     <li class="so-list-group-item">First</li>
                     <li class="so-list-group-item">Second</li>
                     <li class="so-list-group-item">Third</li>
                 </ul>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ul class="so-list-group so-list-group-horizontal"&gt;...&lt;/ul&gt;
-&lt;ul class="so-list-group so-list-group-horizontal-md"&gt;...&lt;/ul&gt;
-&lt;ul class="so-list-group so-list-group-horizontal-lg"&gt;...&lt;/ul&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ul class="so-list-group so-list-group-horizontal">...</ul>
+<ul class="so-list-group so-list-group-horizontal-md">...</ul>
+<ul class="so-list-group so-list-group-horizontal-lg">...</ul>', 'html') ?>
             </div>
         </div>
 
@@ -264,7 +201,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Add Material Icons to list items.</p>
 
-                <ul class="so-list-group so-mb-6" style="max-width: 400px;">
+                <ul class="so-list-group" style="max-width: 400px;">
                     <li class="so-list-group-item">
                         <span class="material-icons">home</span>
                         Home
@@ -282,19 +219,10 @@ require_once '../includes/navbar.php';
                         Help & Support
                     </li>
                 </ul>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;li class="so-list-group-item"&gt;
-    &lt;span class="material-icons"&gt;home&lt;/span&gt;
+                <?= so_code_block('<li class="so-list-group-item">
+    <span class="material-icons">home</span>
     Home
-&lt;/li&gt;</code></pre>
-                </div>
+</li>', 'html') ?>
             </div>
         </div>
 
@@ -306,7 +234,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Badges are automatically pushed to the right.</p>
 
-                <ul class="so-list-group so-mb-6" style="max-width: 400px;">
+                <ul class="so-list-group" style="max-width: 400px;">
                     <li class="so-list-group-item">
                         <span class="material-icons">inbox</span>
                         Inbox
@@ -327,20 +255,11 @@ require_once '../includes/navbar.php';
                         <span class="so-badge so-badge-danger so-badge-pill">99+</span>
                     </li>
                 </ul>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;li class="so-list-group-item"&gt;
-    &lt;span class="material-icons"&gt;inbox&lt;/span&gt;
+                <?= so_code_block('<li class="so-list-group-item">
+    <span class="material-icons">inbox</span>
     Inbox
-    &lt;span class="so-badge so-badge-primary so-badge-pill"&gt;14&lt;/span&gt;
-&lt;/li&gt;</code></pre>
-                </div>
+    <span class="so-badge so-badge-primary so-badge-pill">14</span>
+</li>', 'html') ?>
             </div>
         </div>
 
@@ -352,7 +271,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Use <code>.so-list-group-item-content</code>, <code>.so-list-group-item-heading</code>, and <code>.so-list-group-item-text</code> for rich content.</p>
 
-                <div class="so-list-group so-mb-6" style="max-width: 500px;">
+                <div class="so-list-group" style="max-width: 500px;">
                     <a href="#" class="so-list-group-item so-list-group-item-action so-active">
                         <div class="so-list-group-item-content">
                             <h5 class="so-list-group-item-heading">List group item heading</h5>
@@ -375,22 +294,13 @@ require_once '../includes/navbar.php';
                         <small class="so-text-muted">1 week ago</small>
                     </a>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;a href="#" class="so-list-group-item so-list-group-item-action"&gt;
-    &lt;div class="so-list-group-item-content"&gt;
-        &lt;h5 class="so-list-group-item-heading"&gt;Heading&lt;/h5&gt;
-        &lt;p class="so-list-group-item-text"&gt;Description text&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;small class="so-text-muted"&gt;3 days ago&lt;/small&gt;
-&lt;/a&gt;</code></pre>
-                </div>
+                <?= so_code_block('<a href="#" class="so-list-group-item so-list-group-item-action">
+    <div class="so-list-group-item-content">
+        <h5 class="so-list-group-item-heading">Heading</h5>
+        <p class="so-list-group-item-text">Description text</p>
+    </div>
+    <small class="so-text-muted">3 days ago</small>
+</a>', 'html') ?>
             </div>
         </div>
 
@@ -402,7 +312,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Combine contextual color classes with heading and text elements for rich colored items.</p>
 
-                <div class="so-list-group so-mb-6" style="max-width: 500px;">
+                <div class="so-list-group" style="max-width: 500px;">
                     <a href="#" class="so-list-group-item so-list-group-item-action so-list-group-item-primary">
                         <div class="so-list-group-item-content">
                             <h5 class="so-list-group-item-heading">Primary Notification</h5>
@@ -439,22 +349,13 @@ require_once '../includes/navbar.php';
                         <small>1 week ago</small>
                     </a>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;a href="#" class="so-list-group-item so-list-group-item-action so-list-group-item-success"&gt;
-    &lt;div class="so-list-group-item-content"&gt;
-        &lt;h5 class="so-list-group-item-heading"&gt;Success Alert&lt;/h5&gt;
-        &lt;p class="so-list-group-item-text"&gt;Your payment has been processed.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;small&gt;2 hours ago&lt;/small&gt;
-&lt;/a&gt;</code></pre>
-                </div>
+                <?= so_code_block('<a href="#" class="so-list-group-item so-list-group-item-action so-list-group-item-success">
+    <div class="so-list-group-item-content">
+        <h5 class="so-list-group-item-heading">Success Alert</h5>
+        <p class="so-list-group-item-text">Your payment has been processed.</p>
+    </div>
+    <small>2 hours ago</small>
+</a>', 'html') ?>
             </div>
         </div>
 
@@ -466,7 +367,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Small and large size variants.</p>
 
-                <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4 so-mb-6">
+                <div class="so-grid so-grid-cols-1 md:so-grid-cols-2 so-gap-4">
                     <div>
                         <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Small (.so-list-group-sm)</label>
                         <ul class="so-list-group so-list-group-sm">
@@ -484,17 +385,8 @@ require_once '../includes/navbar.php';
                         </ul>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ul class="so-list-group so-list-group-sm"&gt;...&lt;/ul&gt;
-&lt;ul class="so-list-group so-list-group-lg"&gt;...&lt;/ul&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ul class="so-list-group so-list-group-sm">...</ul>
+<ul class="so-list-group so-list-group-lg">...</ul>', 'html') ?>
             </div>
         </div>
 
@@ -560,7 +452,8 @@ require_once '../includes/navbar.php';
         </div>
 
     </div>
-    
+    </div>
+
 </main>
 
 <?php

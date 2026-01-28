@@ -32,8 +32,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Simple empty state with icon, title, and description.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-empty-state">
                     <div class="so-empty-state-icon">
                         <span class="material-icons">inbox</span>
@@ -41,21 +39,13 @@ require_once '../includes/navbar.php';
                     <h3 class="so-empty-state-title">No messages yet</h3>
                     <p class="so-empty-state-text">Your inbox is empty. When you receive new messages, they'll appear here.</p>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-empty-state"&gt;
-    &lt;div class="so-empty-state-icon"&gt;
-        &lt;span class="material-icons"&gt;inbox&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;h3 class="so-empty-state-title"&gt;No messages yet&lt;/h3&gt;
-    &lt;p class="so-empty-state-text"&gt;Your inbox is empty.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-empty-state">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">inbox</span>
+    </div>
+    <h3 class="so-empty-state-title">No messages yet</h3>
+    <p class="so-empty-state-text">Your inbox is empty.</p>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -67,8 +57,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Include a call-to-action button to guide users.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-empty-state">
                     <div class="so-empty-state-icon">
                         <span class="material-icons">folder_open</span>
@@ -82,27 +70,19 @@ require_once '../includes/navbar.php';
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-empty-state"&gt;
-    &lt;div class="so-empty-state-icon"&gt;
-        &lt;span class="material-icons"&gt;folder_open&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;h3 class="so-empty-state-title"&gt;No projects found&lt;/h3&gt;
-    &lt;p class="so-empty-state-text"&gt;Get started by creating your first project.&lt;/p&gt;
-    &lt;div class="so-empty-state-actions"&gt;
-        &lt;button class="so-btn so-btn-primary"&gt;
-            &lt;span class="material-icons"&gt;add&lt;/span&gt;
+        <?= so_code_block('<div class="so-empty-state">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">folder_open</span>
+    </div>
+    <h3 class="so-empty-state-title">No projects found</h3>
+    <p class="so-empty-state-text">Get started by creating your first project.</p>
+    <div class="so-empty-state-actions">
+        <button class="so-btn so-btn-primary">
+            <span class="material-icons">add</span>
             Create Project
-        &lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        </button>
+    </div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -114,8 +94,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Show when search returns no results.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-empty-state">
                     <div class="so-empty-state-icon">
                         <span class="material-icons">search_off</span>
@@ -126,24 +104,16 @@ require_once '../includes/navbar.php';
                         <button class="so-btn so-btn-outline">Clear Search</button>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-empty-state"&gt;
-    &lt;div class="so-empty-state-icon"&gt;
-        &lt;span class="material-icons"&gt;search_off&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;h3 class="so-empty-state-title"&gt;No results found&lt;/h3&gt;
-    &lt;p class="so-empty-state-text"&gt;We couldn't find anything matching...&lt;/p&gt;
-    &lt;div class="so-empty-state-actions"&gt;
-        &lt;button class="so-btn so-btn-outline"&gt;Clear Search&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-empty-state">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">search_off</span>
+    </div>
+    <h3 class="so-empty-state-title">No results found</h3>
+    <p class="so-empty-state-text">We couldn\'t find anything matching...</p>
+    <div class="so-empty-state-actions">
+        <button class="so-btn so-btn-outline">Clear Search</button>
+    </div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -155,8 +125,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Display when something goes wrong.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-empty-state so-empty-state-danger">
                     <div class="so-empty-state-icon">
                         <span class="material-icons">error_outline</span>
@@ -171,25 +139,17 @@ require_once '../includes/navbar.php';
                         <button class="so-btn so-btn-outline">Contact Support</button>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-empty-state so-empty-state-danger"&gt;
-    &lt;div class="so-empty-state-icon"&gt;
-        &lt;span class="material-icons"&gt;error_outline&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;h3 class="so-empty-state-title"&gt;Something went wrong&lt;/h3&gt;
-    &lt;p class="so-empty-state-text"&gt;We're having trouble loading your data.&lt;/p&gt;
-    &lt;div class="so-empty-state-actions"&gt;
-        &lt;button class="so-btn so-btn-danger"&gt;Try Again&lt;/button&gt;
-        &lt;button class="so-btn so-btn-outline"&gt;Contact Support&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-empty-state so-empty-state-danger">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">error_outline</span>
+    </div>
+    <h3 class="so-empty-state-title">Something went wrong</h3>
+    <p class="so-empty-state-text">We\'re having trouble loading your data.</p>
+    <div class="so-empty-state-actions">
+        <button class="so-btn so-btn-danger">Try Again</button>
+        <button class="so-btn so-btn-outline">Contact Support</button>
+    </div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -201,8 +161,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Celebrate successful completions.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-empty-state so-empty-state-success">
                     <div class="so-empty-state-icon">
                         <span class="material-icons">check_circle</span>
@@ -213,24 +171,16 @@ require_once '../includes/navbar.php';
                         <button class="so-btn so-btn-success">View Completed Tasks</button>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-empty-state so-empty-state-success"&gt;
-    &lt;div class="so-empty-state-icon"&gt;
-        &lt;span class="material-icons"&gt;check_circle&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;h3 class="so-empty-state-title"&gt;All caught up!&lt;/h3&gt;
-    &lt;p class="so-empty-state-text"&gt;You've completed all your tasks.&lt;/p&gt;
-    &lt;div class="so-empty-state-actions"&gt;
-        &lt;button class="so-btn so-btn-success"&gt;View Completed Tasks&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-empty-state so-empty-state-success">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">check_circle</span>
+    </div>
+    <h3 class="so-empty-state-title">All caught up!</h3>
+    <p class="so-empty-state-text">You\'ve completed all your tasks.</p>
+    <div class="so-empty-state-actions">
+        <button class="so-btn so-btn-success">View Completed Tasks</button>
+    </div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -242,8 +192,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Different sizes for various contexts.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-4">
                         <div class="so-card so-card-bordered">
@@ -288,22 +236,14 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;!-- Small --&gt;
-&lt;div class="so-empty-state so-empty-state-sm"&gt;...&lt;/div&gt;
+        <?= so_code_block('<!-- Small -->
+<div class="so-empty-state so-empty-state-sm">...</div>
 
-&lt;!-- Default --&gt;
-&lt;div class="so-empty-state"&gt;...&lt;/div&gt;
+<!-- Default -->
+<div class="so-empty-state">...</div>
 
-&lt;!-- Large --&gt;
-&lt;div class="so-empty-state so-empty-state-lg"&gt;...&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+<!-- Large -->
+<div class="so-empty-state so-empty-state-lg">...</div>', 'html') ?>
     </div>
 </div>
 
@@ -315,8 +255,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Minimal empty state for inline use.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-empty-state so-empty-state-compact">
                     <span class="material-icons">inventory_2</span>
                     <span>No items in cart</span>
@@ -327,24 +265,16 @@ require_once '../includes/navbar.php';
                     <span class="material-icons">schedule</span>
                     <span>No recent activity</span>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-empty-state so-empty-state-compact"&gt;
-    &lt;span class="material-icons"&gt;inventory_2&lt;/span&gt;
-    &lt;span&gt;No items in cart&lt;/span&gt;
-    &lt;a href="#" class="so-link"&gt;Start shopping&lt;/a&gt;
-&lt;/div&gt;
+        <?= so_code_block('<div class="so-empty-state so-empty-state-compact">
+    <span class="material-icons">inventory_2</span>
+    <span>No items in cart</span>
+    <a href="#" class="so-link">Start shopping</a>
+</div>
 
-&lt;div class="so-empty-state so-empty-state-compact"&gt;
-    &lt;span class="material-icons"&gt;schedule&lt;/span&gt;
-    &lt;span&gt;No recent activity&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+<div class="so-empty-state so-empty-state-compact">
+    <span class="material-icons">schedule</span>
+    <span>No recent activity</span>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -356,8 +286,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Empty state wrapped in a card for standalone use.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-empty-state so-empty-state-card">
                     <div class="so-empty-state-icon">
                         <span class="material-icons">photo_library</span>
@@ -371,24 +299,16 @@ require_once '../includes/navbar.php';
                         </button>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-empty-state so-empty-state-card"&gt;
-    &lt;div class="so-empty-state-icon"&gt;
-        &lt;span class="material-icons"&gt;photo_library&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;h3 class="so-empty-state-title"&gt;No photos uploaded&lt;/h3&gt;
-    &lt;p class="so-empty-state-text"&gt;Drag and drop photos here...&lt;/p&gt;
-    &lt;div class="so-empty-state-actions"&gt;
-        &lt;button class="so-btn so-btn-primary"&gt;Upload Photos&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-empty-state so-empty-state-card">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">photo_library</span>
+    </div>
+    <h3 class="so-empty-state-title">No photos uploaded</h3>
+    <p class="so-empty-state-text">Drag and drop photos here...</p>
+    <div class="so-empty-state-actions">
+        <button class="so-btn so-btn-primary">Upload Photos</button>
+    </div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -400,8 +320,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Various icon presentation styles.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <div class="so-empty-state">
@@ -428,29 +346,21 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;!-- Circle icon style --&gt;
-&lt;div class="so-empty-state"&gt;
-    &lt;div class="so-empty-state-icon so-empty-state-icon-circle"&gt;
-        &lt;span class="material-icons"&gt;people&lt;/span&gt;
-    &lt;/div&gt;
+        <?= so_code_block('<!-- Circle icon style -->
+<div class="so-empty-state">
+    <div class="so-empty-state-icon so-empty-state-icon-circle">
+        <span class="material-icons">people</span>
+    </div>
     ...
-&lt;/div&gt;
+</div>
 
-&lt;!-- Gradient icon style --&gt;
-&lt;div class="so-empty-state"&gt;
-    &lt;div class="so-empty-state-icon so-empty-state-icon-gradient"&gt;
-        &lt;span class="material-icons"&gt;rocket_launch&lt;/span&gt;
-    &lt;/div&gt;
+<!-- Gradient icon style -->
+<div class="so-empty-state">
+    <div class="so-empty-state-icon so-empty-state-icon-gradient">
+        <span class="material-icons">rocket_launch</span>
+    </div>
     ...
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -462,8 +372,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Common empty state scenarios.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <!-- No orders -->
                     <div class="so-col-md-6">
@@ -543,25 +451,17 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;!-- Warning state for connection errors --&gt;
-&lt;div class="so-empty-state so-empty-state-sm so-empty-state-warning"&gt;
-    &lt;div class="so-empty-state-icon"&gt;
-        &lt;span class="material-icons"&gt;wifi_off&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;h4 class="so-empty-state-title"&gt;Connection lost&lt;/h4&gt;
-    &lt;p class="so-empty-state-text"&gt;Please check your connection.&lt;/p&gt;
-    &lt;div class="so-empty-state-actions"&gt;
-        &lt;button class="so-btn so-btn-warning so-btn-sm"&gt;Reconnect&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<!-- Warning state for connection errors -->
+<div class="so-empty-state so-empty-state-sm so-empty-state-warning">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">wifi_off</span>
+    </div>
+    <h4 class="so-empty-state-title">Connection lost</h4>
+    <p class="so-empty-state-text">Please check your connection.</p>
+    <div class="so-empty-state-actions">
+        <button class="so-btn so-btn-warning so-btn-sm">Reconnect</button>
+    </div>
+</div>', 'html') ?>
     </div>
 </div>
 

@@ -58,27 +58,21 @@ require_once '../includes/navbar.php';
                         <button type="button" class="so-btn so-btn-primary">Submit</button>
                     </div>
                 </form>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;form class="so-form-horizontal"&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;label class="so-form-label"&gt;Full Name&lt;/label&gt;
-        &lt;input type="text" class="so-form-control" placeholder="John Doe"&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;label class="so-form-label"&gt;Email&lt;/label&gt;
-        &lt;input type="email" class="so-form-control" placeholder="john@example.com"&gt;
-        &lt;span class="so-form-hint"&gt;We'll never share your email.&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;label class="so-form-label"&gt;&lt;/label&gt;
-        &lt;button type="button" class="so-btn so-btn-primary"&gt;Submit&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-                </div>
+                <?= so_code_block('<form class="so-form-horizontal">
+    <div class="so-form-group">
+        <label class="so-form-label">Full Name</label>
+        <input type="text" class="so-form-control" placeholder="John Doe">
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label">Email</label>
+        <input type="email" class="so-form-control" placeholder="john@example.com">
+        <span class="so-form-hint">We\'ll never share your email.</span>
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label"></label>
+        <button type="button" class="so-btn so-btn-primary">Submit</button>
+    </div>
+</form>', 'html') ?>
             </div>
         </div>
 
@@ -109,15 +103,9 @@ require_once '../includes/navbar.php';
                         <input type="text" class="so-form-control" placeholder="Wide label width">
                     </div>
                 </form>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;form class="so-form-horizontal so-form-horizontal-narrow"&gt;...&lt;/form&gt;
-&lt;form class="so-form-horizontal"&gt;...&lt;/form&gt;
-&lt;form class="so-form-horizontal so-form-horizontal-wide"&gt;...&lt;/form&gt;</code></pre>
-                </div>
+                <?= so_code_block('<form class="so-form-horizontal so-form-horizontal-narrow">...</form>
+<form class="so-form-horizontal">...</form>
+<form class="so-form-horizontal so-form-horizontal-wide">...</form>', 'html') ?>
             </div>
         </div>
 
@@ -149,28 +137,22 @@ require_once '../includes/navbar.php';
                         </button>
                     </div>
                 </form>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;form class="so-form-inline"&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;label class="so-form-label"&gt;Search&lt;/label&gt;
-        &lt;input type="text" class="so-form-control" placeholder="Keyword..."&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;label class="so-form-label"&gt;Category&lt;/label&gt;
-        &lt;select class="so-form-control" data-so-select&gt;
-            &lt;option&gt;All&lt;/option&gt;
-            &lt;option&gt;Products&lt;/option&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;button type="button" class="so-btn so-btn-primary"&gt;Search&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/form&gt;</code></pre>
-                </div>
+                <?= so_code_block('<form class="so-form-inline">
+    <div class="so-form-group">
+        <label class="so-form-label">Search</label>
+        <input type="text" class="so-form-control" placeholder="Keyword...">
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label">Category</label>
+        <select class="so-form-control" data-so-select>
+            <option>All</option>
+            <option>Products</option>
+        </select>
+    </div>
+    <div class="so-form-group">
+        <button type="button" class="so-btn so-btn-primary">Search</button>
+    </div>
+</form>', 'html') ?>
             </div>
         </div>
 
@@ -205,22 +187,16 @@ require_once '../includes/navbar.php';
                         <input type="text" class="so-form-control" placeholder="10001">
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-row"&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;label class="so-form-label"&gt;First Name&lt;/label&gt;
-        &lt;input type="text" class="so-form-control" placeholder="John"&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-group"&gt;
-        &lt;label class="so-form-label"&gt;Last Name&lt;/label&gt;
-        &lt;input type="text" class="so-form-control" placeholder="Doe"&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-form-row">
+    <div class="so-form-group">
+        <label class="so-form-label">First Name</label>
+        <input type="text" class="so-form-control" placeholder="John">
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label">Last Name</label>
+        <input type="text" class="so-form-control" placeholder="Doe">
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -260,22 +236,16 @@ require_once '../includes/navbar.php';
                         <input type="text" class="so-form-control" placeholder="10001">
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-row"&gt;
-    &lt;div class="so-form-group so-col-8"&gt;
-        &lt;label class="so-form-label"&gt;Street Address&lt;/label&gt;
-        &lt;input type="text" class="so-form-control"&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-group so-col-4"&gt;
-        &lt;label class="so-form-label"&gt;Apt/Suite&lt;/label&gt;
-        &lt;input type="text" class="so-form-control"&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-form-row">
+    <div class="so-form-group so-col-8">
+        <label class="so-form-label">Street Address</label>
+        <input type="text" class="so-form-control">
+    </div>
+    <div class="so-form-group so-col-4">
+        <label class="so-form-label">Apt/Suite</label>
+        <input type="text" class="so-form-control">
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -309,14 +279,8 @@ require_once '../includes/navbar.php';
                         <input type="text" class="so-form-control" placeholder="Field 3">
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-row so-form-row-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-form-row so-form-row-lg"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-form-row so-form-row-sm">...</div>
+<div class="so-form-row so-form-row-lg">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -351,25 +315,19 @@ require_once '../includes/navbar.php';
                         <button type="button" class="so-btn so-btn-primary">Save Changes</button>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-card"&gt;
-    &lt;div class="so-form-card-header"&gt;
-        &lt;h4 class="so-form-card-title"&gt;Account Settings&lt;/h4&gt;
-        &lt;p class="so-form-card-subtitle"&gt;Update your personal information&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-card-body"&gt;
-        &lt;div class="so-form-group"&gt;...&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-form-card-footer"&gt;
-        &lt;button type="button" class="so-btn so-btn-secondary"&gt;Cancel&lt;/button&gt;
-        &lt;button type="button" class="so-btn so-btn-primary"&gt;Save Changes&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-form-card">
+    <div class="so-form-card-header">
+        <h4 class="so-form-card-title">Account Settings</h4>
+        <p class="so-form-card-subtitle">Update your personal information</p>
+    </div>
+    <div class="so-form-card-body">
+        <div class="so-form-group">...</div>
+    </div>
+    <div class="so-form-card-footer">
+        <button type="button" class="so-btn so-btn-secondary">Cancel</button>
+        <button type="button" class="so-btn so-btn-primary">Save Changes</button>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -405,22 +363,16 @@ require_once '../includes/navbar.php';
                         <input type="tel" class="so-form-control">
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-section"&gt;
-    &lt;h5 class="so-form-section-title"&gt;Personal Information&lt;/h5&gt;
-    &lt;div class="so-form-row"&gt;...&lt;/div&gt;
-&lt;/div&gt;
+                <?= so_code_block('<div class="so-form-section">
+    <h5 class="so-form-section-title">Personal Information</h5>
+    <div class="so-form-row">...</div>
+</div>
 
-&lt;div class="so-form-section"&gt;
-    &lt;h5 class="so-form-section-title"&gt;Contact Details&lt;/h5&gt;
-    &lt;p class="so-form-section-subtitle"&gt;How can we reach you?&lt;/p&gt;
+<div class="so-form-section">
+    <h5 class="so-form-section-title">Contact Details</h5>
+    <p class="so-form-section-subtitle">How can we reach you?</p>
     ...
-&lt;/div&gt;</code></pre>
-                </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -448,15 +400,9 @@ require_once '../includes/navbar.php';
                         <span class="material-icons">facebook</span> Facebook
                     </button>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;hr class="so-form-divider"&gt;
+                <?= so_code_block('<hr class="so-form-divider">
 
-&lt;div class="so-form-divider-text"&gt;or continue with&lt;/div&gt;</code></pre>
-                </div>
+<div class="so-form-divider-text">or continue with</div>', 'html') ?>
             </div>
         </div>
 

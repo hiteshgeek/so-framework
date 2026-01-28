@@ -32,8 +32,7 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Apply RTL direction to a container and its children.</p>
 
-        <div class="so-example-block so-mb-4">
-            <div class="so-code-block">
+            <div class="so-code-block so-mb-4">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                     <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -49,7 +48,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-ms-auto"&gt;Margin start auto&lt;/div&gt;
 &lt;div class="so-me-3"&gt;Margin end 3&lt;/div&gt;</code></pre>
             </div>
-        </div>
 
         <div class="so-card so-card-bordered so-mb-4">
             <div class="so-card-header">
@@ -89,8 +87,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Use logical properties that adapt to text direction.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <div class="so-card so-card-bordered">
@@ -115,7 +111,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -132,7 +127,6 @@ require_once '../includes/navbar.php';
     &lt;p class="so-text-start"&gt;محاذاة لليمين&lt;/p&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -144,8 +138,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Margin and padding utilities that flip in RTL.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <h6 class="so-text-muted so-mb-3">LTR Context</h6>
@@ -182,7 +174,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -200,7 +191,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Padding end (right in LTR, left in RTL) --&gt;
 &lt;div class="so-pe-4"&gt;Padding end&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -212,8 +202,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Float utilities that adapt to text direction.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <div class="so-card so-card-bordered">
@@ -238,7 +226,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -252,7 +239,6 @@ require_once '../includes/navbar.php';
 &lt;img class="so-float-end so-ms-3" src="image.jpg"&gt;
 &lt;p&gt;Text wraps around the image...&lt;/p&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -264,8 +250,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Border utilities that flip in RTL.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <h6 class="so-text-muted so-mb-3">LTR Context</h6>
@@ -286,7 +270,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -298,7 +281,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Border on end side (right in LTR, left in RTL) --&gt;
 &lt;div class="so-border-end"&gt;Border end&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -310,8 +292,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Automatically flip directional icons in RTL mode.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <h6 class="so-text-muted so-mb-3">LTR Context</h6>
@@ -334,7 +314,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -347,7 +326,6 @@ require_once '../includes/navbar.php';
 &lt;span class="material-icons so-rtl-flip"&gt;reply&lt;/span&gt;
 &lt;span class="material-icons so-rtl-flip"&gt;redo&lt;/span&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -359,8 +337,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Form controls automatically adapt to RTL.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <h6 class="so-text-muted so-mb-3">LTR Form</h6>
@@ -405,7 +381,6 @@ require_once '../includes/navbar.php';
                         </form>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -427,7 +402,6 @@ require_once '../includes/navbar.php';
     &lt;button type="button" class="so-btn so-btn-primary"&gt;تسجيل الدخول&lt;/button&gt;
 &lt;/form&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -439,8 +413,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Navigation components adapt to RTL direction.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <h6 class="so-text-muted so-mb-3">LTR Navigation</h6>
                 <nav class="so-breadcrumb so-mb-4">
                     <a href="#" class="so-breadcrumb-item">Home</a>
@@ -458,7 +430,6 @@ require_once '../includes/navbar.php';
                     <span class="so-breadcrumb-separator">/</span>
                     <span class="so-breadcrumb-item so-active">التفاصيل</span>
                 </nav>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -473,7 +444,6 @@ require_once '../includes/navbar.php';
     &lt;span class="so-breadcrumb-item so-active"&gt;التفاصيل&lt;/span&gt;
 &lt;/nav&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -485,8 +455,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Handle mixed LTR and RTL content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-card so-card-bordered so-p-3 so-mb-3" dir="rtl">
                     <p>هذا نص عربي يحتوي على <span class="so-bidi-isolate" dir="ltr">English text</span> في المنتصف.</p>
                 </div>
@@ -494,7 +462,6 @@ require_once '../includes/navbar.php';
                 <div class="so-card so-card-bordered so-p-3">
                     <p>This English text contains <span class="so-bidi-isolate" dir="rtl">نص عربي</span> in the middle.</p>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -510,7 +477,6 @@ require_once '../includes/navbar.php';
     &lt;p&gt;English text &lt;span class="so-bidi-isolate" dir="rtl"&gt;نص عربي&lt;/span&gt; more text&lt;/p&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 

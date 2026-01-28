@@ -31,17 +31,13 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">The default spinner using a rotating border animation.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; align-items: center; gap: 24px;">
-                        <div class="so-spinner"></div>
+                <div class="so-spinner"></div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner"&gt;&lt;/div&gt;</code></pre>
-                    </div>
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner"&gt;&lt;/div&gt;</code></pre>
                 </div>
             </div>
         </div>
@@ -53,25 +49,21 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Extra small to extra large spinner variants.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; align-items: center; gap: 24px;">
-                        <div class="so-spinner so-spinner-xs"></div>
-                        <div class="so-spinner so-spinner-sm"></div>
-                        <div class="so-spinner so-spinner-md"></div>
-                        <div class="so-spinner so-spinner-lg"></div>
-                        <div class="so-spinner so-spinner-xl"></div>
+                <div class="so-spinner so-spinner-xs"></div>
+                <div class="so-spinner so-spinner-sm"></div>
+                <div class="so-spinner so-spinner-md"></div>
+                <div class="so-spinner so-spinner-lg"></div>
+                <div class="so-spinner so-spinner-xl"></div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner so-spinner-xs"&gt;&lt;/div&gt;
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner so-spinner-xs"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-sm"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-md"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-lg"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-xl"&gt;&lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -83,25 +75,22 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Color variants for different contexts.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-                        <div class="so-spinner so-spinner-primary"></div>
-                        <div class="so-spinner so-spinner-secondary"></div>
-                        <div class="so-spinner so-spinner-success"></div>
-                        <div class="so-spinner so-spinner-danger"></div>
-                        <div class="so-spinner so-spinner-warning"></div>
-                        <div class="so-spinner so-spinner-info"></div>
-                        <div style="background: var(--so-grey-800); padding: 12px; border-radius: 8px;">
-                            <div class="so-spinner so-spinner-light"></div>
-                        </div>
-                        <div class="so-spinner so-spinner-dark"></div>
+                <div class="so-spinner so-spinner-primary"></div>
+                <div class="so-spinner so-spinner-secondary"></div>
+                <div class="so-spinner so-spinner-success"></div>
+                <div class="so-spinner so-spinner-danger"></div>
+                <div class="so-spinner so-spinner-warning"></div>
+                <div class="so-spinner so-spinner-info"></div>
+                <div style="background: var(--so-grey-800); padding: 12px; border-radius: 8px;">
+                    <div class="so-spinner so-spinner-light"></div>
+                </div>
+                <div class="so-spinner so-spinner-dark"></div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner so-spinner-primary"&gt;&lt;/div&gt;
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner so-spinner-primary"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-secondary"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-success"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-danger"&gt;&lt;/div&gt;
@@ -109,7 +98,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-spinner so-spinner-info"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-light"&gt;&lt;/div&gt;
 &lt;div class="so-spinner so-spinner-dark"&gt;&lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -121,27 +109,23 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">A pulsing dot animation that grows and fades.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
-                        <div class="so-spinner-grow"></div>
-                        <div class="so-spinner-grow so-spinner-sm"></div>
-                        <div class="so-spinner-grow so-spinner-lg"></div>
-                        <div class="so-spinner-grow so-spinner-primary"></div>
-                        <div class="so-spinner-grow so-spinner-success"></div>
-                        <div class="so-spinner-grow so-spinner-danger"></div>
+                <div class="so-spinner-grow"></div>
+                <div class="so-spinner-grow so-spinner-sm"></div>
+                <div class="so-spinner-grow so-spinner-lg"></div>
+                <div class="so-spinner-grow so-spinner-primary"></div>
+                <div class="so-spinner-grow so-spinner-success"></div>
+                <div class="so-spinner-grow so-spinner-danger"></div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-grow"&gt;&lt;/div&gt;
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-grow"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-grow so-spinner-sm"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-grow so-spinner-lg"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-grow so-spinner-primary"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-grow so-spinner-success"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-grow so-spinner-danger"&gt;&lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -153,30 +137,27 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Three bouncing dots animation.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
-                        <div class="so-spinner-dots">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-dots so-spinner-dots-sm">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-dots so-spinner-dots-lg">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-dots so-spinner-dots-success">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-dots so-spinner-dots-danger">
-                            <span></span><span></span><span></span>
-                        </div>
+                <div class="so-spinner-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-dots so-spinner-dots-sm">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-dots so-spinner-dots-lg">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-dots so-spinner-dots-success">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-dots so-spinner-dots-danger">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-dots"&gt;
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-dots"&gt;
     &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
 &lt;/div&gt;
 
@@ -191,7 +172,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-spinner-dots so-spinner-dots-success"&gt;
     &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -203,30 +183,27 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Animated loading bars like an equalizer.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
-                        <div class="so-spinner-bars">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-bars so-spinner-bars-sm">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-bars so-spinner-bars-lg">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-bars so-spinner-bars-primary">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                        <div class="so-spinner-bars so-spinner-bars-success">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
+                <div class="so-spinner-bars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-bars so-spinner-bars-sm">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-bars so-spinner-bars-lg">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-bars so-spinner-bars-primary">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="so-spinner-bars so-spinner-bars-success">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-bars"&gt;
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-bars"&gt;
     &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
 &lt;/div&gt;
 
@@ -241,7 +218,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-spinner-bars so-spinner-bars-primary"&gt;
     &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -253,27 +229,23 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Expanding rings animation.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
-                        <div class="so-spinner-pulse"></div>
-                        <div class="so-spinner-pulse so-spinner-sm"></div>
-                        <div class="so-spinner-pulse so-spinner-lg"></div>
-                        <div class="so-spinner-pulse so-spinner-primary"></div>
-                        <div class="so-spinner-pulse so-spinner-success"></div>
-                        <div class="so-spinner-pulse so-spinner-danger"></div>
+                <div class="so-spinner-pulse"></div>
+                <div class="so-spinner-pulse so-spinner-sm"></div>
+                <div class="so-spinner-pulse so-spinner-lg"></div>
+                <div class="so-spinner-pulse so-spinner-primary"></div>
+                <div class="so-spinner-pulse so-spinner-success"></div>
+                <div class="so-spinner-pulse so-spinner-danger"></div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-pulse"&gt;&lt;/div&gt;
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-pulse"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-pulse so-spinner-sm"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-pulse so-spinner-lg"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-pulse so-spinner-primary"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-pulse so-spinner-success"&gt;&lt;/div&gt;
 &lt;div class="so-spinner-pulse so-spinner-danger"&gt;&lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -285,29 +257,26 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Inline spinner combined with loading text.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; flex-direction: column; gap: 16px;">
-                        <div class="so-spinner-inline">
-                            <div class="so-spinner so-spinner-sm"></div>
-                            <span>Loading...</span>
-                        </div>
-                        <div class="so-spinner-inline">
-                            <div class="so-spinner-dots so-spinner-dots-sm">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span>Please wait</span>
-                        </div>
-                        <div class="so-spinner-inline">
-                            <div class="so-spinner so-spinner-sm so-spinner-success"></div>
-                            <span>Saving changes...</span>
-                        </div>
+                <div class="so-spinner-inline">
+                    <div class="so-spinner so-spinner-sm"></div>
+                    <span>Loading...</span>
+                </div>
+                <div class="so-spinner-inline">
+                    <div class="so-spinner-dots so-spinner-dots-sm">
+                        <span></span><span></span><span></span>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-inline"&gt;
+                    <span>Please wait</span>
+                </div>
+                <div class="so-spinner-inline">
+                    <div class="so-spinner so-spinner-sm so-spinner-success"></div>
+                    <span>Saving changes...</span>
+                </div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
+                    </div>
+                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-spinner-inline"&gt;
     &lt;div class="so-spinner so-spinner-sm"&gt;&lt;/div&gt;
     &lt;span&gt;Loading...&lt;/span&gt;
 &lt;/div&gt;
@@ -318,7 +287,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
     &lt;span&gt;Please wait&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -330,32 +298,29 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Spinners inside buttons for async actions.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview" style="display: flex; gap: 16px; flex-wrap: wrap;">
-                        <button class="so-btn so-btn-primary" disabled>
-                            <div class="so-spinner so-spinner-xs so-spinner-light"></div>
-                            Loading...
-                        </button>
-                        <button class="so-btn so-btn-success" disabled>
-                            <div class="so-spinner so-spinner-xs so-spinner-light"></div>
-                            Saving
-                        </button>
-                        <button class="so-btn so-btn-secondary" disabled>
-                            <div class="so-spinner-dots so-spinner-dots-sm so-spinner-dots-dark">
-                                <span></span><span></span><span></span>
-                            </div>
-                        </button>
-                        <button class="so-btn so-btn-outline-primary" disabled>
-                            <div class="so-spinner so-spinner-xs so-spinner-primary"></div>
-                            Processing
-                        </button>
+                <button class="so-btn so-btn-primary" disabled>
+                    <div class="so-spinner so-spinner-xs so-spinner-light"></div>
+                    Loading...
+                </button>
+                <button class="so-btn so-btn-success" disabled>
+                    <div class="so-spinner so-spinner-xs so-spinner-light"></div>
+                    Saving
+                </button>
+                <button class="so-btn so-btn-secondary" disabled>
+                    <div class="so-spinner-dots so-spinner-dots-sm so-spinner-dots-dark">
+                        <span></span><span></span><span></span>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-primary" disabled&gt;
+                </button>
+                <button class="so-btn so-btn-outline-primary" disabled>
+                    <div class="so-spinner so-spinner-xs so-spinner-primary"></div>
+                    Processing
+                </button>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
+                    </div>
+                    <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-primary" disabled&gt;
     &lt;div class="so-spinner so-spinner-xs so-spinner-light"&gt;&lt;/div&gt;
     Loading...
 &lt;/button&gt;
@@ -375,7 +340,6 @@ require_once '../includes/navbar.php';
     &lt;div class="so-spinner so-spinner-xs so-spinner-primary"&gt;&lt;/div&gt;
     Processing
 &lt;/button&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -387,29 +351,26 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Full-screen or contained loading overlay.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div style="position: relative; height: 200px; border: 1px solid var(--so-border-color); border-radius: 8px; overflow: hidden;">
-                            <div class="so-spinner-overlay so-spinner-overlay-contained">
-                                <div class="so-spinner-overlay-content">
-                                    <div class="so-spinner so-spinner-lg"></div>
-                                    <div class="so-spinner-overlay-text">Loading content...</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="margin-top: 16px;">
-                            <button class="so-btn so-btn-primary" onclick="showFullOverlay()">
-                                <span class="material-icons">fullscreen</span>
-                                Show Full-screen Overlay (2s)
-                            </button>
+                <div style="position: relative; height: 200px; border: 1px solid var(--so-border-color); border-radius: 8px; overflow: hidden;">
+                    <div class="so-spinner-overlay so-spinner-overlay-contained">
+                        <div class="so-spinner-overlay-content">
+                            <div class="so-spinner so-spinner-lg"></div>
+                            <div class="so-spinner-overlay-text">Loading content...</div>
                         </div>
                     </div>
-                    <div class="so-code-block">
-                        <div class="so-code-header">
-                            <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                            <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                        </div>
-                        <pre class="so-code-content"><code class="language-html">&lt;!-- Contained overlay (for cards, sections) --&gt;
+                </div>
+                <div style="margin-top: 16px;">
+                    <button class="so-btn so-btn-primary" onclick="showFullOverlay()">
+                        <span class="material-icons">fullscreen</span>
+                        Show Full-screen Overlay (2s)
+                    </button>
+                </div>
+                <div class="so-code-block">
+                    <div class="so-code-header">
+                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
+                    </div>
+                    <pre class="so-code-content"><code class="language-html">&lt;!-- Contained overlay (for cards, sections) --&gt;
 &lt;div style="position: relative;"&gt;
     &lt;div class="so-spinner-overlay so-spinner-overlay-contained"&gt;
         &lt;div class="so-spinner-overlay-content"&gt;
@@ -426,7 +387,6 @@ require_once '../includes/navbar.php';
         &lt;div class="so-spinner-overlay-text"&gt;Loading...&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>

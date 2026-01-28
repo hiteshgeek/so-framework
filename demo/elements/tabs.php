@@ -46,32 +46,24 @@ require_once '../includes/navbar.php';
                                         <p>Settings tab content for configuration options.</p>
                                     </div>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs" role="tablist" data-so-tabs&gt;
-    &lt;button class="so-tab so-active" role="tab" data-so-target="#panel1"&gt;Home&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel2"&gt;Profile&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel3"&gt;Settings&lt;/button&gt;
-    &lt;button class="so-tab so-disabled" role="tab"&gt;Disabled&lt;/button&gt;
-&lt;/div&gt;
+<?= so_code_block('<div class="so-tabs" role="tablist" data-so-tabs>
+    <button class="so-tab so-active" role="tab" data-so-target="#panel1">Home</button>
+    <button class="so-tab" role="tab" data-so-target="#panel2">Profile</button>
+    <button class="so-tab" role="tab" data-so-target="#panel3">Settings</button>
+    <button class="so-tab so-disabled" role="tab">Disabled</button>
+</div>
 
-&lt;div class="so-tab-content"&gt;
-    &lt;div class="so-tab-pane so-fade so-show so-active" id="panel1" role="tabpanel"&gt;
-        &lt;p&gt;Home tab content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="so-tab-pane so-fade" id="panel2" role="tabpanel"&gt;
-        &lt;p&gt;Profile tab content.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="so-tab-pane so-fade" id="panel3" role="tabpanel"&gt;
-        &lt;p&gt;Settings tab content.&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                            </div>
+<div class="so-tab-content">
+    <div class="so-tab-pane so-fade so-show so-active" id="panel1" role="tabpanel">
+        <p>Home tab content.</p>
+    </div>
+    <div class="so-tab-pane so-fade" id="panel2" role="tabpanel">
+        <p>Profile tab content.</p>
+    </div>
+    <div class="so-tab-pane so-fade" id="panel3" role="tabpanel">
+        <p>Settings tab content.</p>
+    </div>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -97,19 +89,11 @@ require_once '../includes/navbar.php';
                                         <p>Pricing information displayed here.</p>
                                     </div>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs so-tabs-pills" role="tablist" data-so-tabs&gt;
-    &lt;button class="so-tab so-active" role="tab" data-so-target="#panel1"&gt;Overview&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel2"&gt;Features&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel3"&gt;Pricing&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                            </div>
+<?= so_code_block('<div class="so-tabs so-tabs-pills" role="tablist" data-so-tabs>
+    <button class="so-tab so-active" role="tab" data-so-target="#panel1">Overview</button>
+    <button class="so-tab" role="tab" data-so-target="#panel2">Features</button>
+    <button class="so-tab" role="tab" data-so-target="#panel3">Pricing</button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -139,20 +123,12 @@ require_once '../includes/navbar.php';
                                         <p>Yearly view content.</p>
                                     </div>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs so-tabs-boxed" role="tablist" data-so-tabs&gt;
-    &lt;button class="so-tab so-active" role="tab" data-so-target="#panel1"&gt;Day&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel2"&gt;Week&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel3"&gt;Month&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel4"&gt;Year&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                            </div>
+<?= so_code_block('<div class="so-tabs so-tabs-boxed" role="tablist" data-so-tabs>
+    <button class="so-tab so-active" role="tab" data-so-target="#panel1">Day</button>
+    <button class="so-tab" role="tab" data-so-target="#panel2">Week</button>
+    <button class="so-tab" role="tab" data-so-target="#panel3">Month</button>
+    <button class="so-tab" role="tab" data-so-target="#panel4">Year</button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -178,19 +154,11 @@ require_once '../includes/navbar.php';
                                         <p>Completed items content.</p>
                                     </div>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs so-tabs-ghost" role="tablist" data-so-tabs&gt;
-    &lt;button class="so-tab so-active" role="tab" data-so-target="#panel1"&gt;All&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel2"&gt;Active&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel3"&gt;Completed&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                            </div>
+<?= so_code_block('<div class="so-tabs so-tabs-ghost" role="tablist" data-so-tabs>
+    <button class="so-tab so-active" role="tab" data-so-target="#panel1">All</button>
+    <button class="so-tab" role="tab" data-so-target="#panel2">Active</button>
+    <button class="so-tab" role="tab" data-so-target="#panel3">Completed</button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -216,19 +184,11 @@ require_once '../includes/navbar.php';
                                         <p>Frequently asked questions.</p>
                                     </div>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs so-tabs-bordered" role="tablist" data-so-tabs&gt;
-    &lt;button class="so-tab so-active" role="tab" data-so-target="#panel1"&gt;Details&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel2"&gt;Reviews&lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel3"&gt;FAQ&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                            </div>
+<?= so_code_block('<div class="so-tabs so-tabs-bordered" role="tablist" data-so-tabs>
+    <button class="so-tab so-active" role="tab" data-so-target="#panel1">Details</button>
+    <button class="so-tab" role="tab" data-so-target="#panel2">Reviews</button>
+    <button class="so-tab" role="tab" data-so-target="#panel3">FAQ</button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -258,22 +218,14 @@ require_once '../includes/navbar.php';
                                     <button class="so-tab" role="tab" data-so-target="#demo-lg-2">Tab 2</button>
                                     <button class="so-tab" role="tab" data-so-target="#demo-lg-3">Tab 3</button>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;!-- Small --&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-sm" role="tablist"&gt;...&lt;/div&gt;
+<?= so_code_block('<!-- Small -->
+<div class="so-tabs so-tabs-pills so-tabs-sm" role="tablist">...</div>
 
-&lt;!-- Default --&gt;
-&lt;div class="so-tabs so-tabs-pills" role="tablist"&gt;...&lt;/div&gt;
+<!-- Default -->
+<div class="so-tabs so-tabs-pills" role="tablist">...</div>
 
-&lt;!-- Large --&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-lg" role="tablist"&gt;...&lt;/div&gt;</code></pre>
-                            </div>
+<!-- Large -->
+<div class="so-tabs so-tabs-pills so-tabs-lg" role="tablist">...</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -341,22 +293,14 @@ require_once '../includes/navbar.php';
                                         </div>
                                     </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs so-tabs-pills so-tabs-primary"&gt;...&lt;/div&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-success"&gt;...&lt;/div&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-danger"&gt;...&lt;/div&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-warning"&gt;...&lt;/div&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-info"&gt;...&lt;/div&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-secondary"&gt;...&lt;/div&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-light"&gt;...&lt;/div&gt;
-&lt;div class="so-tabs so-tabs-pills so-tabs-dark"&gt;...&lt;/div&gt;</code></pre>
-                            </div>
+<?= so_code_block('<div class="so-tabs so-tabs-pills so-tabs-primary">...</div>
+<div class="so-tabs so-tabs-pills so-tabs-success">...</div>
+<div class="so-tabs so-tabs-pills so-tabs-danger">...</div>
+<div class="so-tabs so-tabs-pills so-tabs-warning">...</div>
+<div class="so-tabs so-tabs-pills so-tabs-info">...</div>
+<div class="so-tabs so-tabs-pills so-tabs-secondary">...</div>
+<div class="so-tabs so-tabs-pills so-tabs-light">...</div>
+<div class="so-tabs so-tabs-pills so-tabs-dark">...</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -398,24 +342,16 @@ require_once '../includes/navbar.php';
                                         <p>Settings content.</p>
                                     </div>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs so-tabs-pills" role="tablist" data-so-tabs&gt;
-    &lt;button class="so-tab so-active" role="tab" data-so-target="#panel1"&gt;
-        &lt;span class="material-icons"&gt;home&lt;/span&gt;
+<?= so_code_block('<div class="so-tabs so-tabs-pills" role="tablist" data-so-tabs>
+    <button class="so-tab so-active" role="tab" data-so-target="#panel1">
+        <span class="material-icons">home</span>
         Home
-    &lt;/button&gt;
-    &lt;button class="so-tab" role="tab" data-so-target="#panel2"&gt;
-        &lt;span class="material-icons"&gt;person&lt;/span&gt;
+    </button>
+    <button class="so-tab" role="tab" data-so-target="#panel2">
+        <span class="material-icons">person</span>
         Profile
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                            </div>
+    </button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -451,26 +387,18 @@ require_once '../includes/navbar.php';
                                         </div>
                                     </div>
                                 </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;div class="so-tabs-container so-tabs-container-vertical"&gt;
-    &lt;div class="so-tabs so-tabs-vertical" role="tablist" data-so-tabs&gt;
-        &lt;button class="so-tab so-active" role="tab" data-so-target="#panel1"&gt;General&lt;/button&gt;
-        &lt;button class="so-tab" role="tab" data-so-target="#panel2"&gt;Security&lt;/button&gt;
-        &lt;button class="so-tab" role="tab" data-so-target="#panel3"&gt;Notifications&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="so-tab-content"&gt;
-        &lt;div class="so-tab-pane so-fade so-show so-active" id="panel1"&gt;...&lt;/div&gt;
-        &lt;div class="so-tab-pane so-fade" id="panel2"&gt;...&lt;/div&gt;
-        &lt;div class="so-tab-pane so-fade" id="panel3"&gt;...&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                            </div>
+<?= so_code_block('<div class="so-tabs-container so-tabs-container-vertical">
+    <div class="so-tabs so-tabs-vertical" role="tablist" data-so-tabs>
+        <button class="so-tab so-active" role="tab" data-so-target="#panel1">General</button>
+        <button class="so-tab" role="tab" data-so-target="#panel2">Security</button>
+        <button class="so-tab" role="tab" data-so-target="#panel3">Notifications</button>
+    </div>
+    <div class="so-tab-content">
+        <div class="so-tab-pane so-fade so-show so-active" id="panel1">...</div>
+        <div class="so-tab-pane so-fade" id="panel2">...</div>
+        <div class="so-tab-pane so-fade" id="panel3">...</div>
+    </div>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -500,25 +428,17 @@ require_once '../includes/navbar.php';
                                     <button class="so-tab" role="tab">Tab 2</button>
                                     <button class="so-tab" role="tab">Tab 3</button>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-html">&lt;!-- Center aligned --&gt;
-&lt;div class="so-tabs so-tabs-center" role="tablist"&gt;...&lt;/div&gt;
+<?= so_code_block('<!-- Center aligned -->
+<div class="so-tabs so-tabs-center" role="tablist">...</div>
 
-&lt;!-- Right aligned --&gt;
-&lt;div class="so-tabs so-tabs-end" role="tablist"&gt;...&lt;/div&gt;
+<!-- Right aligned -->
+<div class="so-tabs so-tabs-end" role="tablist">...</div>
 
-&lt;!-- Justified (equal width) --&gt;
-&lt;div class="so-tabs so-tabs-justified" role="tablist"&gt;...&lt;/div&gt;
+<!-- Justified (equal width) -->
+<div class="so-tabs so-tabs-justified" role="tablist">...</div>
 
-&lt;!-- Fill (proportional) --&gt;
-&lt;div class="so-tabs so-tabs-fill" role="tablist"&gt;...&lt;/div&gt;</code></pre>
-                            </div>
+<!-- Fill (proportional) -->
+<div class="so-tabs so-tabs-fill" role="tablist">...</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -550,44 +470,36 @@ require_once '../includes/navbar.php';
                                     <button class="so-btn so-btn-outline so-btn-sm" onclick="demoTabsShowById()">Show Tab 3</button>
                                 </div>
                                 <p class="so-demo-note">Open browser console to see event logs</p>
-                        <div class="so-code-block so-mt-4">
-                                <div class="so-code-header">
-                                    <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                    <button class="so-code-copy" onclick="copyCode(this)">
-                                        <span class="material-icons">content_copy</span>
-                                    </button>
-                                </div>
-                                <pre class="so-code-content"><code class="language-javascript">// Get tabs instance
-const tabsEl = document.querySelector('#my-tabs');
+<?= so_code_block('// Get tabs instance
+const tabsEl = document.querySelector(\'#my-tabs\');
 const tabs = SOTabs.getInstance(tabsEl);
 
 // Public methods
 tabs.show(2);           // Show tab by index (0-based)
-tabs.showById('panel3'); // Show tab by target ID
+tabs.showById(\'panel3\'); // Show tab by target ID
 tabs.next();            // Go to next tab
 tabs.prev();            // Go to previous tab
 tabs.getActiveTab();    // Get active tab element
 tabs.getActiveIndex();  // Get active tab index
 
-// Events (use 'so:' prefix)
-tabsEl.addEventListener('so:tab:show', (e) => {
-    console.log('About to show:', e.target);
-    console.log('Previous tab:', e.detail.relatedTarget);
+// Events (use \'so:\' prefix)
+tabsEl.addEventListener(\'so:tab:show\', (e) => {
+    console.log(\'About to show:\', e.target);
+    console.log(\'Previous tab:\', e.detail.relatedTarget);
     // e.preventDefault(); // Can cancel tab change
 });
 
-tabsEl.addEventListener('so:tab:shown', (e) => {
-    console.log('Tab shown:', e.target);
+tabsEl.addEventListener(\'so:tab:shown\', (e) => {
+    console.log(\'Tab shown:\', e.target);
 });
 
-tabsEl.addEventListener('so:tab:hide', (e) => {
-    console.log('About to hide:', e.target);
+tabsEl.addEventListener(\'so:tab:hide\', (e) => {
+    console.log(\'About to hide:\', e.target);
 });
 
-tabsEl.addEventListener('so:tab:hidden', (e) => {
-    console.log('Tab hidden:', e.target);
-});</code></pre>
-                            </div>
+tabsEl.addEventListener(\'so:tab:hidden\', (e) => {
+    console.log(\'Tab hidden:\', e.target);
+});', 'javascript') ?>
                     </div>
                 </div>
 

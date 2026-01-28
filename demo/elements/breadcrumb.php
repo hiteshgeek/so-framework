@@ -41,28 +41,20 @@ require_once '../includes/navbar.php';
                     </ol>
                 </nav>
 
-                <nav aria-label="breadcrumb" class="so-mb-6">
+                <nav aria-label="breadcrumb">
                     <ol class="so-breadcrumb">
                         <li class="so-breadcrumb-item"><a href="#">Home</a></li>
                         <li class="so-breadcrumb-item so-active" aria-current="page">Library</li>
                     </ol>
                 </nav>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;nav aria-label="breadcrumb"&gt;
-    &lt;ol class="so-breadcrumb"&gt;
-        &lt;li class="so-breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="so-breadcrumb-item"&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="so-breadcrumb-item so-active" aria-current="page"&gt;Data&lt;/li&gt;
-    &lt;/ol&gt;
-&lt;/nav&gt;</code></pre>
-                </div>
+                <?= so_code_block('<nav aria-label="breadcrumb">
+    <ol class="so-breadcrumb">
+        <li class="so-breadcrumb-item"><a href="#">Home</a></li>
+        <li class="so-breadcrumb-item"><a href="#">Library</a></li>
+        <li class="so-breadcrumb-item so-active" aria-current="page">Data</li>
+    </ol>
+</nav>', 'html') ?>
             </div>
         </div>
 
@@ -74,7 +66,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Different divider styles available.</p>
 
-                <div class="so-grid so-grid-cols-1 so-gap-4 so-mb-6">
+                <div class="so-grid so-grid-cols-1 so-gap-4">
                     <div>
                         <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Slash (default)</label>
                         <nav aria-label="breadcrumb">
@@ -142,19 +134,11 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ol class="so-breadcrumb so-breadcrumb-chevron"&gt;...&lt;/ol&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-arrow"&gt;...&lt;/ol&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-pipe"&gt;...&lt;/ol&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-dot"&gt;...&lt;/ol&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-icon"&gt;...&lt;/ol&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ol class="so-breadcrumb so-breadcrumb-chevron">...</ol>
+<ol class="so-breadcrumb so-breadcrumb-arrow">...</ol>
+<ol class="so-breadcrumb so-breadcrumb-pipe">...</ol>
+<ol class="so-breadcrumb so-breadcrumb-dot">...</ol>
+<ol class="so-breadcrumb so-breadcrumb-icon">...</ol>', 'html') ?>
             </div>
         </div>
 
@@ -180,7 +164,7 @@ require_once '../includes/navbar.php';
                     </ol>
                 </nav>
 
-                <nav aria-label="breadcrumb" class="so-mb-6">
+                <nav aria-label="breadcrumb">
                     <ol class="so-breadcrumb so-breadcrumb-arrow">
                         <li class="so-breadcrumb-item">
                             <a href="#"><span class="material-icons">home</span></a>
@@ -192,17 +176,9 @@ require_once '../includes/navbar.php';
                     </ol>
                 </nav>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;li class="so-breadcrumb-item"&gt;
-    &lt;a href="#"&gt;&lt;span class="material-icons"&gt;home&lt;/span&gt; Home&lt;/a&gt;
-&lt;/li&gt;</code></pre>
-                </div>
+                <?= so_code_block('<li class="so-breadcrumb-item">
+    <a href="#"><span class="material-icons">home</span> Home</a>
+</li>', 'html') ?>
             </div>
         </div>
 
@@ -214,7 +190,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Add a background with <code>.so-breadcrumb-filled</code>.</p>
 
-                <nav aria-label="breadcrumb" class="so-mb-4">
+                <nav aria-label="breadcrumb">
                     <ol class="so-breadcrumb so-breadcrumb-filled so-breadcrumb-chevron">
                         <li class="so-breadcrumb-item"><a href="#">Home</a></li>
                         <li class="so-breadcrumb-item"><a href="#">Category</a></li>
@@ -222,15 +198,7 @@ require_once '../includes/navbar.php';
                     </ol>
                 </nav>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ol class="so-breadcrumb so-breadcrumb-filled"&gt;...&lt;/ol&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ol class="so-breadcrumb so-breadcrumb-filled">...</ol>', 'html') ?>
             </div>
         </div>
 
@@ -242,7 +210,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Contextual color variants for breadcrumbs.</p>
 
-                <div class="so-grid so-grid-cols-1 so-gap-3 so-mb-6">
+                <div class="so-grid so-grid-cols-1 so-gap-3">
                     <nav aria-label="breadcrumb">
                         <ol class="so-breadcrumb so-breadcrumb-primary so-breadcrumb-chevron">
                             <li class="so-breadcrumb-item"><a href="#">Home</a></li>
@@ -268,17 +236,9 @@ require_once '../includes/navbar.php';
                     </nav>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ol class="so-breadcrumb so-breadcrumb-primary"&gt;...&lt;/ol&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-success"&gt;...&lt;/ol&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-danger"&gt;...&lt;/ol&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ol class="so-breadcrumb so-breadcrumb-primary">...</ol>
+<ol class="so-breadcrumb so-breadcrumb-success">...</ol>
+<ol class="so-breadcrumb so-breadcrumb-danger">...</ol>', 'html') ?>
             </div>
         </div>
 
@@ -290,7 +250,7 @@ require_once '../includes/navbar.php';
             <div class="so-card-body">
                 <p class="so-text-muted so-mb-4">Breadcrumb items as pills with <code>.so-breadcrumb-pills</code>.</p>
 
-                <nav aria-label="breadcrumb" class="so-mb-6">
+                <nav aria-label="breadcrumb">
                     <ol class="so-breadcrumb so-breadcrumb-pills">
                         <li class="so-breadcrumb-item"><a href="#">Home</a></li>
                         <li class="so-breadcrumb-item"><a href="#">Products</a></li>
@@ -299,19 +259,11 @@ require_once '../includes/navbar.php';
                     </ol>
                 </nav>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ol class="so-breadcrumb so-breadcrumb-pills"&gt;
-    &lt;li class="so-breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="so-breadcrumb-item"&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
-    &lt;li class="so-breadcrumb-item so-active"&gt;Current&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ol class="so-breadcrumb so-breadcrumb-pills">
+    <li class="so-breadcrumb-item"><a href="#">Home</a></li>
+    <li class="so-breadcrumb-item"><a href="#">Products</a></li>
+    <li class="so-breadcrumb-item so-active">Current</li>
+</ol>', 'html') ?>
             </div>
         </div>
 
@@ -334,7 +286,7 @@ require_once '../includes/navbar.php';
                     </nav>
                 </div>
 
-                <div class="so-mb-6">
+                <div>
                     <label class="so-d-block so-mb-2 so-text-sm so-font-medium">Large (.so-breadcrumb-lg)</label>
                     <nav aria-label="breadcrumb">
                         <ol class="so-breadcrumb so-breadcrumb-lg so-breadcrumb-chevron">
@@ -345,16 +297,8 @@ require_once '../includes/navbar.php';
                     </nav>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;ol class="so-breadcrumb so-breadcrumb-sm"&gt;...&lt;/ol&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-lg"&gt;...&lt;/ol&gt;</code></pre>
-                </div>
+                <?= so_code_block('<ol class="so-breadcrumb so-breadcrumb-sm">...</ol>
+<ol class="so-breadcrumb so-breadcrumb-lg">...</ol>', 'html') ?>
             </div>
         </div>
 
@@ -377,7 +321,7 @@ require_once '../includes/navbar.php';
                     </nav>
                 </div>
 
-                <div class="so-mb-6">
+                <div>
                     <label class="so-d-block so-mb-2 so-text-sm so-font-medium">With ellipsis (collapsed)</label>
                     <nav aria-label="breadcrumb">
                         <ol class="so-breadcrumb so-breadcrumb-chevron">
@@ -389,21 +333,13 @@ require_once '../includes/navbar.php';
                     </nav>
                 </div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Truncate long text --&gt;
-&lt;ol class="so-breadcrumb so-breadcrumb-truncate"&gt;...&lt;/ol&gt;
+                <?= so_code_block('<!-- Truncate long text -->
+<ol class="so-breadcrumb so-breadcrumb-truncate">...</ol>
 
-&lt;!-- With ellipsis --&gt;
-&lt;li class="so-breadcrumb-item so-breadcrumb-ellipsis"&gt;
-    &lt;a href="#"&gt;...&lt;/a&gt;
-&lt;/li&gt;</code></pre>
-                </div>
+<!-- With ellipsis -->
+<li class="so-breadcrumb-item so-breadcrumb-ellipsis">
+    <a href="#">...</a>
+</li>', 'html') ?>
             </div>
         </div>
 
@@ -485,7 +421,8 @@ require_once '../includes/navbar.php';
         </div>
 
     </div>
-    
+    </div>
+
 </main>
 
 <?php

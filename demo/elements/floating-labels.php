@@ -54,29 +54,23 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Outlined (Default) --&gt;
-&lt;div class="so-form-floating so-form-floating-outlined"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Enter text"&gt;
-    &lt;label&gt;Outlined Label&lt;/label&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Outlined (Default) -->
+<div class="so-form-floating so-form-floating-outlined">
+    <input type="text" class="so-form-control" placeholder="Enter text">
+    <label>Outlined Label</label>
+</div>
 
-&lt;!-- Filled --&gt;
-&lt;div class="so-form-floating so-form-floating-filled"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Enter text"&gt;
-    &lt;label&gt;Filled Label&lt;/label&gt;
-&lt;/div&gt;
+<!-- Filled -->
+<div class="so-form-floating so-form-floating-filled">
+    <input type="text" class="so-form-control" placeholder="Enter text">
+    <label>Filled Label</label>
+</div>
 
-&lt;!-- Standard --&gt;
-&lt;div class="so-form-floating so-form-floating-standard"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Enter text"&gt;
-    &lt;label&gt;Standard Label&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<!-- Standard -->
+<div class="so-form-floating so-form-floating-standard">
+    <input type="text" class="so-form-control" placeholder="Enter text">
+    <label>Standard Label</label>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -194,15 +188,9 @@ require_once '../includes/navbar.php';
                         <label for="floatLg">Large Floating Label</label>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-floating so-form-floating-sm so-form-floating-outlined"&gt;...&lt;/div&gt;
-&lt;div class="so-form-floating so-form-floating-outlined"&gt;...&lt;/div&gt;
-&lt;div class="so-form-floating so-form-floating-lg so-form-floating-outlined"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-floating so-form-floating-sm so-form-floating-outlined">...</div>
+<div class="so-form-floating so-form-floating-outlined">...</div>
+<div class="so-form-floating so-form-floating-lg so-form-floating-outlined">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -246,16 +234,10 @@ require_once '../includes/navbar.php';
                     <input type="text" class="so-form-control" id="floatRequired" placeholder="Required" required>
                     <label for="floatRequired" class="so-required">Company Name</label>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-floating so-form-floating-outlined"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Required" required&gt;
-    &lt;label class="so-required"&gt;Company Name&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-floating so-form-floating-outlined">
+    <input type="text" class="so-form-control" placeholder="Required" required>
+    <label class="so-required">Company Name</label>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -288,20 +270,14 @@ require_once '../includes/navbar.php';
                         <span class="so-form-warning"><span class="material-icons">warning</span> Username is reserved</span>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-floating so-form-floating-outlined has-success"&gt;...&lt;/div&gt;
-&lt;span class="so-form-success"&gt;Email is valid&lt;/span&gt;
+<?= so_code_block('<div class="so-form-floating so-form-floating-outlined has-success">...</div>
+<span class="so-form-success">Email is valid</span>
 
-&lt;div class="so-form-floating so-form-floating-outlined has-error"&gt;...&lt;/div&gt;
-&lt;span class="so-form-error"&gt;Please enter a valid email&lt;/span&gt;
+<div class="so-form-floating so-form-floating-outlined has-error">...</div>
+<span class="so-form-error">Please enter a valid email</span>
 
-&lt;div class="so-form-floating so-form-floating-outlined has-warning"&gt;...&lt;/div&gt;
-&lt;span class="so-form-warning"&gt;Username is reserved&lt;/span&gt;</code></pre>
-                </div>
+<div class="so-form-floating so-form-floating-outlined has-warning">...</div>
+<span class="so-form-warning">Username is reserved</span>', 'html') ?>
             </div>
         </div>
 
@@ -332,16 +308,10 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-floating so-form-floating-outlined so-disabled"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Disabled" disabled&gt;
-    &lt;label&gt;Disabled&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-floating so-form-floating-outlined so-disabled">
+    <input type="text" class="so-form-control" placeholder="Disabled" disabled>
+    <label>Disabled</label>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -424,27 +394,21 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Leading Icon --&gt;
-&lt;div class="so-form-floating so-form-floating-outlined so-form-floating-icon-start"&gt;
-    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;person&lt;/span&gt;&lt;/span&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Username"&gt;
-    &lt;label&gt;Username&lt;/label&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Leading Icon -->
+<div class="so-form-floating so-form-floating-outlined so-form-floating-icon-start">
+    <span class="so-input-icon"><span class="material-icons">person</span></span>
+    <input type="text" class="so-form-control" placeholder="Username">
+    <label>Username</label>
+</div>
 
-&lt;!-- Trailing Action --&gt;
-&lt;div class="so-form-floating so-form-floating-outlined so-form-floating-icon-end"&gt;
-    &lt;input type="password" class="so-form-control" placeholder="Password"&gt;
-    &lt;label&gt;Password&lt;/label&gt;
-    &lt;button type="button" class="so-input-action"&gt;
-        &lt;span class="material-icons"&gt;visibility&lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<!-- Trailing Action -->
+<div class="so-form-floating so-form-floating-outlined so-form-floating-icon-end">
+    <input type="password" class="so-form-control" placeholder="Password">
+    <label>Password</label>
+    <button type="button" class="so-input-action">
+        <span class="material-icons">visibility</span>
+    </button>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -475,15 +439,9 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-floating so-form-floating-outlined"&gt;...&lt;/div&gt;
-&lt;div class="so-form-floating so-form-floating-outlined so-form-floating-secondary"&gt;...&lt;/div&gt;
-&lt;div class="so-form-floating so-form-floating-outlined so-form-floating-info"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-floating so-form-floating-outlined">...</div>
+<div class="so-form-floating so-form-floating-outlined so-form-floating-secondary">...</div>
+<div class="so-form-floating so-form-floating-outlined so-form-floating-info">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -538,16 +496,10 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-floating so-form-floating-outlined"&gt;
-    &lt;textarea class="so-form-control" placeholder="Description" style="height: 100px;"&gt;&lt;/textarea&gt;
-    &lt;label&gt;Description (Outlined)&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-floating so-form-floating-outlined">
+    <textarea class="so-form-control" placeholder="Description" style="height: 100px;"></textarea>
+    <label>Description (Outlined)</label>
+</div>', 'html') ?>
             </div>
         </div>
 

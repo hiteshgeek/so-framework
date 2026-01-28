@@ -31,21 +31,18 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">A styled file input with browse button and filename display.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-group">
-                            <label class="so-form-label">Upload Document</label>
-                            <div class="so-form-control-file">
-                                <input type="file" id="fileInput1">
-                                <span class="so-form-file-button">
-                                    <span class="material-icons">upload_file</span>
-                                    Browse
-                                </span>
-                                <span class="so-form-file-text">No file chosen</span>
-                            </div>
-                        </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Upload Document</label>
+                    <div class="so-form-control-file">
+                        <input type="file" id="fileInput1">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload_file</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
                     </div>
-                    <div class="so-code-block so-code-block-tabbed">
+                </div>
+                <div class="so-code-block so-code-block-tabbed">
                         <div class="so-code-header">
                             <div class="so-code-tabs">
                                 <button class="so-code-tab so-active" data-so-target="#file-input-html">
@@ -91,7 +88,6 @@ document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(in
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- ===================== MULTIPLE FILES ===================== -->
         <div class="so-card so-mb-4">
@@ -100,22 +96,19 @@ document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(in
                 <p class="so-card-subtitle">Allow users to select multiple files at once.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-group">
-                            <label class="so-form-label">Upload Images</label>
-                            <div class="so-form-control-file">
-                                <input type="file" multiple accept="image/*">
-                                <span class="so-form-file-button">
-                                    <span class="material-icons">photo_library</span>
-                                    Choose Files
-                                </span>
-                                <span class="so-form-file-text">No files chosen</span>
-                            </div>
-                            <span class="so-form-hint">You can select multiple images</span>
-                        </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Upload Images</label>
+                    <div class="so-form-control-file">
+                        <input type="file" multiple accept="image/*">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">photo_library</span>
+                            Choose Files
+                        </span>
+                        <span class="so-form-file-text">No files chosen</span>
                     </div>
-                    <div class="so-code-block">
+                    <span class="so-form-hint">You can select multiple images</span>
+                </div>
+                <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                             <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -132,7 +125,6 @@ document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(in
     &lt;/div&gt;
     &lt;span class="so-form-hint"&gt;You can select multiple images&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -144,43 +136,40 @@ document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(in
                 <p class="so-card-subtitle">Small, default, and large file input variants.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-group">
-                            <label class="so-form-label">Small</label>
-                            <div class="so-form-control-file so-form-control-file-sm">
-                                <input type="file">
-                                <span class="so-form-file-button">
-                                    <span class="material-icons">upload</span>
-                                    Browse
-                                </span>
-                                <span class="so-form-file-text">No file chosen</span>
-                            </div>
-                        </div>
-                        <div class="so-form-group">
-                            <label class="so-form-label">Default</label>
-                            <div class="so-form-control-file">
-                                <input type="file">
-                                <span class="so-form-file-button">
-                                    <span class="material-icons">upload</span>
-                                    Browse
-                                </span>
-                                <span class="so-form-file-text">No file chosen</span>
-                            </div>
-                        </div>
-                        <div class="so-form-group">
-                            <label class="so-form-label">Large</label>
-                            <div class="so-form-control-file so-form-control-file-lg">
-                                <input type="file">
-                                <span class="so-form-file-button">
-                                    <span class="material-icons">upload</span>
-                                    Browse
-                                </span>
-                                <span class="so-form-file-text">No file chosen</span>
-                            </div>
-                        </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Small</label>
+                    <div class="so-form-control-file so-form-control-file-sm">
+                        <input type="file">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
                     </div>
-                    <div class="so-code-block">
+                </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Default</label>
+                    <div class="so-form-control-file">
+                        <input type="file">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
+                    </div>
+                </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Large</label>
+                    <div class="so-form-control-file so-form-control-file-lg">
+                        <input type="file">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
+                    </div>
+                </div>
+                <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                             <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -214,7 +203,6 @@ document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(in
     &lt;/span&gt;
     &lt;span class="so-form-file-text"&gt;No file chosen&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -226,25 +214,22 @@ document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(in
                 <p class="so-card-subtitle">A large dropzone area for drag-and-drop file uploads.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-group">
-                            <label class="so-form-label">Upload Files</label>
-                            <div class="so-form-file-dropzone" id="dropzone1">
-                                <input type="file" multiple>
-                                <div class="so-form-file-dropzone-icon">
-                                    <span class="material-icons">cloud_upload</span>
-                                </div>
-                                <div class="so-form-file-dropzone-text">
-                                    Drag & drop files here, or <span>click to browse</span>
-                                </div>
-                                <div class="so-form-file-dropzone-hint">
-                                    Supports: PDF, DOC, DOCX, XLS, XLSX (max 10MB)
-                                </div>
-                            </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Upload Files</label>
+                    <div class="so-form-file-dropzone" id="dropzone1">
+                        <input type="file" multiple>
+                        <div class="so-form-file-dropzone-icon">
+                            <span class="material-icons">cloud_upload</span>
+                        </div>
+                        <div class="so-form-file-dropzone-text">
+                            Drag & drop files here, or <span>click to browse</span>
+                        </div>
+                        <div class="so-form-file-dropzone-hint">
+                            Supports: PDF, DOC, DOCX, XLS, XLSX (max 10MB)
                         </div>
                     </div>
-                    <div class="so-code-block so-code-block-tabbed">
+                </div>
+                <div class="so-code-block so-code-block-tabbed">
                         <div class="so-code-header">
                             <div class="so-code-tabs">
                                 <button class="so-code-tab so-active" data-so-target="#dropzone-html">
@@ -327,7 +312,6 @@ function handleFiles(files, dropzone) {
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- ===================== IMAGE DROPZONE ===================== -->
         <div class="so-card so-mb-4">
@@ -336,25 +320,22 @@ function handleFiles(files, dropzone) {
                 <p class="so-card-subtitle">Compact dropzone variant for image uploads.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-group">
-                            <label class="so-form-label">Profile Photo</label>
-                            <div class="so-form-file-dropzone" style="padding: 2rem;">
-                                <input type="file" accept="image/*">
-                                <div class="so-form-file-dropzone-icon">
-                                    <span class="material-icons">add_photo_alternate</span>
-                                </div>
-                                <div class="so-form-file-dropzone-text">
-                                    <span>Click to upload</span> or drag and drop
-                                </div>
-                                <div class="so-form-file-dropzone-hint">
-                                    PNG, JPG or GIF (max 5MB)
-                                </div>
-                            </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Profile Photo</label>
+                    <div class="so-form-file-dropzone" style="padding: 2rem;">
+                        <input type="file" accept="image/*">
+                        <div class="so-form-file-dropzone-icon">
+                            <span class="material-icons">add_photo_alternate</span>
+                        </div>
+                        <div class="so-form-file-dropzone-text">
+                            <span>Click to upload</span> or drag and drop
+                        </div>
+                        <div class="so-form-file-dropzone-hint">
+                            PNG, JPG or GIF (max 5MB)
                         </div>
                     </div>
-                    <div class="so-code-block">
+                </div>
+                <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                             <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -374,7 +355,6 @@ function handleFiles(files, dropzone) {
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -386,18 +366,15 @@ function handleFiles(files, dropzone) {
                 <p class="so-card-subtitle">A styled color picker with swatch preview.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-group">
-                            <label class="so-form-label">Choose Color</label>
-                            <div class="so-form-control-color">
-                                <input type="color" value="#1a73e8">
-                                <span class="so-form-color-swatch" style="--selected-color: #1a73e8;"></span>
-                                <span class="so-form-color-value">#1a73e8</span>
-                            </div>
-                        </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Choose Color</label>
+                    <div class="so-form-control-color">
+                        <input type="color" value="#1a73e8">
+                        <span class="so-form-color-swatch" style="--selected-color: #1a73e8;"></span>
+                        <span class="so-form-color-value">#1a73e8</span>
                     </div>
-                    <div class="so-code-block so-code-block-tabbed">
+                </div>
+                <div class="so-code-block so-code-block-tabbed">
                         <div class="so-code-header">
                             <div class="so-code-tabs">
                                 <button class="so-code-tab so-active" data-so-target="#color-input-html">
@@ -448,7 +425,6 @@ document.querySelectorAll('.so-form-control-color input[type="color"]').forEach(
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- ===================== COLOR INPUT SIZES ===================== -->
         <div class="so-card so-mb-4">
@@ -457,36 +433,33 @@ document.querySelectorAll('.so-form-control-color input[type="color"]').forEach(
                 <p class="so-card-subtitle">Small, default, and large color picker variants.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-row" style="align-items: center;">
-                            <div class="so-form-group">
-                                <label class="so-form-label">Small</label>
-                                <div class="so-form-control-color so-form-control-color-sm">
-                                    <input type="color" value="#28c76f">
-                                    <span class="so-form-color-swatch" style="--selected-color: #28c76f;"></span>
-                                    <span class="so-form-color-value">#28c76f</span>
-                                </div>
-                            </div>
-                            <div class="so-form-group">
-                                <label class="so-form-label">Default</label>
-                                <div class="so-form-control-color">
-                                    <input type="color" value="#ff9f43">
-                                    <span class="so-form-color-swatch" style="--selected-color: #ff9f43;"></span>
-                                    <span class="so-form-color-value">#ff9f43</span>
-                                </div>
-                            </div>
-                            <div class="so-form-group">
-                                <label class="so-form-label">Large</label>
-                                <div class="so-form-control-color so-form-control-color-lg">
-                                    <input type="color" value="#ea5455">
-                                    <span class="so-form-color-swatch" style="--selected-color: #ea5455;"></span>
-                                    <span class="so-form-color-value">#ea5455</span>
-                                </div>
-                            </div>
+                <div class="so-form-row" style="align-items: center;">
+                    <div class="so-form-group">
+                        <label class="so-form-label">Small</label>
+                        <div class="so-form-control-color so-form-control-color-sm">
+                            <input type="color" value="#28c76f">
+                            <span class="so-form-color-swatch" style="--selected-color: #28c76f;"></span>
+                            <span class="so-form-color-value">#28c76f</span>
                         </div>
                     </div>
-                    <div class="so-code-block">
+                    <div class="so-form-group">
+                        <label class="so-form-label">Default</label>
+                        <div class="so-form-control-color">
+                            <input type="color" value="#ff9f43">
+                            <span class="so-form-color-swatch" style="--selected-color: #ff9f43;"></span>
+                            <span class="so-form-color-value">#ff9f43</span>
+                        </div>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Large</label>
+                        <div class="so-form-control-color so-form-control-color-lg">
+                            <input type="color" value="#ea5455">
+                            <span class="so-form-color-swatch" style="--selected-color: #ea5455;"></span>
+                            <span class="so-form-color-value">#ea5455</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                             <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -511,7 +484,6 @@ document.querySelectorAll('.so-form-control-color input[type="color"]').forEach(
     &lt;span class="so-form-color-swatch" style="--selected-color: #ea5455;"&gt;&lt;/span&gt;
     &lt;span class="so-form-color-value"&gt;#ea5455&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
         </div>
@@ -523,21 +495,18 @@ document.querySelectorAll('.so-form-control-color input[type="color"]').forEach(
                 <p class="so-card-subtitle">Combined color picker with editable hex value input.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-group">
-                            <label class="so-form-label">Brand Color</label>
-                            <div class="so-form-color-input" style="max-width: 200px;">
-                                <div class="so-form-control-color">
-                                    <input type="color" value="#7367f0">
-                                    <span class="so-form-color-swatch" style="--selected-color: #7367f0;"></span>
-                                </div>
-                                <input type="text" class="so-form-control" value="#7367F0" maxlength="7">
-                            </div>
-                            <span class="so-form-hint">Click swatch or type hex value</span>
+                <div class="so-form-group">
+                    <label class="so-form-label">Brand Color</label>
+                    <div class="so-form-color-input" style="max-width: 200px;">
+                        <div class="so-form-control-color">
+                            <input type="color" value="#7367f0">
+                            <span class="so-form-color-swatch" style="--selected-color: #7367f0;"></span>
                         </div>
+                        <input type="text" class="so-form-control" value="#7367F0" maxlength="7">
                     </div>
-                    <div class="so-code-block so-code-block-tabbed">
+                    <span class="so-form-hint">Click swatch or type hex value</span>
+                </div>
+                <div class="so-code-block so-code-block-tabbed">
                         <div class="so-code-header">
                             <div class="so-code-tabs">
                                 <button class="so-code-tab so-active" data-so-target="#color-hex-html">
@@ -594,7 +563,6 @@ document.querySelectorAll('.so-form-color-input').forEach(wrapper => {
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- ===================== THEME COLORS ===================== -->
         <div class="so-card so-mb-4">
@@ -603,44 +571,41 @@ document.querySelectorAll('.so-form-color-input').forEach(wrapper => {
                 <p class="so-card-subtitle">Example of multiple color pickers for theme customization.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
-                        <div class="so-form-row">
-                            <div class="so-form-group">
-                                <label class="so-form-label">Primary</label>
-                                <div class="so-form-control-color">
-                                    <input type="color" value="#1a73e8">
-                                    <span class="so-form-color-swatch" style="--selected-color: #1a73e8;"></span>
-                                    <span class="so-form-color-value">#1a73e8</span>
-                                </div>
-                            </div>
-                            <div class="so-form-group">
-                                <label class="so-form-label">Success</label>
-                                <div class="so-form-control-color">
-                                    <input type="color" value="#28c76f">
-                                    <span class="so-form-color-swatch" style="--selected-color: #28c76f;"></span>
-                                    <span class="so-form-color-value">#28c76f</span>
-                                </div>
-                            </div>
-                            <div class="so-form-group">
-                                <label class="so-form-label">Danger</label>
-                                <div class="so-form-control-color">
-                                    <input type="color" value="#ea5455">
-                                    <span class="so-form-color-swatch" style="--selected-color: #ea5455;"></span>
-                                    <span class="so-form-color-value">#ea5455</span>
-                                </div>
-                            </div>
-                            <div class="so-form-group">
-                                <label class="so-form-label">Warning</label>
-                                <div class="so-form-control-color">
-                                    <input type="color" value="#ff9f43">
-                                    <span class="so-form-color-swatch" style="--selected-color: #ff9f43;"></span>
-                                    <span class="so-form-color-value">#ff9f43</span>
-                                </div>
-                            </div>
+                <div class="so-form-row">
+                    <div class="so-form-group">
+                        <label class="so-form-label">Primary</label>
+                        <div class="so-form-control-color">
+                            <input type="color" value="#1a73e8">
+                            <span class="so-form-color-swatch" style="--selected-color: #1a73e8;"></span>
+                            <span class="so-form-color-value">#1a73e8</span>
                         </div>
                     </div>
-                    <div class="so-code-block">
+                    <div class="so-form-group">
+                        <label class="so-form-label">Success</label>
+                        <div class="so-form-control-color">
+                            <input type="color" value="#28c76f">
+                            <span class="so-form-color-swatch" style="--selected-color: #28c76f;"></span>
+                            <span class="so-form-color-value">#28c76f</span>
+                        </div>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Danger</label>
+                        <div class="so-form-control-color">
+                            <input type="color" value="#ea5455">
+                            <span class="so-form-color-swatch" style="--selected-color: #ea5455;"></span>
+                            <span class="so-form-color-value">#ea5455</span>
+                        </div>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Warning</label>
+                        <div class="so-form-control-color">
+                            <input type="color" value="#ff9f43">
+                            <span class="so-form-color-swatch" style="--selected-color: #ff9f43;"></span>
+                            <span class="so-form-color-value">#ff9f43</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
                             <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
@@ -682,7 +647,6 @@ document.querySelectorAll('.so-form-color-input').forEach(wrapper => {
                     </div>
                 </div>
             </div>
-        </div>
 
     </div>
 </main>

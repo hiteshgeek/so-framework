@@ -34,16 +34,10 @@ require_once '../includes/navbar.php';
                     <label class="so-form-label" for="input-default">Default Input</label>
                     <input type="text" class="so-form-control" id="input-default" placeholder="Enter text...">
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label" for="input-default"&gt;Default Input&lt;/label&gt;
-    &lt;input type="text" class="so-form-control" id="input-default" placeholder="Enter text..."&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-group">
+    <label class="so-form-label" for="input-default">Default Input</label>
+    <input type="text" class="so-form-control" id="input-default" placeholder="Enter text...">
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -116,15 +110,9 @@ require_once '../includes/navbar.php';
                     <label class="so-form-label">Large</label>
                     <input type="text" class="so-form-control so-form-control-lg" placeholder="Large input">
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;input type="text" class="so-form-control so-form-control-sm" placeholder="Small"&gt;
-&lt;input type="text" class="so-form-control" placeholder="Default"&gt;
-&lt;input type="text" class="so-form-control so-form-control-lg" placeholder="Large"&gt;</code></pre>
-                </div>
+<?= so_code_block('<input type="text" class="so-form-control so-form-control-sm" placeholder="Small">
+<input type="text" class="so-form-control" placeholder="Default">
+<input type="text" class="so-form-control so-form-control-lg" placeholder="Large">', 'html') ?>
             </div>
         </div>
 
@@ -174,25 +162,19 @@ require_once '../includes/navbar.php';
                     <textarea class="so-form-control so-form-control-autosize" placeholder="This textarea auto-expands as you type..." data-autosize="true"></textarea>
                     <span class="so-form-hint">Automatically adjusts height based on content</span>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Default Textarea --&gt;
-&lt;textarea class="so-form-control" rows="3" placeholder="Enter your message..."&gt;&lt;/textarea&gt;
+<?= so_code_block('<!-- Default Textarea -->
+<textarea class="so-form-control" rows="3" placeholder="Enter your message..."></textarea>
 
-&lt;!-- Textarea with Character Counter --&gt;
-&lt;textarea class="so-form-control" rows="3" maxlength="200"
-    data-char-counter="200" data-counter-target="#charCounter"&gt;&lt;/textarea&gt;
-&lt;div class="so-form-hints"&gt;
-    &lt;span class="so-form-hint"&gt;Write a short description&lt;/span&gt;
-    &lt;span class="so-form-char-counter" id="charCounter"&gt;0/200&lt;/span&gt;
-&lt;/div&gt;
+<!-- Textarea with Character Counter -->
+<textarea class="so-form-control" rows="3" maxlength="200"
+    data-char-counter="200" data-counter-target="#charCounter"></textarea>
+<div class="so-form-hints">
+    <span class="so-form-hint">Write a short description</span>
+    <span class="so-form-char-counter" id="charCounter">0/200</span>
+</div>
 
-&lt;!-- Autosize Textarea --&gt;
-&lt;textarea class="so-form-control so-form-control-autosize" data-autosize="true"&gt;&lt;/textarea&gt;</code></pre>
-                </div>
+<!-- Autosize Textarea -->
+<textarea class="so-form-control so-form-control-autosize" data-autosize="true"></textarea>', 'html') ?>
             </div>
         </div>
 
@@ -207,17 +189,11 @@ require_once '../includes/navbar.php';
                     <input type="text" class="so-form-control" placeholder="This field is required" required>
                     <span class="so-form-hint">Fields marked with * are required</span>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-group"&gt;
-    &lt;label class="so-form-label so-required"&gt;Required Field&lt;/label&gt;
-    &lt;input type="text" class="so-form-control" required&gt;
-    &lt;span class="so-form-hint"&gt;Fields marked with * are required&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-group">
+    <label class="so-form-label so-required">Required Field</label>
+    <input type="text" class="so-form-control" required>
+    <span class="so-form-hint">Fields marked with * are required</span>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -243,21 +219,15 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-input-wrapper"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Search..."&gt;
-    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;search&lt;/span&gt;&lt;/span&gt;
-&lt;/div&gt;
+<?= so_code_block('<div class="so-input-wrapper">
+    <input type="text" class="so-form-control" placeholder="Search...">
+    <span class="so-input-icon"><span class="material-icons">search</span></span>
+</div>
 
-&lt;div class="so-input-wrapper icon-right"&gt;
-    &lt;input type="email" class="so-form-control" placeholder="Email"&gt;
-    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;email&lt;/span&gt;&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+<div class="so-input-wrapper icon-right">
+    <input type="email" class="so-form-control" placeholder="Email">
+    <span class="so-input-icon"><span class="material-icons">email</span></span>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -278,14 +248,8 @@ require_once '../includes/navbar.php';
                         <div class="so-form-control-plaintext so-form-control-plaintext-underline">$1,234.56</div>
                     </div>
                 </div>
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-form-control-plaintext"&gt;john.doe@example.com&lt;/div&gt;
-&lt;div class="so-form-control-plaintext so-form-control-plaintext-underline"&gt;$1,234.56&lt;/div&gt;</code></pre>
-                </div>
+<?= so_code_block('<div class="so-form-control-plaintext">john.doe@example.com</div>
+<div class="so-form-control-plaintext so-form-control-plaintext-underline">$1,234.56</div>', 'html') ?>
             </div>
         </div>
 

@@ -119,50 +119,42 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Default Checkbox --&gt;
-&lt;label class="so-checkbox"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;check&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-checkbox-label"&gt;Default checkbox&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Default Checkbox -->
+<label class="so-checkbox">
+    <input type="checkbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">check</span>
+    </span>
+    <span class="so-checkbox-label">Default checkbox</span>
+</label>
 
-&lt;!-- Indeterminate (set via JavaScript) --&gt;
-&lt;label class="so-checkbox"&gt;
-    &lt;input type="checkbox" id="myCheckbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;remove&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-checkbox-label"&gt;Indeterminate&lt;/span&gt;
-&lt;/label&gt;
-&lt;script&gt;document.getElementById('myCheckbox').indeterminate = true;&lt;/script&gt;
+<!-- Indeterminate (set via JavaScript) -->
+<label class="so-checkbox">
+    <input type="checkbox" id="myCheckbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">remove</span>
+    </span>
+    <span class="so-checkbox-label">Indeterminate</span>
+</label>
+<script>document.getElementById(\'myCheckbox\').indeterminate = true;</script>
 
-&lt;!-- Disabled --&gt;
-&lt;label class="so-checkbox so-disabled"&gt;
-    &lt;input type="checkbox" disabled&gt;
+<!-- Disabled -->
+<label class="so-checkbox so-disabled">
+    <input type="checkbox" disabled>
     ...
-&lt;/label&gt;
+</label>
 
-&lt;!-- Inline Group --&gt;
-&lt;div class="so-checkbox-group so-checkbox-group-inline"&gt;
-    &lt;label class="so-checkbox"&gt;...&lt;/label&gt;
-    &lt;label class="so-checkbox"&gt;...&lt;/label&gt;
-&lt;/div&gt;
+<!-- Inline Group -->
+<div class="so-checkbox-group so-checkbox-group-inline">
+    <label class="so-checkbox">...</label>
+    <label class="so-checkbox">...</label>
+</div>
 
-&lt;!-- Vertical Group --&gt;
-&lt;div class="so-checkbox-group so-checkbox-group-vertical"&gt;
-    &lt;label class="so-checkbox"&gt;...&lt;/label&gt;
-    &lt;label class="so-checkbox"&gt;...&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Vertical Group -->
+<div class="so-checkbox-group so-checkbox-group-vertical">
+    <label class="so-checkbox">...</label>
+    <label class="so-checkbox">...</label>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -195,17 +187,9 @@ require_once '../includes/navbar.php';
                                 <span class="so-checkbox-label">Large</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;label class="so-checkbox so-checkbox-sm"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-lg"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+                        <?= so_code_block('<label class="so-checkbox so-checkbox-sm">...</label>
+<label class="so-checkbox">...</label>
+<label class="so-checkbox so-checkbox-lg">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -334,32 +318,24 @@ require_once '../includes/navbar.php';
                                 <span class="so-checkbox-label">Dark</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Color variant --&gt;
-&lt;label class="so-checkbox so-checkbox-primary"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-success"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-danger"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-warning"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-info"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-secondary"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-light"&gt;...&lt;/label&gt;
-&lt;label class="so-checkbox so-checkbox-dark"&gt;...&lt;/label&gt;
+                        <?= so_code_block('<!-- Color variant -->
+<label class="so-checkbox so-checkbox-primary">...</label>
+<label class="so-checkbox so-checkbox-success">...</label>
+<label class="so-checkbox so-checkbox-danger">...</label>
+<label class="so-checkbox so-checkbox-warning">...</label>
+<label class="so-checkbox so-checkbox-info">...</label>
+<label class="so-checkbox so-checkbox-secondary">...</label>
+<label class="so-checkbox so-checkbox-light">...</label>
+<label class="so-checkbox so-checkbox-dark">...</label>
 
-&lt;!-- With contextual label color (label matches when checked) --&gt;
-&lt;label class="so-checkbox so-checkbox-success so-checkbox-label-contextual"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;check&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-checkbox-label"&gt;Success&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-                        </div>
+<!-- With contextual label color (label matches when checked) -->
+<label class="so-checkbox so-checkbox-success so-checkbox-label-contextual">
+    <input type="checkbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">check</span>
+    </span>
+    <span class="so-checkbox-label">Success</span>
+</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -432,32 +408,24 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Radio Button --&gt;
-&lt;label class="so-radio"&gt;
-    &lt;input type="radio" name="group" value="1"&gt;
-    &lt;span class="so-radio-circle"&gt;&lt;/span&gt;
-    &lt;span class="so-radio-label"&gt;Option 1&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Radio Button -->
+<label class="so-radio">
+    <input type="radio" name="group" value="1">
+    <span class="so-radio-circle"></span>
+    <span class="so-radio-label">Option 1</span>
+</label>
 
-&lt;!-- Vertical Group --&gt;
-&lt;div class="so-radio-group so-radio-group-vertical"&gt;
-    &lt;label class="so-radio"&gt;...&lt;/label&gt;
-    &lt;label class="so-radio"&gt;...&lt;/label&gt;
-&lt;/div&gt;
+<!-- Vertical Group -->
+<div class="so-radio-group so-radio-group-vertical">
+    <label class="so-radio">...</label>
+    <label class="so-radio">...</label>
+</div>
 
-&lt;!-- Inline Group --&gt;
-&lt;div class="so-radio-group so-radio-group-inline"&gt;
-    &lt;label class="so-radio"&gt;...&lt;/label&gt;
-    &lt;label class="so-radio"&gt;...&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Inline Group -->
+<div class="so-radio-group so-radio-group-inline">
+    <label class="so-radio">...</label>
+    <label class="so-radio">...</label>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -484,17 +452,9 @@ require_once '../includes/navbar.php';
                                 <span class="so-radio-label">Large</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;label class="so-radio so-radio-sm"&gt;...&lt;/label&gt;
-&lt;label class="so-radio"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-lg"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+                        <?= so_code_block('<label class="so-radio so-radio-sm">...</label>
+<label class="so-radio">...</label>
+<label class="so-radio so-radio-lg">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -591,28 +551,20 @@ require_once '../includes/navbar.php';
                                 <span class="so-radio-label">Dark</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Color variant --&gt;
-&lt;label class="so-radio so-radio-primary"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-success"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-danger"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-secondary"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-light"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-dark"&gt;...&lt;/label&gt;
+                        <?= so_code_block('<!-- Color variant -->
+<label class="so-radio so-radio-primary">...</label>
+<label class="so-radio so-radio-success">...</label>
+<label class="so-radio so-radio-danger">...</label>
+<label class="so-radio so-radio-secondary">...</label>
+<label class="so-radio so-radio-light">...</label>
+<label class="so-radio so-radio-dark">...</label>
 
-&lt;!-- With contextual label color --&gt;
-&lt;label class="so-radio so-radio-success so-radio-label-contextual"&gt;
-    &lt;input type="radio" name="group" value="1"&gt;
-    &lt;span class="so-radio-circle"&gt;&lt;/span&gt;
-    &lt;span class="so-radio-label"&gt;Success&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-                        </div>
+<!-- With contextual label color -->
+<label class="so-radio so-radio-success so-radio-label-contextual">
+    <input type="radio" name="group" value="1">
+    <span class="so-radio-circle"></span>
+    <span class="so-radio-label">Success</span>
+</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -831,67 +783,59 @@ require_once '../includes/navbar.php';
                                 <span class="so-switch-label">Large</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Basic Switch --&gt;
-&lt;label class="so-switch"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;&lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Switch label&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Basic Switch -->
+<label class="so-switch">
+    <input type="checkbox">
+    <span class="so-switch-track"></span>
+    <span class="so-switch-label">Switch label</span>
+</label>
 
-&lt;!-- Size Variants --&gt;
-&lt;label class="so-switch so-switch-sm"&gt;...&lt;/label&gt;
-&lt;label class="so-switch"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-lg"&gt;...&lt;/label&gt;
+<!-- Size Variants -->
+<label class="so-switch so-switch-sm">...</label>
+<label class="so-switch">...</label>
+<label class="so-switch so-switch-lg">...</label>
 
-&lt;!-- Color Variants --&gt;
-&lt;label class="so-switch so-switch-primary"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-success"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-danger"&gt;...&lt;/label&gt;
+<!-- Color Variants -->
+<label class="so-switch so-switch-primary">...</label>
+<label class="so-switch so-switch-success">...</label>
+<label class="so-switch so-switch-danger">...</label>
 
-&lt;!-- Contextual Label Color --&gt;
-&lt;label class="so-switch so-switch-success so-switch-label-contextual"&gt;
-    &lt;input type="checkbox" checked&gt;
-    &lt;span class="so-switch-track"&gt;&lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Success&lt;/span&gt;
-&lt;/label&gt;
+<!-- Contextual Label Color -->
+<label class="so-switch so-switch-success so-switch-label-contextual">
+    <input type="checkbox" checked>
+    <span class="so-switch-track"></span>
+    <span class="so-switch-label">Success</span>
+</label>
 
-&lt;!-- Switch with Inner Icons --&gt;
-&lt;label class="so-switch so-switch-icon so-switch-success"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;
-        &lt;span class="so-switch-on"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt;&lt;/span&gt;
-        &lt;span class="so-switch-off"&gt;&lt;span class="material-icons"&gt;close&lt;/span&gt;&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Icon switch&lt;/span&gt;
-&lt;/label&gt;
+<!-- Switch with Inner Icons -->
+<label class="so-switch so-switch-icon so-switch-success">
+    <input type="checkbox">
+    <span class="so-switch-track">
+        <span class="so-switch-on"><span class="material-icons">check</span></span>
+        <span class="so-switch-off"><span class="material-icons">close</span></span>
+    </span>
+    <span class="so-switch-label">Icon switch</span>
+</label>
 
-&lt;!-- Switch with Inner Text --&gt;
-&lt;label class="so-switch so-switch-text so-switch-success"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;
-        &lt;span class="so-switch-on"&gt;ON&lt;/span&gt;
-        &lt;span class="so-switch-off"&gt;OFF&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Text switch&lt;/span&gt;
-&lt;/label&gt;
+<!-- Switch with Inner Text -->
+<label class="so-switch so-switch-text so-switch-success">
+    <input type="checkbox">
+    <span class="so-switch-track">
+        <span class="so-switch-on">ON</span>
+        <span class="so-switch-off">OFF</span>
+    </span>
+    <span class="so-switch-label">Text switch</span>
+</label>
 
-&lt;!-- Switch with Icon + Text --&gt;
-&lt;label class="so-switch so-switch-icon-text so-switch-success"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;
-        &lt;span class="so-switch-on"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt;ON&lt;/span&gt;
-        &lt;span class="so-switch-off"&gt;OFF&lt;span class="material-icons"&gt;close&lt;/span&gt;&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Icon + Text&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Switch with Icon + Text -->
+<label class="so-switch so-switch-icon-text so-switch-success">
+    <input type="checkbox">
+    <span class="so-switch-track">
+        <span class="so-switch-on"><span class="material-icons">check</span>ON</span>
+        <span class="so-switch-off">OFF<span class="material-icons">close</span></span>
+    </span>
+    <span class="so-switch-label">Icon + Text</span>
+</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -997,38 +941,30 @@ require_once '../includes/navbar.php';
                                 <span class="so-switch-label">Soft Danger</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Soft Checkbox --&gt;
-&lt;label class="so-checkbox so-checkbox-soft-primary"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;check&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-checkbox-label"&gt;Soft Primary&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Soft Checkbox -->
+<label class="so-checkbox so-checkbox-soft-primary">
+    <input type="checkbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">check</span>
+    </span>
+    <span class="so-checkbox-label">Soft Primary</span>
+</label>
 
-&lt;!-- Soft Radio --&gt;
-&lt;label class="so-radio so-radio-soft-success"&gt;
-    &lt;input type="radio" name="group" value="1"&gt;
-    &lt;span class="so-radio-circle"&gt;&lt;/span&gt;
-    &lt;span class="so-radio-label"&gt;Soft Success&lt;/span&gt;
-&lt;/label&gt;
+<!-- Soft Radio -->
+<label class="so-radio so-radio-soft-success">
+    <input type="radio" name="group" value="1">
+    <span class="so-radio-circle"></span>
+    <span class="so-radio-label">Soft Success</span>
+</label>
 
-&lt;!-- Soft Switch --&gt;
-&lt;label class="so-switch so-switch-soft-danger"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;&lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Soft Danger&lt;/span&gt;
-&lt;/label&gt;
+<!-- Soft Switch -->
+<label class="so-switch so-switch-soft-danger">
+    <input type="checkbox">
+    <span class="so-switch-track"></span>
+    <span class="so-switch-label">Soft Danger</span>
+</label>
 
-&lt;!-- Available: soft-primary, soft-secondary, soft-success, soft-danger, soft-warning, soft-info --&gt;</code></pre>
-                        </div>
+<!-- Available: soft-primary, soft-secondary, soft-success, soft-danger, soft-warning, soft-info -->', 'html') ?>
                     </div>
                 </div>
 
@@ -1103,29 +1039,21 @@ require_once '../includes/navbar.php';
                                 <span class="so-radio-label">Outlined Warning</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Outlined Checkbox --&gt;
-&lt;label class="so-checkbox so-checkbox-outlined-primary"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;check&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-checkbox-label"&gt;Outlined Primary&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Outlined Checkbox -->
+<label class="so-checkbox so-checkbox-outlined-primary">
+    <input type="checkbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">check</span>
+    </span>
+    <span class="so-checkbox-label">Outlined Primary</span>
+</label>
 
-&lt;!-- Outlined Radio --&gt;
-&lt;label class="so-radio so-radio-outlined-success"&gt;
-    &lt;input type="radio" name="group" value="1"&gt;
-    &lt;span class="so-radio-circle"&gt;&lt;/span&gt;
-    &lt;span class="so-radio-label"&gt;Outlined Success&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Outlined Radio -->
+<label class="so-radio so-radio-outlined-success">
+    <input type="radio" name="group" value="1">
+    <span class="so-radio-circle"></span>
+    <span class="so-radio-label">Outlined Success</span>
+</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1188,29 +1116,21 @@ require_once '../includes/navbar.php';
                                 <span class="so-radio-label">Filled Danger</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Filled Checkbox --&gt;
-&lt;label class="so-checkbox so-checkbox-filled so-checkbox-filled-primary"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;check&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-checkbox-label"&gt;Filled Primary&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Filled Checkbox -->
+<label class="so-checkbox so-checkbox-filled so-checkbox-filled-primary">
+    <input type="checkbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">check</span>
+    </span>
+    <span class="so-checkbox-label">Filled Primary</span>
+</label>
 
-&lt;!-- Filled Radio --&gt;
-&lt;label class="so-radio so-radio-filled so-radio-filled-success"&gt;
-    &lt;input type="radio" name="group" value="1"&gt;
-    &lt;span class="so-radio-circle"&gt;&lt;/span&gt;
-    &lt;span class="so-radio-label"&gt;Filled Success&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Filled Radio -->
+<label class="so-radio so-radio-filled so-radio-filled-success">
+    <input type="radio" name="group" value="1">
+    <span class="so-radio-circle"></span>
+    <span class="so-radio-label">Filled Success</span>
+</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1284,30 +1204,22 @@ require_once '../includes/navbar.php';
                                 <span class="so-switch-label">Large</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- iOS Style Switch --&gt;
-&lt;label class="so-switch so-switch-ios"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;&lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;iOS Switch&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- iOS Style Switch -->
+<label class="so-switch so-switch-ios">
+    <input type="checkbox">
+    <span class="so-switch-track"></span>
+    <span class="so-switch-label">iOS Switch</span>
+</label>
 
-&lt;!-- iOS Switch with Color --&gt;
-&lt;label class="so-switch so-switch-ios so-switch-ios-primary"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-ios so-switch-ios-success"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-ios so-switch-ios-danger"&gt;...&lt;/label&gt;
+<!-- iOS Switch with Color -->
+<label class="so-switch so-switch-ios so-switch-ios-primary">...</label>
+<label class="so-switch so-switch-ios so-switch-ios-success">...</label>
+<label class="so-switch so-switch-ios so-switch-ios-danger">...</label>
 
-&lt;!-- iOS Switch Sizes --&gt;
-&lt;label class="so-switch so-switch-ios so-switch-ios-sm"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-ios"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-ios so-switch-ios-lg"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+<!-- iOS Switch Sizes -->
+<label class="so-switch so-switch-ios so-switch-ios-sm">...</label>
+<label class="so-switch so-switch-ios">...</label>
+<label class="so-switch so-switch-ios so-switch-ios-lg">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1381,28 +1293,20 @@ require_once '../includes/navbar.php';
                                 <span class="so-switch-label">Large</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Android/Material Style Switch --&gt;
-&lt;label class="so-switch so-switch-android"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;&lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Android Switch&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Android/Material Style Switch -->
+<label class="so-switch so-switch-android">
+    <input type="checkbox">
+    <span class="so-switch-track"></span>
+    <span class="so-switch-label">Android Switch</span>
+</label>
 
-&lt;!-- Android Switch with Color --&gt;
-&lt;label class="so-switch so-switch-android so-switch-android-primary"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-android so-switch-android-success"&gt;...&lt;/label&gt;
+<!-- Android Switch with Color -->
+<label class="so-switch so-switch-android so-switch-android-primary">...</label>
+<label class="so-switch so-switch-android so-switch-android-success">...</label>
 
-&lt;!-- Android Switch Sizes --&gt;
-&lt;label class="so-switch so-switch-android so-switch-android-sm"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-android so-switch-android-lg"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Android Switch Sizes -->
+<label class="so-switch so-switch-android so-switch-android-sm">...</label>
+<label class="so-switch so-switch-android so-switch-android-lg">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1496,37 +1400,29 @@ require_once '../includes/navbar.php';
                                 <span class="so-switch-label">Large</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Material 3 Style Switch --&gt;
-&lt;label class="so-switch so-switch-m3"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;&lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;M3 Switch&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Material 3 Style Switch -->
+<label class="so-switch so-switch-m3">
+    <input type="checkbox">
+    <span class="so-switch-track"></span>
+    <span class="so-switch-label">M3 Switch</span>
+</label>
 
-&lt;!-- M3 Switch with Icons --&gt;
-&lt;label class="so-switch so-switch-m3 so-switch-m3-success"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;
-        &lt;span class="so-switch-icon-on material-icons"&gt;check&lt;/span&gt;
-        &lt;span class="so-switch-icon-off material-icons"&gt;close&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;With Icons&lt;/span&gt;
-&lt;/label&gt;
+<!-- M3 Switch with Icons -->
+<label class="so-switch so-switch-m3 so-switch-m3-success">
+    <input type="checkbox">
+    <span class="so-switch-track">
+        <span class="so-switch-icon-on material-icons">check</span>
+        <span class="so-switch-icon-off material-icons">close</span>
+    </span>
+    <span class="so-switch-label">With Icons</span>
+</label>
 
-&lt;!-- M3 Switch with Color --&gt;
-&lt;label class="so-switch so-switch-m3 so-switch-m3-primary"&gt;...&lt;/label&gt;
+<!-- M3 Switch with Color -->
+<label class="so-switch so-switch-m3 so-switch-m3-primary">...</label>
 
-&lt;!-- M3 Switch Sizes --&gt;
-&lt;label class="so-switch so-switch-m3 so-switch-m3-sm"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-m3 so-switch-m3-lg"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+<!-- M3 Switch Sizes -->
+<label class="so-switch so-switch-m3 so-switch-m3-sm">...</label>
+<label class="so-switch so-switch-m3 so-switch-m3-lg">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1590,27 +1486,19 @@ require_once '../includes/navbar.php';
                                 <span class="so-switch-label">Default</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Ant Design Style Switch --&gt;
-&lt;label class="so-switch so-switch-ant"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-switch-track"&gt;&lt;/span&gt;
-    &lt;span class="so-switch-label"&gt;Ant Switch&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Ant Design Style Switch -->
+<label class="so-switch so-switch-ant">
+    <input type="checkbox">
+    <span class="so-switch-track"></span>
+    <span class="so-switch-label">Ant Switch</span>
+</label>
 
-&lt;!-- Ant Switch with Color --&gt;
-&lt;label class="so-switch so-switch-ant so-switch-ant-primary"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-ant so-switch-ant-success"&gt;...&lt;/label&gt;
+<!-- Ant Switch with Color -->
+<label class="so-switch so-switch-ant so-switch-ant-primary">...</label>
+<label class="so-switch so-switch-ant so-switch-ant-success">...</label>
 
-&lt;!-- Ant Switch Small --&gt;
-&lt;label class="so-switch so-switch-ant so-switch-ant-sm"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Ant Switch Small -->
+<label class="so-switch so-switch-ant so-switch-ant-sm">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1702,31 +1590,23 @@ require_once '../includes/navbar.php';
                                 <span class="so-switch-label">Label Bottom</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Label End (Default) --&gt;
-&lt;label class="so-checkbox so-checkbox-label-end"&gt;...&lt;/label&gt;
+                        <?= so_code_block('<!-- Label End (Default) -->
+<label class="so-checkbox so-checkbox-label-end">...</label>
 
-&lt;!-- Label Start (Before Input) --&gt;
-&lt;label class="so-checkbox so-checkbox-label-start"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-label-start"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-label-start"&gt;...&lt;/label&gt;
+<!-- Label Start (Before Input) -->
+<label class="so-checkbox so-checkbox-label-start">...</label>
+<label class="so-radio so-radio-label-start">...</label>
+<label class="so-switch so-switch-label-start">...</label>
 
-&lt;!-- Label Top --&gt;
-&lt;label class="so-checkbox so-checkbox-label-top"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-label-top"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-label-top"&gt;...&lt;/label&gt;
+<!-- Label Top -->
+<label class="so-checkbox so-checkbox-label-top">...</label>
+<label class="so-radio so-radio-label-top">...</label>
+<label class="so-switch so-switch-label-top">...</label>
 
-&lt;!-- Label Bottom --&gt;
-&lt;label class="so-checkbox so-checkbox-label-bottom"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-label-bottom"&gt;...&lt;/label&gt;
-&lt;label class="so-switch so-switch-label-bottom"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Label Bottom -->
+<label class="so-checkbox so-checkbox-label-bottom">...</label>
+<label class="so-radio so-radio-label-bottom">...</label>
+<label class="so-switch so-switch-label-bottom">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1800,39 +1680,31 @@ require_once '../includes/navbar.php';
                                 </div>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Card Checkbox --&gt;
-&lt;label class="so-checkbox so-checkbox-card"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;check&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;div class="so-checkbox-card-content"&gt;
-        &lt;div class="so-checkbox-card-title"&gt;Plan Name&lt;/div&gt;
-        &lt;div class="so-checkbox-card-description"&gt;Description text&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Card Checkbox -->
+<label class="so-checkbox so-checkbox-card">
+    <input type="checkbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">check</span>
+    </span>
+    <div class="so-checkbox-card-content">
+        <div class="so-checkbox-card-title">Plan Name</div>
+        <div class="so-checkbox-card-description">Description text</div>
+    </div>
+</label>
 
-&lt;!-- Card Radio --&gt;
-&lt;label class="so-radio so-radio-card"&gt;
-    &lt;input type="radio" name="group" value="1"&gt;
-    &lt;span class="so-radio-circle"&gt;&lt;/span&gt;
-    &lt;div class="so-radio-card-content"&gt;
-        &lt;div class="so-radio-card-title"&gt;Option Title&lt;/div&gt;
-        &lt;div class="so-radio-card-description"&gt;Option description&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/label&gt;
+<!-- Card Radio -->
+<label class="so-radio so-radio-card">
+    <input type="radio" name="group" value="1">
+    <span class="so-radio-circle"></span>
+    <div class="so-radio-card-content">
+        <div class="so-radio-card-title">Option Title</div>
+        <div class="so-radio-card-description">Option description</div>
+    </div>
+</label>
 
-&lt;!-- Card with Color Variant --&gt;
-&lt;label class="so-checkbox so-checkbox-card so-checkbox-card-success"&gt;...&lt;/label&gt;
-&lt;label class="so-radio so-radio-card so-radio-card-primary"&gt;...&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Card with Color Variant -->
+<label class="so-checkbox so-checkbox-card so-checkbox-card-success">...</label>
+<label class="so-radio so-radio-card so-radio-card-primary">...</label>', 'html') ?>
                     </div>
                 </div>
 
@@ -1876,29 +1748,21 @@ require_once '../includes/navbar.php';
                                 <span class="so-radio-label">Option 2</span>
                             </label>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Checkbox with Ripple Effect --&gt;
-&lt;label class="so-checkbox so-checkbox-ripple so-checkbox-primary"&gt;
-    &lt;input type="checkbox"&gt;
-    &lt;span class="so-checkbox-box"&gt;
-        &lt;span class="material-icons"&gt;check&lt;/span&gt;
-    &lt;/span&gt;
-    &lt;span class="so-checkbox-label"&gt;With Ripple&lt;/span&gt;
-&lt;/label&gt;
+                        <?= so_code_block('<!-- Checkbox with Ripple Effect -->
+<label class="so-checkbox so-checkbox-ripple so-checkbox-primary">
+    <input type="checkbox">
+    <span class="so-checkbox-box">
+        <span class="material-icons">check</span>
+    </span>
+    <span class="so-checkbox-label">With Ripple</span>
+</label>
 
-&lt;!-- Radio with Ripple Effect --&gt;
-&lt;label class="so-radio so-radio-ripple so-radio-primary"&gt;
-    &lt;input type="radio" name="group" value="1"&gt;
-    &lt;span class="so-radio-circle"&gt;&lt;/span&gt;
-    &lt;span class="so-radio-label"&gt;With Ripple&lt;/span&gt;
-&lt;/label&gt;</code></pre>
-                        </div>
+<!-- Radio with Ripple Effect -->
+<label class="so-radio so-radio-ripple so-radio-primary">
+    <input type="radio" name="group" value="1">
+    <span class="so-radio-circle"></span>
+    <span class="so-radio-label">With Ripple</span>
+</label>', 'html') ?>
                     </div>
                 </div>
     </div>

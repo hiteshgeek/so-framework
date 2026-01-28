@@ -32,8 +32,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Basic horizontal stepper with numbered steps.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-horizontal">
                     <div class="so-step so-step-completed">
                         <div class="so-step-icon">
@@ -69,34 +67,26 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-horizontal"&gt;
-    &lt;div class="so-step so-step-completed"&gt;
-        &lt;div class="so-step-icon"&gt;
-            &lt;span class="material-icons"&gt;check&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;div class="so-step-content"&gt;
-            &lt;div class="so-step-title"&gt;Account Setup&lt;/div&gt;
-            &lt;div class="so-step-subtitle"&gt;Create your account&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="so-step-connector"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step so-step-active"&gt;
-        &lt;div class="so-step-icon"&gt;2&lt;/div&gt;
-        &lt;div class="so-step-content"&gt;...&lt;/div&gt;
-        &lt;div class="so-step-connector"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step"&gt;...&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- States: so-step-completed, so-step-active, so-step-error, so-step-disabled --&gt;</code></pre>
-            </div>
+        <?= so_code_block('<div class="so-stepper so-stepper-horizontal">
+    <div class="so-step so-step-completed">
+        <div class="so-step-icon">
+            <span class="material-icons">check</span>
         </div>
+        <div class="so-step-content">
+            <div class="so-step-title">Account Setup</div>
+            <div class="so-step-subtitle">Create your account</div>
+        </div>
+        <div class="so-step-connector"></div>
+    </div>
+    <div class="so-step so-step-active">
+        <div class="so-step-icon">2</div>
+        <div class="so-step-content">...</div>
+        <div class="so-step-connector"></div>
+    </div>
+    <div class="so-step">...</div>
+</div>
+
+<!-- States: so-step-completed, so-step-active, so-step-error, so-step-disabled -->', 'html') ?>
     </div>
 </div>
 
@@ -108,8 +98,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Stepper with visible step numbers and titles only.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-horizontal so-stepper-numbered">
                     <div class="so-step so-step-completed">
                         <div class="so-step-icon">1</div>
@@ -139,25 +127,17 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-horizontal so-stepper-numbered"&gt;
-    &lt;div class="so-step so-step-completed"&gt;
-        &lt;div class="so-step-icon"&gt;1&lt;/div&gt;
-        &lt;div class="so-step-content"&gt;
-            &lt;div class="so-step-title"&gt;Cart&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="so-step-connector"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step so-step-active"&gt;...&lt;/div&gt;
-    &lt;div class="so-step"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
+        <?= so_code_block('<div class="so-stepper so-stepper-horizontal so-stepper-numbered">
+    <div class="so-step so-step-completed">
+        <div class="so-step-icon">1</div>
+        <div class="so-step-content">
+            <div class="so-step-title">Cart</div>
         </div>
+        <div class="so-step-connector"></div>
+    </div>
+    <div class="so-step so-step-active">...</div>
+    <div class="so-step">...</div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -169,8 +149,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Vertical layout with expanded content areas.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-vertical">
                     <div class="so-step so-step-completed">
                         <div class="so-step-icon">
@@ -219,30 +197,22 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-vertical"&gt;
-    &lt;div class="so-step so-step-completed"&gt;
-        &lt;div class="so-step-icon"&gt;
-            &lt;span class="material-icons"&gt;check&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;div class="so-step-connector"&gt;&lt;/div&gt;
-        &lt;div class="so-step-content"&gt;
-            &lt;div class="so-step-title"&gt;Step Title&lt;/div&gt;
-            &lt;div class="so-step-subtitle"&gt;Step description&lt;/div&gt;
-            &lt;div class="so-step-body"&gt;
-                &lt;!-- Step content here --&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step so-step-active"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+        <?= so_code_block('<div class="so-stepper so-stepper-vertical">
+    <div class="so-step so-step-completed">
+        <div class="so-step-icon">
+            <span class="material-icons">check</span>
+        </div>
+        <div class="so-step-connector"></div>
+        <div class="so-step-content">
+            <div class="so-step-title">Step Title</div>
+            <div class="so-step-subtitle">Step description</div>
+            <div class="so-step-body">
+                <!-- Step content here -->
             </div>
         </div>
+    </div>
+    <div class="so-step so-step-active">...</div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -254,8 +224,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Custom icons for each step instead of numbers.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-horizontal so-stepper-icons">
                     <div class="so-step so-step-completed">
                         <div class="so-step-icon">
@@ -293,26 +261,18 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-horizontal so-stepper-icons"&gt;
-    &lt;div class="so-step so-step-completed"&gt;
-        &lt;div class="so-step-icon"&gt;
-            &lt;span class="material-icons"&gt;shopping_cart&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;div class="so-step-content"&gt;
-            &lt;div class="so-step-title"&gt;Cart&lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="so-step-connector"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;!-- More steps... --&gt;
-&lt;/div&gt;</code></pre>
-            </div>
+        <?= so_code_block('<div class="so-stepper so-stepper-horizontal so-stepper-icons">
+    <div class="so-step so-step-completed">
+        <div class="so-step-icon">
+            <span class="material-icons">shopping_cart</span>
         </div>
+        <div class="so-step-content">
+            <div class="so-step-title">Cart</div>
+        </div>
+        <div class="so-step-connector"></div>
+    </div>
+    <!-- More steps... -->
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -324,8 +284,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Stepper with an error state on a step.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-horizontal">
                     <div class="so-step so-step-completed">
                         <div class="so-step-icon">
@@ -353,27 +311,19 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-step so-step-error"&gt;
-    &lt;div class="so-step-icon"&gt;
-        &lt;span class="material-icons"&gt;priority_high&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step-content"&gt;
-        &lt;div class="so-step-title"&gt;Payment Failed&lt;/div&gt;
-        &lt;div class="so-step-subtitle"&gt;Please update your payment method&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step-connector"&gt;&lt;/div&gt;
-&lt;/div&gt;
+        <?= so_code_block('<div class="so-step so-step-error">
+    <div class="so-step-icon">
+        <span class="material-icons">priority_high</span>
+    </div>
+    <div class="so-step-content">
+        <div class="so-step-title">Payment Failed</div>
+        <div class="so-step-subtitle">Please update your payment method</div>
+    </div>
+    <div class="so-step-connector"></div>
+</div>
 
-&lt;!-- Disabled step --&gt;
-&lt;div class="so-step so-step-disabled"&gt;...&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+<!-- Disabled step -->
+<div class="so-step so-step-disabled">...</div>', 'html') ?>
     </div>
 </div>
 
@@ -385,8 +335,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Small and large stepper variants.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <h6 class="so-text-muted so-mb-3">Small Stepper</h6>
                 <div class="so-stepper so-stepper-horizontal so-stepper-sm so-mb-5">
                     <div class="so-step so-step-completed">
@@ -422,19 +370,11 @@ require_once '../includes/navbar.php';
                         <div class="so-step-content"><div class="so-step-title">Step 3</div></div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;!-- Small stepper --&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-sm"&gt;...&lt;/div&gt;
+        <?= so_code_block('<!-- Small stepper -->
+<div class="so-stepper so-stepper-horizontal so-stepper-sm">...</div>
 
-&lt;!-- Large stepper --&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-lg"&gt;...&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+<!-- Large stepper -->
+<div class="so-stepper so-stepper-horizontal so-stepper-lg">...</div>', 'html') ?>
     </div>
 </div>
 
@@ -446,8 +386,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Stepper with outlined step icons.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-horizontal so-stepper-outline">
                     <div class="so-step so-step-completed">
                         <div class="so-step-icon">
@@ -479,17 +417,9 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-horizontal so-stepper-outline"&gt;
-    &lt;!-- Steps with outlined icons --&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-stepper so-stepper-horizontal so-stepper-outline">
+    <!-- Steps with outlined icons -->
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -501,8 +431,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Stepper with soft background step icons.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-horizontal so-stepper-light">
                     <div class="so-step so-step-completed">
                         <div class="so-step-icon">
@@ -534,17 +462,9 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-horizontal so-stepper-light"&gt;
-    &lt;!-- Steps with soft background icons --&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-stepper so-stepper-horizontal so-stepper-light">
+    <!-- Steps with soft background icons -->
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -556,8 +476,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Steppers in different colors.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <h6 class="so-text-muted so-mb-3">Primary</h6>
                 <div class="so-stepper so-stepper-horizontal so-stepper-primary so-mb-4">
                     <div class="so-step so-step-completed">
@@ -647,24 +565,16 @@ require_once '../includes/navbar.php';
                         <div class="so-step-content"><div class="so-step-title">Step 3</div></div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;!-- Color variants --&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-primary"&gt;...&lt;/div&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-success"&gt;...&lt;/div&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-warning"&gt;...&lt;/div&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-danger"&gt;...&lt;/div&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-info"&gt;...&lt;/div&gt;
+        <?= so_code_block('<!-- Color variants -->
+<div class="so-stepper so-stepper-horizontal so-stepper-primary">...</div>
+<div class="so-stepper so-stepper-horizontal so-stepper-success">...</div>
+<div class="so-stepper so-stepper-horizontal so-stepper-warning">...</div>
+<div class="so-stepper so-stepper-horizontal so-stepper-danger">...</div>
+<div class="so-stepper so-stepper-horizontal so-stepper-info">...</div>
 
-&lt;!-- Combined with variants --&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-info so-stepper-outline"&gt;...&lt;/div&gt;
-&lt;div class="so-stepper so-stepper-horizontal so-stepper-danger so-stepper-light"&gt;...&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+<!-- Combined with variants -->
+<div class="so-stepper so-stepper-horizontal so-stepper-info so-stepper-outline">...</div>
+<div class="so-stepper so-stepper-horizontal so-stepper-danger so-stepper-light">...</div>', 'html') ?>
     </div>
 </div>
 
@@ -676,8 +586,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Interactive stepper where users can click to navigate between completed steps.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-horizontal so-stepper-clickable">
                     <div class="so-step so-step-completed" onclick="alert('Go to step 1')">
                         <div class="so-step-icon">
@@ -711,20 +619,12 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-horizontal so-stepper-clickable"&gt;
-    &lt;div class="so-step so-step-completed" onclick="goToStep(1)"&gt;...&lt;/div&gt;
-    &lt;div class="so-step so-step-completed" onclick="goToStep(2)"&gt;...&lt;/div&gt;
-    &lt;div class="so-step so-step-active"&gt;...&lt;/div&gt;
-    &lt;div class="so-step so-step-disabled"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-stepper so-stepper-horizontal so-stepper-clickable">
+    <div class="so-step so-step-completed" onclick="goToStep(1)">...</div>
+    <div class="so-step so-step-completed" onclick="goToStep(2)">...</div>
+    <div class="so-step so-step-active">...</div>
+    <div class="so-step so-step-disabled">...</div>
+</div>', 'html') ?>
     </div>
 </div>
 
@@ -736,8 +636,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Minimal progress-style stepper.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-stepper so-stepper-progress">
                     <div class="so-step so-step-completed">
                         <div class="so-step-dot"></div>
@@ -756,32 +654,24 @@ require_once '../includes/navbar.php';
                         <div class="so-step-label">Delivered</div>
                     </div>
                 </div>
-            </div>
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-stepper so-stepper-progress"&gt;
-    &lt;div class="so-step so-step-completed"&gt;
-        &lt;div class="so-step-dot"&gt;&lt;/div&gt;
-        &lt;div class="so-step-label"&gt;Order Placed&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step so-step-completed"&gt;
-        &lt;div class="so-step-dot"&gt;&lt;/div&gt;
-        &lt;div class="so-step-label"&gt;Processing&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step so-step-active"&gt;
-        &lt;div class="so-step-dot"&gt;&lt;/div&gt;
-        &lt;div class="so-step-label"&gt;Shipped&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="so-step"&gt;
-        &lt;div class="so-step-dot"&gt;&lt;/div&gt;
-        &lt;div class="so-step-label"&gt;Delivered&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            </div>
-        </div>
+        <?= so_code_block('<div class="so-stepper so-stepper-progress">
+    <div class="so-step so-step-completed">
+        <div class="so-step-dot"></div>
+        <div class="so-step-label">Order Placed</div>
+    </div>
+    <div class="so-step so-step-completed">
+        <div class="so-step-dot"></div>
+        <div class="so-step-label">Processing</div>
+    </div>
+    <div class="so-step so-step-active">
+        <div class="so-step-dot"></div>
+        <div class="so-step-label">Shipped</div>
+    </div>
+    <div class="so-step">
+        <div class="so-step-dot"></div>
+        <div class="so-step-label">Delivered</div>
+    </div>
+</div>', 'html') ?>
     </div>
 </div>
 

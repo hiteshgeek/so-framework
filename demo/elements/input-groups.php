@@ -64,32 +64,24 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Text Prefix --&gt;
-&lt;div class="so-input-group"&gt;
-    &lt;span class="so-input-addon"&gt;$&lt;/span&gt;
-    &lt;input type="text" class="so-form-control" placeholder="0.00"&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Text Prefix -->
+<div class="so-input-group">
+    <span class="so-input-addon">$</span>
+    <input type="text" class="so-form-control" placeholder="0.00">
+</div>
 
-&lt;!-- Text Suffix --&gt;
-&lt;div class="so-input-group"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Username"&gt;
-    &lt;span class="so-input-addon"&gt;@example.com&lt;/span&gt;
-&lt;/div&gt;
+<!-- Text Suffix -->
+<div class="so-input-group">
+    <input type="text" class="so-form-control" placeholder="Username">
+    <span class="so-input-addon">@example.com</span>
+</div>
 
-&lt;!-- Both Sides --&gt;
-&lt;div class="so-input-group"&gt;
-    &lt;span class="so-input-addon"&gt;https://&lt;/span&gt;
-    &lt;input type="text" class="so-form-control" placeholder="domain"&gt;
-    &lt;span class="so-input-addon"&gt;.com&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Both Sides -->
+<div class="so-input-group">
+    <span class="so-input-addon">https://</span>
+    <input type="text" class="so-form-control" placeholder="domain">
+    <span class="so-input-addon">.com</span>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -132,23 +124,15 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-input-group"&gt;
-    &lt;span class="so-input-addon"&gt;&lt;span class="material-icons"&gt;email&lt;/span&gt;&lt;/span&gt;
-    &lt;input type="email" class="so-form-control" placeholder="Email address"&gt;
-&lt;/div&gt;
+<?= so_code_block('<div class="so-input-group">
+    <span class="so-input-addon"><span class="material-icons">email</span></span>
+    <input type="email" class="so-form-control" placeholder="Email address">
+</div>
 
-&lt;div class="so-input-group"&gt;
-    &lt;span class="so-input-addon"&gt;&lt;span class="material-icons"&gt;phone&lt;/span&gt;&lt;/span&gt;
-    &lt;input type="tel" class="so-form-control" placeholder="Phone number"&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<div class="so-input-group">
+    <span class="so-input-addon"><span class="material-icons">phone</span></span>
+    <input type="tel" class="so-form-control" placeholder="Phone number">
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -193,30 +177,22 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Search --&gt;
-&lt;div class="so-input-group"&gt;
-    &lt;input type="text" class="so-form-control" placeholder="Search..."&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Search&lt;/button&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Search -->
+<div class="so-input-group">
+    <input type="text" class="so-form-control" placeholder="Search...">
+    <button type="button" class="so-btn so-btn-primary">Search</button>
+</div>
 
-&lt;!-- Icon Button --&gt;
-&lt;div class="so-input-group"&gt;
-    &lt;input type="text" class="so-form-control" value="https://..." readonly&gt;
-    &lt;button type="button" class="so-btn so-btn-secondary"&gt;
-        &lt;span class="material-icons"&gt;content_copy&lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Icon Button -->
+<div class="so-input-group">
+    <input type="text" class="so-form-control" value="https://..." readonly>
+    <button type="button" class="so-btn so-btn-secondary">
+        <span class="material-icons">content_copy</span>
+    </button>
+</div>', 'html') ?>
                     </div>
                 </div>
-    
+    </div>
 </main>
 
 <?php

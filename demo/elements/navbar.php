@@ -59,41 +59,33 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-lg"&gt;
-    &lt;div class="so-component-navbar-container"&gt;
-        &lt;a href="#" class="so-component-navbar-brand"&gt;
-            &lt;span class="material-icons so-text-primary"&gt;dashboard&lt;/span&gt;
+                        <?= so_code_block('<nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-lg">
+    <div class="so-component-navbar-container">
+        <a href="#" class="so-component-navbar-brand">
+            <span class="material-icons so-text-primary">dashboard</span>
             SixOrbit
-        &lt;/a&gt;
-        &lt;button class="so-component-navbar-toggler" type="button"&gt;
-            &lt;span class="so-component-navbar-toggler-icon"&gt;&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;div class="so-component-navbar-collapse"&gt;
-            &lt;ul class="so-component-navbar-nav so-component-navbar-nav-start"&gt;
-                &lt;li class="so-component-navbar-item"&gt;
-                    &lt;a href="#" class="so-component-navbar-link so-active"&gt;Home&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li class="so-component-navbar-item"&gt;
-                    &lt;a href="#" class="so-component-navbar-link"&gt;Features&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li class="so-component-navbar-item"&gt;
-                    &lt;a href="#" class="so-component-navbar-link"&gt;Pricing&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li class="so-component-navbar-item"&gt;
-                    &lt;a href="#" class="so-component-navbar-link so-disabled"&gt;Disabled&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-                        </div>
+        </a>
+        <button class="so-component-navbar-toggler" type="button">
+            <span class="so-component-navbar-toggler-icon"></span>
+        </button>
+        <div class="so-component-navbar-collapse">
+            <ul class="so-component-navbar-nav so-component-navbar-nav-start">
+                <li class="so-component-navbar-item">
+                    <a href="#" class="so-component-navbar-link so-active">Home</a>
+                </li>
+                <li class="so-component-navbar-item">
+                    <a href="#" class="so-component-navbar-link">Features</a>
+                </li>
+                <li class="so-component-navbar-item">
+                    <a href="#" class="so-component-navbar-link">Pricing</a>
+                </li>
+                <li class="so-component-navbar-item">
+                    <a href="#" class="so-component-navbar-link so-disabled">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>', 'html') ?>
                     </div>
                 </div>
 
@@ -201,37 +193,29 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Light --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-light"&gt;...&lt;/nav&gt;
+                        <?= so_code_block('<!-- Light -->
+<nav class="so-component-navbar so-component-navbar-light">...</nav>
 
-&lt;!-- Dark --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-dark"&gt;...&lt;/nav&gt;
+<!-- Dark -->
+<nav class="so-component-navbar so-component-navbar-dark">...</nav>
 
-&lt;!-- Primary --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-primary"&gt;...&lt;/nav&gt;
+<!-- Primary -->
+<nav class="so-component-navbar so-component-navbar-primary">...</nav>
 
-&lt;!-- Secondary --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-secondary"&gt;...&lt;/nav&gt;
+<!-- Secondary -->
+<nav class="so-component-navbar so-component-navbar-secondary">...</nav>
 
-&lt;!-- Success --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-success"&gt;...&lt;/nav&gt;
+<!-- Success -->
+<nav class="so-component-navbar so-component-navbar-success">...</nav>
 
-&lt;!-- Danger --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-danger"&gt;...&lt;/nav&gt;
+<!-- Danger -->
+<nav class="so-component-navbar so-component-navbar-danger">...</nav>
 
-&lt;!-- Warning --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-warning"&gt;...&lt;/nav&gt;
+<!-- Warning -->
+<nav class="so-component-navbar so-component-navbar-warning">...</nav>
 
-&lt;!-- Info --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-info"&gt;...&lt;/nav&gt;</code></pre>
-                        </div>
+<!-- Info -->
+<nav class="so-component-navbar so-component-navbar-info">...</nav>', 'html') ?>
                     </div>
                 </div>
 
@@ -276,28 +260,20 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Text Only --&gt;
-&lt;a href="#" class="so-component-navbar-brand"&gt;SixOrbit ERP&lt;/a&gt;
+                        <?= so_code_block('<!-- Text Only -->
+<a href="#" class="so-component-navbar-brand">SixOrbit ERP</a>
 
-&lt;!-- Icon + Text --&gt;
-&lt;a href="#" class="so-component-navbar-brand"&gt;
-    &lt;span class="material-icons so-text-primary"&gt;rocket_launch&lt;/span&gt;
+<!-- Icon + Text -->
+<a href="#" class="so-component-navbar-brand">
+    <span class="material-icons so-text-primary">rocket_launch</span>
     SixOrbit
-&lt;/a&gt;
+</a>
 
-&lt;!-- Image Logo --&gt;
-&lt;a href="#" class="so-component-navbar-brand"&gt;
-    &lt;img src="logo.png" alt="Logo"&gt;
+<!-- Image Logo -->
+<a href="#" class="so-component-navbar-brand">
+    <img src="logo.png" alt="Logo">
     SixOrbit
-&lt;/a&gt;</code></pre>
-                        </div>
+</a>', 'html') ?>
                     </div>
                 </div>
 
@@ -365,34 +341,26 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;li class="so-component-navbar-item so-dropdown" data-so-dropdown&gt;
-    &lt;a href="#" class="so-component-navbar-link so-dropdown-toggle"&gt;
+                        <?= so_code_block('<li class="so-component-navbar-item so-dropdown" data-so-dropdown>
+    <a href="#" class="so-component-navbar-link so-dropdown-toggle">
         Products
-    &lt;/a&gt;
-    &lt;div class="so-dropdown-menu"&gt;
-        &lt;a href="#" class="so-dropdown-item"&gt;
-            &lt;span class="material-icons"&gt;inventory_2&lt;/span&gt;
+    </a>
+    <div class="so-dropdown-menu">
+        <a href="#" class="so-dropdown-item">
+            <span class="material-icons">inventory_2</span>
             All Products
-        &lt;/a&gt;
-        &lt;a href="#" class="so-dropdown-item"&gt;
-            &lt;span class="material-icons"&gt;add_box&lt;/span&gt;
+        </a>
+        <a href="#" class="so-dropdown-item">
+            <span class="material-icons">add_box</span>
             Add New
-        &lt;/a&gt;
-        &lt;div class="so-dropdown-divider"&gt;&lt;/div&gt;
-        &lt;a href="#" class="so-dropdown-item"&gt;
-            &lt;span class="material-icons"&gt;archive&lt;/span&gt;
+        </a>
+        <div class="so-dropdown-divider"></div>
+        <a href="#" class="so-dropdown-item">
+            <span class="material-icons">archive</span>
             Archived
-        &lt;/a&gt;
-    &lt;/div&gt;
-&lt;/li&gt;</code></pre>
-                        </div>
+        </a>
+    </div>
+</li>', 'html') ?>
                     </div>
                 </div>
 
@@ -463,28 +431,20 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Search Form --&gt;
-&lt;form class="so-component-navbar-form so-component-navbar-nav-end"&gt;
-    &lt;div class="so-component-navbar-search"&gt;
-        &lt;span class="material-icons search-icon"&gt;search&lt;/span&gt;
-        &lt;input type="search" class="so-form-control" placeholder="Search..."&gt;
-    &lt;/div&gt;
-    &lt;button type="submit" class="so-btn so-btn-primary"&gt;Search&lt;/button&gt;
-&lt;/form&gt;
+                        <?= so_code_block('<!-- Search Form -->
+<form class="so-component-navbar-form so-component-navbar-nav-end">
+    <div class="so-component-navbar-search">
+        <span class="material-icons search-icon">search</span>
+        <input type="search" class="so-form-control" placeholder="Search...">
+    </div>
+    <button type="submit" class="so-btn so-btn-primary">Search</button>
+</form>
 
-&lt;!-- Auth Buttons --&gt;
-&lt;div class="so-component-navbar-nav so-component-navbar-nav-end so-gap-2"&gt;
-    &lt;a href="#" class="so-btn so-btn-outline-primary"&gt;Login&lt;/a&gt;
-    &lt;a href="#" class="so-btn so-btn-primary"&gt;Sign Up&lt;/a&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Auth Buttons -->
+<div class="so-component-navbar-nav so-component-navbar-nav-end so-gap-2">
+    <a href="#" class="so-btn so-btn-outline-primary">Login</a>
+    <a href="#" class="so-btn so-btn-primary">Sign Up</a>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -547,25 +507,17 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;a href="#" class="so-component-navbar-link"&gt;
-    &lt;span class="material-icons"&gt;mail&lt;/span&gt;
+                        <?= so_code_block('<a href="#" class="so-component-navbar-link">
+    <span class="material-icons">mail</span>
     Messages
-    &lt;span class="so-badge so-badge-danger"&gt;5&lt;/span&gt;
-&lt;/a&gt;
+    <span class="so-badge so-badge-danger">5</span>
+</a>
 
-&lt;a href="#" class="so-component-navbar-link"&gt;
-    &lt;span class="material-icons"&gt;notifications&lt;/span&gt;
+<a href="#" class="so-component-navbar-link">
+    <span class="material-icons">notifications</span>
     Alerts
-    &lt;span class="so-badge so-badge-warning"&gt;New&lt;/span&gt;
-&lt;/a&gt;</code></pre>
-                        </div>
+    <span class="so-badge so-badge-warning">New</span>
+</a>', 'html') ?>
                     </div>
                 </div>
 
@@ -615,22 +567,14 @@ require_once '../includes/navbar.php';
                             </nav>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- With Shadow --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-light so-component-navbar-shadow"&gt;...&lt;/nav&gt;
+                        <?= so_code_block('<!-- With Shadow -->
+<nav class="so-component-navbar so-component-navbar-light so-component-navbar-shadow">...</nav>
 
-&lt;!-- With Border --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-light so-component-navbar-bordered"&gt;...&lt;/nav&gt;
+<!-- With Border -->
+<nav class="so-component-navbar so-component-navbar-light so-component-navbar-bordered">...</nav>
 
-&lt;!-- Transparent --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-dark so-component-navbar-transparent"&gt;...&lt;/nav&gt;</code></pre>
-                        </div>
+<!-- Transparent -->
+<nav class="so-component-navbar so-component-navbar-dark so-component-navbar-transparent">...</nav>', 'html') ?>
                     </div>
                 </div>
 
@@ -716,28 +660,20 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Expand at SM (576px) --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-expand-sm"&gt;...&lt;/nav&gt;
+                        <?= so_code_block('<!-- Expand at SM (576px) -->
+<nav class="so-component-navbar so-component-navbar-expand-sm">...</nav>
 
-&lt;!-- Expand at MD (768px) --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-expand-md"&gt;...&lt;/nav&gt;
+<!-- Expand at MD (768px) -->
+<nav class="so-component-navbar so-component-navbar-expand-md">...</nav>
 
-&lt;!-- Expand at LG (1024px) - Recommended --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-expand-lg"&gt;...&lt;/nav&gt;
+<!-- Expand at LG (1024px) - Recommended -->
+<nav class="so-component-navbar so-component-navbar-expand-lg">...</nav>
 
-&lt;!-- Expand at XL (1200px) --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-expand-xl"&gt;...&lt;/nav&gt;
+<!-- Expand at XL (1200px) -->
+<nav class="so-component-navbar so-component-navbar-expand-xl">...</nav>
 
-&lt;!-- Always Expanded --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-expand"&gt;...&lt;/nav&gt;</code></pre>
-                        </div>
+<!-- Always Expanded -->
+<nav class="so-component-navbar so-component-navbar-expand">...</nav>', 'html') ?>
                     </div>
                 </div>
 
@@ -773,23 +709,15 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Fluid (Full Width) --&gt;
-&lt;nav class="so-component-navbar"&gt;
-    &lt;div class="so-component-navbar-container"&gt;...&lt;/div&gt;
-&lt;/nav&gt;
+                        <?= so_code_block('<!-- Fluid (Full Width) -->
+<nav class="so-component-navbar">
+    <div class="so-component-navbar-container">...</div>
+</nav>
 
-&lt;!-- Contained (Centered Max-Width) --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-contained"&gt;
-    &lt;div class="so-component-navbar-container"&gt;...&lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-                        </div>
+<!-- Contained (Centered Max-Width) -->
+<nav class="so-component-navbar so-component-navbar-contained">
+    <div class="so-component-navbar-container">...</div>
+</nav>', 'html') ?>
                     </div>
                 </div>
 
@@ -865,22 +793,14 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Fixed to Top --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-fixed-top"&gt;...&lt;/nav&gt;
+                        <?= so_code_block('<!-- Fixed to Top -->
+<nav class="so-component-navbar so-component-navbar-fixed-top">...</nav>
 
-&lt;!-- Fixed to Bottom --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-fixed-bottom"&gt;...&lt;/nav&gt;
+<!-- Fixed to Bottom -->
+<nav class="so-component-navbar so-component-navbar-fixed-bottom">...</nav>
 
-&lt;!-- Sticky Top (sticks on scroll) --&gt;
-&lt;nav class="so-component-navbar so-component-navbar-sticky-top"&gt;...&lt;/nav&gt;</code></pre>
-                        </div>
+<!-- Sticky Top (sticks on scroll) -->
+<nav class="so-component-navbar so-component-navbar-sticky-top">...</nav>', 'html') ?>
 
                         <h6 class="so-mt-4 so-mb-2 so-text-muted">Positioning Classes</h6>
                         <table class="so-table">
@@ -1002,75 +922,67 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-lg so-component-navbar-shadow"&gt;
-    &lt;div class="so-component-navbar-container"&gt;
-        &lt;a href="#" class="so-component-navbar-brand"&gt;
-            &lt;span class="material-icons so-text-primary"&gt;rocket_launch&lt;/span&gt;
+                        <?= so_code_block('<nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-lg so-component-navbar-shadow">
+    <div class="so-component-navbar-container">
+        <a href="#" class="so-component-navbar-brand">
+            <span class="material-icons so-text-primary">rocket_launch</span>
             SixOrbit ERP
-        &lt;/a&gt;
-        &lt;button class="so-component-navbar-toggler" type="button"&gt;
-            &lt;span class="so-component-navbar-toggler-icon"&gt;&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;div class="so-component-navbar-collapse"&gt;
-            &lt;ul class="so-component-navbar-nav so-component-navbar-nav-start"&gt;
-                &lt;li class="so-component-navbar-item"&gt;
-                    &lt;a href="#" class="so-component-navbar-link so-active"&gt;
-                        &lt;span class="material-icons"&gt;dashboard&lt;/span&gt;
+        </a>
+        <button class="so-component-navbar-toggler" type="button">
+            <span class="so-component-navbar-toggler-icon"></span>
+        </button>
+        <div class="so-component-navbar-collapse">
+            <ul class="so-component-navbar-nav so-component-navbar-nav-start">
+                <li class="so-component-navbar-item">
+                    <a href="#" class="so-component-navbar-link so-active">
+                        <span class="material-icons">dashboard</span>
                         Dashboard
-                    &lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li class="so-component-navbar-item so-dropdown" data-so-dropdown&gt;
-                    &lt;a href="#" class="so-component-navbar-link so-dropdown-toggle"&gt;
-                        &lt;span class="material-icons"&gt;inventory_2&lt;/span&gt;
+                    </a>
+                </li>
+                <li class="so-component-navbar-item so-dropdown" data-so-dropdown>
+                    <a href="#" class="so-component-navbar-link so-dropdown-toggle">
+                        <span class="material-icons">inventory_2</span>
                         Products
-                    &lt;/a&gt;
-                    &lt;div class="so-dropdown-menu"&gt;
-                        &lt;a href="#" class="so-dropdown-item"&gt;All Products&lt;/a&gt;
-                        &lt;a href="#" class="so-dropdown-item"&gt;Add New&lt;/a&gt;
-                    &lt;/div&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
+                    </a>
+                    <div class="so-dropdown-menu">
+                        <a href="#" class="so-dropdown-item">All Products</a>
+                        <a href="#" class="so-dropdown-item">Add New</a>
+                    </div>
+                </li>
+            </ul>
 
-            &lt;span class="so-component-navbar-divider"&gt;&lt;/span&gt;
+            <span class="so-component-navbar-divider"></span>
 
-            &lt;form class="so-component-navbar-form"&gt;
-                &lt;div class="so-component-navbar-search"&gt;
-                    &lt;span class="material-icons search-icon"&gt;search&lt;/span&gt;
-                    &lt;input type="search" class="so-form-control" placeholder="Search..."&gt;
-                &lt;/div&gt;
-            &lt;/form&gt;
+            <form class="so-component-navbar-form">
+                <div class="so-component-navbar-search">
+                    <span class="material-icons search-icon">search</span>
+                    <input type="search" class="so-form-control" placeholder="Search...">
+                </div>
+            </form>
 
-            &lt;ul class="so-component-navbar-nav so-component-navbar-nav-end"&gt;
-                &lt;li class="so-component-navbar-item"&gt;
-                    &lt;a href="#" class="so-component-navbar-link"&gt;
-                        &lt;span class="material-icons"&gt;notifications&lt;/span&gt;
-                        &lt;span class="so-badge so-badge-danger"&gt;3&lt;/span&gt;
-                    &lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li class="so-component-navbar-item so-dropdown" data-so-dropdown&gt;
-                    &lt;a href="#" class="so-component-navbar-link so-dropdown-toggle"&gt;
-                        &lt;span class="material-icons"&gt;account_circle&lt;/span&gt;
+            <ul class="so-component-navbar-nav so-component-navbar-nav-end">
+                <li class="so-component-navbar-item">
+                    <a href="#" class="so-component-navbar-link">
+                        <span class="material-icons">notifications</span>
+                        <span class="so-badge so-badge-danger">3</span>
+                    </a>
+                </li>
+                <li class="so-component-navbar-item so-dropdown" data-so-dropdown>
+                    <a href="#" class="so-component-navbar-link so-dropdown-toggle">
+                        <span class="material-icons">account_circle</span>
                         John Doe
-                    &lt;/a&gt;
-                    &lt;div class="so-dropdown-menu dropdown-menu-end"&gt;
-                        &lt;a href="#" class="so-dropdown-item"&gt;Profile&lt;/a&gt;
-                        &lt;a href="#" class="so-dropdown-item"&gt;Settings&lt;/a&gt;
-                        &lt;div class="so-dropdown-divider"&gt;&lt;/div&gt;
-                        &lt;a href="#" class="so-dropdown-item so-text-danger"&gt;Logout&lt;/a&gt;
-                    &lt;/div&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-                        </div>
+                    </a>
+                    <div class="so-dropdown-menu dropdown-menu-end">
+                        <a href="#" class="so-dropdown-item">Profile</a>
+                        <a href="#" class="so-dropdown-item">Settings</a>
+                        <div class="so-dropdown-divider"></div>
+                        <a href="#" class="so-dropdown-item so-text-danger">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>', 'html') ?>
                     </div>
                 </div>
 
@@ -1195,38 +1107,30 @@ require_once '../includes/navbar.php';
                         <!-- Shared Backdrop -->
                         <div id="demo-offcanvas-backdrop" class="so-component-navbar-offcanvas-backdrop" onclick="document.getElementById('demo-offcanvas-left').classList.remove('show'); document.getElementById('demo-offcanvas-right').classList.remove('show'); this.classList.remove('show');"></div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Left Side Offcanvas (Default) --&gt;
-&lt;div class="so-component-navbar-offcanvas"&gt;
-    &lt;div class="so-component-navbar-offcanvas-header"&gt;
-        &lt;h5 class="so-component-navbar-offcanvas-title"&gt;Menu&lt;/h5&gt;
-        &lt;button class="so-component-navbar-offcanvas-close"&gt;
-            &lt;span class="material-icons"&gt;close&lt;/span&gt;
-        &lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="so-component-navbar-offcanvas-body"&gt;
-        &lt;ul class="so-component-navbar-nav"&gt;
-            &lt;li class="so-component-navbar-item"&gt;
-                &lt;a href="#" class="so-component-navbar-link"&gt;Link&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+                        <?= so_code_block('<!-- Left Side Offcanvas (Default) -->
+<div class="so-component-navbar-offcanvas">
+    <div class="so-component-navbar-offcanvas-header">
+        <h5 class="so-component-navbar-offcanvas-title">Menu</h5>
+        <button class="so-component-navbar-offcanvas-close">
+            <span class="material-icons">close</span>
+        </button>
+    </div>
+    <div class="so-component-navbar-offcanvas-body">
+        <ul class="so-component-navbar-nav">
+            <li class="so-component-navbar-item">
+                <a href="#" class="so-component-navbar-link">Link</a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-&lt;!-- Right Side Offcanvas --&gt;
-&lt;div class="so-component-navbar-offcanvas so-component-navbar-offcanvas-end"&gt;
+<!-- Right Side Offcanvas -->
+<div class="so-component-navbar-offcanvas so-component-navbar-offcanvas-end">
     ...
-&lt;/div&gt;
+</div>
 
-&lt;!-- Backdrop --&gt;
-&lt;div class="so-component-navbar-offcanvas-backdrop"&gt;&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Backdrop -->
+<div class="so-component-navbar-offcanvas-backdrop"></div>', 'html') ?>
 
                         <h6 class="so-mt-4 so-mb-2 so-text-muted">Offcanvas Position Classes</h6>
                         <table class="so-table">
@@ -1409,43 +1313,35 @@ require_once '../includes/navbar.php';
                             </div>
                         </nav>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Squeeze Animation --&gt;
-&lt;button class="so-hamburger so-hamburger--squeeze" type="button"&gt;
-    &lt;span class="so-hamburger-box"&gt;
-        &lt;span class="so-hamburger-inner"&gt;&lt;/span&gt;
-    &lt;/span&gt;
-&lt;/button&gt;
+                        <?= so_code_block('<!-- Squeeze Animation -->
+<button class="so-hamburger so-hamburger--squeeze" type="button">
+    <span class="so-hamburger-box">
+        <span class="so-hamburger-inner"></span>
+    </span>
+</button>
 
-&lt;!-- Spin Animation --&gt;
-&lt;button class="so-hamburger so-hamburger--spin"&gt;...&lt;/button&gt;
+<!-- Spin Animation -->
+<button class="so-hamburger so-hamburger--spin">...</button>
 
-&lt;!-- Elastic Animation --&gt;
-&lt;button class="so-hamburger so-hamburger--elastic"&gt;...&lt;/button&gt;
+<!-- Elastic Animation -->
+<button class="so-hamburger so-hamburger--elastic">...</button>
 
-&lt;!-- Arrow Animation --&gt;
-&lt;button class="so-hamburger so-hamburger--arrow"&gt;...&lt;/button&gt;
+<!-- Arrow Animation -->
+<button class="so-hamburger so-hamburger--arrow">...</button>
 
-&lt;!-- Collapse Animation --&gt;
-&lt;button class="so-hamburger so-hamburger--collapse"&gt;...&lt;/button&gt;
+<!-- Collapse Animation -->
+<button class="so-hamburger so-hamburger--collapse">...</button>
 
-&lt;!-- Size Variants --&gt;
-&lt;button class="so-hamburger so-hamburger--squeeze so-hamburger--sm"&gt;...&lt;/button&gt;
-&lt;button class="so-hamburger so-hamburger--squeeze so-hamburger--lg"&gt;...&lt;/button&gt;
+<!-- Size Variants -->
+<button class="so-hamburger so-hamburger--squeeze so-hamburger--sm">...</button>
+<button class="so-hamburger so-hamburger--squeeze so-hamburger--lg">...</button>
 
-&lt;!-- Toggle active state with JavaScript --&gt;
-&lt;script&gt;
-hamburger.addEventListener('click', function() {
-    this.classList.toggle('is-active');
+<!-- Toggle active state with JavaScript -->
+<script>
+hamburger.addEventListener(\'click\', function() {
+    this.classList.toggle(\'is-active\');
 });
-&lt;/script&gt;</code></pre>
-                        </div>
+</script>', 'html') ?>
 
                         <h6 class="so-mt-4 so-mb-2 so-text-muted">Hamburger Classes</h6>
                         <table class="so-table">

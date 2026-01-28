@@ -284,71 +284,63 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Solid badges (8 colors) --&gt;
-&lt;span class="so-badge so-badge-primary"&gt;Primary&lt;/span&gt;
-&lt;span class="so-badge so-badge-secondary"&gt;Secondary&lt;/span&gt;
+<?= so_code_block('<!-- Solid badges (8 colors) -->
+<span class="so-badge so-badge-primary">Primary</span>
+<span class="so-badge so-badge-secondary">Secondary</span>
 
-&lt;!-- Soft badges --&gt;
-&lt;span class="so-badge so-badge-soft-primary"&gt;Primary&lt;/span&gt;
+<!-- Soft badges -->
+<span class="so-badge so-badge-soft-primary">Primary</span>
 
-&lt;!-- Outline badges --&gt;
-&lt;span class="so-badge so-badge-outline-primary"&gt;Primary&lt;/span&gt;
+<!-- Outline badges -->
+<span class="so-badge so-badge-outline-primary">Primary</span>
 
-&lt;!-- Sizes --&gt;
-&lt;span class="so-badge so-badge-primary so-badge-sm"&gt;Small&lt;/span&gt;
-&lt;span class="so-badge so-badge-primary so-badge-lg"&gt;Large&lt;/span&gt;
+<!-- Sizes -->
+<span class="so-badge so-badge-primary so-badge-sm">Small</span>
+<span class="so-badge so-badge-primary so-badge-lg">Large</span>
 
-&lt;!-- With icon --&gt;
-&lt;span class="so-badge so-badge-success"&gt;
-    &lt;span class="material-icons"&gt;check&lt;/span&gt;
+<!-- With icon -->
+<span class="so-badge so-badge-success">
+    <span class="material-icons">check</span>
     Approved
-&lt;/span&gt;
+</span>
 
-&lt;!-- Dot badges --&gt;
-&lt;span class="so-badge-dot so-badge-success"&gt;&lt;/span&gt;
+<!-- Dot badges -->
+<span class="so-badge-dot so-badge-success"></span>
 
-&lt;!-- Pulse animation --&gt;
-&lt;span class="so-badge-dot so-badge-danger so-badge-pulse"&gt;&lt;/span&gt;
+<!-- Pulse animation -->
+<span class="so-badge-dot so-badge-danger so-badge-pulse"></span>
 
-&lt;!-- Positioned badge (notification) --&gt;
-&lt;span class="so-badge-wrapper"&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;
-        &lt;span class="material-icons"&gt;notifications&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;span class="so-badge-count"&gt;5&lt;/span&gt;
-&lt;/span&gt;
+<!-- Positioned badge (notification) -->
+<span class="so-badge-wrapper">
+    <button class="so-btn so-btn-primary">
+        <span class="material-icons">notifications</span>
+    </button>
+    <span class="so-badge-count">5</span>
+</span>
 
-&lt;!-- Count badge with contextual colors --&gt;
-&lt;span class="so-badge-wrapper"&gt;
-    &lt;button class="so-btn so-btn-light so-btn-icon"&gt;
-        &lt;span class="material-icons"&gt;mail&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;span class="so-badge-count so-badge-success"&gt;5&lt;/span&gt;
-&lt;/span&gt;
+<!-- Count badge with contextual colors -->
+<span class="so-badge-wrapper">
+    <button class="so-btn so-btn-light so-btn-icon">
+        <span class="material-icons">mail</span>
+    </button>
+    <span class="so-badge-count so-badge-success">5</span>
+</span>
 
-&lt;!-- Hint badge (dot on button) --&gt;
-&lt;span class="so-badge-wrapper"&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;Profile&lt;/button&gt;
-    &lt;span class="so-badge-dot so-badge-danger"&gt;&lt;/span&gt;
-&lt;/span&gt;
+<!-- Hint badge (dot on button) -->
+<span class="so-badge-wrapper">
+    <button class="so-btn so-btn-primary">Profile</button>
+    <span class="so-badge-dot so-badge-danger"></span>
+</span>
 
-&lt;!-- Hint badge with position --&gt;
-&lt;span class="so-badge-wrapper so-badge-top-left"&gt;
-    &lt;button class="so-btn so-btn-primary so-btn-icon"&gt;
-        &lt;span class="material-icons"&gt;person&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;span class="so-badge-dot so-badge-success"&gt;&lt;/span&gt;
-&lt;/span&gt;
+<!-- Hint badge with position -->
+<span class="so-badge-wrapper so-badge-top-left">
+    <button class="so-btn so-btn-primary so-btn-icon">
+        <span class="material-icons">person</span>
+    </button>
+    <span class="so-badge-dot so-badge-success"></span>
+</span>
 
-&lt;!-- Position variants: so-badge-top-left, so-badge-top-right, so-badge-bottom-left, so-badge-bottom-right --&gt;</code></pre>
-                        </div>
+<!-- Position variants: so-badge-top-left, so-badge-top-right, so-badge-bottom-left, so-badge-bottom-right -->', 'html') ?>
                     </div>
                 </div>
 
@@ -437,38 +429,30 @@ require_once '../includes/navbar.php';
                             </span>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Solid pills (8 colors) --&gt;
-&lt;span class="so-pill so-pill-primary"&gt;Primary&lt;/span&gt;
+<?= so_code_block('<!-- Solid pills (8 colors) -->
+<span class="so-pill so-pill-primary">Primary</span>
 
-&lt;!-- Soft pills --&gt;
-&lt;span class="so-pill so-pill-soft-primary"&gt;Primary&lt;/span&gt;
+<!-- Soft pills -->
+<span class="so-pill so-pill-soft-primary">Primary</span>
 
-&lt;!-- Outline pills --&gt;
-&lt;span class="so-pill so-pill-outline-primary"&gt;Primary&lt;/span&gt;
+<!-- Outline pills -->
+<span class="so-pill so-pill-outline-primary">Primary</span>
 
-&lt;!-- Sizes --&gt;
-&lt;span class="so-pill so-pill-primary so-pill-sm"&gt;Small&lt;/span&gt;
-&lt;span class="so-pill so-pill-primary so-pill-lg"&gt;Large&lt;/span&gt;
+<!-- Sizes -->
+<span class="so-pill so-pill-primary so-pill-sm">Small</span>
+<span class="so-pill so-pill-primary so-pill-lg">Large</span>
 
-&lt;!-- With icon --&gt;
-&lt;span class="so-pill so-pill-primary"&gt;
-    &lt;span class="material-icons"&gt;star&lt;/span&gt;
+<!-- With icon -->
+<span class="so-pill so-pill-primary">
+    <span class="material-icons">star</span>
     Featured
-&lt;/span&gt;
+</span>
 
-&lt;!-- Closable pill --&gt;
-&lt;span class="so-pill so-pill-primary" data-so-chip data-so-chip-closable&gt;
+<!-- Closable pill -->
+<span class="so-pill so-pill-primary" data-so-chip data-so-chip-closable>
     Tag Name
-    &lt;button class="so-pill-close"&gt;&lt;span class="material-icons"&gt;close&lt;/span&gt;&lt;/button&gt;
-&lt;/span&gt;</code></pre>
-                        </div>
+    <button class="so-pill-close"><span class="material-icons">close</span></button>
+</span>', 'html') ?>
                     </div>
                 </div>
 
@@ -533,29 +517,21 @@ require_once '../includes/navbar.php';
                             </span>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Solid labels (8 colors) --&gt;
-&lt;span class="so-label so-label-primary"&gt;Primary&lt;/span&gt;
+<?= so_code_block('<!-- Solid labels (8 colors) -->
+<span class="so-label so-label-primary">Primary</span>
 
-&lt;!-- Soft labels --&gt;
-&lt;span class="so-label so-label-soft-primary"&gt;Primary&lt;/span&gt;
+<!-- Soft labels -->
+<span class="so-label so-label-soft-primary">Primary</span>
 
-&lt;!-- Sizes --&gt;
-&lt;span class="so-label so-label-primary so-label-sm"&gt;Small&lt;/span&gt;
-&lt;span class="so-label so-label-primary so-label-lg"&gt;Large&lt;/span&gt;
+<!-- Sizes -->
+<span class="so-label so-label-primary so-label-sm">Small</span>
+<span class="so-label so-label-primary so-label-lg">Large</span>
 
-&lt;!-- With icon --&gt;
-&lt;span class="so-label so-label-success"&gt;
-    &lt;span class="material-icons"&gt;new_releases&lt;/span&gt;
+<!-- With icon -->
+<span class="so-label so-label-success">
+    <span class="material-icons">new_releases</span>
     New
-&lt;/span&gt;</code></pre>
-                        </div>
+</span>', 'html') ?>
                     </div>
                 </div>
 
@@ -989,69 +965,61 @@ require_once '../includes/navbar.php';
                         });
                         </script>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Basic chip --&gt;
-&lt;span class="so-chip so-chip-primary"&gt;Primary&lt;/span&gt;
+<?= so_code_block('<!-- Basic chip -->
+<span class="so-chip so-chip-primary">Primary</span>
 
-&lt;!-- Soft chip --&gt;
-&lt;span class="so-chip so-chip-soft-primary"&gt;Primary&lt;/span&gt;
+<!-- Soft chip -->
+<span class="so-chip so-chip-soft-primary">Primary</span>
 
-&lt;!-- Outline chip --&gt;
-&lt;span class="so-chip so-chip-outline-primary"&gt;Primary&lt;/span&gt;
+<!-- Outline chip -->
+<span class="so-chip so-chip-outline-primary">Primary</span>
 
-&lt;!-- Chip with icon --&gt;
-&lt;span class="so-chip so-chip-soft-primary"&gt;
-    &lt;span class="material-icons"&gt;code&lt;/span&gt;
+<!-- Chip with icon -->
+<span class="so-chip so-chip-soft-primary">
+    <span class="material-icons">code</span>
     JavaScript
-&lt;/span&gt;
+</span>
 
-&lt;!-- Chip with avatar --&gt;
-&lt;span class="so-chip so-chip-soft-primary"&gt;
-    &lt;img src="user.jpg" class="so-chip-avatar" alt=""&gt;
+<!-- Chip with avatar -->
+<span class="so-chip so-chip-soft-primary">
+    <img src="user.jpg" class="so-chip-avatar" alt="">
     John Doe
-&lt;/span&gt;
+</span>
 
-&lt;!-- Closable chip --&gt;
-&lt;span class="so-chip so-chip-primary" data-so-chip data-so-chip-closable data-value="tag1"&gt;
+<!-- Closable chip -->
+<span class="so-chip so-chip-primary" data-so-chip data-so-chip-closable data-value="tag1">
     Tag Name
-    &lt;button class="so-chip-close"&gt;&lt;span class="material-icons"&gt;close&lt;/span&gt;&lt;/button&gt;
-&lt;/span&gt;
+    <button class="so-chip-close"><span class="material-icons">close</span></button>
+</span>
 
-&lt;!-- Selectable/filter chip --&gt;
-&lt;span class="so-chip so-chip-outline-primary so-chip-selectable" data-so-chip data-so-chip-selectable data-value="filter1"&gt;
-    &lt;span class="so-chip-check"&gt;&lt;span class="material-icons"&gt;check&lt;/span&gt;&lt;/span&gt;
+<!-- Selectable/filter chip -->
+<span class="so-chip so-chip-outline-primary so-chip-selectable" data-so-chip data-so-chip-selectable data-value="filter1">
+    <span class="so-chip-check"><span class="material-icons">check</span></span>
     Filter Option
-&lt;/span&gt;
+</span>
 
-&lt;!-- Disabled chip --&gt;
-&lt;span class="so-chip so-chip-primary so-chip-disabled"&gt;Disabled&lt;/span&gt;
+<!-- Disabled chip -->
+<span class="so-chip so-chip-primary so-chip-disabled">Disabled</span>
 
-&lt;!-- JavaScript events --&gt;
-&lt;script&gt;
+<!-- JavaScript events -->
+<script>
 // Listen for chip close
-document.addEventListener('so-chip:close', (e) =&gt; {
-    console.log('Chip closed:', e.detail.value);
+document.addEventListener(\'so-chip:close\', (e) => {
+    console.log(\'Chip closed:\', e.detail.value);
 });
 
 // Listen for chip selection
-document.addEventListener('so-chip:select', (e) =&gt; {
-    console.log('Chip selected:', e.detail.value);
+document.addEventListener(\'so-chip:select\', (e) => {
+    console.log(\'Chip selected:\', e.detail.value);
 });
 
-document.addEventListener('so-chip:deselect', (e) =&gt; {
-    console.log('Chip deselected:', e.detail.value);
+document.addEventListener(\'so-chip:deselect\', (e) => {
+    console.log(\'Chip deselected:\', e.detail.value);
 });
 
 // Get selected chips
 const selected = SOChips.getSelectedValues(container);
-&lt;/script&gt;</code></pre>
-                        </div>
+</script>', 'html') ?>
                     </div>
                 </div>
 
@@ -1223,49 +1191,41 @@ const selected = SOChips.getSelectedValues(container);
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Image avatar --&gt;
-&lt;div class="so-avatar"&gt;
-    &lt;img src="user.jpg" alt=""&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Image avatar -->
+<div class="so-avatar">
+    <img src="user.jpg" alt="">
+</div>
 
-&lt;!-- Initial avatar with color --&gt;
-&lt;div class="so-avatar so-avatar-primary"&gt;
-    &lt;span&gt;JD&lt;/span&gt;
-&lt;/div&gt;
+<!-- Initial avatar with color -->
+<div class="so-avatar so-avatar-primary">
+    <span>JD</span>
+</div>
 
-&lt;!-- Icon avatar --&gt;
-&lt;div class="so-avatar so-avatar-secondary"&gt;
-    &lt;span class="material-icons"&gt;person&lt;/span&gt;
-&lt;/div&gt;
+<!-- Icon avatar -->
+<div class="so-avatar so-avatar-secondary">
+    <span class="material-icons">person</span>
+</div>
 
-&lt;!-- Sizes: xs, sm, (default), lg, xl, 2xl --&gt;
-&lt;div class="so-avatar so-avatar-xs"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-lg"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-xl"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-2xl"&gt;...&lt;/div&gt;
+<!-- Sizes: xs, sm, (default), lg, xl, 2xl -->
+<div class="so-avatar so-avatar-xs">...</div>
+<div class="so-avatar so-avatar-sm">...</div>
+<div class="so-avatar">...</div>
+<div class="so-avatar so-avatar-lg">...</div>
+<div class="so-avatar so-avatar-xl">...</div>
+<div class="so-avatar so-avatar-2xl">...</div>
 
-&lt;!-- Square avatar --&gt;
-&lt;div class="so-avatar so-avatar-square"&gt;...&lt;/div&gt;
+<!-- Square avatar -->
+<div class="so-avatar so-avatar-square">...</div>
 
-&lt;!-- Avatar with ring --&gt;
-&lt;div class="so-avatar so-avatar-ring"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-ring-primary"&gt;...&lt;/div&gt;
+<!-- Avatar with ring -->
+<div class="so-avatar so-avatar-ring">...</div>
+<div class="so-avatar so-avatar-ring-primary">...</div>
 
-&lt;!-- Avatar with status --&gt;
-&lt;div class="so-avatar so-avatar-status so-avatar-status-online"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-status so-avatar-status-away"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-status so-avatar-status-busy"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar so-avatar-status so-avatar-status-offline"&gt;...&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Avatar with status -->
+<div class="so-avatar so-avatar-status so-avatar-status-online">...</div>
+<div class="so-avatar so-avatar-status so-avatar-status-away">...</div>
+<div class="so-avatar so-avatar-status so-avatar-status-busy">...</div>
+<div class="so-avatar so-avatar-status so-avatar-status-offline">...</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -1340,40 +1300,32 @@ const selected = SOChips.getSelectedValues(container);
                             <div class="so-avatar so-avatar-more so-avatar-secondary"><span>+12</span></div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Stacked (overlapping horizontal) --&gt;
-&lt;div class="so-avatar-group so-avatar-group-stacked"&gt;
-    &lt;div class="so-avatar"&gt;&lt;img src="user1.jpg" alt=""&gt;&lt;/div&gt;
-    &lt;div class="so-avatar"&gt;&lt;img src="user2.jpg" alt=""&gt;&lt;/div&gt;
-    &lt;div class="so-avatar"&gt;&lt;img src="user3.jpg" alt=""&gt;&lt;/div&gt;
-    &lt;div class="so-avatar so-avatar-more so-avatar-secondary"&gt;&lt;span&gt;+5&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Stacked (overlapping horizontal) -->
+<div class="so-avatar-group so-avatar-group-stacked">
+    <div class="so-avatar"><img src="user1.jpg" alt=""></div>
+    <div class="so-avatar"><img src="user2.jpg" alt=""></div>
+    <div class="so-avatar"><img src="user3.jpg" alt=""></div>
+    <div class="so-avatar so-avatar-more so-avatar-secondary"><span>+5</span></div>
+</div>
 
-&lt;!-- Stacked with size modifier --&gt;
-&lt;div class="so-avatar-group so-avatar-group-stacked so-avatar-group-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-avatar-group so-avatar-group-stacked so-avatar-group-lg"&gt;...&lt;/div&gt;
+<!-- Stacked with size modifier -->
+<div class="so-avatar-group so-avatar-group-stacked so-avatar-group-sm">...</div>
+<div class="so-avatar-group so-avatar-group-stacked so-avatar-group-lg">...</div>
 
-&lt;!-- Vertical list --&gt;
-&lt;div class="so-avatar-group so-avatar-group-vertical"&gt;
-    &lt;div class="so-avatar so-avatar-status so-avatar-status-online"&gt;...&lt;/div&gt;
-    &lt;div class="so-avatar so-avatar-status so-avatar-status-away"&gt;...&lt;/div&gt;
-    &lt;div class="so-avatar so-avatar-status so-avatar-status-offline"&gt;...&lt;/div&gt;
-&lt;/div&gt;
+<!-- Vertical list -->
+<div class="so-avatar-group so-avatar-group-vertical">
+    <div class="so-avatar so-avatar-status so-avatar-status-online">...</div>
+    <div class="so-avatar so-avatar-status so-avatar-status-away">...</div>
+    <div class="so-avatar so-avatar-status so-avatar-status-offline">...</div>
+</div>
 
-&lt;!-- Grid layout --&gt;
-&lt;div class="so-avatar-group so-avatar-group-grid"&gt;
-    &lt;div class="so-avatar"&gt;...&lt;/div&gt;
-    &lt;div class="so-avatar"&gt;...&lt;/div&gt;
-    &lt;div class="so-avatar"&gt;...&lt;/div&gt;
-    &lt;div class="so-avatar so-avatar-more so-avatar-secondary"&gt;&lt;span&gt;+12&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Grid layout -->
+<div class="so-avatar-group so-avatar-group-grid">
+    <div class="so-avatar">...</div>
+    <div class="so-avatar">...</div>
+    <div class="so-avatar">...</div>
+    <div class="so-avatar so-avatar-more so-avatar-secondary"><span>+12</span></div>
+</div>', 'html') ?>
                     </div>
                 </div>
     </div>

@@ -58,25 +58,17 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-btn-group"&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Left&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Middle&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Right&lt;/button&gt;
-&lt;/div&gt;
+<?= so_code_block('<div class="so-btn-group">
+    <button type="button" class="so-btn so-btn-primary">Left</button>
+    <button type="button" class="so-btn so-btn-primary">Middle</button>
+    <button type="button" class="so-btn so-btn-primary">Right</button>
+</div>
 
-&lt;div class="so-btn-group"&gt;
-    &lt;button type="button" class="so-btn so-btn-outline"&gt;Left&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline"&gt;Middle&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline"&gt;Right&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<div class="so-btn-group">
+    <button type="button" class="so-btn so-btn-outline">Left</button>
+    <button type="button" class="so-btn so-btn-outline">Middle</button>
+    <button type="button" class="so-btn so-btn-outline">Right</button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -115,27 +107,19 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Text Formatting --&gt;
-&lt;div class="so-btn-group"&gt;
-    &lt;button type="button" class="so-btn so-btn-light"&gt;&lt;span class="material-icons"&gt;format_bold&lt;/span&gt;&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-light"&gt;&lt;span class="material-icons"&gt;format_italic&lt;/span&gt;&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-light"&gt;&lt;span class="material-icons"&gt;format_underlined&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Text Formatting -->
+<div class="so-btn-group">
+    <button type="button" class="so-btn so-btn-light"><span class="material-icons">format_bold</span></button>
+    <button type="button" class="so-btn so-btn-light"><span class="material-icons">format_italic</span></button>
+    <button type="button" class="so-btn so-btn-light"><span class="material-icons">format_underlined</span></button>
+</div>
 
-&lt;!-- Text Alignment --&gt;
-&lt;div class="so-btn-group"&gt;
-    &lt;button type="button" class="so-btn so-btn-outline"&gt;&lt;span class="material-icons"&gt;format_align_left&lt;/span&gt;&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline"&gt;&lt;span class="material-icons"&gt;format_align_center&lt;/span&gt;&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline"&gt;&lt;span class="material-icons"&gt;format_align_right&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Text Alignment -->
+<div class="so-btn-group">
+    <button type="button" class="so-btn so-btn-outline"><span class="material-icons">format_align_left</span></button>
+    <button type="button" class="so-btn so-btn-outline"><span class="material-icons">format_align_center</span></button>
+    <button type="button" class="so-btn so-btn-outline"><span class="material-icons">format_align_right</span></button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -215,33 +199,25 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Small Button Group (apply size at group level) --&gt;
-&lt;div class="so-btn-group so-btn-group-sm"&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;One&lt;/button&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;Two&lt;/button&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;Three&lt;/button&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Small Button Group (apply size at group level) -->
+<div class="so-btn-group so-btn-group-sm">
+    <button class="so-btn so-btn-primary">One</button>
+    <button class="so-btn so-btn-primary">Two</button>
+    <button class="so-btn so-btn-primary">Three</button>
+</div>
 
-&lt;!-- Large Button Group --&gt;
-&lt;div class="so-btn-group so-btn-group-lg"&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;One&lt;/button&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;Two&lt;/button&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;Three&lt;/button&gt;
-&lt;/div&gt;
+<!-- Large Button Group -->
+<div class="so-btn-group so-btn-group-lg">
+    <button class="so-btn so-btn-primary">One</button>
+    <button class="so-btn so-btn-primary">Two</button>
+    <button class="so-btn so-btn-primary">Three</button>
+</div>
 
-&lt;!-- Large Icon Button Group --&gt;
-&lt;div class="so-btn-group so-btn-group-lg"&gt;
-    &lt;button class="so-btn so-btn-outline so-btn-icon"&gt;&lt;span class="material-icons"&gt;format_bold&lt;/span&gt;&lt;/button&gt;
-    &lt;button class="so-btn so-btn-outline so-btn-icon"&gt;&lt;span class="material-icons"&gt;format_italic&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Large Icon Button Group -->
+<div class="so-btn-group so-btn-group-lg">
+    <button class="so-btn so-btn-outline so-btn-icon"><span class="material-icons">format_bold</span></button>
+    <button class="so-btn so-btn-outline so-btn-icon"><span class="material-icons">format_italic</span></button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -281,35 +257,27 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Text with Icons --&gt;
-&lt;div class="so-btn-group"&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;&lt;span class="material-icons"&gt;save&lt;/span&gt; Save&lt;/button&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;&lt;span class="material-icons"&gt;edit&lt;/span&gt; Edit&lt;/button&gt;
-    &lt;button class="so-btn so-btn-primary"&gt;&lt;span class="material-icons"&gt;delete&lt;/span&gt; Delete&lt;/button&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Text with Icons -->
+<div class="so-btn-group">
+    <button class="so-btn so-btn-primary"><span class="material-icons">save</span> Save</button>
+    <button class="so-btn so-btn-primary"><span class="material-icons">edit</span> Edit</button>
+    <button class="so-btn so-btn-primary"><span class="material-icons">delete</span> Delete</button>
+</div>
 
-&lt;!-- Toggle Buttons --&gt;
-&lt;div class="so-btn-group" role="group"&gt;
-    &lt;button class="so-btn so-btn-outline so-active"&gt;Day&lt;/button&gt;
-    &lt;button class="so-btn so-btn-outline"&gt;Week&lt;/button&gt;
-    &lt;button class="so-btn so-btn-outline"&gt;Month&lt;/button&gt;
-&lt;/div&gt;
+<!-- Toggle Buttons -->
+<div class="so-btn-group" role="group">
+    <button class="so-btn so-btn-outline so-active">Day</button>
+    <button class="so-btn so-btn-outline">Week</button>
+    <button class="so-btn so-btn-outline">Month</button>
+</div>
 
-&lt;!-- Split Button --&gt;
-&lt;div class="so-btn-group"&gt;
-    &lt;button class="so-btn so-btn-success"&gt;Save Changes&lt;/button&gt;
-    &lt;button class="so-btn so-btn-success so-dropdown-toggle"&gt;
-        &lt;span class="material-icons"&gt;expand_more&lt;/span&gt;
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Split Button -->
+<div class="so-btn-group">
+    <button class="so-btn so-btn-success">Save Changes</button>
+    <button class="so-btn so-btn-success so-dropdown-toggle">
+        <span class="material-icons">expand_more</span>
+    </button>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -418,47 +386,39 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Primary Split Button --&gt;
-&lt;div class="so-btn-group"&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Save&lt;/button&gt;
-    &lt;div class="so-dropdown" data-so-dropdown&gt;
-        &lt;button type="button" class="so-dropdown-trigger so-btn so-btn-primary"&gt;
-            &lt;span class="material-icons so-dropdown-arrow"&gt;expand_more&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;div class="so-dropdown-menu"&gt;
-            &lt;div class="so-dropdown-item"&gt;Save as Draft&lt;/div&gt;
-            &lt;div class="so-dropdown-item"&gt;Save &amp; Publish&lt;/div&gt;
-            &lt;div class="so-dropdown-item"&gt;Save as Copy&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Primary Split Button -->
+<div class="so-btn-group">
+    <button type="button" class="so-btn so-btn-primary">Save</button>
+    <div class="so-dropdown" data-so-dropdown>
+        <button type="button" class="so-dropdown-trigger so-btn so-btn-primary">
+            <span class="material-icons so-dropdown-arrow">expand_more</span>
+        </button>
+        <div class="so-dropdown-menu">
+            <div class="so-dropdown-item">Save as Draft</div>
+            <div class="so-dropdown-item">Save & Publish</div>
+            <div class="so-dropdown-item">Save as Copy</div>
+        </div>
+    </div>
+</div>
 
-&lt;!-- With Icon and Divider --&gt;
-&lt;div class="so-btn-group"&gt;
-    &lt;button type="button" class="so-btn so-btn-success"&gt;
-        &lt;span class="material-icons"&gt;download&lt;/span&gt;
+<!-- With Icon and Divider -->
+<div class="so-btn-group">
+    <button type="button" class="so-btn so-btn-success">
+        <span class="material-icons">download</span>
         Export
-    &lt;/button&gt;
-    &lt;div class="so-dropdown" data-so-dropdown&gt;
-        &lt;button type="button" class="so-dropdown-trigger so-btn so-btn-success"&gt;
-            &lt;span class="material-icons so-dropdown-arrow"&gt;expand_more&lt;/span&gt;
-        &lt;/button&gt;
-        &lt;div class="so-dropdown-menu"&gt;
-            &lt;div class="so-dropdown-item"&gt;Export as CSV&lt;/div&gt;
-            &lt;div class="so-dropdown-item"&gt;Export as Excel&lt;/div&gt;
-            &lt;div class="so-dropdown-divider"&gt;&lt;/div&gt;
-            &lt;div class="so-dropdown-item"&gt;Export as PDF&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+    </button>
+    <div class="so-dropdown" data-so-dropdown>
+        <button type="button" class="so-dropdown-trigger so-btn so-btn-success">
+            <span class="material-icons so-dropdown-arrow">expand_more</span>
+        </button>
+        <div class="so-dropdown-menu">
+            <div class="so-dropdown-item">Export as CSV</div>
+            <div class="so-dropdown-item">Export as Excel</div>
+            <div class="so-dropdown-divider"></div>
+            <div class="so-dropdown-item">Export as PDF</div>
+        </div>
+    </div>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -541,39 +501,31 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Radio Toggle (Single Selection) --&gt;
-&lt;div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio"&gt;
-    &lt;input type="radio" class="so-btn-check" name="align" id="left" value="left" checked&gt;
-    &lt;label class="so-btn so-btn-outline" for="left"&gt;
-        &lt;span class="material-icons"&gt;format_align_left&lt;/span&gt;
-    &lt;/label&gt;
-    &lt;input type="radio" class="so-btn-check" name="align" id="center" value="center"&gt;
-    &lt;label class="so-btn so-btn-outline" for="center"&gt;
-        &lt;span class="material-icons"&gt;format_align_center&lt;/span&gt;
-    &lt;/label&gt;
-    &lt;!-- ... more buttons --&gt;
-&lt;/div&gt;
+<?= so_code_block('<!-- Radio Toggle (Single Selection) -->
+<div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio">
+    <input type="radio" class="so-btn-check" name="align" id="left" value="left" checked>
+    <label class="so-btn so-btn-outline" for="left">
+        <span class="material-icons">format_align_left</span>
+    </label>
+    <input type="radio" class="so-btn-check" name="align" id="center" value="center">
+    <label class="so-btn so-btn-outline" for="center">
+        <span class="material-icons">format_align_center</span>
+    </label>
+    <!-- ... more buttons -->
+</div>
 
-&lt;!-- Checkbox Toggle (Multi Selection) --&gt;
-&lt;div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="checkbox"&gt;
-    &lt;input type="checkbox" class="so-btn-check" id="bold" value="bold"&gt;
-    &lt;label class="so-btn so-btn-outline" for="bold"&gt;
-        &lt;span class="material-icons"&gt;format_bold&lt;/span&gt;
-    &lt;/label&gt;
-    &lt;input type="checkbox" class="so-btn-check" id="italic" value="italic"&gt;
-    &lt;label class="so-btn so-btn-outline" for="italic"&gt;
-        &lt;span class="material-icons"&gt;format_italic&lt;/span&gt;
-    &lt;/label&gt;
-    &lt;!-- ... more buttons --&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Checkbox Toggle (Multi Selection) -->
+<div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="checkbox">
+    <input type="checkbox" class="so-btn-check" id="bold" value="bold">
+    <label class="so-btn so-btn-outline" for="bold">
+        <span class="material-icons">format_bold</span>
+    </label>
+    <input type="checkbox" class="so-btn-check" id="italic" value="italic">
+    <label class="so-btn so-btn-outline" for="italic">
+        <span class="material-icons">format_italic</span>
+    </label>
+    <!-- ... more buttons -->
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -631,37 +583,29 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Primary Outline Toggle --&gt;
-&lt;div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio"&gt;
-    &lt;input type="radio" class="so-btn-check" name="opt" id="opt1" value="1" checked&gt;
-    &lt;label class="so-btn so-btn-outline-primary" for="opt1"&gt;Option 1&lt;/label&gt;
+<?= so_code_block('<!-- Primary Outline Toggle -->
+<div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio">
+    <input type="radio" class="so-btn-check" name="opt" id="opt1" value="1" checked>
+    <label class="so-btn so-btn-outline-primary" for="opt1">Option 1</label>
     ...
-&lt;/div&gt;
+</div>
 
-&lt;!-- Success Outline Toggle --&gt;
-&lt;div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio"&gt;
-    &lt;input type="radio" class="so-btn-check" name="status" id="approved" value="approved"&gt;
-    &lt;label class="so-btn so-btn-outline-success" for="approved"&gt;Approved&lt;/label&gt;
+<!-- Success Outline Toggle -->
+<div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio">
+    <input type="radio" class="so-btn-check" name="status" id="approved" value="approved">
+    <label class="so-btn so-btn-outline-success" for="approved">Approved</label>
     ...
-&lt;/div&gt;
+</div>
 
-&lt;!-- Mixed Colors (Priority) --&gt;
-&lt;div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio"&gt;
-    &lt;input type="radio" class="so-btn-check" name="priority" id="low" value="low"&gt;
-    &lt;label class="so-btn so-btn-outline-success" for="low"&gt;Low&lt;/label&gt;
-    &lt;input type="radio" class="so-btn-check" name="priority" id="medium" value="medium"&gt;
-    &lt;label class="so-btn so-btn-outline-warning" for="medium"&gt;Medium&lt;/label&gt;
-    &lt;input type="radio" class="so-btn-check" name="priority" id="high" value="high"&gt;
-    &lt;label class="so-btn so-btn-outline-danger" for="high"&gt;High&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Mixed Colors (Priority) -->
+<div class="so-btn-group" data-so-toggle="buttons" data-toggle-type="radio">
+    <input type="radio" class="so-btn-check" name="priority" id="low" value="low">
+    <label class="so-btn so-btn-outline-success" for="low">Low</label>
+    <input type="radio" class="so-btn-check" name="priority" id="medium" value="medium">
+    <label class="so-btn so-btn-outline-warning" for="medium">Medium</label>
+    <input type="radio" class="so-btn-check" name="priority" id="high" value="high">
+    <label class="so-btn so-btn-outline-danger" for="high">High</label>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -754,23 +698,15 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Vertical Toggle Group --&gt;
-&lt;div class="so-btn-group-vertical" data-so-toggle="buttons" data-toggle-type="radio"&gt;
-    &lt;input type="radio" class="so-btn-check" name="vert" id="v1" value="top" checked&gt;
-    &lt;label class="so-btn so-btn-outline" for="v1"&gt;Top&lt;/label&gt;
-    &lt;input type="radio" class="so-btn-check" name="vert" id="v2" value="middle"&gt;
-    &lt;label class="so-btn so-btn-outline" for="v2"&gt;Middle&lt;/label&gt;
-    &lt;input type="radio" class="so-btn-check" name="vert" id="v3" value="bottom"&gt;
-    &lt;label class="so-btn so-btn-outline" for="v3"&gt;Bottom&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<?= so_code_block('<!-- Vertical Toggle Group -->
+<div class="so-btn-group-vertical" data-so-toggle="buttons" data-toggle-type="radio">
+    <input type="radio" class="so-btn-check" name="vert" id="v1" value="top" checked>
+    <label class="so-btn so-btn-outline" for="v1">Top</label>
+    <input type="radio" class="so-btn-check" name="vert" id="v2" value="middle">
+    <label class="so-btn so-btn-outline" for="v2">Middle</label>
+    <input type="radio" class="so-btn-check" name="vert" id="v3" value="bottom">
+    <label class="so-btn so-btn-outline" for="v3">Bottom</label>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -839,26 +775,18 @@ require_once '../includes/navbar.php';
                                 </span>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- Enforced Selection (can't deselect all) --&gt;
-&lt;div class="so-btn-group"
+<?= so_code_block('<!-- Enforced Selection (can\'t deselect all) -->
+<div class="so-btn-group"
      data-so-toggle="buttons"
      data-toggle-type="checkbox"
-     data-enforce-selection="true"&gt;
-    &lt;input type="checkbox" class="so-btn-check" id="email" value="email" checked&gt;
-    &lt;label class="so-btn so-btn-outline-primary" for="email"&gt;Email&lt;/label&gt;
-    &lt;input type="checkbox" class="so-btn-check" id="sms" value="sms"&gt;
-    &lt;label class="so-btn so-btn-outline-primary" for="sms"&gt;SMS&lt;/label&gt;
-    &lt;input type="checkbox" class="so-btn-check" id="push" value="push"&gt;
-    &lt;label class="so-btn so-btn-outline-primary" for="push"&gt;Push&lt;/label&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+     data-enforce-selection="true">
+    <input type="checkbox" class="so-btn-check" id="email" value="email" checked>
+    <label class="so-btn so-btn-outline-primary" for="email">Email</label>
+    <input type="checkbox" class="so-btn-check" id="sms" value="sms">
+    <label class="so-btn so-btn-outline-primary" for="sms">SMS</label>
+    <input type="checkbox" class="so-btn-check" id="push" value="push">
+    <label class="so-btn so-btn-outline-primary" for="push">Push</label>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -894,25 +822,18 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-javascript">// Get instance
-const group = SOButtonGroup.getInstance(document.querySelector('#myGroup'));
+<?= so_code_block('// Get instance
+const group = SOButtonGroup.getInstance(document.querySelector(\'#myGroup\'));
 
 // Get current value(s)
 group.getValue()  // Returns array for checkbox, string for radio
 
 // Set value(s)
-group.setValue(['option1', 'option3'])  // checkbox
-group.setValue('option2')               // radio
+group.setValue([\'option1\', \'option3\'])  // checkbox
+group.setValue(\'option2\')               // radio
 
 // Toggle specific button
-group.toggle('option2')
+group.toggle(\'option2\')
 
 // Select/Deselect all (checkbox only)
 group.selectAll()
@@ -921,16 +842,15 @@ group.deselectAll()
 // Enable/Disable
 group.disable()
 group.enable()
-group.disableButton('option2')
-group.enableButton('option2')
+group.disableButton(\'option2\')
+group.enableButton(\'option2\')
 
 // Listen to changes
-element.addEventListener('so:toggle:change', (e) => {
+element.addEventListener(\'so:toggle:change\', (e) => {
     console.log(e.detail.value)    // Current value(s)
     console.log(e.detail.changed)  // Which button changed
     console.log(e.detail.checked)  // New checked state
-})</code></pre>
-                        </div>
+})', 'javascript') ?>
                     </div>
                 </div>
 
@@ -1222,106 +1142,98 @@ element.addEventListener('so:toggle:change', (e) => {
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;!-- ============================================ --&gt;
-&lt;!-- SINGLE BLOCK BUTTONS --&gt;
-&lt;!-- ============================================ --&gt;
+<?= so_code_block('<!-- ============================================ -->
+<!-- SINGLE BLOCK BUTTONS -->
+<!-- ============================================ -->
 
-&lt;!-- Solid Block Buttons --&gt;
-&lt;button class="so-btn so-btn-primary so-btn-block"&gt;Primary Block&lt;/button&gt;
-&lt;button class="so-btn so-btn-secondary so-btn-block"&gt;Secondary Block&lt;/button&gt;
-&lt;button class="so-btn so-btn-success so-btn-block"&gt;Success Block&lt;/button&gt;
-&lt;button class="so-btn so-btn-danger so-btn-block"&gt;Danger Block&lt;/button&gt;
+<!-- Solid Block Buttons -->
+<button class="so-btn so-btn-primary so-btn-block">Primary Block</button>
+<button class="so-btn so-btn-secondary so-btn-block">Secondary Block</button>
+<button class="so-btn so-btn-success so-btn-block">Success Block</button>
+<button class="so-btn so-btn-danger so-btn-block">Danger Block</button>
 
-&lt;!-- Outline Block Buttons --&gt;
-&lt;button class="so-btn so-btn-outline-primary so-btn-block"&gt;Outline Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-outline-danger so-btn-block"&gt;Outline Danger&lt;/button&gt;
+<!-- Outline Block Buttons -->
+<button class="so-btn so-btn-outline-primary so-btn-block">Outline Primary</button>
+<button class="so-btn so-btn-outline-danger so-btn-block">Outline Danger</button>
 
-&lt;!-- Light (Soft) Block Buttons --&gt;
-&lt;button class="so-btn so-btn-light-primary so-btn-block"&gt;Light Primary&lt;/button&gt;
-&lt;button class="so-btn so-btn-light-success so-btn-block"&gt;Light Success&lt;/button&gt;
+<!-- Light (Soft) Block Buttons -->
+<button class="so-btn so-btn-light-primary so-btn-block">Light Primary</button>
+<button class="so-btn so-btn-light-success so-btn-block">Light Success</button>
 
-&lt;!-- Ghost Block Buttons --&gt;
-&lt;button class="so-btn so-btn-ghost so-btn-primary so-btn-block"&gt;Ghost Primary&lt;/button&gt;
+<!-- Ghost Block Buttons -->
+<button class="so-btn so-btn-ghost so-btn-primary so-btn-block">Ghost Primary</button>
 
-&lt;!-- Link Block Buttons --&gt;
-&lt;button class="so-btn so-btn-link so-btn-block"&gt;Link Block&lt;/button&gt;
+<!-- Link Block Buttons -->
+<button class="so-btn so-btn-link so-btn-block">Link Block</button>
 
-&lt;!-- Block Button Sizes --&gt;
-&lt;button class="so-btn so-btn-primary so-btn-xs so-btn-block"&gt;Extra Small&lt;/button&gt;
-&lt;button class="so-btn so-btn-primary so-btn-sm so-btn-block"&gt;Small&lt;/button&gt;
-&lt;button class="so-btn so-btn-primary so-btn-block"&gt;Default&lt;/button&gt;
-&lt;button class="so-btn so-btn-primary so-btn-lg so-btn-block"&gt;Large&lt;/button&gt;
+<!-- Block Button Sizes -->
+<button class="so-btn so-btn-primary so-btn-xs so-btn-block">Extra Small</button>
+<button class="so-btn so-btn-primary so-btn-sm so-btn-block">Small</button>
+<button class="so-btn so-btn-primary so-btn-block">Default</button>
+<button class="so-btn so-btn-primary so-btn-lg so-btn-block">Large</button>
 
-&lt;!-- Block Buttons with Icons --&gt;
-&lt;button class="so-btn so-btn-primary so-btn-block"&gt;
-    &lt;span class="material-icons"&gt;download&lt;/span&gt;
+<!-- Block Buttons with Icons -->
+<button class="so-btn so-btn-primary so-btn-block">
+    <span class="material-icons">download</span>
     Download File
-&lt;/button&gt;
+</button>
 
-&lt;!-- ============================================ --&gt;
-&lt;!-- BLOCK BUTTON GROUPS --&gt;
-&lt;!-- ============================================ --&gt;
+<!-- ============================================ -->
+<!-- BLOCK BUTTON GROUPS -->
+<!-- ============================================ -->
 
-&lt;!-- Basic Block Button Group --&gt;
-&lt;div class="so-btn-group so-btn-group-block"&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Left&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Middle&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Right&lt;/button&gt;
-&lt;/div&gt;
+<!-- Basic Block Button Group -->
+<div class="so-btn-group so-btn-group-block">
+    <button type="button" class="so-btn so-btn-primary">Left</button>
+    <button type="button" class="so-btn so-btn-primary">Middle</button>
+    <button type="button" class="so-btn so-btn-primary">Right</button>
+</div>
 
-&lt;!-- Outline Block Group --&gt;
-&lt;div class="so-btn-group so-btn-group-block"&gt;
-    &lt;button type="button" class="so-btn so-btn-outline-primary"&gt;Left&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline-primary"&gt;Middle&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline-primary"&gt;Right&lt;/button&gt;
-&lt;/div&gt;
+<!-- Outline Block Group -->
+<div class="so-btn-group so-btn-group-block">
+    <button type="button" class="so-btn so-btn-outline-primary">Left</button>
+    <button type="button" class="so-btn so-btn-outline-primary">Middle</button>
+    <button type="button" class="so-btn so-btn-outline-primary">Right</button>
+</div>
 
-&lt;!-- Contextual Block Groups --&gt;
-&lt;div class="so-btn-group so-btn-group-block"&gt;
-    &lt;button type="button" class="so-btn so-btn-success"&gt;Approve&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-warning"&gt;Pending&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-danger"&gt;Reject&lt;/button&gt;
-&lt;/div&gt;
+<!-- Contextual Block Groups -->
+<div class="so-btn-group so-btn-group-block">
+    <button type="button" class="so-btn so-btn-success">Approve</button>
+    <button type="button" class="so-btn so-btn-warning">Pending</button>
+    <button type="button" class="so-btn so-btn-danger">Reject</button>
+</div>
 
-&lt;!-- Block Group with Size --&gt;
-&lt;div class="so-btn-group so-btn-group-lg so-btn-group-block"&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Large Block&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Group&lt;/button&gt;
-&lt;/div&gt;
+<!-- Block Group with Size -->
+<div class="so-btn-group so-btn-group-lg so-btn-group-block">
+    <button type="button" class="so-btn so-btn-primary">Large Block</button>
+    <button type="button" class="so-btn so-btn-primary">Group</button>
+</div>
 
-&lt;!-- Block Group with Icons --&gt;
-&lt;div class="so-btn-group so-btn-group-block"&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;
-        &lt;span class="material-icons"&gt;thumb_up&lt;/span&gt;
+<!-- Block Group with Icons -->
+<div class="so-btn-group so-btn-group-block">
+    <button type="button" class="so-btn so-btn-primary">
+        <span class="material-icons">thumb_up</span>
         Like
-    &lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;
-        &lt;span class="material-icons"&gt;share&lt;/span&gt;
+    </button>
+    <button type="button" class="so-btn so-btn-primary">
+        <span class="material-icons">share</span>
         Share
-    &lt;/button&gt;
-&lt;/div&gt;
+    </button>
+</div>
 
-&lt;!-- Block Toggle Group --&gt;
-&lt;div class="so-btn-group so-btn-group-toggle so-btn-group-block" data-so-toggle="buttons" data-toggle-type="radio"&gt;
-    &lt;button type="button" class="so-btn so-btn-outline-primary so-active" data-value="daily"&gt;Daily&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline-primary" data-value="weekly"&gt;Weekly&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-outline-primary" data-value="monthly"&gt;Monthly&lt;/button&gt;
-&lt;/div&gt;
+<!-- Block Toggle Group -->
+<div class="so-btn-group so-btn-group-toggle so-btn-group-block" data-so-toggle="buttons" data-toggle-type="radio">
+    <button type="button" class="so-btn so-btn-outline-primary so-active" data-value="daily">Daily</button>
+    <button type="button" class="so-btn so-btn-outline-primary" data-value="weekly">Weekly</button>
+    <button type="button" class="so-btn so-btn-outline-primary" data-value="monthly">Monthly</button>
+</div>
 
-&lt;!-- Vertical Block Group --&gt;
-&lt;div class="so-btn-group so-btn-group-vertical so-btn-group-block"&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Top&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Middle&lt;/button&gt;
-    &lt;button type="button" class="so-btn so-btn-primary"&gt;Bottom&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Vertical Block Group -->
+<div class="so-btn-group so-btn-group-vertical so-btn-group-block">
+    <button type="button" class="so-btn so-btn-primary">Top</button>
+    <button type="button" class="so-btn so-btn-primary">Middle</button>
+    <button type="button" class="so-btn so-btn-primary">Bottom</button>
+</div>', 'html') ?>
                     </div>
                 </div>
     </div>

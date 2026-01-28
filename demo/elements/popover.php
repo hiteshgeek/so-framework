@@ -32,8 +32,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Click the button to toggle the popover.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-gap-3 so-flex-wrap">
                     <div class="so-popover-wrapper">
                         <button class="so-btn so-btn-primary" data-popover-toggle="popover1">Click me</button>
@@ -44,7 +42,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -59,7 +56,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -71,8 +67,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Popovers can include a title header.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-gap-3 so-flex-wrap">
                     <div class="so-popover-wrapper">
                         <button class="so-btn so-btn-outline" data-popover-toggle="popover2">With Header</button>
@@ -99,7 +93,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -116,7 +109,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -128,8 +120,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Popovers can appear in different positions.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-gap-3 so-flex-wrap so-justify-content-center so-py-5">
                     <div class="so-popover-wrapper">
                         <button class="so-btn so-btn-outline" data-popover-toggle="popoverTop">Top</button>
@@ -159,7 +149,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -177,7 +166,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Left position --&gt;
 &lt;div class="so-popover so-popover-left"&gt;...&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -189,8 +177,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Popovers that appear on hover instead of click.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-gap-3 so-flex-wrap">
                     <div class="so-popover-wrapper so-popover-hover">
                         <button class="so-btn so-btn-success">Hover me</button>
@@ -213,7 +199,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -226,7 +211,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -238,8 +222,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Popovers can contain rich HTML content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-gap-3 so-flex-wrap">
                     <div class="so-popover-wrapper">
                         <button class="so-btn so-btn-primary" data-popover-toggle="richPopover">
@@ -307,7 +289,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -352,7 +333,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -364,8 +344,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Popover containing image content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-popover-wrapper so-popover-hover">
                     <a href="#" class="so-link">
                         <span class="material-icons">image</span>
@@ -375,7 +353,6 @@ require_once '../includes/navbar.php';
                         <img src="https://picsum.photos/300/200" alt="Preview" style="border-radius: 8px;">
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -388,7 +365,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -400,8 +376,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Popovers can contain form elements.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-popover-wrapper">
                     <button class="so-btn so-btn-info" data-popover-toggle="formPopover">
                         <span class="material-icons">edit</span>
@@ -434,7 +408,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -472,7 +445,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -484,8 +456,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Use popovers for confirmation dialogs.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-gap-3 so-flex-wrap">
                     <div class="so-popover-wrapper">
                         <button class="so-btn so-btn-danger" data-popover-toggle="confirmPopover">
@@ -504,7 +474,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -527,7 +496,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -539,8 +507,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Different popover sizes for various content needs.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-gap-3 so-flex-wrap">
                     <div class="so-popover-wrapper">
                         <button class="so-btn so-btn-outline" data-popover-toggle="smallPopover">Small</button>
@@ -569,7 +535,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -584,7 +549,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Large popover --&gt;
 &lt;div class="so-popover so-popover-lg"&gt;...&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 

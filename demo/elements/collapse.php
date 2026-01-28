@@ -44,26 +44,17 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;button class="so-btn so-btn-primary" data-so-toggle="collapse" data-so-target="#myCollapse"&gt;
+                <?= so_code_block('<button class="so-btn so-btn-primary" data-so-toggle="collapse" data-so-target="#myCollapse">
     Toggle Content
-&lt;/button&gt;
+</button>
 
-&lt;div id="myCollapse" class="so-collapse so-show"&gt;
-    &lt;div class="so-card"&gt;
-        &lt;div class="so-card-body"&gt;
+<div id="myCollapse" class="so-collapse so-show">
+    <div class="so-card">
+        <div class="so-card-body">
             Collapsible content here...
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -91,24 +82,15 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Link with href --&gt;
-&lt;a class="so-btn so-btn-primary" href="#myCollapse" data-so-toggle="collapse"&gt;
+                <?= so_code_block('<!-- Link with href -->
+<a class="so-btn so-btn-primary" href="#myCollapse" data-so-toggle="collapse">
     Toggle
-&lt;/a&gt;
+</a>
 
-&lt;!-- Button with data-so-target --&gt;
-&lt;button class="so-btn so-btn-secondary" data-so-toggle="collapse" data-so-target="#myCollapse"&gt;
+<!-- Button with data-so-target -->
+<button class="so-btn so-btn-secondary" data-so-toggle="collapse" data-so-target="#myCollapse">
     Toggle
-&lt;/button&gt;</code></pre>
-                </div>
+</button>', 'html') ?>
             </div>
         </div>
 
@@ -131,20 +113,11 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div id="horizontalCollapse" class="so-collapse so-collapse-horizontal so-show"&gt;
-    &lt;div class="so-card so-card-body" style="width: 300px;"&gt;
+                <?= so_code_block('<div id="horizontalCollapse" class="so-collapse so-collapse-horizontal so-show">
+    <div class="so-card so-card-body" style="width: 300px;">
         Horizontal collapse content...
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -184,22 +157,13 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Toggle both using class selector --&gt;
-&lt;button data-so-toggle="collapse" data-so-target=".multi-collapse"&gt;
+                <?= so_code_block('<!-- Toggle both using class selector -->
+<button data-so-toggle="collapse" data-so-target=".multi-collapse">
     Toggle Both
-&lt;/button&gt;
+</button>
 
-&lt;div id="multiCollapse1" class="so-collapse multi-collapse so-show"&gt;...&lt;/div&gt;
-&lt;div id="multiCollapse2" class="so-collapse multi-collapse"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+<div id="multiCollapse1" class="so-collapse multi-collapse so-show">...</div>
+<div id="multiCollapse2" class="so-collapse multi-collapse">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -234,26 +198,17 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-collapse-container"&gt;
-    &lt;div class="so-collapse-header" data-so-toggle="collapse" data-so-target="#myContainer" aria-expanded="true"&gt;
-        &lt;h5 class="so-collapse-title"&gt;Section Title&lt;/h5&gt;
-        &lt;span class="material-icons so-collapse-icon"&gt;expand_more&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div id="myContainer" class="so-collapse so-show"&gt;
-        &lt;div class="so-collapse-body"&gt;
+                <?= so_code_block('<div class="so-collapse-container">
+    <div class="so-collapse-header" data-so-toggle="collapse" data-so-target="#myContainer" aria-expanded="true">
+        <h5 class="so-collapse-title">Section Title</h5>
+        <span class="material-icons so-collapse-icon">expand_more</span>
+    </div>
+    <div id="myContainer" class="so-collapse so-show">
+        <div class="so-collapse-body">
             Content here...
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -300,20 +255,11 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-collapse-group"&gt;
-    &lt;div class="so-collapse-container"&gt;...&lt;/div&gt;
-    &lt;div class="so-collapse-container"&gt;...&lt;/div&gt;
-    &lt;div class="so-collapse-container"&gt;...&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-collapse-group">
+    <div class="so-collapse-container">...</div>
+    <div class="so-collapse-container">...</div>
+    <div class="so-collapse-container">...</div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -365,23 +311,14 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
+                <?= so_code_block('<!-- Fade -->
+<div class="so-collapse so-collapse-fade">...</div>
 
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;!-- Fade --&gt;
-&lt;div class="so-collapse so-collapse-fade"&gt;...&lt;/div&gt;
+<!-- Slide -->
+<div class="so-collapse so-collapse-slide">...</div>
 
-&lt;!-- Slide --&gt;
-&lt;div class="so-collapse so-collapse-slide"&gt;...&lt;/div&gt;
-
-&lt;!-- Scale --&gt;
-&lt;div class="so-collapse so-collapse-scale"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+<!-- Scale -->
+<div class="so-collapse so-collapse-scale">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -426,17 +363,8 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-collapse-container so-collapse-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-collapse-container so-collapse-lg"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-collapse-container so-collapse-sm">...</div>
+<div class="so-collapse-container so-collapse-lg">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -486,19 +414,10 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-collapse-container so-collapse-primary"&gt;...&lt;/div&gt;
-&lt;div class="so-collapse-container so-collapse-success"&gt;...&lt;/div&gt;
-&lt;div class="so-collapse-container so-collapse-warning"&gt;...&lt;/div&gt;
-&lt;div class="so-collapse-container so-collapse-danger"&gt;...&lt;/div&gt;</code></pre>
-                </div>
+                <?= so_code_block('<div class="so-collapse-container so-collapse-primary">...</div>
+<div class="so-collapse-container so-collapse-success">...</div>
+<div class="so-collapse-container so-collapse-warning">...</div>
+<div class="so-collapse-container so-collapse-danger">...</div>', 'html') ?>
             </div>
         </div>
 
@@ -533,26 +452,17 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-card so-card-collapsible"&gt;
-    &lt;div class="so-card-header" data-so-toggle="collapse" data-so-target="#cardBody" aria-expanded="true"&gt;
-        &lt;h5 class="so-mb-0"&gt;Card Title&lt;/h5&gt;
-        &lt;span class="material-icons so-collapse-icon"&gt;expand_more&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div id="cardBody" class="so-collapse so-show"&gt;
-        &lt;div class="so-card-body"&gt;
+                <?= so_code_block('<div class="so-card so-card-collapsible">
+    <div class="so-card-header" data-so-toggle="collapse" data-so-target="#cardBody" aria-expanded="true">
+        <h5 class="so-mb-0">Card Title</h5>
+        <span class="material-icons so-collapse-icon">expand_more</span>
+    </div>
+    <div id="cardBody" class="so-collapse so-show">
+        <div class="so-card-body">
             Card content here...
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -573,23 +483,14 @@ require_once '../includes/navbar.php';
                         Show More
                     </button>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-collapse-inline"&gt;
-    &lt;div class="so-collapse-content"&gt;
+                <?= so_code_block('<div class="so-collapse-inline">
+    <div class="so-collapse-content">
         Long content here...
-    &lt;/div&gt;
-    &lt;button class="so-collapse-toggle so-btn so-btn-link"&gt;
+    </div>
+    <button class="so-collapse-toggle so-btn so-btn-link">
         Show More
-    &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                </div>
+    </button>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -632,34 +533,25 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-html">&lt;div class="so-collapse-container"&gt;
-    &lt;div class="so-collapse-header" data-so-toggle="collapse" data-so-target="#parent"&gt;
+                <?= so_code_block('<div class="so-collapse-container">
+    <div class="so-collapse-header" data-so-toggle="collapse" data-so-target="#parent">
         Parent Section
-    &lt;/div&gt;
-    &lt;div id="parent" class="so-collapse so-show"&gt;
-        &lt;div class="so-collapse-body"&gt;
+    </div>
+    <div id="parent" class="so-collapse so-show">
+        <div class="so-collapse-body">
             Parent content...
 
-            &lt;div class="so-collapse-nested"&gt;
-                &lt;button class="so-collapse-toggle" data-so-toggle="collapse" data-so-target="#child1"&gt;
+            <div class="so-collapse-nested">
+                <button class="so-collapse-toggle" data-so-toggle="collapse" data-so-target="#child1">
                     Nested Item
-                &lt;/button&gt;
-                &lt;div id="child1" class="so-collapse"&gt;
+                </button>
+                <div id="child1" class="so-collapse">
                     Nested content...
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
 
@@ -693,36 +585,27 @@ require_once '../includes/navbar.php';
                     <span class="material-icons">info</span>
                     <span>Event log will appear here. Interact with the collapse above.</span>
                 </div>
-
-                <div class="so-code-block so-mt-4">
-                    <div class="so-code-header">
-                        <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                        <button class="so-code-copy" onclick="copyCode(this)">
-                            <span class="material-icons">content_copy</span>
-                        </button>
-                    </div>
-                    <pre class="so-code-content"><code class="language-javascript">// Programmatic control
+                <?= so_code_block('// Programmatic control
 SOCollapse.show(element);   // Expand collapse
 SOCollapse.hide(element);   // Collapse
 SOCollapse.toggle(element); // Toggle state
 
 // Events
-element.addEventListener('so:collapse:show', (e) => {
-    console.log('About to expand');
+element.addEventListener(\'so:collapse:show\', (e) => {
+    console.log(\'About to expand\');
 });
 
-element.addEventListener('so:collapse:shown', (e) => {
-    console.log('Fully expanded');
+element.addEventListener(\'so:collapse:shown\', (e) => {
+    console.log(\'Fully expanded\');
 });
 
-element.addEventListener('so:collapse:hide', (e) => {
-    console.log('About to collapse');
+element.addEventListener(\'so:collapse:hide\', (e) => {
+    console.log(\'About to collapse\');
 });
 
-element.addEventListener('so:collapse:hidden', (e) => {
-    console.log('Fully collapsed');
-});</code></pre>
-                </div>
+element.addEventListener(\'so:collapse:hidden\', (e) => {
+    console.log(\'Fully collapsed\');
+});', 'javascript') ?>
 
                 <h5 class="so-mt-6 so-mb-3">Available Events</h5>
                 <div class="so-table-responsive">
@@ -1012,9 +895,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function copyCode(button) {
+    const codeBlock = button.closest('.so-code-block');
+    const activePane = codeBlock.querySelector('.so-code-pane.so-active') || codeBlock;
+    const code = activePane.querySelector('.so-code-content code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        button.innerHTML = '<span class="material-icons">check</span>';
+        setTimeout(() => {
+            button.innerHTML = '<span class="material-icons">content_copy</span>';
+        }, 2000);
+    });
+}
 </script>
 
-    </div>
 </main>
 
 <?php

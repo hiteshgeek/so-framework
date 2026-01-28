@@ -31,8 +31,6 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">A clean login form with social authentication options.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-card" style="max-width: 400px; margin: 0 auto;">
                             <div class="so-form-card-header" style="text-align: center;">
                                 <h4 class="so-form-card-title">Welcome Back</h4>
@@ -83,7 +81,6 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -126,7 +123,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     </div>
-                </div>
             </div>
         </div>
 
@@ -137,8 +133,6 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">A user registration form with password requirements.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-card" style="max-width: 500px; margin: 0 auto;">
                             <div class="so-form-card-header">
                                 <h4 class="so-form-card-title">Create Account</h4>
@@ -183,7 +177,6 @@ require_once '../includes/navbar.php';
                                 </form>
                             </div>
                         </div>
-                    </div>
                     <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -234,7 +227,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     </div>
-                </div>
             </div>
         </div>
 
@@ -245,8 +237,6 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">A contact form with file attachments.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-card" style="max-width: 600px; margin: 0 auto;">
                             <div class="so-form-card-header">
                                 <h4 class="so-form-card-title">Get in Touch</h4>
@@ -305,8 +295,6 @@ require_once '../includes/navbar.php';
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -317,8 +305,6 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">A horizontal settings form with sections and switches.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-card" style="max-width: 700px; margin: 0 auto;">
                             <div class="so-form-card-header">
                                 <h4 class="so-form-card-title">Account Settings</h4>
@@ -402,8 +388,6 @@ require_once '../includes/navbar.php';
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -414,8 +398,6 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">A payment checkout form with billing and card details.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-card" style="max-width: 600px; margin: 0 auto;">
                             <div class="so-form-card-header">
                                 <h4 class="so-form-card-title">Payment Details</h4>
@@ -506,8 +488,6 @@ require_once '../includes/navbar.php';
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
         </div>
 

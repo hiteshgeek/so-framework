@@ -73,30 +73,22 @@ require_once '../includes/navbar.php';
                             </tbody>
                         </table>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table"&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;#&lt;/th&gt;
-            &lt;th&gt;Name&lt;/th&gt;
-            &lt;th&gt;Email&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;1&lt;/td&gt;
-            &lt;td&gt;John Smith&lt;/td&gt;
-            &lt;td&gt;john@example.com&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Smith</td>
+            <td>john@example.com</td>
+        </tr>
+    </tbody>
+</table>', 'html') ?>
                     </div>
                 </div>
 
@@ -146,17 +138,9 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table so-table-striped"&gt;...&lt;/table&gt;
-&lt;table class="so-table so-table-hover"&gt;...&lt;/table&gt;
-&lt;table class="so-table so-table-striped so-table-hover"&gt;...&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table so-table-striped">...</table>
+<table class="so-table so-table-hover">...</table>
+<table class="so-table so-table-striped so-table-hover">...</table>', 'html') ?>
                     </div>
                 </div>
 
@@ -195,16 +179,8 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table so-table-bordered"&gt;...&lt;/table&gt;
-&lt;table class="so-table so-table-borderless"&gt;...&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table so-table-bordered">...</table>
+<table class="so-table so-table-borderless">...</table>', 'html') ?>
                     </div>
                 </div>
 
@@ -244,16 +220,8 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table so-table-sm"&gt;...&lt;/table&gt;
-&lt;table class="so-table so-table-lg"&gt;...&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table so-table-sm">...</table>
+<table class="so-table so-table-lg">...</table>', 'html') ?>
                     </div>
                 </div>
 
@@ -292,20 +260,12 @@ require_once '../includes/navbar.php';
                             </div>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table"&gt;
-    &lt;thead class="so-thead-light"&gt;...&lt;/thead&gt;
-&lt;/table&gt;
-&lt;table class="so-table"&gt;
-    &lt;thead class="so-thead-dark"&gt;...&lt;/thead&gt;
-&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table">
+    <thead class="so-thead-light">...</thead>
+</table>
+<table class="so-table">
+    <thead class="so-thead-dark">...</thead>
+</table>', 'html') ?>
                     </div>
                 </div>
 
@@ -359,20 +319,12 @@ require_once '../includes/navbar.php';
                             </tbody>
                         </table>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;tr class="so-table-primary"&gt;...&lt;/tr&gt;
-&lt;tr class="so-table-success"&gt;...&lt;/tr&gt;
-&lt;tr class="so-table-warning"&gt;...&lt;/tr&gt;
-&lt;tr class="so-table-danger"&gt;...&lt;/tr&gt;
-&lt;tr class="so-table-info"&gt;...&lt;/tr&gt;
-&lt;td class="so-table-success"&gt;Cell&lt;/td&gt;</code></pre>
-                        </div>
+<?= so_code_block('<tr class="so-table-primary">...</tr>
+<tr class="so-table-success">...</tr>
+<tr class="so-table-warning">...</tr>
+<tr class="so-table-danger">...</tr>
+<tr class="so-table-info">...</tr>
+<td class="so-table-success">Cell</td>', 'html') ?>
                     </div>
                 </div>
 
@@ -429,21 +381,13 @@ require_once '../includes/navbar.php';
                             </table>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-table-responsive"&gt;
-    &lt;table class="so-table"&gt;...&lt;/table&gt;
-&lt;/div&gt;
+<?= so_code_block('<div class="so-table-responsive">
+    <table class="so-table">...</table>
+</div>
 
-&lt;!-- Breakpoint-specific --&gt;
-&lt;div class="so-table-responsive-md"&gt;...&lt;/div&gt;
-&lt;div class="so-table-responsive-lg"&gt;...&lt;/div&gt;</code></pre>
-                        </div>
+<!-- Breakpoint-specific -->
+<div class="so-table-responsive-md">...</div>
+<div class="so-table-responsive-lg">...</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -518,28 +462,20 @@ require_once '../includes/navbar.php';
                             </tbody>
                         </table>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table" data-so-table data-so-sortable="true"&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th data-sort="name"&gt;
-                &lt;span class="so-table-sort"&gt;
-                    &lt;span&gt;Name&lt;/span&gt;
-                    &lt;span class="so-table-sort-icon"&gt;
-                        &lt;span class="material-icons"&gt;unfold_more&lt;/span&gt;
-                    &lt;/span&gt;
-                &lt;/span&gt;
-            &lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table" data-so-table data-so-sortable="true">
+    <thead>
+        <tr>
+            <th data-sort="name">
+                <span class="so-table-sort">
+                    <span>Name</span>
+                    <span class="so-table-sort-icon">
+                        <span class="material-icons">unfold_more</span>
+                    </span>
+                </span>
+            </th>
+        </tr>
+    </thead>
+</table>', 'html') ?>
                     </div>
                 </div>
 
@@ -612,35 +548,27 @@ require_once '../includes/navbar.php';
                             <button class="so-btn so-btn-sm so-btn-outline-info" onclick="demoGetSelected()">Get Selected</button>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table" data-so-table data-so-selectable="true"&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th class="so-table-check so-table-check-all"&gt;
-                &lt;label class="so-checkbox"&gt;
-                    &lt;input type="checkbox"&gt;
-                    &lt;span class="so-checkbox-box"&gt;...&lt;/span&gt;
-                &lt;/label&gt;
-            &lt;/th&gt;
-            &lt;th&gt;Column&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td class="so-table-check"&gt;
-                &lt;label class="so-checkbox"&gt;...&lt;/label&gt;
-            &lt;/td&gt;
-            &lt;td&gt;Data&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table" data-so-table data-so-selectable="true">
+    <thead>
+        <tr>
+            <th class="so-table-check so-table-check-all">
+                <label class="so-checkbox">
+                    <input type="checkbox">
+                    <span class="so-checkbox-box">...</span>
+                </label>
+            </th>
+            <th>Column</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="so-table-check">
+                <label class="so-checkbox">...</label>
+            </td>
+            <td>Data</td>
+        </tr>
+    </tbody>
+</table>', 'html') ?>
                     </div>
                 </div>
 
@@ -718,25 +646,17 @@ require_once '../includes/navbar.php';
                             </nav>
                         </div>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;div class="so-table-toolbar"&gt;
-    &lt;h4 class="so-table-title"&gt;Title&lt;/h4&gt;
-    &lt;div class="so-table-actions"&gt;...&lt;/div&gt;
-&lt;/div&gt;
+<?= so_code_block('<div class="so-table-toolbar">
+    <h4 class="so-table-title">Title</h4>
+    <div class="so-table-actions">...</div>
+</div>
 
-&lt;table class="so-table"&gt;...&lt;/table&gt;
+<table class="so-table">...</table>
 
-&lt;div class="so-table-footer"&gt;
-    &lt;span&gt;Page info&lt;/span&gt;
-    &lt;nav class="so-pagination"&gt;...&lt;/nav&gt;
-&lt;/div&gt;</code></pre>
-                        </div>
+<div class="so-table-footer">
+    <span>Page info</span>
+    <nav class="so-pagination">...</nav>
+</div>', 'html') ?>
                     </div>
                 </div>
 
@@ -813,23 +733,13 @@ require_once '../includes/navbar.php';
                             </tfoot>
                         </table>
 
-                        <div class="so-code-block so-mt-4">
-                            <div class="so-code-header">
-                                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                                <button class="so-code-copy" onclick="copyCode(this)">
-                                    <span class="material-icons">content_copy</span>
-                                </button>
-                            </div>
-                            <pre class="so-code-content"><code class="language-html">&lt;table class="so-table so-table-striped so-table-hover so-table-bordered"&gt;
-    &lt;thead class="so-thead-dark"&gt;...&lt;/thead&gt;
-    &lt;tbody&gt;...&lt;/tbody&gt;
-    &lt;tfoot&gt;...&lt;/tfoot&gt;
-&lt;/table&gt;</code></pre>
-                        </div>
+<?= so_code_block('<table class="so-table so-table-striped so-table-hover so-table-bordered">
+    <thead class="so-thead-dark">...</thead>
+    <tbody>...</tbody>
+    <tfoot>...</tfoot>
+</table>', 'html') ?>
                     </div>
                 </div>
-
-            </div>
 
 <script>
 function demoSelectAll() {

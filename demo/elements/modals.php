@@ -35,30 +35,24 @@ require_once '../includes/navbar.php';
                 Launch Basic Modal
             </button>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-modal" id="myModal"&gt;
-    &lt;div class="so-modal-dialog"&gt;
-        &lt;div class="so-modal-header"&gt;
-            &lt;h5 class="so-modal-title"&gt;Modal Title&lt;/h5&gt;
-            &lt;button class="so-modal-close" data-dismiss="modal"&gt;
-                &lt;span class="material-icons"&gt;close&lt;/span&gt;
-            &lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class="so-modal-body"&gt;
+            <div class="so-mt-4">
+                <?= so_code_block('<div class="so-modal" id="myModal">
+    <div class="so-modal-dialog">
+        <div class="so-modal-header">
+            <h5 class="so-modal-title">Modal Title</h5>
+            <button class="so-modal-close" data-dismiss="modal">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div class="so-modal-body">
             Modal content goes here...
-        &lt;/div&gt;
-        &lt;div class="so-modal-footer"&gt;
-            &lt;button class="so-btn so-btn-outline" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
-            &lt;button class="so-btn so-btn-primary"&gt;Save Changes&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+        </div>
+        <div class="so-modal-footer">
+            <button class="so-btn so-btn-outline" data-dismiss="modal">Cancel</button>
+            <button class="so-btn so-btn-primary">Save Changes</button>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
     </div>
@@ -79,27 +73,21 @@ require_once '../includes/navbar.php';
                 <button type="button" class="so-btn so-btn-outline" onclick="showSizeModal('fullscreen')">Fullscreen</button>
             </div>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;!-- Small Modal --&gt;
-&lt;div class="so-modal so-modal-sm"&gt;...&lt;/div&gt;
+            <div class="so-mt-4">
+                <?= so_code_block('<!-- Small Modal -->
+<div class="so-modal so-modal-sm">...</div>
 
-&lt;!-- Default Modal --&gt;
-&lt;div class="so-modal"&gt;...&lt;/div&gt;
+<!-- Default Modal -->
+<div class="so-modal">...</div>
 
-&lt;!-- Large Modal --&gt;
-&lt;div class="so-modal so-modal-lg"&gt;...&lt;/div&gt;
+<!-- Large Modal -->
+<div class="so-modal so-modal-lg">...</div>
 
-&lt;!-- Extra Large Modal --&gt;
-&lt;div class="so-modal so-modal-xl"&gt;...&lt;/div&gt;
+<!-- Extra Large Modal -->
+<div class="so-modal so-modal-xl">...</div>
 
-&lt;!-- Fullscreen Modal --&gt;
-&lt;div class="so-modal so-modal-fullscreen"&gt;...&lt;/div&gt;</code></pre>
+<!-- Fullscreen Modal -->
+<div class="so-modal so-modal-fullscreen">...</div>', 'html') ?>
             </div>
         </div>
     </div>
@@ -116,22 +104,16 @@ require_once '../includes/navbar.php';
                 Show Scrollable Modal
             </button>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-modal so-modal-scrollable"&gt;
-    &lt;div class="so-modal-dialog"&gt;
-        &lt;div class="so-modal-header"&gt;...&lt;/div&gt;
-        &lt;div class="so-modal-body"&gt;
-            &lt;!-- Long scrollable content --&gt;
-        &lt;/div&gt;
-        &lt;div class="so-modal-footer"&gt;...&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+            <div class="so-mt-4">
+                <?= so_code_block('<div class="so-modal so-modal-scrollable">
+    <div class="so-modal-dialog">
+        <div class="so-modal-header">...</div>
+        <div class="so-modal-body">
+            <!-- Long scrollable content -->
+        </div>
+        <div class="so-modal-footer">...</div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
     </div>
@@ -166,61 +148,55 @@ require_once '../includes/navbar.php';
 
             <div id="confirm-result" class="so-mt-3"></div>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-javascript">// Basic confirmation (returns true/false)
+            <div class="so-mt-4">
+                <?= so_code_block('// Basic confirmation (returns true/false)
 const confirmed = await SOModal.confirm({
-    title: 'Confirm Action',
-    message: 'Are you sure you want to proceed?',
-    confirmText: 'Yes, Continue',
-    cancelText: 'Cancel'
+    title: \'Confirm Action\',
+    message: \'Are you sure you want to proceed?\',
+    confirmText: \'Yes, Continue\',
+    cancelText: \'Cancel\'
 });
 
 if (confirmed) {
-    console.log('User confirmed');
+    console.log(\'User confirmed\');
 } else {
-    console.log('User cancelled');
+    console.log(\'User cancelled\');
 }
 
 // Danger confirmation
 const deleted = await SOModal.confirm({
-    title: 'Delete Item',
-    message: 'This action cannot be undone.',
-    confirmText: 'Delete',
-    cancelText: 'Cancel',
+    title: \'Delete Item\',
+    message: \'This action cannot be undone.\',
+    confirmText: \'Delete\',
+    cancelText: \'Cancel\',
     danger: true  // Red confirm button
 });
 
-// Multiple actions (returns action id or 'dismiss')
+// Multiple actions (returns action id or \'dismiss\')
 const action = await SOModal.confirm({
-    title: 'Unsaved Changes',
-    message: 'You have unsaved changes. What would you like to do?',
+    title: \'Unsaved Changes\',
+    message: \'You have unsaved changes. What would you like to do?\',
     actions: [
-        { id: 'discard', text: 'Discard', class: 'so-btn-outline' },
-        { id: 'save-draft', text: 'Save Draft', class: 'so-btn-secondary' },
-        { id: 'save', text: 'Save & Close', class: 'so-btn-primary', primary: true }
+        { id: \'discard\', text: \'Discard\', class: \'so-btn-outline\' },
+        { id: \'save-draft\', text: \'Save Draft\', class: \'so-btn-secondary\' },
+        { id: \'save\', text: \'Save & Close\', class: \'so-btn-primary\', primary: true }
     ]
 });
 
 switch (action) {
-    case 'save':
-        console.log('User chose to save');
+    case \'save\':
+        console.log(\'User chose to save\');
         break;
-    case 'save-draft':
-        console.log('User chose to save as draft');
+    case \'save-draft\':
+        console.log(\'User chose to save as draft\');
         break;
-    case 'discard':
-        console.log('User chose to discard');
+    case \'discard\':
+        console.log(\'User chose to discard\');
         break;
-    case 'dismiss':
-        console.log('User dismissed the dialog');
+    case \'dismiss\':
+        console.log(\'User dismissed the dialog\');
         break;
-}</code></pre>
+}', 'javascript') ?>
             </div>
         </div>
     </div>
@@ -248,22 +224,16 @@ switch (action) {
                 </button>
             </div>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-javascript">// Alert returns a Promise that resolves when closed
+            <div class="so-mt-4">
+                <?= so_code_block('// Alert returns a Promise that resolves when closed
 await SOModal.alert({
-    title: 'Success!',
-    message: 'Your file has been uploaded.',
-    type: 'success', // info, success, warning, danger
-    buttonText: 'OK'
+    title: \'Success!\',
+    message: \'Your file has been uploaded.\',
+    type: \'success\', // info, success, warning, danger
+    buttonText: \'OK\'
 });
 
-console.log('Alert was closed');</code></pre>
+console.log(\'Alert was closed\');', 'javascript') ?>
             </div>
         </div>
     </div>
@@ -299,52 +269,45 @@ console.log('Alert was closed');</code></pre>
                 <button type="button" class="so-btn so-btn-outline" onclick="showContextualModal('dark-light')">Dark Light</button>
             </div>
 
-            <div class="so-code-block so-code-block-tabbed so-mt-4">
-                <div class="so-code-header">
-                    <div class="so-code-tabs">
-                        <button class="so-code-tab so-active" data-so-target="#contextual-modal-html">
-                            <span class="material-icons">code</span> HTML
-                        </button>
-                        <button class="so-code-tab" data-so-target="#contextual-modal-js">
-                            <span class="material-icons">javascript</span> JavaScript
-                        </button>
-                    </div>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <div class="so-code-body">
-                    <div class="so-code-pane so-active" id="contextual-modal-html">
-                        <pre class="so-code-content"><code class="language-html">&lt;!-- Solid colored headers --&gt;
-&lt;div class="so-modal so-modal-primary"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-secondary"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-success"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-danger"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-warning"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-info"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-light"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-dark"&gt;...&lt;/div&gt;
+            <div class="so-mt-4">
+                <?= so_code_tabs('contextual-modal', [
+                    [
+                        'label' => 'HTML',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Solid colored headers -->
+<div class="so-modal so-modal-primary">...</div>
+<div class="so-modal so-modal-secondary">...</div>
+<div class="so-modal so-modal-success">...</div>
+<div class="so-modal so-modal-danger">...</div>
+<div class="so-modal so-modal-warning">...</div>
+<div class="so-modal so-modal-info">...</div>
+<div class="so-modal so-modal-light">...</div>
+<div class="so-modal so-modal-dark">...</div>
 
-&lt;!-- Light colored headers --&gt;
-&lt;div class="so-modal so-modal-primary-light"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-secondary-light"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-success-light"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-danger-light"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-warning-light"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-info-light"&gt;...&lt;/div&gt;
-&lt;div class="so-modal so-modal-dark-light"&gt;...&lt;/div&gt;</code></pre>
-                    </div>
-                    <div class="so-code-pane" id="contextual-modal-js">
-                        <pre class="so-code-content"><code class="language-javascript">// Create modal with contextual header using className option
+<!-- Light colored headers -->
+<div class="so-modal so-modal-primary-light">...</div>
+<div class="so-modal so-modal-secondary-light">...</div>
+<div class="so-modal so-modal-success-light">...</div>
+<div class="so-modal so-modal-danger-light">...</div>
+<div class="so-modal so-modal-warning-light">...</div>
+<div class="so-modal so-modal-info-light">...</div>
+<div class="so-modal so-modal-dark-light">...</div>'
+                    ],
+                    [
+                        'label' => 'JavaScript',
+                        'language' => 'javascript',
+                        'icon' => 'javascript',
+                        'code' => '// Create modal with contextual header using className option
 const modal = SOModal.create({
-    title: 'Success',
-    content: '&lt;p&gt;Your changes have been saved.&lt;/p&gt;',
-    className: 'so-modal-success', // or 'so-modal-success-light'
-    footer: '&lt;button class="so-btn so-btn-primary" data-dismiss="modal"&gt;OK&lt;/button&gt;'
+    title: \'Success\',
+    content: \'<p>Your changes have been saved.</p>\',
+    className: \'so-modal-success\', // or \'so-modal-success-light\'
+    footer: \'<button class="so-btn so-btn-primary" data-dismiss="modal">OK</button>\'
 });
-modal.show();</code></pre>
-                    </div>
-                </div>
+modal.show();'
+                    ]
+                ]) ?>
             </div>
         </div>
     </div>
@@ -361,25 +324,19 @@ modal.show();</code></pre>
                 Create Modal Programmatically
             </button>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-javascript">const modal = SOModal.create({
-    title: 'Dynamic Modal',
-    content: '&lt;p&gt;This modal was created with JavaScript.&lt;/p&gt;',
-    size: 'default', // sm, default, lg, xl, fullscreen
+            <div class="so-mt-4">
+                <?= so_code_block('const modal = SOModal.create({
+    title: \'Dynamic Modal\',
+    content: \'<p>This modal was created with JavaScript.</p>\',
+    size: \'default\', // sm, default, lg, xl, fullscreen
     closable: true,
     footer: `
-        &lt;button class="so-btn so-btn-outline" data-dismiss="modal"&gt;Close&lt;/button&gt;
-        &lt;button class="so-btn so-btn-primary"&gt;Save&lt;/button&gt;
+        <button class="so-btn so-btn-outline" data-dismiss="modal">Close</button>
+        <button class="so-btn so-btn-primary">Save</button>
     `
 });
 
-modal.show();</code></pre>
+modal.show();', 'javascript') ?>
             </div>
         </div>
     </div>
@@ -396,36 +353,30 @@ modal.show();</code></pre>
                 Show Login Form
             </button>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
+            <div class="so-mt-4">
+                <?= so_code_block('<div class="so-modal so-modal-sm">
+    <div class="so-modal-dialog">
+        <div class="so-modal-header">
+            <h5 class="so-modal-title">Login</h5>
+            <button class="so-modal-close" data-dismiss="modal">...</button>
+        </div>
+        <div class="so-modal-body">
+            <form>
+                <div class="so-form-group">
+                    <label class="so-form-label">Email</label>
+                    <input type="email" class="so-form-control">
                 </div>
-                <pre class="so-code-content"><code class="language-html">&lt;div class="so-modal so-modal-sm"&gt;
-    &lt;div class="so-modal-dialog"&gt;
-        &lt;div class="so-modal-header"&gt;
-            &lt;h5 class="so-modal-title"&gt;Login&lt;/h5&gt;
-            &lt;button class="so-modal-close" data-dismiss="modal"&gt;...&lt;/button&gt;
-        &lt;/div&gt;
-        &lt;div class="so-modal-body"&gt;
-            &lt;form&gt;
-                &lt;div class="so-form-group"&gt;
-                    &lt;label class="so-form-label"&gt;Email&lt;/label&gt;
-                    &lt;input type="email" class="so-form-control"&gt;
-                &lt;/div&gt;
-                &lt;div class="so-form-group"&gt;
-                    &lt;label class="so-form-label"&gt;Password&lt;/label&gt;
-                    &lt;input type="password" class="so-form-control"&gt;
-                &lt;/div&gt;
-            &lt;/form&gt;
-        &lt;/div&gt;
-        &lt;div class="so-modal-footer"&gt;
-            &lt;button class="so-btn so-btn-primary so-w-100"&gt;Sign In&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                <div class="so-form-group">
+                    <label class="so-form-label">Password</label>
+                    <input type="password" class="so-form-control">
+                </div>
+            </form>
+        </div>
+        <div class="so-modal-footer">
+            <button class="so-btn so-btn-primary so-w-100">Sign In</button>
+        </div>
+    </div>
+</div>', 'html') ?>
             </div>
         </div>
     </div>
@@ -455,30 +406,24 @@ modal.show();</code></pre>
                 <button type="button" class="so-btn so-btn-outline" onclick="showDrawer('right', 'xl')">Extra Large (720px)</button>
             </div>
 
-            <div class="so-code-block so-mt-4">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-html">&lt;!-- Right Drawer (default) --&gt;
-&lt;div class="so-drawer"&gt;
-    &lt;div class="so-drawer-header"&gt;
-        &lt;h5 class="so-drawer-title"&gt;Drawer Title&lt;/h5&gt;
-        &lt;button class="so-drawer-close"&gt;...&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="so-drawer-body"&gt;Content...&lt;/div&gt;
-    &lt;div class="so-drawer-footer"&gt;Actions...&lt;/div&gt;
-&lt;/div&gt;
+            <div class="so-mt-4">
+                <?= so_code_block('<!-- Right Drawer (default) -->
+<div class="so-drawer">
+    <div class="so-drawer-header">
+        <h5 class="so-drawer-title">Drawer Title</h5>
+        <button class="so-drawer-close">...</button>
+    </div>
+    <div class="so-drawer-body">Content...</div>
+    <div class="so-drawer-footer">Actions...</div>
+</div>
 
-&lt;!-- Left Drawer --&gt;
-&lt;div class="so-drawer so-drawer-left"&gt;...&lt;/div&gt;
+<!-- Left Drawer -->
+<div class="so-drawer so-drawer-left">...</div>
 
-&lt;!-- Drawer Sizes --&gt;
-&lt;div class="so-drawer so-drawer-sm"&gt;...&lt;/div&gt;
-&lt;div class="so-drawer so-drawer-lg"&gt;...&lt;/div&gt;
-&lt;div class="so-drawer so-drawer-xl"&gt;...&lt;/div&gt;</code></pre>
+<!-- Drawer Sizes -->
+<div class="so-drawer so-drawer-sm">...</div>
+<div class="so-drawer so-drawer-lg">...</div>
+<div class="so-drawer so-drawer-xl">...</div>', 'html') ?>
             </div>
         </div>
     </div>
@@ -508,54 +453,47 @@ modal.show();</code></pre>
                 <div>Try clicking outside the modal or pressing Escape - it won't close! A subtle shake animation indicates the modal requires action.</div>
             </div>
 
-            <div class="so-code-block so-code-block-tabbed so-mt-4">
-                <div class="so-code-header">
-                    <div class="so-code-tabs">
-                        <button class="so-code-tab so-active" data-so-target="#static-modal-html">
-                            <span class="material-icons">code</span> HTML
-                        </button>
-                        <button class="so-code-tab" data-so-target="#static-modal-js">
-                            <span class="material-icons">javascript</span> JavaScript
-                        </button>
-                    </div>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <div class="so-code-body">
-                    <div class="so-code-pane so-active" id="static-modal-html">
-                        <pre class="so-code-content"><code class="language-html">&lt;!-- Static Modal - cannot be dismissed except via footer actions --&gt;
-&lt;div class="so-modal so-modal-static" data-so-static="true"&gt;
-    &lt;div class="so-modal-dialog"&gt;
-        &lt;div class="so-modal-header"&gt;
-            &lt;h5 class="so-modal-title"&gt;Required Action&lt;/h5&gt;
-            &lt;!-- No close button shown --&gt;
-        &lt;/div&gt;
-        &lt;div class="so-modal-body"&gt;
-            &lt;p&gt;You must complete this action to continue.&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="so-modal-footer"&gt;
-            &lt;button class="so-btn so-btn-primary" data-dismiss="modal"&gt;
-                Accept &amp; Continue
-            &lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+            <div class="so-mt-4">
+                <?= so_code_tabs('static-modal', [
+                    [
+                        'label' => 'HTML',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Static Modal - cannot be dismissed except via footer actions -->
+<div class="so-modal so-modal-static" data-so-static="true">
+    <div class="so-modal-dialog">
+        <div class="so-modal-header">
+            <h5 class="so-modal-title">Required Action</h5>
+            <!-- No close button shown -->
+        </div>
+        <div class="so-modal-body">
+            <p>You must complete this action to continue.</p>
+        </div>
+        <div class="so-modal-footer">
+            <button class="so-btn so-btn-primary" data-dismiss="modal">
+                Accept & Continue
+            </button>
+        </div>
+    </div>
+</div>
 
-&lt;!-- With lock icon indicator --&gt;
-&lt;div class="so-modal so-modal-static so-modal-show-lock" data-so-static="true"&gt;
+<!-- With lock icon indicator -->
+<div class="so-modal so-modal-static so-modal-show-lock" data-so-static="true">
     ...
-&lt;/div&gt;</code></pre>
-                    </div>
-                    <div class="so-code-pane" id="static-modal-js">
-                        <pre class="so-code-content"><code class="language-javascript">// Create static modal programmatically
+</div>'
+                    ],
+                    [
+                        'label' => 'JavaScript',
+                        'language' => 'javascript',
+                        'icon' => 'javascript',
+                        'code' => '// Create static modal programmatically
 const modal = SOModal.create({
-    title: 'Terms of Service',
-    content: '&lt;p&gt;Please accept our terms to continue.&lt;/p&gt;',
+    title: \'Terms of Service\',
+    content: \'<p>Please accept our terms to continue.</p>\',
     static: true,  // Prevents backdrop/ESC close, hides close button
     footer: `
-        &lt;button class="so-btn so-btn-outline" onclick="handleDecline(this)"&gt;Decline&lt;/button&gt;
-        &lt;button class="so-btn so-btn-primary" onclick="handleAccept(this)"&gt;Accept&lt;/button&gt;
+        <button class="so-btn so-btn-outline" onclick="handleDecline(this)">Decline</button>
+        <button class="so-btn so-btn-primary" onclick="handleAccept(this)">Accept</button>
     `
 });
 modal.show();
@@ -563,39 +501,39 @@ modal.show();
 // Handler functions - close modal after action
 function handleAccept(btn) {
     // Perform your action here (e.g., save to server, update state)
-    console.log('User accepted');
+    console.log(\'User accepted\');
 
     // Close the modal
-    const modal = btn.closest('.so-modal');
+    const modal = btn.closest(\'.so-modal\');
     SOModal.getInstance(modal)?.hide();
 }
 
 function handleDecline(btn) {
     // Perform your action here
-    console.log('User declined');
+    console.log(\'User declined\');
 
     // Close the modal
-    const modal = btn.closest('.so-modal');
+    const modal = btn.closest(\'.so-modal\');
     SOModal.getInstance(modal)?.hide();
 }
 
 // Static confirmation using SOModal.confirm()
 const result = await SOModal.confirm({
-    title: 'Delete Account',
-    message: 'This action is permanent and cannot be undone.',
+    title: \'Delete Account\',
+    message: \'This action is permanent and cannot be undone.\',
     static: true,  // Cannot dismiss without clicking a button
-    confirmText: 'Delete Account',
-    cancelText: 'Keep Account',
+    confirmText: \'Delete Account\',
+    cancelText: \'Keep Account\',
     danger: true
 });
 
 if (result) {
-    console.log('User confirmed deletion');
+    console.log(\'User confirmed deletion\');
 } else {
-    console.log('User cancelled');
-}</code></pre>
-                    </div>
-                </div>
+    console.log(\'User cancelled\');
+}'
+                    ]
+                ]) ?>
             </div>
         </div>
     </div>
@@ -608,22 +546,15 @@ if (result) {
         <div class="so-card-body">
             <p class="so-text-secondary so-mb-4">Full API reference for the modal component.</p>
 
-            <div class="so-code-block">
-                <div class="so-code-header">
-                    <span class="so-code-label"><span class="material-icons">code</span> JavaScript</span>
-                    <button class="so-code-copy" onclick="copyCode(this)">
-                        <span class="material-icons">content_copy</span>
-                    </button>
-                </div>
-                <pre class="so-code-content"><code class="language-javascript">// Get modal instance
-const modal = SOModal.getInstance('#myModal');
+            <?= so_code_block('// Get modal instance
+const modal = SOModal.getInstance(\'#myModal\');
 
 // Instance Methods
 modal.show();           // Show the modal
 modal.hide();           // Hide the modal
 modal.toggle();         // Toggle visibility
 modal.isOpen();         // Check if open
-modal.setTitle('New'); // Set modal title
+modal.setTitle(\'New\'); // Set modal title
 modal.setContent(html); // Set body content
 
 // Static Methods
@@ -637,35 +568,34 @@ SOModal.alert(options);       // Alert dialog (returns Promise)
     keyboard: true,      // Close on Escape
     focus: true,         // Focus trap
     closable: true,      // Allow closing
-    size: 'default',     // sm, default, lg, xl, fullscreen
+    size: \'default\',     // sm, default, lg, xl, fullscreen
     animation: true      // Animate open/close
 }
 
 // Events
-modal.element.addEventListener('so:modal:show', (e) => {
+modal.element.addEventListener(\'so:modal:show\', (e) => {
     // Before modal shows (can call e.preventDefault())
 });
 
-modal.element.addEventListener('so:modal:shown', () => {
+modal.element.addEventListener(\'so:modal:shown\', () => {
     // After modal is visible
 });
 
-modal.element.addEventListener('so:modal:hide', (e) => {
+modal.element.addEventListener(\'so:modal:hide\', (e) => {
     // Before modal hides (can call e.preventDefault())
 });
 
-modal.element.addEventListener('so:modal:hidden', () => {
+modal.element.addEventListener(\'so:modal:hidden\', () => {
     // After modal is hidden
 });
 
-modal.element.addEventListener('so:modal:confirm', () => {
+modal.element.addEventListener(\'so:modal:confirm\', () => {
     // Confirm button clicked
 });
 
-modal.element.addEventListener('so:modal:cancel', () => {
+modal.element.addEventListener(\'so:modal:cancel\', () => {
     // Cancel button clicked
-});</code></pre>
-            </div>
+});', 'javascript') ?>
         </div>
     </div>
 
@@ -1147,7 +1077,6 @@ function handleConfirmDelete(btn) {
 }
 </script>
 
-    </div>
 </main>
 
 <?php

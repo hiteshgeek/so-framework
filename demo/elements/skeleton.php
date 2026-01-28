@@ -32,8 +32,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Fundamental skeleton shapes for various content types.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <h6 class="so-text-muted so-mb-3">Text Lines</h6>
@@ -50,7 +48,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -66,7 +63,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-skeleton so-skeleton-rect" style="width: 100px; height: 48px;"&gt;&lt;/div&gt;
 &lt;div class="so-skeleton so-skeleton-rounded" style="width: 80px; height: 32px;"&gt;&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -78,8 +74,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Loading placeholder for card components.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-4">
                         <div class="so-card so-card-bordered">
@@ -115,7 +109,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -131,7 +124,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -143,8 +135,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Loading placeholder for user profiles and avatars.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <div class="so-d-flex so-align-items-center so-gap-3">
@@ -166,7 +156,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -180,7 +169,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -192,8 +180,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Loading placeholder for list items.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-list-group">
                     <div class="so-list-group-item">
                         <div class="so-d-flex so-align-items-center so-gap-3">
@@ -223,7 +209,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -239,7 +224,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -251,8 +235,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Loading placeholder for table rows.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-table-responsive">
                     <table class="so-table">
                         <thead>
@@ -289,7 +271,6 @@ require_once '../includes/navbar.php';
                         </tbody>
                     </table>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -303,7 +284,6 @@ require_once '../includes/navbar.php';
     &lt;td&gt;&lt;div class="so-skeleton so-skeleton-rounded" style="width: 60px; height: 24px;"&gt;&lt;/div&gt;&lt;/td&gt;
 &lt;/tr&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -315,8 +295,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Loading placeholder for article or blog post content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-card so-card-bordered">
                     <div class="so-skeleton so-skeleton-rect" style="height: 250px;"></div>
                     <div class="so-card-body">
@@ -332,7 +310,6 @@ require_once '../includes/navbar.php';
                         <div class="so-skeleton so-skeleton-text" style="width: 70%;"></div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -351,7 +328,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -363,8 +339,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Loading placeholder for dashboard widgets.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-3">
                         <div class="so-card so-card-bordered so-p-3">
@@ -407,7 +381,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -422,7 +395,6 @@ require_once '../includes/navbar.php';
     &lt;div class="so-skeleton so-skeleton-text" style="width: 70%; height: 12px;"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -434,8 +406,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Loading placeholder for form fields.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4" style="max-width: 500px;">
                     <div class="so-col-12">
                         <div class="so-skeleton so-skeleton-text so-mb-2" style="width: 80px; height: 14px;"></div>
@@ -460,7 +430,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -476,7 +445,6 @@ require_once '../includes/navbar.php';
 &lt;!-- Button skeleton --&gt;
 &lt;div class="so-skeleton so-skeleton-rounded" style="width: 100px; height: 40px;"&gt;&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -488,8 +456,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Different animation styles for skeleton loaders.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-4">
                         <h6 class="so-text-muted so-mb-3">Wave (Default)</h6>
@@ -510,7 +476,6 @@ require_once '../includes/navbar.php';
                         <div class="so-skeleton so-skeleton-static so-skeleton-text" style="width: 60%"></div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -525,7 +490,6 @@ require_once '../includes/navbar.php';
 &lt;!-- No animation (static) --&gt;
 &lt;div class="so-skeleton so-skeleton-static so-skeleton-text"&gt;&lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -537,8 +501,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Side-by-side comparison of skeleton loading and loaded content.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-row so-g-4">
                     <div class="so-col-md-6">
                         <h6 class="so-text-muted so-mb-3">Loading State</h6>
@@ -585,7 +547,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -605,7 +566,6 @@ require_once '../includes/navbar.php';
     &lt;div class="so-skeleton so-skeleton-text" style="width: 70%;"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 

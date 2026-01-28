@@ -31,8 +31,6 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Apply <code>has-error</code>, <code>has-success</code>, <code>has-warning</code>, or <code>has-info</code> classes to the form group.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-row">
                             <div class="so-form-group has-success">
                                 <label class="so-form-label">Success</label>
@@ -63,7 +61,6 @@ require_once '../includes/navbar.php';
                                 <span class="so-form-info"><span class="material-icons">info</span> Username is available</span>
                             </div>
                         </div>
-                    </div>
                     <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -111,7 +108,6 @@ require_once '../includes/navbar.php';
     &lt;/span&gt;
 &lt;/div&gt;</code></pre>
                     </div>
-                </div>
             </div>
         </div>
 
@@ -122,8 +118,6 @@ require_once '../includes/navbar.php';
                 <p class="so-card-subtitle">Add <code>so-shake</code> class to trigger a shake animation on errors.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-group has-error" id="shakeDemo">
                             <label class="so-form-label">Required Field</label>
                             <input type="text" class="so-form-control" placeholder="Leave empty and click button">
@@ -133,7 +127,6 @@ require_once '../includes/navbar.php';
                             <span class="material-icons">error_outline</span>
                             Trigger Shake
                         </button>
-                    </div>
                     <div class="so-code-block so-code-block-tabbed">
                         <div class="so-code-header">
                             <div class="so-code-tabs">
@@ -182,7 +175,6 @@ el.addEventListener('animationend', function() {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
 
@@ -193,8 +185,6 @@ el.addEventListener('animationend', function() {
                 <p class="so-card-subtitle">Use hints to show helper text, character counters, or requirements.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-group">
                             <label class="so-form-label">Bio</label>
                             <textarea class="so-form-control" rows="3" maxlength="150" placeholder="Tell us about yourself..." id="bioTextarea"></textarea>
@@ -211,7 +201,6 @@ el.addEventListener('animationend', function() {
                                 <span class="so-form-char-counter so-form-hint-right" id="usernameCounter">0/20</span>
                             </div>
                         </div>
-                    </div>
                     <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -239,7 +228,6 @@ el.addEventListener('animationend', function() {
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     </div>
-                </div>
             </div>
         </div>
 
@@ -250,8 +238,6 @@ el.addEventListener('animationend', function() {
                 <p class="so-card-subtitle">Try submitting the form with empty or invalid values to see validation in action.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <form id="validationDemoForm" novalidate>
                             <div class="so-form-group" data-validate="required">
                                 <label class="so-form-label so-required">Full Name</label>
@@ -303,7 +289,6 @@ el.addEventListener('animationend', function() {
                                 Submit Form
                             </button>
                         </form>
-                    </div>
                     <div class="so-code-block so-code-block-tabbed">
                         <div class="so-code-header">
                             <div class="so-code-tabs">
@@ -407,7 +392,6 @@ form.addEventListener('submit', function(e) {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
 
@@ -418,8 +402,6 @@ form.addEventListener('submit', function(e) {
                 <p class="so-card-subtitle">Add <code>so-show-success-icon</code> or <code>so-show-error-icon</code> to <code>so-input-wrapper</code> to show icons automatically based on validation state.</p>
             </div>
             <div class="so-card-body">
-                <div class="so-example-block">
-                    <div class="so-example-preview">
                         <div class="so-form-row">
                             <div class="so-form-group has-success">
                                 <label class="so-form-label">With Success Icon</label>
@@ -434,7 +416,6 @@ form.addEventListener('submit', function(e) {
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <div class="so-code-block">
                         <div class="so-code-header">
                             <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -456,7 +437,6 @@ form.addEventListener('submit', function(e) {
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
                     </div>
-                </div>
             </div>
         </div>
 

@@ -121,10 +121,11 @@ function is_page($pages) {
  */
 function so_code_block($code, $language = 'html') {
     $escaped = htmlspecialchars($code, ENT_QUOTES, 'UTF-8');
+    $label = strtoupper($language);
     return <<<HTML
 <div class="so-code-block">
     <div class="so-code-header">
-        <span class="so-code-label"><span class="material-icons">code</span> {$language}</span>
+        <span class="so-code-label"><span class="material-icons">code</span> {$label}</span>
         <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
     </div>
     <pre class="so-code-content"><code class="language-{$language}">{$escaped}</code></pre>

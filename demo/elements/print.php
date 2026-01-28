@@ -32,13 +32,10 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Click the button to open the browser's print dialog and see how this page renders for printing.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <button class="so-btn so-btn-primary" onclick="window.print()">
                     <span class="material-icons">print</span>
                     Print This Page
                 </button>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -49,7 +46,6 @@ require_once '../includes/navbar.php';
     Print This Page
 &lt;/button&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -61,7 +57,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Control which elements appear when printing.</p>
 
-        <div class="so-example-block so-mb-4">
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -78,7 +73,6 @@ require_once '../includes/navbar.php';
 &lt;div class="so-print-break-after"&gt;Force page break after&lt;/div&gt;
 &lt;div class="so-print-break-avoid"&gt;Avoid breaking within&lt;/div&gt;</code></pre>
             </div>
-        </div>
 
         <div class="so-row so-g-4">
             <div class="so-col-md-6">
@@ -123,8 +117,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Control where page breaks occur when printing.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-d-flex so-flex-column so-gap-4">
                     <div class="so-card so-card-bordered">
                         <div class="so-card-header">
@@ -158,7 +150,6 @@ require_once '../includes/navbar.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -179,7 +170,6 @@ require_once '../includes/navbar.php';
     &lt;table&gt;...&lt;/table&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -254,8 +244,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Sample content that demonstrates print optimization.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-print-break-avoid">
                     <h4>Company Report - Q4 2024</h4>
                     <p>This section demonstrates how content looks when printed. Shadows are removed, backgrounds are simplified, and colors are optimized for black and white printing.</p>
@@ -291,7 +279,6 @@ require_once '../includes/navbar.php';
                         </tbody>
                     </table>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -317,7 +304,6 @@ require_once '../includes/navbar.php';
     &lt;/table&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -329,8 +315,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">Links automatically show their URLs when printed for reference.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <p>Visit our website at <a href="https://example.com">Example.com</a> for more information.</p>
                 <p>Check out the <a href="https://github.com/example/project">GitHub repository</a> for source code.</p>
                 <p>Contact us at <a href="mailto:hello@example.com">hello@example.com</a> for support.</p>
@@ -339,7 +323,6 @@ require_once '../includes/navbar.php';
                     <span class="material-icons">info</span>
                     <div>When you print this page, the full URLs will appear after each link text.</div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -351,7 +334,6 @@ require_once '../includes/navbar.php';
 &lt;!-- CSS for showing URLs (in print styles): --&gt;
 &lt;!-- @media print { a[href]:after { content: " (" attr(href) ")"; } } --&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
@@ -443,8 +425,6 @@ require_once '../includes/navbar.php';
     <div class="so-card-body">
         <p class="so-text-muted so-mb-4">A sample document optimized for printing.</p>
 
-        <div class="so-example-block">
-            <div class="so-example-preview">
                 <div class="so-card so-card-bordered so-p-4">
                     <!-- Print-only header -->
                     <div class="so-print-only so-text-center so-mb-4">
@@ -532,7 +512,6 @@ require_once '../includes/navbar.php';
                         </button>
                     </div>
                 </div>
-            </div>
             <div class="so-code-block">
                 <div class="so-code-header">
                     <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -563,7 +542,6 @@ require_once '../includes/navbar.php';
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </div>
-        </div>
     </div>
 </div>
 
