@@ -445,7 +445,7 @@
                 <kbd>↑</kbd><kbd>↓</kbd> to navigate
                 <kbd>↵</kbd> to select
                 <kbd>ESC</kbd> to close
-                <span style="margin-left: auto;">Tip: Type <kbd>isv:</kbd> for item search with filters</span>
+                <span style="margin-left: 16px;">Tip: Type <kbd>isv:</kbd> for item search with filters</span>
             </div>
         </div>
     </div>

@@ -428,12 +428,110 @@ class GlobalSearchController {
    */
   async _fetchSearchResults(query) {
     if (this.searchUrl) {
-      const response = await fetch(`${this.searchUrl}?q=${encodeURIComponent(query)}&category=${this.activeCategory}`);
-      return await response.json();
+      try {
+        // Build URL properly - use window.location.href as base for relative paths
+        const url = new URL(this.searchUrl, window.location.href);
+        url.searchParams.append('query', query);
+        url.searchParams.append('category', this.activeCategory);
+
+        const response = await fetch(url.toString());
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        // Transform JSON structure to flat array for rendering
+        return this._transformSearchData(data);
+      } catch (error) {
+        console.error('Search fetch error:', error);
+        return []; // Return empty on error, no fallback
+      }
     }
 
-    // Fallback demo data
-    return this._getFallbackSearchData(query);
+    // No URL configured - return empty (AJAX only mode)
+    console.warn('Search URL not configured');
+    return [];
+  }
+
+  /**
+   * Transform JSON data structure to flat array for rendering
+   * Server is expected to return already-filtered results based on query parameter
+   * @param {Object} data - JSON data with menus, customers, vendors, ledgers arrays
+   * @returns {Array}
+   * @private
+   */
+  _transformSearchData(data) {
+    const results = [];
+
+    // Transform menus (no client-side filtering - server should filter)
+    if (data.menus) {
+      data.menus.forEach(item => {
+        results.push({
+          id: item.id,
+          type: 'menu',
+          name: item.title,
+          icon: item.icon,
+          iconColor: item.color,
+          path: item.path,
+          url: item.href,
+        });
+      });
+    }
+
+    // Transform customers
+    if (data.customers) {
+      data.customers.forEach(item => {
+        results.push({
+          id: item.id,
+          type: 'customer',
+          name: item.title,
+          icon: item.icon || 'person',
+          iconColor: item.color || 'blue',
+          category: 'Customer',
+          balance: item.walletBalance,
+          details: [
+            { label: 'Phone', value: item.mobile },
+            { label: 'City', value: item.city },
+          ],
+        });
+      });
+    }
+
+    // Transform vendors
+    if (data.vendors) {
+      data.vendors.forEach(item => {
+        results.push({
+          id: item.id,
+          type: 'vendor',
+          name: item.title,
+          icon: item.icon || 'storefront',
+          iconColor: item.color || 'green',
+          category: 'Vendor',
+          balance: item.walletBalance,
+          details: [
+            { label: 'Phone', value: item.mobile },
+            { label: 'City', value: item.city },
+          ],
+        });
+      });
+    }
+
+    // Transform ledgers
+    if (data.ledgers) {
+      data.ledgers.forEach(item => {
+        results.push({
+          id: item.id,
+          type: 'ledger',
+          name: item.title,
+          icon: item.icon || 'account_balance_wallet',
+          iconColor: item.color || 'orange',
+          category: item.group,
+          balance: item.walletBalance,
+        });
+      });
+    }
+
+    return results;
   }
 
   /**
@@ -444,17 +542,43 @@ class GlobalSearchController {
    */
   async _fetchISVResults(query) {
     if (this.isvSearchUrl) {
-      const params = new URLSearchParams({
-        q: query,
-        stock: this.activeFilters.stock,
-        status: this.activeFilters.status,
-      });
-      const response = await fetch(`${this.isvSearchUrl}?${params}`);
-      return await response.json();
+      try {
+        // Build URL properly - use window.location.href as base for relative paths
+        const url = new URL(this.isvSearchUrl, window.location.href);
+        url.searchParams.append('query', query);
+        url.searchParams.append('stock', this.activeFilters.stock);
+        url.searchParams.append('status', this.activeFilters.status);
+
+        const response = await fetch(url.toString());
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        // Transform and filter ISV data by query
+        return this._transformISVData(data);
+      } catch (error) {
+        console.error('ISV search fetch error:', error);
+        return []; // Return empty on error, no fallback
+      }
     }
 
-    // Fallback demo data
-    return this._getFallbackISVData(query);
+    // No URL configured - return empty (AJAX only mode)
+    console.warn('ISV search URL not configured');
+    return [];
+  }
+
+  /**
+   * Transform ISV JSON data and filter by query
+   * Filters items by name/SKU matching query (for static JSON files)
+   * @param {Object} data - JSON data with items array
+   * @param {string} query - Search query for filtering
+   * @returns {Array}
+   * @private
+   */
+  _transformISVData(data) {
+    // Return all items - server is expected to return filtered results
+    return data.items || [];
   }
 
   /**
@@ -465,16 +589,26 @@ class GlobalSearchController {
   _renderResults(results) {
     this._hideLoading();
 
+    // Hide quick links when showing results
+    if (this._quickLinks) this._quickLinks.style.display = 'none';
+
+    // Hide search prompt
+    this._hideEmpty();
+
     if (!results || results.length === 0) {
       this._showEmpty('search_off', 'No results found', `No matches for "${this.searchQuery}"`);
       return;
     }
 
-    this._hideEmpty();
-
     if (this.isISVSearch) {
+      // Show filter bar for ISV search
+      if (this._filterBar) this._filterBar.classList.add(cls('visible'));
+      if (this._categoryTabs) this._categoryTabs.classList.remove(cls('visible'));
       this._renderISVResults(results);
     } else {
+      // Show category tabs for normal search
+      if (this._categoryTabs) this._categoryTabs.classList.add(cls('visible'));
+      if (this._filterBar) this._filterBar.classList.remove(cls('visible'));
       this._renderNormalResults(results);
     }
   }
@@ -506,34 +640,35 @@ class GlobalSearchController {
     if (this._resultsContainer) {
       let html = '';
 
-      // Menus section
+      // Menus section (limit to 10 items like plugins project)
       const menus = this.activeCategory === 'all' ? grouped.menus : (this.activeCategory === 'menus' ? filteredResults : []);
       if (menus.length > 0) {
         html += `
-          <div class="so-search-overlay-section">
-            <div class="so-search-overlay-section-title">Menus</div>
-            <div class="so-search-overlay-results">
-              ${menus.map(item => this._renderMenuItem(item)).join('')}
+          <div class="${cls('search-overlay-section')}">
+            <div class="${cls('search-overlay-section-title')}">Menu & Actions</div>
+            <div class="${cls('search-overlay-results')}">
+              ${menus.slice(0, 10).map(item => this._renderMenuItem(item)).join('')}
             </div>
           </div>
         `;
       }
 
-      // Accounts sections
-      ['customers', 'vendors', 'ledgers'].forEach(type => {
-        const items = this.activeCategory === 'all' ? grouped[type] : (this.activeCategory === type ? filteredResults : []);
-        if (items.length > 0) {
-          const title = type.charAt(0).toUpperCase() + type.slice(1);
-          html += `
-            <div class="so-search-account-section">
-              <div class="so-search-account-section-title">${title}</div>
-              <div class="so-search-account-cards">
-                ${items.map(item => this._renderAccountCard(item)).join('')}
-              </div>
+      // Accounts section - combine all account types (limit to 12 items like plugins project)
+      const allAccounts = [
+        ...(this.activeCategory === 'all' || this.activeCategory === 'customers' ? grouped.customers : []),
+        ...(this.activeCategory === 'all' || this.activeCategory === 'vendors' ? grouped.vendors : []),
+        ...(this.activeCategory === 'all' || this.activeCategory === 'ledgers' ? grouped.ledgers : []),
+      ];
+      if (allAccounts.length > 0) {
+        html += `
+          <div class="${cls('search-overlay-section')}">
+            <div class="${cls('search-overlay-section-title')}">Accounts</div>
+            <div class="${cls('search-account-cards')}">
+              ${allAccounts.slice(0, 12).map(item => this._renderAccountCard(item)).join('')}
             </div>
-          `;
-        }
-      });
+          </div>
+        `;
+      }
 
       this._resultsContainer.innerHTML = html;
       this._resultsContainer.style.display = 'block';
@@ -546,6 +681,22 @@ class GlobalSearchController {
    * @private
    */
   _renderISVResults(results) {
+    // Show the results container for ISV results
+    if (this._resultsContainer) {
+      this._resultsContainer.style.display = 'block';
+
+      // Restore grid/list structure if destroyed by normal search
+      if (!this._resultsContainer.querySelector(this.options.resultsGridSelector)) {
+        this._resultsContainer.innerHTML = `
+          <div class="${cls('search-results-grid')}"></div>
+          <div class="${cls('search-results-list')}"></div>
+        `;
+        // Re-cache the elements
+        this._resultsGrid = this._resultsContainer.querySelector(this.options.resultsGridSelector);
+        this._resultsList = this._resultsContainer.querySelector(this.options.resultsListSelector);
+      }
+    }
+
     if (this.currentView === 'grid') {
       if (this._resultsGrid) {
         this._resultsGrid.innerHTML = results.map(item => this._renderItemCard(item)).join('');
@@ -571,10 +722,6 @@ class GlobalSearchController {
       if (this._resultsGrid) {
         this._resultsGrid.classList.remove(cls('visible'));
       }
-    }
-
-    if (this._resultsContainer) {
-      this._resultsContainer.style.display = 'none';
     }
   }
 
@@ -643,7 +790,7 @@ class GlobalSearchController {
    */
   _renderItemCard(item) {
     const stockClass = this._getStockClass(item.stock);
-    const statusClass = item.status === 'active' ? 'active' : 'liquidation';
+    const statusClass = item.status === 'active' ? cls('active') : 'liquidation';
 
     return `
       <div class="so-search-item-card" data-item-id="${item.id}" data-item-type="item">
@@ -814,6 +961,8 @@ class GlobalSearchController {
 
       this._empty.classList.add(cls('visible'));
     }
+    // Hide quick links when showing empty state (for "no results" scenario)
+    if (this._quickLinks) this._quickLinks.style.display = 'none';
     if (this._resultsContainer) this._resultsContainer.style.display = 'none';
     if (this._resultsGrid) this._resultsGrid.classList.remove(cls('visible'));
     if (this._resultsList) this._resultsList.classList.remove(cls('visible'));
@@ -828,18 +977,38 @@ class GlobalSearchController {
   }
 
   /**
-   * Show default state (quick links)
+   * Show default state (quick links + search prompt when empty)
    * @private
    */
   _showDefaultState() {
     this._hideLoading();
-    this._hideEmpty();
     if (this._quickLinks) this._quickLinks.style.display = 'block';
     if (this._resultsContainer) this._resultsContainer.style.display = 'none';
     if (this._resultsGrid) this._resultsGrid.classList.remove(cls('visible'));
     if (this._resultsList) this._resultsList.classList.remove(cls('visible'));
     if (this._categoryTabs) this._categoryTabs.classList.remove(cls('visible'));
     if (this._filterBar) this._filterBar.classList.remove(cls('visible'));
+
+    // Show search prompt below quick links
+    this._showSearchPrompt();
+  }
+
+  /**
+   * Show search prompt (without hiding other elements)
+   * @private
+   */
+  _showSearchPrompt() {
+    if (this._empty) {
+      const iconEl = this._empty.querySelector('.so-search-empty-icon');
+      const titleEl = this._empty.querySelector('.so-search-empty-title');
+      const textEl = this._empty.querySelector('.so-search-empty-text');
+
+      if (iconEl) iconEl.textContent = 'search';
+      if (titleEl) titleEl.textContent = 'Start typing to search';
+      if (textEl) textEl.textContent = 'Search for menus, customers, vendors, ledgers or type "isv:" for item search';
+
+      this._empty.classList.add(cls('visible'));
+    }
   }
 
   // ============================================
@@ -909,78 +1078,6 @@ class GlobalSearchController {
     if (stock <= 0) return 'out-of-stock';
     if (stock < 10) return 'low-stock';
     return 'in-stock';
-  }
-
-  // ============================================
-  // FALLBACK DATA (Demo Mode)
-  // ============================================
-
-  /**
-   * Get fallback search data for demo
-   * @param {string} query
-   * @returns {Array}
-   * @private
-   */
-  _getFallbackSearchData(query) {
-    const data = [
-      { id: 1, type: 'menu', name: 'Dashboard', icon: 'dashboard', iconColor: 'blue', path: 'Home / Dashboard', url: 'index.php' },
-      { id: 2, type: 'menu', name: 'Trial Balance', icon: 'account_balance', iconColor: 'green', path: 'Reports / Trial Balance', url: 'trial-balance.php' },
-      { id: 3, type: 'menu', name: 'Profit & Loss', icon: 'trending_up', iconColor: 'orange', path: 'Reports / Profit & Loss', url: 'profit-loss.php' },
-      { id: 4, type: 'menu', name: 'Balance Sheet', icon: 'receipt_long', iconColor: 'purple', path: 'Reports / Balance Sheet', url: 'balance-sheet.php' },
-      { id: 5, type: 'customer', name: 'Rajesh Kumar', icon: 'person', iconColor: 'blue', category: 'Customer', balance: 15000, details: [{ label: 'Phone', value: '+91 98765 43210' }, { label: 'Last Order', value: '2 days ago' }] },
-      { id: 6, type: 'customer', name: 'Priya Sharma', icon: 'person', iconColor: 'green', category: 'Customer', balance: -5000, details: [{ label: 'Phone', value: '+91 98765 12345' }, { label: 'Last Order', value: '1 week ago' }] },
-      { id: 7, type: 'vendor', name: 'ABC Suppliers', icon: 'store', iconColor: 'orange', category: 'Vendor', balance: -25000, details: [{ label: 'Phone', value: '+91 98700 00001' }, { label: 'Last Purchase', value: '3 days ago' }] },
-      { id: 8, type: 'ledger', name: 'Sales Account', icon: 'account_balance_wallet', iconColor: 'teal', category: 'Ledger', balance: 150000 },
-    ];
-
-    return data.filter(item =>
-      item.name.toLowerCase().includes(query.toLowerCase())
-    );
-  }
-
-  /**
-   * Get fallback ISV data for demo
-   * @param {string} query
-   * @returns {Array}
-   * @private
-   */
-  _getFallbackISVData(query) {
-    const data = [
-      { id: 1, sku: 'SKU001', name: 'iPhone 15 Pro Max 256GB', stock: 25, price: 159900, cost: 140000, vendorStock: 50, status: 'active' },
-      { id: 2, sku: 'SKU002', name: 'Samsung Galaxy S24 Ultra', stock: 8, price: 134999, cost: 115000, vendorStock: 30, status: 'active' },
-      { id: 3, sku: 'SKU003', name: 'OnePlus 12 5G 256GB', stock: 0, price: 64999, cost: 55000, vendorStock: 20, status: 'active' },
-      { id: 4, sku: 'SKU004', name: 'Google Pixel 8 Pro', stock: 3, price: 106999, cost: 90000, vendorStock: 15, status: 'liquidation' },
-      { id: 5, sku: 'SKU005', name: 'MacBook Pro 14" M3', stock: 12, price: 199900, cost: 175000, vendorStock: 25, status: 'active' },
-    ];
-
-    let filtered = data;
-
-    // Filter by query
-    if (query) {
-      filtered = filtered.filter(item =>
-        item.name.toLowerCase().includes(query.toLowerCase()) ||
-        item.sku.toLowerCase().includes(query.toLowerCase())
-      );
-    }
-
-    // Filter by stock
-    if (this.activeFilters.stock !== 'all') {
-      filtered = filtered.filter(item => {
-        switch (this.activeFilters.stock) {
-          case 'in-stock': return item.stock > 10;
-          case 'low-stock': return item.stock > 0 && item.stock <= 10;
-          case 'out-of-stock': return item.stock === 0;
-          default: return true;
-        }
-      });
-    }
-
-    // Filter by status
-    if (this.activeFilters.status !== 'all') {
-      filtered = filtered.filter(item => item.status === this.activeFilters.status);
-    }
-
-    return filtered;
   }
 
   // ============================================

@@ -392,6 +392,473 @@ require_once 'includes/navbar.php';
     </div>
 </div>
 
+<!-- Page Overlay Styles -->
+<style>
+/* Lock Screen Overlay */
+.so-lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: linear-gradient(135deg, #1a1c2e 0%, #0d0e17 100%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.so-lock-screen.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+.so-lock-screen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.so-lock-screen-time {
+    font-size: 72px;
+    font-weight: 200;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.so-lock-screen-date {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 48px;
+}
+.so-lock-screen-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 16px;
+}
+.so-lock-screen-avatar[data-color="teal"] {
+    background: linear-gradient(135deg, #00897b, #26a69a);
+}
+.so-lock-screen-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.so-lock-screen-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 32px;
+}
+.so-lock-screen-status .material-icons {
+    font-size: 18px;
+}
+.so-lock-screen-form {
+    margin-bottom: 16px;
+}
+.so-lock-screen-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.so-lock-screen-input {
+    width: 280px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+.so-lock-screen-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+.so-lock-screen-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.so-lock-screen-submit {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.so-lock-screen-submit:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.so-lock-screen-hint {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+.so-lock-screen-branding {
+    position: absolute;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+}
+.so-lock-screen-branding svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Keyboard Shortcuts Overlay */
+.so-shortcuts-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.so-shortcuts-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+.so-shortcuts-popup {
+    width: 100%;
+    max-width: 520px;
+    background: var(--so-card-bg, #fff);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+.so-shortcuts-overlay.active .so-shortcuts-popup {
+    transform: scale(1);
+}
+.so-shortcuts-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--so-border-color, #f0f0f0);
+}
+.so-shortcuts-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--so-text-heading, #1e293b);
+}
+.so-shortcuts-header h2 .material-icons {
+    font-size: 24px;
+    color: var(--so-accent-primary, #7367f0);
+}
+.so-shortcuts-close {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--so-text-secondary, #64748b);
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.so-shortcuts-close:hover {
+    background: var(--so-grey-100, #f1f5f9);
+}
+.so-shortcuts-content {
+    padding: 16px 24px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.so-shortcuts-section {
+    margin-bottom: 20px;
+}
+.so-shortcuts-section:last-child {
+    margin-bottom: 0;
+}
+.so-shortcuts-section h3 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--so-text-muted, #94a3b8);
+    margin: 0 0 8px 0;
+}
+.so-shortcut-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+.so-shortcut-desc {
+    font-size: 14px;
+    color: var(--so-text-primary, #334155);
+}
+.so-shortcut-keys {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.so-shortcut-keys kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 28px;
+    padding: 0 10px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--so-text-secondary, #64748b);
+    background: var(--so-grey-100, #f1f5f9);
+    border: 1px solid var(--so-border-color, #e2e8f0);
+    border-radius: 6px;
+}
+.so-shortcuts-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    font-size: 14px;
+    color: var(--so-text-secondary, #64748b);
+    background: var(--so-grey-50, #f8fafc);
+    border-top: 1px solid var(--so-border-color, #f0f0f0);
+}
+.so-shortcuts-footer .material-icons {
+    font-size: 18px;
+    color: var(--so-accent-primary, #7367f0);
+}
+.so-shortcuts-footer kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 8px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--so-text-secondary, #64748b);
+    background: #fff;
+    border: 1px solid var(--so-border-color, #e2e8f0);
+    border-radius: 4px;
+}
+
+/* Logout Confirmation Overlay */
+.so-confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9997;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.so-confirm-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+.so-confirm-popup {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px;
+    background: var(--so-card-bg, #fff);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
+.so-confirm-overlay.active .so-confirm-popup {
+    transform: scale(1);
+}
+.so-confirm-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(234, 84, 85, 0.1);
+    border-radius: 50%;
+}
+.so-confirm-icon .material-icons {
+    font-size: 32px;
+    color: #ea5455;
+}
+.so-confirm-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--so-text-heading, #1e293b);
+    margin: 0 0 8px 0;
+}
+.so-confirm-message {
+    font-size: 14px;
+    color: var(--so-text-secondary, #64748b);
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+}
+.so-confirm-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .so-shortcuts-popup,
+[data-theme="dark"] .so-confirm-popup {
+    background: var(--so-card-bg, #1e293b);
+}
+[data-theme="dark"] .so-shortcuts-close:hover {
+    background: var(--so-grey-800, #334155);
+}
+[data-theme="dark"] .so-shortcut-keys kbd,
+[data-theme="dark"] .so-shortcuts-footer kbd {
+    background: var(--so-grey-800, #334155);
+    border-color: var(--so-grey-700, #475569);
+}
+[data-theme="dark"] .so-shortcuts-footer {
+    background: var(--so-grey-900, #0f172a);
+    border-color: var(--so-grey-800, #334155);
+}
+
+/* Mobile Bottom Bar */
+.so-mobile-bottom-bar {
+    display: none;
+}
+@media (max-width: 768px) {
+    .so-mobile-bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 8px 16px 12px;
+        background: var(--so-card-bg, #fff);
+        border-top: 1px solid var(--so-border-color, #e2e8f0);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+.so-mobile-bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    color: var(--so-text-secondary, #64748b);
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.so-mobile-bottom-item:hover {
+    color: var(--so-accent-primary, #7367f0);
+}
+.so-mobile-bottom-item .material-icons {
+    font-size: 24px;
+}
+.so-mobile-bottom-item-label {
+    font-size: 11px;
+    font-weight: 500;
+}
+.so-mobile-outlet-dropdown {
+    position: relative;
+}
+.so-mobile-outlet-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+    width: 220px;
+    background: var(--so-card-bg, #fff);
+    border-radius: 12px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    display: none;
+    overflow: hidden;
+}
+.so-mobile-outlet-dropdown.open .so-mobile-outlet-menu {
+    display: block;
+}
+.so-mobile-outlet-header {
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--so-text-muted, #94a3b8);
+    border-bottom: 1px solid var(--so-border-color, #e2e8f0);
+}
+.so-mobile-outlet-list {
+    padding: 8px 0;
+}
+.so-mobile-outlet-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--so-text-primary, #334155);
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.so-mobile-outlet-item:hover {
+    background: var(--so-grey-50, #f8fafc);
+}
+.so-mobile-outlet-item .check-icon {
+    display: none;
+    font-size: 18px;
+    color: var(--so-accent-primary, #7367f0);
+}
+.so-mobile-outlet-item.so-selected .check-icon {
+    display: inline-flex;
+}
+</style>
+
 <!-- Lock Screen Overlay -->
 <div class="so-lock-screen" id="lockScreen">
     <div class="so-lock-screen-container">

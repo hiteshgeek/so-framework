@@ -1097,6 +1097,83 @@
     margin-left: -1px;
   }
 
+  // Border separators for toggle buttons (matching regular button groups)
+  // Default/outline toggle buttons - use border color
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-outline,
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn:not([class*="btn-outline-"]):not([class*="btn-primary"]):not([class*="btn-secondary"]):not([class*="btn-success"]):not([class*="btn-danger"]):not([class*="btn-warning"]):not([class*="btn-info"]):not([class*="btn-light"]):not([class*="btn-dark"]):not([class*="btn-ghost"]) {
+    border-left: 1px solid css-var('border-color');
+  }
+
+  // Primary toggle buttons
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-primary {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Secondary toggle buttons
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-secondary {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Success toggle buttons
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-success {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Danger toggle buttons
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-danger {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Warning toggle buttons - darker separator for visibility
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-warning {
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  // Info toggle buttons
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-info {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  // Light toggle buttons - dark separator
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-light {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  // Dark toggle buttons
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-dark {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  // Outline toggle button variants
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-outline-primary {
+    border-left: 1px solid css-var('accent-primary');
+  }
+
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-outline-success {
+    border-left: 1px solid css-var('accent-success');
+  }
+
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-outline-danger {
+    border-left: 1px solid css-var('accent-danger');
+  }
+
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-outline-warning {
+    border-left: 1px solid css-var('accent-warning');
+  }
+
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-outline-info {
+    border-left: 1px solid css-var('accent-info');
+  }
+
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-outline-secondary {
+    border-left: 1px solid $so-secondary;
+  }
+
+  // Ghost toggle buttons - subtle border
+  .#{$so-prefix}btn-check:not(:first-of-type) + .#{$so-prefix}btn-ghost {
+    border-left: 1px solid css-var('border-color');
+  }
+
   // Separator lines for checked toggle buttons
   // Default outline toggle separator - match the active background
   .#{$so-prefix}btn-check:checked + .#{$so-prefix}btn-outline {

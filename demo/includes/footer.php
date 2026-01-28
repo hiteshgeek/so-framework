@@ -12,10 +12,11 @@
     <?php if ($globalJs): ?>
     <script src="<?= htmlspecialchars($globalJs) ?>"></script>
     <script>
-    // Configure search with API URLs
+    // Configure search with JSON data files
     document.addEventListener('DOMContentLoaded', function() {
         if (window.globalSearchController) {
             window.globalSearchController.configure({
+                // Relative paths - resolved from current page location
                 searchUrl: 'data/search-results.json',
                 isvSearchUrl: 'data/isv-search-results.json',
                 onSearch: function(query, results) {
