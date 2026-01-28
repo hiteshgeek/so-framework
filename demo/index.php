@@ -6,6 +6,12 @@
 $pageTitle = 'Dashboard';
 $currentPage = 'dashboard';
 
+// DataTable CSS
+$additionalCss = [
+    '../general_plugins/datatable/libs/tabulator.min.css',
+    '../general_plugins/datatable/datatable.css'
+];
+
 require_once 'includes/config.php';
 require_once 'includes/header.php';
 require_once 'includes/sidebar.php';
@@ -51,8 +57,8 @@ require_once 'includes/navbar.php';
                     Latha Mohan
                 </h1>
                 <div class="so-page-actions">
-                    <div class="so-dropdown dropdown-right">
-                        <button class="so-btn so-btn-light so-dropdown-trigger">
+                    <div class="so-dropdown so-dropdown-no-scroll dropdown-right">
+                        <button class="so-btn so-btn-default so-btn-sm so-dropdown-trigger">
                             <span class="material-icons">bolt</span>
                             Actions
                             <span class="material-icons so-dropdown-arrow">expand_more</span>
