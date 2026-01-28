@@ -141,15 +141,15 @@ class SOForms {
     });
 
     // Initialize autosize textareas (including size variants)
-    document.querySelectorAll('.so-textarea-autosize, .so-textarea-autosize-sm, .so-textarea-autosize-lg').forEach(textarea => {
+    document.querySelectorAll('.so-form-control-autosize, .so-form-control-autosize-sm, .so-form-control-autosize-lg').forEach(textarea => {
       // Determine default min/max based on size variant
       let defaultMinHeight = 80;
       let defaultMaxHeight = 400;
 
-      if (textarea.classList.contains('so-textarea-autosize-sm')) {
+      if (textarea.classList.contains('so-form-control-autosize-sm')) {
         defaultMinHeight = 60;
         defaultMaxHeight = 200;
-      } else if (textarea.classList.contains('so-textarea-autosize-lg')) {
+      } else if (textarea.classList.contains('so-form-control-autosize-lg')) {
         defaultMinHeight = 120;
         defaultMaxHeight = 600;
       }

@@ -12,42 +12,57 @@
 
 .#{$so-prefix}form-control {
   @include input-base;
+}
 
-  // Textarea-specific styles when applied to textarea element
-  &[rows],
-  textarea#{&} {
-    height: auto;
-    min-height: 100px;
-    padding-top: spacing('3');
-    padding-bottom: spacing('3');
-    resize: vertical;
-    line-height: line-height('relaxed');
-  }
+// Textarea-specific styles
+textarea.#{$so-prefix}form-control,
+.#{$so-prefix}form-control[rows] {
+  height: auto;
+  min-height: 100px;
+  padding: spacing('2') spacing('3'); // Same as inputs: 8px 16px
+  resize: vertical;
+  line-height: line-height('relaxed');
 }
 
 // Form Control Sizes
 .#{$so-prefix}form-control-sm {
   @include input-size($so-form-height-sm, spacing('2') + 2px, $so-form-font-size-sm);
-
-  &[rows],
-  textarea#{&} {
-    height: auto;
-    min-height: 80px;
-    padding-top: spacing('2');
-    padding-bottom: spacing('2');
-  }
 }
 
 .#{$so-prefix}form-control-lg {
   @include input-size($so-form-height-lg, spacing('4'), $so-form-font-size-lg);
+}
 
-  &[rows],
-  textarea#{&} {
-    height: auto;
-    min-height: 120px;
-    padding-top: spacing('4');
-    padding-bottom: spacing('4');
-  }
+// Textarea size variants
+textarea.#{$so-prefix}form-control-sm,
+.#{$so-prefix}form-control-sm[rows] {
+  height: auto;
+  min-height: 80px;
+  padding: spacing('1') + 2px spacing('2') + 2px; // Match sm input padding
+}
+
+textarea.#{$so-prefix}form-control-lg,
+.#{$so-prefix}form-control-lg[rows] {
+  height: auto;
+  min-height: 120px;
+  padding: spacing('3') spacing('4'); // Match lg input padding
+}
+
+// Textarea resize modifiers
+.#{$so-prefix}resize-none {
+  resize: none !important;
+}
+
+.#{$so-prefix}resize-vertical {
+  resize: vertical !important;
+}
+
+.#{$so-prefix}resize-horizontal {
+  resize: horizontal !important;
+}
+
+.#{$so-prefix}resize-both {
+  resize: both !important;
 }
 
 // ============================================
@@ -142,6 +157,7 @@
   position: relative;
   display: block;
 
+  // Base icon styling (left positioned by default)
   .#{$so-prefix}input-icon {
     position: absolute;
     left: 12px;
@@ -149,6 +165,9 @@
     transform: translateY(-50%);
     color: css-var('text-secondary');
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .material-icons {
       font-size: 20px;
@@ -162,7 +181,7 @@
     }
   }
 
-  // Icon on right side
+  // Icon on right side only (single icon)
   &.icon-right {
     .#{$so-prefix}form-control {
       padding-right: 40px;
@@ -171,6 +190,59 @@
     .#{$so-prefix}input-icon {
       left: auto;
       right: 12px;
+    }
+  }
+
+  // ============================================
+  // INPUT ACTION (Right-side clickable icon/button)
+  // Use for password toggles, clear buttons, etc.
+  // Works alongside left icon for dual-icon inputs
+  // ============================================
+
+  .#{$so-prefix}input-action {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: spacing('1');
+    background: transparent;
+    border: none;
+    border-radius: radius('md');
+    color: css-var('text-muted');
+    cursor: pointer;
+    pointer-events: auto;
+    transition: color $so-transition-base, background $so-transition-base;
+
+    &:hover {
+      color: css-var('text-primary');
+      background: css-var('card-hover-bg');
+    }
+
+    &:focus {
+      outline: none;
+      color: css-var('accent-primary');
+    }
+
+    .material-icons {
+      font-size: 20px;
+    }
+  }
+
+  // When has input-action, add right padding
+  &:has(.#{$so-prefix}input-action) {
+    .#{$so-prefix}form-control {
+      padding-right: 44px;
+    }
+  }
+
+  // Both left icon and right action (dual icons)
+  &:has(.#{$so-prefix}input-icon):has(.#{$so-prefix}input-action) {
+    .#{$so-prefix}form-control {
+      padding-left: 40px;
+      padding-right: 44px;
     }
   }
 
@@ -216,16 +288,20 @@
   resize: none;
   min-height: 80px;
   max-height: 400px;
+}
 
-  &.#{$so-prefix}form-control-sm {
-    min-height: 60px;
-    max-height: 200px;
-  }
+.#{$so-prefix}form-control-autosize-sm {
+  overflow: hidden;
+  resize: none;
+  min-height: 60px;
+  max-height: 200px;
+}
 
-  &.#{$so-prefix}form-control-lg {
-    min-height: 120px;
-    max-height: 600px;
-  }
+.#{$so-prefix}form-control-autosize-lg {
+  overflow: hidden;
+  resize: none;
+  min-height: 120px;
+  max-height: 600px;
 }
 
 // ============================================

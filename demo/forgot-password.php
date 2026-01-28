@@ -72,16 +72,16 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                             <!-- Email/Mobile Input -->
                             <div class="so-form-group" id="recoveryIdGroup">
                                 <label class="so-form-label" for="recoveryId">Email Address</label>
-                                <div class="so-auth-input-wrapper">
+                                <div class="so-input-wrapper so-auth-input-wrapper">
+                                    <span class="so-input-icon" id="recoveryIdIcon">
+                                        <span class="material-icons">email</span>
+                                    </span>
                                     <input type="email"
                                         id="recoveryId"
                                         class="so-form-control"
                                         placeholder="Enter your email address"
                                         autocomplete="email"
                                         required>
-                                    <span class="so-form-control-icon-left" id="recoveryIdIcon">
-                                        <span class="material-icons">email</span>
-                                    </span>
                                 </div>
                                 <span class="so-form-error" id="recoveryIdError">
                                     <span class="material-icons">error</span>
@@ -90,13 +90,13 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="so-btn so-btn-primary so-btn-lg" style="width: 100%;" id="sendOtpBtn">
+                            <button type="submit" class="so-btn so-btn-primary so-btn-lg so-btn-block" id="sendOtpBtn">
                                 <span class="material-icons">send</span>
                                 Send Verification Code
                             </button>
                         </form>
 
-                        <div style="text-align: center;">
+                        <div class="so-text-center">
                             <a href="login.php" class="so-auth-back">
                                 <span class="material-icons">arrow_back</span>
                                 Back to Login
@@ -132,13 +132,13 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="so-btn so-btn-primary so-btn-lg" style="width: 100%;" id="verifyOtpBtn">
+                            <button type="submit" class="so-btn so-btn-primary so-btn-lg so-btn-block" id="verifyOtpBtn">
                                 <span class="material-icons">verified</span>
                                 Verify Code
                             </button>
                         </form>
 
-                        <div style="text-align: center;">
+                        <div class="so-text-center">
                             <a href="#" class="so-auth-back" data-go-step="1">
                                 <span class="material-icons">arrow_back</span>
                                 Change Email/Mobile
@@ -157,17 +157,17 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                             <!-- New Password Input -->
                             <div class="so-form-group" id="newPasswordGroup">
                                 <label class="so-form-label" for="newPassword">New Password</label>
-                                <div class="so-auth-input-wrapper has-toggle">
+                                <div class="so-input-wrapper so-auth-input-wrapper">
+                                    <span class="so-input-icon">
+                                        <span class="material-icons">lock</span>
+                                    </span>
                                     <input type="password"
                                         id="newPassword"
                                         class="so-form-control"
                                         placeholder="Enter your new password"
                                         autocomplete="new-password"
                                         required>
-                                    <span class="so-form-control-icon-left">
-                                        <span class="material-icons">lock</span>
-                                    </span>
-                                    <button type="button" class="so-password-toggle" aria-label="Toggle password visibility">
+                                    <button type="button" class="so-input-action so-password-toggle" aria-label="Toggle password visibility">
                                         <span class="material-icons">visibility</span>
                                     </button>
                                 </div>
@@ -196,17 +196,17 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                             <!-- Confirm Password Input -->
                             <div class="so-form-group" id="confirmPasswordGroup">
                                 <label class="so-form-label" for="confirmPassword">Confirm Password</label>
-                                <div class="so-auth-input-wrapper has-toggle">
+                                <div class="so-input-wrapper so-auth-input-wrapper">
+                                    <span class="so-input-icon">
+                                        <span class="material-icons">lock_outline</span>
+                                    </span>
                                     <input type="password"
                                         id="confirmPassword"
                                         class="so-form-control"
                                         placeholder="Confirm your new password"
                                         autocomplete="new-password"
                                         required>
-                                    <span class="so-form-control-icon-left">
-                                        <span class="material-icons">lock_outline</span>
-                                    </span>
-                                    <button type="button" class="so-password-toggle" aria-label="Toggle password visibility">
+                                    <button type="button" class="so-input-action so-password-toggle" aria-label="Toggle password visibility">
                                         <span class="material-icons">visibility</span>
                                     </button>
                                 </div>
@@ -217,7 +217,7 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="so-btn so-btn-primary so-btn-lg" style="width: 100%;" id="resetPasswordBtn">
+                            <button type="submit" class="so-btn so-btn-primary so-btn-lg so-btn-block" id="resetPasswordBtn">
                                 <span class="material-icons">vpn_key</span>
                                 Reset Password
                             </button>
@@ -236,7 +236,7 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                                 You can now sign in with your new password.
                             </p>
 
-                            <a href="login.php" class="so-btn so-btn-primary so-btn-lg" style="width: 100%;">
+                            <a href="login.php" class="so-btn so-btn-primary so-btn-lg so-btn-block">
                                 <span class="material-icons">login</span>
                                 Back to Login
                             </a>
@@ -245,8 +245,8 @@ $pageTitle = 'Reset Password - ' . DEMO_COMPANY_NAME;
                 </div>
 
                 <!-- SixOrbit Branding Footer -->
-                <div class="so-auth-footer" style="border-top: none; margin-top: 32px;">
-                    <a href="https://sixorbit.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: var(--so-text-muted); font-size: 12px;">
+                <div class="so-auth-footer so-mt-5" style="border-top: none;">
+                    <a href="https://sixorbit.com" target="_blank" rel="noopener" class="so-d-inline-flex so-align-items-center so-gap-1 so-text-decoration-none so-fs-xs" style="color: var(--so-text-muted);">
                         <svg width="18" height="18" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <ellipse cx="24" cy="24" rx="22" ry="10" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-20 24 24)" opacity="0.6" />
                             <path d="M24 6L38.7 15V33L24 42L9.3 33V15L24 6Z" stroke="currentColor" stroke-width="2.5" fill="none" />

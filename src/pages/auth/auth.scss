@@ -404,64 +404,19 @@
 }
 
 // ============================================
-// INPUT WITH ICON WRAPPER
+// INPUT WITH ICON - AUTH OVERRIDES
+// Extends framework's so-input-wrapper for auth pages
 // ============================================
 
+// Auth-specific input wrapper styling
+// Extends framework's so-input-wrapper for auth pages
 .#{$so-prefix}auth-input-wrapper {
-  position: relative;
-
-  .#{$so-prefix}form-control {
-    padding-left: 44px;
-  }
-
-  .#{$so-prefix}form-control-icon-left {
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: css-var("text-muted");
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-
-    .material-icons {
-      font-size: 20px;
+  &.#{$so-prefix}input-wrapper {
+    // Override left icon color on focus/has-value
+    &:focus-within .#{$so-prefix}input-icon,
+    &:has(.#{$so-prefix}form-control:not(:placeholder-shown)) .#{$so-prefix}input-icon {
+      color: css-var("accent-primary");
     }
-  }
-
-  .#{$so-prefix}form-control:focus + .#{$so-prefix}form-control-icon-left,
-  .#{$so-prefix}form-control:not(:placeholder-shown)
-    + .#{$so-prefix}form-control-icon-left {
-    color: css-var("accent-primary");
-  }
-
-  &.has-toggle .#{$so-prefix}form-control {
-    padding-right: 44px;
-  }
-}
-
-// Password Toggle Button
-.#{$so-prefix}password-toggle {
-  position: absolute;
-  right: spacing("2");
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  padding: spacing("2");
-  cursor: pointer;
-  color: css-var("text-muted");
-  display: flex;
-  align-items: center;
-  border-radius: radius("md");
-  transition: color $so-transition-base;
-
-  &:hover {
-    color: css-var("text-primary");
-  }
-
-  .material-icons {
-    font-size: 20px;
   }
 }
 

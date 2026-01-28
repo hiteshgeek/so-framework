@@ -144,6 +144,45 @@ require_once '../includes/navbar.php';
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Dual Icons Section -->
+                        <h5 class="so-mt-5 so-mb-3">Dual Icons (Left Icon + Right Action)</h5>
+                        <p class="so-text-secondary so-mb-4">Use <code>so-input-icon</code> for left icon and <code>so-input-action</code> for clickable right actions like password toggles.</p>
+                        <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                            <div class="so-form-group">
+                                <label class="so-form-label" for="input-password-demo">Password with Toggle</label>
+                                <div class="so-input-wrapper">
+                                    <span class="so-input-icon"><span class="material-icons">lock</span></span>
+                                    <input type="password" id="input-password-demo" class="so-form-control" placeholder="Enter password">
+                                    <button type="button" class="so-input-action" onclick="togglePasswordVisibility(this)" aria-label="Toggle password">
+                                        <span class="material-icons">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="so-form-group">
+                                <label class="so-form-label" for="input-search-clear">Search with Clear</label>
+                                <div class="so-input-wrapper">
+                                    <span class="so-input-icon"><span class="material-icons">search</span></span>
+                                    <input type="text" id="input-search-clear" class="so-form-control" placeholder="Search..." value="Example query">
+                                    <button type="button" class="so-input-action" onclick="this.previousElementSibling.value=''; this.previousElementSibling.focus();" aria-label="Clear search">
+                                        <span class="material-icons">close</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="so-form-group">
+                                <label class="so-form-label" for="input-url-copy">URL with Copy</label>
+                                <div class="so-input-wrapper">
+                                    <span class="so-input-icon"><span class="material-icons">link</span></span>
+                                    <input type="text" id="input-url-copy" class="so-form-control" value="https://sixorbit.com" readonly>
+                                    <button type="button" class="so-input-action" onclick="navigator.clipboard.writeText(this.previousElementSibling.value)" aria-label="Copy URL">
+                                        <span class="material-icons">content_copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="so-code-block so-mt-4">
                             <div class="so-code-header">
                                 <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
@@ -152,24 +191,31 @@ require_once '../includes/navbar.php';
                                 </button>
                             </div>
                             <pre class="so-code-content"><code class="language-html">&lt;!-- Left Icon --&gt;
-&lt;label class="so-form-label" for="search"&gt;Search&lt;/label&gt;
 &lt;div class="so-input-wrapper"&gt;
     &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;search&lt;/span&gt;&lt;/span&gt;
-    &lt;input type="text" id="search" class="so-form-control" placeholder="Search..."&gt;
+    &lt;input type="text" class="so-form-control" placeholder="Search..."&gt;
 &lt;/div&gt;
 
-&lt;!-- Right Icon --&gt;
-&lt;label class="so-form-label" for="email"&gt;Email&lt;/label&gt;
+&lt;!-- Right Icon (static) --&gt;
 &lt;div class="so-input-wrapper icon-right"&gt;
-    &lt;input type="text" id="email" class="so-form-control" placeholder="Email"&gt;
+    &lt;input type="text" class="so-form-control" placeholder="Email"&gt;
     &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;email&lt;/span&gt;&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;!-- Clearable Input --&gt;
-&lt;label class="so-form-label" for="clearable"&gt;Clearable&lt;/label&gt;
-&lt;div class="so-input-wrapper icon-right"&gt;
-    &lt;input type="text" id="clearable" class="so-form-control" placeholder="Type..." value="Clear me"&gt;
-    &lt;button type="button" class="so-input-clear" aria-label="Clear input"&gt;
+&lt;!-- Dual Icons: Left Icon + Right Action (password toggle) --&gt;
+&lt;div class="so-input-wrapper"&gt;
+    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;lock&lt;/span&gt;&lt;/span&gt;
+    &lt;input type="password" class="so-form-control" placeholder="Enter password"&gt;
+    &lt;button type="button" class="so-input-action" aria-label="Toggle password"&gt;
+        &lt;span class="material-icons"&gt;visibility&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Dual Icons: Search with Clear --&gt;
+&lt;div class="so-input-wrapper"&gt;
+    &lt;span class="so-input-icon"&gt;&lt;span class="material-icons"&gt;search&lt;/span&gt;&lt;/span&gt;
+    &lt;input type="text" class="so-form-control" placeholder="Search..."&gt;
+    &lt;button type="button" class="so-input-action" aria-label="Clear"&gt;
         &lt;span class="material-icons"&gt;close&lt;/span&gt;
     &lt;/button&gt;
 &lt;/div&gt;</code></pre>
@@ -546,6 +592,31 @@ SOForms.clearError('email');</code></pre>
                                 <textarea id="textarea-lg" class="so-form-control so-form-control-autosize-lg" placeholder="Large autosize (120-600px)"></textarea>
                             </div>
                         </div>
+
+                        <!-- Resize Modifiers -->
+                        <h4 class="so-mt-6 so-mb-3">Resize Modifiers</h4>
+                        <p class="so-text-muted so-mb-4">Control textarea resize behavior with utility classes.</p>
+                        <div class="so-grid so-grid-cols-4 so-grid-cols-md-2 so-grid-cols-sm-1">
+                            <div class="so-form-group">
+                                <label class="so-form-label" for="textarea-resize-vertical">Vertical Only (Default)</label>
+                                <textarea id="textarea-resize-vertical" class="so-form-control so-resize-vertical" rows="3" placeholder="so-resize-vertical"></textarea>
+                            </div>
+
+                            <div class="so-form-group">
+                                <label class="so-form-label" for="textarea-resize-none">No Resize</label>
+                                <textarea id="textarea-resize-none" class="so-form-control so-resize-none" rows="3" placeholder="so-resize-none"></textarea>
+                            </div>
+
+                            <div class="so-form-group">
+                                <label class="so-form-label" for="textarea-resize-horizontal">Horizontal Only</label>
+                                <textarea id="textarea-resize-horizontal" class="so-form-control so-resize-horizontal" rows="3" placeholder="so-resize-horizontal"></textarea>
+                            </div>
+
+                            <div class="so-form-group">
+                                <label class="so-form-label" for="textarea-resize-both">Both Directions</label>
+                                <textarea id="textarea-resize-both" class="so-form-control so-resize-both" rows="3" placeholder="so-resize-both"></textarea>
+                            </div>
+                        </div>
                         <div class="so-code-block so-code-block-tabbed so-mt-4">
                             <div class="so-code-header">
                                 <div class="so-code-tabs">
@@ -574,11 +645,14 @@ SOForms.clearError('email');</code></pre>
     data-max-height="300"&gt;&lt;/textarea&gt;
 
 &lt;!-- Size Variants --&gt;
-&lt;label class="so-form-label" for="small-textarea"&gt;Small&lt;/label&gt;
-&lt;textarea id="small-textarea" class="so-form-control so-form-control-autosize-sm"&gt;&lt;/textarea&gt;
+&lt;textarea class="so-form-control so-form-control-autosize-sm" placeholder="Small"&gt;&lt;/textarea&gt;
+&lt;textarea class="so-form-control so-form-control-autosize-lg" placeholder="Large"&gt;&lt;/textarea&gt;
 
-&lt;label class="so-form-label" for="large-textarea"&gt;Large&lt;/label&gt;
-&lt;textarea id="large-textarea" class="so-form-control so-form-control-autosize-lg"&gt;&lt;/textarea&gt;</code></pre>
+&lt;!-- Resize Modifiers --&gt;
+&lt;textarea class="so-form-control so-resize-vertical" rows="3"&gt;&lt;/textarea&gt; &lt;!-- Default --&gt;
+&lt;textarea class="so-form-control so-resize-none" rows="3"&gt;&lt;/textarea&gt;
+&lt;textarea class="so-form-control so-resize-horizontal" rows="3"&gt;&lt;/textarea&gt;
+&lt;textarea class="so-form-control so-resize-both" rows="3"&gt;&lt;/textarea&gt;</code></pre>
                                 </div>
                                 <div class="so-code-pane" id="textarea-js">
                                     <pre class="so-code-content"><code class="language-javascript">// Get or create autosize instance
@@ -1925,6 +1999,22 @@ select.getOption('us');  // Returns option object</code></pre>
                     </div>
                 </div>
     </div>
+
+    <!-- Helper Scripts -->
+    <script>
+        // Password visibility toggle for demo
+        function togglePasswordVisibility(btn) {
+            const input = btn.previousElementSibling;
+            const icon = btn.querySelector('.material-icons');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        }
+    </script>
 </main>
 
 <?php

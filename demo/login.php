@@ -156,16 +156,14 @@ require_once 'includes/config.php';
                 <!-- Email/Mobile Input -->
                 <div class="so-form-group" id="loginIdGroup">
                     <label class="so-form-label" for="loginId">Email Address</label>
-                    <div class="so-auth-input-wrapper">
+                    <div class="so-input-wrapper so-auth-input-wrapper">
+                        <span class="so-input-icon" id="loginIdIcon"><span class="material-icons">email</span></span>
                         <input type="email"
                                id="loginId"
                                class="so-form-control"
                                placeholder="Enter your email address"
                                autocomplete="email"
                                required>
-                        <span class="so-form-control-icon-left" id="loginIdIcon">
-                            <span class="material-icons">email</span>
-                        </span>
                     </div>
                     <span class="so-form-error" id="loginIdError">
                         <span class="material-icons">error</span>
@@ -176,17 +174,15 @@ require_once 'includes/config.php';
                 <!-- Password Input -->
                 <div class="so-form-group" id="passwordGroup">
                     <label class="so-form-label" for="password">Password</label>
-                    <div class="so-auth-input-wrapper has-toggle">
+                    <div class="so-input-wrapper so-auth-input-wrapper">
+                        <span class="so-input-icon"><span class="material-icons">lock</span></span>
                         <input type="password"
                                id="password"
                                class="so-form-control"
                                placeholder="Enter your password"
                                autocomplete="current-password"
                                required>
-                        <span class="so-form-control-icon-left">
-                            <span class="material-icons">lock</span>
-                        </span>
-                        <button type="button" class="so-password-toggle" id="togglePassword">
+                        <button type="button" class="so-input-action so-password-toggle" id="togglePassword">
                             <span class="material-icons">visibility</span>
                         </button>
                     </div>
