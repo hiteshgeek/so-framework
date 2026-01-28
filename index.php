@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SixOrbit UI Framework - Root Index
  * Entry point linking to demo pages and documentation
@@ -7,6 +8,7 @@ $version = '1.0.0';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +16,12 @@ $version = '1.0.0';
 
     <!-- Theme detection -->
     <script>
-    (function() {
-        var theme = localStorage.getItem('so-theme-preference') || 'light';
-        var effectiveTheme = theme === 'sidebar-dark' ? 'light' : (theme === 'system' ?
-            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme);
-        document.documentElement.setAttribute('data-theme', effectiveTheme);
-    })();
+        (function() {
+            var theme = localStorage.getItem('so-theme-preference') || 'light';
+            var effectiveTheme = theme === 'sidebar-dark' ? 'light' : (theme === 'system' ?
+                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme);
+            document.documentElement.setAttribute('data-theme', effectiveTheme);
+        })();
     </script>
 
     <!-- Fonts -->
@@ -28,24 +30,11 @@ $version = '1.0.0';
 
     <!-- SixOrbit UI CSS -->
     <link rel="stylesheet" href="dist/css/<?php
-        $manifest = json_decode(file_get_contents('dist/manifest.json'), true);
-        echo basename($manifest['css']['sixorbit-full'] ?? 'sixorbit-full.css');
-    ?>">
+                                            $manifest = json_decode(file_get_contents('dist/manifest.json'), true);
+                                            echo basename($manifest['css']['sixorbit-full'] ?? 'sixorbit-full.css');
+                                            ?>">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Google Sans', 'Roboto', -apple-system, sans-serif;
-            background: var(--so-page-bg, #f5f5f5);
-            color: var(--so-text-primary, #202124);
-            min-height: 100vh;
-        }
-
         .hero {
             background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
             color: white;
@@ -168,7 +157,7 @@ $version = '1.0.0';
 
         .feature-card {
             background: var(--so-card-bg, white);
-            border: 1px solid var(--so-card-border, rgba(0,0,0,0.05));
+            border: 1px solid var(--so-card-border, rgba(0, 0, 0, 0.05));
             border-radius: 12px;
             padding: 28px;
             text-align: center;
@@ -191,10 +180,25 @@ $version = '1.0.0';
             font-size: 28px;
         }
 
-        .feature-icon.blue { background: rgba(26, 115, 232, 0.1); color: #1a73e8; }
-        .feature-icon.green { background: rgba(52, 168, 83, 0.1); color: #34a853; }
-        .feature-icon.purple { background: rgba(115, 103, 240, 0.1); color: #7367f0; }
-        .feature-icon.orange { background: rgba(249, 171, 0, 0.1); color: #f9ab00; }
+        .feature-icon.blue {
+            background: rgba(26, 115, 232, 0.1);
+            color: #1a73e8;
+        }
+
+        .feature-icon.green {
+            background: rgba(52, 168, 83, 0.1);
+            color: #34a853;
+        }
+
+        .feature-icon.purple {
+            background: rgba(115, 103, 240, 0.1);
+            color: #7367f0;
+        }
+
+        .feature-icon.orange {
+            background: rgba(249, 171, 0, 0.1);
+            color: #f9ab00;
+        }
 
         .feature-title {
             font-size: 18px;
@@ -213,7 +217,7 @@ $version = '1.0.0';
             background: var(--so-card-bg, white);
             border-radius: 16px;
             padding: 40px;
-            border: 1px solid var(--so-card-border, rgba(0,0,0,0.05));
+            border: 1px solid var(--so-card-border, rgba(0, 0, 0, 0.05));
         }
 
         .demo-grid {
@@ -362,22 +366,34 @@ $version = '1.0.0';
             overflow-x: auto;
         }
 
-        .quick-start-code .comment { color: #6a9955; }
-        .quick-start-code .tag { color: #569cd6; }
-        .quick-start-code .attr { color: #9cdcfe; }
-        .quick-start-code .string { color: #ce9178; }
+        .quick-start-code .comment {
+            color: #6a9955;
+        }
+
+        .quick-start-code .tag {
+            color: #569cd6;
+        }
+
+        .quick-start-code .attr {
+            color: #9cdcfe;
+        }
+
+        .quick-start-code .string {
+            color: #ce9178;
+        }
     </style>
 </head>
+
 <body>
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-logo">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="24" cy="24" rx="22" ry="10" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-20 24 24)" opacity="0.6"/>
-                <path d="M24 6L38.7 15V33L24 42L9.3 33V15L24 6Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                <circle cx="24" cy="24" r="4" fill="currentColor"/>
-                <circle cx="42" cy="18" r="2.5" fill="currentColor"/>
-                <circle cx="6" cy="30" r="2.5" fill="currentColor"/>
+                <ellipse cx="24" cy="24" rx="22" ry="10" stroke="currentColor" stroke-width="2" fill="none" transform="rotate(-20 24 24)" opacity="0.6" />
+                <path d="M24 6L38.7 15V33L24 42L9.3 33V15L24 6Z" stroke="currentColor" stroke-width="2.5" fill="none" />
+                <circle cx="24" cy="24" r="4" fill="currentColor" />
+                <circle cx="42" cy="18" r="2.5" fill="currentColor" />
+                <circle cx="6" cy="30" r="2.5" fill="currentColor" />
             </svg>
             <span class="hero-logo-text">Six<span>Orbit</span> UI</span>
         </div>
@@ -577,10 +593,14 @@ $manifest = json_decode(file_get_contents('dist/manifest.json'), true);
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
     </script>
 </body>
+
 </html>

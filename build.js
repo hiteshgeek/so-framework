@@ -39,7 +39,7 @@ const jsModules = [
 // Each page is a folder in src/pages/ containing optional .scss and .js files
 // These are NOT part of the framework - they are app/demo specific files
 const pageModules = [
-  { name: "search", hasCSS: false, hasJS: true },
+  { name: "global", hasCSS: true, hasJS: true },
   // { name: "dashboard", hasCSS: true, hasJS: true },
 ];
 

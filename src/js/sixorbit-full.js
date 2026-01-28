@@ -27,7 +27,6 @@ import SOPagination from './components/so-pagination.js';
 
 // Features
 import SOForms from './features/so-forms.js';
-import SOSearchOverlay from './features/so-search.js';
 import { SOFeatureCarousel, SOAuth } from './features/so-auth.js';
 
 // Auto-initialize all components when DOM is ready
@@ -52,12 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize forms
   SOForms.initAll();
-
-  // Initialize search overlay if present
-  const searchOverlay = document.querySelector('.so-search-overlay');
-  if (searchOverlay) {
-    new SOSearchOverlay(document.body);
-  }
 
   // Initialize OTP inputs if present
   document.querySelectorAll('.so-otp-group').forEach(el => {
@@ -116,7 +109,6 @@ export {
   SOTable,
   SOPagination,
   SOForms,
-  SOSearchOverlay,
   SOFeatureCarousel,
   SOAuth,
 };

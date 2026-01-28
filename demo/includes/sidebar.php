@@ -7,24 +7,43 @@
 $sidebarMenu = load_data('sidebar-menu.json');
 $currentPage = get_current_page();
 
+// Get relative prefix for URL adjustment (pages in subdirs need to go up)
+$scriptDir = dirname($_SERVER['SCRIPT_NAME']);
+$demoBase = '/so-framework/demo';
+$urlDepth = substr_count(str_replace($demoBase, '', $scriptDir), '/');
+$urlPrefix = $urlDepth > 0 ? str_repeat('../', $urlDepth) : '';
+
+/**
+ * Check if any child item is active (recursively)
+ */
+function check_children_active($children, $currentPage) {
+    foreach ($children as $child) {
+        $childUrl = $child['url'] ?? '';
+        if ($childUrl === $currentPage . '.php' || preg_match('/\/' . preg_quote($currentPage, '/') . '\.php$/', $childUrl)) {
+            return true;
+        }
+        if (!empty($child['children']) && check_children_active($child['children'], $currentPage)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 /**
  * Render sidebar menu items recursively
  */
 function render_menu_items($items, $currentPage, $depth = 0) {
+    global $urlPrefix;
     $html = '';
     foreach ($items as $item) {
         $hasChildren = !empty($item['children']);
-        $isActive = ($item['url'] ?? '') === $currentPage . '.php';
+        $itemUrl = $item['url'] ?? '';
+        $isActive = $itemUrl === $currentPage . '.php' || preg_match('/\/' . preg_quote($currentPage, '/') . '\.php$/', $itemUrl);
         $isCurrent = $isActive;
 
-        // Check if any child is active
+        // Check if any child is active (recursively)
         if ($hasChildren) {
-            foreach ($item['children'] as $child) {
-                if (($child['url'] ?? '') === $currentPage . '.php') {
-                    $isActive = true;
-                    break;
-                }
-            }
+            $isActive = check_children_active($item['children'], $currentPage) || $isActive;
         }
 
         $itemClass = 'so-sidebar-item';
@@ -35,6 +54,10 @@ function render_menu_items($items, $currentPage, $depth = 0) {
         $html .= '<li class="' . $itemClass . '">';
 
         $url = $hasChildren ? '#' : ($item['url'] ?? '#');
+        // Prepend relative prefix for non-hash URLs
+        if ($url !== '#' && strpos($url, '#') !== 0 && strpos($url, 'http') !== 0) {
+            $url = $urlPrefix . $url;
+        }
         $html .= '<a href="' . htmlspecialchars($url) . '" class="so-sidebar-link">';
         $html .= '<span class="so-sidebar-icon"><span class="material-icons">' . ($item['icon'] ?? 'circle') . '</span></span>';
         $html .= '<span class="so-sidebar-text">' . htmlspecialchars($item['title'] ?? '') . '</span>';

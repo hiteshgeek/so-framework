@@ -7,70 +7,293 @@
       "url": "index.php"
     },
     {
-      "id": "grid-system",
-      "title": "Grid System",
-      "icon": "grid_view",
-      "url": "grid.php"
-    },
-    {
-      "id": "form-elements",
-      "title": "Form Elements",
-      "icon": "input",
-      "url": "form-elements.php"
-    },
-    {
-      "id": "reports",
-      "title": "Reports",
-      "icon": "assessment",
+      "id": "sixorbit-element",
+      "title": "SixOrbit Element",
+      "icon": "widgets",
       "children": [
         {
-          "id": "profit-loss",
-          "title": "Profit & Loss",
-          "url": "profit-loss.php"
+          "id": "grid-system",
+          "title": "Grid System",
+          "icon": "grid_view",
+          "children": [
+            { "id": "breakpoints", "title": "Breakpoints", "url": "grid/breakpoints.php" },
+            { "id": "containers", "title": "Containers", "url": "grid/containers.php" },
+            { "id": "grid", "title": "Grid", "url": "grid/grid.php" },
+            { "id": "columns", "title": "Columns", "url": "grid/columns.php" },
+            { "id": "gutters", "title": "Gutters", "url": "grid/gutters.php" },
+            { "id": "grid-utilities", "title": "Utilities", "url": "grid/utilities.php" },
+            { "id": "css-grid", "title": "CSS Grid", "url": "grid/css-grid.php" },
+            { "id": "layouts", "title": "Layouts", "url": "grid/layouts.php" },
+            { "id": "z-index", "title": "Z-Index", "url": "grid/z-index.php" }
+          ]
         },
         {
-          "id": "balance-sheet",
-          "title": "Balance Sheet",
-          "url": "balance-sheet.php"
-        },
-        {
-          "id": "cash-flow",
-          "title": "Cash Flow",
-          "url": "cash-flow.php"
-        },
-        {
-          "id": "trial-balance",
-          "title": "Trial Balance",
-          "url": "trial-balance.php"
+          "id": "form-elements",
+          "title": "Form Elements",
+          "icon": "input",
+          "children": [
+            { "id": "buttons", "title": "Buttons", "url": "elements/buttons.php" },
+            { "id": "button-groups", "title": "Button Groups", "url": "elements/button-groups.php" },
+            { "id": "inputs", "title": "Inputs", "url": "elements/inputs.php" },
+            { "id": "input-groups", "title": "Input Groups", "url": "elements/input-groups.php" },
+            { "id": "checkboxes", "title": "Checkboxes & Radios", "url": "elements/checkboxes.php" },
+            { "id": "dropdowns", "title": "Dropdowns", "url": "elements/dropdowns.php" },
+            { "id": "tabs", "title": "Tabs", "url": "elements/tabs.php" },
+            { "id": "modals", "title": "Modals", "url": "elements/modals.php" },
+            { "id": "alerts-toasts", "title": "Alerts & Toasts", "url": "elements/alerts-toasts.php" },
+            { "id": "cards", "title": "Cards", "url": "elements/cards.php" },
+            { "id": "tables", "title": "Tables", "url": "elements/tables.php" },
+            { "id": "pagination", "title": "Pagination", "url": "elements/pagination.php" },
+            { "id": "badges", "title": "Badges", "url": "elements/badges.php" },
+            { "id": "tags-avatars", "title": "Tags & Avatars", "url": "elements/tags-avatars.php" },
+            { "id": "tooltips", "title": "Tooltips", "url": "elements/tooltips.php" },
+            { "id": "progress", "title": "Progress", "url": "elements/progress.php" },
+            { "id": "sliders", "title": "Sliders", "url": "elements/sliders.php" },
+            { "id": "accordion", "title": "Accordion", "url": "elements/accordion.php" },
+            { "id": "collapse", "title": "Collapse", "url": "elements/collapse.php" },
+            { "id": "list-group", "title": "List Group", "url": "elements/list-group.php" },
+            { "id": "breadcrumb", "title": "Breadcrumb", "url": "elements/breadcrumb.php" },
+            { "id": "navbar", "title": "Navbar", "url": "elements/navbar.php" },
+            { "id": "scrollspy", "title": "Scrollspy", "url": "elements/scrollspy.php" },
+            { "id": "carousel", "title": "Carousel", "url": "elements/carousel.php" },
+            { "id": "context-menu", "title": "Context Menu", "url": "elements/context-menu.php" },
+            { "id": "colors", "title": "Colors", "url": "elements/colors.php" },
+            { "id": "utilities", "title": "Utilities", "url": "elements/utilities.php" }
+          ]
         }
       ]
     },
     {
-      "id": "wallet",
-      "title": "Customer Wallet",
-      "icon": "account_balance_wallet",
-      "url": "wallet.php"
-    },
-    {
-      "id": "video-tutorial",
-      "title": "Video Tutorials",
-      "icon": "play_circle",
-      "url": "video-tutorial.php"
-    },
-    {
-      "id": "auth-pages",
-      "title": "Auth Pages",
-      "icon": "lock",
+      "id": "office",
+      "title": "Office",
+      "icon": "business",
       "children": [
         {
-          "id": "login",
-          "title": "Login",
-          "url": "login.php"
+          "id": "purchase-indent",
+          "title": "Purchase Indent",
+          "icon": "assignment",
+          "children": [
+            { "id": "create-pi", "title": "Create Purchase Indent", "url": "#create-pi" },
+            { "id": "pi-list", "title": "Purchase Indent List", "url": "#pi-list" }
+          ]
         },
         {
-          "id": "forgot-password",
-          "title": "Forgot Password",
-          "url": "forgot-password.php"
+          "id": "purchase-order",
+          "title": "Purchase Order",
+          "icon": "shopping_cart",
+          "children": [
+            { "id": "create-po", "title": "Create Purchase Order", "url": "#create-po" },
+            { "id": "po-list", "title": "Purchase Order List", "url": "#po-list" }
+          ]
+        },
+        {
+          "id": "vendor",
+          "title": "Vendor",
+          "icon": "storefront",
+          "children": [
+            { "id": "create-vendor", "title": "Create Vendor", "url": "#create-vendor" },
+            { "id": "vendor-list", "title": "Vendor List", "url": "#vendor-list" }
+          ]
+        },
+        {
+          "id": "stock-requests",
+          "title": "Stock Requests",
+          "icon": "inventory_2",
+          "children": [
+            { "id": "create-sr", "title": "Create Stock Request", "url": "#create-sr" },
+            { "id": "sr-list", "title": "Stock Request List", "url": "#sr-list" }
+          ]
+        },
+        {
+          "id": "stock-transfer",
+          "title": "Stock Transfer",
+          "icon": "swap_horiz",
+          "children": [
+            { "id": "create-st", "title": "Create Stock Transfer", "url": "#create-st" },
+            { "id": "st-list", "title": "Stock Transfer List", "url": "#st-list" }
+          ]
+        },
+        {
+          "id": "office-reports",
+          "title": "Reports",
+          "icon": "analytics",
+          "children": [
+            { "id": "pi-report", "title": "Purchase Indent Report", "url": "#pi-report" },
+            { "id": "po-report", "title": "Purchase Order Report", "url": "#po-report" },
+            {
+              "id": "stock-reports",
+              "title": "Stock Reports",
+              "children": [
+                { "id": "current-stock", "title": "Current Stock", "url": "#current-stock" },
+                { "id": "stock-movement", "title": "Stock Movement", "url": "#stock-movement" },
+                {
+                  "id": "stock-analysis",
+                  "title": "Stock Analysis",
+                  "children": [
+                    { "id": "daily-analysis", "title": "Daily Analysis", "url": "#daily-analysis" },
+                    { "id": "weekly-trend", "title": "Weekly Trend", "url": "#weekly-trend" },
+                    { "id": "monthly-trend", "title": "Monthly Trend", "url": "#monthly-trend" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Finance",
+      "icon": "account_balance",
+      "children": [
+        {
+          "id": "account",
+          "title": "Account",
+          "icon": "account_tree",
+          "children": [
+            { "id": "groups", "title": "Groups", "url": "#groups" },
+            { "id": "ledgers", "title": "Ledgers", "url": "#ledgers" },
+            { "id": "vouchers", "title": "Vouchers", "url": "#vouchers" }
+          ]
+        },
+        {
+          "id": "sales-invoice",
+          "title": "Sales Invoice",
+          "icon": "receipt_long",
+          "children": [
+            { "id": "create-si", "title": "Create Sales Invoice", "url": "#create-si" },
+            { "id": "si-list", "title": "Sales Invoice List", "url": "#si-list" }
+          ]
+        },
+        {
+          "id": "purchase-invoice",
+          "title": "Purchase Invoice",
+          "icon": "request_quote",
+          "children": [
+            { "id": "create-pinv", "title": "Create Purchase Invoice", "url": "#create-pinv" },
+            { "id": "pinv-list", "title": "Purchase Invoice List", "url": "#pinv-list" }
+          ]
+        },
+        {
+          "id": "receipt",
+          "title": "Receipt",
+          "icon": "call_received",
+          "children": [
+            { "id": "create-receipt", "title": "Create Receipt", "url": "#create-receipt" },
+            { "id": "receipt-list", "title": "Receipt List", "url": "#receipt-list" }
+          ]
+        },
+        {
+          "id": "payment",
+          "title": "Payment",
+          "icon": "payments",
+          "children": [
+            { "id": "create-payment", "title": "Create Payment", "url": "#create-payment" },
+            { "id": "payment-list", "title": "Payment List", "url": "#payment-list" }
+          ]
+        },
+        {
+          "id": "credit-note",
+          "title": "Credit Note",
+          "icon": "note_add",
+          "children": [
+            { "id": "create-cn", "title": "Create Credit Note", "url": "#create-cn" },
+            { "id": "cn-list", "title": "Credit Note List", "url": "#cn-list" }
+          ]
+        },
+        {
+          "id": "debit-note",
+          "title": "Debit Note",
+          "icon": "sticky_note_2",
+          "children": [
+            { "id": "create-dn", "title": "Create Debit Note", "url": "#create-dn" },
+            { "id": "dn-list", "title": "Debit Note List", "url": "#dn-list" }
+          ]
+        },
+        {
+          "id": "statutory",
+          "title": "Statutory Info",
+          "icon": "gavel",
+          "children": [
+            { "id": "gst-settings", "title": "GST Settings", "url": "#gst-settings" },
+            { "id": "tds-settings", "title": "TDS Settings", "url": "#tds-settings" }
+          ]
+        },
+        {
+          "id": "asset",
+          "title": "Asset",
+          "icon": "apartment",
+          "children": [
+            { "id": "create-asset", "title": "Create Asset", "url": "#create-asset" },
+            { "id": "asset-list", "title": "Asset List", "url": "#asset-list" }
+          ]
+        },
+        {
+          "id": "finance-reports",
+          "title": "Reports",
+          "icon": "assessment",
+          "children": [
+            { "id": "cash-flow-summary", "title": "Cash Flow Summary", "url": "cash-flow-summary.php" },
+            { "id": "trial-balance", "title": "Trial Balance", "url": "trial-balance.php" },
+            { "id": "profit-loss", "title": "Profit & Loss", "url": "profit-loss.php" },
+            { "id": "monthwise-profit-loss", "title": "Monthwise P&L", "url": "monthwise-profit-loss.php" },
+            { "id": "balance-sheet", "title": "Balance Sheet", "url": "balance-sheet.php" },
+            { "id": "group-summary", "title": "Group Summary", "url": "group-summary.php" },
+            { "id": "other-reports", "title": "Other Reports", "url": "other-reports.php" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sales",
+      "title": "Sales",
+      "icon": "point_of_sale",
+      "children": [
+        {
+          "id": "leads",
+          "title": "Leads",
+          "icon": "leaderboard",
+          "children": [
+            { "id": "create-lead", "title": "Create Lead", "url": "#create-lead" },
+            { "id": "lead-list", "title": "Lead List", "url": "#lead-list" }
+          ]
+        },
+        {
+          "id": "quotation",
+          "title": "Quotation",
+          "icon": "description",
+          "children": [
+            { "id": "create-quote", "title": "Create Quotation", "url": "#create-quote" },
+            { "id": "quote-list", "title": "Quotation List", "url": "#quote-list" }
+          ]
+        },
+        {
+          "id": "sales-order",
+          "title": "Sales Order",
+          "icon": "shopping_bag",
+          "children": [
+            { "id": "create-so", "title": "Create Sales Order", "url": "#create-so" },
+            { "id": "so-list", "title": "Sales Order List", "url": "#so-list" }
+          ]
+        },
+        {
+          "id": "customer",
+          "title": "Customer",
+          "icon": "people",
+          "children": [
+            { "id": "create-customer", "title": "Create Customer", "url": "#create-customer" },
+            { "id": "customer-list", "title": "Customer List", "url": "#customer-list" },
+            { "id": "wallet", "title": "Customer Wallet", "url": "wallet.php" }
+          ]
+        },
+        {
+          "id": "sales-reports",
+          "title": "Reports",
+          "icon": "bar_chart",
+          "children": [
+            { "id": "sales-report", "title": "Sales Report", "url": "#sales-report" },
+            { "id": "lead-report", "title": "Lead Report", "url": "#lead-report" }
+          ]
         }
       ]
     }

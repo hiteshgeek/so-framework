@@ -6,8 +6,15 @@
 // Framework info
 define('SO_VERSION', '1.0.0');
 define('SO_PREFIX', 'so');
-define('SO_DIST_PATH', '../dist');
-define('SO_DATA_PATH', './data');
+
+// Calculate base path based on current script location
+$scriptDir = dirname($_SERVER['SCRIPT_NAME']);
+$demoBase = '/so-framework/demo';
+$depth = substr_count(str_replace($demoBase, '', $scriptDir), '/');
+$relativePrefix = $depth > 0 ? str_repeat('../', $depth) : '';
+
+define('SO_DIST_PATH', $relativePrefix . '../dist');
+define('SO_DATA_PATH', $relativePrefix . 'data');
 
 // Demo company info
 define('DEMO_COMPANY_NAME', 'Trove Innovation');

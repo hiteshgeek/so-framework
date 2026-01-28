@@ -86,6 +86,12 @@ $includeSearch = $includeSearch ?? true;
     <!-- SixOrbit UI CSS -->
     <link rel="stylesheet" href="<?= so_asset('css', 'sixorbit-full') ?>">
 
+    <!-- Global Page CSS (Navbar & Search) -->
+    <?php $globalCss = so_page_asset('global', 'css'); ?>
+    <?php if ($globalCss): ?>
+    <link rel="stylesheet" href="<?= htmlspecialchars($globalCss) ?>">
+    <?php endif; ?>
+
     <?php if (!empty($additionalCss)): ?>
     <?php foreach ($additionalCss as $css): ?>
     <link rel="stylesheet" href="<?= htmlspecialchars($css) ?>">
