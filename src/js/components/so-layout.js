@@ -78,7 +78,7 @@ class SONavbar extends SOComponent {
     if (userBtn && userDropdown) {
       this.on('click', (e) => {
         e.stopPropagation();
-        this._toggleDropdown(userDropdown, 'user');
+        this._toggleDropdown(userDropdown, 'user', 'so-active');
       }, userBtn);
     }
 
@@ -88,7 +88,7 @@ class SONavbar extends SOComponent {
     if (appsContainer && appsBtn) {
       this.on('click', (e) => {
         e.stopPropagation();
-        this._toggleDropdown(appsContainer, 'apps', 'open');
+        this._toggleDropdown(appsContainer, 'apps', 'so-open');
       }, appsBtn);
     }
 
@@ -264,7 +264,7 @@ class SONavbar extends SOComponent {
    * @param {string} activeClass - Class to toggle (default: 'active')
    * @private
    */
-  _toggleDropdown(dropdown, type, activeClass = 'active') {
+  _toggleDropdown(dropdown, type, activeClass = 'so-active') {
     const isActive = dropdown.classList.contains(activeClass);
 
     // Close all first (including SODropdowns)

@@ -201,6 +201,130 @@ switch (action) {
         </div>
     </div>
 
+    <!-- Centered Confirmation Dialogs -->
+    <div class="so-card so-mb-4">
+        <div class="so-card-header">
+            <h3 class="so-card-title">Centered Confirmation Dialogs</h3>
+        </div>
+        <div class="so-card-body">
+            <p class="so-text-secondary so-mb-4">Enhanced confirmation dialogs with centered icon, title, and customizable button options.</p>
+
+            <h5 class="so-mb-3">Icon Types</h5>
+            <div class="so-btn-group so-flex-wrap so-mb-4">
+                <button type="button" class="so-btn so-btn-danger" onclick="showCenteredConfirm('danger')">
+                    Danger (Delete)
+                </button>
+                <button type="button" class="so-btn so-btn-warning" onclick="showCenteredConfirm('warning')">
+                    Warning
+                </button>
+                <button type="button" class="so-btn so-btn-success" onclick="showCenteredConfirm('success')">
+                    Success
+                </button>
+                <button type="button" class="so-btn so-btn-info" onclick="showCenteredConfirm('info')">
+                    Info
+                </button>
+            </div>
+
+            <h5 class="so-mb-3">Button Icon Positions</h5>
+            <div class="so-btn-group so-flex-wrap so-mb-4">
+                <button type="button" class="so-btn so-btn-outline" onclick="showIconLeftConfirm()">
+                    Icon Left
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showIconRightConfirm()">
+                    Icon Right
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showBothIconsConfirm()">
+                    Both Buttons with Icons
+                </button>
+            </div>
+
+            <h5 class="so-mb-3">Button Layouts</h5>
+            <div class="so-btn-group so-flex-wrap so-mb-4">
+                <button type="button" class="so-btn so-btn-outline" onclick="showButtonPosition('center')">
+                    Center
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showButtonPosition('left')">
+                    Left
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showButtonPosition('right')">
+                    Right
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showButtonPosition('between')">
+                    Space Between
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showStackedButtons()">
+                    Stacked (Vertical)
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showReversedButtons()">
+                    Reversed Order
+                </button>
+            </div>
+
+            <h5 class="so-mb-3">With Close Button</h5>
+            <div class="so-btn-group so-flex-wrap">
+                <button type="button" class="so-btn so-btn-primary" onclick="showWithCloseButton()">
+                    Show Close Button (X)
+                </button>
+            </div>
+
+            <div id="centered-confirm-result" class="so-mt-3"></div>
+
+            <div class="so-mt-4">
+                <?= so_code_block('// Flexible button API - icon + text in any order
+await SOModal.confirm({
+    title: \'Delete Item\',
+    message: \'This cannot be undone.\',
+    icon: { name: \'delete\', type: \'danger\' },  // Object format
+    confirm: [{ icon: \'delete\' }, \'Delete\'],   // Icon then text
+    cancel: \'Cancel\',
+    danger: true
+});
+
+// Icon after text
+await SOModal.confirm({
+    title: \'Continue?\',
+    message: \'Proceed to the next step?\',
+    icon: { name: \'arrow_forward\', type: \'info\' },
+    confirm: [\'Continue\', { icon: \'arrow_forward\' }],  // Text then icon
+    cancel: \'Cancel\'
+});
+
+// Multiple icons on button
+await SOModal.confirm({
+    title: \'Upload & Save\',
+    message: \'Ready to upload?\',
+    icon: \'cloud_upload\',
+    confirm: [{ icon: \'cloud_upload\' }, \'Upload\', { icon: \'check\' }],
+    cancel: [{ icon: \'close\' }, \'Cancel\']
+});
+
+// With custom class override
+await SOModal.confirm({
+    title: \'Save Changes?\',
+    message: \'Do you want to save?\',
+    icon: { name: \'save\', type: \'success\' },
+    confirm: {
+        content: [{ icon: \'save\' }, \'Save\'],
+        class: \'so-btn-success\'
+    },
+    cancel: \'Discard\',
+    buttonPosition: \'between\'
+});
+
+// Stacked buttons with full width
+await SOModal.confirm({
+    title: \'Confirm Action\',
+    message: \'Are you sure?\',
+    icon: \'help_outline\',
+    confirm: [{ icon: \'check\' }, \'Confirm\'],
+    cancel: [{ icon: \'close\' }, \'Cancel\'],
+    buttonLayout: \'stacked\',
+    fullWidthButtons: true
+});', 'javascript') ?>
+            </div>
+        </div>
+    </div>
+
     <!-- Alert Modals -->
     <div class="so-card so-mb-4">
         <div class="so-card-header">
@@ -318,25 +442,78 @@ modal.show();'
             <h3 class="so-card-title">Programmatic Modal</h3>
         </div>
         <div class="so-card-body">
-            <p class="so-text-secondary so-mb-4">Create modals dynamically using <code>SOModal.create()</code>.</p>
+            <p class="so-text-secondary so-mb-4">Create modals dynamically using <code>SOModal.create()</code>. Supports flexible footer button configuration.</p>
 
-            <button type="button" class="so-btn so-btn-primary" onclick="showProgrammaticModal()">
-                Create Modal Programmatically
-            </button>
+            <div class="so-btn-group so-flex-wrap so-mb-4">
+                <button type="button" class="so-btn so-btn-primary" onclick="showProgrammaticModal()">
+                    Legacy Footer (HTML)
+                </button>
+                <button type="button" class="so-btn so-btn-secondary" onclick="showFlexibleFooterModal()">
+                    Flexible Footer (Array)
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showSectionsFooterModal()">
+                    Footer Sections (Left/Center/Right)
+                </button>
+            </div>
 
             <div class="so-mt-4">
-                <?= so_code_block('const modal = SOModal.create({
+                <?= so_code_block('// Legacy footer (HTML string)
+const modal = SOModal.create({
     title: \'Dynamic Modal\',
     content: \'<p>This modal was created with JavaScript.</p>\',
-    size: \'default\', // sm, default, lg, xl, fullscreen
-    closable: true,
     footer: `
         <button class="so-btn so-btn-outline" data-dismiss="modal">Close</button>
-        <button class="so-btn so-btn-primary">Save</button>
+        <button class="so-btn so-btn-primary" data-dismiss="modal">Save</button>
     `
 });
 
-modal.show();', 'javascript') ?>
+// Flexible footer (Array of buttons)
+const modal = SOModal.create({
+    title: \'Flexible Footer\',
+    content: \'<p>Footer buttons using flexible array format.</p>\',
+    footer: [
+        \'Cancel\',                                    // Simple text
+        [{ icon: \'close\' }, \'Discard\'],            // Array with icon
+        { content: [{ icon: \'save\' }, \'Save\'], class: \'so-btn-primary\' }
+    ],
+    footerPosition: \'right\'  // left, center, right, between, around
+});
+
+// With onclick handlers
+SOModal.create({
+    title: \'With Handlers\',
+    content: \'<p>Buttons with click handlers.</p>\',
+    footer: [
+        { content: \'Cancel\', dismiss: true },
+        {
+            content: [{ icon: \'check\' }, \'Confirm\'],
+            class: \'so-btn-success\',
+            dismiss: false,  // Don\'t auto-close
+            onclick: (e, btn) => {
+                console.log(\'Confirmed!\');
+                SOModal.getInstance(btn.closest(\'.so-modal\'))?.hide();
+            }
+        }
+    ]
+});
+
+// Footer sections - position buttons independently
+SOModal.create({
+    title: \'Footer Sections\',
+    content: \'<p>Buttons can be positioned in left, center, or right sections.</p>\',
+    footer: {
+        left: [
+            { content: [{ icon: \'help\' }, \'Help\'], class: \'so-btn-link\' }
+        ],
+        center: [
+            { content: \'Preview\', class: \'so-btn-outline\' }
+        ],
+        right: [
+            \'Cancel\',
+            { content: [{ icon: \'save\' }, \'Save\'], class: \'so-btn-primary\' }
+        ]
+    }
+});', 'javascript') ?>
             </div>
         </div>
     </div>
@@ -804,6 +981,139 @@ async function showFileActionDialog() {
     document.getElementById('confirm-result').innerHTML = messages[action] || messages['dismiss'];
 }
 
+// Centered Confirmation Dialog Functions
+async function showCenteredConfirm(type) {
+    const configs = {
+        danger: {
+            title: 'Delete Item',
+            message: 'This will permanently delete the item. This action cannot be undone.',
+            icon: { name: 'delete', type: 'danger' },
+            confirm: [{ icon: 'delete' }, 'Delete'],
+            cancel: 'Cancel',
+            danger: true
+        },
+        warning: {
+            title: 'Warning',
+            message: 'This action may have unintended consequences. Do you want to proceed?',
+            icon: { name: 'warning', type: 'warning' },
+            confirm: [{ icon: 'warning' }, 'Proceed'],
+            cancel: 'Cancel'
+        },
+        success: {
+            title: 'Save Changes?',
+            message: 'Do you want to save your changes before leaving?',
+            icon: { name: 'save', type: 'success' },
+            confirm: [{ icon: 'save' }, 'Save'],
+            cancel: 'Cancel'
+        },
+        info: {
+            title: 'Information',
+            message: 'You are about to start a new process. Continue?',
+            icon: { name: 'info', type: 'info' },
+            confirm: ['Continue', { icon: 'arrow_forward' }],
+            cancel: 'Cancel'
+        }
+    };
+
+    const config = configs[type] || configs.info;
+    const result = await SOModal.confirm(config);
+
+    const resultEl = document.getElementById('centered-confirm-result');
+    resultEl.innerHTML = result
+        ? `<div class="so-alert so-alert-${type === 'danger' ? 'danger' : 'success'} so-alert-sm"><span class="material-icons">check_circle</span> User confirmed</div>`
+        : `<div class="so-alert so-alert-secondary so-alert-sm"><span class="material-icons">cancel</span> User cancelled</div>`;
+}
+
+async function showIconLeftConfirm() {
+    const result = await SOModal.confirm({
+        title: 'Delete Item',
+        message: 'Icon is positioned on the left of the button text.',
+        icon: { name: 'delete', type: 'danger' },
+        confirm: [{ icon: 'delete' }, 'Delete'],
+        cancel: 'Cancel',
+        danger: true
+    });
+    updateCenteredResult(result);
+}
+
+async function showIconRightConfirm() {
+    const result = await SOModal.confirm({
+        title: 'Continue?',
+        message: 'Icon is positioned on the right of the button text.',
+        icon: { name: 'arrow_forward', type: 'info' },
+        confirm: ['Continue', { icon: 'arrow_forward' }],
+        cancel: 'Cancel'
+    });
+    updateCenteredResult(result);
+}
+
+async function showBothIconsConfirm() {
+    const result = await SOModal.confirm({
+        title: 'Save Changes?',
+        message: 'Both buttons have icons.',
+        icon: { name: 'save', type: 'success' },
+        confirm: [{ icon: 'check' }, 'Save'],
+        cancel: [{ icon: 'close' }, 'Discard']
+    });
+    updateCenteredResult(result);
+}
+
+async function showButtonPosition(position) {
+    const result = await SOModal.confirm({
+        title: 'Button Position: ' + position.charAt(0).toUpperCase() + position.slice(1),
+        message: 'Buttons are aligned to: ' + position,
+        icon: { name: 'view_quilt', type: 'info' },
+        confirm: 'OK',
+        cancel: 'Cancel',
+        buttonPosition: position
+    });
+    updateCenteredResult(result);
+}
+
+async function showStackedButtons() {
+    const result = await SOModal.confirm({
+        title: 'Stacked Buttons',
+        message: 'Buttons are displayed vertically (stacked layout).',
+        icon: { name: 'view_agenda', type: 'info' },
+        confirm: [{ icon: 'check' }, 'Primary Action'],
+        cancel: [{ icon: 'close' }, 'Secondary Action'],
+        buttonLayout: 'stacked',
+        fullWidthButtons: true
+    });
+    updateCenteredResult(result);
+}
+
+async function showReversedButtons() {
+    const result = await SOModal.confirm({
+        title: 'Reversed Order',
+        message: 'Confirm button appears first, then Cancel.',
+        icon: { name: 'swap_horiz', type: 'info' },
+        confirm: 'Confirm',
+        cancel: 'Cancel',
+        reverseButtons: true
+    });
+    updateCenteredResult(result);
+}
+
+async function showWithCloseButton() {
+    const result = await SOModal.confirm({
+        title: 'With Close Button',
+        message: 'This dialog has an X close button in the header.',
+        icon: { name: 'help_outline', type: 'info' },
+        confirm: 'OK',
+        cancel: 'Cancel',
+        showCloseButton: true
+    });
+    updateCenteredResult(result);
+}
+
+function updateCenteredResult(result) {
+    const resultEl = document.getElementById('centered-confirm-result');
+    resultEl.innerHTML = result
+        ? '<div class="so-alert so-alert-success so-alert-sm"><span class="material-icons">check_circle</span> User confirmed</div>'
+        : '<div class="so-alert so-alert-secondary so-alert-sm"><span class="material-icons">cancel</span> User cancelled</div>';
+}
+
 function showProgrammaticModal() {
     const modal = SOModal.create({
         title: 'Dynamic Modal',
@@ -820,6 +1130,56 @@ function showProgrammaticModal() {
             <button class="so-btn so-btn-outline" data-dismiss="modal">Cancel</button>
             <button class="so-btn so-btn-primary" data-dismiss="modal">Got It</button>
         `
+    });
+    modal.show();
+}
+
+function showFlexibleFooterModal() {
+    const modal = SOModal.create({
+        title: 'Flexible Footer Buttons',
+        content: `
+            <p>This modal uses the flexible array format for footer buttons.</p>
+            <p>Each button can have icons, custom classes, and click handlers.</p>
+            <div class="so-alert so-alert-info so-alert-sm so-mt-3">
+                <span class="material-icons">info</span>
+                <div>Buttons are defined as an array with flexible content options.</div>
+            </div>
+        `,
+        size: 'default',
+        footer: [
+            'Cancel',
+            { content: [{ icon: 'close' }, 'Discard'], class: 'so-btn-outline' },
+            { content: [{ icon: 'save' }, 'Save'], class: 'so-btn-primary' }
+        ],
+        footerPosition: 'right'
+    });
+    modal.show();
+}
+
+function showSectionsFooterModal() {
+    const modal = SOModal.create({
+        title: 'Footer Sections Layout',
+        content: `
+            <p>This modal demonstrates the <strong>footer sections</strong> feature.</p>
+            <p>Buttons can be independently positioned in <code>left</code>, <code>center</code>, or <code>right</code> sections.</p>
+            <div class="so-alert so-alert-info so-alert-sm so-mt-3">
+                <span class="material-icons">info</span>
+                <div>Uses CSS Grid for true centering regardless of left/right content width.</div>
+            </div>
+        `,
+        size: 'default',
+        footer: {
+            left: [
+                { content: [{ icon: 'help_outline' }, 'Help'], class: 'so-btn-link' }
+            ],
+            center: [
+                { content: 'Preview', class: 'so-btn-outline' }
+            ],
+            right: [
+                'Cancel',
+                { content: [{ icon: 'save' }, 'Save'], class: 'so-btn-primary' }
+            ]
+        }
     });
     modal.show();
 }
@@ -917,8 +1277,8 @@ document.addEventListener('keydown', (e) => {
         const staticModals = document.querySelectorAll('.so-modal-static.so-show');
         if (staticModals.length > 0) {
             staticModals.forEach(modal => {
-                modal.classList.add('modal-static-shake');
-                setTimeout(() => modal.classList.remove('modal-static-shake'), 300);
+                modal.classList.add('so-modal-static-shake');
+                setTimeout(() => modal.classList.remove('so-modal-static-shake'), 300);
             });
             return; // Don't close anything
         }
@@ -993,7 +1353,7 @@ function showStaticModalWithLock() {
         title: 'Session Timeout Warning',
         content: `
             <div class="so-text-center so-py-3">
-                <div class="so-confirm-icon warning so-mx-auto">
+                <div class="so-confirm-icon so-warning so-mx-auto">
                     <span class="material-icons">timer</span>
                 </div>
                 <h5 class="so-mt-3">Your session is about to expire</h5>
@@ -1046,7 +1406,7 @@ function showStaticConfirmModal() {
         title: 'Delete Your Account',
         content: `
             <div class="so-text-center so-py-2">
-                <div class="so-confirm-icon danger so-mx-auto">
+                <div class="so-confirm-icon so-danger so-mx-auto">
                     <span class="material-icons">warning</span>
                 </div>
                 <h5 class="so-mt-3 so-text-danger">This action is irreversible!</h5>

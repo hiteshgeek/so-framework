@@ -56,6 +56,9 @@ class SidebarController {
     this._initSubmenuArrows();
     this._initSubmenuState();
 
+    // Initialize footer buttons
+    this._initFooterButtons();
+
     // Update body class
     this._updateBodyClass();
 
@@ -474,6 +477,210 @@ class SidebarController {
         parent = parent.parentElement.closest('.so-sidebar-item');
       }
     });
+  }
+
+  /**
+   * Initialize sidebar footer buttons
+   */
+  _initFooterButtons() {
+    const footer = this.element.querySelector('.so-sidebar-footer');
+    if (!footer) return;
+
+    // Info button - toggle popup
+    const infoBtn = footer.querySelector('#sidebarInfoBtn');
+    const infoPopup = footer.querySelector('#sidebarInfoPopup');
+    if (infoBtn && infoPopup) {
+      infoBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        infoPopup.classList.toggle('so-active');
+      });
+
+      // Close popup on outside click
+      document.addEventListener('click', (e) => {
+        if (!infoPopup.contains(e.target) && !infoBtn.contains(e.target)) {
+          infoPopup.classList.remove('so-active');
+        }
+      });
+    }
+
+    // Fullscreen button
+    const fullscreenBtn = footer.querySelector('#sidebarFullscreenBtn');
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this._toggleFullscreen();
+      });
+    }
+
+    // Navbar fullscreen button (in user dropdown)
+    const navbarFullscreenBtn = document.getElementById('navbarFullscreenBtn');
+    if (navbarFullscreenBtn) {
+      navbarFullscreenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this._toggleFullscreen();
+      });
+    }
+
+    // Listen for fullscreen change to update icons
+    document.addEventListener('fullscreenchange', () => this._updateFullscreenIcon());
+    document.addEventListener('webkitfullscreenchange', () => this._updateFullscreenIcon());
+
+    // Logout buttons - use framework's SOModal.confirm()
+    const sidebarLogoutBtn = footer.querySelector('#sidebarLogoutBtn');
+    const navbarLogoutBtn = document.getElementById('navbarLogoutBtn');
+
+    const handleLogout = () => {
+      localStorage.removeItem('so-user-session');
+      localStorage.removeItem('so-screen-locked');
+      sessionStorage.clear();
+      // Navigate to login page relative to demo root
+      const currentPath = window.location.pathname;
+      const demoIndex = currentPath.indexOf('/demo/');
+      if (demoIndex !== -1) {
+        const basePath = currentPath.substring(0, demoIndex + 6); // includes '/demo/'
+        window.location.href = basePath + 'login.php';
+      } else {
+        window.location.href = '/so-framework/demo/login.php';
+      }
+    };
+
+    const showLogoutConfirmation = async () => {
+      // Use framework's SOModal.confirm()
+      if (typeof SOModal !== 'undefined' && SOModal.confirm) {
+        const confirmed = await SOModal.confirm({
+          title: 'Confirm Logout',
+          message: 'Are you sure you want to logout? Any unsaved changes will be lost.',
+          icon: { name: 'logout', type: 'danger' },
+          confirm: [{ icon: 'logout' }, 'Logout'],
+          cancel: 'Cancel',
+          danger: true
+        });
+        if (confirmed) {
+          handleLogout();
+        }
+      } else {
+        // Fallback if SOModal not available
+        if (confirm('Are you sure you want to logout?')) {
+          handleLogout();
+        }
+      }
+    };
+
+    if (sidebarLogoutBtn) {
+      sidebarLogoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showLogoutConfirmation();
+      });
+    }
+
+    if (navbarLogoutBtn) {
+      navbarLogoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showLogoutConfirmation();
+      });
+    }
+
+    // Lock Screen button
+    const lockScreenBtn = document.getElementById('lockScreenBtn');
+    const lockScreen = document.getElementById('lockScreen');
+    const lockScreenForm = document.getElementById('lockScreenForm');
+    const lockScreenPassword = document.getElementById('lockScreenPassword');
+    const lockScreenTime = document.getElementById('lockScreenTime');
+    const lockScreenDate = document.getElementById('lockScreenDate');
+
+    const updateLockScreenTime = () => {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      if (lockScreenTime) lockScreenTime.textContent = `${hours}:${minutes}`;
+      if (lockScreenDate) {
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        lockScreenDate.textContent = now.toLocaleDateString('en-US', options);
+      }
+    };
+
+    const lockScreenAction = () => {
+      if (lockScreen) {
+        lockScreen.classList.add('active');
+        document.body.classList.add('screen-locked');
+        localStorage.setItem('so-screen-locked', 'true');
+        updateLockScreenTime();
+        if (lockScreenPassword) lockScreenPassword.focus();
+      }
+    };
+
+    const unlockScreenAction = () => {
+      if (lockScreen) {
+        lockScreen.classList.remove('active');
+        document.body.classList.remove('screen-locked');
+        localStorage.removeItem('so-screen-locked');
+        if (lockScreenPassword) lockScreenPassword.value = '';
+      }
+    };
+
+    if (lockScreenBtn) {
+      lockScreenBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        lockScreenAction();
+      });
+    }
+
+    if (lockScreenForm) {
+      lockScreenForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        unlockScreenAction();
+      });
+    }
+
+    // Check if screen was locked on page load
+    if (localStorage.getItem('so-screen-locked') === 'true' && lockScreen) {
+      lockScreen.classList.add('active');
+      document.body.classList.add('screen-locked');
+      updateLockScreenTime();
+      if (lockScreenPassword) lockScreenPassword.focus();
+    }
+
+  }
+
+  /**
+   * Toggle fullscreen mode
+   */
+  _toggleFullscreen() {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      // Enter fullscreen
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      }
+    } else {
+      // Exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
+  }
+
+  /**
+   * Update fullscreen button icons
+   */
+  _updateFullscreenIcon() {
+    const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement;
+    const iconText = isFullscreen ? 'fullscreen_exit' : 'fullscreen';
+
+    // Update sidebar button
+    const sidebarBtn = this.element.querySelector('#sidebarFullscreenBtn .material-icons');
+    if (sidebarBtn) sidebarBtn.textContent = iconText;
+
+    // Update navbar button
+    const navbarBtn = document.querySelector('#navbarFullscreenBtn .material-icons');
+    if (navbarBtn) navbarBtn.textContent = iconText;
   }
 
   /**

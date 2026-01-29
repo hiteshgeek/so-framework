@@ -23,6 +23,7 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  @include custom-scrollbar(8px, $so-grey-400, transparent);
 }
 
 body {
