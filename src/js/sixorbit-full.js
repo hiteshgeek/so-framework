@@ -24,6 +24,7 @@ import SOButtonGroup from './components/so-button-group.js';
 import SOAlert from './components/so-alert.js';
 import SOToast from './components/so-toast.js';
 import SOSelect from './components/so-select.js';
+import SOAutocomplete from './components/so-autocomplete.js';
 import SOTable from './components/so-table.js';
 import SOPagination from './components/so-pagination.js';
 
@@ -40,6 +41,7 @@ window.SODropdown = SODropdown;
 window.SOTabs = SOTabs;
 window.SOTooltip = SOTooltip;
 window.SOSelect = SOSelect;
+window.SOAutocomplete = SOAutocomplete;
 window.SOTable = SOTable;
 window.SOPagination = SOPagination;
 window.SOTheme = SOTheme;
@@ -91,6 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize custom selects
   SOSelect.initAll();
 
+  // Initialize autocomplete inputs
+  SOAutocomplete.initAll();
+
   // Initialize tables
   SOTable.initAll();
 
@@ -122,6 +127,7 @@ export {
   SOAlert,
   SOToast,
   SOSelect,
+  SOAutocomplete,
   SOTable,
   SOPagination,
   SOForms,
