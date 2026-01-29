@@ -506,7 +506,9 @@
   'success': $so-success,
   'danger': $so-danger,
   'warning': $so-warning,
-  'info': $so-info
+  'info': $so-info,
+  'dark': $so-dark,
+  'light': $so-light
 ) {
   .#{$so-prefix}autocomplete-#{$name} {
     &.#{$so-prefix}autocomplete-focused {
@@ -521,11 +523,20 @@
     }
 
     .#{$so-prefix}autocomplete-option.#{$so-prefix}selected {
-      background: css-var('dropdown-item-active');
-      color: css-var('dropdown-item-active-text');
+      background: alpha($color, 0.1);
+      color: $color;
+      font-weight: font-weight('medium');
 
       &:hover {
-        background: css-var('dropdown-item-active');
+        background: alpha($color, 0.15);
+      }
+
+      @include dark-mode {
+        background: alpha($color, 0.2);
+
+        &:hover {
+          background: alpha($color, 0.25);
+        }
       }
     }
 

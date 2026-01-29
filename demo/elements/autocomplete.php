@@ -377,13 +377,17 @@ new SOAutocomplete(\'#async-load-open\', {
         <div class="so-card so-mb-4">
             <div class="so-card-header">
                 <h3 class="so-card-title">Color Variants</h3>
-                <p class="so-card-subtitle">Theme color variants for focus states</p>
+                <p class="so-card-subtitle">Theme color variants for focus states and tokens - tokens automatically match the variant color</p>
             </div>
             <div class="so-card-body">
                 <div class="so-row so-g-3">
                     <div class="so-col-12 so-col-md-6">
                         <label class="so-form-label">Primary</label>
                         <div class="so-autocomplete so-autocomplete-primary" id="variant-primary"></div>
+                    </div>
+                    <div class="so-col-12 so-col-md-6">
+                        <label class="so-form-label">Secondary</label>
+                        <div class="so-autocomplete so-autocomplete-secondary" id="variant-secondary"></div>
                     </div>
                     <div class="so-col-12 so-col-md-6">
                         <label class="so-form-label">Success</label>
@@ -397,15 +401,32 @@ new SOAutocomplete(\'#async-load-open\', {
                         <label class="so-form-label">Warning</label>
                         <div class="so-autocomplete so-autocomplete-warning" id="variant-warning"></div>
                     </div>
+                    <div class="so-col-12 so-col-md-6">
+                        <label class="so-form-label">Info</label>
+                        <div class="so-autocomplete so-autocomplete-info" id="variant-info"></div>
+                    </div>
+                    <div class="so-col-12 so-col-md-6">
+                        <label class="so-form-label">Dark</label>
+                        <div class="so-autocomplete so-autocomplete-dark" id="variant-dark"></div>
+                    </div>
+                    <div class="so-col-12 so-col-md-6">
+                        <label class="so-form-label">Light</label>
+                        <div class="so-autocomplete so-autocomplete-light" id="variant-light"></div>
+                    </div>
                 </div>
                 <?= so_code_tabs('color-variants-code', [
                     [
                         'label' => 'HTML',
                         'language' => 'html',
-                        'code' => '<div class="so-autocomplete so-autocomplete-primary"></div>
-<div class="so-autocomplete so-autocomplete-success"></div>
-<div class="so-autocomplete so-autocomplete-danger"></div>
-<div class="so-autocomplete so-autocomplete-warning"></div>'
+                        'code' => '<!-- Color variants - tokens automatically match the variant color -->
+<div class="so-autocomplete so-autocomplete-primary" data-so-multiple="true"></div>
+<div class="so-autocomplete so-autocomplete-secondary" data-so-multiple="true"></div>
+<div class="so-autocomplete so-autocomplete-success" data-so-multiple="true"></div>
+<div class="so-autocomplete so-autocomplete-danger" data-so-multiple="true"></div>
+<div class="so-autocomplete so-autocomplete-warning" data-so-multiple="true"></div>
+<div class="so-autocomplete so-autocomplete-info" data-so-multiple="true"></div>
+<div class="so-autocomplete so-autocomplete-dark" data-so-multiple="true"></div>
+<div class="so-autocomplete so-autocomplete-light" data-so-multiple="true"></div>'
                     ]
                 ]) ?>
             </div>
@@ -483,13 +504,35 @@ new SOAutocomplete(\'#async-load-open\', {
                     </div>
                     <div class="so-col-12 so-col-md-6">
                         <label for="form-skills" class="so-form-label">Skills</label>
-                        <div class="so-autocomplete" id="form-skills" data-so-multiple="true"></div>
-                        <div class="so-valid-feedback">Looks good!</div>
+                        <div class="so-autocomplete so-autocomplete-success" id="form-skills" data-so-multiple="true"></div>
+                        <div class="so-valid-feedback" style="display: flex;">
+                            <span class="material-icons" style="margin-right: 0.5rem;">check_circle</span>
+                            Looks good!
+                        </div>
                     </div>
                     <div class="so-col-12 so-col-md-6">
                         <label for="form-error" class="so-form-label">With Error</label>
                         <div class="so-autocomplete so-autocomplete-error" id="form-error"></div>
-                        <div class="so-invalid-feedback" style="display: block;">Please select an option</div>
+                        <div class="so-invalid-feedback" style="display: flex;">
+                            <span class="material-icons" style="margin-right: 0.5rem;">error</span>
+                            Please select an option
+                        </div>
+                    </div>
+                    <div class="so-col-12 so-col-md-6">
+                        <label for="form-warning" class="so-form-label">With Warning</label>
+                        <div class="so-autocomplete so-autocomplete-warning" id="form-warning"></div>
+                        <div class="so-warning-feedback" style="display: flex; color: var(--so-warning); margin-top: 0.25rem; font-size: 0.875rem;">
+                            <span class="material-icons" style="margin-right: 0.5rem; font-size: 1rem;">warning</span>
+                            Limited options available
+                        </div>
+                    </div>
+                    <div class="so-col-12 so-col-md-6">
+                        <label for="form-info" class="so-form-label">With Info</label>
+                        <div class="so-autocomplete so-autocomplete-info" id="form-info"></div>
+                        <div class="so-info-feedback" style="display: flex; color: var(--so-info); margin-top: 0.25rem; font-size: 0.875rem;">
+                            <span class="material-icons" style="margin-right: 0.5rem; font-size: 1rem;">info</span>
+                            Select your preferred options
+                        </div>
                     </div>
                     <div class="so-col-12 so-col-md-6">
                         <label for="form-disabled" class="so-form-label">Disabled</label>
@@ -501,19 +544,45 @@ new SOAutocomplete(\'#async-load-open\', {
                         'label' => 'HTML',
                         'language' => 'html',
                         'code' => '<form>
-  <!-- Required field -->
+  <!-- Required field with helper text -->
   <label class="so-form-label">Country <span class="so-text-danger">*</span></label>
   <div class="so-autocomplete" data-so-autocomplete></div>
-  <small class="so-form-text">Helper text</small>
+  <small class="so-form-text">Select your country</small>
 
-  <!-- With validation -->
-  <div class="so-valid-feedback">Looks good!</div>
+  <!-- Success validation -->
+  <label class="so-form-label">Skills</label>
+  <div class="so-autocomplete so-autocomplete-success" data-so-multiple="true"></div>
+  <div class="so-valid-feedback" style="display: flex;">
+    <span class="material-icons">check_circle</span>
+    Looks good!
+  </div>
 
-  <!-- With error -->
+  <!-- Error validation -->
+  <label class="so-form-label">With Error</label>
   <div class="so-autocomplete so-autocomplete-error"></div>
-  <div class="so-invalid-feedback" style="display: block;">Error message</div>
+  <div class="so-invalid-feedback" style="display: flex;">
+    <span class="material-icons">error</span>
+    Please select an option
+  </div>
 
-  <!-- Disabled -->
+  <!-- Warning validation -->
+  <label class="so-form-label">With Warning</label>
+  <div class="so-autocomplete so-autocomplete-warning"></div>
+  <div class="so-warning-feedback" style="display: flex; color: var(--so-warning);">
+    <span class="material-icons">warning</span>
+    Limited options available
+  </div>
+
+  <!-- Info validation -->
+  <label class="so-form-label">With Info</label>
+  <div class="so-autocomplete so-autocomplete-info"></div>
+  <div class="so-info-feedback" style="display: flex; color: var(--so-info);">
+    <span class="material-icons">info</span>
+    Select your preferred options
+  </div>
+
+  <!-- Disabled state -->
+  <label class="so-form-label">Disabled</label>
   <div class="so-autocomplete so-autocomplete-disabled"></div>
 </form>'
                     ]
@@ -1079,12 +1148,14 @@ new SOAutocomplete(\'#example-emails\', {
             }
         });
 
-        // 8. Color Variants
-        ['variant-primary', 'variant-success', 'variant-danger', 'variant-warning'].forEach(id => {
+        // 8. Color Variants - tokens automatically match the variant color
+        ['variant-primary', 'variant-secondary', 'variant-success', 'variant-danger', 'variant-warning', 'variant-info', 'variant-dark', 'variant-light'].forEach(id => {
             if (document.getElementById(id)) {
                 new SOAutocomplete(`#${id}`, {
-                    placeholder: 'Select option...',
-                    options: skills
+                    placeholder: 'Select skills...',
+                    multiple: true,
+                    options: skills,
+                    value: ['js', 'py'] // Pre-select to show colored tokens
                 });
             }
         });
@@ -1164,6 +1235,21 @@ new SOAutocomplete(\'#example-emails\', {
             new SOAutocomplete('#form-error', {
                 placeholder: 'This has an error...',
                 options: countries
+            });
+        }
+
+        if (document.getElementById('form-warning')) {
+            new SOAutocomplete('#form-warning', {
+                placeholder: 'Select option...',
+                options: skills.slice(0, 3) // Limited options
+            });
+        }
+
+        if (document.getElementById('form-info')) {
+            new SOAutocomplete('#form-info', {
+                placeholder: 'Choose your preferences...',
+                multiple: true,
+                options: skills
             });
         }
 

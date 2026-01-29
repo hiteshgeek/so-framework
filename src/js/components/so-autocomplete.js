@@ -480,9 +480,17 @@ class SOAutocomplete extends SOComponent {
       return;
     }
 
-    // Focus input if clicking on container
-    if (e.target === this._container || e.target === this._tokensContainer) {
+    // Don't handle if clicking on token remove button
+    if (e.target.closest('.so-autocomplete-token-remove')) {
+      return;
+    }
+
+    // Focus input and open dropdown when clicking anywhere in the container
+    if (this._input && !this._disabled) {
       this._input.focus();
+      if (!this._isOpen) {
+        this.open();
+      }
     }
   }
 
@@ -1497,12 +1505,28 @@ class SOAutocomplete extends SOComponent {
   }
 
   /**
+   * Get the current color variant from element classes
+   * @private
+   * @returns {string} The variant name (primary, success, danger, etc.)
+   */
+  _getColorVariant() {
+    const variants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'light'];
+    for (const variant of variants) {
+      if (this.element.classList.contains(`so-autocomplete-${variant}`)) {
+        return variant;
+      }
+    }
+    return 'primary'; // Default
+  }
+
+  /**
    * Create token element
    * @private
    */
   _createTokenElement(token, index) {
     const tokenEl = document.createElement('span');
-    tokenEl.className = 'so-autocomplete-token so-chip so-chip-sm so-chip-soft-primary';
+    const variant = this._getColorVariant();
+    tokenEl.className = `so-autocomplete-token so-chip so-chip-sm so-chip-soft-${variant}`;
     tokenEl.dataset.index = index;
     tokenEl.dataset.value = token.value;
 
