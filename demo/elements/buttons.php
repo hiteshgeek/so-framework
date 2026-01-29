@@ -283,6 +283,245 @@ require_once '../includes/navbar.php';
                     </div>
                 </div>
 
+                <!-- Section 8: Circular Icon Buttons -->
+                <div class="so-card so-mb-4">
+                    <div class="so-card-header">
+                        <h3 class="so-card-title">Circular Icon Buttons</h3>
+                    </div>
+                    <div class="so-card-body">
+                        <p class="so-text-muted so-mb-3">Add <code>.so-btn-circle</code> to icon buttons to make them circular. Works with all color variants and sizes.</p>
+
+                                <!-- Default/Toolbar Style -->
+                                <h5 class="so-mb-3">Default (Toolbar Style)</h5>
+                                <p class="so-text-muted so-mb-3">Simple neutral buttons for toolbars and action bars - no color class needed.</p>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">grid_view</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">settings</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">search</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">filter_list</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">refresh</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">download</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle">
+                                        <span class="material-icons">print</span>
+                                    </button>
+                                </div>
+
+                                <!-- Ghost Default -->
+                                <h5 class="so-mb-3">Ghost Default (Toolbar Style)</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost">
+                                        <span class="material-icons">grid_view</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost">
+                                        <span class="material-icons">settings</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost">
+                                        <span class="material-icons">search</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost">
+                                        <span class="material-icons">filter_list</span>
+                                    </button>
+                                </div>
+
+                                <!-- Solid Circular -->
+                                <h5 class="so-mb-3">Solid Circular</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-primary">
+                                        <span class="material-icons">add</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-secondary">
+                                        <span class="material-icons">edit</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-success">
+                                        <span class="material-icons">check</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-danger">
+                                        <span class="material-icons">delete</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-warning">
+                                        <span class="material-icons">warning</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-info">
+                                        <span class="material-icons">info</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light">
+                                        <span class="material-icons">light_mode</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-dark">
+                                        <span class="material-icons">dark_mode</span>
+                                    </button>
+                                </div>
+
+                                <!-- Outline Circular -->
+                                <h5 class="so-mb-3">Outline Circular</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-primary">
+                                        <span class="material-icons">favorite</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-secondary">
+                                        <span class="material-icons">bookmark</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-success">
+                                        <span class="material-icons">thumb_up</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-danger">
+                                        <span class="material-icons">close</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-warning">
+                                        <span class="material-icons">star</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-info">
+                                        <span class="material-icons">lightbulb</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-light">
+                                        <span class="material-icons">visibility</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-outline-dark">
+                                        <span class="material-icons">settings</span>
+                                    </button>
+                                </div>
+
+                                <!-- Light (Soft) Circular -->
+                                <h5 class="so-mb-3">Light (Soft) Circular</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-primary">
+                                        <span class="material-icons">share</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-secondary">
+                                        <span class="material-icons">link</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-success">
+                                        <span class="material-icons">download</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-danger">
+                                        <span class="material-icons">delete_outline</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-warning">
+                                        <span class="material-icons">notifications</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-info">
+                                        <span class="material-icons">help</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-light">
+                                        <span class="material-icons">refresh</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-light-dark">
+                                        <span class="material-icons">more_horiz</span>
+                                    </button>
+                                </div>
+
+                                <!-- Ghost Circular -->
+                                <h5 class="so-mb-3">Ghost Circular</h5>
+                                <div class="so-flex so-gap-2 so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost so-btn-primary">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost so-btn-secondary">
+                                        <span class="material-icons">tune</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost so-btn-success">
+                                        <span class="material-icons">check_circle</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost so-btn-danger">
+                                        <span class="material-icons">cancel</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost so-btn-warning">
+                                        <span class="material-icons">error</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-ghost so-btn-info">
+                                        <span class="material-icons">info</span>
+                                    </button>
+                                </div>
+
+                                <!-- Size Variants -->
+                                <h5 class="so-mb-3">Size Variants</h5>
+                                <div class="so-flex so-gap-2 so-items-center so-flex-wrap so-mb-4">
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-primary so-btn-xs">
+                                        <span class="material-icons" style="font-size: 14px;">add</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-primary so-btn-sm">
+                                        <span class="material-icons" style="font-size: 16px;">add</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-primary">
+                                        <span class="material-icons">add</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-primary so-btn-lg">
+                                        <span class="material-icons" style="font-size: 24px;">add</span>
+                                    </button>
+                                </div>
+
+                                <!-- FAB Style -->
+                                <h5 class="so-mb-3">FAB Style (Material Design Floating Action Button)</h5>
+                                <p class="so-text-muted so-mb-3">Combine circular buttons with <code>.so-shadow</code> or <code>.so-shadow-lg</code> for Material Design FAB style.</p>
+                                <div class="so-flex so-gap-3 so-items-center so-flex-wrap">
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-primary so-btn-lg so-shadow-lg">
+                                        <span class="material-icons" style="font-size: 24px;">add</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-success so-btn-lg so-shadow-lg">
+                                        <span class="material-icons" style="font-size: 24px;">edit</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-danger so-btn-lg so-shadow-lg">
+                                        <span class="material-icons" style="font-size: 24px;">delete</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-info so-btn-lg so-shadow-lg">
+                                        <span class="material-icons" style="font-size: 24px;">chat</span>
+                                    </button>
+                                    <button class="so-btn so-btn-icon so-btn-circle so-btn-warning so-btn-lg so-shadow">
+                                        <span class="material-icons" style="font-size: 24px;">support</span>
+                                    </button>
+                                </div>
+
+                        <?= so_code_block('<!-- Default/Toolbar Style (subtle background + border) -->
+<button class="so-btn so-btn-icon so-btn-circle">
+    <span class="material-icons">settings</span>
+</button>
+
+<!-- Ghost Style (transparent, no border) -->
+<button class="so-btn so-btn-icon so-btn-circle so-btn-ghost">
+    <span class="material-icons">more_vert</span>
+</button>
+
+<!-- Solid Circular with Color -->
+<button class="so-btn so-btn-icon so-btn-circle so-btn-primary">
+    <span class="material-icons">add</span>
+</button>
+
+<!-- Outline Circular with Color -->
+<button class="so-btn so-btn-icon so-btn-circle so-btn-outline-primary">
+    <span class="material-icons">favorite</span>
+</button>
+
+<!-- Size Variants -->
+<button class="so-btn so-btn-icon so-btn-circle so-btn-xs">...</button>
+<button class="so-btn so-btn-icon so-btn-circle so-btn-sm">...</button>
+<button class="so-btn so-btn-icon so-btn-circle">...</button>
+<button class="so-btn so-btn-icon so-btn-circle so-btn-lg">...</button>
+
+<!-- FAB Style (with shadow) -->
+<button class="so-btn so-btn-icon so-btn-circle so-btn-primary so-btn-lg so-shadow-lg">
+    <span class="material-icons">add</span>
+</button>', 'html') ?>
+                    </div>
+                </div>
+
                 <!-- Section 9: Hover Style Modifiers -->
                 <div class="so-card so-mb-4">
                     <div class="so-card-header">

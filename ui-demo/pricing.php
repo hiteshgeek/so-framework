@@ -7,7 +7,7 @@ require_once 'includes/navbar.php';
 
 <!-- Breadcrumb -->
 <section class="so-bg-white so-border-bottom so-py-3">
-    <div class="so-container">
+    <div class="so-container-xxl">
         <nav class="so-breadcrumb">
             <a href="index.php" class="so-breadcrumb-item">
                 <span class="material-icons so-fs-sm">home</span>
@@ -20,7 +20,7 @@ require_once 'includes/navbar.php';
 
 <!-- Hero -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-text-center">
             <span class="so-badge so-badge-soft-primary so-mb-2">Pricing</span>
             <h1 class="so-fs-3xl so-fw-bold so-mb-2">Simple, transparent pricing</h1>
@@ -46,7 +46,7 @@ require_once 'includes/navbar.php';
 
 <!-- Pricing Cards -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-row so-g-4 so-justify-content-center">
             <!-- Free Plan -->
             <div class="so-col-12 so-col-md-6 so-col-lg-4">
@@ -185,7 +185,7 @@ require_once 'includes/navbar.php';
 
 <!-- Feature Comparison with Tooltips -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-fluid" style="max-width: 1200px;">
         <h3 class="so-text-center so-fw-bold so-mb-4">Feature Comparison</h3>
         <div class="so-table-responsive">
             <table class="so-table so-table-bordered">
@@ -248,7 +248,7 @@ require_once 'includes/navbar.php';
 
 <!-- Usage Calculator with Sliders -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -303,7 +303,7 @@ require_once 'includes/navbar.php';
 
 <!-- Progress Bars Demo -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -368,7 +368,7 @@ require_once 'includes/navbar.php';
 
 <!-- Button Groups Demo -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -426,7 +426,7 @@ require_once 'includes/navbar.php';
 
 <!-- Input Groups Demo -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -481,7 +481,7 @@ require_once 'includes/navbar.php';
 
 <!-- Select Dropdown Demo -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">

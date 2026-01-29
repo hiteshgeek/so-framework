@@ -7,7 +7,7 @@ require_once 'includes/navbar.php';
 
 <!-- Breadcrumb -->
 <section class="so-bg-white so-border-bottom so-py-3">
-    <div class="so-container">
+    <div class="so-container-fluid" style="max-width: 1600px;">
         <nav class="so-breadcrumb">
             <a href="index.php" class="so-breadcrumb-item">
                 <span class="material-icons so-fs-sm">home</span>
@@ -20,7 +20,7 @@ require_once 'includes/navbar.php';
 
 <!-- Hero -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-sm">
         <div class="so-text-center">
             <span class="so-badge so-badge-soft-primary so-mb-2">Contact</span>
             <h1 class="so-fs-3xl so-fw-bold so-mb-2">Get in touch</h1>
@@ -33,7 +33,7 @@ require_once 'includes/navbar.php';
 
 <!-- Contact Methods -->
 <section class="so-py-4">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-row so-g-4">
             <div class="so-col-12 so-col-md-4">
                 <div class="so-card so-card-bordered so-text-center so-h-100">
@@ -83,7 +83,7 @@ require_once 'includes/navbar.php';
 
 <!-- Alerts Demo -->
 <section class="so-py-4 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -135,7 +135,7 @@ require_once 'includes/navbar.php';
 
 <!-- Main Contact Form -->
 <section class="so-py-4">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-row so-g-4">
             <!-- Contact Form -->
             <div class="so-col-12 so-col-lg-8">
@@ -407,7 +407,7 @@ require_once 'includes/navbar.php';
 
 <!-- Form Validation States Demo -->
 <section class="so-py-4 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -440,7 +440,7 @@ require_once 'includes/navbar.php';
 
 <!-- Context Menu Demo -->
 <section class="so-py-4">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">

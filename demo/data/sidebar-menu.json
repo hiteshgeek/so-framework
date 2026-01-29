@@ -7,6 +7,13 @@
       "url": "index.php"
     },
     {
+      "id": "ui-demo",
+      "title": "UI Demo Site",
+      "icon": "web",
+      "url": "../ui-demo/index.php",
+      "badge": "New"
+    },
+    {
       "id": "sixorbit-element",
       "title": "SixOrbit Element",
       "icon": "widgets",

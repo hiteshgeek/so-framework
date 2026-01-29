@@ -7,7 +7,7 @@ require_once 'includes/navbar.php';
 
 <!-- Breadcrumb -->
 <section class="so-bg-white so-border-bottom so-py-3">
-    <div class="so-container">
+    <div class="so-container-fluid" style="max-width: 1600px;">
         <nav class="so-breadcrumb">
             <a href="index.php" class="so-breadcrumb-item">
                 <span class="material-icons so-fs-sm">home</span>
@@ -20,7 +20,7 @@ require_once 'includes/navbar.php';
 
 <!-- Hero -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-row so-align-items-center so-gy-4">
             <div class="so-col-12 so-col-lg-6">
                 <span class="so-badge so-badge-soft-primary so-mb-2">About Us</span>
@@ -68,7 +68,7 @@ require_once 'includes/navbar.php';
 
 <!-- Stats Section -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-row so-g-4 so-text-center">
             <div class="so-col-6 so-col-md-3">
                 <div class="so-card">
@@ -108,7 +108,7 @@ require_once 'includes/navbar.php';
 
 <!-- Team Section with Profile Cards and Avatars -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-xxl">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-success so-mb-2">Our Team</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">Meet the leadership</h2>
@@ -233,7 +233,7 @@ require_once 'includes/navbar.php';
 
 <!-- Company Timeline -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-info so-mb-2">Our Journey</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">Company Timeline</h2>
@@ -350,7 +350,7 @@ require_once 'includes/navbar.php';
 
 <!-- Values Section with Pills and Labels -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-warning so-mb-2">Our Values</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">What we stand for</h2>
@@ -415,7 +415,7 @@ require_once 'includes/navbar.php';
 
 <!-- Skeleton Loading Demo -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-card">
             <div class="so-card-header so-d-flex so-justify-content-between so-align-items-center">
                 <h5 class="so-mb-0">
@@ -497,7 +497,7 @@ require_once 'includes/navbar.php';
 
 <!-- Partners Section -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-fluid" style="max-width: 1200px;">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-secondary so-mb-2">Partners</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">Trusted by industry leaders</h2>

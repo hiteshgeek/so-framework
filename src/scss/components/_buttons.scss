@@ -90,17 +90,30 @@
 .#{$so-prefix}btn-icon {
   width: $so-form-height-md;
   padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .material-icons {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   &.#{$so-prefix}btn-xs {
     width: 26px;
+    height: 26px;
   }
 
   &.#{$so-prefix}btn-sm {
     width: $so-form-height-sm;
+    height: $so-form-height-sm;
   }
 
   &.#{$so-prefix}btn-lg {
     width: $so-form-height-lg;
+    height: $so-form-height-lg;
   }
 }
 

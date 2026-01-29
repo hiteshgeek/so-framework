@@ -7,7 +7,7 @@ require_once 'includes/navbar.php';
 
 <!-- Hero Section -->
 <section class="so-py-5" style="background: linear-gradient(135deg, var(--so-primary-50) 0%, var(--so-bg-primary) 100%);">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-row so-align-items-center so-gy-4">
             <div class="so-col-12 so-col-lg-6">
                 <span class="so-badge so-badge-soft-primary so-mb-3">
@@ -118,7 +118,7 @@ require_once 'includes/navbar.php';
 
 <!-- Features Grid -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-primary so-mb-2">Features</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">Everything you need to scale</h2>
@@ -260,7 +260,7 @@ require_once 'includes/navbar.php';
 
 <!-- Testimonials Carousel -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-success so-mb-2">Testimonials</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">Loved by developers</h2>
@@ -374,7 +374,7 @@ require_once 'includes/navbar.php';
 
 <!-- Timeline Section -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-info so-mb-2">How it Works</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">Get started in minutes</h2>
@@ -456,7 +456,7 @@ require_once 'includes/navbar.php';
 
 <!-- CTA Section -->
 <section class="so-py-5 so-bg-primary">
-    <div class="so-container">
+    <div class="so-container-fluid" style="max-width: 1400px;">
         <div class="so-row so-align-items-center so-gy-4">
             <div class="so-col-12 so-col-lg-6">
                 <h2 class="so-fs-2xl so-fw-bold so-text-white so-mb-2">
@@ -486,7 +486,7 @@ require_once 'includes/navbar.php';
 
 <!-- Button Variants Demo -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-xxl">
         <div class="so-text-center so-mb-5">
             <span class="so-badge so-badge-soft-secondary so-mb-2">UI Components</span>
             <h2 class="so-fs-2xl so-fw-bold so-mb-2">Button Showcase</h2>

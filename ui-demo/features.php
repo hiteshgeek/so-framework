@@ -7,7 +7,7 @@ require_once 'includes/navbar.php';
 
 <!-- Breadcrumb -->
 <section class="so-bg-white so-border-bottom so-py-3">
-    <div class="so-container">
+    <div class="so-container-fluid" style="max-width: 1600px;">
         <nav class="so-breadcrumb">
             <a href="index.php" class="so-breadcrumb-item">
                 <span class="material-icons so-fs-sm">home</span>
@@ -20,7 +20,7 @@ require_once 'includes/navbar.php';
 
 <!-- Hero -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-text-center">
             <span class="so-badge so-badge-soft-primary so-mb-2">
                 <span class="material-icons so-fs-xs so-me-1">auto_awesome</span>
@@ -36,7 +36,7 @@ require_once 'includes/navbar.php';
 
 <!-- Tabs Section -->
 <section class="so-py-5" id="tabs">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -116,7 +116,7 @@ require_once 'includes/navbar.php';
 
 <!-- Accordion Section -->
 <section class="so-py-5 so-bg-white" id="accordion">
-    <div class="so-container">
+    <div class="so-container-xxl">
         <div class="so-row so-g-4">
             <div class="so-col-12 so-col-lg-6">
                 <div class="so-card so-h-100">
@@ -231,7 +231,7 @@ require_once 'includes/navbar.php';
 
 <!-- Stepper Section -->
 <section class="so-py-5" id="stepper">
-    <div class="so-container">
+    <div class="so-container-lg">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -328,7 +328,7 @@ require_once 'includes/navbar.php';
 
 <!-- Table Section -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-fluid" style="max-width: 1400px;">
         <div class="so-card">
             <div class="so-card-header so-d-flex so-justify-content-between so-align-items-center">
                 <h5 class="so-mb-0">
@@ -473,7 +473,7 @@ require_once 'includes/navbar.php';
 
 <!-- Code Block Section -->
 <section class="so-py-5">
-    <div class="so-container">
+    <div class="so-container-md">
         <div class="so-card">
             <div class="so-card-header">
                 <h5 class="so-mb-0">
@@ -535,7 +535,7 @@ env:
 
 <!-- List Group Section -->
 <section class="so-py-5 so-bg-white">
-    <div class="so-container">
+    <div class="so-container-xl">
         <div class="so-row so-g-4">
             <div class="so-col-12 so-col-md-6">
                 <div class="so-card so-h-100">
