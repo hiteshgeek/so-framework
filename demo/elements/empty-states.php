@@ -184,6 +184,129 @@ require_once '../includes/navbar.php';
     </div>
 </div>
 
+<!-- No Permission State -->
+<div class="so-card so-mb-4">
+    <div class="so-card-header">
+        <h3 class="so-card-title">No Permission State</h3>
+    </div>
+    <div class="so-card-body">
+        <p class="so-text-muted so-mb-4">Display when user lacks access to content.</p>
+
+                <div class="so-empty-state so-empty-state-no-permission">
+                    <div class="so-empty-state-icon">
+                        <span class="material-icons">lock</span>
+                    </div>
+                    <h3 class="so-empty-state-title">Access Denied</h3>
+                    <p class="so-empty-state-text">You don't have permission to view this content. Contact your administrator to request access.</p>
+                    <div class="so-empty-state-actions">
+                        <button class="so-btn so-btn-secondary">Request Access</button>
+                        <button class="so-btn so-btn-outline">Go Back</button>
+                    </div>
+                </div>
+        <?= so_code_block('<div class="so-empty-state so-empty-state-no-permission">
+    <div class="so-empty-state-icon">
+        <span class="material-icons">lock</span>
+    </div>
+    <h3 class="so-empty-state-title">Access Denied</h3>
+    <p class="so-empty-state-text">You don\'t have permission to view this content.</p>
+    <div class="so-empty-state-actions">
+        <button class="so-btn so-btn-secondary">Request Access</button>
+        <button class="so-btn so-btn-outline">Go Back</button>
+    </div>
+</div>', 'html') ?>
+    </div>
+</div>
+
+<!-- Contextual Presets -->
+<div class="so-card so-mb-4">
+    <div class="so-card-header">
+        <h3 class="so-card-title">Contextual Presets</h3>
+    </div>
+    <div class="so-card-body">
+        <p class="so-text-muted so-mb-4">Pre-styled variants for common scenarios. Each preset includes colored icon backgrounds.</p>
+
+                <div class="so-row so-g-4">
+                    <div class="so-col-md-4">
+                        <div class="so-card so-card-bordered">
+                            <div class="so-empty-state so-empty-state-sm so-empty-state-search">
+                                <div class="so-empty-state-icon">
+                                    <span class="material-icons">search</span>
+                                </div>
+                                <h4 class="so-empty-state-title">.so-empty-state-search</h4>
+                                <p class="so-empty-state-text">For search results</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="so-col-md-4">
+                        <div class="so-card so-card-bordered">
+                            <div class="so-empty-state so-empty-state-sm so-empty-state-error">
+                                <div class="so-empty-state-icon">
+                                    <span class="material-icons">error</span>
+                                </div>
+                                <h4 class="so-empty-state-title">.so-empty-state-error</h4>
+                                <p class="so-empty-state-text">For error states</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="so-col-md-4">
+                        <div class="so-card so-card-bordered">
+                            <div class="so-empty-state so-empty-state-sm so-empty-state-success">
+                                <div class="so-empty-state-icon">
+                                    <span class="material-icons">check_circle</span>
+                                </div>
+                                <h4 class="so-empty-state-title">.so-empty-state-success</h4>
+                                <p class="so-empty-state-text">For success states</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="so-col-md-4">
+                        <div class="so-card so-card-bordered">
+                            <div class="so-empty-state so-empty-state-sm so-empty-state-warning">
+                                <div class="so-empty-state-icon">
+                                    <span class="material-icons">warning</span>
+                                </div>
+                                <h4 class="so-empty-state-title">.so-empty-state-warning</h4>
+                                <p class="so-empty-state-text">For warning states</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="so-col-md-4">
+                        <div class="so-card so-card-bordered">
+                            <div class="so-empty-state so-empty-state-sm so-empty-state-info">
+                                <div class="so-empty-state-icon">
+                                    <span class="material-icons">info</span>
+                                </div>
+                                <h4 class="so-empty-state-title">.so-empty-state-info</h4>
+                                <p class="so-empty-state-text">For info states</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="so-col-md-4">
+                        <div class="so-card so-card-bordered">
+                            <div class="so-empty-state so-empty-state-sm so-empty-state-no-permission">
+                                <div class="so-empty-state-icon">
+                                    <span class="material-icons">lock</span>
+                                </div>
+                                <h4 class="so-empty-state-title">.so-empty-state-no-permission</h4>
+                                <p class="so-empty-state-text">For access denied</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <?= so_code_block('<!-- Contextual preset classes -->
+<div class="so-empty-state so-empty-state-search">...</div>
+<div class="so-empty-state so-empty-state-error">...</div>
+<div class="so-empty-state so-empty-state-success">...</div>
+<div class="so-empty-state so-empty-state-warning">...</div>
+<div class="so-empty-state so-empty-state-info">...</div>
+<div class="so-empty-state so-empty-state-no-permission">...</div>
+
+<!-- Alternative class names -->
+<div class="so-empty-state so-empty-state-danger">...</div>
+<div class="so-empty-state so-empty-state-forbidden">...</div>', 'html') ?>
+    </div>
+</div>
+
 <!-- Size Variants -->
 <div class="so-card so-mb-4">
     <div class="so-card-header">

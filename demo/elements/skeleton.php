@@ -493,6 +493,135 @@ require_once '../includes/navbar.php';
     </div>
 </div>
 
+<!-- Skeleton Presets -->
+<div class="so-card so-mb-4">
+    <div class="so-card-header">
+        <h3 class="so-card-title">Skeleton Presets</h3>
+    </div>
+    <div class="so-card-body">
+        <p class="so-text-muted so-mb-4">Ready-to-use skeleton components that can be dropped in directly.</p>
+
+        <h6 class="so-text-muted so-mb-3">Card Preset</h6>
+        <div class="so-row so-g-4 so-mb-5">
+            <div class="so-col-md-4">
+                <div class="so-skeleton-card">
+                    <div class="so-skeleton-card-img"></div>
+                    <div class="so-skeleton-card-body">
+                        <div class="so-skeleton-card-title"></div>
+                        <div class="so-skeleton-card-text"></div>
+                        <div class="so-skeleton-card-text"></div>
+                        <div class="so-skeleton-card-text"></div>
+                        <div class="so-skeleton-card-btn"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="so-col-md-4">
+                <div class="so-skeleton-card so-skeleton-card-text-only">
+                    <div class="so-skeleton-card-body">
+                        <div class="so-skeleton-card-title"></div>
+                        <div class="so-skeleton-card-text"></div>
+                        <div class="so-skeleton-card-text"></div>
+                        <div class="so-skeleton-card-text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="so-col-md-4">
+                <div class="so-skeleton-stats">
+                    <div class="so-skeleton-stats-header">
+                        <div class="so-skeleton-stats-label"></div>
+                        <div class="so-skeleton-stats-icon"></div>
+                    </div>
+                    <div class="so-skeleton-stats-value"></div>
+                    <div class="so-skeleton-stats-change"></div>
+                </div>
+            </div>
+        </div>
+
+        <h6 class="so-text-muted so-mb-3">List Item Preset</h6>
+        <div class="so-card so-card-bordered so-mb-5">
+            <div class="so-skeleton-list-item">
+                <div class="so-skeleton-list-avatar"></div>
+                <div class="so-skeleton-list-content">
+                    <div class="so-skeleton-list-title"></div>
+                    <div class="so-skeleton-list-subtitle"></div>
+                </div>
+                <div class="so-skeleton-list-action"></div>
+            </div>
+            <div class="so-skeleton-list-item">
+                <div class="so-skeleton-list-avatar"></div>
+                <div class="so-skeleton-list-content">
+                    <div class="so-skeleton-list-title"></div>
+                    <div class="so-skeleton-list-subtitle"></div>
+                </div>
+                <div class="so-skeleton-list-action"></div>
+            </div>
+            <div class="so-skeleton-list-item">
+                <div class="so-skeleton-list-avatar"></div>
+                <div class="so-skeleton-list-content">
+                    <div class="so-skeleton-list-title"></div>
+                    <div class="so-skeleton-list-subtitle"></div>
+                </div>
+                <div class="so-skeleton-list-action"></div>
+            </div>
+        </div>
+
+        <h6 class="so-text-muted so-mb-3">Avatar Sizes</h6>
+        <div class="so-d-flex so-align-items-end so-gap-3 so-mb-4">
+            <div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-xs"></div>
+            <div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-sm"></div>
+            <div class="so-skeleton so-skeleton-avatar"></div>
+            <div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-lg"></div>
+            <div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-xl"></div>
+            <div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-2xl"></div>
+        </div>
+
+        <div class="so-code-block">
+            <div class="so-code-header">
+                <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                <button class="so-code-copy" onclick="copyCode(this)"><span class="material-icons">content_copy</span></button>
+            </div>
+            <pre class="so-code-content"><code class="language-html">&lt;!-- Card Preset --&gt;
+&lt;div class="so-skeleton-card"&gt;
+    &lt;div class="so-skeleton-card-img"&gt;&lt;/div&gt;
+    &lt;div class="so-skeleton-card-body"&gt;
+        &lt;div class="so-skeleton-card-title"&gt;&lt;/div&gt;
+        &lt;div class="so-skeleton-card-text"&gt;&lt;/div&gt;
+        &lt;div class="so-skeleton-card-text"&gt;&lt;/div&gt;
+        &lt;div class="so-skeleton-card-btn"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- List Item Preset --&gt;
+&lt;div class="so-skeleton-list-item"&gt;
+    &lt;div class="so-skeleton-list-avatar"&gt;&lt;/div&gt;
+    &lt;div class="so-skeleton-list-content"&gt;
+        &lt;div class="so-skeleton-list-title"&gt;&lt;/div&gt;
+        &lt;div class="so-skeleton-list-subtitle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="so-skeleton-list-action"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Stats Card Preset --&gt;
+&lt;div class="so-skeleton-stats"&gt;
+    &lt;div class="so-skeleton-stats-header"&gt;
+        &lt;div class="so-skeleton-stats-label"&gt;&lt;/div&gt;
+        &lt;div class="so-skeleton-stats-icon"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="so-skeleton-stats-value"&gt;&lt;/div&gt;
+    &lt;div class="so-skeleton-stats-change"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Avatar Sizes --&gt;
+&lt;div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-xs"&gt;&lt;/div&gt;
+&lt;div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-sm"&gt;&lt;/div&gt;
+&lt;div class="so-skeleton so-skeleton-avatar"&gt;&lt;/div&gt;
+&lt;div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-lg"&gt;&lt;/div&gt;
+&lt;div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-xl"&gt;&lt;/div&gt;
+&lt;div class="so-skeleton so-skeleton-avatar so-skeleton-avatar-2xl"&gt;&lt;/div&gt;</code></pre>
+        </div>
+    </div>
+</div>
+
 <!-- Real World Example -->
 <div class="so-card so-mb-4">
     <div class="so-card-header">
@@ -569,63 +698,6 @@ require_once '../includes/navbar.php';
     </div>
 </div>
 
-<style>
-/* Skeleton base styles */
-.so-skeleton {
-    background: linear-gradient(90deg,
-        var(--so-border-color) 25%,
-        var(--so-card-hover-bg) 50%,
-        var(--so-border-color) 75%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-wave 1.5s ease-in-out infinite;
-}
-
-.so-skeleton-text {
-    height: 16px;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.so-skeleton-circle {
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.so-skeleton-rect {
-    border-radius: 8px;
-}
-
-.so-skeleton-rounded {
-    border-radius: 6px;
-}
-
-.so-skeleton-input {
-    height: 42px;
-    border-radius: 8px;
-}
-
-/* Animation variants */
-.so-skeleton-pulse {
-    animation: skeleton-pulse 1.5s ease-in-out infinite;
-    background: var(--so-border-color);
-}
-
-.so-skeleton-static {
-    animation: none;
-    background: var(--so-border-color);
-}
-
-@keyframes skeleton-wave {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-}
-
-@keyframes skeleton-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-}
-</style>
 
     </div>
 </main>

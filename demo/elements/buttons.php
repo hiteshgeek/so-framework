@@ -850,6 +850,77 @@ document.querySelector(\'.toggle-btn\').addEventListener(\'click\', function() {
                     </div>
                 </div>
 
+                <!-- Section 10b: Data Loading Attribute -->
+                <div class="so-card so-mb-4">
+                    <div class="so-card-header">
+                        <h3 class="so-card-title">Data Loading Attribute</h3>
+                    </div>
+                    <div class="so-card-body">
+                        <p class="so-text-muted so-mb-3">Alternative to <code>.so-loading</code> class - use the <code>data-loading</code> attribute for declarative loading states.</p>
+
+                                <div class="so-flex so-gap-3 so-flex-wrap so-items-center so-mb-4">
+                                    <button class="so-btn so-btn-primary" data-loading>Loading Button</button>
+                                    <button class="so-btn so-btn-success" data-loading="true">Processing</button>
+                                    <button class="so-btn so-btn-outline-primary" data-loading>Outline Loading</button>
+                                    <button class="so-btn so-btn-light-danger" data-loading>Light Loading</button>
+                                </div>
+
+                                <h5 class="so-demo-section-title">Interactive Example</h5>
+                                <p class="so-text-muted so-mb-3">Click buttons to toggle data-loading attribute via JavaScript</p>
+                                <div class="so-flex so-gap-3 so-flex-wrap so-items-center so-mb-4">
+                                    <button class="so-btn so-btn-primary" onclick="this.toggleAttribute('data-loading')">
+                                        <span class="material-icons">save</span>
+                                        Save
+                                    </button>
+                                    <button class="so-btn so-btn-success" onclick="this.toggleAttribute('data-loading')">
+                                        <span class="material-icons">check</span>
+                                        Submit
+                                    </button>
+                                    <button class="so-btn so-btn-outline-primary" onclick="this.toggleAttribute('data-loading')">
+                                        <span class="material-icons">refresh</span>
+                                        Refresh
+                                    </button>
+                                </div>
+
+                        <?= so_code_tabs('data-loading-btn', [
+                            ['language' => 'html', 'code' => '<!-- Use data-loading attribute -->
+<button class="so-btn so-btn-primary" data-loading>Loading...</button>
+
+<!-- Explicit true value -->
+<button class="so-btn so-btn-success" data-loading="true">Processing</button>
+
+<!-- Works with all button variants -->
+<button class="so-btn so-btn-outline-primary" data-loading>Outline</button>
+<button class="so-btn so-btn-light-danger" data-loading>Light</button>
+<button class="so-btn so-btn-ghost so-btn-primary" data-loading>Ghost</button>'],
+                            ['language' => 'javascript', 'code' => 'const btn = document.querySelector(\'.so-btn\');
+
+// Start loading
+btn.setAttribute(\'data-loading\', \'\');
+// or
+btn.dataset.loading = \'true\';
+
+// Stop loading
+btn.removeAttribute(\'data-loading\');
+// or
+btn.dataset.loading = \'false\';
+
+// Toggle loading
+btn.toggleAttribute(\'data-loading\');
+
+// Example: Form submission
+async function handleSubmit(btn) {
+    btn.dataset.loading = \'true\';
+    try {
+        await submitForm();
+    } finally {
+        delete btn.dataset.loading;
+    }
+}']
+                        ]) ?>
+                    </div>
+                </div>
+
                 <!-- Section 11: Progress Buttons -->
                 <div class="so-card so-mb-4">
                     <div class="so-card-header">

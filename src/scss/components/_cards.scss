@@ -796,77 +796,58 @@
 }
 
 // ============================================
-// SKELETON LOADING ANIMATION
+// CARD LOADING STATE
+// Note: Skeleton styles moved to _skeleton.scss
 // ============================================
 
-@keyframes so-skeleton-loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-// Base skeleton element (no animation by default)
-.#{$so-prefix}skeleton {
-  background: css-var('border-color');
-  border-radius: radius('sm');
-}
-
-// Skeleton loading container - enables animation for all .so-skeleton children
-.#{$so-prefix}skeleton-loading,
-.#{$so-prefix}card-loading {
+.#{$so-prefix}card-loading,
+.#{$so-prefix}card[data-loading="true"],
+.#{$so-prefix}card[data-loading] {
+  position: relative;
   pointer-events: none;
 
-  .#{$so-prefix}skeleton {
-    background: linear-gradient(
-      90deg,
-      css-var('border-color') 25%,
-      css-var('card-hover-bg') 50%,
-      css-var('border-color') 75%
-    );
-    background-size: 200% 100%;
-    animation: so-skeleton-loading 1.5s infinite;
+  // Overlay effect
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: css-var('card-bg');
+    opacity: 0.7;
+    z-index: 10;
+    border-radius: radius('lg');
+  }
+
+  // Spinner
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 3px solid css-var('border-color');
+    border-top-color: css-var('accent-primary');
+    border-radius: 50%;
+    animation: so-card-spin 0.8s linear infinite;
+    z-index: 11;
   }
 }
 
-// Skeleton element variants
-.#{$so-prefix}skeleton-text {
-  @extend .#{$so-prefix}skeleton;
-  height: 1em;
-  margin-bottom: spacing('2');
+// Disable loading when data-loading="false"
+.#{$so-prefix}card[data-loading="false"] {
+  pointer-events: auto;
 
-  &:last-child {
-    width: 60%;
-    margin-bottom: 0;
+  &::before,
+  &::after {
+    content: none;
   }
 }
 
-.#{$so-prefix}skeleton-title {
-  @extend .#{$so-prefix}skeleton;
-  height: 1.5em;
-  width: 50%;
-  margin-bottom: spacing('3');
-}
-
-.#{$so-prefix}skeleton-avatar {
-  @extend .#{$so-prefix}skeleton;
-  width: 40px;
-  height: 40px;
-  border-radius: radius('full');
-}
-
-.#{$so-prefix}skeleton-img {
-  @extend .#{$so-prefix}skeleton;
-  height: 200px;
-  border-radius: radius('lg') radius('lg') 0 0;
-  width: 100%;
-}
-
-.#{$so-prefix}skeleton-btn {
-  @extend .#{$so-prefix}skeleton;
-  height: 36px;
-  width: 80px;
-  border-radius: radius('md');
+@keyframes so-card-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

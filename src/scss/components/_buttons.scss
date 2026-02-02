@@ -2223,3 +2223,80 @@
     color: $so-secondary !important;
   }
 }
+
+// ============================================
+// DATA-LOADING ATTRIBUTE SUPPORT
+// Alternative to .so-loading class - use data-loading attribute
+// ============================================
+
+.#{$so-prefix}btn[data-loading="true"],
+.#{$so-prefix}btn[data-loading] {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: so-btn-spin 0.6s linear infinite;
+    opacity: 1;
+  }
+
+  // Inherit spinner styles from .so-loading
+  &.#{$so-prefix}btn-primary::before {
+    border-color: color.mix($so-white, $so-primary, 70%);
+    border-right-color: transparent;
+  }
+
+  &.#{$so-prefix}btn-secondary::before {
+    border-color: color.mix($so-white, $so-secondary, 70%);
+    border-right-color: transparent;
+  }
+
+  &.#{$so-prefix}btn-success::before {
+    border-color: color.mix($so-white, $so-success, 70%);
+    border-right-color: transparent;
+  }
+
+  &.#{$so-prefix}btn-danger::before {
+    border-color: color.mix($so-white, $so-danger, 70%);
+    border-right-color: transparent;
+  }
+
+  &.#{$so-prefix}btn-warning::before {
+    border-color: color.mix($so-white, $so-warning, 70%);
+    border-right-color: transparent;
+  }
+
+  &.#{$so-prefix}btn-info::before {
+    border-color: color.mix($so-white, $so-info, 70%);
+    border-right-color: transparent;
+  }
+
+  &.#{$so-prefix}btn-outline::before,
+  &.#{$so-prefix}btn-ghost::before,
+  &[class*="btn-outline-"]::before,
+  &[class*="btn-light-"]::before {
+    border-color: currentColor;
+    border-right-color: transparent;
+    opacity: 0.7;
+  }
+}
+
+// Disable loading when data-loading="false"
+.#{$so-prefix}btn[data-loading="false"] {
+  color: inherit !important;
+  pointer-events: auto;
+
+  &::before {
+    content: none;
+  }
+}
