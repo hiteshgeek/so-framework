@@ -284,13 +284,13 @@ $so-radii: (
 // ============================================
 $so-shadows: (
   'none': none,
-  'xs': 0 1px 2px 0 rgba(60, 64, 67, 0.05),
-  'sm': 0 1px 2px 0 rgba(60, 64, 67, 0.1),
-  'base': (0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15)),
-  'md': (0 1px 3px 0 rgba(60, 64, 67, 0.15), 0 4px 8px 3px rgba(60, 64, 67, 0.1)),
-  'lg': (0 1px 3px 0 rgba(60, 64, 67, 0.15), 0 4px 8px 3px rgba(60, 64, 67, 0.15)),
-  'xl': 0 4px 16px rgba(0, 0, 0, 0.16),
-  '2xl': 0 8px 32px rgba(0, 0, 0, 0.2),
+  'xs': 0 1px 2px 0 rgba(0, 0, 0, 0.08),
+  'sm': 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  'base': 0 2px 6px 0 rgba(0, 0, 0, 0.15),
+  'md': 0 4px 12px 0 rgba(0, 0, 0, 0.18),
+  'lg': 0 8px 24px 0 rgba(0, 0, 0, 0.22),
+  'xl': 0 12px 32px 0 rgba(0, 0, 0, 0.25),
+  '2xl': 0 16px 48px 0 rgba(0, 0, 0, 0.3),
 ) !default;
 
 $so-shadows-dark: (
@@ -298,9 +298,10 @@ $so-shadows-dark: (
   'xs': 0 1px 2px 0 rgba(0, 0, 0, 0.15),
   'sm': 0 1px 3px 0 rgba(0, 0, 0, 0.2),
   'base': 0 2px 6px 0 rgba(0, 0, 0, 0.25),
-  'md': 0 4px 12px rgba(0, 0, 0, 0.3),
-  'lg': 0 4px 16px rgba(0, 0, 0, 0.4),
-  'xl': 0 8px 24px rgba(0, 0, 0, 0.5),
+  'md': 0 4px 12px 0 rgba(0, 0, 0, 0.35),
+  'lg': 0 8px 24px 0 rgba(0, 0, 0, 0.45),
+  'xl': 0 12px 32px 0 rgba(0, 0, 0, 0.5),
+  '2xl': 0 16px 48px 0 rgba(0, 0, 0, 0.55),
 ) !default;
 
 // ============================================

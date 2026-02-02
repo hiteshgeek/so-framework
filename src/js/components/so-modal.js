@@ -36,6 +36,9 @@ class SOModal extends SOComponent {
   // Track open modals for stacking
   static _openModals = [];
 
+  // Track singleton modal instances by ID
+  static _singletonInstances = new Map();
+
   /**
    * Initialize the modal
    * @private
@@ -516,7 +519,20 @@ class SOModal extends SOComponent {
       className = '',
       static: isStatic = false,
       focusElement = 'footer',
+      singleton = false,
+      singletonId = null,
     } = options;
+
+    // Singleton check - if modal with same ID exists, shake it and return existing
+    if (singleton) {
+      const id = singletonId || `singleton-${title.toLowerCase().replace(/\s+/g, '-')}`;
+      const existingInstance = SOModal._singletonInstances.get(id);
+
+      if (existingInstance && existingInstance._isOpen) {
+        existingInstance._shakeModal();
+        return existingInstance;
+      }
+    }
 
     /**
      * Parse button content from various formats (same as confirm)
@@ -685,8 +701,19 @@ class SOModal extends SOComponent {
     // Store the instance on the element for easy retrieval
     modal._soModalInstance = instance;
 
+    // Register singleton instance
+    if (singleton) {
+      const id = singletonId || `singleton-${title.toLowerCase().replace(/\s+/g, '-')}`;
+      SOModal._singletonInstances.set(id, instance);
+    }
+
     // Remove from DOM when hidden
     modal.addEventListener(SixOrbit.evt(SOModal.EVENTS.HIDDEN), () => {
+      // Remove singleton from registry
+      if (singleton) {
+        const id = singletonId || `singleton-${title.toLowerCase().replace(/\s+/g, '-')}`;
+        SOModal._singletonInstances.delete(id);
+      }
       modal.remove();
     });
 

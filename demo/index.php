@@ -40,7 +40,7 @@ require_once 'includes/navbar.php';
         <span class="so-breadcrumb-bar-item so-active">Wallet</span>
     </div>
 
-    <div class="demo-content">
+    <div class="demo-content so-p-3">
         <!-- Page Header Card -->
         <div class="so-card so-card-padded so-page-header-card so-shadow">
             <nav class="so-breadcrumb-bar" style="background: transparent; border: none; padding: 0; margin-bottom: 12px;">
@@ -116,7 +116,7 @@ require_once 'includes/navbar.php';
 
         <!-- Dashboard Cards -->
         <div class="so-grid so-grid-cols-4 so-grid-cols-lg-2 so-grid-cols-sm-1 so-gap-3 so-mb-4">
-            <div class="so-card so-card-padded so-shadow">
+            <div class="so-card so-card-padded">
                 <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
                     <span class="so-text-muted so-fs-xs so-text-uppercase so-fw-medium">Total Sales</span>
                     <span class="so-d-flex so-align-items-center so-justify-content-center so-rounded-full so-bg-info-subtle so-w-8 so-h-8">
@@ -130,7 +130,7 @@ require_once 'includes/navbar.php';
                 </div>
             </div>
 
-            <div class="so-card so-card-padded so-shadow">
+            <div class="so-card so-card-padded">
                 <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
                     <span class="so-text-muted so-fs-xs so-text-uppercase so-fw-medium">Total Purchase</span>
                     <span class="so-d-flex so-align-items-center so-justify-content-center so-rounded-full so-bg-danger-subtle so-w-8 so-h-8">
@@ -144,7 +144,7 @@ require_once 'includes/navbar.php';
                 </div>
             </div>
 
-            <div class="so-card so-card-padded so-shadow">
+            <div class="so-card so-card-padded">
                 <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
                     <span class="so-text-muted so-fs-xs so-text-uppercase so-fw-medium">Pending Orders</span>
                     <span class="so-d-flex so-align-items-center so-justify-content-center so-rounded-full so-bg-warning-subtle so-w-8 so-h-8">

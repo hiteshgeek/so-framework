@@ -45,10 +45,10 @@ $so-theme-light: (
   'accent-info-hover': #138496,
   'accent-info-light': #e0f7fa,
 
-  // Shadows (all sides - equal spread)
-  'shadow': 0 0 8px 0 rgba(60, 64, 67, 0.15),
-  'shadow-lg': 0 0 16px 0 rgba(60, 64, 67, 0.2),
-  'shadow-xl': 0 0 24px 0 rgba(60, 64, 67, 0.25),
+  // Shadows (natural downward offset)
+  'shadow': 0 2px 6px 0 rgba(0, 0, 0, 0.15),
+  'shadow-lg': 0 4px 12px 0 rgba(0, 0, 0, 0.18),
+  'shadow-xl': 0 8px 24px 0 rgba(0, 0, 0, 0.22),
 
   // Form Elements
   'form-bg': #ffffff,
@@ -140,10 +140,10 @@ $so-theme-dark: (
   'accent-info-hover': #33d8ec,
   'accent-info-light': rgba(0, 207, 232, 0.15),
 
-  // Shadows (all sides - equal spread)
-  'shadow': 0 0 8px 0 rgba(0, 0, 0, 0.3),
-  'shadow-lg': 0 0 16px 0 rgba(0, 0, 0, 0.4),
-  'shadow-xl': 0 0 24px 0 rgba(0, 0, 0, 0.5),
+  // Shadows (more prominent for dark backgrounds)
+  'shadow': 0 2px 6px 0 rgba(0, 0, 0, 0.25),
+  'shadow-lg': 0 4px 12px 0 rgba(0, 0, 0, 0.35),
+  'shadow-xl': 0 8px 24px 0 rgba(0, 0, 0, 0.45),
 
   // Form Elements
   'form-bg': #25293c,

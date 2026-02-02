@@ -37,3 +37,132 @@
 | **Code Block Component** | Syntax highlighting integration |
 | **Empty States** | Standardized "no data" patterns |
 | **Media Object** | Image + content pattern |
+
+---
+
+## New Components (To Be Added)
+
+### High Priority
+- [ ] **Date Picker** - Calendar-based date selection (forms, scheduling)
+- [ ] **Time Picker** - Hour/minute selection (scheduling, appointments)
+- [ ] **Date Range Picker** - Two-date selection with calendar (reports, filters)
+- [ ] **Tree View / Tree Select** - Hierarchical data display/selection (file browsers, categories)
+- [ ] **Transfer List** - Dual-list selector available → selected (permissions, bulk assignment)
+
+### Medium Priority
+- [ ] **Mentions Input** - @user tagging in text (comments, chat)
+- [ ] **Avatar Group** - Overlapping avatar stack with "+N" (team displays)
+- [ ] **Infinite Scroll** - Load more on scroll (feeds, long lists)
+- [ ] **Virtual List** - Virtualized rendering for 1000+ items (large datasets)
+- [ ] **Countdown Timer** - Time remaining display (sales, events)
+- [x] **Copy Button** - Click-to-copy with feedback (code blocks, IDs) ✓ IMPLEMENTED
+
+### Lower Priority
+- [ ] **Image Cropper** - Crop/resize images (profile photos)
+- [ ] **Notification Center** - Bell icon with dropdown list (app notifications)
+- [ ] **Keyboard Shortcuts** - Hotkey registration & display (power users)
+- [ ] **Tour/Onboarding** - Step-by-step feature guide (new user experience)
+
+---
+
+## Existing Components - Improvements
+
+### Table (so-table.js)
+- [ ] Column resizing (drag to resize)
+- [ ] Fixed/sticky header on scroll
+- [ ] Column filtering (per-column dropdowns)
+- [ ] Row grouping/aggregation
+- [ ] Export to CSV/Excel
+- [ ] Virtualization for 1000+ rows
+- [ ] Inline cell editing
+
+### Modal (so-modal.js)
+- [ ] Draggable modal (movable by header)
+- [ ] Maximizable/minimize toggle
+- [ ] Nested modal management
+- [ ] Mobile fullscreen auto-switch
+- [ ] Modal with sidebar layout
+
+### Tabs (so-tabs.js)
+- [ ] Closable tabs (X button)
+- [ ] Draggable tab reordering
+- [ ] Overflow handling (scroll arrows or dropdown when many tabs)
+- [ ] Tab badges/indicators
+- [ ] Vertical tabs variant
+
+### Dropdown/Select (so-select.js)
+- [ ] Grouped options with headers
+- [ ] Checkbox mode in multi-select
+- [ ] Option icons/avatars
+- [ ] "Select All" for multi-select
+- [ ] Creatable (add new option inline)
+
+### Toast (so-toast.js)
+- [ ] Action buttons ("Undo", "View")
+- [ ] Queue similar toasts (batch)
+- [ ] Persistent toast (requires manual dismiss)
+- [ ] Custom icons
+- [ ] HTML content support
+
+### Buttons
+- [ ] Split button (button + dropdown arrow)
+- [ ] Button with badge/counter
+- [ ] Async/loading state built-in
+- [ ] Icon-only button sizing fixes
+
+### Forms/Inputs
+- [ ] Input masking (phone: xxx-xxx-xxxx, card: xxxx xxxx xxxx xxxx)
+- [ ] Password strength meter
+- [ ] Character counter
+- [ ] Clear button (X to clear input)
+- [ ] Prefix/suffix improvements
+
+### Cards
+- [ ] Card loading/skeleton state
+- [ ] Card selection (checkbox mode)
+- [ ] Card actions overlay on hover
+- [ ] Expandable card content
+
+### Autocomplete (so-autocomplete.js)
+- [ ] Virtualized dropdown (1000+ options)
+- [ ] Recent/popular suggestions
+- [ ] Keyboard shortcut hints
+- [ ] Better mobile drawer mode
+
+### Pagination (so-pagination.js)
+- [ ] Jump to page input
+- [ ] Items per page selector
+- [ ] Total count display
+- [ ] Compact mobile mode
+
+---
+
+## Quick Wins (Easy Improvements)
+
+- [ ] **Skeleton presets** - so-skeleton-avatar, so-skeleton-card, so-skeleton-table-row, so-skeleton-list-item
+- [ ] **Loading states** - Add data-loading attribute support to buttons/cards
+- [ ] **Empty state presets** - No search results, No data, Error state, No permissions
+- [ ] **Badge improvements** - Dot badge, animated badge, badge positions
+- [ ] **Tooltip enhancements** - Rich tooltips with HTML, images
+
+---
+
+## Implementation Priority
+
+### Phase 1 (High Value)
+- [ ] Date Picker
+- [ ] Table column resizing + fixed header
+- [ ] Split buttons
+- [ ] Input masking
+
+### Phase 2 (User Experience)
+- [ ] Tabs overflow handling
+- [ ] Toast actions
+- [x] Copy button utility ✓ IMPLEMENTED
+- [ ] Skeleton presets
+
+### Phase 3 (Advanced)
+- [ ] Tree View
+- [ ] Transfer List
+- [ ] Virtual List
+- [ ] Draggable modal

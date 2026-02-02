@@ -920,6 +920,94 @@ if (result) {
         </div>
     </div>
 
+    <!-- Singleton Modal -->
+    <div class="so-card so-mb-4">
+        <div class="so-card-header">
+            <h3 class="so-card-title">Singleton Modal</h3>
+        </div>
+        <div class="so-card-body">
+            <p class="so-text-secondary so-mb-4">Compare normal modals (multiple instances allowed) vs singleton modals (only one instance at a time).</p>
+
+            <h5 class="so-mb-3">Normal Modal (Multiple Instances)</h5>
+            <p class="so-text-secondary so-text-sm so-mb-3">Each click creates a new modal instance, stacking on top of each other.</p>
+            <div class="so-btn-group so-flex-wrap so-mb-4">
+                <button type="button" class="so-btn so-btn-outline" onclick="showNormalModal()">
+                    Open Normal Modal
+                </button>
+            </div>
+
+            <h5 class="so-mb-3">Singleton Modal (Single Instance)</h5>
+            <p class="so-text-secondary so-text-sm so-mb-3">Only one instance can exist. Duplicate calls shake the existing modal instead of creating a new one.</p>
+            <div class="so-btn-group so-flex-wrap so-mb-4">
+                <button type="button" class="so-btn so-btn-primary" onclick="showSingletonModal()">
+                    Open Singleton Modal
+                </button>
+            </div>
+
+            <h5 class="so-mb-3 so-mt-4">Singleton with Animation Options</h5>
+            <p class="so-text-secondary so-text-sm so-mb-3">Customize the modal entrance animation or disable it entirely.</p>
+            <div class="so-btn-group so-flex-wrap so-mb-4">
+                <button type="button" class="so-btn so-btn-outline" onclick="showSingletonModalWithAnimation('none')">
+                    No Animation
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showSingletonModalWithAnimation('bounce-in')">
+                    Bounce In
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showSingletonModalWithAnimation('scale-in')">
+                    Scale In
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showSingletonModalWithAnimation('fade-in-up')">
+                    Fade In Up
+                </button>
+                <button type="button" class="so-btn so-btn-outline" onclick="showSingletonModalWithAnimation('slide-in-up')">
+                    Slide In Up
+                </button>
+            </div>
+
+            <div class="so-mt-4">
+                <?= so_code_block('// Normal modal - allows multiple instances
+SOModal.create({
+    title: \'Normal Modal\',
+    content: \'<p>Each call creates a new instance...</p>\',
+    // singleton: false (default)
+});
+
+// Singleton modal - only one instance at a time
+SOModal.create({
+    title: \'Settings\',
+    content: \'<p>Your settings content here...</p>\',
+    singleton: true,           // Enable singleton mode
+    singletonId: \'my-settings\', // Optional: custom ID (defaults to title-based ID)
+    footer: [...]
+});
+
+// Singleton with no animation
+SOModal.create({
+    title: \'Quick Modal\',
+    content: \'<p>Appears instantly without animation.</p>\',
+    singleton: true,
+    singletonId: \'quick-modal\',
+    animation: false  // Disable fade animation
+});
+
+// Singleton with custom animation
+SOModal.create({
+    title: \'Bouncy Modal\',
+    content: \'<p>Custom entrance animation.</p>\',
+    singleton: true,
+    singletonId: \'bouncy-modal\',
+    className: \'so-animate so-animate-bounce-in\'  // Use framework animations
+});
+
+// Available animations:
+// - so-animate-bounce-in, so-animate-scale-in, so-animate-zoom-in
+// - so-animate-fade-in-up, so-animate-fade-in-down
+// - so-animate-slide-in-up, so-animate-slide-in-down
+// - so-animate-tada, so-animate-swing', 'javascript') ?>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript API -->
     <div class="so-card so-mb-4">
         <div class="so-card-header">
@@ -1689,6 +1777,91 @@ function showDomModal(modalId) {
     if (!modalEl) return;
 
     const modal = SOModal.getInstance(modalEl);
+    modal.show();
+}
+
+// Normal Modal Demo (multiple instances allowed)
+function showNormalModal() {
+    const modal = SOModal.create({
+        title: 'Normal Modal',
+        content: `
+            <p>This is a <strong>normal modal</strong> - multiple instances can exist at the same time.</p>
+            <p>Click the button below to open another instance. Each click creates a new modal that stacks on top.</p>
+            <div class="so-mt-4">
+                <button type="button" class="so-btn so-btn-primary" onclick="showNormalModal()">
+                    <span class="material-icons">add</span> Open Another Modal
+                </button>
+            </div>
+        `,
+        footer: [
+            { content: 'Close', class: 'so-btn-outline', dismiss: true }
+        ]
+    });
+    modal.show();
+}
+
+// Singleton Modal Demo (only one instance allowed)
+function showSingletonModal() {
+    const modal = SOModal.create({
+        title: 'Singleton Modal',
+        content: `
+            <p>This modal is a <strong>singleton</strong> - only one instance can exist at a time.</p>
+            <p>Click the button below to try opening another instance. Instead of creating a new modal, this one will <strong>shake</strong> to indicate it's already open.</p>
+            <div class="so-mt-4">
+                <button type="button" class="so-btn so-btn-primary" onclick="showSingletonModal()">
+                    <span class="material-icons">add</span> Try Open Another
+                </button>
+            </div>
+            <div class="so-alert so-alert-info so-alert-sm so-mt-3">
+                <span class="material-icons">info</span>
+                <div>Useful for modals that should never have multiple instances, like settings or login dialogs.</div>
+            </div>
+        `,
+        singleton: true,
+        singletonId: 'demo-singleton',
+        footer: [
+            { content: 'Close', class: 'so-btn-outline', dismiss: true }
+        ]
+    });
+    modal.show();
+}
+
+// Singleton Modal with Animation Options
+function showSingletonModalWithAnimation(animationType) {
+    const animationNames = {
+        'none': 'No Animation',
+        'bounce-in': 'Bounce In',
+        'scale-in': 'Scale In',
+        'fade-in-up': 'Fade In Up',
+        'slide-in-up': 'Slide In Up'
+    };
+
+    const options = {
+        title: `Singleton - ${animationNames[animationType]}`,
+        content: `
+            <p>This singleton modal uses <strong>${animationType === 'none' ? 'no animation' : 'so-animate-' + animationType}</strong> for its entrance.</p>
+            <p>Click the button below to try opening another instance - the modal will shake instead.</p>
+            <div class="so-mt-4">
+                <button type="button" class="so-btn so-btn-primary" onclick="showSingletonModalWithAnimation('${animationType}')">
+                    <span class="material-icons">add</span> Try Open Another
+                </button>
+            </div>
+        `,
+        singleton: true,
+        singletonId: 'demo-singleton-animated',
+        footer: [
+            { content: 'Close', class: 'so-btn-outline', dismiss: true }
+        ]
+    };
+
+    // Apply animation settings
+    if (animationType === 'none') {
+        options.animation = false;
+    } else {
+        options.className = `so-animate so-animate-${animationType}`;
+    }
+
+    const modal = SOModal.create(options);
     modal.show();
 }
 </script>
