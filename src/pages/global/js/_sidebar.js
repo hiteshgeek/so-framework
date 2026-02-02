@@ -540,7 +540,7 @@ class SidebarController {
         const basePath = currentPath.substring(0, demoIndex + 6); // includes '/demo/'
         window.location.href = basePath + 'login.php';
       } else {
-        window.location.href = '/so-framework/demo/login.php';
+        window.location.href = '/demo/login.php';
       }
     };
 

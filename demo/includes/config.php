@@ -3,18 +3,25 @@
  * SixOrbit UI Demo - Configuration
  */
 
+// Load Composer autoloader and .env
+require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
+$dotenv->load();
+
 // Framework info
 define('SO_VERSION', '1.0.0');
 define('SO_PREFIX', 'so');
 
-// Calculate base path based on current script location
-$scriptDir = dirname($_SERVER['SCRIPT_NAME']);
-$demoBase = '/so-framework/demo';
-$depth = substr_count(str_replace($demoBase, '', $scriptDir), '/');
-$relativePrefix = $depth > 0 ? str_repeat('../', $depth) : '';
+// Base URL from .env or fallback to auto-detect
+define('APP_URL', $_ENV['APP_URL'] ?? '//' . $_SERVER['HTTP_HOST']);
 
-define('SO_DIST_PATH', $relativePrefix . '../dist');
-define('SO_DATA_PATH', $relativePrefix . 'data');
+// Filesystem root path
+define('PROJECT_ROOT', dirname(__DIR__, 2));
+
+// URL paths (absolute from document root)
+define('SO_DIST_PATH', '/dist');
+define('SO_DATA_PATH', '/demo/data');
 
 // Demo company info
 define('DEMO_COMPANY_NAME', 'Trove Innovation');
@@ -24,7 +31,7 @@ define('DEMO_USER_EMAIL', 'rajeev@trove.com');
 
 // Load manifest for versioned assets
 function loadManifest() {
-    $manifestPath = SO_DIST_PATH . '/manifest.json';
+    $manifestPath = PROJECT_ROOT . '/dist/manifest.json';
     if (file_exists($manifestPath)) {
         return json_decode(file_get_contents($manifestPath), true);
     }
@@ -71,9 +78,9 @@ function so_page_asset($page, $type) {
     }
 
     // Fallback to non-versioned path
-    $fallbackPath = SO_DIST_PATH . "/pages/{$page}/{$page}.{$type}";
-    if (file_exists($fallbackPath)) {
-        return $fallbackPath;
+    $fallbackPath = "/pages/{$page}/{$page}.{$type}";
+    if (file_exists(PROJECT_ROOT . '/dist' . $fallbackPath)) {
+        return SO_DIST_PATH . $fallbackPath;
     }
 
     return null;
@@ -85,7 +92,7 @@ function so_page_asset($page, $type) {
  * @return array - Parsed JSON data
  */
 function load_data($filename) {
-    $path = SO_DATA_PATH . '/' . $filename;
+    $path = PROJECT_ROOT . '/demo/data/' . $filename;
     if (file_exists($path)) {
         return json_decode(file_get_contents($path), true);
     }

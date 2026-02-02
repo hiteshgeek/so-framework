@@ -7,11 +7,8 @@
 $sidebarMenu = load_data('sidebar-menu.json');
 $currentPage = get_current_page();
 
-// Get relative prefix for URL adjustment (pages in subdirs need to go up)
-$scriptDir = dirname($_SERVER['SCRIPT_NAME']);
-$demoBase = '/so-framework/demo';
-$urlDepth = substr_count(str_replace($demoBase, '', $scriptDir), '/');
-$urlPrefix = $urlDepth > 0 ? str_repeat('../', $urlDepth) : '';
+// Base path for all demo URLs (absolute)
+$demoBase = '/demo/';
 
 /**
  * Check if any child item is active (recursively)
@@ -36,7 +33,7 @@ function check_children_active($children, $currentPage) {
  * Render sidebar menu items recursively
  */
 function render_menu_items($items, $currentPage, $depth = 0) {
-    global $urlPrefix;
+    global $demoBase;
     $html = '';
     foreach ($items as $item) {
         $hasChildren = !empty($item['children']);
@@ -61,9 +58,9 @@ function render_menu_items($items, $currentPage, $depth = 0) {
         $html .= '<li class="' . $itemClass . '">';
 
         $url = $hasChildren ? '#' : ($item['url'] ?? '#');
-        // Prepend relative prefix for non-hash URLs
-        if ($url !== '#' && strpos($url, '#') !== 0 && strpos($url, 'http') !== 0) {
-            $url = $urlPrefix . $url;
+        // Prepend /demo/ base for internal URLs (not #, not http, not ..)
+        if ($url !== '#' && strpos($url, '#') !== 0 && strpos($url, 'http') !== 0 && strpos($url, '..') !== 0) {
+            $url = $demoBase . $url;
         }
         $html .= '<a href="' . htmlspecialchars($url) . '" class="so-sidebar-link">';
         $html .= '<span class="so-sidebar-icon"><span class="material-icons">' . ($item['icon'] ?? 'circle') . '</span></span>';
