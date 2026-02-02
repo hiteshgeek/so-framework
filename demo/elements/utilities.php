@@ -622,6 +622,111 @@ require_once '../includes/navbar.php';
     </div>
 
     <!-- ============================================
+         LIST UTILITIES
+         ============================================ -->
+    <div class="so-card so-mb-4">
+        <div class="so-card-header">
+            <h3 class="so-card-title">Lists</h3>
+        </div>
+        <div class="so-card-body">
+            <p class="so-text-muted so-mb-4">List styles and utility classes for ordered and unordered lists.</p>
+
+            <!-- Default Lists -->
+            <h5 class="so-fw-semibold so-mb-3">Default Lists</h5>
+            <div class="so-row so-mb-4">
+                <div class="so-col-md-6 so-mb-3">
+                    <p class="so-fs-sm so-text-muted so-mb-2">Unordered List (ul)</p>
+                    <ul>
+                        <li>First item</li>
+                        <li>Second item</li>
+                        <li>Third item with nested list
+                            <ul>
+                                <li>Nested item one</li>
+                                <li>Nested item two
+                                    <ul>
+                                        <li>Deep nested item</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Fourth item</li>
+                    </ul>
+                </div>
+                <div class="so-col-md-6 so-mb-3">
+                    <p class="so-fs-sm so-text-muted so-mb-2">Ordered List (ol)</p>
+                    <ol>
+                        <li>First step</li>
+                        <li>Second step</li>
+                        <li>Third step with sub-steps
+                            <ol>
+                                <li>Sub-step one</li>
+                                <li>Sub-step two
+                                    <ol>
+                                        <li>Deep sub-step</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Fourth step</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Unstyled List -->
+            <h5 class="so-fw-semibold so-mb-3">Unstyled List</h5>
+            <p class="so-fs-sm so-text-muted so-mb-2">.so-list-unstyled - Removes bullets/numbers and padding</p>
+            <ul class="so-list-unstyled so-bg-body-secondary so-p-3 so-rounded so-mb-4">
+                <li>Item without bullet</li>
+                <li>Another item</li>
+                <li>Third item</li>
+            </ul>
+
+            <!-- Inline List -->
+            <h5 class="so-fw-semibold so-mb-3">Inline List</h5>
+            <p class="so-fs-sm so-text-muted so-mb-2">.so-list-inline - Horizontal list using flexbox</p>
+            <ul class="so-list-inline so-bg-body-secondary so-p-3 so-rounded so-mb-4">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+
+            <div class="so-code-block">
+                <div class="so-code-header">
+                    <span class="so-code-label"><span class="material-icons">code</span> HTML</span>
+                    <button class="so-code-copy" onclick="copyCode(this)">
+                        <span class="material-icons">content_copy</span>
+                    </button>
+                </div>
+                <pre class="so-code-content"><code class="language-html">&lt;!-- Default unordered list --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item one&lt;/li&gt;
+    &lt;li&gt;Item two&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Default ordered list --&gt;
+&lt;ol&gt;
+    &lt;li&gt;Step one&lt;/li&gt;
+    &lt;li&gt;Step two&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Unstyled list --&gt;
+&lt;ul class="so-list-unstyled"&gt;
+    &lt;li&gt;No bullets&lt;/li&gt;
+    &lt;li&gt;No padding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Inline list --&gt;
+&lt;ul class="so-list-inline"&gt;
+    &lt;li&gt;Home&lt;/li&gt;
+    &lt;li&gt;About&lt;/li&gt;
+    &lt;li&gt;Contact&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
          BORDER UTILITIES
          ============================================ -->
     <div class="so-card so-mb-4">

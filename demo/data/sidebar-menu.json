@@ -336,6 +336,13 @@
               "url": "elements/scrollspy.php"
             },
             {
+              "id": "scroll-navigation",
+              "title": "Scroll Navigation",
+              "icon": "swap_vert",
+              "url": "elements/go-to-top.php",
+              "badge": "New"
+            },
+            {
               "id": "skeleton",
               "title": "Skeleton",
               "icon": "hourglass_empty",

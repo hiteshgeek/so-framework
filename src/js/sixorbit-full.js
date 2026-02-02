@@ -28,6 +28,7 @@ import SOAutocomplete from './components/so-autocomplete.js';
 import SOTable from './components/so-table.js';
 import SOPagination from './components/so-pagination.js';
 import SOCopy from './components/so-copy.js';
+import SOGoToTop from './components/so-go-to-top.js';
 
 // Features
 import SOForms from './features/so-forms.js';
@@ -49,6 +50,7 @@ window.SOTheme = SOTheme;
 window.SONavbar = SONavbar;
 window.SOContextMenu = SOContextMenu;
 window.SOCopy = SOCopy;
+window.SOGoToTop = SOGoToTop;
 
 // Auto-initialize all components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -110,6 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize copy buttons
   SOCopy.initAll();
 
+  // Initialize go to top buttons
+  SOGoToTop.initAll();
+
   console.log('SixOrbit UI Full initialized');
 });
 
@@ -136,6 +141,7 @@ export {
   SOTable,
   SOPagination,
   SOCopy,
+  SOGoToTop,
   SOForms,
 };
 

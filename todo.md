@@ -139,6 +139,7 @@
 
 ## Quick Wins (Easy Improvements)
 
+- [x] **Go to Top Button** - Scroll-to-top button that appears after scrolling down (long pages, mobile UX) ✓ IMPLEMENTED
 - [ ] **Skeleton presets** - so-skeleton-avatar, so-skeleton-card, so-skeleton-table-row, so-skeleton-list-item
 - [ ] **Loading states** - Add data-loading attribute support to buttons/cards
 - [ ] **Empty state presets** - No search results, No data, Error state, No permissions
