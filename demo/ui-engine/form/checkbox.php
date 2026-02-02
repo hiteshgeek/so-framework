@@ -15,18 +15,10 @@ require_once '../../includes/navbar.php';
 <main class="so-main-content">
     <!-- Page Header -->
     <div class="so-page-header">
-        <nav aria-label="breadcrumb">
-            <ol class="so-breadcrumb">
-                <li class="so-breadcrumb-item"><a href="../index.php">UI Engine</a></li>
-                <li class="so-breadcrumb-item"><a href="../index.php#form">Form Elements</a></li>
-                <li class="so-breadcrumb-item so-active">Checkbox</li>
-            </ol>
-        </nav>
-        <h1 class="so-page-title">
-            <span class="material-icons so-text-primary">check_box</span>
-            Checkbox
-        </h1>
-        <p class="so-page-subtitle">Checkbox element for boolean values and multiple selections with various styling options.</p>
+        <div class="so-page-header-left">
+            <h1 class="so-page-title">Checkbox</h1>
+            <p class="so-page-subtitle">Checkbox element for boolean values and multiple selections with various styling options.</p>
+        </div>
     </div>
 
     <div class="so-page-body">
@@ -38,10 +30,11 @@ require_once '../../includes/navbar.php';
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="checkbox" id="demo-terms" name="terms">
-                        <label class="so-form-check-label" for="demo-terms">I agree to the terms and conditions</label>
-                    </div>
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="terms">
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">I agree to the terms and conditions</span>
+                    </label>
                 </div>
 
                 <!-- Code Tabs -->
@@ -71,10 +64,11 @@ document.getElementById('container').innerHTML = checkbox.toHtml();"
                         'label' => 'HTML Output',
                         'language' => 'html',
                         'icon' => 'code',
-                        'code' => '<div class="so-form-check">
-    <input class="so-form-check-input" type="checkbox" id="terms" name="terms">
-    <label class="so-form-check-label" for="terms">I agree to the terms and conditions</label>
-</div>'
+                        'code' => '<label class="so-checkbox">
+    <input type="checkbox" name="terms">
+    <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+    <span class="so-checkbox-label">I agree to the terms and conditions</span>
+</label>'
                     ],
                 ]) ?>
             </div>
@@ -88,18 +82,23 @@ document.getElementById('container').innerHTML = checkbox.toHtml();"
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label">Select your interests</label>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="checkbox" id="demo-tech" name="interests[]" value="tech">
-                        <label class="so-form-check-label" for="demo-tech">Technology</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="checkbox" id="demo-sports" name="interests[]" value="sports">
-                        <label class="so-form-check-label" for="demo-sports">Sports</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="checkbox" id="demo-music" name="interests[]" value="music">
-                        <label class="so-form-check-label" for="demo-music">Music</label>
+                    <label class="so-form-label so-mb-2">Select your interests</label>
+                    <div class="so-checkbox-group so-checkbox-group-vertical">
+                        <label class="so-checkbox">
+                            <input type="checkbox" name="interests[]" value="tech">
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Technology</span>
+                        </label>
+                        <label class="so-checkbox">
+                            <input type="checkbox" name="interests[]" value="sports">
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Sports</span>
+                        </label>
+                        <label class="so-checkbox">
+                            <input type="checkbox" name="interests[]" value="music">
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Music</span>
+                        </label>
                     </div>
                 </div>
 
@@ -145,20 +144,23 @@ document.getElementById('container').innerHTML = checkboxGroup.toHtml();"
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label">Size options</label>
-                    <div>
-                        <div class="so-form-check so-form-check-inline">
-                            <input class="so-form-check-input" type="checkbox" id="demo-sm" name="sizes[]" value="sm">
-                            <label class="so-form-check-label" for="demo-sm">Small</label>
-                        </div>
-                        <div class="so-form-check so-form-check-inline">
-                            <input class="so-form-check-input" type="checkbox" id="demo-md" name="sizes[]" value="md">
-                            <label class="so-form-check-label" for="demo-md">Medium</label>
-                        </div>
-                        <div class="so-form-check so-form-check-inline">
-                            <input class="so-form-check-input" type="checkbox" id="demo-lg" name="sizes[]" value="lg">
-                            <label class="so-form-check-label" for="demo-lg">Large</label>
-                        </div>
+                    <label class="so-form-label so-mb-2">Size options</label>
+                    <div class="so-checkbox-group so-checkbox-group-inline">
+                        <label class="so-checkbox">
+                            <input type="checkbox" name="sizes[]" value="sm">
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Small</span>
+                        </label>
+                        <label class="so-checkbox">
+                            <input type="checkbox" name="sizes[]" value="md">
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Medium</span>
+                        </label>
+                        <label class="so-checkbox">
+                            <input type="checkbox" name="sizes[]" value="lg">
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Large</span>
+                        </label>
                     </div>
                 </div>
 
@@ -206,17 +208,22 @@ document.getElementById('container').innerHTML = checkboxGroup.toHtml();"
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="checkbox" id="demo-checked" checked>
-                        <label class="so-form-check-label" for="demo-checked">Checked checkbox</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="checkbox" id="demo-disabled" disabled>
-                        <label class="so-form-check-label" for="demo-disabled">Disabled checkbox</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="checkbox" id="demo-checked-disabled" checked disabled>
-                        <label class="so-form-check-label" for="demo-checked-disabled">Checked and disabled</label>
+                    <div class="so-checkbox-group so-checkbox-group-vertical">
+                        <label class="so-checkbox">
+                            <input type="checkbox" name="checked" checked>
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Checked checkbox</span>
+                        </label>
+                        <label class="so-checkbox disabled">
+                            <input type="checkbox" name="disabled" disabled>
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Disabled checkbox</span>
+                        </label>
+                        <label class="so-checkbox disabled">
+                            <input type="checkbox" name="both" checked disabled>
+                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                            <span class="so-checkbox-label">Checked and disabled</span>
+                        </label>
                     </div>
                 </div>
 

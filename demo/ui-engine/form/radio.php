@@ -15,18 +15,10 @@ require_once '../../includes/navbar.php';
 <main class="so-main-content">
     <!-- Page Header -->
     <div class="so-page-header">
-        <nav aria-label="breadcrumb">
-            <ol class="so-breadcrumb">
-                <li class="so-breadcrumb-item"><a href="../index.php">UI Engine</a></li>
-                <li class="so-breadcrumb-item"><a href="../index.php#form">Form Elements</a></li>
-                <li class="so-breadcrumb-item so-active">Radio</li>
-            </ol>
-        </nav>
-        <h1 class="so-page-title">
-            <span class="material-icons so-text-primary">radio_button_checked</span>
-            Radio
-        </h1>
-        <p class="so-page-subtitle">Radio button element for selecting a single option from a group of choices.</p>
+        <div class="so-page-header-left">
+            <h1 class="so-page-title">Radio</h1>
+            <p class="so-page-subtitle">Radio button element for selecting a single option from a group of choices.</p>
+        </div>
     </div>
 
     <div class="so-page-body">
@@ -38,18 +30,23 @@ require_once '../../includes/navbar.php';
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label">Select your gender</label>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="gender" id="demo-male" value="male">
-                        <label class="so-form-check-label" for="demo-male">Male</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="gender" id="demo-female" value="female">
-                        <label class="so-form-check-label" for="demo-female">Female</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="gender" id="demo-other" value="other">
-                        <label class="so-form-check-label" for="demo-other">Other</label>
+                    <label class="so-form-label so-mb-2">Select your gender</label>
+                    <div class="so-radio-group so-radio-group-vertical">
+                        <label class="so-radio">
+                            <input type="radio" name="gender" value="male">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Male</span>
+                        </label>
+                        <label class="so-radio">
+                            <input type="radio" name="gender" value="female">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Female</span>
+                        </label>
+                        <label class="so-radio">
+                            <input type="radio" name="gender" value="other">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Other</span>
+                        </label>
                     </div>
                 </div>
 
@@ -91,18 +88,23 @@ document.getElementById('container').innerHTML = radio.toHtml();"
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<div class="so-form-group">
-    <label class="so-form-label">Select your gender</label>
-    <div class="so-form-check">
-        <input class="so-form-check-input" type="radio" name="gender" id="gender-male" value="male">
-        <label class="so-form-check-label" for="gender-male">Male</label>
-    </div>
-    <div class="so-form-check">
-        <input class="so-form-check-input" type="radio" name="gender" id="gender-female" value="female">
-        <label class="so-form-check-label" for="gender-female">Female</label>
-    </div>
-    <div class="so-form-check">
-        <input class="so-form-check-input" type="radio" name="gender" id="gender-other" value="other">
-        <label class="so-form-check-label" for="gender-other">Other</label>
+    <label class="so-form-label so-mb-2">Select your gender</label>
+    <div class="so-radio-group so-radio-group-vertical">
+        <label class="so-radio">
+            <input type="radio" name="gender" value="male">
+            <span class="so-radio-circle"></span>
+            <span class="so-radio-label">Male</span>
+        </label>
+        <label class="so-radio">
+            <input type="radio" name="gender" value="female">
+            <span class="so-radio-circle"></span>
+            <span class="so-radio-label">Female</span>
+        </label>
+        <label class="so-radio">
+            <input type="radio" name="gender" value="other">
+            <span class="so-radio-circle"></span>
+            <span class="so-radio-label">Other</span>
+        </label>
     </div>
 </div>'
                     ],
@@ -118,20 +120,23 @@ document.getElementById('container').innerHTML = radio.toHtml();"
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label">Choose a plan</label>
-                    <div>
-                        <div class="so-form-check so-form-check-inline">
-                            <input class="so-form-check-input" type="radio" name="plan" id="demo-basic" value="basic">
-                            <label class="so-form-check-label" for="demo-basic">Basic</label>
-                        </div>
-                        <div class="so-form-check so-form-check-inline">
-                            <input class="so-form-check-input" type="radio" name="plan" id="demo-pro" value="pro">
-                            <label class="so-form-check-label" for="demo-pro">Pro</label>
-                        </div>
-                        <div class="so-form-check so-form-check-inline">
-                            <input class="so-form-check-input" type="radio" name="plan" id="demo-enterprise" value="enterprise">
-                            <label class="so-form-check-label" for="demo-enterprise">Enterprise</label>
-                        </div>
+                    <label class="so-form-label so-mb-2">Choose a plan</label>
+                    <div class="so-radio-group so-radio-group-inline">
+                        <label class="so-radio">
+                            <input type="radio" name="plan" value="basic">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Basic</span>
+                        </label>
+                        <label class="so-radio">
+                            <input type="radio" name="plan" value="pro">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Pro</span>
+                        </label>
+                        <label class="so-radio">
+                            <input type="radio" name="plan" value="enterprise">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Enterprise</span>
+                        </label>
                     </div>
                 </div>
 
@@ -179,18 +184,23 @@ document.getElementById('container').innerHTML = radio.toHtml();"
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label">Notification preference</label>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="notification" id="demo-email" value="email" checked>
-                        <label class="so-form-check-label" for="demo-email">Email</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="notification" id="demo-sms" value="sms">
-                        <label class="so-form-check-label" for="demo-sms">SMS</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="notification" id="demo-push" value="push">
-                        <label class="so-form-check-label" for="demo-push">Push notification</label>
+                    <label class="so-form-label so-mb-2">Notification preference</label>
+                    <div class="so-radio-group so-radio-group-vertical">
+                        <label class="so-radio">
+                            <input type="radio" name="notification" value="email" checked>
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Email</span>
+                        </label>
+                        <label class="so-radio">
+                            <input type="radio" name="notification" value="sms">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">SMS</span>
+                        </label>
+                        <label class="so-radio">
+                            <input type="radio" name="notification" value="push">
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Push notification</span>
+                        </label>
                     </div>
                 </div>
 
@@ -238,14 +248,18 @@ document.getElementById('container').innerHTML = radio.toHtml();"
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label">Unavailable options</label>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="tier" id="demo-free" value="free" checked>
-                        <label class="so-form-check-label" for="demo-free">Free tier</label>
-                    </div>
-                    <div class="so-form-check">
-                        <input class="so-form-check-input" type="radio" name="tier" id="demo-premium" value="premium" disabled>
-                        <label class="so-form-check-label" for="demo-premium">Premium tier (Coming soon)</label>
+                    <label class="so-form-label so-mb-2">Unavailable options</label>
+                    <div class="so-radio-group so-radio-group-vertical">
+                        <label class="so-radio">
+                            <input type="radio" name="tier" value="free" checked>
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Free tier</span>
+                        </label>
+                        <label class="so-radio disabled">
+                            <input type="radio" name="tier" value="premium" disabled>
+                            <span class="so-radio-circle"></span>
+                            <span class="so-radio-label">Premium tier (Coming soon)</span>
+                        </label>
                     </div>
                 </div>
 

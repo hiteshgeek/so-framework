@@ -15,18 +15,10 @@ require_once '../../includes/navbar.php';
 <main class="so-main-content">
     <!-- Page Header -->
     <div class="so-page-header">
-        <nav aria-label="breadcrumb">
-            <ol class="so-breadcrumb">
-                <li class="so-breadcrumb-item"><a href="../index.php">UI Engine</a></li>
-                <li class="so-breadcrumb-item"><a href="../index.php#form">Form Elements</a></li>
-                <li class="so-breadcrumb-item so-active">Form</li>
-            </ol>
-        </nav>
-        <h1 class="so-page-title">
-            <span class="material-icons so-text-primary">description</span>
-            Form
-        </h1>
-        <p class="so-page-subtitle">Form container element with built-in validation, AJAX submission, and field management.</p>
+        <div class="so-page-header-left">
+            <h1 class="so-page-title">Form</h1>
+            <p class="so-page-subtitle">Form container element with built-in validation, AJAX submission, and field management.</p>
+        </div>
     </div>
 
     <div class="so-page-body">

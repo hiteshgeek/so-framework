@@ -15,18 +15,10 @@ require_once '../../includes/navbar.php';
 <main class="so-main-content">
     <!-- Page Header -->
     <div class="so-page-header">
-        <nav aria-label="breadcrumb">
-            <ol class="so-breadcrumb">
-                <li class="so-breadcrumb-item"><a href="../index.php">UI Engine</a></li>
-                <li class="so-breadcrumb-item"><a href="../index.php#navigation">Navigation Elements</a></li>
-                <li class="so-breadcrumb-item so-active">Collapse</li>
-            </ol>
-        </nav>
-        <h1 class="so-page-title">
-            <span class="material-icons so-text-primary">unfold_less</span>
-            Collapse
-        </h1>
-        <p class="so-page-subtitle">Toggle the visibility of content with smooth CSS transitions and animations.</p>
+        <div class="so-page-header-left">
+            <h1 class="so-page-title">Collapse</h1>
+            <p class="so-page-subtitle">Toggle the visibility of content with smooth CSS transitions and animations.</p>
+        </div>
     </div>
 
     <div class="so-page-body">

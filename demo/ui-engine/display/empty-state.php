@@ -15,18 +15,10 @@ require_once '../../includes/navbar.php';
 <main class="so-main-content">
     <!-- Page Header -->
     <div class="so-page-header">
-        <nav aria-label="breadcrumb">
-            <ol class="so-breadcrumb">
-                <li class="so-breadcrumb-item"><a href="../index.php">UI Engine</a></li>
-                <li class="so-breadcrumb-item"><a href="../index.php#display">Display Elements</a></li>
-                <li class="so-breadcrumb-item so-active">Empty State</li>
-            </ol>
-        </nav>
-        <h1 class="so-page-title">
-            <span class="material-icons so-text-primary">inbox</span>
-            Empty State
-        </h1>
-        <p class="so-page-subtitle">Placeholder UI for when there's no content to display, guiding users on what to do next.</p>
+        <div class="so-page-header-left">
+            <h1 class="so-page-title">Empty State</h1>
+            <p class="so-page-subtitle">Placeholder UI for when there's no content to display, guiding users on what to do next.</p>
+        </div>
     </div>
 
     <div class="so-page-body">

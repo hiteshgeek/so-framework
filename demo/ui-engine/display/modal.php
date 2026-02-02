@@ -15,18 +15,10 @@ require_once '../../includes/navbar.php';
 <main class="so-main-content">
     <!-- Page Header -->
     <div class="so-page-header">
-        <nav aria-label="breadcrumb">
-            <ol class="so-breadcrumb">
-                <li class="so-breadcrumb-item"><a href="../index.php">UI Engine</a></li>
-                <li class="so-breadcrumb-item"><a href="../index.php#display">Display Elements</a></li>
-                <li class="so-breadcrumb-item so-active">Modal</li>
-            </ol>
-        </nav>
-        <h1 class="so-page-title">
-            <span class="material-icons so-text-primary">open_in_new</span>
-            Modal
-        </h1>
-        <p class="so-page-subtitle">Dialog overlay for focused user interactions, confirmations, and forms.</p>
+        <div class="so-page-header-left">
+            <h1 class="so-page-title">Modal</h1>
+            <p class="so-page-subtitle">Dialog overlay for focused user interactions, confirmations, and forms.</p>
+        </div>
     </div>
 
     <div class="so-page-body">

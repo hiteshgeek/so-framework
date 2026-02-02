@@ -15,18 +15,10 @@ require_once '../../includes/navbar.php';
 <main class="so-main-content">
     <!-- Page Header -->
     <div class="so-page-header">
-        <nav aria-label="breadcrumb">
-            <ol class="so-breadcrumb">
-                <li class="so-breadcrumb-item"><a href="../index.php">UI Engine</a></li>
-                <li class="so-breadcrumb-item"><a href="../index.php#form">Form Elements</a></li>
-                <li class="so-breadcrumb-item so-active">Select</li>
-            </ol>
-        </nav>
-        <h1 class="so-page-title">
-            <span class="material-icons so-text-primary">arrow_drop_down</span>
-            Select
-        </h1>
-        <p class="so-page-subtitle">Dropdown select element with single and multiple selection, option groups, and search functionality.</p>
+        <div class="so-page-header-left">
+            <h1 class="so-page-title">Select</h1>
+            <p class="so-page-subtitle">Dropdown select element with single and multiple selection, option groups, and search functionality.</p>
+        </div>
     </div>
 
     <div class="so-page-body">
@@ -40,7 +32,7 @@ require_once '../../includes/navbar.php';
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
                     <div class="so-form-group">
                         <label class="so-form-label" for="demo-country">Country</label>
-                        <select class="so-form-select" id="demo-country" name="country">
+                        <select class="so-form-control" id="demo-country" name="country">
                             <option value="">Select a country</option>
                             <option value="us">United States</option>
                             <option value="uk">United Kingdom</option>
@@ -93,7 +85,7 @@ document.getElementById('container').innerHTML = select.toHtml();"
                         'icon' => 'code',
                         'code' => '<div class="so-form-group">
     <label class="so-form-label" for="country">Country</label>
-    <select class="so-form-select" id="country" name="country">
+    <select class="so-form-control" id="country" name="country">
         <option value="">Select a country</option>
         <option value="us">United States</option>
         <option value="uk">United Kingdom</option>
@@ -116,7 +108,7 @@ document.getElementById('container').innerHTML = select.toHtml();"
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
                     <div class="so-form-group">
                         <label class="so-form-label" for="demo-car">Car Model</label>
-                        <select class="so-form-select" id="demo-car" name="car">
+                        <select class="so-form-control" id="demo-car" name="car">
                             <option value="">Select a car</option>
                             <optgroup label="German">
                                 <option value="bmw">BMW</option>
@@ -192,7 +184,7 @@ document.getElementById('container').innerHTML = select.toHtml();"
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
                     <div class="so-form-group">
                         <label class="so-form-label" for="demo-skills">Skills</label>
-                        <select class="so-form-select" id="demo-skills" name="skills[]" multiple>
+                        <select class="so-form-control" id="demo-skills" name="skills[]" multiple>
                             <option value="html">HTML</option>
                             <option value="css">CSS</option>
                             <option value="js">JavaScript</option>
@@ -255,19 +247,19 @@ document.getElementById('container').innerHTML = select.toHtml();"
                 <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
                     <div class="so-mb-3">
                         <label class="so-form-label">Small</label>
-                        <select class="so-form-select so-form-select-sm">
+                        <select class="so-form-control so-form-control-sm">
                             <option>Small select</option>
                         </select>
                     </div>
                     <div class="so-mb-3">
                         <label class="so-form-label">Default</label>
-                        <select class="so-form-select">
+                        <select class="so-form-control">
                             <option>Default select</option>
                         </select>
                     </div>
                     <div>
                         <label class="so-form-label">Large</label>
-                        <select class="so-form-select so-form-select-lg">
+                        <select class="so-form-control so-form-control-lg">
                             <option>Large select</option>
                         </select>
                     </div>
