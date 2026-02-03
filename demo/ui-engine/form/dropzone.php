@@ -29,11 +29,20 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-dropzone so-p-5 so-border so-border-dashed so-rounded so-text-center" style="border-color: #dee2e6;">
-                    <span class="material-icons so-text-muted" style="font-size: 48px;">cloud_upload</span>
-                    <p class="so-mt-2 so-mb-1">Drag and drop files here</p>
-                    <p class="so-text-muted so-small">or click to browse</p>
-                    <input type="file" class="so-d-none" multiple>
+                <div class="so-form-group">
+                    <label class="so-form-label">Upload Files</label>
+                    <div class="so-form-file-dropzone" id="demo-dropzone-basic">
+                        <input type="file" multiple>
+                        <div class="so-form-file-dropzone-icon">
+                            <span class="material-icons">cloud_upload</span>
+                        </div>
+                        <div class="so-form-file-dropzone-text">
+                            Drag & drop files here, or <span>click to browse</span>
+                        </div>
+                        <div class="so-form-file-dropzone-hint">
+                            Supports all file types
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -47,7 +56,7 @@ use Core\UiEngine\UiEngine;
 
 \$dropzone = UiEngine::dropzone('files')
     ->label('Upload Files')
-    ->message('Drag and drop files here')
+    ->message('Drag & drop files here')
     ->subMessage('or click to browse');
 
 echo \$dropzone->renderGroup();"
@@ -58,7 +67,7 @@ echo \$dropzone->renderGroup();"
                         'icon' => 'javascript',
                         'code' => "const dropzone = UiEngine.dropzone('files')
     .label('Upload Files')
-    .message('Drag and drop files here')
+    .message('Drag & drop files here')
     .subMessage('or click to browse');
 
 document.getElementById('container').innerHTML = dropzone.toHtml();"
@@ -69,13 +78,17 @@ document.getElementById('container').innerHTML = dropzone.toHtml();"
                         'icon' => 'code',
                         'code' => '<div class="so-form-group">
     <label class="so-form-label">Upload Files</label>
-    <div class="so-dropzone" data-dropzone>
-        <div class="so-dropzone-message">
+    <div class="so-form-file-dropzone">
+        <input type="file" multiple>
+        <div class="so-form-file-dropzone-icon">
             <span class="material-icons">cloud_upload</span>
-            <p>Drag and drop files here</p>
-            <p class="so-text-muted">or click to browse</p>
         </div>
-        <input type="file" name="files[]" multiple hidden>
+        <div class="so-form-file-dropzone-text">
+            Drag & drop files here, or <span>click to browse</span>
+        </div>
+        <div class="so-form-file-dropzone-hint">
+            Supports all file types
+        </div>
     </div>
 </div>'
                     ],
@@ -90,10 +103,20 @@ document.getElementById('container').innerHTML = dropzone.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-dropzone so-p-5 so-border so-border-dashed so-rounded so-text-center" style="border-color: #dee2e6;">
-                    <span class="material-icons so-text-muted" style="font-size: 48px;">image</span>
-                    <p class="so-mt-2 so-mb-1">Drop images here</p>
-                    <p class="so-text-muted so-small">Accepts: JPG, PNG, GIF (max 5MB)</p>
+                <div class="so-form-group">
+                    <label class="so-form-label">Upload Images</label>
+                    <div class="so-form-file-dropzone" id="demo-dropzone-images">
+                        <input type="file" multiple accept="image/jpeg,image/png,image/gif">
+                        <div class="so-form-file-dropzone-icon">
+                            <span class="material-icons">add_photo_alternate</span>
+                        </div>
+                        <div class="so-form-file-dropzone-text">
+                            <span>Click to upload</span> or drag and drop
+                        </div>
+                        <div class="so-form-file-dropzone-hint">
+                            Accepts: JPG, PNG, GIF (max 5MB)
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -106,9 +129,10 @@ document.getElementById('container').innerHTML = dropzone.toHtml();"
     ->label('Upload Images')
     ->accept(['image/jpeg', 'image/png', 'image/gif'])
     ->maxSize(5 * 1024 * 1024)  // 5MB
-    ->message('Drop images here')
-    ->subMessage('Accepts: JPG, PNG, GIF (max 5MB)')
-    ->icon('image');
+    ->message('Click to upload')
+    ->subMessage('or drag and drop')
+    ->hint('Accepts: JPG, PNG, GIF (max 5MB)')
+    ->icon('add_photo_alternate');
 
 echo \$dropzone->renderGroup();"
                     ],
@@ -120,80 +144,74 @@ echo \$dropzone->renderGroup();"
     .label('Upload Images')
     .accept(['image/jpeg', 'image/png', 'image/gif'])
     .maxSize(5 * 1024 * 1024)
-    .message('Drop images here')
-    .subMessage('Accepts: JPG, PNG, GIF (max 5MB)')
-    .icon('image');
+    .message('Click to upload')
+    .subMessage('or drag and drop')
+    .hint('Accepts: JPG, PNG, GIF (max 5MB)')
+    .icon('add_photo_alternate');
 
 document.getElementById('container').innerHTML = dropzone.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label">Upload Images</label>
+    <div class="so-form-file-dropzone">
+        <input type="file" multiple accept="image/jpeg,image/png,image/gif">
+        <div class="so-form-file-dropzone-icon">
+            <span class="material-icons">add_photo_alternate</span>
+        </div>
+        <div class="so-form-file-dropzone-text">
+            <span>Click to upload</span> or drag and drop
+        </div>
+        <div class="so-form-file-dropzone-hint">
+            Accepts: JPG, PNG, GIF (max 5MB)
+        </div>
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>
         </div>
 
-        <!-- With Previews -->
+        <!-- Document Upload -->
         <div class="so-card so-mb-4">
             <div class="so-card-header">
-                <h3 class="so-card-title">With File Previews</h3>
+                <h3 class="so-card-title">Document Upload</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <div class="so-form-group">
+                    <label class="so-form-label">Upload Documents</label>
+                    <div class="so-form-file-dropzone" id="demo-dropzone-docs">
+                        <input type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx">
+                        <div class="so-form-file-dropzone-icon">
+                            <span class="material-icons">description</span>
+                        </div>
+                        <div class="so-form-file-dropzone-text">
+                            Drag & drop files here, or <span>click to browse</span>
+                        </div>
+                        <div class="so-form-file-dropzone-hint">
+                            Supports: PDF, DOC, DOCX, XLS, XLSX (max 10MB)
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Code Tabs -->
-                <?= so_code_tabs('dropzone-preview', [
-                    [
-                        'label' => 'PHP',
-                        'language' => 'php',
-                        'icon' => 'data_object',
-                        'code' => "\$dropzone = UiEngine::dropzone('gallery')
-    ->label('Photo Gallery')
-    ->accept('image/*')
-    ->multiple()
-    ->showPreviews()           // Show image previews
-    ->previewSize(120)         // Preview thumbnail size
-    ->removable();             // Allow removing files
-
-echo \$dropzone->renderGroup();"
-                    ],
-                    [
-                        'label' => 'JavaScript',
-                        'language' => 'javascript',
-                        'icon' => 'javascript',
-                        'code' => "const dropzone = UiEngine.dropzone('gallery')
-    .label('Photo Gallery')
-    .accept('image/*')
-    .multiple()
-    .showPreviews()
-    .previewSize(120)
-    .removable()
-    .onAdd((file) => {
-        console.log('File added:', file.name);
-    })
-    .onRemove((file) => {
-        console.log('File removed:', file.name);
-    });
-
-document.getElementById('container').innerHTML = dropzone.toHtml();"
-                    ],
-                ]) ?>
-            </div>
-        </div>
-
-        <!-- With Upload Progress -->
-        <div class="so-card so-mb-4">
-            <div class="so-card-header">
-                <h3 class="so-card-title">With Upload Progress</h3>
-            </div>
-            <div class="so-card-body">
-                <!-- Code Tabs -->
-                <?= so_code_tabs('dropzone-progress', [
+                <?= so_code_tabs('dropzone-docs', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
                         'code' => "\$dropzone = UiEngine::dropzone('documents')
     ->label('Upload Documents')
-    ->url('/api/upload')       // Upload endpoint
-    ->autoUpload()             // Upload immediately on drop
-    ->showProgress()           // Show upload progress bar
-    ->parallel(3);             // Max parallel uploads
+    ->accept(['.pdf', '.doc', '.docx', '.xls', '.xlsx'])
+    ->maxSize(10 * 1024 * 1024)  // 10MB
+    ->message('Drag & drop files here')
+    ->subMessage('or click to browse')
+    ->hint('Supports: PDF, DOC, DOCX, XLS, XLSX (max 10MB)')
+    ->icon('description');
 
 echo \$dropzone->renderGroup();"
                     ],
@@ -203,46 +221,75 @@ echo \$dropzone->renderGroup();"
                         'icon' => 'javascript',
                         'code' => "const dropzone = UiEngine.dropzone('documents')
     .label('Upload Documents')
-    .url('/api/upload')
-    .autoUpload()
-    .showProgress()
-    .parallel(3)
-    .onUploadProgress((file, progress) => {
-        console.log(file.name, progress + '%');
-    })
-    .onUploadComplete((file, response) => {
-        console.log('Uploaded:', file.name, response);
-    })
-    .onUploadError((file, error) => {
-        console.error('Error:', file.name, error);
-    });
+    .accept(['.pdf', '.doc', '.docx', '.xls', '.xlsx'])
+    .maxSize(10 * 1024 * 1024)
+    .message('Drag & drop files here')
+    .subMessage('or click to browse')
+    .hint('Supports: PDF, DOC, DOCX, XLS, XLSX (max 10MB)')
+    .icon('description');
 
 document.getElementById('container').innerHTML = dropzone.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label">Upload Documents</label>
+    <div class="so-form-file-dropzone">
+        <input type="file" multiple accept=".pdf,.doc,.docx,.xls,.xlsx">
+        <div class="so-form-file-dropzone-icon">
+            <span class="material-icons">description</span>
+        </div>
+        <div class="so-form-file-dropzone-text">
+            Drag & drop files here, or <span>click to browse</span>
+        </div>
+        <div class="so-form-file-dropzone-hint">
+            Supports: PDF, DOC, DOCX, XLS, XLSX (max 10MB)
+        </div>
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>
         </div>
 
-        <!-- Max Files -->
+        <!-- Compact Profile Photo -->
         <div class="so-card so-mb-4">
             <div class="so-card-header">
-                <h3 class="so-card-title">Maximum Files Limit</h3>
+                <h3 class="so-card-title">Compact Profile Photo Upload</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <div class="so-form-group">
+                    <label class="so-form-label">Profile Photo</label>
+                    <div class="so-form-file-dropzone" id="demo-dropzone-avatar" style="padding: 2rem;">
+                        <input type="file" accept="image/*">
+                        <div class="so-form-file-dropzone-icon">
+                            <span class="material-icons">account_circle</span>
+                        </div>
+                        <div class="so-form-file-dropzone-text">
+                            <span>Click to upload</span> or drag and drop
+                        </div>
+                        <div class="so-form-file-dropzone-hint">
+                            PNG, JPG or GIF (max 2MB)
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Code Tabs -->
-                <?= so_code_tabs('dropzone-max', [
+                <?= so_code_tabs('dropzone-avatar', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "\$dropzone = UiEngine::dropzone('attachments')
-    ->label('Attachments')
-    ->multiple()
-    ->maxFiles(5)              // Maximum 5 files
-    ->maxSize(10 * 1024 * 1024) // 10MB per file
-    ->maxTotalSize(50 * 1024 * 1024) // 50MB total
-    ->message('Drop up to 5 files')
-    ->subMessage('Max 10MB per file, 50MB total');
+                        'code' => "\$dropzone = UiEngine::dropzone('avatar')
+    ->label('Profile Photo')
+    ->accept('image/*')
+    ->maxSize(2 * 1024 * 1024)  // 2MB
+    ->compact()
+    ->icon('account_circle')
+    ->hint('PNG, JPG or GIF (max 2MB)');
 
 echo \$dropzone->renderGroup();"
                     ],
@@ -250,77 +297,133 @@ echo \$dropzone->renderGroup();"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const dropzone = UiEngine.dropzone('attachments')
-    .label('Attachments')
-    .multiple()
-    .maxFiles(5)
-    .maxSize(10 * 1024 * 1024)
-    .maxTotalSize(50 * 1024 * 1024)
-    .message('Drop up to 5 files')
-    .subMessage('Max 10MB per file, 50MB total')
-    .onMaxFilesExceeded(() => {
-        alert('Maximum 5 files allowed');
-    });
+                        'code' => "const dropzone = UiEngine.dropzone('avatar')
+    .label('Profile Photo')
+    .accept('image/*')
+    .maxSize(2 * 1024 * 1024)
+    .compact()
+    .icon('account_circle')
+    .hint('PNG, JPG or GIF (max 2MB)');
 
 document.getElementById('container').innerHTML = dropzone.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label">Profile Photo</label>
+    <div class="so-form-file-dropzone" style="padding: 2rem;">
+        <input type="file" accept="image/*">
+        <div class="so-form-file-dropzone-icon">
+            <span class="material-icons">account_circle</span>
+        </div>
+        <div class="so-form-file-dropzone-text">
+            <span>Click to upload</span> or drag and drop
+        </div>
+        <div class="so-form-file-dropzone-hint">
+            PNG, JPG or GIF (max 2MB)
+        </div>
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>
         </div>
 
-        <!-- Dropzone Variants -->
+        <!-- With Event Handlers -->
         <div class="so-card so-mb-4">
             <div class="so-card-header">
-                <h3 class="so-card-title">Dropzone Variants</h3>
+                <h3 class="so-card-title">With Event Handlers</h3>
             </div>
             <div class="so-card-body">
                 <!-- Code Tabs -->
-                <?= so_code_tabs('dropzone-variants', [
+                <?= so_code_tabs('dropzone-events', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "// Default variant
-UiEngine::dropzone('default')
-    ->variant('default');
-
-// Compact variant (smaller)
-UiEngine::dropzone('compact')
-    ->variant('compact');
-
-// Minimal variant (just text)
-UiEngine::dropzone('minimal')
-    ->variant('minimal')
-    ->message('Click or drop files');
-
-// Avatar upload variant
-UiEngine::dropzone('avatar')
-    ->variant('avatar')
+                        'code' => "\$dropzone = UiEngine::dropzone('upload')
+    ->label('Upload Files')
+    ->multiple()
     ->accept('image/*')
-    ->circular();"
+    ->maxSize(5 * 1024 * 1024);
+
+echo \$dropzone->renderGroup();"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "// Default variant
-UiEngine.dropzone('default')
-    .variant('default');
+                        'code' => "// Initialize dropzone with event handlers
+const dropzoneEl = document.querySelector('.so-form-file-dropzone');
+const input = dropzoneEl.querySelector('input[type=\"file\"]');
 
-// Compact variant (smaller)
-UiEngine.dropzone('compact')
-    .variant('compact');
+// Prevent default drag behaviors
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropzoneEl.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    }, false);
+});
 
-// Minimal variant (just text)
-UiEngine.dropzone('minimal')
-    .variant('minimal')
-    .message('Click or drop files');
+// Highlight dropzone when dragging over
+['dragenter', 'dragover'].forEach(eventName => {
+    dropzoneEl.addEventListener(eventName, () => {
+        dropzoneEl.classList.add('so-dragover');
+    }, false);
+});
 
-// Avatar upload variant
-UiEngine.dropzone('avatar')
-    .variant('avatar')
-    .accept('image/*')
-    .circular();"
+['dragleave', 'drop'].forEach(eventName => {
+    dropzoneEl.addEventListener(eventName, () => {
+        dropzoneEl.classList.remove('so-dragover');
+    }, false);
+});
+
+// Handle dropped files
+dropzoneEl.addEventListener('drop', (e) => {
+    const files = e.dataTransfer.files;
+    input.files = files;
+    handleFiles(files);
+}, false);
+
+// Handle file input change
+input.addEventListener('change', function() {
+    handleFiles(this.files);
+});
+
+function handleFiles(files) {
+    if (files.length > 0) {
+        const fileNames = Array.from(files).map(f => f.name).join(', ');
+        const textEl = dropzoneEl.querySelector('.so-form-file-dropzone-text');
+        textEl.innerHTML = '<strong>' + files.length + ' file(s) selected:</strong> ' + fileNames;
+    }
+}"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label">Upload Files</label>
+    <div class="so-form-file-dropzone">
+        <input type="file" multiple accept="image/*">
+        <div class="so-form-file-dropzone-icon">
+            <span class="material-icons">cloud_upload</span>
+        </div>
+        <div class="so-form-file-dropzone-text">
+            Drag & drop files here, or <span>click to browse</span>
+        </div>
+        <div class="so-form-file-dropzone-hint">
+            Accepts images (max 5MB)
+        </div>
+    </div>
+</div>
+
+<!-- Drag-over state adds .so-dragover class -->
+<div class="so-form-file-dropzone so-dragover">
+    <!-- ... -->
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -345,17 +448,12 @@ UiEngine.dropzone('avatar')
                             <tr>
                                 <td><code>accept()</code></td>
                                 <td><code>string|array $types</code></td>
-                                <td>Set accepted file types</td>
+                                <td>Set accepted file types (MIME types or extensions)</td>
                             </tr>
                             <tr>
                                 <td><code>maxSize()</code></td>
                                 <td><code>int $bytes</code></td>
-                                <td>Maximum file size per file</td>
-                            </tr>
-                            <tr>
-                                <td><code>maxFiles()</code></td>
-                                <td><code>int $count</code></td>
-                                <td>Maximum number of files</td>
+                                <td>Maximum file size per file in bytes</td>
                             </tr>
                             <tr>
                                 <td><code>multiple()</code></td>
@@ -363,34 +461,63 @@ UiEngine.dropzone('avatar')
                                 <td>Allow multiple file selection</td>
                             </tr>
                             <tr>
-                                <td><code>url()</code></td>
-                                <td><code>string $url</code></td>
-                                <td>Set upload endpoint URL</td>
-                            </tr>
-                            <tr>
-                                <td><code>autoUpload()</code></td>
-                                <td>-</td>
-                                <td>Upload immediately on drop</td>
-                            </tr>
-                            <tr>
-                                <td><code>showPreviews()</code></td>
-                                <td>-</td>
-                                <td>Show file previews</td>
-                            </tr>
-                            <tr>
-                                <td><code>showProgress()</code></td>
-                                <td>-</td>
-                                <td>Show upload progress</td>
-                            </tr>
-                            <tr>
                                 <td><code>message()</code></td>
                                 <td><code>string $text</code></td>
                                 <td>Set main message text</td>
                             </tr>
                             <tr>
-                                <td><code>variant()</code></td>
-                                <td><code>string $variant</code></td>
-                                <td>Set variant: default, compact, minimal, avatar</td>
+                                <td><code>subMessage()</code></td>
+                                <td><code>string $text</code></td>
+                                <td>Set secondary message text</td>
+                            </tr>
+                            <tr>
+                                <td><code>hint()</code></td>
+                                <td><code>string $text</code></td>
+                                <td>Set hint text (file restrictions info)</td>
+                            </tr>
+                            <tr>
+                                <td><code>icon()</code></td>
+                                <td><code>string $icon</code></td>
+                                <td>Set Material icon name</td>
+                            </tr>
+                            <tr>
+                                <td><code>compact()</code></td>
+                                <td>-</td>
+                                <td>Use compact variant with less padding</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="so-mt-4">CSS Classes</h4>
+                <div class="so-table-responsive">
+                    <table class="so-table so-table-bordered">
+                        <thead class="so-table-light">
+                            <tr>
+                                <th>Class</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>.so-form-file-dropzone</code></td>
+                                <td>Main dropzone container</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-form-file-dropzone-icon</code></td>
+                                <td>Icon wrapper</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-form-file-dropzone-text</code></td>
+                                <td>Main message text</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-form-file-dropzone-hint</code></td>
+                                <td>Hint text (accepted formats, size limits)</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-dragover</code></td>
+                                <td>Applied when files are dragged over (highlight state)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -401,3 +528,51 @@ UiEngine.dropzone('avatar')
 </main>
 
 <?php require_once '../../includes/footer.php'; ?>
+
+<script>
+// Initialize dropzone functionality for all demo dropzones
+document.querySelectorAll('.so-form-file-dropzone').forEach(dropzone => {
+    const input = dropzone.querySelector('input[type="file"]');
+
+    // Prevent default drag behaviors
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        }, false);
+    });
+
+    // Highlight dropzone when dragging over
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, () => {
+            dropzone.classList.add('so-dragover');
+        }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, () => {
+            dropzone.classList.remove('so-dragover');
+        }, false);
+    });
+
+    // Handle dropped files
+    dropzone.addEventListener('drop', (e) => {
+        const files = e.dataTransfer.files;
+        input.files = files;
+        handleDropzoneFiles(files, dropzone);
+    }, false);
+
+    // Handle file input change
+    input.addEventListener('change', function() {
+        handleDropzoneFiles(this.files, dropzone);
+    });
+});
+
+function handleDropzoneFiles(files, dropzone) {
+    if (files.length > 0) {
+        const fileNames = Array.from(files).map(f => f.name).join(', ');
+        const textEl = dropzone.querySelector('.so-form-file-dropzone-text');
+        textEl.innerHTML = '<strong>' + files.length + ' file(s) selected:</strong> ' + fileNames;
+    }
+}
+</script>

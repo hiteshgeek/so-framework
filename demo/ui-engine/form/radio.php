@@ -168,6 +168,29 @@ echo \$radio->renderGroup();"
 
 document.getElementById('container').innerHTML = radio.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<label class="so-form-label">Choose a plan</label>
+<div class="so-radio-group so-radio-group-inline">
+    <label class="so-radio">
+        <input type="radio" name="plan" value="basic">
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">Basic</span>
+    </label>
+    <label class="so-radio">
+        <input type="radio" name="plan" value="pro">
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">Pro</span>
+    </label>
+    <label class="so-radio">
+        <input type="radio" name="plan" value="enterprise">
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">Enterprise</span>
+    </label>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -230,6 +253,29 @@ echo \$radio->renderGroup();"
 
 document.getElementById('container').innerHTML = radio.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<label class="so-form-label">Notification preference</label>
+<div class="so-radio-group so-radio-group-vertical">
+    <label class="so-radio">
+        <input type="radio" name="notification" value="email" checked>
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">Email</span>
+    </label>
+    <label class="so-radio">
+        <input type="radio" name="notification" value="sms">
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">SMS</span>
+    </label>
+    <label class="so-radio">
+        <input type="radio" name="notification" value="push">
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">Push notification</span>
+    </label>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -284,6 +330,24 @@ echo \$radio->renderGroup();"
     .value('free');
 
 document.getElementById('container').innerHTML = radio.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<label class="so-form-label">Unavailable options</label>
+<div class="so-radio-group so-radio-group-vertical">
+    <label class="so-radio">
+        <input type="radio" name="tier" value="free" checked>
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">Free tier</span>
+    </label>
+    <label class="so-radio so-disabled">
+        <input type="radio" name="tier" value="premium" disabled>
+        <span class="so-radio-circle"></span>
+        <span class="so-radio-label">Premium tier (Coming soon)</span>
+    </label>
+</div>'
                     ],
                 ]) ?>
             </div>

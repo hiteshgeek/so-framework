@@ -242,31 +242,42 @@ document.getElementById('container').innerHTML = timeline.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-timeline so-timeline-compact so-mb-4">
+                <div class="so-timeline so-timeline-feed so-mb-4">
                     <div class="so-timeline-item">
-                        <div class="so-timeline-marker">
-                            <img src="https://i.pravatar.cc/40?img=1" alt="John Doe" class="so-rounded-circle" style="width:32px;height:32px;">
+                        <div class="so-timeline-avatar">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=667eea&color=fff" alt="John Doe">
                         </div>
+                        <div class="so-timeline-connector"></div>
                         <div class="so-timeline-content">
-                            <p class="so-timeline-text"><strong>John Doe</strong> created a new project</p>
+                            <div class="so-timeline-header">
+                                <strong>John Doe</strong>
+                                <span class="so-text-muted">created a new project</span>
+                            </div>
                             <div class="so-timeline-time">2 hours ago</div>
                         </div>
                     </div>
                     <div class="so-timeline-item">
-                        <div class="so-timeline-marker">
-                            <img src="https://i.pravatar.cc/40?img=5" alt="Jane Smith" class="so-rounded-circle" style="width:32px;height:32px;">
+                        <div class="so-timeline-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=f093fb&color=fff" alt="Jane Smith">
                         </div>
+                        <div class="so-timeline-connector"></div>
                         <div class="so-timeline-content">
-                            <p class="so-timeline-text"><strong>Jane Smith</strong> commented on the task</p>
+                            <div class="so-timeline-header">
+                                <strong>Jane Smith</strong>
+                                <span class="so-text-muted">commented on the task</span>
+                            </div>
                             <div class="so-timeline-time">4 hours ago</div>
                         </div>
                     </div>
                     <div class="so-timeline-item">
-                        <div class="so-timeline-marker">
-                            <img src="https://i.pravatar.cc/40?img=8" alt="Bob Wilson" class="so-rounded-circle" style="width:32px;height:32px;">
+                        <div class="so-timeline-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Bob+Wilson&background=4facfe&color=fff" alt="Bob Wilson">
                         </div>
                         <div class="so-timeline-content">
-                            <p class="so-timeline-text"><strong>Bob Wilson</strong> completed the milestone</p>
+                            <div class="so-timeline-header">
+                                <strong>Bob Wilson</strong>
+                                <span class="so-text-muted">completed the milestone</span>
+                            </div>
                             <div class="so-timeline-time">Yesterday</div>
                         </div>
                     </div>
@@ -279,7 +290,7 @@ document.getElementById('container').innerHTML = timeline.toHtml();"
                         'language' => 'php',
                         'icon' => 'data_object',
                         'code' => "\$timeline = UiEngine::timeline()
-    ->compact()  // Compact style for activity feeds
+    ->feed()  // Activity feed style with avatars
     ->event(null, '<strong>John Doe</strong> created a new project', '2 hours ago', [
         'avatar' => '/avatars/john.jpg',
     ])
@@ -297,7 +308,7 @@ echo \$timeline->render();"
                         'language' => 'javascript',
                         'icon' => 'javascript',
                         'code' => "const timeline = UiEngine.timeline()
-    .compact()
+    .feed()
     .event(null, '<strong>John Doe</strong> created a new project', '2 hours ago', {
         avatar: '/avatars/john.jpg',
     })
@@ -314,13 +325,17 @@ document.getElementById('container').innerHTML = timeline.toHtml();"
                         'label' => 'HTML Output',
                         'language' => 'html',
                         'icon' => 'code',
-                        'code' => '<div class="so-timeline so-timeline-compact">
+                        'code' => '<div class="so-timeline so-timeline-feed">
     <div class="so-timeline-item">
-        <div class="so-timeline-marker">
-            <img src="/avatars/john.jpg" alt="John Doe" class="so-rounded-circle">
+        <div class="so-timeline-avatar">
+            <img src="/avatars/john.jpg" alt="John Doe">
         </div>
+        <div class="so-timeline-connector"></div>
         <div class="so-timeline-content">
-            <p class="so-timeline-text"><strong>John Doe</strong> created a new project</p>
+            <div class="so-timeline-header">
+                <strong>John Doe</strong>
+                <span class="so-text-muted">created a new project</span>
+            </div>
             <div class="so-timeline-time">2 hours ago</div>
         </div>
     </div>
@@ -576,7 +591,12 @@ document.getElementById('container').innerHTML = timeline.toHtml();"
                             <tr>
                                 <td><code>compact()</code></td>
                                 <td>-</td>
-                                <td>Use compact style</td>
+                                <td>Use compact style (minimal spacing)</td>
+                            </tr>
+                            <tr>
+                                <td><code>feed()</code></td>
+                                <td>-</td>
+                                <td>Activity feed style with avatar support</td>
                             </tr>
                             <tr>
                                 <td><code>alternating()</code></td>

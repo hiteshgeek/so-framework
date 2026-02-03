@@ -131,6 +131,20 @@ echo \$color->renderGroup();"
 
 document.getElementById('container').innerHTML = color.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label">Brand Color</label>
+    <div class="so-color-presets so-d-flex so-gap-2 so-mb-2">
+        <button type="button" class="so-color-swatch" style="background:#ef4444;"></button>
+        <button type="button" class="so-color-swatch" style="background:#f97316;"></button>
+        <!-- ... more swatches -->
+    </div>
+    <input type="color" class="so-form-control so-form-control-color" name="brand_color" value="#3b82f6">
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>

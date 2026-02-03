@@ -122,6 +122,27 @@ document.getElementById('container').innerHTML = form.toHtml();"
                 <h3 class="so-card-title">Form with Validation</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <form action="/api/register" method="POST" data-validate="true" onsubmit="event.preventDefault(); alert('Form validated!');">
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label so-required" for="demo-username">Username</label>
+                        <input type="text" class="so-form-control" id="demo-username" name="username" required minlength="3" maxlength="20">
+                    </div>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label so-required" for="demo-reg-email">Email</label>
+                        <input type="email" class="so-form-control" id="demo-reg-email" name="email" required>
+                    </div>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label so-required" for="demo-password">Password</label>
+                        <input type="password" class="so-form-control" id="demo-password" name="password" required minlength="8">
+                    </div>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label so-required" for="demo-password-confirm">Confirm Password</label>
+                        <input type="password" class="so-form-control" id="demo-password-confirm" name="password_confirmation" required>
+                    </div>
+                    <button type="submit" class="so-btn so-btn-primary">Register</button>
+                </form>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('form-validation', [
                     [
@@ -190,6 +211,30 @@ echo \$form->render();"
 
 document.getElementById('container').innerHTML = form.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<form action="/api/register" method="POST" data-validate="true">
+    <div class="so-form-group">
+        <label class="so-form-label so-required" for="username">Username</label>
+        <input type="text" class="so-form-control" id="username" name="username" required>
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label so-required" for="email">Email</label>
+        <input type="email" class="so-form-control" id="email" name="email" required>
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label so-required" for="password">Password</label>
+        <input type="password" class="so-form-control" id="password" name="password" required>
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label so-required" for="password_confirmation">Confirm Password</label>
+        <input type="password" class="so-form-control" id="password_confirmation" name="password_confirmation" required>
+    </div>
+    <button type="submit" class="so-btn so-btn-primary">Register</button>
+</form>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -200,6 +245,17 @@ document.getElementById('container').innerHTML = form.toHtml();"
                 <h3 class="so-card-title">AJAX Form Submission</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <form action="/api/subscribe" method="POST" data-ajax="true" onsubmit="event.preventDefault(); alert('AJAX form would submit here!');">
+                    <div class="so-d-flex so-gap-2 so-align-items-end">
+                        <div class="so-form-group so-mb-0" style="flex: 1;">
+                            <label class="so-form-label so-required" for="demo-subscribe-email">Email</label>
+                            <input type="email" class="so-form-control" id="demo-subscribe-email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <button type="submit" class="so-btn so-btn-primary">Subscribe</button>
+                    </div>
+                </form>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('form-ajax', [
                     [
@@ -244,6 +300,18 @@ echo \$form->render();"
         .variant('primary'));
 
 document.getElementById('container').innerHTML = form.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<form action="/api/subscribe" method="POST" data-ajax="true">
+    <div class="so-form-group">
+        <label class="so-form-label so-required" for="email">Email</label>
+        <input type="email" class="so-form-control" id="email" name="email" placeholder="your@email.com" required>
+    </div>
+    <button type="submit" class="so-btn so-btn-primary">Subscribe</button>
+</form>'
                     ],
                 ]) ?>
             </div>
@@ -333,6 +401,31 @@ const inlineForm = UiEngine.form('/search')
         .type('submit')
         .variant('primary'));"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Horizontal Layout -->
+<form action="/login" method="POST">
+    <div class="so-grid so-grid-cols-12 so-gap-3 so-mb-3 so-align-items-center">
+        <label class="so-col-span-3 so-form-label so-mb-0">Email</label>
+        <div class="so-col-span-9">
+            <input type="email" class="so-form-control" placeholder="Email">
+        </div>
+    </div>
+    <div class="so-grid so-grid-cols-12 so-gap-3 so-mb-3 so-align-items-center">
+        <label class="so-col-span-3 so-form-label so-mb-0">Password</label>
+        <div class="so-col-span-9">
+            <input type="password" class="so-form-control" placeholder="Password">
+        </div>
+    </div>
+    <div class="so-grid so-grid-cols-12 so-gap-3">
+        <div class="so-col-span-9 so-col-start-4">
+            <button type="submit" class="so-btn so-btn-primary">Sign in</button>
+        </div>
+    </div>
+</form>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -343,6 +436,27 @@ const inlineForm = UiEngine.form('/search')
                 <h3 class="so-card-title">Form with File Upload</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <form action="/api/profile" method="POST" enctype="multipart/form-data" onsubmit="event.preventDefault(); alert('Profile would be updated!');">
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label so-required" for="demo-profile-name">Name</label>
+                        <input type="text" class="so-form-control" id="demo-profile-name" name="name" required>
+                    </div>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label" for="demo-avatar">Profile Picture</label>
+                        <div class="so-form-control-file">
+                            <input type="file" id="demo-avatar" name="avatar" accept="image/*">
+                            <span class="so-form-file-button">
+                                <span class="material-icons">image</span>
+                                Browse
+                            </span>
+                            <span class="so-form-file-text">No file chosen</span>
+                        </div>
+                        <div class="so-form-hint">Max size: 2MB</div>
+                    </div>
+                    <button type="submit" class="so-btn so-btn-primary">Update Profile</button>
+                </form>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('form-file', [
                     [
@@ -384,6 +498,30 @@ echo \$form->render();"
         .variant('primary'));
 
 document.getElementById('container').innerHTML = form.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<form action="/api/profile" method="POST" enctype="multipart/form-data">
+    <div class="so-form-group">
+        <label class="so-form-label so-required" for="name">Name</label>
+        <input type="text" class="so-form-control" id="name" name="name" required>
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label" for="avatar">Profile Picture</label>
+        <div class="so-form-control-file">
+            <input type="file" id="avatar" name="avatar" accept="image/*">
+            <span class="so-form-file-button">
+                <span class="material-icons">image</span>
+                Browse
+            </span>
+            <span class="so-form-file-text">No file chosen</span>
+        </div>
+        <div class="so-form-hint">Max size: 2MB</div>
+    </div>
+    <button type="submit" class="so-btn so-btn-primary">Update Profile</button>
+</form>'
                     ],
                 ]) ?>
             </div>
@@ -459,3 +597,19 @@ document.getElementById('container').innerHTML = form.toHtml();"
 </main>
 
 <?php require_once '../../includes/footer.php'; ?>
+
+<script>
+// Handle file input display
+document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(input => {
+    input.addEventListener('change', function() {
+        const fileText = this.closest('.so-form-control-file').querySelector('.so-form-file-text');
+        if (this.files.length > 0) {
+            fileText.textContent = this.files[0].name;
+            fileText.classList.add('has-file');
+        } else {
+            fileText.textContent = 'No file chosen';
+            fileText.classList.remove('has-file');
+        }
+    });
+});
+</script>

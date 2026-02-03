@@ -109,6 +109,16 @@ echo \$timePicker->renderGroup();"
 
 document.getElementById('container').innerHTML = timePicker.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label" for="meeting_time">Business Hours</label>
+    <input type="time" class="so-form-control" id="meeting_time" name="meeting_time" min="09:00" max="17:00">
+    <div class="so-form-hint">Select a time between 9:00 AM and 5:00 PM</div>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -175,6 +185,28 @@ UiEngine.timePicker('slot_60')
     .label('1 hour steps')
     .step(60);"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- 15 minute steps (step in seconds: 15 * 60 = 900) -->
+<div class="so-form-group">
+    <label class="so-form-label">15 minute steps</label>
+    <input type="time" class="so-form-control" id="slot_15" name="slot_15" step="900">
+</div>
+
+<!-- 30 minute steps (step in seconds: 30 * 60 = 1800) -->
+<div class="so-form-group">
+    <label class="so-form-label">30 minute steps</label>
+    <input type="time" class="so-form-control" id="slot_30" name="slot_30" step="1800">
+</div>
+
+<!-- 1 hour steps (step in seconds: 60 * 60 = 3600) -->
+<div class="so-form-group">
+    <label class="so-form-label">1 hour steps</label>
+    <input type="time" class="so-form-control" id="slot_60" name="slot_60" step="3600">
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -185,6 +217,22 @@ UiEngine.timePicker('slot_60')
                 <h3 class="so-card-title">Time Formats</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label">24-hour format</label>
+                        <input type="time" class="so-form-control" value="14:30">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">With seconds</label>
+                        <input type="time" class="so-form-control" step="1" value="14:30:00">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Default value</label>
+                        <input type="time" class="so-form-control" value="09:00">
+                    </div>
+                </div>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('time-formats', [
                     [
@@ -228,6 +276,28 @@ UiEngine.timePicker('time_seconds')
     .label('With seconds')
     .format('H:i:s')
     .showSeconds();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- 24-hour format -->
+<div class="so-form-group">
+    <label class="so-form-label">24-hour format</label>
+    <input type="time" class="so-form-control" id="time_24" name="time_24" value="14:30">
+</div>
+
+<!-- With seconds (step="1" enables seconds) -->
+<div class="so-form-group">
+    <label class="so-form-label">With seconds</label>
+    <input type="time" class="so-form-control" id="time_seconds" name="time_seconds" step="1" value="14:30:00">
+</div>
+
+<!-- With default value -->
+<div class="so-form-group">
+    <label class="so-form-label">Default value</label>
+    <input type="time" class="so-form-control" id="time_default" name="time_default" value="09:00">
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -293,6 +363,21 @@ const timeRange = UiEngine.timeRange('schedule')
     });
 
 document.getElementById('container').innerHTML = timeRange.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+    <div class="so-form-group">
+        <label class="so-form-label" for="start_time">Start Time</label>
+        <input type="time" class="so-form-control" id="start_time" name="start_time">
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label" for="end_time">End Time</label>
+        <input type="time" class="so-form-control" id="end_time" name="end_time">
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>

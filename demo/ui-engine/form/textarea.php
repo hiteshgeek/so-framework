@@ -118,6 +118,19 @@ echo \$textarea->renderGroup();"
 
 document.getElementById('container').innerHTML = textarea.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label" for="bio">Bio</label>
+    <textarea class="so-form-control" id="bio" name="bio" rows="3" maxlength="200" placeholder="Tell us about yourself..."></textarea>
+    <div class="so-d-flex so-justify-content-between so-mt-1">
+        <div class="so-form-hint">Maximum 200 characters</div>
+        <div class="so-form-hint so-form-hint-counter"><span id="bio-count">0</span>/200</div>
+    </div>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -162,6 +175,16 @@ echo \$textarea->renderGroup();"
     .help('This textarea will auto-resize based on content');
 
 document.getElementById('container').innerHTML = textarea.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label" for="content">Content</label>
+    <textarea class="so-form-control" id="content" name="content" rows="2" placeholder="Start typing and the textarea will grow..."></textarea>
+    <div class="so-form-hint">This textarea will auto-resize based on content</div>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -217,6 +240,19 @@ UiEngine.textarea('default').rows(2).placeholder('Default textarea');
 // Large textarea
 UiEngine.textarea('large').size('lg').rows(2).placeholder('Large textarea');"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Small -->
+<textarea class="so-form-control so-form-control-sm" rows="2" placeholder="Small textarea"></textarea>
+
+<!-- Default -->
+<textarea class="so-form-control" rows="2" placeholder="Default textarea"></textarea>
+
+<!-- Large -->
+<textarea class="so-form-control so-form-control-lg" rows="2" placeholder="Large textarea"></textarea>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -268,6 +304,16 @@ UiEngine.textarea('disabled')
 UiEngine.textarea('readonly')
     .value('This textarea is readonly')
     .readonly();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Disabled -->
+<textarea class="so-form-control" rows="2" disabled>This textarea is disabled</textarea>
+
+<!-- Readonly -->
+<textarea class="so-form-control" rows="2" readonly>This textarea is readonly</textarea>'
                     ],
                 ]) ?>
             </div>

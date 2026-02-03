@@ -148,6 +148,30 @@ const number = UiEngine.number('age')
 const date = UiEngine.date('birthdate')
     .label('Birth Date');"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label" for="email">Email</label>
+    <input type="email" class="so-form-control" id="email" name="email" placeholder="you@example.com">
+</div>
+
+<div class="so-form-group">
+    <label class="so-form-label" for="password">Password</label>
+    <input type="password" class="so-form-control" id="password" name="password" placeholder="Enter password">
+</div>
+
+<div class="so-form-group">
+    <label class="so-form-label" for="age">Age</label>
+    <input type="number" class="so-form-control" id="age" name="age" min="0" max="120">
+</div>
+
+<div class="so-form-group">
+    <label class="so-form-label" for="birthdate">Birth Date</label>
+    <input type="date" class="so-form-control" id="birthdate" name="birthdate">
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -200,6 +224,16 @@ echo \$email->renderGroup();"
     .help('We\\'ll never share your email.');
 
 document.getElementById('container').innerHTML = email.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label so-required" for="email">Email Address</label>
+    <input type="email" class="so-form-control" id="email" name="email" placeholder="you@example.com" required>
+    <div class="so-form-hint">We\'ll never share your email.</div>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -254,6 +288,19 @@ UiEngine.input('default').placeholder('Default input');
 
 // Large input
 UiEngine.input('large').size('lg').placeholder('Large input');"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Small -->
+<input type="text" class="so-form-control so-form-control-sm" placeholder="Small input">
+
+<!-- Default -->
+<input type="text" class="so-form-control" placeholder="Default input">
+
+<!-- Large -->
+<input type="text" class="so-form-control so-form-control-lg" placeholder="Large input">'
                     ],
                 ]) ?>
             </div>
@@ -312,6 +359,22 @@ UiEngine.input('amount')
 UiEngine.input('username')
     .suffix('@example.com')
     .placeholder('Username');"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Input with prefix -->
+<div class="so-input-group">
+    <span class="so-input-addon">$</span>
+    <input type="text" class="so-form-control" placeholder="Amount">
+</div>
+
+<!-- Input with suffix -->
+<div class="so-input-group">
+    <input type="text" class="so-form-control" placeholder="Username">
+    <span class="so-input-addon">@example.com</span>
+</div>'
                     ],
                 ]) ?>
             </div>

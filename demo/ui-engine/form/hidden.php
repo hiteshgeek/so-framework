@@ -128,6 +128,22 @@ const form = UiEngine.form('/users/update')
     .add(UiEngine.input('name').label('Name').value(user.name))
     .add(UiEngine.button('Update').type('submit'));"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- CSRF Token -->
+<input type="hidden" name="_token" value="abc123xyz">
+
+<!-- Record ID -->
+<input type="hidden" name="id" value="12345">
+
+<!-- HTTP Method Override -->
+<input type="hidden" name="_method" value="PUT">
+
+<!-- Form action context -->
+<input type="hidden" name="action" value="update">'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -203,6 +219,24 @@ echo \$form->render();"
 
 document.getElementById('container').innerHTML = form.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<form action="/profile/update" method="POST">
+    <input type="hidden" name="user_id" value="12345">
+    <input type="hidden" name="_token" value="abc123xyz">
+    <div class="so-form-group">
+        <label class="so-form-label" for="name">Name</label>
+        <input type="text" class="so-form-control" id="name" name="name" value="John Doe">
+    </div>
+    <div class="so-form-group">
+        <label class="so-form-label" for="email">Email</label>
+        <input type="email" class="so-form-control" id="email" name="email" value="john@example.com">
+    </div>
+    <button type="submit" class="so-btn so-btn-primary">Update Profile</button>
+</form>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -253,6 +287,19 @@ dataHidden.value(JSON.stringify({
 // Access the DOM element to update
 const element = hidden.getElement();
 element.value = 'new-value';"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Dynamic value from database -->
+<input type="hidden" name="record_id" value="12345">
+
+<!-- JSON data -->
+<input type="hidden" name="metadata" value="{\"key\":\"value\"}">
+
+<!-- Redirect URL -->
+<input type="hidden" name="redirect" value="/dashboard">'
                     ],
                 ]) ?>
             </div>

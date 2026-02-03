@@ -114,6 +114,15 @@ UiEngine.button('Secondary').variant('secondary').outline().toHtml();
 UiEngine.button('Success').variant('success').outline().toHtml();
 UiEngine.button('Danger').variant('danger').outline().toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<button type="button" class="so-btn so-btn-outline-primary">Primary</button>
+<button type="button" class="so-btn so-btn-outline-secondary">Secondary</button>
+<button type="button" class="so-btn so-btn-outline-success">Success</button>
+<button type="button" class="so-btn so-btn-outline-danger">Danger</button>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -148,6 +157,14 @@ UiEngine::button('Large')->variant('primary')->size('lg');"
                         'code' => "UiEngine.button('Small').variant('primary').size('sm').toHtml();
 UiEngine.button('Default').variant('primary').toHtml();
 UiEngine.button('Large').variant('primary').size('lg').toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<button type="button" class="so-btn so-btn-primary so-btn-sm">Small</button>
+<button type="button" class="so-btn so-btn-primary">Default</button>
+<button type="button" class="so-btn so-btn-primary so-btn-lg">Large</button>'
                     ],
                 ]) ?>
             </div>
@@ -203,6 +220,25 @@ UiEngine.button('Download').variant('success').iconAfter('download').toHtml();
 // Icon only
 UiEngine.button().variant('secondary').icon('settings').toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Icon before text -->
+<button type="button" class="so-btn so-btn-primary">
+    <span class="material-icons">save</span> Save
+</button>
+
+<!-- Icon after text -->
+<button type="button" class="so-btn so-btn-success">
+    Download <span class="material-icons">download</span>
+</button>
+
+<!-- Icon only -->
+<button type="button" class="so-btn so-btn-secondary">
+    <span class="material-icons">settings</span>
+</button>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -240,6 +276,17 @@ UiEngine::button('Processing')->variant('secondary')->loading();"
 const btn = UiEngine.button('Submit').variant('primary');
 btn.loading(true); // Shows spinner
 btn.loading(false); // Restores original state"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<button type="button" class="so-btn so-btn-primary" disabled>
+    <span class="so-spinner-border so-spinner-border-sm"></span> Loading...
+</button>
+<button type="button" class="so-btn so-btn-secondary" disabled>
+    <span class="so-spinner-border so-spinner-border-sm"></span> Processing
+</button>'
                     ],
                 ]) ?>
             </div>
@@ -293,6 +340,15 @@ UiEngine.button('Reset').type('reset').variant('secondary').toHtml();
 // Link styled as button
 UiEngine.button('Link Button').tag('a').href('#').variant('info').toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<button type="button" class="so-btn so-btn-primary">Button</button>
+<button type="submit" class="so-btn so-btn-success">Submit</button>
+<button type="reset" class="so-btn so-btn-secondary">Reset</button>
+<a href="#" class="so-btn so-btn-info">Link Button</a>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -325,6 +381,17 @@ UiEngine::button('Full Width Button')->variant('primary')->block();"
                         'icon' => 'javascript',
                         'code' => "// Full width button
 UiEngine.button('Full Width Button').variant('primary').block().toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<button type="button" class="so-btn so-btn-primary so-w-100">Full Width Button</button>
+
+<div class="so-d-grid so-gap-2">
+    <button type="button" class="so-btn so-btn-secondary">Grid Button 1</button>
+    <button type="button" class="so-btn so-btn-secondary">Grid Button 2</button>
+</div>'
                     ],
                 ]) ?>
             </div>

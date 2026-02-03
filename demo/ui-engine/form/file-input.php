@@ -4,7 +4,7 @@
  */
 
 $pageTitle = 'File Input - UI Engine';
-$pageDescription = 'File input with drag-and-drop and preview support';
+$pageDescription = 'Styled file input with browse button and filename display';
 
 require_once '../../includes/config.php';
 require_once '../../includes/header.php';
@@ -17,7 +17,7 @@ require_once '../../includes/navbar.php';
     <div class="so-page-header">
         <div class="so-page-header-left">
             <h1 class="so-page-title">File Input</h1>
-            <p class="so-page-subtitle">File input element with file type restrictions, multiple file support, and preview functionality.</p>
+            <p class="so-page-subtitle">Styled file input element with browse button, filename display, and file type restrictions.</p>
         </div>
     </div>
 
@@ -30,8 +30,15 @@ require_once '../../includes/navbar.php';
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-form-group">
-                    <label class="so-form-label" for="demo-file">Choose file</label>
-                    <input type="file" class="so-form-control" id="demo-file" name="file">
+                    <label class="so-form-label">Upload Document</label>
+                    <div class="so-form-control-file">
+                        <input type="file" id="demo-file-basic">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload_file</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
+                    </div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -44,7 +51,9 @@ require_once '../../includes/navbar.php';
 use Core\UiEngine\UiEngine;
 
 \$file = UiEngine::file('document')
-    ->label('Choose file');
+    ->label('Upload Document')
+    ->buttonText('Browse')
+    ->icon('upload_file');
 
 echo \$file->renderGroup();"
                     ],
@@ -53,7 +62,9 @@ echo \$file->renderGroup();"
                         'language' => 'javascript',
                         'icon' => 'javascript',
                         'code' => "const file = UiEngine.file('document')
-    .label('Choose file');
+    .label('Upload Document')
+    .buttonText('Browse')
+    .icon('upload_file');
 
 document.getElementById('container').innerHTML = file.toHtml();"
                     ],
@@ -62,8 +73,15 @@ document.getElementById('container').innerHTML = file.toHtml();"
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<div class="so-form-group">
-    <label class="so-form-label" for="document">Choose file</label>
-    <input type="file" class="so-form-control" id="document" name="document">
+    <label class="so-form-label">Upload Document</label>
+    <div class="so-form-control-file">
+        <input type="file" id="document">
+        <span class="so-form-file-button">
+            <span class="material-icons">upload_file</span>
+            Browse
+        </span>
+        <span class="so-form-file-text">No file chosen</span>
+    </div>
 </div>'
                     ],
                 ]) ?>
@@ -79,14 +97,28 @@ document.getElementById('container').innerHTML = file.toHtml();"
                 <!-- Live Demo -->
                 <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
                     <div class="so-form-group">
-                        <label class="so-form-label" for="demo-image">Image files only</label>
-                        <input type="file" class="so-form-control" id="demo-image" accept="image/*">
-                        <div class="so-form-hint">Accepts: JPG, PNG, GIF, etc.</div>
+                        <label class="so-form-label">Image files only</label>
+                        <div class="so-form-control-file">
+                            <input type="file" id="demo-file-image" accept="image/*">
+                            <span class="so-form-file-button">
+                                <span class="material-icons">image</span>
+                                Browse
+                            </span>
+                            <span class="so-form-file-text">No file chosen</span>
+                        </div>
+                        <span class="so-form-hint">Accepts: JPG, PNG, GIF, etc.</span>
                     </div>
                     <div class="so-form-group">
-                        <label class="so-form-label" for="demo-pdf">PDF files only</label>
-                        <input type="file" class="so-form-control" id="demo-pdf" accept=".pdf">
-                        <div class="so-form-hint">Accepts: PDF documents</div>
+                        <label class="so-form-label">PDF files only</label>
+                        <div class="so-form-control-file">
+                            <input type="file" id="demo-file-pdf" accept=".pdf">
+                            <span class="so-form-file-button">
+                                <span class="material-icons">picture_as_pdf</span>
+                                Browse
+                            </span>
+                            <span class="so-form-file-text">No file chosen</span>
+                        </div>
+                        <span class="so-form-hint">Accepts: PDF documents</span>
                     </div>
                 </div>
 
@@ -100,12 +132,14 @@ document.getElementById('container').innerHTML = file.toHtml();"
 UiEngine::file('image')
     ->label('Image files only')
     ->accept('image/*')
+    ->icon('image')
     ->help('Accepts: JPG, PNG, GIF, etc.');
 
 // PDF files only
 UiEngine::file('document')
     ->label('PDF files only')
     ->accept('.pdf')
+    ->icon('picture_as_pdf')
     ->help('Accepts: PDF documents');
 
 // Multiple specific types
@@ -121,18 +155,52 @@ UiEngine::file('media')
 UiEngine.file('image')
     .label('Image files only')
     .accept('image/*')
+    .icon('image')
     .help('Accepts: JPG, PNG, GIF, etc.');
 
 // PDF files only
 UiEngine.file('document')
     .label('PDF files only')
     .accept('.pdf')
+    .icon('picture_as_pdf')
     .help('Accepts: PDF documents');
 
 // Multiple specific types
 UiEngine.file('media')
     .label('Media files')
     .accept('.jpg,.png,.mp4,.mp3');"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Image files only -->
+<div class="so-form-group">
+    <label class="so-form-label">Image files only</label>
+    <div class="so-form-control-file">
+        <input type="file" id="image" accept="image/*">
+        <span class="so-form-file-button">
+            <span class="material-icons">image</span>
+            Browse
+        </span>
+        <span class="so-form-file-text">No file chosen</span>
+    </div>
+    <span class="so-form-hint">Accepts: JPG, PNG, GIF, etc.</span>
+</div>
+
+<!-- PDF files only -->
+<div class="so-form-group">
+    <label class="so-form-label">PDF files only</label>
+    <div class="so-form-control-file">
+        <input type="file" id="document" accept=".pdf">
+        <span class="so-form-file-button">
+            <span class="material-icons">picture_as_pdf</span>
+            Browse
+        </span>
+        <span class="so-form-file-text">No file chosen</span>
+    </div>
+    <span class="so-form-hint">Accepts: PDF documents</span>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -146,9 +214,16 @@ UiEngine.file('media')
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-form-group">
-                    <label class="so-form-label" for="demo-files">Upload multiple files</label>
-                    <input type="file" class="so-form-control" id="demo-files" name="files[]" multiple>
-                    <div class="so-form-hint">Hold Ctrl/Cmd to select multiple files</div>
+                    <label class="so-form-label">Upload Images</label>
+                    <div class="so-form-control-file">
+                        <input type="file" id="demo-file-multi" multiple accept="image/*">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">photo_library</span>
+                            Choose Files
+                        </span>
+                        <span class="so-form-file-text">No files chosen</span>
+                    </div>
+                    <span class="so-form-hint">You can select multiple images</span>
                 </div>
 
                 <!-- Code Tabs -->
@@ -157,10 +232,13 @@ UiEngine.file('media')
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "\$file = UiEngine::file('files')
-    ->label('Upload multiple files')
+                        'code' => "\$file = UiEngine::file('images')
+    ->label('Upload Images')
     ->multiple()
-    ->help('Hold Ctrl/Cmd to select multiple files');
+    ->accept('image/*')
+    ->buttonText('Choose Files')
+    ->icon('photo_library')
+    ->help('You can select multiple images');
 
 echo \$file->renderGroup();"
                     ],
@@ -168,53 +246,32 @@ echo \$file->renderGroup();"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const file = UiEngine.file('files')
-    .label('Upload multiple files')
+                        'code' => "const file = UiEngine.file('images')
+    .label('Upload Images')
     .multiple()
-    .help('Hold Ctrl/Cmd to select multiple files');
+    .accept('image/*')
+    .buttonText('Choose Files')
+    .icon('photo_library')
+    .help('You can select multiple images');
 
 document.getElementById('container').innerHTML = file.toHtml();"
                     ],
-                ]) ?>
-            </div>
-        </div>
-
-        <!-- With Size Limit -->
-        <div class="so-card so-mb-4">
-            <div class="so-card-header">
-                <h3 class="so-card-title">With Size Limit</h3>
-            </div>
-            <div class="so-card-body">
-                <!-- Live Demo -->
-                <div class="so-form-group">
-                    <label class="so-form-label" for="demo-limited">Upload file (max 5MB)</label>
-                    <input type="file" class="so-form-control" id="demo-limited" name="limited">
-                    <div class="so-form-hint">Maximum file size: 5MB</div>
-                </div>
-
-                <!-- Code Tabs -->
-                <?= so_code_tabs('file-size', [
                     [
-                        'label' => 'PHP',
-                        'language' => 'php',
-                        'icon' => 'data_object',
-                        'code' => "\$file = UiEngine::file('limited')
-    ->label('Upload file (max 5MB)')
-    ->maxSize(5 * 1024 * 1024) // 5MB in bytes
-    ->help('Maximum file size: 5MB');
-
-echo \$file->renderGroup();"
-                    ],
-                    [
-                        'label' => 'JavaScript',
-                        'language' => 'javascript',
-                        'icon' => 'javascript',
-                        'code' => "const file = UiEngine.file('limited')
-    .label('Upload file (max 5MB)')
-    .maxSize(5 * 1024 * 1024) // 5MB in bytes
-    .help('Maximum file size: 5MB');
-
-document.getElementById('container').innerHTML = file.toHtml();"
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-group">
+    <label class="so-form-label">Upload Images</label>
+    <div class="so-form-control-file">
+        <input type="file" id="images" multiple accept="image/*">
+        <span class="so-form-file-button">
+            <span class="material-icons">photo_library</span>
+            Choose Files
+        </span>
+        <span class="so-form-file-text">No files chosen</span>
+    </div>
+    <span class="so-form-hint">You can select multiple images</span>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -223,22 +280,41 @@ document.getElementById('container').innerHTML = file.toHtml();"
         <!-- File Input Sizes -->
         <div class="so-card so-mb-4">
             <div class="so-card-header">
-                <h3 class="so-card-title">Input Sizes</h3>
+                <h3 class="so-card-title">File Input Sizes</h3>
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
-                    <div class="so-form-group">
-                        <label class="so-form-label">Small</label>
-                        <input type="file" class="so-form-control so-form-control-sm">
+                <div class="so-form-group">
+                    <label class="so-form-label">Small</label>
+                    <div class="so-form-control-file so-form-control-file-sm">
+                        <input type="file">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
                     </div>
-                    <div class="so-form-group">
-                        <label class="so-form-label">Default</label>
-                        <input type="file" class="so-form-control">
+                </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Default</label>
+                    <div class="so-form-control-file">
+                        <input type="file">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
                     </div>
-                    <div class="so-form-group">
-                        <label class="so-form-label">Large</label>
-                        <input type="file" class="so-form-control so-form-control-lg">
+                </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Large</label>
+                    <div class="so-form-control-file so-form-control-file-lg">
+                        <input type="file">
+                        <span class="so-form-file-button">
+                            <span class="material-icons">upload</span>
+                            Browse
+                        </span>
+                        <span class="so-form-file-text">No file chosen</span>
                     </div>
                 </div>
 
@@ -249,26 +325,70 @@ document.getElementById('container').innerHTML = file.toHtml();"
                         'language' => 'php',
                         'icon' => 'data_object',
                         'code' => "// Small file input
-UiEngine::file('small')->size('sm');
+UiEngine::file('small')
+    ->label('Small')
+    ->size('sm');
 
 // Default file input
-UiEngine::file('default');
+UiEngine::file('default')
+    ->label('Default');
 
 // Large file input
-UiEngine::file('large')->size('lg');"
+UiEngine::file('large')
+    ->label('Large')
+    ->size('lg');"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
                         'code' => "// Small file input
-UiEngine.file('small').size('sm').toHtml();
+UiEngine.file('small')
+    .label('Small')
+    .size('sm');
 
 // Default file input
-UiEngine.file('default').toHtml();
+UiEngine.file('default')
+    .label('Default');
 
 // Large file input
-UiEngine.file('large').size('lg').toHtml();"
+UiEngine.file('large')
+    .label('Large')
+    .size('lg');"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Small -->
+<div class="so-form-control-file so-form-control-file-sm">
+    <input type="file">
+    <span class="so-form-file-button">
+        <span class="material-icons">upload</span>
+        Browse
+    </span>
+    <span class="so-form-file-text">No file chosen</span>
+</div>
+
+<!-- Default -->
+<div class="so-form-control-file">
+    <input type="file">
+    <span class="so-form-file-button">
+        <span class="material-icons">upload</span>
+        Browse
+    </span>
+    <span class="so-form-file-text">No file chosen</span>
+</div>
+
+<!-- Large -->
+<div class="so-form-control-file so-form-control-file-lg">
+    <input type="file">
+    <span class="so-form-file-button">
+        <span class="material-icons">upload</span>
+        Browse
+    </span>
+    <span class="so-form-file-text">No file chosen</span>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -301,14 +421,14 @@ UiEngine.file('large').size('lg').toHtml();"
                                 <td>Allow multiple file selection</td>
                             </tr>
                             <tr>
-                                <td><code>maxSize()</code></td>
-                                <td><code>int $bytes</code></td>
-                                <td>Set maximum file size in bytes</td>
+                                <td><code>buttonText()</code></td>
+                                <td><code>string $text</code></td>
+                                <td>Set button text (default: 'Browse')</td>
                             </tr>
                             <tr>
-                                <td><code>preview()</code></td>
-                                <td>-</td>
-                                <td>Enable file preview (for images)</td>
+                                <td><code>icon()</code></td>
+                                <td><code>string $icon</code></td>
+                                <td>Set Material icon name</td>
                             </tr>
                             <tr>
                                 <td><code>size()</code></td>
@@ -328,9 +448,64 @@ UiEngine.file('large').size('lg').toHtml();"
                         </tbody>
                     </table>
                 </div>
+
+                <h4 class="so-mt-4">CSS Classes</h4>
+                <div class="so-table-responsive">
+                    <table class="so-table so-table-bordered">
+                        <thead class="so-table-light">
+                            <tr>
+                                <th>Class</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>.so-form-control-file</code></td>
+                                <td>Main file input container</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-form-control-file-sm</code></td>
+                                <td>Small size variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-form-control-file-lg</code></td>
+                                <td>Large size variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-form-file-button</code></td>
+                                <td>Browse button with icon</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-form-file-text</code></td>
+                                <td>Filename display area</td>
+                            </tr>
+                            <tr>
+                                <td><code>.has-file</code></td>
+                                <td>Added to text when file is selected</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </main>
 
 <?php require_once '../../includes/footer.php'; ?>
+
+<script>
+// Update filename display when file is selected
+document.querySelectorAll('.so-form-control-file input[type="file"]').forEach(input => {
+    input.addEventListener('change', function() {
+        const fileText = this.closest('.so-form-control-file').querySelector('.so-form-file-text');
+        if (this.files.length > 0) {
+            const fileNames = Array.from(this.files).map(f => f.name).join(', ');
+            fileText.textContent = fileNames;
+            fileText.classList.add('has-file');
+        } else {
+            fileText.textContent = 'No file chosen';
+            fileText.classList.remove('has-file');
+        }
+    });
+});
+</script>

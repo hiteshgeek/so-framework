@@ -128,6 +128,34 @@ UiEngine.toggle('disabled_off').label('Disabled (Off)').disabled();
 // Disabled (On)
 UiEngine.toggle('disabled_on').label('Disabled (On)').checked().disabled();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Default (Off) -->
+<div class="so-form-check so-form-switch">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="default">
+    <label class="so-form-check-label" for="default">Default (Off)</label>
+</div>
+
+<!-- Checked (On) -->
+<div class="so-form-check so-form-switch">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="checked" checked>
+    <label class="so-form-check-label" for="checked">Checked (On)</label>
+</div>
+
+<!-- Disabled (Off) -->
+<div class="so-form-check so-form-switch">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="disabled_off" disabled>
+    <label class="so-form-check-label" for="disabled_off">Disabled (Off)</label>
+</div>
+
+<!-- Disabled (On) -->
+<div class="so-form-check so-form-switch">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="disabled_on" checked disabled>
+    <label class="so-form-check-label" for="disabled_on">Disabled (On)</label>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -174,6 +202,15 @@ const iconToggle = UiEngine.toggle('dark_mode')
 
 document.getElementById('container').innerHTML = toggle.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-form-check so-form-switch">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="dark_mode" name="dark_mode" data-on-label="Dark" data-off-label="Light">
+    <label class="so-form-check-label" for="dark_mode">Theme Mode</label>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -211,6 +248,28 @@ UiEngine.toggle('default').label('Default toggle');
 
 // Large toggle
 UiEngine.toggle('large').size('lg').label('Large toggle');"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Small -->
+<div class="so-form-check so-form-switch so-form-switch-sm">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="small">
+    <label class="so-form-check-label" for="small">Small toggle</label>
+</div>
+
+<!-- Default -->
+<div class="so-form-check so-form-switch">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="default">
+    <label class="so-form-check-label" for="default">Default toggle</label>
+</div>
+
+<!-- Large -->
+<div class="so-form-check so-form-switch so-form-switch-lg">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="large">
+    <label class="so-form-check-label" for="large">Large toggle</label>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -255,6 +314,34 @@ UiEngine.toggle('warning').color('warning').label('Warning').checked();
 
 // Danger
 UiEngine.toggle('danger').color('danger').label('Danger').checked();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Primary -->
+<div class="so-form-check so-form-switch so-form-switch-primary">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="primary" checked>
+    <label class="so-form-check-label" for="primary">Primary</label>
+</div>
+
+<!-- Success -->
+<div class="so-form-check so-form-switch so-form-switch-success">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="success" checked>
+    <label class="so-form-check-label" for="success">Success</label>
+</div>
+
+<!-- Warning -->
+<div class="so-form-check so-form-switch so-form-switch-warning">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="warning" checked>
+    <label class="so-form-check-label" for="warning">Warning</label>
+</div>
+
+<!-- Danger -->
+<div class="so-form-check so-form-switch so-form-switch-danger">
+    <input class="so-form-check-input" type="checkbox" role="switch" id="danger" checked>
+    <label class="so-form-check-label" for="danger">Danger</label>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -341,6 +428,40 @@ foreach (\$settings as \$toggle) {
 
 const html = settings.map(t => t.toSettingItem()).join('');
 document.getElementById('settings-list').innerHTML = html;"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-list-group">
+    <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+        <div>
+            <div class="so-fw-medium">Email Notifications</div>
+            <small class="so-text-muted">Receive email updates about your account</small>
+        </div>
+        <div class="so-form-check so-form-switch so-mb-0">
+            <input class="so-form-check-input" type="checkbox" role="switch" id="email_notifications" checked>
+        </div>
+    </div>
+    <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+        <div>
+            <div class="so-fw-medium">SMS Notifications</div>
+            <small class="so-text-muted">Receive text messages for important alerts</small>
+        </div>
+        <div class="so-form-check so-form-switch so-mb-0">
+            <input class="so-form-check-input" type="checkbox" role="switch" id="sms_notifications">
+        </div>
+    </div>
+    <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+        <div>
+            <div class="so-fw-medium">Two-Factor Authentication</div>
+            <small class="so-text-muted">Add an extra layer of security</small>
+        </div>
+        <div class="so-form-check so-form-switch so-mb-0">
+            <input class="so-form-check-input" type="checkbox" role="switch" id="two_factor" checked>
+        </div>
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>

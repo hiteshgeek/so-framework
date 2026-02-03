@@ -128,6 +128,29 @@ echo \$checkboxGroup->renderGroup();"
 
 document.getElementById('container').innerHTML = checkboxGroup.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<label class="so-form-label">Select your interests</label>
+<div class="so-checkbox-group so-checkbox-group-vertical">
+    <label class="so-checkbox">
+        <input type="checkbox" name="interests[]" value="tech">
+        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+        <span class="so-checkbox-label">Technology</span>
+    </label>
+    <label class="so-checkbox">
+        <input type="checkbox" name="interests[]" value="sports">
+        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+        <span class="so-checkbox-label">Sports</span>
+    </label>
+    <label class="so-checkbox">
+        <input type="checkbox" name="interests[]" value="music">
+        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+        <span class="so-checkbox-label">Music</span>
+    </label>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -190,6 +213,29 @@ echo \$checkboxGroup->renderGroup();"
 
 document.getElementById('container').innerHTML = checkboxGroup.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<label class="so-form-label">Size options</label>
+<div class="so-checkbox-group so-checkbox-group-inline">
+    <label class="so-checkbox">
+        <input type="checkbox" name="sizes[]" value="sm">
+        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+        <span class="so-checkbox-label">Small</span>
+    </label>
+    <label class="so-checkbox">
+        <input type="checkbox" name="sizes[]" value="md">
+        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+        <span class="so-checkbox-label">Medium</span>
+    </label>
+    <label class="so-checkbox">
+        <input type="checkbox" name="sizes[]" value="lg">
+        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+        <span class="so-checkbox-label">Large</span>
+    </label>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -246,6 +292,31 @@ UiEngine.checkbox('disabled').label('Disabled checkbox').disabled();
 
 // Checked and disabled
 UiEngine.checkbox('both').label('Checked and disabled').checked().disabled();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Checked checkbox -->
+<label class="so-checkbox">
+    <input type="checkbox" name="checked" checked>
+    <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+    <span class="so-checkbox-label">Checked checkbox</span>
+</label>
+
+<!-- Disabled checkbox -->
+<label class="so-checkbox so-disabled">
+    <input type="checkbox" name="disabled" disabled>
+    <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+    <span class="so-checkbox-label">Disabled checkbox</span>
+</label>
+
+<!-- Checked and disabled -->
+<label class="so-checkbox so-disabled">
+    <input type="checkbox" name="both" checked disabled>
+    <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+    <span class="so-checkbox-label">Checked and disabled</span>
+</label>'
                     ],
                 ]) ?>
             </div>

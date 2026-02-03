@@ -31,15 +31,18 @@ require_once '../../includes/navbar.php';
                 <!-- Live Demo -->
                 <div class="so-form-group">
                     <label class="so-form-label">Enter verification code</label>
-                    <div class="so-d-flex so-gap-2 so-justify-content-center">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                    <div class="so-otp-group" id="demo-basic-otp">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
                     </div>
-                    <div class="so-form-hint so-text-center so-mt-2">Enter the 6-digit code sent to your phone</div>
+                    <input type="hidden" name="verification_code">
+                    <div class="so-form-hint so-mt-2">Enter the 6-digit code sent to your phone</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -75,13 +78,15 @@ document.getElementById('container').innerHTML = otp.toHtml();"
                         'icon' => 'code',
                         'code' => '<div class="so-form-group">
     <label class="so-form-label">Enter verification code</label>
-    <div class="so-otp-input" data-length="6">
-        <input type="text" maxlength="1" class="so-otp-digit">
-        <input type="text" maxlength="1" class="so-otp-digit">
-        <input type="text" maxlength="1" class="so-otp-digit">
-        <input type="text" maxlength="1" class="so-otp-digit">
-        <input type="text" maxlength="1" class="so-otp-digit">
-        <input type="text" maxlength="1" class="so-otp-digit">
+    <div class="so-otp-group" id="otpInput">
+        <div class="so-otp-inputs">
+            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+        </div>
     </div>
     <input type="hidden" name="verification_code">
     <small class="so-form-text">Enter the 6-digit code sent to your phone</small>
@@ -100,25 +105,28 @@ document.getElementById('container').innerHTML = otp.toHtml();"
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <label class="so-form-label">4-digit PIN</label>
-                    <div class="so-d-flex so-gap-2">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                    <div class="so-otp-group" id="demo-pin4">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
                     </div>
                 </div>
                 <div>
                     <label class="so-form-label">8-digit code</label>
-                    <div class="so-d-flex so-gap-2">
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        <span class="so-mx-1">-</span>
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                    <div class="so-otp-group" id="demo-code8">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
                     </div>
                 </div>
 
@@ -133,11 +141,10 @@ UiEngine::otp('pin')
     ->label('4-digit PIN')
     ->length(4);
 
-// 8-digit code with separator
+// 8-digit code
 UiEngine::otp('long_code')
     ->label('8-digit code')
-    ->length(8)
-    ->separator(4); // Add separator after 4th digit"
+    ->length(8);"
                     ],
                     [
                         'label' => 'JavaScript',
@@ -148,104 +155,32 @@ UiEngine.otp('pin')
     .label('4-digit PIN')
     .length(4);
 
-// 8-digit code with separator
+// 8-digit code
 UiEngine.otp('long_code')
     .label('8-digit code')
-    .length(8)
-    .separator(4); // Add separator after 4th digit"
-                    ],
-                ]) ?>
-            </div>
-        </div>
-
-        <!-- Input Types -->
-        <div class="so-card so-mb-4">
-            <div class="so-card-header">
-                <h3 class="so-card-title">Input Types</h3>
-            </div>
-            <div class="so-card-body">
-                <!-- Code Tabs -->
-                <?= so_code_tabs('otp-types', [
-                    [
-                        'label' => 'PHP',
-                        'language' => 'php',
-                        'icon' => 'data_object',
-                        'code' => "// Numbers only (default)
-UiEngine::otp('numeric')
-    ->label('Numeric OTP')
-    ->type('numeric');
-
-// Alphanumeric
-UiEngine::otp('alphanumeric')
-    ->label('Alphanumeric Code')
-    ->type('alphanumeric');
-
-// Password style (masked)
-UiEngine::otp('secure')
-    ->label('Secure PIN')
-    ->type('password')
-    ->length(4);"
+    .length(8);"
                     ],
                     [
-                        'label' => 'JavaScript',
-                        'language' => 'javascript',
-                        'icon' => 'javascript',
-                        'code' => "// Numbers only (default)
-UiEngine.otp('numeric')
-    .label('Numeric OTP')
-    .type('numeric');
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- 4-digit PIN -->
+<div class="so-otp-group" id="pin4">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+    </div>
+</div>
 
-// Alphanumeric
-UiEngine.otp('alphanumeric')
-    .label('Alphanumeric Code')
-    .type('alphanumeric');
-
-// Password style (masked)
-UiEngine.otp('secure')
-    .label('Secure PIN')
-    .type('password')
-    .length(4);"
-                    ],
-                ]) ?>
-            </div>
-        </div>
-
-        <!-- With Auto Submit -->
-        <div class="so-card so-mb-4">
-            <div class="so-card-header">
-                <h3 class="so-card-title">With Auto Submit</h3>
-            </div>
-            <div class="so-card-body">
-                <!-- Code Tabs -->
-                <?= so_code_tabs('otp-autosubmit', [
-                    [
-                        'label' => 'PHP',
-                        'language' => 'php',
-                        'icon' => 'data_object',
-                        'code' => "\$otp = UiEngine::otp('code')
-    ->label('Verification Code')
-    ->length(6)
-    ->autoSubmit() // Submit form when complete
-    ->autoFocus(); // Focus first input on load
-
-echo \$otp->renderGroup();"
-                    ],
-                    [
-                        'label' => 'JavaScript',
-                        'language' => 'javascript',
-                        'icon' => 'javascript',
-                        'code' => "const otp = UiEngine.otp('code')
-    .label('Verification Code')
-    .length(6)
-    .autoSubmit()
-    .autoFocus()
-    .onComplete((value) => {
-        console.log('OTP entered:', value);
-        // Auto-verify the code
-        verifyOTP(value);
-    });
-
-document.getElementById('container').innerHTML = otp.toHtml();"
+<!-- 8-digit code -->
+<div class="so-otp-group" id="code8">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... 8 inputs total ... -->
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -257,6 +192,47 @@ document.getElementById('container').innerHTML = otp.toHtml();"
                 <h3 class="so-card-title">OTP Sizes</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <div class="so-mb-4">
+                    <label class="so-form-label">Small (<code>.so-otp-group-sm</code>)</label>
+                    <div class="so-otp-group so-otp-group-sm" id="demo-otp-sm">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
+                    </div>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Default</label>
+                    <div class="so-otp-group" id="demo-otp-default">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="so-form-label">Large (<code>.so-otp-group-lg</code>)</label>
+                    <div class="so-otp-group so-otp-group-lg" id="demo-otp-lg">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('otp-sizes', [
                     [
@@ -301,29 +277,73 @@ UiEngine.otp('large')
     .length(6)
     .size('lg');"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Small OTP -->
+<div class="so-otp-group so-otp-group-sm">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>
+
+<!-- Default OTP -->
+<div class="so-otp-group">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>
+
+<!-- Large OTP -->
+<div class="so-otp-group so-otp-group-lg">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
 
-        <!-- With Resend -->
+        <!-- Error State -->
         <div class="so-card so-mb-4">
             <div class="so-card-header">
-                <h3 class="so-card-title">With Resend Link</h3>
+                <h3 class="so-card-title">Error State</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <div class="so-form-group">
+                    <label class="so-form-label">OTP with error state</label>
+                    <div class="so-otp-group" id="demo-error-otp">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
+                    </div>
+                    <div class="so-btn-group so-mt-3">
+                        <button type="button" class="so-btn so-btn-danger so-btn-sm" onclick="setOtpError(true)">Show Error</button>
+                        <button type="button" class="so-btn so-btn-outline so-btn-sm" onclick="setOtpError(false)">Clear Error</button>
+                    </div>
+                </div>
+
                 <!-- Code Tabs -->
-                <?= so_code_tabs('otp-resend', [
+                <?= so_code_tabs('otp-error', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
                         'code' => "\$otp = UiEngine::otp('code')
-    ->label('Verification Code')
+    ->label('OTP with error')
     ->length(6)
-    ->help('Enter the code sent to your phone')
-    ->resendLink('/api/resend-otp')
-    ->resendText('Didn\\'t receive code?')
-    ->resendCooldown(60); // 60 second cooldown
+    ->error('Invalid code'); // Sets error state
 
 echo \$otp->renderGroup();"
                     ],
@@ -331,18 +351,108 @@ echo \$otp->renderGroup();"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const otp = UiEngine.otp('code')
-    .label('Verification Code')
-    .length(6)
-    .help('Enter the code sent to your phone')
-    .showResend(true)
-    .resendCooldown(60)
-    .onResend(async () => {
-        await fetch('/api/resend-otp', {method: 'POST'});
-        alert('Code resent!');
-    });
+                        'code' => "const otp = SOOtpInput.getInstance('#errorOtp');
 
-document.getElementById('container').innerHTML = otp.toHtml();"
+// Show error state
+otp.setError(true);
+
+// Clear error state
+otp.setError(false);
+
+// Validate against expected value
+const isValid = otp.validate('123456');
+if (!isValid) {
+    // Error state is automatically set
+}"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-otp-group" id="errorOtp">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>
+
+<!-- Error state adds .so-otp-error to inputs -->'
+                    ],
+                ]) ?>
+            </div>
+        </div>
+
+        <!-- Event Handling -->
+        <div class="so-card so-mb-4">
+            <div class="so-card-header">
+                <h3 class="so-card-title">Event Handling</h3>
+            </div>
+            <div class="so-card-body">
+                <!-- Live Demo -->
+                <div class="so-form-group">
+                    <label class="so-form-label">Type to see events</label>
+                    <div class="so-otp-group" id="demo-event-otp">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                        </div>
+                    </div>
+                    <div class="so-alert so-alert-info so-mt-3" id="eventLog">
+                        <span class="material-icons">info</span>
+                        <div>
+                            <strong>Event Log:</strong> <span id="eventOutput">Type in the OTP field above...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code Tabs -->
+                <?= so_code_tabs('otp-events', [
+                    [
+                        'label' => 'PHP',
+                        'language' => 'php',
+                        'icon' => 'data_object',
+                        'code' => "\$otp = UiEngine::otp('code')
+    ->label('Verification Code')
+    ->length(6)
+    ->onComplete('handleComplete')
+    ->onInput('handleInput');
+
+echo \$otp->renderGroup();"
+                    ],
+                    [
+                        'label' => 'JavaScript',
+                        'language' => 'javascript',
+                        'icon' => 'javascript',
+                        'code' => "const otp = SOOtpInput.getInstance('#eventOtp');
+
+// Listen for value changes
+otp.element.addEventListener('otp:change', (e) => {
+    console.log('Current value:', e.detail.value);
+    console.log('Changed index:', e.detail.index);
+});
+
+// Listen for completion
+otp.element.addEventListener('otp:complete', (e) => {
+    console.log('OTP complete:', e.detail.value);
+    // Submit form or validate
+});"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-otp-group" id="eventOtp">
+    <div class="so-otp-inputs">
+        <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric">
+        <!-- ... -->
+    </div>
+</div>
+
+<!-- Events: otp:change, otp:complete -->'
                     ],
                 ]) ?>
             </div>
@@ -370,14 +480,9 @@ document.getElementById('container').innerHTML = otp.toHtml();"
                                 <td>Set number of digits (default: 6)</td>
                             </tr>
                             <tr>
-                                <td><code>type()</code></td>
-                                <td><code>string $type</code></td>
-                                <td>Set type: numeric, alphanumeric, password</td>
-                            </tr>
-                            <tr>
-                                <td><code>separator()</code></td>
-                                <td><code>int $position</code></td>
-                                <td>Add visual separator after position</td>
+                                <td><code>size()</code></td>
+                                <td><code>string $size</code></td>
+                                <td>Set size: 'sm' or 'lg'</td>
                             </tr>
                             <tr>
                                 <td><code>autoFocus()</code></td>
@@ -385,24 +490,93 @@ document.getElementById('container').innerHTML = otp.toHtml();"
                                 <td>Auto-focus first input on load</td>
                             </tr>
                             <tr>
-                                <td><code>autoSubmit()</code></td>
-                                <td>-</td>
-                                <td>Submit form when complete</td>
-                            </tr>
-                            <tr>
-                                <td><code>size()</code></td>
-                                <td><code>string $size</code></td>
-                                <td>Set size: 'sm' or 'lg'</td>
-                            </tr>
-                            <tr>
                                 <td><code>onComplete()</code></td>
                                 <td><code>callable $callback</code></td>
                                 <td>Callback when all digits entered</td>
                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="so-mt-4">CSS Classes</h4>
+                <div class="so-table-responsive">
+                    <table class="so-table so-table-bordered">
+                        <thead class="so-table-light">
                             <tr>
-                                <td><code>onResend()</code></td>
-                                <td><code>callable $callback</code></td>
-                                <td>Callback for resend action</td>
+                                <th>Class</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>.so-otp-group</code></td>
+                                <td>Main OTP container</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-otp-group-sm</code></td>
+                                <td>Small size variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-otp-group-lg</code></td>
+                                <td>Large size variant</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-otp-inputs</code></td>
+                                <td>Container for input elements</td>
+                            </tr>
+                            <tr>
+                                <td><code>.so-otp-input</code></td>
+                                <td>Individual digit input</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="so-mt-4">JavaScript Methods</h4>
+                <div class="so-table-responsive">
+                    <table class="so-table so-table-bordered">
+                        <thead class="so-table-light">
+                            <tr>
+                                <th>Method</th>
+                                <th>Returns</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>getValue()</code></td>
+                                <td>string</td>
+                                <td>Returns the combined OTP value</td>
+                            </tr>
+                            <tr>
+                                <td><code>setValue(value)</code></td>
+                                <td>this</td>
+                                <td>Sets the OTP value and updates UI</td>
+                            </tr>
+                            <tr>
+                                <td><code>clear()</code></td>
+                                <td>this</td>
+                                <td>Clears all inputs</td>
+                            </tr>
+                            <tr>
+                                <td><code>focus()</code></td>
+                                <td>this</td>
+                                <td>Focuses on first empty input</td>
+                            </tr>
+                            <tr>
+                                <td><code>setError(hasError)</code></td>
+                                <td>this</td>
+                                <td>Sets or removes error state</td>
+                            </tr>
+                            <tr>
+                                <td><code>isComplete()</code></td>
+                                <td>boolean</td>
+                                <td>Returns true if all inputs filled</td>
+                            </tr>
+                            <tr>
+                                <td><code>validate(expected)</code></td>
+                                <td>boolean</td>
+                                <td>Validates OTP against expected value</td>
                             </tr>
                         </tbody>
                     </table>
@@ -413,3 +587,41 @@ document.getElementById('container').innerHTML = otp.toHtml();"
 </main>
 
 <?php require_once '../../includes/footer.php'; ?>
+
+<script>
+// Initialize OTP inputs after DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof SOOtpInput !== 'undefined') {
+        initOtpDemos();
+    } else {
+        setTimeout(initOtpDemos, 100);
+    }
+});
+
+function initOtpDemos() {
+    // Initialize all OTP inputs with autoFocus disabled
+    document.querySelectorAll('.so-otp-group').forEach(el => {
+        SOOtpInput.getInstance(el, { autoFocus: false });
+    });
+
+    // Setup event handling demo
+    const eventOtp = document.getElementById('demo-event-otp');
+    const eventOutput = document.getElementById('eventOutput');
+
+    if (eventOtp) {
+        eventOtp.addEventListener('otp:change', (e) => {
+            eventOutput.textContent = `Change: value="${e.detail.value}", index=${e.detail.index ?? 'paste'}`;
+        });
+
+        eventOtp.addEventListener('otp:complete', (e) => {
+            eventOutput.innerHTML = `<strong class="so-text-success">Complete!</strong> value="${e.detail.value}"`;
+        });
+    }
+}
+
+// Error state demo
+function setOtpError(hasError) {
+    const otp = SOOtpInput.getInstance('#demo-error-otp');
+    otp.setError(hasError);
+}
+</script>

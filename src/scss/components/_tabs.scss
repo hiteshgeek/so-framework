@@ -668,6 +668,7 @@
 
 .#{$so-prefix}tab-content {
   width: 100%;
+  // padding-top: spacing("4");
 }
 
 // ============================================
@@ -676,6 +677,7 @@
 
 .#{$so-prefix}tab-pane {
   display: none;
+  padding: spacing("2") 0;
 
   &.#{$so-prefix}active,
   &.#{$so-prefix}show {
@@ -707,7 +709,7 @@
       min-width: 180px;
       align-self: flex-start;
       max-height: calc(100vh - 100px);
-      overflow-y: auto;
+      // overflow-y: auto;
       flex-wrap: nowrap;
       scrollbar-width: thin;
 
@@ -728,6 +730,7 @@
     .#{$so-prefix}tab-content {
       flex: 1;
       min-width: 0;
+      padding-top: 0; // No top padding for vertical layout
     }
   }
 }
@@ -876,7 +879,8 @@
 }
 
 @keyframes so-tab-dot-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -1007,11 +1011,13 @@
   background: linear-gradient(to left, css-var("card-bg"), transparent);
 }
 
-.#{$so-prefix}tabs-overflow-container.#{$so-prefix}can-scroll-left .#{$so-prefix}tabs-scroll-wrapper::before {
+.#{$so-prefix}tabs-overflow-container.#{$so-prefix}can-scroll-left
+  .#{$so-prefix}tabs-scroll-wrapper::before {
   opacity: 1;
 }
 
-.#{$so-prefix}tabs-overflow-container.#{$so-prefix}can-scroll-right .#{$so-prefix}tabs-scroll-wrapper::after {
+.#{$so-prefix}tabs-overflow-container.#{$so-prefix}can-scroll-right
+  .#{$so-prefix}tabs-scroll-wrapper::after {
   opacity: 1;
 }
 
