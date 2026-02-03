@@ -34,15 +34,15 @@ require_once '../../includes/navbar.php';
                 <!-- Live Demo -->
                 <div class="so-form-group so-mb-4">
                     <label class="so-form-label">Enter verification code</label>
-                    <div class="so-otp-input so-otp-default" id="demo-basic-otp" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"text","masked":false,"autoSubmit":false,"autoFocus":false,"allowPaste":true}'>
+                    <div class="so-otp-group so-otp-group-default" id="demo-basic-otp" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"text","masked":false,"autoSubmit":false,"autoFocus":false,"allowPaste":true}'>
                         <input type="hidden" class="so-otp-value" name="verification_code">
                         <div class="so-otp-inputs">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
                         </div>
                     </div>
                     <div class="so-form-hint so-mt-2">Enter the 6-digit code sent to your phone</div>
@@ -78,13 +78,13 @@ document.getElementById('container').appendChild(otp.renderGroup());"
                         'label' => 'HTML Output',
                         'language' => 'html',
                         'icon' => 'code',
-                        'code' => '<div class="so-otp-input so-otp-default" data-so-ui-init="otp-input"
+                        'code' => '<div class="so-otp-group so-otp-group-default" data-so-ui-init="otp-input"
      data-so-ui-config=\'{"length":6,"inputType":"text","masked":false,"autoSubmit":false,"autoFocus":true,"allowPaste":true}\'>
     <input type="hidden" class="so-otp-value" name="verification_code">
     <div class="so-otp-inputs">
-        <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code"
+        <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code"
                inputmode="numeric" pattern="[0-9]" data-so-index="0" autofocus>
-        <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code"
+        <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code"
                inputmode="numeric" pattern="[0-9]" data-so-index="1">
         <!-- ... more inputs ... -->
     </div>
@@ -103,33 +103,31 @@ document.getElementById('container').appendChild(otp.renderGroup());"
                 <p class="so-mb-3">OTP inputs support various lengths with shortcut methods <code>pin4()</code> and <code>pin6()</code>.</p>
 
                 <!-- Live Demo -->
-                <div class="so-row">
-                    <div class="so-col-md-6 so-mb-4">
-                        <label class="so-form-label">4-digit PIN</label>
-                        <div class="so-otp-input so-otp-default" id="demo-pin4" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"inputType":"text","autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value" name="pin">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
-                            </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">4-digit PIN</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-pin4" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"inputType":"text","autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value" name="pin">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
                         </div>
                     </div>
-                    <div class="so-col-md-6 so-mb-4">
-                        <label class="so-form-label">8-digit code</label>
-                        <div class="so-otp-input so-otp-default" id="demo-code8" data-so-ui-init="otp-input" data-so-ui-config='{"length":8,"inputType":"text","autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value" name="long_code">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="6">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="7">
-                            </div>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">8-digit code</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-code8" data-so-ui-init="otp-input" data-so-ui-config='{"length":8,"inputType":"text","autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value" name="long_code">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="6">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="7">
                         </div>
                     </div>
                 </div>
@@ -176,13 +174,13 @@ UiEngine.otpInput('code')
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<!-- 4-digit PIN -->
-<div class="so-otp-input so-otp-default" data-so-ui-config=\'{"length":4}\'>
+<div class="so-otp-group so-otp-group-default" data-so-ui-config=\'{"length":4}\'>
     <input type="hidden" class="so-otp-value" name="pin">
     <div class="so-otp-inputs">
-        <input type="text" class="so-otp-digit" maxlength="1" ...>
-        <input type="text" class="so-otp-digit" maxlength="1" ...>
-        <input type="text" class="so-otp-digit" maxlength="1" ...>
-        <input type="text" class="so-otp-digit" maxlength="1" ...>
+        <input type="text" class="so-otp-input" maxlength="1" ...>
+        <input type="text" class="so-otp-input" maxlength="1" ...>
+        <input type="text" class="so-otp-input" maxlength="1" ...>
+        <input type="text" class="so-otp-input" maxlength="1" ...>
     </div>
 </div>'
                     ],
@@ -199,52 +197,50 @@ UiEngine.otpInput('code')
                 <p class="so-mb-3">Control input type for numeric, alphanumeric, or password (masked) OTP codes.</p>
 
                 <!-- Live Demo -->
-                <div class="so-row">
-                    <div class="so-col-md-4 so-mb-4">
-                        <label class="so-form-label">Numeric Only</label>
-                        <div class="so-otp-input so-otp-default" id="demo-numeric" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"number","autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value" name="numeric_code">
-                            <div class="so-otp-inputs">
-                                <input type="tel" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
-                                <input type="tel" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
-                                <input type="tel" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
-                                <input type="tel" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
-                                <input type="tel" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
-                                <input type="tel" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
-                            </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Numeric Only</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-numeric" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"number","autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value" name="numeric_code">
+                        <div class="so-otp-inputs">
+                            <input type="tel" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
+                            <input type="tel" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
+                            <input type="tel" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
+                            <input type="tel" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
+                            <input type="tel" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
+                            <input type="tel" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
                         </div>
-                        <small class="so-text-muted">Shows numeric keyboard on mobile</small>
                     </div>
-                    <div class="so-col-md-4 so-mb-4">
-                        <label class="so-form-label">Alphanumeric</label>
-                        <div class="so-otp-input so-otp-default" id="demo-alphanumeric" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"text","autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value" name="alpha_code">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="3">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="4">
-                                <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="5">
-                            </div>
+                    <small class="so-text-muted">Shows numeric keyboard on mobile</small>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Alphanumeric</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-alphanumeric" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"text","autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value" name="alpha_code">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="text" pattern="[a-zA-Z0-9]" data-so-index="5">
                         </div>
-                        <small class="so-text-muted">Allows letters and numbers</small>
                     </div>
-                    <div class="so-col-md-4 so-mb-4">
-                        <label class="so-form-label">Password (Masked)</label>
-                        <div class="so-otp-input so-otp-default" id="demo-password" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"password","masked":true,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value" name="secure_code">
-                            <div class="so-otp-inputs">
-                                <input type="password" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
-                                <input type="password" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
-                                <input type="password" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
-                                <input type="password" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
-                                <input type="password" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
-                                <input type="password" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
-                            </div>
+                    <small class="so-text-muted">Allows letters and numbers</small>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Password (Masked)</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-password" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"password","masked":true,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value" name="secure_code">
+                        <div class="so-otp-inputs">
+                            <input type="password" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
+                            <input type="password" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
+                            <input type="password" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
+                            <input type="password" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
+                            <input type="password" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
+                            <input type="password" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
                         </div>
-                        <small class="so-text-muted">Input is hidden with dots</small>
                     </div>
+                    <small class="so-text-muted">Input is hidden with dots</small>
                 </div>
 
                 <?= so_code_tabs('otp-types', [
@@ -289,13 +285,13 @@ UiEngine.otpInput('hidden_code').masked();"
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<!-- Numeric: type="tel" with inputmode="numeric" -->
-<input type="tel" class="so-otp-digit" inputmode="numeric" pattern="[0-9]">
+<input type="tel" class="so-otp-input" inputmode="numeric" pattern="[0-9]">
 
 <!-- Alphanumeric: type="text" with inputmode="text" -->
-<input type="text" class="so-otp-digit" inputmode="text" pattern="[a-zA-Z0-9]">
+<input type="text" class="so-otp-input" inputmode="text" pattern="[a-zA-Z0-9]">
 
 <!-- Password/Masked: type="password" -->
-<input type="password" class="so-otp-digit" inputmode="numeric" pattern="[0-9]">'
+<input type="password" class="so-otp-input" inputmode="numeric" pattern="[0-9]">'
                     ],
                 ]) ?>
             </div>
@@ -312,16 +308,16 @@ UiEngine.otpInput('hidden_code').masked();"
                 <!-- Live Demo -->
                 <div class="so-form-group so-mb-4">
                     <label class="so-form-label">6-digit code (XXX-XXX)</label>
-                    <div class="so-otp-input so-otp-default" id="demo-grouped" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"text","groupSize":3,"autoFocus":false}'>
+                    <div class="so-otp-group so-otp-group-default" id="demo-grouped" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"inputType":"text","groupSize":3,"autoFocus":false}'>
                         <input type="hidden" class="so-otp-value" name="grouped_code">
                         <div class="so-otp-inputs">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="2">
                             <span class="so-otp-separator">-</span>
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
-                            <input type="text" class="so-otp-digit" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]" data-so-index="5">
                         </div>
                     </div>
                 </div>
@@ -360,13 +356,13 @@ UiEngine.otpInput('code')
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<div class="so-otp-inputs">
-    <input type="text" class="so-otp-digit" data-so-index="0">
-    <input type="text" class="so-otp-digit" data-so-index="1">
-    <input type="text" class="so-otp-digit" data-so-index="2">
+    <input type="text" class="so-otp-input" data-so-index="0">
+    <input type="text" class="so-otp-input" data-so-index="1">
+    <input type="text" class="so-otp-input" data-so-index="2">
     <span class="so-otp-separator">-</span>
-    <input type="text" class="so-otp-digit" data-so-index="3">
-    <input type="text" class="so-otp-digit" data-so-index="4">
-    <input type="text" class="so-otp-digit" data-so-index="5">
+    <input type="text" class="so-otp-input" data-so-index="3">
+    <input type="text" class="so-otp-input" data-so-index="4">
+    <input type="text" class="so-otp-input" data-so-index="5">
 </div>'
                     ],
                 ]) ?>
@@ -382,53 +378,51 @@ UiEngine.otpInput('code')
                 <p class="so-mb-3">Different visual styles: default, outline, filled, and underline.</p>
 
                 <!-- Live Demo -->
-                <div class="so-row">
-                    <div class="so-col-md-6 so-col-lg-3 so-mb-4">
-                        <label class="so-form-label">Default</label>
-                        <div class="so-otp-input so-otp-default" id="demo-variant-default" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Default</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-variant-default" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
                         </div>
                     </div>
-                    <div class="so-col-md-6 so-col-lg-3 so-mb-4">
-                        <label class="so-form-label">Outline</label>
-                        <div class="so-otp-input so-otp-outline" id="demo-variant-outline" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            </div>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Outline</label>
+                    <div class="so-otp-group so-otp-group-outline" id="demo-variant-outline" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
                         </div>
                     </div>
-                    <div class="so-col-md-6 so-col-lg-3 so-mb-4">
-                        <label class="so-form-label">Filled</label>
-                        <div class="so-otp-input so-otp-filled" id="demo-variant-filled" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            </div>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Filled</label>
+                    <div class="so-otp-group so-otp-group-filled" id="demo-variant-filled" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
                         </div>
                     </div>
-                    <div class="so-col-md-6 so-col-lg-3 so-mb-4">
-                        <label class="so-form-label">Underline</label>
-                        <div class="so-otp-input so-otp-underline" id="demo-variant-underline" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            </div>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Underline</label>
+                    <div class="so-otp-group so-otp-group-underline" id="demo-variant-underline" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
                         </div>
                     </div>
                 </div>
@@ -465,10 +459,10 @@ UiEngine.otpInput('code').underline(); // bottom border only"
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<!-- Variant classes -->
-<div class="so-otp-input so-otp-default">...</div>
-<div class="so-otp-input so-otp-outline">...</div>
-<div class="so-otp-input so-otp-filled">...</div>
-<div class="so-otp-input so-otp-underline">...</div>'
+<div class="so-otp-group so-otp-group-default">...</div>
+<div class="so-otp-group so-otp-group-outline">...</div>
+<div class="so-otp-group so-otp-group-filled">...</div>
+<div class="so-otp-group so-otp-group-underline">...</div>'
                     ],
                 ]) ?>
             </div>
@@ -483,44 +477,42 @@ UiEngine.otpInput('code').underline(); // bottom border only"
                 <p class="so-mb-3">Disabled, readonly, and error states for OTP inputs.</p>
 
                 <!-- Live Demo -->
-                <div class="so-row">
-                    <div class="so-col-md-4 so-mb-4">
-                        <label class="so-form-label">Disabled</label>
-                        <div class="so-otp-input so-otp-default" id="demo-disabled" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" disabled data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" disabled data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" disabled data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" disabled data-so-index="3">
-                            </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Disabled</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-disabled" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" disabled data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" disabled data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" disabled data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" disabled data-so-index="3">
                         </div>
                     </div>
-                    <div class="so-col-md-4 so-mb-4">
-                        <label class="so-form-label">Readonly (with value)</label>
-                        <div class="so-otp-input so-otp-default" id="demo-readonly" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value" value="1234">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" readonly value="1" data-so-index="0">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" readonly value="2" data-so-index="1">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" readonly value="3" data-so-index="2">
-                                <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" readonly value="4" data-so-index="3">
-                            </div>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Readonly (with value)</label>
+                    <div class="so-otp-group so-otp-group-default" id="demo-readonly" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value" value="1234">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" readonly value="1" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" readonly value="2" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" readonly value="3" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" readonly value="4" data-so-index="3">
                         </div>
                     </div>
-                    <div class="so-col-md-4 so-mb-4">
-                        <label class="so-form-label">Error State</label>
-                        <div class="so-otp-input so-otp-default so-is-invalid" id="demo-error" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
-                            <input type="hidden" class="so-otp-value">
-                            <div class="so-otp-inputs">
-                                <input type="text" class="so-otp-digit error" maxlength="1" inputmode="numeric" data-so-index="0">
-                                <input type="text" class="so-otp-digit error" maxlength="1" inputmode="numeric" data-so-index="1">
-                                <input type="text" class="so-otp-digit error" maxlength="1" inputmode="numeric" data-so-index="2">
-                                <input type="text" class="so-otp-digit error" maxlength="1" inputmode="numeric" data-so-index="3">
-                            </div>
+                </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">Error State</label>
+                    <div class="so-otp-group so-otp-group-default so-is-invalid" id="demo-error" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoFocus":false}'>
+                        <input type="hidden" class="so-otp-value">
+                        <div class="so-otp-inputs">
+                            <input type="text" class="so-otp-input error" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input error" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input error" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input error" maxlength="1" inputmode="numeric" data-so-index="3">
                         </div>
-                        <div class="so-invalid-feedback so-d-block">Invalid verification code</div>
                     </div>
+                    <div class="so-invalid-feedback so-d-block">Invalid verification code</div>
                 </div>
 
                 <?= so_code_tabs('otp-states', [
@@ -559,15 +551,15 @@ otp.setError(false);  // Remove error state"
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<!-- Disabled inputs -->
-<input type="text" class="so-otp-digit" disabled>
+<input type="text" class="so-otp-input" disabled>
 
 <!-- Readonly inputs -->
-<input type="text" class="so-otp-digit" readonly value="1">
+<input type="text" class="so-otp-input" readonly value="1">
 
 <!-- Error state: so-is-invalid on wrapper, error on inputs -->
-<div class="so-otp-input so-otp-default so-is-invalid">
+<div class="so-otp-group so-otp-group-default so-is-invalid">
     <div class="so-otp-inputs">
-        <input type="text" class="so-otp-digit error">
+        <input type="text" class="so-otp-input error">
         ...
     </div>
 </div>
@@ -588,13 +580,13 @@ otp.setError(false);  // Remove error state"
                 <!-- Live Demo -->
                 <div class="so-form-group so-mb-4">
                     <label class="so-form-label">Auto-submit when complete</label>
-                    <div class="so-otp-input so-otp-default" id="demo-autosubmit" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoSubmit":true,"autoFocus":false}'>
+                    <div class="so-otp-group so-otp-group-default" id="demo-autosubmit" data-so-ui-init="otp-input" data-so-ui-config='{"length":4,"autoSubmit":true,"autoFocus":false}'>
                         <input type="hidden" class="so-otp-value" name="auto_submit_code">
                         <div class="so-otp-inputs">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
                         </div>
                     </div>
                     <small class="so-text-muted">Form will submit automatically when all digits are entered</small>
@@ -641,7 +633,7 @@ UiEngine.otpInput('code')
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<!-- Config passed via data attribute -->
-<div class="so-otp-input so-otp-default"
+<div class="so-otp-group so-otp-group-default"
      data-so-ui-init="otp-input"
      data-so-ui-config=\'{
          "length": 6,
@@ -667,15 +659,15 @@ UiEngine.otpInput('code')
                 <!-- Live Demo -->
                 <div class="so-form-group so-mb-4">
                     <label class="so-form-label">Interactive OTP Demo</label>
-                    <div class="so-otp-input so-otp-default" id="demo-interactive" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
+                    <div class="so-otp-group so-otp-group-default" id="demo-interactive" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
                         <input type="hidden" class="so-otp-value" name="interactive_code">
                         <div class="so-otp-inputs">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="4">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="5">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="5">
                         </div>
                     </div>
                     <div class="so-btn-group so-mt-3">
@@ -823,15 +815,15 @@ if (otp.hasClass('my-class')) { ... }"
                 <!-- Live Demo -->
                 <div class="so-form-group so-mb-4">
                     <label class="so-form-label">Enter code: <strong>123456</strong></label>
-                    <div class="so-otp-input so-otp-default" id="demo-validation" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
+                    <div class="so-otp-group so-otp-group-default" id="demo-validation" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
                         <input type="hidden" class="so-otp-value" name="validated_code">
                         <div class="so-otp-inputs">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="4">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="5">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="5">
                         </div>
                     </div>
                     <div class="so-invalid-feedback" id="validation-error" style="display:none;">Invalid code entered</div>
@@ -940,15 +932,15 @@ otp.element.addEventListener('so:otp:complete', async (e) => {
                 <!-- Live Demo -->
                 <div class="so-form-group so-mb-4">
                     <label class="so-form-label">Error handling demo</label>
-                    <div class="so-otp-input so-otp-default" id="demo-error-handling" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
+                    <div class="so-otp-group so-otp-group-default" id="demo-error-handling" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
                         <input type="hidden" class="so-otp-value">
                         <div class="so-otp-inputs">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="4">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="5">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="5">
                         </div>
                     </div>
                     <div class="so-invalid-feedback" id="error-message" style="display:none;"></div>
@@ -1015,10 +1007,10 @@ function clearError() {
                         'code' => '<!-- Error state classes -->
 
 <!-- On wrapper element -->
-<div class="so-otp-input so-otp-default so-is-invalid">
+<div class="so-otp-group so-otp-group-default so-is-invalid">
 
 <!-- On individual digit inputs (set by JS) -->
-<input type="text" class="so-otp-digit error">
+<input type="text" class="so-otp-input error">
 
 <!-- Error message -->
 <div class="so-invalid-feedback">Error message here</div>
@@ -1083,12 +1075,12 @@ console.log(otp.options);
                         'language' => 'html',
                         'icon' => 'code',
                         'code' => '<!-- Generated by PHP -->
-<div class="so-otp-input so-otp-default"
+<div class="so-otp-group so-otp-group-default"
      data-so-ui-init="otp-input"
      data-so-ui-config=\'{"length":6,"inputType":"number","masked":false,"autoSubmit":true,"autoFocus":true,"allowPaste":true,"groupSize":3}\'>
     <input type="hidden" class="so-otp-value" name="verification_code">
     <div class="so-otp-inputs">
-        <input type="tel" class="so-otp-digit" maxlength="1"
+        <input type="tel" class="so-otp-input" maxlength="1"
                autocomplete="one-time-code" inputmode="numeric"
                pattern="[0-9]" data-so-index="0" autofocus>
         ...
@@ -1112,15 +1104,15 @@ console.log(otp.options);
                 <!-- Live Demo -->
                 <div class="so-form-group so-mb-4">
                     <label class="so-form-label">Type to see events</label>
-                    <div class="so-otp-input so-otp-default" id="demo-events" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
+                    <div class="so-otp-group so-otp-group-default" id="demo-events" data-so-ui-init="otp-input" data-so-ui-config='{"length":6,"autoFocus":false}'>
                         <input type="hidden" class="so-otp-value">
                         <div class="so-otp-inputs">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="0">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="1">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="2">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="3">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="4">
-                            <input type="text" class="so-otp-digit" maxlength="1" inputmode="numeric" data-so-index="5">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="0">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="1">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="2">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="3">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="4">
+                            <input type="text" class="so-otp-input" maxlength="1" inputmode="numeric" data-so-index="5">
                         </div>
                     </div>
                     <div class="so-alert so-alert-info so-mt-3" id="eventLog">
@@ -1230,27 +1222,27 @@ otp.element.addEventListener('so:otp:complete', handleComplete);"
                         </thead>
                         <tbody>
                             <tr>
-                                <td><code>so-otp-input</code></td>
+                                <td><code>so-otp-group</code></td>
                                 <td>Wrapper</td>
                                 <td>Main wrapper class for the OTP input component</td>
                             </tr>
                             <tr>
-                                <td><code>so-otp-default</code></td>
+                                <td><code>so-otp-group-default</code></td>
                                 <td>Wrapper</td>
                                 <td>Default variant style</td>
                             </tr>
                             <tr>
-                                <td><code>so-otp-outline</code></td>
+                                <td><code>so-otp-group-outline</code></td>
                                 <td>Wrapper</td>
                                 <td>Outline variant with prominent borders</td>
                             </tr>
                             <tr>
-                                <td><code>so-otp-filled</code></td>
+                                <td><code>so-otp-group-filled</code></td>
                                 <td>Wrapper</td>
                                 <td>Filled variant with background</td>
                             </tr>
                             <tr>
-                                <td><code>so-otp-underline</code></td>
+                                <td><code>so-otp-group-underline</code></td>
                                 <td>Wrapper</td>
                                 <td>Underline variant with bottom border only</td>
                             </tr>
@@ -1265,7 +1257,7 @@ otp.element.addEventListener('so:otp:complete', handleComplete);"
                                 <td>Flex container for digit inputs</td>
                             </tr>
                             <tr>
-                                <td><code>so-otp-digit</code></td>
+                                <td><code>so-otp-input</code></td>
                                 <td>Input</td>
                                 <td>Individual digit input field</td>
                             </tr>

@@ -66,6 +66,22 @@
     border-color: css-var("accent-danger");
   }
 
+  // Disabled state
+  &:disabled,
+  &[disabled] {
+    background: css-var("form-bg-disabled", css-var("bg-tertiary"));
+    color: css-var("text-muted");
+    border-color: css-var("border-light");
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  // Readonly state
+  &[readonly] {
+    background: css-var("form-bg-disabled", css-var("bg-tertiary"));
+    cursor: default;
+  }
+
   // Remove spinners for numeric input
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -107,6 +123,70 @@
     height: 72px;
     font-size: font-size("4xl");
     border-radius: radius("xl");
+  }
+}
+
+// ============================================
+// STYLE VARIANTS
+// ============================================
+
+// Default variant (standard border style)
+.#{$so-prefix}otp-group-default {
+  .#{$so-prefix}otp-input {
+    border: 2px solid css-var("form-border");
+    background: css-var("form-bg");
+    border-radius: radius("lg");
+  }
+}
+
+// Outline variant (prominent borders)
+.#{$so-prefix}otp-group-outline {
+  .#{$so-prefix}otp-input {
+    border: 2px solid css-var("accent-primary");
+    background: transparent;
+    border-radius: radius("lg");
+
+    &:focus {
+      border-color: css-var("accent-primary");
+      box-shadow: 0 0 0 3px alpha($so-primary, 0.2);
+    }
+  }
+}
+
+// Filled variant (background color)
+.#{$so-prefix}otp-group-filled {
+  .#{$so-prefix}otp-input {
+    border: 2px solid transparent;
+    background: rgba($so-grey-500, 0.15);
+    border-radius: radius("lg");
+
+    &:focus {
+      border-color: css-var("accent-primary");
+      background: css-var("form-bg");
+    }
+
+    @include dark-mode {
+      background: rgba($so-grey-400, 0.2);
+
+      &:focus {
+        background: css-var("form-bg");
+      }
+    }
+  }
+}
+
+// Underline variant (bottom border only)
+.#{$so-prefix}otp-group-underline {
+  .#{$so-prefix}otp-input {
+    border: none;
+    border-bottom: 2px solid css-var("form-border");
+    background: transparent;
+    border-radius: 0;
+
+    &:focus {
+      border-bottom-color: css-var("accent-primary");
+      box-shadow: none;
+    }
   }
 }
 

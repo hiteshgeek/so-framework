@@ -15,7 +15,7 @@ class SOOtpInput extends SOComponent {
 
   static DEFAULTS = {
     length: 6,
-    inputSelector: '.so-otp-digit',
+    inputSelector: '.so-otp-input',
     autoFocus: true,
     numericOnly: true,
   };
