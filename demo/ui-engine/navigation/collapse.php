@@ -32,7 +32,7 @@ require_once '../../includes/navbar.php';
                 <button class="so-btn so-btn-primary so-mb-3" type="button" data-so-toggle="collapse" data-so-target="#collapseDemo">
                     Toggle Content
                 </button>
-                <div class="so-collapse" id="collapseDemo">
+                <div class="so-collapse so-show" id="collapseDemo">
                     <div class="so-card so-card-body">
                         This is collapsible content. It can contain any HTML elements including text, images, forms, and other components.
                     </div>
@@ -165,7 +165,7 @@ document.getElementById('container').innerHTML =
                     Toggle Width
                 </button>
                 <div style="min-height:100px;">
-                    <div class="so-collapse so-collapse-horizontal" id="collapseHorizontal">
+                    <div class="so-collapse so-collapse-horizontal so-show" id="collapseHorizontal">
                         <div class="so-card so-card-body" style="width:300px;">
                             This collapses horizontally instead of vertically!
                         </div>
@@ -224,7 +224,7 @@ const collapse = UiEngine.collapse('sidebar')
                     </button>
                 </div>
                 <div class="so-grid so-grid-cols-2">
-                    <div class="so-collapse multi-collapse" id="multiCollapse1">
+                    <div class="so-collapse multi-collapse so-show" id="multiCollapse1">
                         <div class="so-card so-card-body">First collapsible element</div>
                     </div>
                     <div class="so-collapse multi-collapse" id="multiCollapse2">
@@ -280,6 +280,16 @@ const panel2 = UiEngine.collapse('panel2')
                 <h3 class="so-card-title">Initially Shown</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <button class="so-btn so-btn-primary so-mb-3" type="button" data-so-toggle="collapse" data-so-target="#collapseShownDemo" aria-expanded="true">
+                    Hide Details
+                </button>
+                <div class="so-collapse so-show" id="collapseShownDemo">
+                    <div class="so-card so-card-body">
+                        This content is visible by default. Click the button above to toggle visibility.
+                    </div>
+                </div>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('collapse-shown', [
                     [
@@ -321,6 +331,20 @@ const button = UiEngine.button('Hide Details')
                 <h3 class="so-card-title">Event Handling</h3>
             </div>
             <div class="so-card-body">
+                <!-- Live Demo -->
+                <button class="so-btn so-btn-primary so-mb-3" type="button" data-so-toggle="collapse" data-so-target="#collapseEventsDemo">
+                    Toggle Content
+                </button>
+                <div class="so-collapse so-show" id="collapseEventsDemo">
+                    <div class="so-card so-card-body">
+                        Toggle this content and watch the event log below.
+                    </div>
+                </div>
+                <div class="so-alert so-alert-info so-mt-3" id="collapse-event-log">
+                    <span class="material-icons">info</span>
+                    <span>Event log: Interact with the collapse above to see events.</span>
+                </div>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('collapse-events', [
                     [
@@ -372,52 +396,108 @@ collapseEl.addEventListener('hidden.so.collapse', () => {
                 <h3 class="so-card-title">Accordion Pattern</h3>
             </div>
             <div class="so-card-body">
+                <p class="so-text-muted so-mb-4">Use the parent attribute to create accordion behavior where only one item can be open at a time.</p>
+
+                <!-- Live Demo -->
+                <div class="so-accordion so-mb-4" id="accordionDemo" data-so-accordion>
+                    <div class="so-accordion-item">
+                        <h2 class="so-accordion-header">
+                            <button class="so-accordion-button" data-so-toggle="collapse" data-so-target="#accordionItem1" aria-expanded="true">
+                                Section 1
+                            </button>
+                        </h2>
+                        <div id="accordionItem1" class="so-accordion-collapse so-show" data-so-parent="#accordionDemo">
+                            <div class="so-accordion-body">
+                                This is the first accordion item content. When you open another section, this one will automatically close.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="so-accordion-item">
+                        <h2 class="so-accordion-header">
+                            <button class="so-accordion-button so-collapsed" data-so-toggle="collapse" data-so-target="#accordionItem2" aria-expanded="false">
+                                Section 2
+                            </button>
+                        </h2>
+                        <div id="accordionItem2" class="so-accordion-collapse" data-so-parent="#accordionDemo">
+                            <div class="so-accordion-body">
+                                This is the second accordion item content. Only one section can be open at a time.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="so-accordion-item">
+                        <h2 class="so-accordion-header">
+                            <button class="so-accordion-button so-collapsed" data-so-toggle="collapse" data-so-target="#accordionItem3" aria-expanded="false">
+                                Section 3
+                            </button>
+                        </h2>
+                        <div id="accordionItem3" class="so-accordion-collapse" data-so-parent="#accordionDemo">
+                            <div class="so-accordion-body">
+                                This is the third accordion item content. Click the headers to toggle sections.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Code Tabs -->
                 <?= so_code_tabs('collapse-accordion', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "// Use parent attribute for accordion behavior
-// When one item opens, others close
+                        'code' => "// Use the dedicated accordion component
+\$accordion = UiEngine::accordion('myAccordion')
+    ->item('Section 1', 'First content', ['show' => true])
+    ->item('Section 2', 'Second content')
+    ->item('Section 3', 'Third content');
 
-\$accordion = UiEngine::div()->id('myAccordion');
-
-\$item1 = UiEngine::collapse('item1')
-    ->parent('myAccordion')  // Links to accordion container
-    ->show()  // First item expanded
-    ->content('First item content');
-
-\$item2 = UiEngine::collapse('item2')
-    ->parent('myAccordion')
-    ->content('Second item content');
-
-\$item3 = UiEngine::collapse('item3')
-    ->parent('myAccordion')
-    ->content('Third item content');
-
-// Note: For accordions, use UiEngine::accordion() which
-// handles all the markup automatically"
+echo \$accordion->render();"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "// Use data-so-parent for accordion behavior
-const item1 = UiEngine.collapse('item1')
-    .parent('#myAccordion')
-    .show()
-    .content('First item content');
-
-const item2 = UiEngine.collapse('item2')
-    .parent('#myAccordion')
-    .content('Second item content');
-
-// Or use the dedicated accordion component
+                        'code' => "// Use the dedicated accordion component
 const accordion = UiEngine.accordion('myAccordion')
     .item('Section 1', 'First content', {show: true})
     .item('Section 2', 'Second content')
-    .item('Section 3', 'Third content');"
+    .item('Section 3', 'Third content');
+
+document.getElementById('container').innerHTML = accordion.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-accordion" id="myAccordion" data-so-accordion>
+    <div class="so-accordion-item">
+        <h2 class="so-accordion-header">
+            <button class="so-accordion-button" data-so-toggle="collapse"
+                    data-so-target="#collapse1" aria-expanded="true">
+                Section 1
+            </button>
+        </h2>
+        <div id="collapse1" class="so-accordion-collapse so-show"
+             data-so-parent="#myAccordion">
+            <div class="so-accordion-body">
+                First content
+            </div>
+        </div>
+    </div>
+    <div class="so-accordion-item">
+        <h2 class="so-accordion-header">
+            <button class="so-accordion-button so-collapsed"
+                    data-so-toggle="collapse" data-so-target="#collapse2">
+                Section 2
+            </button>
+        </h2>
+        <div id="collapse2" class="so-accordion-collapse"
+             data-so-parent="#myAccordion">
+            <div class="so-accordion-body">
+                Second content
+            </div>
+        </div>
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -506,5 +586,190 @@ const accordion = UiEngine.accordion('myAccordion')
         </div>
     </div>
 </main>
+
+<script>
+// SOCollapse Class - Handles collapse toggle functionality
+class SOCollapse {
+    static init() {
+        document.querySelectorAll('[data-so-toggle="collapse"]').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Get target(s)
+                const targetSelector = trigger.dataset.soTarget || trigger.getAttribute('href');
+                if (!targetSelector) return;
+
+                const targets = document.querySelectorAll(targetSelector);
+                targets.forEach(target => {
+                    SOCollapse.toggle(target);
+                });
+            });
+        });
+    }
+
+    static toggle(element) {
+        if (element.classList.contains('so-show')) {
+            SOCollapse.hide(element);
+        } else {
+            SOCollapse.show(element);
+        }
+    }
+
+    static show(element) {
+        if (element.classList.contains('so-show') || element.classList.contains('so-collapsing')) return;
+
+        const trigger = document.querySelector(`[data-so-target="#${element.id}"], [href="#${element.id}"]`);
+        const isHorizontal = element.classList.contains('so-collapse-horizontal');
+        const isAccordion = element.classList.contains('so-accordion-collapse');
+
+        // Handle accordion behavior - close other items in the same parent
+        const parentSelector = element.dataset.soParent;
+        if (parentSelector) {
+            const parent = document.querySelector(parentSelector);
+            if (parent) {
+                // Support both collapse and accordion collapse elements
+                const selector = isAccordion ? '.so-accordion-collapse.so-show' : '.so-collapse.so-show';
+                parent.querySelectorAll(selector).forEach(sibling => {
+                    if (sibling !== element) {
+                        SOCollapse.hide(sibling);
+                    }
+                });
+            }
+        }
+
+        // Dispatch show event
+        element.dispatchEvent(new CustomEvent('show.so.collapse', { bubbles: true }));
+
+        // Remove hidden state first
+        element.classList.remove('so-collapse', 'so-accordion-collapse');
+        element.style.display = 'block';
+
+        // Measure target dimensions
+        const targetHeight = element.scrollHeight;
+        const targetWidth = element.scrollWidth;
+
+        // Set initial dimension to 0
+        if (isHorizontal) {
+            element.style.width = '0px';
+            element.style.overflow = 'hidden';
+        } else {
+            element.style.height = '0px';
+            element.style.overflow = 'hidden';
+        }
+
+        // Add collapsing class for transition
+        element.classList.add('so-collapsing');
+
+        // Force reflow to apply initial state
+        element.offsetHeight;
+
+        // Animate to full size
+        if (isHorizontal) {
+            element.style.width = targetWidth + 'px';
+        } else {
+            element.style.height = targetHeight + 'px';
+        }
+
+        if (trigger) {
+            trigger.classList.remove('collapsed', 'so-collapsed');
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+
+        setTimeout(() => {
+            element.classList.remove('so-collapsing');
+            // Add appropriate classes based on element type
+            if (isAccordion) {
+                element.classList.add('so-accordion-collapse', 'so-show');
+            } else {
+                element.classList.add('so-collapse', 'so-show');
+            }
+            element.style.height = '';
+            element.style.width = '';
+            element.style.overflow = '';
+            element.dispatchEvent(new CustomEvent('shown.so.collapse', { bubbles: true }));
+        }, 350);
+    }
+
+    static hide(element) {
+        if (!element.classList.contains('so-show') || element.classList.contains('so-collapsing')) return;
+
+        const trigger = document.querySelector(`[data-so-target="#${element.id}"], [href="#${element.id}"]`);
+        const isHorizontal = element.classList.contains('so-collapse-horizontal');
+        const isAccordion = element.classList.contains('so-accordion-collapse');
+
+        // Dispatch hide event
+        element.dispatchEvent(new CustomEvent('hide.so.collapse', { bubbles: true }));
+
+        // Set explicit dimensions before animating
+        if (isHorizontal) {
+            element.style.width = element.scrollWidth + 'px';
+        } else {
+            element.style.height = element.scrollHeight + 'px';
+        }
+        element.style.overflow = 'hidden';
+
+        // Force reflow
+        element.offsetHeight;
+
+        // Remove show state, add collapsing for transition
+        element.classList.remove('so-collapse', 'so-accordion-collapse', 'so-show');
+        element.classList.add('so-collapsing');
+
+        // Force reflow before animating to 0
+        element.offsetHeight;
+
+        // Animate to 0
+        if (isHorizontal) {
+            element.style.width = '0px';
+        } else {
+            element.style.height = '0px';
+        }
+
+        if (trigger) {
+            trigger.classList.add('collapsed', 'so-collapsed');
+            trigger.setAttribute('aria-expanded', 'false');
+        }
+
+        setTimeout(() => {
+            element.classList.remove('so-collapsing');
+            // Add appropriate class based on element type
+            if (isAccordion) {
+                element.classList.add('so-accordion-collapse');
+            } else {
+                element.classList.add('so-collapse');
+            }
+            element.style.display = '';
+            element.style.height = '';
+            element.style.width = '';
+            element.style.overflow = '';
+            element.dispatchEvent(new CustomEvent('hidden.so.collapse', { bubbles: true }));
+        }, 350);
+    }
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', function() {
+    SOCollapse.init();
+
+    // Event log demo
+    const eventsDemo = document.getElementById('collapseEventsDemo');
+    const eventLog = document.getElementById('collapse-event-log');
+
+    if (eventsDemo && eventLog) {
+        eventsDemo.addEventListener('show.so.collapse', () => {
+            eventLog.innerHTML = '<span class="material-icons">play_arrow</span><span><strong>show.so.collapse</strong> - Starting to expand</span>';
+        });
+        eventsDemo.addEventListener('shown.so.collapse', () => {
+            eventLog.innerHTML = '<span class="material-icons">check_circle</span><span><strong>shown.so.collapse</strong> - Fully expanded</span>';
+        });
+        eventsDemo.addEventListener('hide.so.collapse', () => {
+            eventLog.innerHTML = '<span class="material-icons">close</span><span><strong>hide.so.collapse</strong> - Starting to collapse</span>';
+        });
+        eventsDemo.addEventListener('hidden.so.collapse', () => {
+            eventLog.innerHTML = '<span class="material-icons">check</span><span><strong>hidden.so.collapse</strong> - Fully collapsed</span>';
+        });
+    }
+});
+</script>
 
 <?php require_once '../../includes/footer.php'; ?>

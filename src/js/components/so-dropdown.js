@@ -315,8 +315,8 @@ class SODropdown extends SOComponent {
         break;
 
       default:
-        // Standard dropdown - trigger can be .so-dropdown-trigger or .so-btn with trigger class
-        this._trigger = this.$('.so-dropdown-trigger') || this.$('.so-btn');
+        // Standard dropdown - trigger can be .so-dropdown-trigger, .so-btn, or .so-dropdown-toggle (for navbar)
+        this._trigger = this.$('.so-dropdown-trigger') || this.$('.so-dropdown-toggle') || this.$('.so-btn');
         this._menu = this.$('.so-dropdown-menu');
         this._selectedEl = this.$('.so-dropdown-selected');
         // For searchable modifier on standard dropdown
@@ -411,6 +411,7 @@ class SODropdown extends SOComponent {
    * @private
    */
   _handleTriggerClick(e) {
+    e.preventDefault();
     e.stopPropagation();
 
     if (this._disabled) return;

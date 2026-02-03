@@ -37,7 +37,7 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons so-text-primary">dashboard</span>
                                     SixOrbit
                                 </a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -291,7 +291,7 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons so-text-primary">dashboard</span>
                                     SixOrbit
                                 </a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -299,9 +299,10 @@ require_once '../includes/navbar.php';
                                         <li class="so-component-navbar-item">
                                             <a href="#" class="so-component-navbar-link so-active">Dashboard</a>
                                         </li>
-                                        <li class="so-component-navbar-item so-dropdown">
-                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle" onclick="event.preventDefault(); this.parentElement.classList.toggle('show'); this.nextElementSibling.classList.toggle('show');">
+                                        <li class="so-component-navbar-item so-dropdown" data-so-dropdown>
+                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle">
                                                 Products
+                                                <span class="material-icons so-dropdown-arrow">expand_more</span>
                                             </a>
                                             <div class="so-dropdown-menu">
                                                 <a href="#" class="so-dropdown-item">
@@ -323,9 +324,10 @@ require_once '../includes/navbar.php';
                                                 </a>
                                             </div>
                                         </li>
-                                        <li class="so-component-navbar-item so-dropdown">
-                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle" onclick="event.preventDefault(); this.parentElement.classList.toggle('show'); this.nextElementSibling.classList.toggle('show');">
+                                        <li class="so-component-navbar-item so-dropdown" data-so-dropdown>
+                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle">
                                                 Reports
+                                                <span class="material-icons so-dropdown-arrow">expand_more</span>
                                             </a>
                                             <div class="so-dropdown-menu">
                                                 <a href="#" class="so-dropdown-item">Sales Report</a>
@@ -380,7 +382,7 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons so-text-primary">dashboard</span>
                                     SixOrbit
                                 </a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -408,7 +410,7 @@ require_once '../includes/navbar.php';
                         <nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-lg so-mb-4">
                             <div class="so-component-navbar-container">
                                 <a href="#" class="so-component-navbar-brand">SixOrbit</a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -462,7 +464,7 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons so-text-primary">dashboard</span>
                                     SixOrbit
                                 </a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -598,7 +600,7 @@ require_once '../includes/navbar.php';
                         <nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-sm so-mb-4">
                             <div class="so-component-navbar-container">
                                 <a href="#" class="so-component-navbar-brand">Expand SM</a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -616,7 +618,7 @@ require_once '../includes/navbar.php';
                         <nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-md so-mb-4">
                             <div class="so-component-navbar-container">
                                 <a href="#" class="so-component-navbar-brand">Expand MD</a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -634,7 +636,7 @@ require_once '../includes/navbar.php';
                         <nav class="so-component-navbar so-component-navbar-light so-component-navbar-expand-lg so-mb-4">
                             <div class="so-component-navbar-container">
                                 <a href="#" class="so-component-navbar-brand">Expand LG</a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -842,7 +844,7 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons so-text-primary">rocket_launch</span>
                                     SixOrbit ERP
                                 </a>
-                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('show')">
+                                <button class="so-component-navbar-toggler" type="button" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); this.closest('.so-component-navbar').querySelector('.so-component-navbar-collapse').classList.toggle('so-show')">
                                     <span class="so-component-navbar-toggler-icon"></span>
                                 </button>
                                 <div class="so-component-navbar-collapse">
@@ -853,10 +855,11 @@ require_once '../includes/navbar.php';
                                                 Dashboard
                                             </a>
                                         </li>
-                                        <li class="so-component-navbar-item so-dropdown">
-                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle" onclick="event.preventDefault(); this.parentElement.classList.toggle('show'); this.nextElementSibling.classList.toggle('show');">
+                                        <li class="so-component-navbar-item so-dropdown" data-so-dropdown>
+                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle">
                                                 <span class="material-icons">inventory_2</span>
                                                 Products
+                                                <span class="material-icons so-dropdown-arrow">expand_more</span>
                                             </a>
                                             <div class="so-dropdown-menu">
                                                 <a href="#" class="so-dropdown-item">All Products</a>
@@ -896,12 +899,13 @@ require_once '../includes/navbar.php';
                                                 <span class="so-badge so-badge-danger">3</span>
                                             </a>
                                         </li>
-                                        <li class="so-component-navbar-item so-dropdown">
-                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle" onclick="event.preventDefault(); this.parentElement.classList.toggle('show'); this.nextElementSibling.classList.toggle('show');">
+                                        <li class="so-component-navbar-item so-dropdown" data-so-dropdown>
+                                            <a href="#" class="so-component-navbar-link so-dropdown-toggle">
                                                 <span class="material-icons">account_circle</span>
                                                 John Doe
+                                                <span class="material-icons so-dropdown-arrow">expand_more</span>
                                             </a>
-                                            <div class="so-dropdown-menu dropdown-menu-end">
+                                            <div class="so-dropdown-menu so-dropdown-menu-end">
                                                 <a href="#" class="so-dropdown-item">
                                                     <span class="material-icons">person</span>
                                                     Profile
@@ -996,13 +1000,13 @@ require_once '../includes/navbar.php';
 
                         <div class="so-d-flex so-gap-3 so-mb-4">
                             <!-- Left Side Button -->
-                            <button class="so-btn so-btn-primary" onclick="document.getElementById('demo-offcanvas-left').classList.add('show'); document.getElementById('demo-offcanvas-backdrop').classList.add('show');">
+                            <button class="so-btn so-btn-primary" onclick="document.getElementById('demo-offcanvas-left').classList.add('so-show'); document.getElementById('demo-offcanvas-backdrop').classList.add('so-show');">
                                 <span class="material-icons so-mr-2">menu</span>
                                 Open Left Menu
                             </button>
 
                             <!-- Right Side Button -->
-                            <button class="so-btn so-btn-secondary" onclick="document.getElementById('demo-offcanvas-right').classList.add('show'); document.getElementById('demo-offcanvas-backdrop').classList.add('show');">
+                            <button class="so-btn so-btn-secondary" onclick="document.getElementById('demo-offcanvas-right').classList.add('so-show'); document.getElementById('demo-offcanvas-backdrop').classList.add('so-show');">
                                 <span class="material-icons so-mr-2">menu_open</span>
                                 Open Right Menu
                             </button>
@@ -1015,7 +1019,7 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons so-text-primary so-mr-2">dashboard</span>
                                     SixOrbit
                                 </h5>
-                                <button class="so-component-navbar-offcanvas-close" onclick="document.getElementById('demo-offcanvas-left').classList.remove('show'); document.getElementById('demo-offcanvas-backdrop').classList.remove('show');">
+                                <button class="so-component-navbar-offcanvas-close" onclick="document.getElementById('demo-offcanvas-left').classList.remove('so-show'); document.getElementById('demo-offcanvas-backdrop').classList.remove('so-show');">
                                     <span class="material-icons">close</span>
                                 </button>
                             </div>
@@ -1062,7 +1066,7 @@ require_once '../includes/navbar.php';
                                     <span class="material-icons so-text-primary so-mr-2">account_circle</span>
                                     Account
                                 </h5>
-                                <button class="so-component-navbar-offcanvas-close" onclick="document.getElementById('demo-offcanvas-right').classList.remove('show'); document.getElementById('demo-offcanvas-backdrop').classList.remove('show');">
+                                <button class="so-component-navbar-offcanvas-close" onclick="document.getElementById('demo-offcanvas-right').classList.remove('so-show'); document.getElementById('demo-offcanvas-backdrop').classList.remove('so-show');">
                                     <span class="material-icons">close</span>
                                 </button>
                             </div>
@@ -1105,7 +1109,7 @@ require_once '../includes/navbar.php';
                         </div>
 
                         <!-- Shared Backdrop -->
-                        <div id="demo-offcanvas-backdrop" class="so-component-navbar-offcanvas-backdrop" onclick="document.getElementById('demo-offcanvas-left').classList.remove('show'); document.getElementById('demo-offcanvas-right').classList.remove('show'); this.classList.remove('show');"></div>
+                        <div id="demo-offcanvas-backdrop" class="so-component-navbar-offcanvas-backdrop" onclick="document.getElementById('demo-offcanvas-left').classList.remove('so-show'); document.getElementById('demo-offcanvas-right').classList.remove('so-show'); this.classList.remove('so-show');"></div>
 
                         <?= so_code_block('<!-- Left Side Offcanvas (Default) -->
 <div class="so-component-navbar-offcanvas">
@@ -1298,7 +1302,7 @@ require_once '../includes/navbar.php';
                         <nav class="so-component-navbar so-component-navbar-primary so-mb-4">
                             <div class="so-component-navbar-container">
                                 <a href="#" class="so-component-navbar-brand">SixOrbit</a>
-                                <button class="so-hamburger so-hamburger--squeeze" type="button" style="color: white;" onclick="this.classList.toggle('is-active'); document.getElementById('demo-hamburger-collapse').classList.toggle('show');">
+                                <button class="so-hamburger so-hamburger--squeeze" type="button" style="color: white;" onclick="this.classList.toggle('is-active'); document.getElementById('demo-hamburger-collapse').classList.toggle('so-show');">
                                     <span class="so-hamburger-box">
                                         <span class="so-hamburger-inner"></span>
                                     </span>

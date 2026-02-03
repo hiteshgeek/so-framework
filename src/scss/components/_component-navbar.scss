@@ -125,6 +125,7 @@ $component-navbar-toggler-size: 40px !default;
 
 .#{$so-prefix}component-navbar-item {
   position: relative;
+  margin-bottom: 0; // Reset global ul li margin
 }
 
 .#{$so-prefix}component-navbar-link {
