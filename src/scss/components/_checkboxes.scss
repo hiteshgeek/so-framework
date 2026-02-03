@@ -851,7 +851,7 @@
   .#{$so-prefix}switch-on,
   .#{$so-prefix}switch-off {
     position: absolute;
-    top: 0;
+    top: 3px;
     bottom: 0;
     display: flex;
     align-items: center;
@@ -1146,7 +1146,9 @@
   &:hover:not(.disabled) .#{$so-prefix}checkbox-box::before {
     opacity: 0.08;
     transform: scale(1);
-    transition: opacity 0.15s, transform 0.15s;
+    transition:
+      opacity 0.15s,
+      transform 0.15s;
   }
 }
 
@@ -1159,7 +1161,9 @@
   &:hover:not(.disabled) .#{$so-prefix}radio-circle::before {
     opacity: 0.08;
     transform: scale(1);
-    transition: opacity 0.15s, transform 0.15s;
+    transition:
+      opacity 0.15s,
+      transform 0.15s;
   }
 }
 

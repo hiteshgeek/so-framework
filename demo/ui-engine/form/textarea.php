@@ -141,11 +141,28 @@ document.getElementById('container').innerHTML = textarea.toHtml();"
                 <h3 class="so-card-title">Auto-resize</h3>
             </div>
             <div class="so-card-body">
+                <p class="so-text-secondary so-mb-3">Add <code>so-form-control-autosize</code> class to enable automatic height adjustment based on content. Use size variants for different min/max height ranges.</p>
+
                 <!-- Live Demo -->
-                <div class="so-form-group">
-                    <label class="so-form-label" for="demo-content">Content</label>
-                    <textarea class="so-form-control" id="demo-content" name="content" rows="2" placeholder="Start typing and the textarea will grow..."></textarea>
-                    <div class="so-form-hint">This textarea will auto-resize based on content</div>
+                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-autosize-sm">Small Autosize</label>
+                        <textarea class="so-form-control so-form-control-autosize-sm" id="demo-autosize-sm" placeholder="Small (60-200px)"></textarea>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-autosize">Default Autosize</label>
+                        <textarea class="so-form-control so-form-control-autosize" id="demo-autosize" placeholder="Start typing and this will grow... (80-400px)"></textarea>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-autosize-lg">Large Autosize</label>
+                        <textarea class="so-form-control so-form-control-autosize-lg" id="demo-autosize-lg" placeholder="Large (120-600px)"></textarea>
+                    </div>
+                </div>
+
+                <div class="so-form-group so-mt-3">
+                    <label class="so-form-label" for="demo-autosize-custom">Custom Min/Max Height</label>
+                    <textarea class="so-form-control so-form-control-autosize" id="demo-autosize-custom" data-min-height="100" data-max-height="250" placeholder="Custom range: 100-250px"></textarea>
+                    <div class="so-form-hint">Uses <code>data-min-height="100"</code> and <code>data-max-height="250"</code></div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -154,12 +171,21 @@ document.getElementById('container').innerHTML = textarea.toHtml();"
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "\$textarea = UiEngine::textarea('content')
+                        'code' => "// Default autosize (80-400px)
+\$textarea = UiEngine::textarea('content')
     ->label('Content')
-    ->placeholder('Start typing and the textarea will grow...')
-    ->rows(2)
+    ->placeholder('Start typing...')
+    ->autoResize();
+
+// Size variants
+UiEngine::textarea('small')->autoResize('sm');   // 60-200px
+UiEngine::textarea('large')->autoResize('lg');   // 120-600px
+
+// Custom min/max heights
+\$textarea = UiEngine::textarea('notes')
     ->autoResize()
-    ->help('This textarea will auto-resize based on content');
+    ->attr('data-min-height', '100')
+    ->attr('data-max-height', '250');
 
 echo \$textarea->renderGroup();"
                     ],
@@ -167,24 +193,55 @@ echo \$textarea->renderGroup();"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const textarea = UiEngine.textarea('content')
+                        'code' => "// Default autosize
+const textarea = UiEngine.textarea('content')
     .label('Content')
-    .placeholder('Start typing and the textarea will grow...')
-    .rows(2)
-    .autoResize()
-    .help('This textarea will auto-resize based on content');
+    .placeholder('Start typing...')
+    .autoResize();
 
-document.getElementById('container').innerHTML = textarea.toHtml();"
+// Size variants
+UiEngine.textarea('small').autoResize('sm');   // 60-200px
+UiEngine.textarea('large').autoResize('lg');   // 120-600px
+
+// Custom min/max heights
+UiEngine.textarea('notes')
+    .autoResize()
+    .attr('data-min-height', '100')
+    .attr('data-max-height', '250');
+
+// Direct JS API
+const el = document.querySelector('.so-form-control-autosize');
+const autosize = SOTextareaAutosize.getInstance(el, {
+    minHeight: 100,
+    maxHeight: 300
+});
+
+// Listen for resize events
+el.addEventListener('so:autosize', (e) => {
+    console.log('Height:', e.detail.height);
+});"
                     ],
                     [
                         'label' => 'HTML Output',
                         'language' => 'html',
                         'icon' => 'code',
-                        'code' => '<div class="so-form-group">
-    <label class="so-form-label" for="content">Content</label>
-    <textarea class="so-form-control" id="content" name="content" rows="2" placeholder="Start typing and the textarea will grow..."></textarea>
-    <div class="so-form-hint">This textarea will auto-resize based on content</div>
-</div>'
+                        'code' => '<!-- Default autosize (80-400px) -->
+<textarea class="so-form-control so-form-control-autosize"
+    placeholder="Start typing..."></textarea>
+
+<!-- Small autosize (60-200px) -->
+<textarea class="so-form-control so-form-control-autosize-sm"
+    placeholder="Small"></textarea>
+
+<!-- Large autosize (120-600px) -->
+<textarea class="so-form-control so-form-control-autosize-lg"
+    placeholder="Large"></textarea>
+
+<!-- Custom min/max heights -->
+<textarea class="so-form-control so-form-control-autosize"
+    data-min-height="100"
+    data-max-height="250"
+    placeholder="Custom range"></textarea>'
                     ],
                 ]) ?>
             </div>
@@ -252,6 +309,88 @@ UiEngine.textarea('large').size('lg').rows(2).placeholder('Large textarea');"
 
 <!-- Large -->
 <textarea class="so-form-control so-form-control-lg" rows="2" placeholder="Large textarea"></textarea>'
+                    ],
+                ]) ?>
+            </div>
+        </div>
+
+        <!-- Resize Modifiers -->
+        <div class="so-card so-mb-4">
+            <div class="so-card-header">
+                <h3 class="so-card-title">Resize Modifiers</h3>
+            </div>
+            <div class="so-card-body">
+                <p class="so-text-secondary so-mb-3">Control textarea resize behavior with utility classes.</p>
+
+                <!-- Live Demo -->
+                <div class="so-grid so-grid-cols-4 so-grid-cols-md-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label">Vertical Only (Default)</label>
+                        <textarea class="so-form-control so-resize-vertical" rows="3" placeholder="so-resize-vertical"></textarea>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">No Resize</label>
+                        <textarea class="so-form-control so-resize-none" rows="3" placeholder="so-resize-none"></textarea>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Horizontal Only</label>
+                        <textarea class="so-form-control so-resize-horizontal" rows="3" placeholder="so-resize-horizontal"></textarea>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Both Directions</label>
+                        <textarea class="so-form-control so-resize-both" rows="3" placeholder="so-resize-both"></textarea>
+                    </div>
+                </div>
+
+                <!-- Code Tabs -->
+                <?= so_code_tabs('textarea-resize', [
+                    [
+                        'label' => 'PHP',
+                        'language' => 'php',
+                        'icon' => 'data_object',
+                        'code' => "// Vertical resize only (default)
+UiEngine::textarea('note')->resize('vertical');
+
+// No resize
+UiEngine::textarea('note')->resize('none');
+
+// Horizontal resize only
+UiEngine::textarea('note')->resize('horizontal');
+
+// Both directions
+UiEngine::textarea('note')->resize('both');"
+                    ],
+                    [
+                        'label' => 'JavaScript',
+                        'language' => 'javascript',
+                        'icon' => 'javascript',
+                        'code' => "// Vertical resize only (default)
+UiEngine.textarea('note').resize('vertical');
+
+// No resize
+UiEngine.textarea('note').resize('none');
+
+// Horizontal resize only
+UiEngine.textarea('note').resize('horizontal');
+
+// Both directions
+UiEngine.textarea('note').resize('both');"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Vertical only (default) -->
+<textarea class="so-form-control so-resize-vertical" rows="3"></textarea>
+
+<!-- No resize -->
+<textarea class="so-form-control so-resize-none" rows="3"></textarea>
+
+<!-- Horizontal only -->
+<textarea class="so-form-control so-resize-horizontal" rows="3"></textarea>
+
+<!-- Both directions -->
+<textarea class="so-form-control so-resize-both" rows="3"></textarea>'
                     ],
                 ]) ?>
             </div>
@@ -357,8 +496,13 @@ UiEngine.textarea('readonly')
                             </tr>
                             <tr>
                                 <td><code>autoResize()</code></td>
-                                <td>-</td>
-                                <td>Enable auto-resize based on content</td>
+                                <td><code>string $size = null</code></td>
+                                <td>Enable auto-resize. Size: <code>null</code> (default 80-400px), <code>'sm'</code> (60-200px), <code>'lg'</code> (120-600px)</td>
+                            </tr>
+                            <tr>
+                                <td><code>resize()</code></td>
+                                <td><code>string $direction</code></td>
+                                <td>Set resize behavior: <code>'vertical'</code>, <code>'horizontal'</code>, <code>'both'</code>, <code>'none'</code></td>
                             </tr>
                             <tr>
                                 <td><code>placeholder()</code></td>
@@ -392,5 +536,38 @@ UiEngine.textarea('readonly')
         </div>
     </div>
 </main>
+
+<script>
+// Character counter for textarea
+document.addEventListener('DOMContentLoaded', function() {
+    const bioTextarea = document.getElementById('demo-bio');
+    const bioCount = document.getElementById('demo-bio-count');
+
+    if (bioTextarea && bioCount) {
+        // Update counter on input
+        bioTextarea.addEventListener('input', function() {
+            bioCount.textContent = this.value.length;
+
+            // Optional: Add warning class when near limit
+            const maxLength = parseInt(this.getAttribute('maxlength')) || 200;
+            const parent = bioCount.parentElement;
+            if (this.value.length >= maxLength * 0.9) {
+                parent.classList.add('so-text-warning');
+            } else {
+                parent.classList.remove('so-text-warning');
+            }
+            if (this.value.length >= maxLength) {
+                parent.classList.remove('so-text-warning');
+                parent.classList.add('so-text-danger');
+            } else {
+                parent.classList.remove('so-text-danger');
+            }
+        });
+
+        // Initialize count
+        bioCount.textContent = bioTextarea.value.length;
+    }
+});
+</script>
 
 <?php require_once '../../includes/footer.php'; ?>

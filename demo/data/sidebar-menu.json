@@ -440,9 +440,9 @@
                 {"id": "uie-radio", "title": "12. Radio", "icon": "radio_button_checked", "url": "ui-engine/form/radio.php"},
                 {"id": "uie-select", "title": "13. Select", "icon": "arrow_drop_down", "url": "ui-engine/form/select.php"},
                 {"id": "uie-slider", "title": "14. Slider", "icon": "tune", "url": "ui-engine/form/slider.php"},
-                {"id": "uie-textarea", "title": "15. Textarea", "icon": "notes", "url": "ui-engine/form/textarea.php"},
-                {"id": "uie-time-picker", "title": "16. Time Picker", "icon": "schedule", "url": "ui-engine/form/time-picker.php"},
-                {"id": "uie-toggle", "title": "17. Toggle", "icon": "toggle_on", "url": "ui-engine/form/toggle.php"}
+                {"id": "uie-switch", "title": "15. Switch", "icon": "toggle_on", "url": "ui-engine/form/switch.php"},
+                {"id": "uie-textarea", "title": "16. Textarea", "icon": "notes", "url": "ui-engine/form/textarea.php"},
+                {"id": "uie-time-picker", "title": "17. Time Picker", "icon": "schedule", "url": "ui-engine/form/time-picker.php"}
               ]
             },
             {
