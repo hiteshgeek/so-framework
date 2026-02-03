@@ -31,36 +31,36 @@ require_once '../../includes/navbar.php';
                 <!-- Live Demo -->
                 <div class="so-accordion so-mb-4" id="demo-accordion" data-so-accordion>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#demo-one">
+                        <h2 class="so-accordion-header" id="demo-accordion-header-0">
+                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#demo-one" aria-expanded="true" aria-controls="demo-one">
                                 What is UiEngine?
                             </button>
                         </h2>
-                        <div id="demo-one" class="so-accordion-collapse so-show" data-so-parent="#demo-accordion">
+                        <div id="demo-one" class="so-accordion-collapse so-collapse so-show" aria-labelledby="demo-accordion-header-0" data-so-parent="#demo-accordion">
                             <div class="so-accordion-body">
                                 UiEngine is a programmatic UI generation system that provides symmetric PHP and JavaScript APIs for building user interfaces.
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#demo-two">
+                        <h2 class="so-accordion-header" id="demo-accordion-header-1">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#demo-two" aria-expanded="false" aria-controls="demo-two">
                                 How does it work?
                             </button>
                         </h2>
-                        <div id="demo-two" class="so-accordion-collapse" data-so-parent="#demo-accordion">
+                        <div id="demo-two" class="so-accordion-collapse so-collapse" aria-labelledby="demo-accordion-header-1" data-so-parent="#demo-accordion">
                             <div class="so-accordion-body">
                                 You create elements using a fluent API, configure them with methods, and render them to HTML. The same code patterns work in both PHP and JavaScript.
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#demo-three">
+                        <h2 class="so-accordion-header" id="demo-accordion-header-2">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#demo-three" aria-expanded="false" aria-controls="demo-three">
                                 Why use it?
                             </button>
                         </h2>
-                        <div id="demo-three" class="so-accordion-collapse" data-so-parent="#demo-accordion">
+                        <div id="demo-three" class="so-accordion-collapse so-collapse" aria-labelledby="demo-accordion-header-2" data-so-parent="#demo-accordion">
                             <div class="so-accordion-body">
                                 UiEngine provides consistency between server and client rendering, reduces boilerplate code, and offers built-in validation integration.
                             </div>
@@ -95,6 +95,29 @@ echo \$accordion->render();"
 
 document.getElementById('container').innerHTML = accordion.toHtml();"
                     ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-accordion" id="faq">
+    <div class="so-accordion-item">
+        <h2 class="so-accordion-header" id="faq-header-0">
+            <button class="so-accordion-button" type="button"
+                data-so-toggle="collapse" data-so-target="#faq-collapse-0"
+                aria-expanded="true" aria-controls="faq-collapse-0">
+                What is UiEngine?
+            </button>
+        </h2>
+        <div id="faq-collapse-0" class="so-accordion-collapse so-collapse so-show"
+            aria-labelledby="faq-header-0" data-so-parent="#faq">
+            <div class="so-accordion-body">
+                UiEngine is a programmatic UI generation system...
+            </div>
+        </div>
+    </div>
+    <!-- More items... -->
+</div>'
+                    ],
                 ]) ?>
             </div>
         </div>
@@ -106,38 +129,39 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
+                <p class="so-text-muted so-mb-3">Click multiple panels - they stay open (no <code>data-so-parent</code> attribute):</p>
                 <div class="so-accordion so-mb-4" id="demo-always-open" data-so-accordion>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#open-one">
+                        <h2 class="so-accordion-header" id="open-header-0">
+                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#open-one" aria-expanded="true" aria-controls="open-one">
                                 Feature 1
                             </button>
                         </h2>
-                        <div id="open-one" class="so-accordion-collapse so-show">
+                        <div id="open-one" class="so-accordion-collapse so-collapse so-show" aria-labelledby="open-header-0">
                             <div class="so-accordion-body">
-                                Description of feature 1. Multiple panels can be open at the same time.
+                                Description of feature 1. Click other panels - this one stays open!
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#open-two">
+                        <h2 class="so-accordion-header" id="open-header-1">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#open-two" aria-expanded="false" aria-controls="open-two">
                                 Feature 2
                             </button>
                         </h2>
-                        <div id="open-two" class="so-accordion-collapse so-show">
+                        <div id="open-two" class="so-accordion-collapse so-collapse" aria-labelledby="open-header-1">
                             <div class="so-accordion-body">
-                                Description of feature 2. Notice both panels can stay open.
+                                Description of feature 2. Multiple panels can be open simultaneously.
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#open-three">
+                        <h2 class="so-accordion-header" id="open-header-2">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#open-three" aria-expanded="false" aria-controls="open-three">
                                 Feature 3
                             </button>
                         </h2>
-                        <div id="open-three" class="so-accordion-collapse">
+                        <div id="open-three" class="so-accordion-collapse so-collapse" aria-labelledby="open-header-2">
                             <div class="so-accordion-body">
                                 Description of feature 3.
                             </div>
@@ -151,10 +175,12 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "\$accordion = UiEngine::accordion('features')
-    ->alwaysOpen()  // Allow multiple panels to be open
-    ->item('Feature 1', 'Description of feature 1', true)
-    ->item('Feature 2', 'Description of feature 2', true)
+                        'code' => "// alwaysOpen() allows multiple panels to stay open when clicked
+// Note: Only one panel can be initially expanded via item()
+\$accordion = UiEngine::accordion('features')
+    ->alwaysOpen()
+    ->item('Feature 1', 'Description of feature 1', true)  // Initially open
+    ->item('Feature 2', 'Description of feature 2')
     ->item('Feature 3', 'Description of feature 3');
 
 echo \$accordion->render();"
@@ -163,10 +189,11 @@ echo \$accordion->render();"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const accordion = UiEngine.accordion('features')
+                        'code' => "// alwaysOpen() allows multiple panels to stay open when clicked
+const accordion = UiEngine.accordion('features')
     .alwaysOpen()
     .item('Feature 1', 'Description of feature 1', true)
-    .item('Feature 2', 'Description of feature 2', true)
+    .item('Feature 2', 'Description of feature 2')
     .item('Feature 3', 'Description of feature 3');
 
 document.getElementById('container').innerHTML = accordion.toHtml();"
@@ -178,42 +205,43 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
         <!-- With Icons -->
         <div class="so-card so-mb-4">
             <div class="so-card-header">
-                <h3 class="so-card-title">With Icons</h3>
+                <h3 class="so-card-title">With Icons (Custom HTML)</h3>
             </div>
             <div class="so-card-body">
+                <p class="so-text-muted so-mb-3">Icons require custom HTML since <code>item()</code> escapes the title:</p>
                 <!-- Live Demo -->
                 <div class="so-accordion so-mb-4" id="demo-icons" data-so-accordion>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#icon-one">
+                        <h2 class="so-accordion-header" id="icon-header-0">
+                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#icon-one" aria-expanded="true" aria-controls="icon-one">
                                 <span class="material-icons so-me-2">person</span> Account Settings
                             </button>
                         </h2>
-                        <div id="icon-one" class="so-accordion-collapse so-show" data-so-parent="#demo-icons">
+                        <div id="icon-one" class="so-accordion-collapse so-collapse so-show" aria-labelledby="icon-header-0" data-so-parent="#demo-icons">
                             <div class="so-accordion-body">
                                 Manage your account preferences, profile information, and security settings.
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#icon-two">
+                        <h2 class="so-accordion-header" id="icon-header-1">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#icon-two" aria-expanded="false" aria-controls="icon-two">
                                 <span class="material-icons so-me-2">lock</span> Privacy Settings
                             </button>
                         </h2>
-                        <div id="icon-two" class="so-accordion-collapse" data-so-parent="#demo-icons">
+                        <div id="icon-two" class="so-accordion-collapse so-collapse" aria-labelledby="icon-header-1" data-so-parent="#demo-icons">
                             <div class="so-accordion-body">
                                 Control your privacy preferences and data sharing options.
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#icon-three">
+                        <h2 class="so-accordion-header" id="icon-header-2">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#icon-three" aria-expanded="false" aria-controls="icon-three">
                                 <span class="material-icons so-me-2">notifications</span> Notifications
                             </button>
                         </h2>
-                        <div id="icon-three" class="so-accordion-collapse" data-so-parent="#demo-icons">
+                        <div id="icon-three" class="so-accordion-collapse so-collapse" aria-labelledby="icon-header-2" data-so-parent="#demo-icons">
                             <div class="so-accordion-body">
                                 Configure how and when you receive notifications.
                             </div>
@@ -227,23 +255,48 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "\$accordion = UiEngine::accordion('settings')
-    ->item('Account Settings', 'Manage your account...', false, 'person')
-    ->item('Privacy Settings', 'Control your privacy...', false, 'lock')
-    ->item('Notifications', 'Configure notifications...', false, 'notifications');
+                        'code' => "// Icons can be included in the title using HTML
+// The title is escaped, so use raw HTML approach for icons
+\$accordion = UiEngine::accordion('settings');
 
-echo \$accordion->render();"
+// For icons, build items with HTML directly or extend the class
+// The default item() method escapes title text
+echo '<div class=\"so-accordion\" id=\"settings\">';
+
+// Item with icon in title (manual approach)
+echo '<div class=\"so-accordion-item\">';
+echo '<h2 class=\"so-accordion-header\">';
+echo '<button class=\"so-accordion-button\" data-so-toggle=\"collapse\" data-so-target=\"#settings-1\">';
+echo '<span class=\"material-icons so-me-2\">person</span> Account Settings';
+echo '</button></h2>';
+echo '<div id=\"settings-1\" class=\"so-accordion-collapse so-collapse so-show\" data-so-parent=\"#settings\">';
+echo '<div class=\"so-accordion-body\">Manage your account...</div>';
+echo '</div></div>';
+
+echo '</div>';"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const accordion = UiEngine.accordion('settings')
-    .item('Account Settings', 'Manage your account...', false, 'person')
-    .item('Privacy Settings', 'Control your privacy...', false, 'lock')
-    .item('Notifications', 'Configure notifications...', false, 'notifications');
+                        'code' => "// Icons require custom HTML since item() escapes the title
+// Build accordion structure manually for icon support
 
-document.getElementById('container').innerHTML = accordion.toHtml();"
+const html = `
+<div class=\"so-accordion\" id=\"settings\" data-so-accordion>
+    <div class=\"so-accordion-item\">
+        <h2 class=\"so-accordion-header\">
+            <button class=\"so-accordion-button\" data-so-toggle=\"collapse\" data-so-target=\"#settings-1\">
+                <span class=\"material-icons so-me-2\">person</span> Account Settings
+            </button>
+        </h2>
+        <div id=\"settings-1\" class=\"so-accordion-collapse so-show\" data-so-parent=\"#settings\">
+            <div class=\"so-accordion-body\">Manage your account...</div>
+        </div>
+    </div>
+</div>`;
+
+document.getElementById('container').innerHTML = html;"
                     ],
                 ]) ?>
             </div>
@@ -258,36 +311,36 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                 <!-- Live Demo -->
                 <div class="so-accordion so-accordion-flush so-mb-4" id="demo-flush" data-so-accordion>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#flush-one">
+                        <h2 class="so-accordion-header" id="flush-header-0">
+                            <button class="so-accordion-button" type="button" data-so-toggle="collapse" data-so-target="#flush-one" aria-expanded="true" aria-controls="flush-one">
                                 Section 1
                             </button>
                         </h2>
-                        <div id="flush-one" class="so-accordion-collapse so-show" data-so-parent="#demo-flush">
+                        <div id="flush-one" class="so-accordion-collapse so-collapse so-show" aria-labelledby="flush-header-0" data-so-parent="#demo-flush">
                             <div class="so-accordion-body">
                                 Content for section 1. The flush style removes borders and rounded corners for a cleaner look.
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#flush-two">
+                        <h2 class="so-accordion-header" id="flush-header-1">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#flush-two" aria-expanded="false" aria-controls="flush-two">
                                 Section 2
                             </button>
                         </h2>
-                        <div id="flush-two" class="so-accordion-collapse" data-so-parent="#demo-flush">
+                        <div id="flush-two" class="so-accordion-collapse so-collapse" aria-labelledby="flush-header-1" data-so-parent="#demo-flush">
                             <div class="so-accordion-body">
                                 Content for section 2.
                             </div>
                         </div>
                     </div>
                     <div class="so-accordion-item">
-                        <h2 class="so-accordion-header">
-                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#flush-three">
+                        <h2 class="so-accordion-header" id="flush-header-2">
+                            <button class="so-accordion-button so-collapsed" type="button" data-so-toggle="collapse" data-so-target="#flush-three" aria-expanded="false" aria-controls="flush-three">
                                 Section 3
                             </button>
                         </h2>
-                        <div id="flush-three" class="so-accordion-collapse" data-so-parent="#demo-flush">
+                        <div id="flush-three" class="so-accordion-collapse so-collapse" aria-labelledby="flush-header-2" data-so-parent="#demo-flush">
                             <div class="so-accordion-body">
                                 Content for section 3.
                             </div>
@@ -343,28 +396,28 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                         <tbody>
                             <tr>
                                 <td><code>item()</code></td>
-                                <td><code>string $title, string $content, bool $expanded, string $icon</code></td>
-                                <td>Add an accordion item</td>
+                                <td><code>string $title, string|Element $content, bool $open = false</code></td>
+                                <td>Add an accordion item (title is escaped)</td>
                             </tr>
                             <tr>
-                                <td><code>items()</code></td>
-                                <td><code>array $items</code></td>
-                                <td>Add multiple items at once</td>
+                                <td><code>activeItem()</code></td>
+                                <td><code>int $index</code></td>
+                                <td>Set which item is expanded (0-based index)</td>
+                            </tr>
+                            <tr>
+                                <td><code>collapsed()</code></td>
+                                <td>-</td>
+                                <td>Start with all panels collapsed</td>
                             </tr>
                             <tr>
                                 <td><code>alwaysOpen()</code></td>
-                                <td>-</td>
-                                <td>Allow multiple panels to be open</td>
+                                <td><code>bool $alwaysOpen = true</code></td>
+                                <td>Allow multiple panels to stay open</td>
                             </tr>
                             <tr>
                                 <td><code>flush()</code></td>
-                                <td>-</td>
+                                <td><code>bool $flush = true</code></td>
                                 <td>Remove borders and rounded corners</td>
-                            </tr>
-                            <tr>
-                                <td><code>onChange()</code></td>
-                                <td><code>callable $callback</code></td>
-                                <td>Callback when panel opens/closes</td>
                             </tr>
                         </tbody>
                     </table>
