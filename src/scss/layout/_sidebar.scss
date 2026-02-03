@@ -492,7 +492,7 @@ html.sidebar-pinned .#{$so-prefix}main-content {
   .#{$so-prefix}sidebar-submenu
   .#{$so-prefix}sidebar-item.current
   > .#{$so-prefix}sidebar-link {
-  padding-left: calc(100px + 4px + 48px);
+  padding-left: calc(100px + 48px);
 }
 
 // Level 4 icons

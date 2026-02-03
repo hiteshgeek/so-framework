@@ -1339,23 +1339,13 @@ function renderCheckboxGroup(options, containerEl) {
             </div>
             <div class="so-card-body">
                 <!-- Tabs Navigation -->
-                <ul class="so-nav so-nav-tabs so-mb-3" role="tablist">
-                    <li class="so-nav-item">
-                        <button class="so-nav-link active" data-so-toggle="tab" data-so-target="#checkbox-methods" type="button">Checkbox Methods</button>
-                    </li>
-                    <li class="so-nav-item">
-                        <button class="so-nav-link" data-so-toggle="tab" data-so-target="#form-methods" type="button">Form Element</button>
-                    </li>
-                    <li class="so-nav-item">
-                        <button class="so-nav-link" data-so-toggle="tab" data-so-target="#validation-methods" type="button">Validation</button>
-                    </li>
-                    <li class="so-nav-item">
-                        <button class="so-nav-link" data-so-toggle="tab" data-so-target="#event-methods" type="button">Events</button>
-                    </li>
-                    <li class="so-nav-item">
-                        <button class="so-nav-link" data-so-toggle="tab" data-so-target="#base-methods" type="button">Base Element</button>
-                    </li>
-                </ul>
+                <div class="so-tabs so-mb-3" role="tablist" data-so-tabs>
+                    <button class="so-tab so-active" role="tab" data-so-target="#checkbox-methods">Checkbox Methods</button>
+                    <button class="so-tab" role="tab" data-so-target="#form-methods">Form Element</button>
+                    <button class="so-tab" role="tab" data-so-target="#validation-methods">Validation</button>
+                    <button class="so-tab" role="tab" data-so-target="#event-methods">Events</button>
+                    <button class="so-tab" role="tab" data-so-target="#base-methods">Base Element</button>
+                </div>
 
                 <!-- Tab Panes -->
                 <div class="so-tab-content">
