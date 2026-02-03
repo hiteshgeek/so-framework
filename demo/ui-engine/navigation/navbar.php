@@ -355,14 +355,20 @@ echo \$navbar->render();"
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "\$navbar = UiEngine::navbar()
-    ->brand('Brand', '/')
-    ->item('Home', '/')
-    ->search('/search', [
-        'placeholder' => 'Search...',
-    ]);
+                        'code' => "// Search form is added via manual HTML in the navbar collapse area
+// The Navbar UiEngine class focuses on navigation items
 
-echo \$navbar->render();"
+\$navbar = UiEngine::navbar()
+    ->brand('Brand', '/')
+    ->item('Home', '/');
+
+echo \$navbar->render();
+
+// Add search form manually in the navbar-collapse section:
+// <form class=\"so-component-navbar-form\" role=\"search\">
+//     <input type=\"search\" class=\"so-form-control\" placeholder=\"Search...\">
+//     <button type=\"submit\" class=\"so-btn so-btn-primary\">Search</button>
+// </form>"
                     ],
                     [
                         'label' => 'JavaScript',
@@ -370,10 +376,10 @@ echo \$navbar->render();"
                         'icon' => 'javascript',
                         'code' => "const navbar = UiEngine.navbar()
     .brand('Brand', '/')
-    .item('Home', '/')
-    .search('/search', {
-        placeholder: 'Search...',
-    });"
+    .item('Home', '/');
+
+// Search form is typically added as custom HTML content
+// within the navbar-collapse container"
                     ],
                 ]) ?>
             </div>
@@ -515,19 +521,19 @@ echo \$navbar->render();"
                         'icon' => 'data_object',
                         'code' => "// Fixed to top
 UiEngine::navbar()
-    ->fixed('top')
+    ->fixed('top')  // or ->fixedTop()
     ->brand('Brand')
     ->item('Home', '/');
 
 // Fixed to bottom
 UiEngine::navbar()
-    ->fixed('bottom')
+    ->fixed('bottom')  // or ->fixedBottom()
     ->brand('Brand')
     ->item('Home', '/');
 
 // Sticky top (scrolls with page then sticks)
 UiEngine::navbar()
-    ->sticky('top')
+    ->sticky()  // Enables sticky-top behavior
     ->brand('Brand')
     ->item('Home', '/');"
                     ],
@@ -549,7 +555,7 @@ UiEngine.navbar()
 
 // Sticky top
 UiEngine.navbar()
-    .sticky('top')
+    .sticky()  // Enables sticky-top behavior
     .brand('Brand')
     .item('Home', '/');"
                     ],
@@ -817,9 +823,9 @@ UiEngine.navbar().expand(false);"
                                 <td>Add dropdown menu</td>
                             </tr>
                             <tr>
-                                <td><code>search()</code></td>
-                                <td><code>string $action, array $options</code></td>
-                                <td>Add search form</td>
+                                <td><code>rightItems()</code></td>
+                                <td><code>array $items</code></td>
+                                <td>Set right-aligned items</td>
                             </tr>
                             <tr>
                                 <td><code>action()</code></td>
@@ -843,8 +849,8 @@ UiEngine.navbar().expand(false);"
                             </tr>
                             <tr>
                                 <td><code>sticky()</code></td>
-                                <td><code>string $position</code></td>
-                                <td>Sticky position: top</td>
+                                <td><code>bool $sticky = true</code></td>
+                                <td>Enable sticky-top positioning</td>
                             </tr>
                         </tbody>
                     </table>

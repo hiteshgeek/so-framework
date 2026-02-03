@@ -47,42 +47,33 @@ require_once '../../includes/navbar.php';
                         'code' => "<?php
 use Core\UiEngine\UiEngine;
 
-// Create the toggle button
-\$button = UiEngine::button('Toggle Content')
-    ->variant('primary')
-    ->collapse('my-collapse');  // Target collapse ID
-
-// Create the collapsible content
+// Create collapse with trigger button
 \$collapse = UiEngine::collapse('my-collapse')
+    ->trigger('Toggle Content')      // Creates button automatically
+    ->triggerVariant('primary')      // Button variant
     ->content('This is collapsible content.');
 
-echo \$button->render();
 echo \$collapse->render();"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "// Create toggle button
-const button = UiEngine.button('Toggle Content')
-    .variant('primary')
-    .collapse('my-collapse');
-
-// Create collapsible content
+                        'code' => "// Create collapse with trigger button
 const collapse = UiEngine.collapse('my-collapse')
+    .trigger('Toggle Content')
+    .triggerVariant('primary')
     .content('This is collapsible content.');
 
-document.getElementById('container').innerHTML =
-    button.toHtml() + collapse.toHtml();
+document.getElementById('container').innerHTML = collapse.toHtml();
 
 // Or use the collapse API directly
 const collapseEl = document.getElementById('my-collapse');
-const bsCollapse = new SoCollapse(collapseEl);
 
 // Toggle programmatically
-bsCollapse.toggle();
-bsCollapse.show();
-bsCollapse.hide();"
+SOCollapse.toggle(collapseEl);
+SOCollapse.show(collapseEl);
+SOCollapse.hide(collapseEl);"
                     ],
                     [
                         'label' => 'HTML Output',
@@ -94,9 +85,7 @@ bsCollapse.hide();"
 </button>
 
 <div class="so-collapse" id="my-collapse">
-    <div class="so-card so-card-body">
-        This is collapsible content.
-    </div>
+    This is collapsible content.
 </div>'
                     ],
                 ]) ?>
@@ -125,30 +114,35 @@ bsCollapse.hide();"
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "// Using a link as toggle
-\$link = UiEngine::link('Show More')
-    ->collapse('more-content')
-    ->icon('expand_more', 'end');
-
+                        'code' => "// Using collapse with link variant trigger
 \$collapse = UiEngine::collapse('more-content')
+    ->trigger('Show More')
+    ->triggerVariant('link')  // Renders as a link-style button
     ->content('Additional content revealed when the link is clicked.');
 
-echo \$link->render();
-echo \$collapse->render();"
+echo \$collapse->render();
+
+// Or use hideTrigger() for external toggle control:
+\$collapse = UiEngine::collapse('more-content')
+    ->hideTrigger()  // No built-in trigger
+    ->content('Content...');
+
+// Then use manual HTML/JS for the trigger"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const link = UiEngine.link('Show More')
-    .collapse('more-content')
-    .icon('expand_more', 'end');
-
+                        'code' => "// Using collapse with link variant trigger
 const collapse = UiEngine.collapse('more-content')
-    .content('Additional content revealed when the link is clicked.');
+    .trigger('Show More')
+    .triggerVariant('link')
+    .content('Additional content revealed when clicked.');
 
-document.getElementById('container').innerHTML =
-    link.toHtml() + collapse.toHtml();"
+document.getElementById('container').innerHTML = collapse.toHtml();
+
+// Or for external trigger with manual HTML:
+// <a data-so-toggle=\"collapse\" href=\"#more-content\">Show More</a>"
                     ],
                 ]) ?>
             </div>
@@ -178,28 +172,25 @@ document.getElementById('container').innerHTML =
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "\$button = UiEngine::button('Toggle Width')
-    ->collapse('sidebar');
+                        'code' => "\$collapse = UiEngine::collapse('sidebar')
+    ->trigger('Toggle Width')
+    ->triggerVariant('primary')
+    ->horizontal()  // Collapse horizontally instead of vertically
+    ->content('<div style=\"width:300px;\">Sidebar content</div>');
 
-\$collapse = UiEngine::collapse('sidebar')
-    ->horizontal()  // Collapse horizontally
-    ->width(300)    // Set fixed width
-    ->content(UiEngine::card()->body('Sidebar content')->render());
-
-echo \$button->render();
 echo \$collapse->render();"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "const button = UiEngine.button('Toggle Width')
-    .collapse('sidebar');
-
-const collapse = UiEngine.collapse('sidebar')
+                        'code' => "const collapse = UiEngine.collapse('sidebar')
+    .trigger('Toggle Width')
+    .triggerVariant('primary')
     .horizontal()
-    .width(300)
-    .content(UiEngine.card().body('Sidebar content').toHtml());"
+    .content('<div style=\"width:300px;\">Sidebar content</div>');
+
+document.getElementById('container').innerHTML = collapse.toHtml();"
                     ],
                 ]) ?>
             </div>
@@ -238,37 +229,41 @@ const collapse = UiEngine.collapse('sidebar')
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "// Buttons targeting different collapses
-\$btn1 = UiEngine::button('Toggle First')->collapse('#panel1');
-\$btn2 = UiEngine::button('Toggle Second')->collapse('#panel2');
-\$btnBoth = UiEngine::button('Toggle Both')->collapse('.panels'); // Class selector
-
-// Collapsible panels with shared class
+                        'code' => "// Create separate collapses with hideTrigger() for external control
 \$panel1 = UiEngine::collapse('panel1')
-    ->class('panels')
+    ->hideTrigger()  // No built-in trigger
+    ->addClass('panels')
     ->content('First panel');
 
 \$panel2 = UiEngine::collapse('panel2')
-    ->class('panels')
-    ->content('Second panel');"
+    ->hideTrigger()
+    ->addClass('panels')
+    ->content('Second panel');
+
+echo \$panel1->render();
+echo \$panel2->render();
+
+// Use manual HTML buttons with data attributes:
+// <button data-so-toggle=\"collapse\" data-so-target=\"#panel1\">Toggle First</button>
+// <button data-so-toggle=\"collapse\" data-so-target=\".panels\">Toggle Both</button>"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "// Buttons targeting different collapses
-const btn1 = UiEngine.button('Toggle First').collapse('#panel1');
-const btn2 = UiEngine.button('Toggle Second').collapse('#panel2');
-const btnBoth = UiEngine.button('Toggle Both').collapse('.panels');
-
-// Collapsible panels with shared class
+                        'code' => "// Create collapses without built-in triggers
 const panel1 = UiEngine.collapse('panel1')
+    .hideTrigger()
     .addClass('panels')
     .content('First panel');
 
 const panel2 = UiEngine.collapse('panel2')
+    .hideTrigger()
     .addClass('panels')
-    .content('Second panel');"
+    .content('Second panel');
+
+// Multiple targets can be toggled with class selectors:
+// data-so-target=\".panels\" targets all elements with 'panels' class"
                     ],
                 ]) ?>
             </div>
@@ -298,14 +293,11 @@ const panel2 = UiEngine.collapse('panel2')
                         'icon' => 'data_object',
                         'code' => "// Content visible by default
 \$collapse = UiEngine::collapse('details')
-    ->show()  // Initially expanded
+    ->trigger('Hide Details')
+    ->triggerVariant('primary')
+    ->expanded()  // Initially expanded (visible)
     ->content('This content is visible by default.');
 
-\$button = UiEngine::button('Hide Details')
-    ->collapse('details')
-    ->ariaExpanded(true);  // Button shows expanded state
-
-echo \$button->render();
 echo \$collapse->render();"
                     ],
                     [
@@ -314,12 +306,12 @@ echo \$collapse->render();"
                         'icon' => 'javascript',
                         'code' => "// Content visible by default
 const collapse = UiEngine.collapse('details')
-    .show()  // Initially expanded
+    .trigger('Hide Details')
+    .triggerVariant('primary')
+    .expanded()  // Initially expanded
     .content('This content is visible by default.');
 
-const button = UiEngine.button('Hide Details')
-    .collapse('details')
-    .ariaExpanded(true);"
+document.getElementById('container').innerHTML = collapse.toHtml();"
                     ],
                 ]) ?>
             </div>
@@ -525,29 +517,39 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                                 <td>Set collapse content</td>
                             </tr>
                             <tr>
-                                <td><code>show()</code></td>
+                                <td><code>trigger()</code></td>
+                                <td><code>string $text</code></td>
+                                <td>Set trigger button text</td>
+                            </tr>
+                            <tr>
+                                <td><code>triggerVariant()</code></td>
+                                <td><code>string $variant</code></td>
+                                <td>Set trigger button variant (primary, secondary, link, etc.)</td>
+                            </tr>
+                            <tr>
+                                <td><code>expanded()</code></td>
+                                <td><code>bool $expanded = true</code></td>
+                                <td>Initially expanded (visible)</td>
+                            </tr>
+                            <tr>
+                                <td><code>collapsed()</code></td>
                                 <td>-</td>
-                                <td>Initially expanded</td>
+                                <td>Initially collapsed (hidden) - default</td>
                             </tr>
                             <tr>
                                 <td><code>horizontal()</code></td>
+                                <td><code>bool $horizontal = true</code></td>
+                                <td>Collapse horizontally instead of vertically</td>
+                            </tr>
+                            <tr>
+                                <td><code>showTrigger()</code></td>
+                                <td><code>bool $show = true</code></td>
+                                <td>Show/hide the trigger button</td>
+                            </tr>
+                            <tr>
+                                <td><code>hideTrigger()</code></td>
                                 <td>-</td>
-                                <td>Collapse horizontally</td>
-                            </tr>
-                            <tr>
-                                <td><code>width()</code></td>
-                                <td><code>int $pixels</code></td>
-                                <td>Set width for horizontal collapse</td>
-                            </tr>
-                            <tr>
-                                <td><code>parent()</code></td>
-                                <td><code>string $selector</code></td>
-                                <td>Parent for accordion behavior</td>
-                            </tr>
-                            <tr>
-                                <td><code>toggle()</code></td>
-                                <td>-</td>
-                                <td>Toggle visibility (JS)</td>
+                                <td>Hide trigger button for external control</td>
                             </tr>
                         </tbody>
                     </table>
@@ -671,7 +673,7 @@ class SOCollapse {
         }
 
         if (trigger) {
-            trigger.classList.remove('collapsed', 'so-collapsed');
+            trigger.classList.remove('so-collapsed');
             trigger.setAttribute('aria-expanded', 'true');
         }
 
@@ -683,6 +685,7 @@ class SOCollapse {
             } else {
                 element.classList.add('so-collapse', 'so-show');
             }
+            element.style.display = '';
             element.style.height = '';
             element.style.width = '';
             element.style.overflow = '';
@@ -726,7 +729,7 @@ class SOCollapse {
         }
 
         if (trigger) {
-            trigger.classList.add('collapsed', 'so-collapsed');
+            trigger.classList.add('so-collapsed');
             trigger.setAttribute('aria-expanded', 'false');
         }
 

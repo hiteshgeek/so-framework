@@ -333,17 +333,17 @@ contextMenu.enableItem('share');"
                         'icon' => 'data_object',
                         'code' => "\$contextMenu = UiEngine::contextMenu('file-menu')
     ->item('New File', 'new-file', ['icon' => 'insert_drive_file', 'shortcut' => 'Ctrl+N'])
-    ->submenu('New from Template', 'new-template', ['icon' => 'note_add'], function(\$sub) {
-        \$sub->item('HTML File', 'template-html', ['icon' => 'html'])
-            ->item('CSS Stylesheet', 'template-css', ['icon' => 'css'])
-            ->item('JavaScript', 'template-js', ['icon' => 'javascript']);
-    })
+    ->submenu('New from Template', [
+        ['type' => 'item', 'label' => 'HTML File', 'action' => 'template-html', 'icon' => 'html'],
+        ['type' => 'item', 'label' => 'CSS Stylesheet', 'action' => 'template-css', 'icon' => 'css'],
+        ['type' => 'item', 'label' => 'JavaScript', 'action' => 'template-js', 'icon' => 'javascript'],
+    ], ['icon' => 'note_add'])
     ->divider()
-    ->submenu('Sort by', 'sort', ['icon' => 'sort'], function(\$sub) {
-        \$sub->item('Name', 'sort-name')
-            ->item('Date', 'sort-date')
-            ->item('Size', 'sort-size');
-    });
+    ->submenu('Sort by', [
+        ['type' => 'item', 'label' => 'Name', 'action' => 'sort-name'],
+        ['type' => 'item', 'label' => 'Date', 'action' => 'sort-date'],
+        ['type' => 'item', 'label' => 'Size', 'action' => 'sort-size'],
+    ], ['icon' => 'sort']);
 
 echo \$contextMenu->render();"
                     ],
@@ -353,17 +353,17 @@ echo \$contextMenu->render();"
                         'icon' => 'javascript',
                         'code' => "const contextMenu = UiEngine.contextMenu('file-menu')
     .item('New File', 'new-file', {icon: 'insert_drive_file', shortcut: 'Ctrl+N'})
-    .submenu('New from Template', 'new-template', {icon: 'note_add'}, (sub) => {
-        sub.item('HTML File', 'template-html', {icon: 'html'})
-           .item('CSS Stylesheet', 'template-css', {icon: 'css'})
-           .item('JavaScript', 'template-js', {icon: 'javascript'});
-    })
+    .submenu('New from Template', [
+        {type: 'item', label: 'HTML File', action: 'template-html', icon: 'html'},
+        {type: 'item', label: 'CSS Stylesheet', action: 'template-css', icon: 'css'},
+        {type: 'item', label: 'JavaScript', action: 'template-js', icon: 'javascript'},
+    ], {icon: 'note_add'})
     .divider()
-    .submenu('Sort by', 'sort', {icon: 'sort'}, (sub) => {
-        sub.item('Name', 'sort-name')
-           .item('Date', 'sort-date')
-           .item('Size', 'sort-size');
-    });"
+    .submenu('Sort by', [
+        {type: 'item', label: 'Name', action: 'sort-name'},
+        {type: 'item', label: 'Date', action: 'sort-date'},
+        {type: 'item', label: 'Size', action: 'sort-size'},
+    ], {icon: 'sort'});"
                     ],
                 ]) ?>
             </div>
@@ -570,8 +570,8 @@ menu.addEventListener('so:contextmenu:hide', () => {
                             </tr>
                             <tr>
                                 <td><code>submenu()</code></td>
-                                <td><code>string $label, string $id, array $options, callable $builder</code></td>
-                                <td>Add nested submenu</td>
+                                <td><code>string $label, array $items, array $options</code></td>
+                                <td>Add nested submenu with items array</td>
                             </tr>
                             <tr>
                                 <td><code>size()</code></td>

@@ -479,7 +479,7 @@ require_once '../includes/navbar.php';
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
                     </div>
-                    <button class="so-collapse-toggle so-btn so-btn-link" onclick="this.previousElementSibling.classList.toggle('show'); this.textContent = this.previousElementSibling.classList.contains('show') ? 'Show Less' : 'Show More';">
+                    <button class="so-collapse-toggle so-btn so-btn-link" onclick="this.previousElementSibling.classList.toggle('so-show'); this.textContent = this.previousElementSibling.classList.contains('so-show') ? 'Show Less' : 'Show More';">
                         Show More
                     </button>
                 </div>
@@ -659,7 +659,7 @@ element.addEventListener(\'so:collapse:hidden\', (e) => {
                                 <td>Base collapse element (hidden by default)</td>
                             </tr>
                             <tr>
-                                <td><code>.so-collapse.show</code></td>
+                                <td><code>.so-collapse.so-show</code></td>
                                 <td>Visible state</td>
                             </tr>
                             <tr>
@@ -760,7 +760,7 @@ class SOCollapse {
     }
 
     static toggle(element) {
-        if (element.classList.contains('show')) {
+        if (element.classList.contains('so-show')) {
             SOCollapse.hide(element);
         } else {
             SOCollapse.show(element);
@@ -768,7 +768,7 @@ class SOCollapse {
     }
 
     static show(element) {
-        if (element.classList.contains('show') || element.classList.contains('so-collapsing')) return;
+        if (element.classList.contains('so-show') || element.classList.contains('so-collapsing')) return;
 
         const trigger = document.querySelector(`[data-so-target="#${element.id}"], [href="#${element.id}"]`);
         const isHorizontal = element.classList.contains('so-collapse-horizontal');
@@ -807,13 +807,14 @@ class SOCollapse {
         }
 
         if (trigger) {
-            trigger.classList.remove('collapsed');
+            trigger.classList.remove('so-collapsed');
             trigger.setAttribute('aria-expanded', 'true');
         }
 
         setTimeout(() => {
             element.classList.remove('so-collapsing');
-            element.classList.add('so-collapse', 'show');
+            element.classList.add('so-collapse', 'so-show');
+            element.style.display = '';
             element.style.height = '';
             element.style.width = '';
             element.style.overflow = '';
@@ -822,7 +823,7 @@ class SOCollapse {
     }
 
     static hide(element) {
-        if (!element.classList.contains('show') || element.classList.contains('so-collapsing')) return;
+        if (!element.classList.contains('so-show') || element.classList.contains('so-collapsing')) return;
 
         const trigger = document.querySelector(`[data-so-target="#${element.id}"], [href="#${element.id}"]`);
         const isHorizontal = element.classList.contains('so-collapse-horizontal');
@@ -842,7 +843,7 @@ class SOCollapse {
         element.offsetHeight;
 
         // Remove show state, add collapsing for transition
-        element.classList.remove('so-collapse', 'show');
+        element.classList.remove('so-collapse', 'so-show');
         element.classList.add('so-collapsing');
 
         // Force reflow before animating to 0
@@ -856,7 +857,7 @@ class SOCollapse {
         }
 
         if (trigger) {
-            trigger.classList.add('collapsed');
+            trigger.classList.add('so-collapsed');
             trigger.setAttribute('aria-expanded', 'false');
         }
 

@@ -10,7 +10,7 @@
 // ============================================
 
 .#{$so-prefix}collapse {
-  &:not(.show) {
+  &:not(.#{$so-prefix}show) {
     display: none;
   }
 }
@@ -27,7 +27,7 @@
   }
 }
 
-.#{$so-prefix}collapse.show {
+.#{$so-prefix}collapse.#{$so-prefix}show {
   display: block;
 }
 
@@ -321,7 +321,7 @@
 // Collapse that only works on mobile
 @include media-down(md) {
   .#{$so-prefix}collapse-mobile {
-    &:not(.show) {
+    &:not(.#{$so-prefix}show) {
       display: none;
     }
   }
