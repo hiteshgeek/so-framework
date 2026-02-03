@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-username">Username</label>
-                        <input type="text" class="so-form-control" id="demo-username" name="username" placeholder="Enter your username">
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-username">Username</label>
+                    <input type="text" class="so-form-control" id="demo-username" name="username" placeholder="Enter your username">
                 </div>
 
                 <!-- Code Tabs -->
@@ -81,32 +79,22 @@ document.getElementById('container').innerHTML = input.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-md-6">
-                            <div class="so-form-group">
-                                <label class="so-form-label" for="demo-email">Email</label>
-                                <input type="email" class="so-form-control" id="demo-email" placeholder="you@example.com">
-                            </div>
-                        </div>
-                        <div class="so-col-md-6">
-                            <div class="so-form-group">
-                                <label class="so-form-label" for="demo-password">Password</label>
-                                <input type="password" class="so-form-control" id="demo-password" placeholder="Enter password">
-                            </div>
-                        </div>
-                        <div class="so-col-md-6">
-                            <div class="so-form-group">
-                                <label class="so-form-label" for="demo-number">Number</label>
-                                <input type="number" class="so-form-control" id="demo-number" placeholder="0">
-                            </div>
-                        </div>
-                        <div class="so-col-md-6">
-                            <div class="so-form-group">
-                                <label class="so-form-label" for="demo-date">Date</label>
-                                <input type="date" class="so-form-control" id="demo-date">
-                            </div>
-                        </div>
+                <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-email">Email</label>
+                        <input type="email" class="so-form-control" id="demo-email" placeholder="you@example.com">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-password">Password</label>
+                        <input type="password" class="so-form-control" id="demo-password" placeholder="Enter password">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-number">Number</label>
+                        <input type="number" class="so-form-control" id="demo-number" placeholder="0">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-date">Date</label>
+                        <input type="date" class="so-form-control" id="demo-date">
                     </div>
                 </div>
 
@@ -171,14 +159,10 @@ const date = UiEngine.date('birthdate')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-email-val">
-                            Email Address <span class="so-text-danger">*</span>
-                        </label>
-                        <input type="email" class="so-form-control" id="demo-email-val" placeholder="you@example.com" required>
-                        <small class="so-form-text so-text-muted">We'll never share your email.</small>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label so-required" for="demo-email-val">Email Address</label>
+                    <input type="email" class="so-form-control" id="demo-email-val" placeholder="you@example.com" required>
+                    <div class="so-form-hint">We'll never share your email.</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -228,16 +212,16 @@ document.getElementById('container').innerHTML = email.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-mb-3">
+                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                    <div class="so-form-group">
                         <label class="so-form-label">Small</label>
                         <input type="text" class="so-form-control so-form-control-sm" placeholder="Small input">
                     </div>
-                    <div class="so-mb-3">
+                    <div class="so-form-group">
                         <label class="so-form-label">Default</label>
                         <input type="text" class="so-form-control" placeholder="Default input">
                     </div>
-                    <div>
+                    <div class="so-form-group">
                         <label class="so-form-label">Large</label>
                         <input type="text" class="so-form-control so-form-control-lg" placeholder="Large input">
                     </div>
@@ -282,21 +266,19 @@ UiEngine.input('large').size('lg').placeholder('Large input');"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-md-6">
-                            <label class="so-form-label">With Prefix</label>
-                            <div class="so-input-group">
-                                <span class="so-input-group-text">$</span>
-                                <input type="text" class="so-form-control" placeholder="Amount">
-                            </div>
+                <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label">With Prefix</label>
+                        <div class="so-input-group">
+                            <span class="so-input-addon">$</span>
+                            <input type="text" class="so-form-control" placeholder="Amount">
                         </div>
-                        <div class="so-col-md-6">
-                            <label class="so-form-label">With Suffix</label>
-                            <div class="so-input-group">
-                                <input type="text" class="so-form-control" placeholder="Username">
-                                <span class="so-input-group-text">@example.com</span>
-                            </div>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">With Suffix</label>
+                        <div class="so-input-group">
+                            <input type="text" class="so-form-control" placeholder="Username">
+                            <span class="so-input-addon">@example.com</span>
                         </div>
                     </div>
                 </div>

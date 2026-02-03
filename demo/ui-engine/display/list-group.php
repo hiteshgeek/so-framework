@@ -29,14 +29,12 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <ul class="so-list-group" style="max-width:400px;">
-                        <li class="so-list-group-item">First item</li>
-                        <li class="so-list-group-item">Second item</li>
-                        <li class="so-list-group-item">Third item</li>
-                        <li class="so-list-group-item">Fourth item</li>
-                    </ul>
-                </div>
+                <ul class="so-list-group so-mb-4" style="max-width:400px;">
+                    <li class="so-list-group-item">First item</li>
+                    <li class="so-list-group-item">Second item</li>
+                    <li class="so-list-group-item">Third item</li>
+                    <li class="so-list-group-item">Fourth item</li>
+                </ul>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-list', [
@@ -78,14 +76,12 @@ document.getElementById('container').innerHTML = list.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <ul class="so-list-group" style="max-width:400px;">
-                        <li class="so-list-group-item active">Active item</li>
-                        <li class="so-list-group-item">Regular item</li>
-                        <li class="so-list-group-item disabled">Disabled item</li>
-                        <li class="so-list-group-item">Another item</li>
-                    </ul>
-                </div>
+                <ul class="so-list-group so-mb-4" style="max-width:400px;">
+                    <li class="so-list-group-item active">Active item</li>
+                    <li class="so-list-group-item">Regular item</li>
+                    <li class="so-list-group-item disabled">Disabled item</li>
+                    <li class="so-list-group-item">Another item</li>
+                </ul>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('list-states', [
@@ -124,21 +120,19 @@ document.getElementById('container').innerHTML = list.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-list-group" style="max-width:400px;">
-                        <a href="#" class="so-list-group-item so-list-group-item-action active">
-                            Active link item
-                        </a>
-                        <a href="#" class="so-list-group-item so-list-group-item-action">
-                            Link item
-                        </a>
-                        <a href="#" class="so-list-group-item so-list-group-item-action">
-                            Another link
-                        </a>
-                        <a href="#" class="so-list-group-item so-list-group-item-action disabled">
-                            Disabled link
-                        </a>
-                    </div>
+                <div class="so-list-group so-mb-4" style="max-width:400px;">
+                    <a href="#" class="so-list-group-item so-list-group-item-action active">
+                        Active link item
+                    </a>
+                    <a href="#" class="so-list-group-item so-list-group-item-action">
+                        Link item
+                    </a>
+                    <a href="#" class="so-list-group-item so-list-group-item-action">
+                        Another link
+                    </a>
+                    <a href="#" class="so-list-group-item so-list-group-item-action disabled">
+                        Disabled link
+                    </a>
                 </div>
 
                 <!-- Code Tabs -->
@@ -180,22 +174,20 @@ document.getElementById('container').innerHTML = list.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <ul class="so-list-group" style="max-width:400px;">
-                        <li class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
-                            Inbox
-                            <span class="so-badge so-bg-primary so-rounded-pill">14</span>
-                        </li>
-                        <li class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
-                            Drafts
-                            <span class="so-badge so-bg-secondary so-rounded-pill">3</span>
-                        </li>
-                        <li class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
-                            Sent
-                            <span class="so-badge so-bg-success so-rounded-pill">99+</span>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="so-list-group so-mb-4" style="max-width:400px;">
+                    <li class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+                        Inbox
+                        <span class="so-badge so-bg-primary so-rounded-pill">14</span>
+                    </li>
+                    <li class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+                        Drafts
+                        <span class="so-badge so-bg-secondary so-rounded-pill">3</span>
+                    </li>
+                    <li class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+                        Sent
+                        <span class="so-badge so-bg-success so-rounded-pill">99+</span>
+                    </li>
+                </ul>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('list-badges', [
@@ -232,21 +224,19 @@ document.getElementById('container').innerHTML = list.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-list-group" style="max-width:400px;">
-                        <a href="#" class="so-list-group-item so-list-group-item-action so-d-flex so-align-items-center">
-                            <span class="material-icons so-me-3 so-text-primary">home</span>
-                            Dashboard
-                        </a>
-                        <a href="#" class="so-list-group-item so-list-group-item-action so-d-flex so-align-items-center">
-                            <span class="material-icons so-me-3 so-text-primary">person</span>
-                            Profile
-                        </a>
-                        <a href="#" class="so-list-group-item so-list-group-item-action so-d-flex so-align-items-center">
-                            <span class="material-icons so-me-3 so-text-primary">settings</span>
-                            Settings
-                        </a>
-                    </div>
+                <div class="so-list-group so-mb-4" style="max-width:400px;">
+                    <a href="#" class="so-list-group-item so-list-group-item-action so-d-flex so-align-items-center">
+                        <span class="material-icons so-me-3 so-text-primary">home</span>
+                        Dashboard
+                    </a>
+                    <a href="#" class="so-list-group-item so-list-group-item-action so-d-flex so-align-items-center">
+                        <span class="material-icons so-me-3 so-text-primary">person</span>
+                        Profile
+                    </a>
+                    <a href="#" class="so-list-group-item so-list-group-item-action so-d-flex so-align-items-center">
+                        <span class="material-icons so-me-3 so-text-primary">settings</span>
+                        Settings
+                    </a>
                 </div>
 
                 <!-- Code Tabs -->

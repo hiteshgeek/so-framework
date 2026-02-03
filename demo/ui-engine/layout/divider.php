@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <p>Content above the divider</p>
-                    <hr class="so-my-4">
-                    <p>Content below the divider</p>
-                </div>
+                <p>Content above the divider</p>
+                <hr class="so-my-4">
+                <p class="so-mb-4">Content below the divider</p>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-divider', [
@@ -78,17 +76,15 @@ document.getElementById('container').innerHTML =
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-align-items-center so-my-4">
-                        <hr class="so-flex-grow-1">
-                        <span class="so-px-3 so-text-muted">OR</span>
-                        <hr class="so-flex-grow-1">
-                    </div>
-                    <div class="so-d-flex so-align-items-center so-my-4">
-                        <hr class="so-flex-grow-1">
-                        <span class="so-px-3 so-text-muted">Continue with</span>
-                        <hr class="so-flex-grow-1">
-                    </div>
+                <div class="so-d-flex so-align-items-center so-my-4">
+                    <hr class="so-flex-grow-1">
+                    <span class="so-px-3 so-text-muted">OR</span>
+                    <hr class="so-flex-grow-1">
+                </div>
+                <div class="so-d-flex so-align-items-center so-my-4 so-mb-4">
+                    <hr class="so-flex-grow-1">
+                    <span class="so-px-3 so-text-muted">Continue with</span>
+                    <hr class="so-flex-grow-1">
                 </div>
 
                 <!-- Code Tabs -->
@@ -130,20 +126,18 @@ const divider2 = UiEngine.divider()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-align-items-center so-my-4">
-                        <span class="so-pe-3 so-text-muted">Left aligned</span>
-                        <hr class="so-flex-grow-1">
-                    </div>
-                    <div class="so-d-flex so-align-items-center so-my-4">
-                        <hr class="so-flex-grow-1">
-                        <span class="so-px-3 so-text-muted">Center aligned</span>
-                        <hr class="so-flex-grow-1">
-                    </div>
-                    <div class="so-d-flex so-align-items-center so-my-4">
-                        <hr class="so-flex-grow-1">
-                        <span class="so-ps-3 so-text-muted">Right aligned</span>
-                    </div>
+                <div class="so-d-flex so-align-items-center so-my-4">
+                    <span class="so-pe-3 so-text-muted">Left aligned</span>
+                    <hr class="so-flex-grow-1">
+                </div>
+                <div class="so-d-flex so-align-items-center so-my-4">
+                    <hr class="so-flex-grow-1">
+                    <span class="so-px-3 so-text-muted">Center aligned</span>
+                    <hr class="so-flex-grow-1">
+                </div>
+                <div class="so-d-flex so-align-items-center so-my-4 so-mb-4">
+                    <hr class="so-flex-grow-1">
+                    <span class="so-ps-3 so-text-muted">Right aligned</span>
                 </div>
 
                 <!-- Code Tabs -->
@@ -197,16 +191,14 @@ UiEngine.divider()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <p class="so-text-muted so-small">Solid (default):</p>
-                    <hr class="so-my-2">
-                    <p class="so-text-muted so-small so-mt-4">Dashed:</p>
-                    <hr class="so-my-2" style="border-style:dashed;">
-                    <p class="so-text-muted so-small so-mt-4">Dotted:</p>
-                    <hr class="so-my-2" style="border-style:dotted;">
-                    <p class="so-text-muted so-small so-mt-4">Thick:</p>
-                    <hr class="so-my-2" style="border-width:3px;">
-                </div>
+                <p class="so-text-muted so-small">Solid (default):</p>
+                <hr class="so-my-2">
+                <p class="so-text-muted so-small so-mt-4">Dashed:</p>
+                <hr class="so-my-2" style="border-style:dashed;">
+                <p class="so-text-muted so-small so-mt-4">Dotted:</p>
+                <hr class="so-my-2" style="border-style:dotted;">
+                <p class="so-text-muted so-small so-mt-4">Thick:</p>
+                <hr class="so-my-2 so-mb-4" style="border-width:3px;">
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('divider-styles', [
@@ -261,12 +253,10 @@ UiEngine.divider()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <hr class="so-my-3 so-border-primary" style="border-color:var(--so-primary)!important;opacity:1;">
-                    <hr class="so-my-3" style="border-color:var(--so-success)!important;opacity:1;">
-                    <hr class="so-my-3" style="border-color:var(--so-danger)!important;opacity:1;">
-                    <hr class="so-my-3" style="border-color:var(--so-warning)!important;opacity:1;">
-                </div>
+                <hr class="so-my-3 so-border-primary" style="border-color:var(--so-primary)!important;opacity:1;">
+                <hr class="so-my-3" style="border-color:var(--so-success)!important;opacity:1;">
+                <hr class="so-my-3" style="border-color:var(--so-danger)!important;opacity:1;">
+                <hr class="so-my-3 so-mb-4" style="border-color:var(--so-warning)!important;opacity:1;">
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('divider-colors', [
@@ -321,12 +311,10 @@ UiEngine.divider()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-align-items-center" style="height:100px;">
-                        <div class="so-p-3">Left content</div>
-                        <div class="so-vr so-mx-3"></div>
-                        <div class="so-p-3">Right content</div>
-                    </div>
+                <div class="so-d-flex so-align-items-center so-mb-4" style="height:100px;">
+                    <div class="so-p-3">Left content</div>
+                    <div class="so-vr so-mx-3"></div>
+                    <div class="so-p-3">Right content</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -360,7 +348,7 @@ const divider = UiEngine.divider()
 container.innerHTML = `
     <div class='so-d-flex'>
         <div>Left</div>
-        ${divider.toHtml()}
+        \${divider.toHtml()}
         <div>Right</div>
     </div>
 `;"

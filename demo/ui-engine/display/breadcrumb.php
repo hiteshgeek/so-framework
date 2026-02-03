@@ -29,15 +29,13 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <nav aria-label="breadcrumb">
-                        <ol class="so-breadcrumb">
-                            <li class="so-breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="so-breadcrumb-item"><a href="#">Products</a></li>
-                            <li class="so-breadcrumb-item so-active" aria-current="page">Category</li>
-                        </ol>
-                    </nav>
-                </div>
+                <nav aria-label="breadcrumb" class="so-mb-4">
+                    <ol class="so-breadcrumb">
+                        <li class="so-breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="so-breadcrumb-item"><a href="#">Products</a></li>
+                        <li class="so-breadcrumb-item so-active" aria-current="page">Category</li>
+                    </ol>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-breadcrumb', [
@@ -89,21 +87,19 @@ document.getElementById('container').innerHTML = breadcrumb.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <nav aria-label="breadcrumb">
-                        <ol class="so-breadcrumb">
-                            <li class="so-breadcrumb-item">
-                                <a href="#"><span class="material-icons" style="font-size:18px;vertical-align:middle;">home</span> Home</a>
-                            </li>
-                            <li class="so-breadcrumb-item">
-                                <a href="#"><span class="material-icons" style="font-size:18px;vertical-align:middle;">settings</span> Settings</a>
-                            </li>
-                            <li class="so-breadcrumb-item so-active">
-                                <span class="material-icons" style="font-size:18px;vertical-align:middle;">person</span> Profile
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
+                <nav aria-label="breadcrumb" class="so-mb-4">
+                    <ol class="so-breadcrumb">
+                        <li class="so-breadcrumb-item">
+                            <a href="#"><span class="material-icons" style="font-size:18px;vertical-align:middle;">home</span> Home</a>
+                        </li>
+                        <li class="so-breadcrumb-item">
+                            <a href="#"><span class="material-icons" style="font-size:18px;vertical-align:middle;">settings</span> Settings</a>
+                        </li>
+                        <li class="so-breadcrumb-item so-active">
+                            <span class="material-icons" style="font-size:18px;vertical-align:middle;">person</span> Profile
+                        </li>
+                    </ol>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('breadcrumb-icons', [

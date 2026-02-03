@@ -29,17 +29,15 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-country">Country</label>
-                        <select class="so-form-control" id="demo-country" name="country">
-                            <option value="">Select a country</option>
-                            <option value="us">United States</option>
-                            <option value="uk">United Kingdom</option>
-                            <option value="ca">Canada</option>
-                            <option value="au">Australia</option>
-                        </select>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-country">Country</label>
+                    <select class="so-form-control" id="demo-country" name="country">
+                        <option value="">Select a country</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ca">Canada</option>
+                        <option value="au">Australia</option>
+                    </select>
                 </div>
 
                 <!-- Code Tabs -->
@@ -105,23 +103,21 @@ document.getElementById('container').innerHTML = select.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-car">Car Model</label>
-                        <select class="so-form-control" id="demo-car" name="car">
-                            <option value="">Select a car</option>
-                            <optgroup label="German">
-                                <option value="bmw">BMW</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
-                            </optgroup>
-                            <optgroup label="Japanese">
-                                <option value="toyota">Toyota</option>
-                                <option value="honda">Honda</option>
-                                <option value="nissan">Nissan</option>
-                            </optgroup>
-                        </select>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-car">Car Model</label>
+                    <select class="so-form-control" id="demo-car" name="car">
+                        <option value="">Select a car</option>
+                        <optgroup label="German">
+                            <option value="bmw">BMW</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </optgroup>
+                        <optgroup label="Japanese">
+                            <option value="toyota">Toyota</option>
+                            <option value="honda">Honda</option>
+                            <option value="nissan">Nissan</option>
+                        </optgroup>
+                    </select>
                 </div>
 
                 <!-- Code Tabs -->
@@ -181,18 +177,16 @@ document.getElementById('container').innerHTML = select.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-skills">Skills</label>
-                        <select class="so-form-control" id="demo-skills" name="skills[]" multiple>
-                            <option value="html">HTML</option>
-                            <option value="css">CSS</option>
-                            <option value="js">JavaScript</option>
-                            <option value="php">PHP</option>
-                            <option value="python">Python</option>
-                        </select>
-                        <small class="so-form-text so-text-muted">Hold Ctrl/Cmd to select multiple</small>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-skills">Skills</label>
+                    <select class="so-form-control" id="demo-skills" name="skills[]" multiple>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="python">Python</option>
+                    </select>
+                    <div class="so-form-hint">Hold Ctrl/Cmd to select multiple</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -237,6 +231,99 @@ document.getElementById('container').innerHTML = select.toHtml();"
             </div>
         </div>
 
+        <!-- Enhanced Select (JS-powered) -->
+        <div class="so-card so-mb-4">
+            <div class="so-card-header">
+                <h3 class="so-card-title">Enhanced Select</h3>
+            </div>
+            <div class="so-card-body">
+                <p class="so-text-secondary so-mb-4">Add <code>data-so-select</code> attribute to enable enhanced select with search, custom styling, and advanced features.</p>
+                <!-- Live Demo -->
+                <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label">Basic Enhanced</label>
+                        <select class="so-form-control" data-so-select>
+                            <option value="">Select a country</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                        </select>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Searchable</label>
+                        <select class="so-form-control" data-so-select data-so-searchable="true">
+                            <option value="">Search countries...</option>
+                            <option value="us">United States</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                            <option value="fr">France</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Code Tabs -->
+                <?= so_code_tabs('select-enhanced', [
+                    [
+                        'label' => 'PHP',
+                        'language' => 'php',
+                        'icon' => 'data_object',
+                        'code' => "// Enhanced select with JS features
+\$select = UiEngine::select('country')
+    ->label('Country')
+    ->enhanced()  // Adds data-so-select attribute
+    ->placeholder('Select a country')
+    ->options([...]);
+
+// Searchable enhanced select
+\$select = UiEngine::select('country')
+    ->enhanced()
+    ->searchable()  // Adds data-so-searchable=\"true\"
+    ->placeholder('Search countries...')
+    ->options([...]);"
+                    ],
+                    [
+                        'label' => 'JavaScript',
+                        'language' => 'javascript',
+                        'icon' => 'javascript',
+                        'code' => "// Enhanced select with JS features
+const select = UiEngine.select('country')
+    .label('Country')
+    .enhanced()  // Adds data-so-select attribute
+    .placeholder('Select a country')
+    .options({...});
+
+// Searchable enhanced select
+const select = UiEngine.select('country')
+    .enhanced()
+    .searchable()  // Adds data-so-searchable=\"true\"
+    .placeholder('Search countries...')
+    .options({...});"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Basic enhanced select -->
+<select class="so-form-control" data-so-select>
+    <option value="">Select a country</option>
+    <option value="us">United States</option>
+    ...
+</select>
+
+<!-- Searchable enhanced select -->
+<select class="so-form-control" data-so-select data-so-searchable="true">
+    <option value="">Search countries...</option>
+    <option value="us">United States</option>
+    ...
+</select>'
+                    ],
+                ]) ?>
+            </div>
+        </div>
+
         <!-- Select Sizes -->
         <div class="so-card so-mb-4">
             <div class="so-card-header">
@@ -244,20 +331,20 @@ document.getElementById('container').innerHTML = select.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-mb-3">
+                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                    <div class="so-form-group">
                         <label class="so-form-label">Small</label>
                         <select class="so-form-control so-form-control-sm">
                             <option>Small select</option>
                         </select>
                     </div>
-                    <div class="so-mb-3">
+                    <div class="so-form-group">
                         <label class="so-form-label">Default</label>
                         <select class="so-form-control">
                             <option>Default select</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="so-form-group">
                         <label class="so-form-label">Large</label>
                         <select class="so-form-control so-form-control-lg">
                             <option>Large select</option>
@@ -332,6 +419,11 @@ UiEngine.select('large').size('lg').options({opt: 'Large select'});"
                                 <td><code>searchable()</code></td>
                                 <td>-</td>
                                 <td>Enable search/filter functionality</td>
+                            </tr>
+                            <tr>
+                                <td><code>enhanced()</code></td>
+                                <td>-</td>
+                                <td>Enable JS-powered enhanced select (adds data-so-select)</td>
                             </tr>
                             <tr>
                                 <td><code>placeholder()</code></td>

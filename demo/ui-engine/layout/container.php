@@ -29,10 +29,8 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-bg-light so-rounded" style="overflow-x:auto;">
-                    <div class="so-container so-bg-primary so-text-white so-p-3 so-rounded">
-                        Default container - centers content with responsive max-width
-                    </div>
+                <div class="so-container so-bg-primary so-text-white so-p-3 so-rounded so-mb-4">
+                    Default container - centers content with responsive max-width
                 </div>
 
                 <!-- Code Tabs -->
@@ -77,14 +75,12 @@ document.body.innerHTML = container.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-bg-light so-rounded" style="overflow-x:auto;">
-                    <div class="so-container so-bg-info so-text-white so-p-2 so-mb-2 so-rounded">.so-container (responsive max-width)</div>
-                    <div class="so-container-fluid so-bg-success so-text-white so-p-2 so-mb-2 so-rounded">.so-container-fluid (100% width)</div>
-                    <div class="so-container-sm so-bg-warning so-text-dark so-p-2 so-mb-2 so-rounded">.so-container-sm (100% until sm)</div>
-                    <div class="so-container-md so-bg-danger so-text-white so-p-2 so-mb-2 so-rounded">.so-container-md (100% until md)</div>
-                    <div class="so-container-lg so-bg-primary so-text-white so-p-2 so-mb-2 so-rounded">.so-container-lg (100% until lg)</div>
-                    <div class="so-container-xl so-bg-secondary so-text-white so-p-2 so-rounded">.so-container-xl (100% until xl)</div>
-                </div>
+                <div class="so-container so-bg-info so-text-white so-p-2 so-mb-2 so-rounded">.so-container (responsive max-width)</div>
+                <div class="so-container-fluid so-bg-success so-text-white so-p-2 so-mb-2 so-rounded">.so-container-fluid (100% width)</div>
+                <div class="so-container-sm so-bg-warning so-text-dark so-p-2 so-mb-2 so-rounded">.so-container-sm (100% until sm)</div>
+                <div class="so-container-md so-bg-danger so-text-white so-p-2 so-mb-2 so-rounded">.so-container-md (100% until md)</div>
+                <div class="so-container-lg so-bg-primary so-text-white so-p-2 so-mb-2 so-rounded">.so-container-lg (100% until lg)</div>
+                <div class="so-container-xl so-bg-secondary so-text-white so-p-2 so-mb-4 so-rounded">.so-container-xl (100% until xl)</div>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('container-types', [

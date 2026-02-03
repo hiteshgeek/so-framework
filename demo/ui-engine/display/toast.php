@@ -29,16 +29,14 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-toast show" role="alert" style="position: static;">
-                        <div class="so-toast-header">
-                            <strong class="so-me-auto">Notification</strong>
-                            <small>Just now</small>
-                            <button type="button" class="so-btn-close" data-bs-dismiss="toast"></button>
-                        </div>
-                        <div class="so-toast-body">
-                            Hello! This is a toast message.
-                        </div>
+                <div class="so-toast show so-mb-4" role="alert" style="position: static;">
+                    <div class="so-toast-header">
+                        <strong class="so-me-auto">Notification</strong>
+                        <small>Just now</small>
+                        <button type="button" class="so-btn-close" data-bs-dismiss="toast"></button>
+                    </div>
+                    <div class="so-toast-body">
+                        Hello! This is a toast message.
                     </div>
                 </div>
 

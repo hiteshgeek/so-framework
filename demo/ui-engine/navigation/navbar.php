@@ -29,29 +29,27 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-rounded" style="background:#f8f9fa;">
-                    <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
-                        <div class="so-container-fluid">
-                            <a class="so-navbar-brand" href="#">Brand</a>
-                            <button class="so-navbar-toggler" type="button">
-                                <span class="so-navbar-toggler-icon"></span>
-                            </button>
-                            <div class="so-navbar-collapse">
-                                <ul class="so-navbar-nav so-me-auto">
-                                    <li class="so-nav-item">
-                                        <a class="so-nav-link active" href="#">Home</a>
-                                    </li>
-                                    <li class="so-nav-item">
-                                        <a class="so-nav-link" href="#">Features</a>
-                                    </li>
-                                    <li class="so-nav-item">
-                                        <a class="so-nav-link" href="#">Pricing</a>
-                                    </li>
-                                </ul>
-                            </div>
+                <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
+                    <div class="so-container-fluid">
+                        <a class="so-navbar-brand" href="#">Brand</a>
+                        <button class="so-navbar-toggler" type="button">
+                            <span class="so-navbar-toggler-icon"></span>
+                        </button>
+                        <div class="so-navbar-collapse">
+                            <ul class="so-navbar-nav so-me-auto">
+                                <li class="so-nav-item">
+                                    <a class="so-nav-link active" href="#">Home</a>
+                                </li>
+                                <li class="so-nav-item">
+                                    <a class="so-nav-link" href="#">Features</a>
+                                </li>
+                                <li class="so-nav-item">
+                                    <a class="so-nav-link" href="#">Pricing</a>
+                                </li>
+                            </ul>
                         </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-navbar', [
@@ -120,23 +118,21 @@ document.getElementById('header').innerHTML = navbar.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-rounded" style="background:#f8f9fa;">
-                    <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
-                        <div class="so-container-fluid">
-                            <a class="so-navbar-brand so-d-flex so-align-items-center" href="#">
-                                <span class="material-icons so-me-2 so-text-primary">hexagon</span>
-                                <span class="so-fw-bold">SixOrbit</span>
-                            </a>
-                            <div class="so-navbar-collapse">
-                                <ul class="so-navbar-nav so-me-auto">
-                                    <li class="so-nav-item"><a class="so-nav-link" href="#">Products</a></li>
-                                    <li class="so-nav-item"><a class="so-nav-link" href="#">Solutions</a></li>
-                                    <li class="so-nav-item"><a class="so-nav-link" href="#">Resources</a></li>
-                                </ul>
-                            </div>
+                <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
+                    <div class="so-container-fluid">
+                        <a class="so-navbar-brand so-d-flex so-align-items-center" href="#">
+                            <span class="material-icons so-me-2 so-text-primary">hexagon</span>
+                            <span class="so-fw-bold">SixOrbit</span>
+                        </a>
+                        <div class="so-navbar-collapse">
+                            <ul class="so-navbar-nav so-me-auto">
+                                <li class="so-nav-item"><a class="so-nav-link" href="#">Products</a></li>
+                                <li class="so-nav-item"><a class="so-nav-link" href="#">Solutions</a></li>
+                                <li class="so-nav-item"><a class="so-nav-link" href="#">Resources</a></li>
+                            </ul>
                         </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('navbar-logo', [
@@ -179,23 +175,21 @@ echo \$navbar->render();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-rounded">
-                    <nav class="so-navbar so-navbar-dark so-bg-dark so-mb-2">
-                        <div class="so-container-fluid">
-                            <a class="so-navbar-brand" href="#">Dark Navbar</a>
-                        </div>
-                    </nav>
-                    <nav class="so-navbar so-navbar-dark so-bg-primary so-mb-2">
-                        <div class="so-container-fluid">
-                            <a class="so-navbar-brand" href="#">Primary Navbar</a>
-                        </div>
-                    </nav>
-                    <nav class="so-navbar so-navbar-light" style="background-color:#e3f2fd;">
-                        <div class="so-container-fluid">
-                            <a class="so-navbar-brand" href="#">Custom Color</a>
-                        </div>
-                    </nav>
-                </div>
+                <nav class="so-navbar so-navbar-dark so-bg-dark so-mb-2">
+                    <div class="so-container-fluid">
+                        <a class="so-navbar-brand" href="#">Dark Navbar</a>
+                    </div>
+                </nav>
+                <nav class="so-navbar so-navbar-dark so-bg-primary so-mb-2">
+                    <div class="so-container-fluid">
+                        <a class="so-navbar-brand" href="#">Primary Navbar</a>
+                    </div>
+                </nav>
+                <nav class="so-navbar so-navbar-light" style="background-color:#e3f2fd;">
+                    <div class="so-container-fluid">
+                        <a class="so-navbar-brand" href="#">Custom Color</a>
+                    </div>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('navbar-colors', [
@@ -308,22 +302,20 @@ echo \$navbar->render();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-rounded" style="background:#f8f9fa;">
-                    <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
-                        <div class="so-container-fluid">
-                            <a class="so-navbar-brand" href="#">Brand</a>
-                            <div class="so-navbar-collapse">
-                                <ul class="so-navbar-nav so-me-auto">
-                                    <li class="so-nav-item"><a class="so-nav-link" href="#">Home</a></li>
-                                </ul>
-                                <form class="so-d-flex" role="search">
-                                    <input class="so-form-control so-me-2" type="search" placeholder="Search">
-                                    <button class="so-btn so-btn-outline-primary" type="submit">Search</button>
-                                </form>
-                            </div>
+                <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
+                    <div class="so-container-fluid">
+                        <a class="so-navbar-brand" href="#">Brand</a>
+                        <div class="so-navbar-collapse">
+                            <ul class="so-navbar-nav so-me-auto">
+                                <li class="so-nav-item"><a class="so-nav-link" href="#">Home</a></li>
+                            </ul>
+                            <form class="so-d-flex" role="search">
+                                <input class="so-form-control so-me-2" type="search" placeholder="Search">
+                                <button class="so-btn so-btn-outline-primary" type="submit">Search</button>
+                            </form>
                         </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('navbar-search', [
@@ -364,23 +356,21 @@ echo \$navbar->render();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-rounded" style="background:#f8f9fa;">
-                    <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
-                        <div class="so-container-fluid">
-                            <a class="so-navbar-brand" href="#">Brand</a>
-                            <div class="so-navbar-collapse">
-                                <ul class="so-navbar-nav so-me-auto">
-                                    <li class="so-nav-item"><a class="so-nav-link" href="#">Features</a></li>
-                                    <li class="so-nav-item"><a class="so-nav-link" href="#">Pricing</a></li>
-                                </ul>
-                                <div class="so-d-flex so-gap-2">
-                                    <a href="/login" class="so-btn so-btn-outline-primary">Login</a>
-                                    <a href="/register" class="so-btn so-btn-primary">Sign Up</a>
-                                </div>
+                <nav class="so-navbar so-navbar-expand-lg so-navbar-light so-bg-light">
+                    <div class="so-container-fluid">
+                        <a class="so-navbar-brand" href="#">Brand</a>
+                        <div class="so-navbar-collapse">
+                            <ul class="so-navbar-nav so-me-auto">
+                                <li class="so-nav-item"><a class="so-nav-link" href="#">Features</a></li>
+                                <li class="so-nav-item"><a class="so-nav-link" href="#">Pricing</a></li>
+                            </ul>
+                            <div class="so-d-flex so-gap-2">
+                                <a href="/login" class="so-btn so-btn-outline-primary">Login</a>
+                                <a href="/register" class="so-btn so-btn-primary">Sign Up</a>
                             </div>
                         </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('navbar-actions', [

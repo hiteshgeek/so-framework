@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-check so-form-switch">
-                        <input class="so-form-check-input" type="checkbox" role="switch" id="demo-notifications">
-                        <label class="so-form-check-label" for="demo-notifications">Enable notifications</label>
-                    </div>
+                <div class="so-form-check so-form-switch">
+                    <input class="so-form-check-input" type="checkbox" role="switch" id="demo-notifications">
+                    <label class="so-form-check-label" for="demo-notifications">Enable notifications</label>
                 </div>
 
                 <!-- Code Tabs -->
@@ -79,23 +77,21 @@ document.getElementById('container').innerHTML = toggle.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-check so-form-switch so-mb-2">
-                        <input class="so-form-check-input" type="checkbox" role="switch" id="demo-off">
-                        <label class="so-form-check-label" for="demo-off">Default (Off)</label>
-                    </div>
-                    <div class="so-form-check so-form-switch so-mb-2">
-                        <input class="so-form-check-input" type="checkbox" role="switch" id="demo-on" checked>
-                        <label class="so-form-check-label" for="demo-on">Checked (On)</label>
-                    </div>
-                    <div class="so-form-check so-form-switch so-mb-2">
-                        <input class="so-form-check-input" type="checkbox" role="switch" id="demo-disabled-off" disabled>
-                        <label class="so-form-check-label" for="demo-disabled-off">Disabled (Off)</label>
-                    </div>
-                    <div class="so-form-check so-form-switch">
-                        <input class="so-form-check-input" type="checkbox" role="switch" id="demo-disabled-on" checked disabled>
-                        <label class="so-form-check-label" for="demo-disabled-on">Disabled (On)</label>
-                    </div>
+                <div class="so-form-check so-form-switch so-mb-2">
+                    <input class="so-form-check-input" type="checkbox" role="switch" id="demo-off">
+                    <label class="so-form-check-label" for="demo-off">Default (Off)</label>
+                </div>
+                <div class="so-form-check so-form-switch so-mb-2">
+                    <input class="so-form-check-input" type="checkbox" role="switch" id="demo-on" checked>
+                    <label class="so-form-check-label" for="demo-on">Checked (On)</label>
+                </div>
+                <div class="so-form-check so-form-switch so-mb-2">
+                    <input class="so-form-check-input" type="checkbox" role="switch" id="demo-disabled-off" disabled>
+                    <label class="so-form-check-label" for="demo-disabled-off">Disabled (Off)</label>
+                </div>
+                <div class="so-form-check so-form-switch">
+                    <input class="so-form-check-input" type="checkbox" role="switch" id="demo-disabled-on" checked disabled>
+                    <label class="so-form-check-label" for="demo-disabled-on">Disabled (On)</label>
                 </div>
 
                 <!-- Code Tabs -->
@@ -271,34 +267,32 @@ UiEngine.toggle('danger').color('danger').label('Danger').checked();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-list-group">
-                        <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
-                            <div>
-                                <div class="so-fw-medium">Email Notifications</div>
-                                <small class="so-text-muted">Receive email updates about your account</small>
-                            </div>
-                            <div class="so-form-check so-form-switch so-mb-0">
-                                <input class="so-form-check-input" type="checkbox" role="switch" id="demo-email-notif" checked>
-                            </div>
+                <div class="so-list-group">
+                    <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+                        <div>
+                            <div class="so-fw-medium">Email Notifications</div>
+                            <small class="so-text-muted">Receive email updates about your account</small>
                         </div>
-                        <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
-                            <div>
-                                <div class="so-fw-medium">SMS Notifications</div>
-                                <small class="so-text-muted">Receive text messages for important alerts</small>
-                            </div>
-                            <div class="so-form-check so-form-switch so-mb-0">
-                                <input class="so-form-check-input" type="checkbox" role="switch" id="demo-sms-notif">
-                            </div>
+                        <div class="so-form-check so-form-switch so-mb-0">
+                            <input class="so-form-check-input" type="checkbox" role="switch" id="demo-email-notif" checked>
                         </div>
-                        <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
-                            <div>
-                                <div class="so-fw-medium">Two-Factor Authentication</div>
-                                <small class="so-text-muted">Add an extra layer of security</small>
-                            </div>
-                            <div class="so-form-check so-form-switch so-mb-0">
-                                <input class="so-form-check-input" type="checkbox" role="switch" id="demo-2fa" checked>
-                            </div>
+                    </div>
+                    <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+                        <div>
+                            <div class="so-fw-medium">SMS Notifications</div>
+                            <small class="so-text-muted">Receive text messages for important alerts</small>
+                        </div>
+                        <div class="so-form-check so-form-switch so-mb-0">
+                            <input class="so-form-check-input" type="checkbox" role="switch" id="demo-sms-notif">
+                        </div>
+                    </div>
+                    <div class="so-list-group-item so-d-flex so-justify-content-between so-align-items-center">
+                        <div>
+                            <div class="so-fw-medium">Two-Factor Authentication</div>
+                            <small class="so-text-muted">Add an extra layer of security</small>
+                        </div>
+                        <div class="so-form-check so-form-switch so-mb-0">
+                            <input class="so-form-check-input" type="checkbox" role="switch" id="demo-2fa" checked>
                         </div>
                     </div>
                 </div>

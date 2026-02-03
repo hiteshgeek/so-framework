@@ -29,13 +29,11 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-alert so-alert-primary" role="alert">This is a primary alert message.</div>
-                    <div class="so-alert so-alert-success" role="alert">This is a success alert message.</div>
-                    <div class="so-alert so-alert-warning" role="alert">This is a warning alert message.</div>
-                    <div class="so-alert so-alert-danger" role="alert">This is a danger alert message.</div>
-                    <div class="so-alert so-alert-info so-mb-0" role="alert">This is an info alert message.</div>
-                </div>
+                <div class="so-alert so-alert-primary" role="alert">This is a primary alert message.</div>
+                <div class="so-alert so-alert-success" role="alert">This is a success alert message.</div>
+                <div class="so-alert so-alert-warning" role="alert">This is a warning alert message.</div>
+                <div class="so-alert so-alert-danger" role="alert">This is a danger alert message.</div>
+                <div class="so-alert so-alert-info so-mb-4" role="alert">This is an info alert message.</div>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-alerts', [
@@ -73,15 +71,13 @@ UiEngine.alert('This is an info alert message.').variant('info').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-alert so-alert-success so-d-flex so-align-items-center" role="alert">
-                        <span class="material-icons so-me-2">check_circle</span>
-                        <div>Your changes have been saved successfully!</div>
-                    </div>
-                    <div class="so-alert so-alert-danger so-d-flex so-align-items-center so-mb-0" role="alert">
-                        <span class="material-icons so-me-2">error</span>
-                        <div>An error occurred while processing your request.</div>
-                    </div>
+                <div class="so-alert so-alert-success so-d-flex so-align-items-center" role="alert">
+                    <span class="material-icons so-me-2">check_circle</span>
+                    <div>Your changes have been saved successfully!</div>
+                </div>
+                <div class="so-alert so-alert-danger so-d-flex so-align-items-center so-mb-4" role="alert">
+                    <span class="material-icons so-me-2">error</span>
+                    <div>An error occurred while processing your request.</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -123,11 +119,9 @@ UiEngine.alert('An error occurred while processing your request.')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-alert so-alert-warning so-alert-dismissible so-fade so-show" role="alert">
-                        <strong>Warning!</strong> Your session will expire in 5 minutes.
-                        <button type="button" class="so-btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                <div class="so-alert so-alert-warning so-alert-dismissible so-fade so-show so-mb-4" role="alert">
+                    <strong>Warning!</strong> Your session will expire in 5 minutes.
+                    <button type="button" class="so-btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -168,13 +162,11 @@ document.getElementById('container').innerHTML = alert.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-alert so-alert-success" role="alert">
-                        <h4 class="so-alert-heading">Well done!</h4>
-                        <p>You have successfully completed the registration process. Your account is now active and ready to use.</p>
-                        <hr>
-                        <p class="so-mb-0">Need help getting started? Check out our <a href="#" class="so-alert-link">documentation</a>.</p>
-                    </div>
+                <div class="so-alert so-alert-success so-mb-4" role="alert">
+                    <h4 class="so-alert-heading">Well done!</h4>
+                    <p>You have successfully completed the registration process. Your account is now active and ready to use.</p>
+                    <hr>
+                    <p class="so-mb-0">Need help getting started? Check out our <a href="#" class="so-alert-link">documentation</a>.</p>
                 </div>
 
                 <!-- Code Tabs -->

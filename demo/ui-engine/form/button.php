@@ -29,15 +29,13 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-flex-wrap">
-                        <button type="button" class="so-btn so-btn-primary">Primary</button>
-                        <button type="button" class="so-btn so-btn-secondary">Secondary</button>
-                        <button type="button" class="so-btn so-btn-success">Success</button>
-                        <button type="button" class="so-btn so-btn-danger">Danger</button>
-                        <button type="button" class="so-btn so-btn-warning">Warning</button>
-                        <button type="button" class="so-btn so-btn-info">Info</button>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-flex-wrap">
+                    <button type="button" class="so-btn so-btn-primary">Primary</button>
+                    <button type="button" class="so-btn so-btn-secondary">Secondary</button>
+                    <button type="button" class="so-btn so-btn-success">Success</button>
+                    <button type="button" class="so-btn so-btn-danger">Danger</button>
+                    <button type="button" class="so-btn so-btn-warning">Warning</button>
+                    <button type="button" class="so-btn so-btn-info">Info</button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -89,13 +87,11 @@ UiEngine.button('Info').variant('info').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-flex-wrap">
-                        <button type="button" class="so-btn so-btn-outline-primary">Primary</button>
-                        <button type="button" class="so-btn so-btn-outline-secondary">Secondary</button>
-                        <button type="button" class="so-btn so-btn-outline-success">Success</button>
-                        <button type="button" class="so-btn so-btn-outline-danger">Danger</button>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-flex-wrap">
+                    <button type="button" class="so-btn so-btn-outline-primary">Primary</button>
+                    <button type="button" class="so-btn so-btn-outline-secondary">Secondary</button>
+                    <button type="button" class="so-btn so-btn-outline-success">Success</button>
+                    <button type="button" class="so-btn so-btn-outline-danger">Danger</button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -129,12 +125,10 @@ UiEngine.button('Danger').variant('danger').outline().toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-align-items-center so-flex-wrap">
-                        <button type="button" class="so-btn so-btn-primary so-btn-sm">Small</button>
-                        <button type="button" class="so-btn so-btn-primary">Default</button>
-                        <button type="button" class="so-btn so-btn-primary so-btn-lg">Large</button>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-align-items-center so-flex-wrap">
+                    <button type="button" class="so-btn so-btn-primary so-btn-sm">Small</button>
+                    <button type="button" class="so-btn so-btn-primary">Default</button>
+                    <button type="button" class="so-btn so-btn-primary so-btn-lg">Large</button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -166,21 +160,19 @@ UiEngine.button('Large').variant('primary').size('lg').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-flex-wrap">
-                        <button type="button" class="so-btn so-btn-primary">
-                            <span class="material-icons">save</span> Save
-                        </button>
-                        <button type="button" class="so-btn so-btn-danger">
-                            <span class="material-icons">delete</span> Delete
-                        </button>
-                        <button type="button" class="so-btn so-btn-success">
-                            Download <span class="material-icons">download</span>
-                        </button>
-                        <button type="button" class="so-btn so-btn-secondary">
-                            <span class="material-icons">settings</span>
-                        </button>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-flex-wrap">
+                    <button type="button" class="so-btn so-btn-primary">
+                        <span class="material-icons">save</span> Save
+                    </button>
+                    <button type="button" class="so-btn so-btn-danger">
+                        <span class="material-icons">delete</span> Delete
+                    </button>
+                    <button type="button" class="so-btn so-btn-success">
+                        Download <span class="material-icons">download</span>
+                    </button>
+                    <button type="button" class="so-btn so-btn-secondary">
+                        <span class="material-icons">settings</span>
+                    </button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -222,15 +214,13 @@ UiEngine.button().variant('secondary').icon('settings').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-flex-wrap">
-                        <button type="button" class="so-btn so-btn-primary" disabled>
-                            <span class="so-spinner-border so-spinner-border-sm"></span> Loading...
-                        </button>
-                        <button type="button" class="so-btn so-btn-secondary" disabled>
-                            <span class="so-spinner-border so-spinner-border-sm"></span> Processing
-                        </button>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-flex-wrap">
+                    <button type="button" class="so-btn so-btn-primary" disabled>
+                        <span class="so-spinner-border so-spinner-border-sm"></span> Loading...
+                    </button>
+                    <button type="button" class="so-btn so-btn-secondary" disabled>
+                        <span class="so-spinner-border so-spinner-border-sm"></span> Processing
+                    </button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -262,13 +252,11 @@ btn.loading(false); // Restores original state"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-flex-wrap">
-                        <button type="button" class="so-btn so-btn-primary">Button</button>
-                        <button type="submit" class="so-btn so-btn-success">Submit</button>
-                        <button type="reset" class="so-btn so-btn-secondary">Reset</button>
-                        <a href="#" class="so-btn so-btn-info">Link Button</a>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-flex-wrap">
+                    <button type="button" class="so-btn so-btn-primary">Button</button>
+                    <button type="submit" class="so-btn so-btn-success">Submit</button>
+                    <button type="reset" class="so-btn so-btn-secondary">Reset</button>
+                    <a href="#" class="so-btn so-btn-info">Link Button</a>
                 </div>
 
                 <!-- Code Tabs -->
@@ -316,12 +304,10 @@ UiEngine.button('Link Button').tag('a').href('#').variant('info').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <button type="button" class="so-btn so-btn-primary so-w-100 so-mb-2">Full Width Button</button>
-                    <div class="so-d-grid so-gap-2">
-                        <button type="button" class="so-btn so-btn-secondary">Grid Button 1</button>
-                        <button type="button" class="so-btn so-btn-secondary">Grid Button 2</button>
-                    </div>
+                <button type="button" class="so-btn so-btn-primary so-w-100 so-mb-2">Full Width Button</button>
+                <div class="so-d-grid so-gap-2">
+                    <button type="button" class="so-btn so-btn-secondary">Grid Button 1</button>
+                    <button type="button" class="so-btn so-btn-secondary">Grid Button 2</button>
                 </div>
 
                 <!-- Code Tabs -->

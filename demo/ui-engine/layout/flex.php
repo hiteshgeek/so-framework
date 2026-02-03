@@ -29,12 +29,10 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-3">
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 1</div>
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 2</div>
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 3</div>
-                    </div>
+                <div class="so-d-flex so-gap-3 so-mb-4">
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 1</div>
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 2</div>
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 3</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -87,19 +85,17 @@ document.getElementById('container').innerHTML = flex.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <p class="so-text-muted so-small">Row (default):</p>
-                    <div class="so-d-flex so-flex-row so-gap-2 so-mb-4">
-                        <div class="so-bg-primary so-text-white so-p-2 so-rounded">1</div>
-                        <div class="so-bg-primary so-text-white so-p-2 so-rounded">2</div>
-                        <div class="so-bg-primary so-text-white so-p-2 so-rounded">3</div>
-                    </div>
-                    <p class="so-text-muted so-small">Column:</p>
-                    <div class="so-d-flex so-flex-column so-gap-2">
-                        <div class="so-bg-success so-text-white so-p-2 so-rounded">1</div>
-                        <div class="so-bg-success so-text-white so-p-2 so-rounded">2</div>
-                        <div class="so-bg-success so-text-white so-p-2 so-rounded">3</div>
-                    </div>
+                <p class="so-text-muted so-small">Row (default):</p>
+                <div class="so-d-flex so-flex-row so-gap-2 so-mb-4">
+                    <div class="so-bg-primary so-text-white so-p-2 so-rounded">1</div>
+                    <div class="so-bg-primary so-text-white so-p-2 so-rounded">2</div>
+                    <div class="so-bg-primary so-text-white so-p-2 so-rounded">3</div>
+                </div>
+                <p class="so-text-muted so-small">Column:</p>
+                <div class="so-d-flex so-flex-column so-gap-2 so-mb-4">
+                    <div class="so-bg-success so-text-white so-p-2 so-rounded">1</div>
+                    <div class="so-bg-success so-text-white so-p-2 so-rounded">2</div>
+                    <div class="so-bg-success so-text-white so-p-2 so-rounded">3</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -163,32 +159,30 @@ UiEngine.flex()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <p class="so-text-muted so-small">Start:</p>
-                    <div class="so-d-flex so-justify-content-start so-gap-2 so-mb-3 so-bg-white so-p-2 so-rounded">
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
-                    </div>
-                    <p class="so-text-muted so-small">Center:</p>
-                    <div class="so-d-flex so-justify-content-center so-gap-2 so-mb-3 so-bg-white so-p-2 so-rounded">
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
-                    </div>
-                    <p class="so-text-muted so-small">End:</p>
-                    <div class="so-d-flex so-justify-content-end so-gap-2 so-mb-3 so-bg-white so-p-2 so-rounded">
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
-                    </div>
-                    <p class="so-text-muted so-small">Space Between:</p>
-                    <div class="so-d-flex so-justify-content-between so-mb-3 so-bg-white so-p-2 so-rounded">
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
-                    </div>
-                    <p class="so-text-muted so-small">Space Around:</p>
-                    <div class="so-d-flex so-justify-content-around so-bg-white so-p-2 so-rounded">
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
-                    </div>
+                <p class="so-text-muted so-small">Start:</p>
+                <div class="so-d-flex so-justify-content-start so-gap-2 so-mb-3 so-bg-light so-p-2 so-rounded">
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
+                </div>
+                <p class="so-text-muted so-small">Center:</p>
+                <div class="so-d-flex so-justify-content-center so-gap-2 so-mb-3 so-bg-light so-p-2 so-rounded">
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
+                </div>
+                <p class="so-text-muted so-small">End:</p>
+                <div class="so-d-flex so-justify-content-end so-gap-2 so-mb-3 so-bg-light so-p-2 so-rounded">
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
+                </div>
+                <p class="so-text-muted so-small">Space Between:</p>
+                <div class="so-d-flex so-justify-content-between so-mb-3 so-bg-light so-p-2 so-rounded">
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
+                </div>
+                <p class="so-text-muted so-small">Space Around:</p>
+                <div class="so-d-flex so-justify-content-around so-bg-light so-p-2 so-rounded so-mb-4">
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">A</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded">B</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -267,28 +261,26 @@ UiEngine.flex()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-4">
-                            <p class="so-text-muted so-small">Start:</p>
-                            <div class="so-d-flex so-align-items-start so-gap-2 so-bg-white so-p-2 so-rounded" style="height:100px;">
-                                <div class="so-bg-warning so-text-dark so-p-2 so-rounded">A</div>
-                                <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="padding:1.5rem!important;">B</div>
-                            </div>
+                <div class="so-grid so-grid-cols-3 so-gap-3 so-mb-4">
+                    <div>
+                        <p class="so-text-muted so-small">Start:</p>
+                        <div class="so-d-flex so-align-items-start so-gap-2 so-bg-light so-p-2 so-rounded" style="height:100px;">
+                            <div class="so-bg-warning so-text-dark so-p-2 so-rounded">A</div>
+                            <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="padding:1.5rem!important;">B</div>
                         </div>
-                        <div class="so-col-4">
-                            <p class="so-text-muted so-small">Center:</p>
-                            <div class="so-d-flex so-align-items-center so-gap-2 so-bg-white so-p-2 so-rounded" style="height:100px;">
-                                <div class="so-bg-warning so-text-dark so-p-2 so-rounded">A</div>
-                                <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="padding:1.5rem!important;">B</div>
-                            </div>
+                    </div>
+                    <div>
+                        <p class="so-text-muted so-small">Center:</p>
+                        <div class="so-d-flex so-align-items-center so-gap-2 so-bg-light so-p-2 so-rounded" style="height:100px;">
+                            <div class="so-bg-warning so-text-dark so-p-2 so-rounded">A</div>
+                            <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="padding:1.5rem!important;">B</div>
                         </div>
-                        <div class="so-col-4">
-                            <p class="so-text-muted so-small">End:</p>
-                            <div class="so-d-flex so-align-items-end so-gap-2 so-bg-white so-p-2 so-rounded" style="height:100px;">
-                                <div class="so-bg-warning so-text-dark so-p-2 so-rounded">A</div>
-                                <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="padding:1.5rem!important;">B</div>
-                            </div>
+                    </div>
+                    <div>
+                        <p class="so-text-muted so-small">End:</p>
+                        <div class="so-d-flex so-align-items-end so-gap-2 so-bg-light so-p-2 so-rounded" style="height:100px;">
+                            <div class="so-bg-warning so-text-dark so-p-2 so-rounded">A</div>
+                            <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="padding:1.5rem!important;">B</div>
                         </div>
                     </div>
                 </div>
@@ -359,14 +351,12 @@ UiEngine.flex()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-flex-wrap so-gap-2" style="width:300px;">
-                        <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">1</div>
-                        <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">2</div>
-                        <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">3</div>
-                        <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">4</div>
-                        <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">5</div>
-                    </div>
+                <div class="so-d-flex so-flex-wrap so-gap-2 so-mb-4" style="width:300px;">
+                    <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">1</div>
+                    <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">2</div>
+                    <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">3</div>
+                    <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">4</div>
+                    <div class="so-bg-danger so-text-white so-p-3 so-rounded" style="width:100px;">5</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -420,18 +410,16 @@ UiEngine.flex()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <p class="so-text-muted so-small">Flex grow:</p>
-                    <div class="so-d-flex so-gap-2 so-mb-4">
-                        <div class="so-bg-primary so-text-white so-p-2 so-rounded" style="flex-grow:0;">No grow</div>
-                        <div class="so-bg-success so-text-white so-p-2 so-rounded" style="flex-grow:1;">Grow</div>
-                        <div class="so-bg-primary so-text-white so-p-2 so-rounded" style="flex-grow:0;">No grow</div>
-                    </div>
-                    <p class="so-text-muted so-small">Flex shrink:</p>
-                    <div class="so-d-flex so-gap-2" style="width:250px;">
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded" style="flex-shrink:0;width:100px;">No shrink</div>
-                        <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="flex-shrink:1;width:200px;">Shrinks</div>
-                    </div>
+                <p class="so-text-muted so-small">Flex grow:</p>
+                <div class="so-d-flex so-gap-2 so-mb-4">
+                    <div class="so-bg-primary so-text-white so-p-2 so-rounded" style="flex-grow:0;">No grow</div>
+                    <div class="so-bg-success so-text-white so-p-2 so-rounded" style="flex-grow:1;">Grow</div>
+                    <div class="so-bg-primary so-text-white so-p-2 so-rounded" style="flex-grow:0;">No grow</div>
+                </div>
+                <p class="so-text-muted so-small">Flex shrink:</p>
+                <div class="so-d-flex so-gap-2 so-mb-4" style="width:250px;">
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded" style="flex-shrink:0;width:100px;">No shrink</div>
+                    <div class="so-bg-warning so-text-dark so-p-2 so-rounded" style="flex-shrink:1;width:200px;">Shrinks</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -503,10 +491,8 @@ UiEngine.flex()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-justify-content-center so-align-items-center so-bg-white so-rounded" style="height:150px;">
-                        <div class="so-bg-primary so-text-white so-p-4 so-rounded">Perfectly Centered</div>
-                    </div>
+                <div class="so-d-flex so-justify-content-center so-align-items-center so-bg-light so-rounded so-mb-4" style="height:150px;">
+                    <div class="so-bg-primary so-text-white so-p-4 so-rounded">Perfectly Centered</div>
                 </div>
 
                 <!-- Code Tabs -->

@@ -29,7 +29,7 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <button type="button" class="so-btn so-btn-primary" data-bs-toggle="modal" data-bs-target="#demo-modal">
                         Open Modal
                     </button>

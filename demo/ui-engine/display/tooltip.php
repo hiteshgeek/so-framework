@@ -29,7 +29,7 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" title="This is a tooltip">
                         Hover over me
                     </button>
@@ -77,21 +77,19 @@ document.getElementById('container').innerHTML = button.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-flex-wrap">
-                        <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-                            Top
-                        </button>
-                        <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
-                            Right
-                        </button>
-                        <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
-                            Bottom
-                        </button>
-                        <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
-                            Left
-                        </button>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-flex-wrap so-mb-4">
+                    <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                        Top
+                    </button>
+                    <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
+                        Right
+                    </button>
+                    <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+                        Bottom
+                    </button>
+                    <button type="button" class="so-btn so-btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
+                        Left
+                    </button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -125,15 +123,13 @@ UiEngine.button('Left').tooltip('Tooltip on left', 'left');"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <p>
-                        You can add tooltips to
-                        <a href="#" data-bs-toggle="tooltip" title="This is a link with tooltip">links</a>,
-                        <span data-bs-toggle="tooltip" title="This is a span with tooltip" class="so-text-decoration-underline">inline text</span>,
-                        and
-                        <span class="so-badge so-bg-primary" data-bs-toggle="tooltip" title="Badge tooltip">badges</span>.
-                    </p>
-                </div>
+                <p class="so-mb-4">
+                    You can add tooltips to
+                    <a href="#" data-bs-toggle="tooltip" title="This is a link with tooltip">links</a>,
+                    <span data-bs-toggle="tooltip" title="This is a span with tooltip" class="so-text-decoration-underline">inline text</span>,
+                    and
+                    <span class="so-badge so-bg-primary" data-bs-toggle="tooltip" title="Badge tooltip">badges</span>.
+                </p>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('tooltip-elements', [

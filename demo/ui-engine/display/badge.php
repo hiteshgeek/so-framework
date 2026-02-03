@@ -29,7 +29,7 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <span class="so-badge so-bg-primary">Primary</span>
                     <span class="so-badge so-bg-secondary">Secondary</span>
                     <span class="so-badge so-bg-success">Success</span>
@@ -76,7 +76,7 @@ UiEngine.badge('Info').variant('info').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <span class="so-badge so-rounded-pill so-bg-primary">Primary</span>
                     <span class="so-badge so-rounded-pill so-bg-secondary">Secondary</span>
                     <span class="so-badge so-rounded-pill so-bg-success">Success</span>
@@ -114,7 +114,7 @@ UiEngine.badge('Danger').variant('danger').pill().toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <span class="so-badge so-bg-success">
                         <span class="material-icons" style="font-size: 14px; vertical-align: middle;">check</span> Verified
                     </span>
@@ -155,7 +155,7 @@ UiEngine.badge('Pending').variant('warning').icon('schedule').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <button type="button" class="so-btn so-btn-primary so-position-relative">
                         Inbox
                         <span class="so-position-absolute so-top-0 so-start-100 so-translate-middle so-badge so-rounded-pill so-bg-danger">
@@ -207,7 +207,7 @@ const button2 = UiEngine.button('Notifications')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <div class="so-mb-2">
                         <span class="so-badge so-bg-success" style="width:10px;height:10px;padding:0;border-radius:50%;"></span>
                         <span class="so-ms-2">Online</span>

@@ -29,19 +29,17 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label">Enter verification code</label>
-                        <div class="so-d-flex so-gap-2 so-justify-content-center">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        </div>
-                        <small class="so-form-text so-text-muted so-text-center so-d-block so-mt-2">Enter the 6-digit code sent to your phone</small>
+                <div class="so-form-group">
+                    <label class="so-form-label">Enter verification code</label>
+                    <div class="so-d-flex so-gap-2 so-justify-content-center">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
                     </div>
+                    <div class="so-form-hint so-text-center so-mt-2">Enter the 6-digit code sent to your phone</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -100,29 +98,27 @@ document.getElementById('container').innerHTML = otp.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-mb-4">
-                        <label class="so-form-label">4-digit PIN</label>
-                        <div class="so-d-flex so-gap-2">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
-                        </div>
+                <div class="so-mb-4">
+                    <label class="so-form-label">4-digit PIN</label>
+                    <div class="so-d-flex so-gap-2">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:50px;height:50px;font-size:1.5rem;" maxlength="1">
                     </div>
-                    <div>
-                        <label class="so-form-label">8-digit code</label>
-                        <div class="so-d-flex so-gap-2">
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                            <span class="so-mx-1">-</span>
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                            <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
-                        </div>
+                </div>
+                <div>
+                    <label class="so-form-label">8-digit code</label>
+                    <div class="so-d-flex so-gap-2">
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                        <span class="so-mx-1">-</span>
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
+                        <input type="text" class="so-form-control so-text-center" style="width:40px;height:45px;font-size:1.25rem;" maxlength="1">
                     </div>
                 </div>
 

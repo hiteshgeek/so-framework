@@ -29,14 +29,12 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-1">
-                        <span class="material-icons so-text-warning">star</span>
-                        <span class="material-icons so-text-warning">star</span>
-                        <span class="material-icons so-text-warning">star</span>
-                        <span class="material-icons so-text-warning">star</span>
-                        <span class="material-icons so-text-muted">star_border</span>
-                    </div>
+                <div class="so-d-flex so-gap-1 so-mb-4">
+                    <span class="material-icons so-text-warning">star</span>
+                    <span class="material-icons so-text-warning">star</span>
+                    <span class="material-icons so-text-warning">star</span>
+                    <span class="material-icons so-text-warning">star</span>
+                    <span class="material-icons so-text-muted">star_border</span>
                 </div>
 
                 <!-- Code Tabs -->
@@ -124,15 +122,13 @@ document.getElementById('container').innerHTML = rating.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-1 so-align-items-center">
-                        <span class="material-icons so-text-warning">star</span>
-                        <span class="material-icons so-text-warning">star</span>
-                        <span class="material-icons so-text-warning">star</span>
-                        <span class="material-icons so-text-warning">star_half</span>
-                        <span class="material-icons so-text-muted">star_border</span>
-                        <span class="so-ms-2 so-text-muted">(3.5)</span>
-                    </div>
+                <div class="so-d-flex so-gap-1 so-align-items-center so-mb-4">
+                    <span class="material-icons so-text-warning">star</span>
+                    <span class="material-icons so-text-warning">star</span>
+                    <span class="material-icons so-text-warning">star</span>
+                    <span class="material-icons so-text-warning">star_half</span>
+                    <span class="material-icons so-text-muted">star_border</span>
+                    <span class="so-ms-2 so-text-muted">(3.5)</span>
                 </div>
 
                 <!-- Code Tabs -->
@@ -170,7 +166,7 @@ document.getElementById('container').innerHTML = rating.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <div class="so-mb-3">
                         <small class="so-text-muted">Small</small>
                         <div class="so-d-flex so-gap-1" style="font-size:16px;">

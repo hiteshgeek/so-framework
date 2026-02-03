@@ -29,14 +29,12 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-4 so-align-items-center">
-                        <div class="so-spinner-border" role="status">
-                            <span class="so-visually-hidden">Loading...</span>
-                        </div>
-                        <div class="so-spinner-grow" role="status">
-                            <span class="so-visually-hidden">Loading...</span>
-                        </div>
+                <div class="so-d-flex so-gap-4 so-align-items-center so-mb-4">
+                    <div class="so-spinner-border" role="status">
+                        <span class="so-visually-hidden">Loading...</span>
+                    </div>
+                    <div class="so-spinner-grow" role="status">
+                        <span class="so-visually-hidden">Loading...</span>
                     </div>
                 </div>
 
@@ -88,15 +86,13 @@ UiEngine.spinner().grow().toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-3 so-flex-wrap">
-                        <div class="so-spinner-border so-text-primary" role="status"></div>
-                        <div class="so-spinner-border so-text-secondary" role="status"></div>
-                        <div class="so-spinner-border so-text-success" role="status"></div>
-                        <div class="so-spinner-border so-text-danger" role="status"></div>
-                        <div class="so-spinner-border so-text-warning" role="status"></div>
-                        <div class="so-spinner-border so-text-info" role="status"></div>
-                    </div>
+                <div class="so-d-flex so-gap-3 so-flex-wrap so-mb-4">
+                    <div class="so-spinner-border so-text-primary" role="status"></div>
+                    <div class="so-spinner-border so-text-secondary" role="status"></div>
+                    <div class="so-spinner-border so-text-success" role="status"></div>
+                    <div class="so-spinner-border so-text-danger" role="status"></div>
+                    <div class="so-spinner-border so-text-warning" role="status"></div>
+                    <div class="so-spinner-border so-text-info" role="status"></div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -134,12 +130,10 @@ UiEngine.spinner().variant('info').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-4 so-align-items-center">
-                        <div class="so-spinner-border so-spinner-border-sm" role="status"></div>
-                        <div class="so-spinner-border" role="status"></div>
-                        <div class="so-spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
-                    </div>
+                <div class="so-d-flex so-gap-4 so-align-items-center so-mb-4">
+                    <div class="so-spinner-border so-spinner-border-sm" role="status"></div>
+                    <div class="so-spinner-border" role="status"></div>
+                    <div class="so-spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -181,17 +175,15 @@ UiEngine.spinner().size(48).toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2">
-                        <button class="so-btn so-btn-primary" type="button" disabled>
-                            <span class="so-spinner-border so-spinner-border-sm"></span>
-                            Loading...
-                        </button>
-                        <button class="so-btn so-btn-secondary" type="button" disabled>
-                            <span class="so-spinner-grow so-spinner-grow-sm"></span>
-                            Processing
-                        </button>
-                    </div>
+                <div class="so-d-flex so-gap-2 so-mb-4">
+                    <button class="so-btn so-btn-primary" type="button" disabled>
+                        <span class="so-spinner-border so-spinner-border-sm"></span>
+                        Loading...
+                    </button>
+                    <button class="so-btn so-btn-secondary" type="button" disabled>
+                        <span class="so-spinner-grow so-spinner-grow-sm"></span>
+                        Processing
+                    </button>
                 </div>
 
                 <!-- Code Tabs -->

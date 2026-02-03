@@ -29,23 +29,21 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <form action="/api/contact" method="POST">
-                        <div class="so-form-group so-mb-3">
-                            <label class="so-form-label" for="demo-name">Name</label>
-                            <input type="text" class="so-form-control" id="demo-name" name="name" required>
-                        </div>
-                        <div class="so-form-group so-mb-3">
-                            <label class="so-form-label" for="demo-email">Email</label>
-                            <input type="email" class="so-form-control" id="demo-email" name="email" required>
-                        </div>
-                        <div class="so-form-group so-mb-3">
-                            <label class="so-form-label" for="demo-message">Message</label>
-                            <textarea class="so-form-control" id="demo-message" name="message" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="so-btn so-btn-primary">Submit</button>
-                    </form>
-                </div>
+                <form action="/api/contact" method="POST">
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label" for="demo-name">Name</label>
+                        <input type="text" class="so-form-control" id="demo-name" name="name" required>
+                    </div>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label" for="demo-email">Email</label>
+                        <input type="email" class="so-form-control" id="demo-email" name="email" required>
+                    </div>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label" for="demo-message">Message</label>
+                        <textarea class="so-form-control" id="demo-message" name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="so-btn so-btn-primary">Submit</button>
+                </form>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-form', [
@@ -258,28 +256,26 @@ document.getElementById('container').innerHTML = form.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo - Horizontal -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <h6 class="so-mb-3">Horizontal Layout</h6>
-                    <form>
-                        <div class="so-row so-mb-3">
-                            <label class="so-col-sm-3 so-col-form-label">Email</label>
-                            <div class="so-col-sm-9">
-                                <input type="email" class="so-form-control" placeholder="Email">
-                            </div>
+                <h6 class="so-mb-3">Horizontal Layout</h6>
+                <form class="so-mb-4">
+                    <div class="so-grid so-grid-cols-12 so-gap-3 so-mb-3 so-align-items-center">
+                        <label class="so-col-span-3 so-form-label so-mb-0">Email</label>
+                        <div class="so-col-span-9">
+                            <input type="email" class="so-form-control" placeholder="Email">
                         </div>
-                        <div class="so-row so-mb-3">
-                            <label class="so-col-sm-3 so-col-form-label">Password</label>
-                            <div class="so-col-sm-9">
-                                <input type="password" class="so-form-control" placeholder="Password">
-                            </div>
+                    </div>
+                    <div class="so-grid so-grid-cols-12 so-gap-3 so-mb-3 so-align-items-center">
+                        <label class="so-col-span-3 so-form-label so-mb-0">Password</label>
+                        <div class="so-col-span-9">
+                            <input type="password" class="so-form-control" placeholder="Password">
                         </div>
-                        <div class="so-row">
-                            <div class="so-col-sm-9 so-offset-sm-3">
-                                <button type="submit" class="so-btn so-btn-primary">Sign in</button>
-                            </div>
+                    </div>
+                    <div class="so-grid so-grid-cols-12 so-gap-3">
+                        <div class="so-col-span-9 so-col-start-4">
+                            <button type="submit" class="so-btn so-btn-primary">Sign in</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('form-layouts', [

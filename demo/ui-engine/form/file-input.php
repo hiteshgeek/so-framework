@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-file">Choose file</label>
-                        <input type="file" class="so-form-control" id="demo-file" name="file">
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-file">Choose file</label>
+                    <input type="file" class="so-form-control" id="demo-file" name="file">
                 </div>
 
                 <!-- Code Tabs -->
@@ -79,22 +77,16 @@ document.getElementById('container').innerHTML = file.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-md-6">
-                            <div class="so-form-group">
-                                <label class="so-form-label" for="demo-image">Image files only</label>
-                                <input type="file" class="so-form-control" id="demo-image" accept="image/*">
-                                <small class="so-form-text so-text-muted">Accepts: JPG, PNG, GIF, etc.</small>
-                            </div>
-                        </div>
-                        <div class="so-col-md-6">
-                            <div class="so-form-group">
-                                <label class="so-form-label" for="demo-pdf">PDF files only</label>
-                                <input type="file" class="so-form-control" id="demo-pdf" accept=".pdf">
-                                <small class="so-form-text so-text-muted">Accepts: PDF documents</small>
-                            </div>
-                        </div>
+                <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-image">Image files only</label>
+                        <input type="file" class="so-form-control" id="demo-image" accept="image/*">
+                        <div class="so-form-hint">Accepts: JPG, PNG, GIF, etc.</div>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-pdf">PDF files only</label>
+                        <input type="file" class="so-form-control" id="demo-pdf" accept=".pdf">
+                        <div class="so-form-hint">Accepts: PDF documents</div>
                     </div>
                 </div>
 
@@ -153,12 +145,10 @@ UiEngine.file('media')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-files">Upload multiple files</label>
-                        <input type="file" class="so-form-control" id="demo-files" name="files[]" multiple>
-                        <small class="so-form-text so-text-muted">Hold Ctrl/Cmd to select multiple files</small>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-files">Upload multiple files</label>
+                    <input type="file" class="so-form-control" id="demo-files" name="files[]" multiple>
+                    <div class="so-form-hint">Hold Ctrl/Cmd to select multiple files</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -196,12 +186,10 @@ document.getElementById('container').innerHTML = file.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-limited">Upload file (max 5MB)</label>
-                        <input type="file" class="so-form-control" id="demo-limited" name="limited">
-                        <small class="so-form-text so-text-muted">Maximum file size: 5MB</small>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-limited">Upload file (max 5MB)</label>
+                    <input type="file" class="so-form-control" id="demo-limited" name="limited">
+                    <div class="so-form-hint">Maximum file size: 5MB</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -239,16 +227,16 @@ document.getElementById('container').innerHTML = file.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-mb-3">
+                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                    <div class="so-form-group">
                         <label class="so-form-label">Small</label>
                         <input type="file" class="so-form-control so-form-control-sm">
                     </div>
-                    <div class="so-mb-3">
+                    <div class="so-form-group">
                         <label class="so-form-label">Default</label>
                         <input type="file" class="so-form-control">
                     </div>
-                    <div>
+                    <div class="so-form-group">
                         <label class="so-form-label">Large</label>
                         <input type="file" class="so-form-control so-form-control-lg">
                     </div>

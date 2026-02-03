@@ -29,15 +29,13 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 1</div>
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 2</div>
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 3</div>
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 4</div>
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 5</div>
-                        <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 6</div>
-                    </div>
+                <div class="so-grid so-grid-cols-3 so-gap-3 so-mb-4">
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 1</div>
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 2</div>
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 3</div>
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 4</div>
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 5</div>
+                    <div class="so-bg-primary so-text-white so-p-3 so-rounded">Item 6</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -101,17 +99,15 @@ document.getElementById('container').innerHTML = grid.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-grid so-grid-cols-1 so-grid-cols-sm-2 so-grid-cols-md-3 so-grid-cols-lg-4 so-gap-3">
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">1</div>
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">2</div>
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">3</div>
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">4</div>
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">5</div>
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">6</div>
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">7</div>
-                        <div class="so-bg-success so-text-white so-p-3 so-rounded">8</div>
-                    </div>
+                <div class="so-grid so-grid-cols-1 so-grid-cols-sm-2 so-grid-cols-md-3 so-grid-cols-lg-4 so-gap-3 so-mb-4">
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">1</div>
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">2</div>
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">3</div>
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">4</div>
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">5</div>
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">6</div>
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">7</div>
+                    <div class="so-bg-success so-text-white so-p-3 so-rounded">8</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -157,14 +153,12 @@ document.getElementById('container').innerHTML = grid.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;">
-                        <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
-                        <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
-                        <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
-                        <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
-                        <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
-                    </div>
+                <div class="so-grid so-gap-3 so-mb-4" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));">
+                    <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
+                    <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
+                    <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
+                    <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
+                    <div class="so-bg-info so-text-white so-p-3 so-rounded">Auto</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -212,12 +206,10 @@ const grid2 = UiEngine.grid()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div style="display:grid;grid-template-columns:200px 1fr 100px;gap:1rem;">
-                        <div class="so-bg-warning so-text-dark so-p-3 so-rounded">200px</div>
-                        <div class="so-bg-warning so-text-dark so-p-3 so-rounded">1fr (flexible)</div>
-                        <div class="so-bg-warning so-text-dark so-p-3 so-rounded">100px</div>
-                    </div>
+                <div class="so-grid so-gap-3 so-mb-4" style="grid-template-columns:200px 1fr 100px;">
+                    <div class="so-bg-warning so-text-dark so-p-3 so-rounded">200px</div>
+                    <div class="so-bg-warning so-text-dark so-p-3 so-rounded">1fr (flexible)</div>
+                    <div class="so-bg-warning so-text-dark so-p-3 so-rounded">100px</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -274,13 +266,11 @@ const grid2 = UiEngine.grid()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;gap:1rem;height:250px;">
-                        <div class="so-bg-primary so-text-white so-p-2 so-rounded" style="grid-column:span 2;">Header</div>
-                        <div class="so-bg-secondary so-text-white so-p-2 so-rounded">Sidebar</div>
-                        <div class="so-bg-success so-text-white so-p-2 so-rounded">Main</div>
-                        <div class="so-bg-dark so-text-white so-p-2 so-rounded" style="grid-column:span 2;">Footer</div>
-                    </div>
+                <div class="so-grid so-grid-cols-2 so-gap-3 so-mb-4" style="grid-template-rows:auto 1fr auto;height:250px;">
+                    <div class="so-bg-primary so-text-white so-p-2 so-rounded" style="grid-column:span 2;">Header</div>
+                    <div class="so-bg-secondary so-text-white so-p-2 so-rounded">Sidebar</div>
+                    <div class="so-bg-success so-text-white so-p-2 so-rounded">Main</div>
+                    <div class="so-bg-dark so-text-white so-p-2 so-rounded" style="grid-column:span 2;">Footer</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -328,15 +318,13 @@ document.getElementById('container').innerHTML = grid.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:100px;gap:1rem;">
-                        <div class="so-bg-primary so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center" style="grid-column:span 2;">Span 2 cols</div>
-                        <div class="so-bg-success so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">1</div>
-                        <div class="so-bg-success so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center" style="grid-row:span 2;">Span 2 rows</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">2</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">3</div>
-                        <div class="so-bg-info so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">4</div>
-                    </div>
+                <div class="so-grid so-grid-cols-4 so-gap-3 so-mb-4" style="grid-auto-rows:100px;">
+                    <div class="so-bg-primary so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center" style="grid-column:span 2;">Span 2 cols</div>
+                    <div class="so-bg-success so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">1</div>
+                    <div class="so-bg-success so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center" style="grid-row:span 2;">Span 2 rows</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">2</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">3</div>
+                    <div class="so-bg-info so-text-white so-p-2 so-rounded so-d-flex so-align-items-center so-justify-content-center">4</div>
                 </div>
 
                 <!-- Code Tabs -->

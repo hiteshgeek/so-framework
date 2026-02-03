@@ -29,12 +29,10 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-placeholder-glow">
-                        <span class="so-placeholder so-col-12"></span>
-                        <span class="so-placeholder so-col-10"></span>
-                        <span class="so-placeholder so-col-8"></span>
-                    </div>
+                <div class="so-placeholder-glow so-mb-4">
+                    <span class="so-placeholder so-col-12"></span>
+                    <span class="so-placeholder so-col-10"></span>
+                    <span class="so-placeholder so-col-8"></span>
                 </div>
 
                 <!-- Code Tabs -->
@@ -77,19 +75,17 @@ UiEngine.skeleton().lines(3).toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-4 so-align-items-start">
-                        <div class="so-placeholder-glow">
-                            <div class="so-placeholder so-rounded-circle" style="width:64px;height:64px;"></div>
-                        </div>
-                        <div class="so-placeholder-glow">
-                            <div class="so-placeholder so-rounded" style="width:150px;height:100px;"></div>
-                        </div>
-                        <div class="so-placeholder-glow so-flex-grow-1">
-                            <span class="so-placeholder so-col-7 so-mb-2"></span>
-                            <span class="so-placeholder so-col-4 so-mb-2"></span>
-                            <span class="so-placeholder so-col-8"></span>
-                        </div>
+                <div class="so-d-flex so-gap-4 so-align-items-start so-mb-4">
+                    <div class="so-placeholder-glow">
+                        <div class="so-placeholder so-rounded-circle" style="width:64px;height:64px;"></div>
+                    </div>
+                    <div class="so-placeholder-glow">
+                        <div class="so-placeholder so-rounded" style="width:150px;height:100px;"></div>
+                    </div>
+                    <div class="so-placeholder-glow so-flex-grow-1">
+                        <span class="so-placeholder so-col-7 so-mb-2"></span>
+                        <span class="so-placeholder so-col-4 so-mb-2"></span>
+                        <span class="so-placeholder so-col-8"></span>
                     </div>
                 </div>
 
@@ -132,19 +128,17 @@ UiEngine.skeleton().lines(3).toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row">
-                        <div class="so-col-md-6 so-mb-3">
-                            <p class="so-small so-text-muted so-mb-2">Glow Animation</p>
-                            <div class="so-placeholder-glow">
-                                <span class="so-placeholder so-col-12"></span>
-                            </div>
+                <div class="so-grid so-grid-cols-2 so-gap-4 so-mb-4">
+                    <div>
+                        <p class="so-small so-text-muted so-mb-2">Glow Animation</p>
+                        <div class="so-placeholder-glow">
+                            <span class="so-placeholder so-col-12"></span>
                         </div>
-                        <div class="so-col-md-6 so-mb-3">
-                            <p class="so-small so-text-muted so-mb-2">Wave Animation</p>
-                            <div class="so-placeholder-wave">
-                                <span class="so-placeholder so-col-12"></span>
-                            </div>
+                    </div>
+                    <div>
+                        <p class="so-small so-text-muted so-mb-2">Wave Animation</p>
+                        <div class="so-placeholder-wave">
+                            <span class="so-placeholder so-col-12"></span>
                         </div>
                     </div>
                 </div>
@@ -188,18 +182,16 @@ UiEngine.skeleton().animation('none').lines(2).toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-card" style="max-width:300px;">
+                <div class="so-card so-mb-4" style="max-width:300px;">
+                    <div class="so-placeholder-glow">
+                        <div class="so-placeholder" style="height:150px;width:100%;"></div>
+                    </div>
+                    <div class="so-card-body">
                         <div class="so-placeholder-glow">
-                            <div class="so-placeholder" style="height:150px;width:100%;"></div>
-                        </div>
-                        <div class="so-card-body">
-                            <div class="so-placeholder-glow">
-                                <span class="so-placeholder so-col-7 so-mb-2"></span>
-                                <span class="so-placeholder so-col-12 so-mb-2"></span>
-                                <span class="so-placeholder so-col-10 so-mb-3"></span>
-                                <span class="so-placeholder so-col-4 so-btn so-btn-primary"></span>
-                            </div>
+                            <span class="so-placeholder so-col-7 so-mb-2"></span>
+                            <span class="so-placeholder so-col-12 so-mb-2"></span>
+                            <span class="so-placeholder so-col-10 so-mb-3"></span>
+                            <span class="so-placeholder so-col-4 so-btn so-btn-primary"></span>
                         </div>
                     </div>
                 </div>
@@ -243,22 +235,20 @@ UiEngine.skeleton().card({
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-list-group" style="max-width:400px;">
-                        <?php for ($i = 0; $i < 3; $i++): ?>
-                        <div class="so-list-group-item">
-                            <div class="so-d-flex so-align-items-center">
-                                <div class="so-placeholder-glow so-me-3">
-                                    <div class="so-placeholder so-rounded-circle" style="width:40px;height:40px;"></div>
-                                </div>
-                                <div class="so-placeholder-glow so-flex-grow-1">
-                                    <span class="so-placeholder so-col-6 so-mb-1"></span>
-                                    <span class="so-placeholder so-col-4"></span>
-                                </div>
+                <div class="so-list-group so-mb-4" style="max-width:400px;">
+                    <?php for ($i = 0; $i < 3; $i++): ?>
+                    <div class="so-list-group-item">
+                        <div class="so-d-flex so-align-items-center">
+                            <div class="so-placeholder-glow so-me-3">
+                                <div class="so-placeholder so-rounded-circle" style="width:40px;height:40px;"></div>
+                            </div>
+                            <div class="so-placeholder-glow so-flex-grow-1">
+                                <span class="so-placeholder so-col-6 so-mb-1"></span>
+                                <span class="so-placeholder so-col-4"></span>
                             </div>
                         </div>
-                        <?php endfor; ?>
                     </div>
+                    <?php endfor; ?>
                 </div>
 
                 <!-- Code Tabs -->

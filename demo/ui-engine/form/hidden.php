@@ -139,28 +139,26 @@ const form = UiEngine.form('/users/update')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <form>
-                        <input type="hidden" name="user_id" value="12345">
-                        <input type="hidden" name="_token" value="abc123xyz">
+                <form class="so-mb-4">
+                    <input type="hidden" name="user_id" value="12345">
+                    <input type="hidden" name="_token" value="abc123xyz">
 
-                        <div class="so-form-group so-mb-3">
-                            <label class="so-form-label" for="demo-name">Name</label>
-                            <input type="text" class="so-form-control" id="demo-name" name="name" value="John Doe">
-                        </div>
-                        <div class="so-form-group so-mb-3">
-                            <label class="so-form-label" for="demo-email">Email</label>
-                            <input type="email" class="so-form-control" id="demo-email" name="email" value="john@example.com">
-                        </div>
-                        <button type="submit" class="so-btn so-btn-primary">Update Profile</button>
-                    </form>
-                    <div class="so-mt-3 so-p-2 so-bg-dark so-text-white so-rounded">
-                        <small><strong>Hidden fields in this form:</strong></small>
-                        <ul class="so-mb-0 so-mt-1">
-                            <li><code>user_id = "12345"</code></li>
-                            <li><code>_token = "abc123xyz"</code></li>
-                        </ul>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label" for="demo-name">Name</label>
+                        <input type="text" class="so-form-control" id="demo-name" name="name" value="John Doe">
                     </div>
+                    <div class="so-form-group so-mb-3">
+                        <label class="so-form-label" for="demo-email">Email</label>
+                        <input type="email" class="so-form-control" id="demo-email" name="email" value="john@example.com">
+                    </div>
+                    <button type="submit" class="so-btn so-btn-primary">Update Profile</button>
+                </form>
+                <div class="so-p-2 so-bg-dark so-text-white so-rounded">
+                    <small><strong>Hidden fields in this form:</strong></small>
+                    <ul class="so-mb-0 so-mt-1">
+                        <li><code>user_id = "12345"</code></li>
+                        <li><code>_token = "abc123xyz"</code></li>
+                    </ul>
                 </div>
 
                 <!-- Code Tabs -->

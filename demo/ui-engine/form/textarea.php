@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-message">Message</label>
-                        <textarea class="so-form-control" id="demo-message" name="message" rows="3" placeholder="Enter your message here..."></textarea>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-message">Message</label>
+                    <textarea class="so-form-control" id="demo-message" name="message" rows="3" placeholder="Enter your message here..."></textarea>
                 </div>
 
                 <!-- Code Tabs -->
@@ -83,14 +81,12 @@ document.getElementById('container').innerHTML = textarea.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-bio">Bio</label>
-                        <textarea class="so-form-control" id="demo-bio" name="bio" rows="3" maxlength="200" placeholder="Tell us about yourself..."></textarea>
-                        <div class="so-d-flex so-justify-content-between so-mt-1">
-                            <small class="so-form-text so-text-muted">Maximum 200 characters</small>
-                            <small class="so-form-text so-text-muted"><span id="demo-bio-count">0</span>/200</small>
-                        </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-bio">Bio</label>
+                    <textarea class="so-form-control" id="demo-bio" name="bio" rows="3" maxlength="200" placeholder="Tell us about yourself..."></textarea>
+                    <div class="so-d-flex so-justify-content-between so-mt-1">
+                        <div class="so-form-hint">Maximum 200 characters</div>
+                        <div class="so-form-hint so-form-hint-counter"><span id="demo-bio-count">0</span>/200</div>
                     </div>
                 </div>
 
@@ -133,12 +129,10 @@ document.getElementById('container').innerHTML = textarea.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-content">Content</label>
-                        <textarea class="so-form-control" id="demo-content" name="content" rows="2" placeholder="Start typing and the textarea will grow..."></textarea>
-                        <small class="so-form-text so-text-muted">This textarea will auto-resize based on content</small>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-content">Content</label>
+                    <textarea class="so-form-control" id="demo-content" name="content" rows="2" placeholder="Start typing and the textarea will grow..."></textarea>
+                    <div class="so-form-hint">This textarea will auto-resize based on content</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -180,16 +174,16 @@ document.getElementById('container').innerHTML = textarea.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-mb-3">
+                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                    <div class="so-form-group">
                         <label class="so-form-label">Small</label>
                         <textarea class="so-form-control so-form-control-sm" rows="2" placeholder="Small textarea"></textarea>
                     </div>
-                    <div class="so-mb-3">
+                    <div class="so-form-group">
                         <label class="so-form-label">Default</label>
                         <textarea class="so-form-control" rows="2" placeholder="Default textarea"></textarea>
                     </div>
-                    <div>
+                    <div class="so-form-group">
                         <label class="so-form-label">Large</label>
                         <textarea class="so-form-control so-form-control-lg" rows="2" placeholder="Large textarea"></textarea>
                     </div>
@@ -234,16 +228,14 @@ UiEngine.textarea('large').size('lg').rows(2).placeholder('Large textarea');"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-md-6">
-                            <label class="so-form-label">Disabled</label>
-                            <textarea class="so-form-control" rows="2" disabled>This textarea is disabled</textarea>
-                        </div>
-                        <div class="so-col-md-6">
-                            <label class="so-form-label">Readonly</label>
-                            <textarea class="so-form-control" rows="2" readonly>This textarea is readonly</textarea>
-                        </div>
+                <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label">Disabled</label>
+                        <textarea class="so-form-control" rows="2" disabled>This textarea is disabled</textarea>
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">Readonly</label>
+                        <textarea class="so-form-control" rows="2" readonly>This textarea is readonly</textarea>
                     </div>
                 </div>
 

@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-volume">Volume</label>
-                        <input type="range" class="so-form-range" id="demo-volume" name="volume" min="0" max="100" value="50">
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-volume">Volume</label>
+                    <input type="range" class="so-form-range" id="demo-volume" name="volume" min="0" max="100" value="50">
                 </div>
 
                 <!-- Code Tabs -->
@@ -85,19 +83,17 @@ document.getElementById('container').innerHTML = slider.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group so-mb-3">
-                        <label class="so-form-label">Step: 10</label>
-                        <input type="range" class="so-form-range" min="0" max="100" step="10" value="50">
-                    </div>
-                    <div class="so-form-group so-mb-3">
-                        <label class="so-form-label">Step: 25</label>
-                        <input type="range" class="so-form-range" min="0" max="100" step="25" value="50">
-                    </div>
-                    <div class="so-form-group">
-                        <label class="so-form-label">Step: 0.1 (decimal)</label>
-                        <input type="range" class="so-form-range" min="0" max="1" step="0.1" value="0.5">
-                    </div>
+                <div class="so-form-group so-mb-3">
+                    <label class="so-form-label">Step: 10</label>
+                    <input type="range" class="so-form-range" min="0" max="100" step="10" value="50">
+                </div>
+                <div class="so-form-group so-mb-3">
+                    <label class="so-form-label">Step: 25</label>
+                    <input type="range" class="so-form-range" min="0" max="100" step="25" value="50">
+                </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Step: 0.1 (decimal)</label>
+                    <input type="range" class="so-form-range" min="0" max="1" step="0.1" value="0.5">
                 </div>
 
                 <!-- Code Tabs -->
@@ -145,15 +141,13 @@ UiEngine.slider('decimal')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
-                            <label class="so-form-label so-mb-0" for="demo-brightness">Brightness</label>
-                            <span class="so-badge so-bg-primary" id="demo-brightness-value">75%</span>
-                        </div>
-                        <input type="range" class="so-form-range" id="demo-brightness" min="0" max="100" value="75"
-                               oninput="document.getElementById('demo-brightness-value').textContent = this.value + '%'">
+                <div class="so-form-group">
+                    <div class="so-d-flex so-justify-content-between so-align-items-center so-mb-2">
+                        <label class="so-form-label so-mb-0" for="demo-brightness">Brightness</label>
+                        <span class="so-badge so-bg-primary" id="demo-brightness-value">75%</span>
                     </div>
+                    <input type="range" class="so-form-range" id="demo-brightness" min="0" max="100" value="75"
+                           oninput="document.getElementById('demo-brightness-value').textContent = this.value + '%'">
                 </div>
 
                 <!-- Code Tabs -->

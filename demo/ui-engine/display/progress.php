@@ -29,7 +29,7 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <div class="so-progress so-mb-3">
                         <div class="so-progress-bar" role="progressbar" style="width: 25%"></div>
                     </div>
@@ -78,7 +78,7 @@ UiEngine.progress(100).toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <div class="so-progress so-mb-3" style="height: 20px;">
                         <div class="so-progress-bar" role="progressbar" style="width: 25%">25%</div>
                     </div>
@@ -114,7 +114,7 @@ UiEngine.progress(75).label('Complete').variant('success').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <div class="so-progress so-mb-2">
                         <div class="so-progress-bar so-bg-success" style="width: 25%"></div>
                     </div>
@@ -160,7 +160,7 @@ UiEngine.progress(100).variant('danger').toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <div class="so-progress so-mb-3">
                         <div class="so-progress-bar so-progress-bar-striped" style="width: 50%"></div>
                     </div>
@@ -202,7 +202,7 @@ UiEngine.progress(75).striped().animated().toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <div class="so-progress so-mb-3" style="height: 5px;">
                         <div class="so-progress-bar" style="width: 50%"></div>
                     </div>
@@ -243,12 +243,10 @@ UiEngine.progress(50).height(25).toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-progress">
-                        <div class="so-progress-bar so-bg-success" style="width: 30%"></div>
-                        <div class="so-progress-bar so-bg-warning" style="width: 20%"></div>
-                        <div class="so-progress-bar so-bg-danger" style="width: 10%"></div>
-                    </div>
+                <div class="so-progress so-mb-4">
+                    <div class="so-progress-bar so-bg-success" style="width: 30%"></div>
+                    <div class="so-progress-bar so-bg-warning" style="width: 20%"></div>
+                    <div class="so-progress-bar so-bg-danger" style="width: 10%"></div>
                 </div>
 
                 <!-- Code Tabs -->

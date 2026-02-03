@@ -29,12 +29,10 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row">
-                        <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Auto column</div>
-                        <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Auto column</div>
-                        <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Auto column</div>
-                    </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Auto column</div>
+                    <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Auto column</div>
+                    <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Auto column</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -95,18 +93,16 @@ document.getElementById('container').innerHTML = row.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-mb-2">
-                        <div class="so-col-1 so-bg-info so-text-white so-p-1 so-text-center so-border">1</div>
-                        <div class="so-col-2 so-bg-info so-text-white so-p-1 so-text-center so-border">2</div>
-                        <div class="so-col-3 so-bg-info so-text-white so-p-1 so-text-center so-border">3</div>
-                        <div class="so-col-6 so-bg-info so-text-white so-p-1 so-text-center so-border">6</div>
-                    </div>
-                    <div class="so-row">
-                        <div class="so-col-4 so-bg-success so-text-white so-p-1 so-text-center so-border">4</div>
-                        <div class="so-col-4 so-bg-success so-text-white so-p-1 so-text-center so-border">4</div>
-                        <div class="so-col-4 so-bg-success so-text-white so-p-1 so-text-center so-border">4</div>
-                    </div>
+                <div class="so-row so-mb-2">
+                    <div class="so-col-1 so-bg-info so-text-white so-p-1 so-text-center so-border">1</div>
+                    <div class="so-col-2 so-bg-info so-text-white so-p-1 so-text-center so-border">2</div>
+                    <div class="so-col-3 so-bg-info so-text-white so-p-1 so-text-center so-border">3</div>
+                    <div class="so-col-6 so-bg-info so-text-white so-p-1 so-text-center so-border">6</div>
+                </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col-4 so-bg-success so-text-white so-p-1 so-text-center so-border">4</div>
+                    <div class="so-col-4 so-bg-success so-text-white so-p-1 so-text-center so-border">4</div>
+                    <div class="so-col-4 so-bg-success so-text-white so-p-1 so-text-center so-border">4</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -166,20 +162,18 @@ UiEngine.row()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row">
-                        <div class="so-col-12 so-col-sm-6 so-col-md-4 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
-                            12 → 6 → 4 → 3
-                        </div>
-                        <div class="so-col-12 so-col-sm-6 so-col-md-4 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
-                            12 → 6 → 4 → 3
-                        </div>
-                        <div class="so-col-12 so-col-sm-6 so-col-md-4 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
-                            12 → 6 → 4 → 3
-                        </div>
-                        <div class="so-col-12 so-col-sm-6 so-col-md-12 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
-                            12 → 6 → 12 → 3
-                        </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col-12 so-col-sm-6 so-col-md-4 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
+                        12 → 6 → 4 → 3
+                    </div>
+                    <div class="so-col-12 so-col-sm-6 so-col-md-4 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
+                        12 → 6 → 4 → 3
+                    </div>
+                    <div class="so-col-12 so-col-sm-6 so-col-md-4 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
+                        12 → 6 → 4 → 3
+                    </div>
+                    <div class="so-col-12 so-col-sm-6 so-col-md-12 so-col-lg-3 so-bg-primary so-text-white so-p-2 so-border so-mb-2">
+                        12 → 6 → 12 → 3
                     </div>
                 </div>
 
@@ -240,16 +234,14 @@ UiEngine.column()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-mb-3">
-                        <div class="so-col-auto so-bg-warning so-text-dark so-p-2 so-border">Auto (content width)</div>
-                        <div class="so-col so-bg-success so-text-white so-p-2 so-border">Fill remaining</div>
-                    </div>
-                    <div class="so-row">
-                        <div class="so-col so-bg-info so-text-white so-p-2 so-border">Equal</div>
-                        <div class="so-col-auto so-bg-warning so-text-dark so-p-2 so-border">Content width column</div>
-                        <div class="so-col so-bg-info so-text-white so-p-2 so-border">Equal</div>
-                    </div>
+                <div class="so-row so-mb-3">
+                    <div class="so-col-auto so-bg-warning so-text-dark so-p-2 so-border">Auto (content width)</div>
+                    <div class="so-col so-bg-success so-text-white so-p-2 so-border">Fill remaining</div>
+                </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col so-bg-info so-text-white so-p-2 so-border">Equal</div>
+                    <div class="so-col-auto so-bg-warning so-text-dark so-p-2 so-border">Content width column</div>
+                    <div class="so-col so-bg-info so-text-white so-p-2 so-border">Equal</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -301,17 +293,15 @@ UiEngine.row()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-mb-2">
-                        <div class="so-col-4 so-offset-4 so-bg-primary so-text-white so-p-2 so-text-center">offset-4</div>
-                    </div>
-                    <div class="so-row so-mb-2">
-                        <div class="so-col-3 so-bg-success so-text-white so-p-2 so-text-center">col-3</div>
-                        <div class="so-col-3 so-offset-3 so-bg-success so-text-white so-p-2 so-text-center">offset-3</div>
-                    </div>
-                    <div class="so-row">
-                        <div class="so-col-6 so-offset-3 so-bg-info so-text-white so-p-2 so-text-center">Centered with offset</div>
-                    </div>
+                <div class="so-row so-mb-2">
+                    <div class="so-col-4 so-offset-4 so-bg-primary so-text-white so-p-2 so-text-center">offset-4</div>
+                </div>
+                <div class="so-row so-mb-2">
+                    <div class="so-col-3 so-bg-success so-text-white so-p-2 so-text-center">col-3</div>
+                    <div class="so-col-3 so-offset-3 so-bg-success so-text-white so-p-2 so-text-center">offset-3</div>
+                </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col-6 so-offset-3 so-bg-info so-text-white so-p-2 so-text-center">Centered with offset</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -377,12 +367,10 @@ UiEngine.row()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row">
-                        <div class="so-col so-order-3 so-bg-primary so-text-white so-p-2 so-border">First in DOM, displayed third</div>
-                        <div class="so-col so-order-1 so-bg-success so-text-white so-p-2 so-border">Second in DOM, displayed first</div>
-                        <div class="so-col so-order-2 so-bg-warning so-text-dark so-p-2 so-border">Third in DOM, displayed second</div>
-                    </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col so-order-3 so-bg-primary so-text-white so-p-2 so-border">First in DOM, displayed third</div>
+                    <div class="so-col so-order-1 so-bg-success so-text-white so-p-2 so-border">Second in DOM, displayed first</div>
+                    <div class="so-col so-order-2 so-bg-warning so-text-dark so-p-2 so-border">Third in DOM, displayed second</div>
                 </div>
 
                 <!-- Code Tabs -->

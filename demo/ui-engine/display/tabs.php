@@ -29,7 +29,7 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <ul class="so-nav so-nav-tabs" role="tablist">
                         <li class="so-nav-item">
                             <button class="so-nav-link active" data-bs-toggle="tab" data-bs-target="#demo-home">Home</button>
@@ -92,7 +92,7 @@ document.getElementById('container').innerHTML = tabs.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <ul class="so-nav so-nav-pills so-mb-3">
                         <li class="so-nav-item">
                             <button class="so-nav-link active" data-bs-toggle="pill" data-bs-target="#pill-home">Home</button>

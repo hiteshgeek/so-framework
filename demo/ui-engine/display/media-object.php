@@ -29,17 +29,15 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex">
-                        <div class="so-flex-shrink-0">
-                            <div style="width:64px;height:64px;background:#6c757d;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                                <span class="material-icons so-text-white">person</span>
-                            </div>
+                <div class="so-d-flex so-mb-4">
+                    <div class="so-flex-shrink-0">
+                        <div style="width:64px;height:64px;background:#6c757d;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                            <span class="material-icons so-text-white">person</span>
                         </div>
-                        <div class="so-flex-grow-1 so-ms-3">
-                            <h5 class="so-mt-0">John Doe</h5>
-                            <p class="so-mb-0">This is some placeholder content for the media object. It demonstrates how text wraps around the media element.</p>
-                        </div>
+                    </div>
+                    <div class="so-flex-grow-1 so-ms-3">
+                        <h5 class="so-mt-0">John Doe</h5>
+                        <p class="so-mb-0">This is some placeholder content for the media object. It demonstrates how text wraps around the media element.</p>
                     </div>
                 </div>
 

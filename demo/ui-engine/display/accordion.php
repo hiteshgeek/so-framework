@@ -29,8 +29,7 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-accordion" id="demo-accordion">
+                <div class="so-accordion so-mb-4" id="demo-accordion">
                         <div class="so-accordion-item">
                             <h2 class="so-accordion-header">
                                 <button class="so-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#demo-one">
@@ -68,7 +67,6 @@ require_once '../../includes/navbar.php';
                             </div>
                         </div>
                     </div>
-                </div>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-accordion', [

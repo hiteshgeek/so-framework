@@ -29,21 +29,19 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-country">Country</label>
-                        <input type="text" class="so-form-control" id="demo-country" placeholder="Start typing a country name..." list="countries-list">
-                        <datalist id="countries-list">
-                            <option value="United States">
-                            <option value="United Kingdom">
-                            <option value="Canada">
-                            <option value="Australia">
-                            <option value="Germany">
-                            <option value="France">
-                            <option value="Japan">
-                            <option value="India">
-                        </datalist>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-country">Country</label>
+                    <input type="text" class="so-form-control" id="demo-country" placeholder="Start typing a country name..." list="countries-list">
+                    <datalist id="countries-list">
+                        <option value="United States">
+                        <option value="United Kingdom">
+                        <option value="Canada">
+                        <option value="Australia">
+                        <option value="Germany">
+                        <option value="France">
+                        <option value="Japan">
+                        <option value="India">
+                    </datalist>
                 </div>
 
                 <!-- Code Tabs -->

@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-color">Choose Color</label>
-                        <input type="color" class="so-form-control so-form-control-color" id="demo-color" name="color" value="#3b82f6">
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-color">Choose Color</label>
+                    <input type="color" class="so-form-control so-form-control-color" id="demo-color" name="color" value="#3b82f6">
                 </div>
 
                 <!-- Code Tabs -->
@@ -82,19 +80,17 @@ document.getElementById('container').innerHTML = color.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label">Brand Color</label>
-                        <div class="so-d-flex so-gap-2 so-mb-2">
-                            <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#ef4444;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#ef4444'"></button>
-                            <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#f97316;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#f97316'"></button>
-                            <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#eab308;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#eab308'"></button>
-                            <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#22c55e;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#22c55e'"></button>
-                            <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#3b82f6;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#3b82f6'"></button>
-                            <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#8b5cf6;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#8b5cf6'"></button>
-                        </div>
-                        <input type="color" class="so-form-control so-form-control-color" id="demo-preset" value="#3b82f6">
+                <div class="so-form-group">
+                    <label class="so-form-label">Brand Color</label>
+                    <div class="so-d-flex so-gap-2 so-mb-2">
+                        <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#ef4444;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#ef4444'"></button>
+                        <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#f97316;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#f97316'"></button>
+                        <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#eab308;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#eab308'"></button>
+                        <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#22c55e;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#22c55e'"></button>
+                        <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#3b82f6;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#3b82f6'"></button>
+                        <button type="button" class="so-btn so-p-0" style="width:32px;height:32px;background:#8b5cf6;border-radius:4px;border:2px solid transparent;" onclick="document.getElementById('demo-preset').value='#8b5cf6'"></button>
                     </div>
+                    <input type="color" class="so-form-control so-form-control-color" id="demo-preset" value="#3b82f6">
                 </div>
 
                 <!-- Code Tabs -->
@@ -208,13 +204,11 @@ UiEngine.color('rgba_color')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label">Background Color</label>
-                        <div class="so-input-group">
-                            <input type="color" class="so-form-control so-form-control-color" id="demo-combined" value="#3b82f6" style="width:50px;">
-                            <input type="text" class="so-form-control" id="demo-combined-text" value="#3b82f6" placeholder="#000000">
-                        </div>
+                <div class="so-form-group">
+                    <label class="so-form-label">Background Color</label>
+                    <div class="so-input-group">
+                        <input type="color" class="so-form-control so-form-control-color" id="demo-combined" value="#3b82f6" style="width:50px;">
+                        <input type="text" class="so-form-control" id="demo-combined-text" value="#3b82f6" placeholder="#000000">
                     </div>
                 </div>
 

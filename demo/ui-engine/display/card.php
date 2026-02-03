@@ -29,13 +29,11 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-card" style="max-width: 400px;">
-                        <div class="so-card-body">
-                            <h5 class="so-card-title">Card Title</h5>
-                            <p class="so-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="so-btn so-btn-primary">Go somewhere</a>
-                        </div>
+                <div class="so-card so-mb-4" style="max-width: 400px;">
+                    <div class="so-card-body">
+                        <h5 class="so-card-title">Card Title</h5>
+                        <p class="so-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="so-btn so-btn-primary">Go somewhere</a>
                     </div>
                 </div>
 
@@ -77,16 +75,14 @@ document.getElementById('container').innerHTML = card.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-card" style="max-width: 400px;">
-                        <div class="so-card-header">Featured</div>
-                        <div class="so-card-body">
-                            <h5 class="so-card-title">Special title treatment</h5>
-                            <p class="so-card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="so-btn so-btn-primary">Go somewhere</a>
-                        </div>
-                        <div class="so-card-footer so-text-muted">2 days ago</div>
+                <div class="so-card so-mb-4" style="max-width: 400px;">
+                    <div class="so-card-header">Featured</div>
+                    <div class="so-card-body">
+                        <h5 class="so-card-title">Special title treatment</h5>
+                        <p class="so-card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="so-btn so-btn-primary">Go somewhere</a>
                     </div>
+                    <div class="so-card-footer so-text-muted">2 days ago</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -128,15 +124,13 @@ document.getElementById('container').innerHTML = card.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-card" style="max-width: 300px;">
-                        <div style="height:150px;background:#6c757d;display:flex;align-items:center;justify-content:center;">
-                            <span class="material-icons so-text-white" style="font-size:48px;">image</span>
-                        </div>
-                        <div class="so-card-body">
-                            <h5 class="so-card-title">Card with Image</h5>
-                            <p class="so-card-text">This card has an image at the top.</p>
-                        </div>
+                <div class="so-card so-mb-4" style="max-width: 300px;">
+                    <div style="height:150px;background:#6c757d;display:flex;align-items:center;justify-content:center;">
+                        <span class="material-icons so-text-white" style="font-size:48px;">image</span>
+                    </div>
+                    <div class="so-card-body">
+                        <h5 class="so-card-title">Card with Image</h5>
+                        <p class="so-card-text">This card has an image at the top.</p>
                     </div>
                 </div>
 

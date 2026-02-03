@@ -29,13 +29,11 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-checkbox">
-                        <input type="checkbox" name="terms">
-                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                        <span class="so-checkbox-label">I agree to the terms and conditions</span>
-                    </label>
-                </div>
+                <label class="so-checkbox">
+                    <input type="checkbox" name="terms">
+                    <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                    <span class="so-checkbox-label">I agree to the terms and conditions</span>
+                </label>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-checkbox', [
@@ -81,25 +79,23 @@ document.getElementById('container').innerHTML = checkbox.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label so-mb-2">Select your interests</label>
-                    <div class="so-checkbox-group so-checkbox-group-vertical">
-                        <label class="so-checkbox">
-                            <input type="checkbox" name="interests[]" value="tech">
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Technology</span>
-                        </label>
-                        <label class="so-checkbox">
-                            <input type="checkbox" name="interests[]" value="sports">
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Sports</span>
-                        </label>
-                        <label class="so-checkbox">
-                            <input type="checkbox" name="interests[]" value="music">
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Music</span>
-                        </label>
-                    </div>
+                <label class="so-form-label so-mb-2">Select your interests</label>
+                <div class="so-checkbox-group so-checkbox-group-vertical">
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="interests[]" value="tech">
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Technology</span>
+                    </label>
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="interests[]" value="sports">
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Sports</span>
+                    </label>
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="interests[]" value="music">
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Music</span>
+                    </label>
                 </div>
 
                 <!-- Code Tabs -->
@@ -143,25 +139,23 @@ document.getElementById('container').innerHTML = checkboxGroup.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <label class="so-form-label so-mb-2">Size options</label>
-                    <div class="so-checkbox-group so-checkbox-group-inline">
-                        <label class="so-checkbox">
-                            <input type="checkbox" name="sizes[]" value="sm">
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Small</span>
-                        </label>
-                        <label class="so-checkbox">
-                            <input type="checkbox" name="sizes[]" value="md">
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Medium</span>
-                        </label>
-                        <label class="so-checkbox">
-                            <input type="checkbox" name="sizes[]" value="lg">
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Large</span>
-                        </label>
-                    </div>
+                <label class="so-form-label so-mb-2">Size options</label>
+                <div class="so-checkbox-group so-checkbox-group-inline">
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="sizes[]" value="sm">
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Small</span>
+                    </label>
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="sizes[]" value="md">
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Medium</span>
+                    </label>
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="sizes[]" value="lg">
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Large</span>
+                    </label>
                 </div>
 
                 <!-- Code Tabs -->
@@ -207,24 +201,22 @@ document.getElementById('container').innerHTML = checkboxGroup.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-checkbox-group so-checkbox-group-vertical">
-                        <label class="so-checkbox">
-                            <input type="checkbox" name="checked" checked>
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Checked checkbox</span>
-                        </label>
-                        <label class="so-checkbox disabled">
-                            <input type="checkbox" name="disabled" disabled>
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Disabled checkbox</span>
-                        </label>
-                        <label class="so-checkbox disabled">
-                            <input type="checkbox" name="both" checked disabled>
-                            <span class="so-checkbox-box"><span class="material-icons">check</span></span>
-                            <span class="so-checkbox-label">Checked and disabled</span>
-                        </label>
-                    </div>
+                <div class="so-checkbox-group so-checkbox-group-vertical">
+                    <label class="so-checkbox">
+                        <input type="checkbox" name="checked" checked>
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Checked checkbox</span>
+                    </label>
+                    <label class="so-checkbox so-disabled">
+                        <input type="checkbox" name="disabled" disabled>
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Disabled checkbox</span>
+                    </label>
+                    <label class="so-checkbox so-disabled">
+                        <input type="checkbox" name="both" checked disabled>
+                        <span class="so-checkbox-box"><span class="material-icons">check</span></span>
+                        <span class="so-checkbox-label">Checked and disabled</span>
+                    </label>
                 </div>
 
                 <!-- Code Tabs -->

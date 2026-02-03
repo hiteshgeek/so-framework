@@ -29,12 +29,10 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row">
-                        <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Column 1</div>
-                        <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Column 2</div>
-                        <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Column 3</div>
-                    </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Column 1</div>
+                    <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Column 2</div>
+                    <div class="so-col so-bg-primary so-text-white so-p-3 so-border">Column 3</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -85,20 +83,18 @@ document.getElementById('container').innerHTML = row.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-mb-3">
-                        <div class="so-col-6 so-bg-info so-text-white so-p-2 so-border">col-6</div>
-                        <div class="so-col-6 so-bg-info so-text-white so-p-2 so-border">col-6</div>
-                    </div>
-                    <div class="so-row so-mb-3">
-                        <div class="so-col-4 so-bg-success so-text-white so-p-2 so-border">col-4</div>
-                        <div class="so-col-8 so-bg-success so-text-white so-p-2 so-border">col-8</div>
-                    </div>
-                    <div class="so-row">
-                        <div class="so-col-3 so-bg-warning so-text-dark so-p-2 so-border">col-3</div>
-                        <div class="so-col-6 so-bg-warning so-text-dark so-p-2 so-border">col-6</div>
-                        <div class="so-col-3 so-bg-warning so-text-dark so-p-2 so-border">col-3</div>
-                    </div>
+                <div class="so-row so-mb-3">
+                    <div class="so-col-6 so-bg-info so-text-white so-p-2 so-border">col-6</div>
+                    <div class="so-col-6 so-bg-info so-text-white so-p-2 so-border">col-6</div>
+                </div>
+                <div class="so-row so-mb-3">
+                    <div class="so-col-4 so-bg-success so-text-white so-p-2 so-border">col-4</div>
+                    <div class="so-col-8 so-bg-success so-text-white so-p-2 so-border">col-8</div>
+                </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col-3 so-bg-warning so-text-dark so-p-2 so-border">col-3</div>
+                    <div class="so-col-6 so-bg-warning so-text-dark so-p-2 so-border">col-6</div>
+                    <div class="so-col-3 so-bg-warning so-text-dark so-p-2 so-border">col-3</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -154,17 +150,15 @@ UiEngine.row()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row">
-                        <div class="so-col-12 so-col-md-6 so-col-lg-4 so-bg-primary so-text-white so-p-2 so-border so-mb-2 so-mb-lg-0">
-                            Full → Half → Third
-                        </div>
-                        <div class="so-col-12 so-col-md-6 so-col-lg-4 so-bg-primary so-text-white so-p-2 so-border so-mb-2 so-mb-lg-0">
-                            Full → Half → Third
-                        </div>
-                        <div class="so-col-12 so-col-md-12 so-col-lg-4 so-bg-primary so-text-white so-p-2 so-border">
-                            Full → Full → Third
-                        </div>
+                <div class="so-row so-mb-4">
+                    <div class="so-col-12 so-col-md-6 so-col-lg-4 so-bg-primary so-text-white so-p-2 so-border so-mb-2 so-mb-lg-0">
+                        Full → Half → Third
+                    </div>
+                    <div class="so-col-12 so-col-md-6 so-col-lg-4 so-bg-primary so-text-white so-p-2 so-border so-mb-2 so-mb-lg-0">
+                        Full → Half → Third
+                    </div>
+                    <div class="so-col-12 so-col-md-12 so-col-lg-4 so-bg-primary so-text-white so-p-2 so-border">
+                        Full → Full → Third
                     </div>
                 </div>
 
@@ -227,19 +221,17 @@ document.getElementById('container').innerHTML = row.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <p class="so-text-muted so-mb-2">No gutters (g-0):</p>
-                    <div class="so-row so-g-0 so-mb-4">
-                        <div class="so-col-4"><div class="so-bg-info so-text-white so-p-2">Col</div></div>
-                        <div class="so-col-4"><div class="so-bg-success so-text-white so-p-2">Col</div></div>
-                        <div class="so-col-4"><div class="so-bg-warning so-text-dark so-p-2">Col</div></div>
-                    </div>
-                    <p class="so-text-muted so-mb-2">Large gutters (g-4):</p>
-                    <div class="so-row so-g-4">
-                        <div class="so-col-4"><div class="so-bg-info so-text-white so-p-2">Col</div></div>
-                        <div class="so-col-4"><div class="so-bg-success so-text-white so-p-2">Col</div></div>
-                        <div class="so-col-4"><div class="so-bg-warning so-text-dark so-p-2">Col</div></div>
-                    </div>
+                <p class="so-text-muted so-mb-2">No gutters (g-0):</p>
+                <div class="so-row so-g-0 so-mb-4">
+                    <div class="so-col-4"><div class="so-bg-info so-text-white so-p-2">Col</div></div>
+                    <div class="so-col-4"><div class="so-bg-success so-text-white so-p-2">Col</div></div>
+                    <div class="so-col-4"><div class="so-bg-warning so-text-dark so-p-2">Col</div></div>
+                </div>
+                <p class="so-text-muted so-mb-2">Large gutters (g-4):</p>
+                <div class="so-row so-g-4 so-mb-4">
+                    <div class="so-col-4"><div class="so-bg-info so-text-white so-p-2">Col</div></div>
+                    <div class="so-col-4"><div class="so-bg-success so-text-white so-p-2">Col</div></div>
+                    <div class="so-col-4"><div class="so-bg-warning so-text-dark so-p-2">Col</div></div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -309,12 +301,10 @@ UiEngine.row()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-align-items-center so-bg-white" style="height:100px;">
-                        <div class="so-col so-bg-primary so-text-white so-p-2">Centered</div>
-                        <div class="so-col so-bg-success so-text-white so-p-2">Centered</div>
-                        <div class="so-col so-bg-info so-text-white so-p-2">Centered</div>
-                    </div>
+                <div class="so-row so-align-items-center so-bg-light so-mb-4" style="height:100px;">
+                    <div class="so-col so-bg-primary so-text-white so-p-2">Centered</div>
+                    <div class="so-col so-bg-success so-text-white so-p-2">Centered</div>
+                    <div class="so-col so-bg-info so-text-white so-p-2">Centered</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -380,15 +370,13 @@ UiEngine.row()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-justify-content-center so-mb-3">
-                        <div class="so-col-3 so-bg-primary so-text-white so-p-2">Centered</div>
-                        <div class="so-col-3 so-bg-primary so-text-white so-p-2">Centered</div>
-                    </div>
-                    <div class="so-row so-justify-content-between">
-                        <div class="so-col-3 so-bg-success so-text-white so-p-2">Left</div>
-                        <div class="so-col-3 so-bg-success so-text-white so-p-2">Right</div>
-                    </div>
+                <div class="so-row so-justify-content-center so-mb-3">
+                    <div class="so-col-3 so-bg-primary so-text-white so-p-2">Centered</div>
+                    <div class="so-col-3 so-bg-primary so-text-white so-p-2">Centered</div>
+                </div>
+                <div class="so-row so-justify-content-between so-mb-4">
+                    <div class="so-col-3 so-bg-success so-text-white so-p-2">Left</div>
+                    <div class="so-col-3 so-bg-success so-text-white so-p-2">Right</div>
                 </div>
 
                 <!-- Code Tabs -->

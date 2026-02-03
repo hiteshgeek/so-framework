@@ -29,38 +29,36 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <table class="so-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>john@example.com</td>
-                                <td>Admin</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jane Smith</td>
-                                <td>jane@example.com</td>
-                                <td>Editor</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Bob Wilson</td>
-                                <td>bob@example.com</td>
-                                <td>User</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="so-table so-mb-4">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>Admin</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>jane@example.com</td>
+                            <td>Editor</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Bob Wilson</td>
+                            <td>bob@example.com</td>
+                            <td>User</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-table', [

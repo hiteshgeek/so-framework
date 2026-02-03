@@ -29,15 +29,13 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-text-center so-py-5">
-                        <span class="material-icons so-text-muted" style="font-size:64px;">inbox</span>
-                        <h5 class="so-mt-3">No items yet</h5>
-                        <p class="so-text-muted">Get started by creating your first item.</p>
-                        <button class="so-btn so-btn-primary">
-                            <span class="material-icons" style="font-size:18px;">add</span> Create Item
-                        </button>
-                    </div>
+                <div class="so-text-center so-py-5 so-mb-4">
+                    <span class="material-icons so-text-muted" style="font-size:64px;">inbox</span>
+                    <h5 class="so-mt-3">No items yet</h5>
+                    <p class="so-text-muted">Get started by creating your first item.</p>
+                    <button class="so-btn so-btn-primary">
+                        <span class="material-icons" style="font-size:18px;">add</span> Create Item
+                    </button>
                 </div>
 
                 <!-- Code Tabs -->
@@ -192,19 +190,17 @@ UiEngine.emptyState()
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-text-center so-py-5">
-                        <span class="material-icons so-text-muted" style="font-size:64px;">folder_open</span>
-                        <h5 class="so-mt-3">No files uploaded</h5>
-                        <p class="so-text-muted">Upload files or create a new folder to organize your content.</p>
-                        <div class="so-d-flex so-gap-2 so-justify-content-center">
-                            <button class="so-btn so-btn-primary">
-                                <span class="material-icons" style="font-size:18px;">upload</span> Upload Files
-                            </button>
-                            <button class="so-btn so-btn-outline-secondary">
-                                <span class="material-icons" style="font-size:18px;">create_new_folder</span> New Folder
-                            </button>
-                        </div>
+                <div class="so-text-center so-py-5 so-mb-4">
+                    <span class="material-icons so-text-muted" style="font-size:64px;">folder_open</span>
+                    <h5 class="so-mt-3">No files uploaded</h5>
+                    <p class="so-text-muted">Upload files or create a new folder to organize your content.</p>
+                    <div class="so-d-flex so-gap-2 so-justify-content-center">
+                        <button class="so-btn so-btn-primary">
+                            <span class="material-icons" style="font-size:18px;">upload</span> Upload Files
+                        </button>
+                        <button class="so-btn so-btn-outline-secondary">
+                            <span class="material-icons" style="font-size:18px;">create_new_folder</span> New Folder
+                        </button>
                     </div>
                 </div>
 

@@ -29,19 +29,17 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <nav aria-label="Page navigation">
-                        <ul class="so-pagination">
-                            <li class="so-page-item"><a class="so-page-link" href="#">Previous</a></li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">1</a></li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">2</a></li>
-                            <li class="so-page-item active"><a class="so-page-link" href="#">3</a></li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">4</a></li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">5</a></li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                <nav aria-label="Page navigation" class="so-mb-4">
+                    <ul class="so-pagination">
+                        <li class="so-page-item"><a class="so-page-link" href="#">Previous</a></li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">1</a></li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">2</a></li>
+                        <li class="so-page-item active"><a class="so-page-link" href="#">3</a></li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">4</a></li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">5</a></li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('basic-pagination', [
@@ -84,35 +82,33 @@ document.getElementById('container').innerHTML = pagination.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <nav aria-label="Page navigation">
-                        <ul class="so-pagination">
-                            <li class="so-page-item">
-                                <a class="so-page-link" href="#">
-                                    <span class="material-icons" style="font-size:18px;">first_page</span>
-                                </a>
-                            </li>
-                            <li class="so-page-item">
-                                <a class="so-page-link" href="#">
-                                    <span class="material-icons" style="font-size:18px;">chevron_left</span>
-                                </a>
-                            </li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">1</a></li>
-                            <li class="so-page-item active"><a class="so-page-link" href="#">2</a></li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">3</a></li>
-                            <li class="so-page-item">
-                                <a class="so-page-link" href="#">
-                                    <span class="material-icons" style="font-size:18px;">chevron_right</span>
-                                </a>
-                            </li>
-                            <li class="so-page-item">
-                                <a class="so-page-link" href="#">
-                                    <span class="material-icons" style="font-size:18px;">last_page</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                <nav aria-label="Page navigation" class="so-mb-4">
+                    <ul class="so-pagination">
+                        <li class="so-page-item">
+                            <a class="so-page-link" href="#">
+                                <span class="material-icons" style="font-size:18px;">first_page</span>
+                            </a>
+                        </li>
+                        <li class="so-page-item">
+                            <a class="so-page-link" href="#">
+                                <span class="material-icons" style="font-size:18px;">chevron_left</span>
+                            </a>
+                        </li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">1</a></li>
+                        <li class="so-page-item active"><a class="so-page-link" href="#">2</a></li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">3</a></li>
+                        <li class="so-page-item">
+                            <a class="so-page-link" href="#">
+                                <span class="material-icons" style="font-size:18px;">chevron_right</span>
+                            </a>
+                        </li>
+                        <li class="so-page-item">
+                            <a class="so-page-link" href="#">
+                                <span class="material-icons" style="font-size:18px;">last_page</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('pagination-icons', [
@@ -153,7 +149,7 @@ document.getElementById('container').innerHTML = pagination.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
+                <div class="so-mb-4">
                     <nav class="so-mb-3">
                         <ul class="so-pagination so-pagination-sm">
                             <li class="so-page-item"><a class="so-page-link" href="#">1</a></li>
@@ -257,14 +253,12 @@ document.getElementById('container').innerHTML = pagination.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <nav aria-label="Page navigation">
-                        <ul class="so-pagination">
-                            <li class="so-page-item"><a class="so-page-link" href="#">Previous</a></li>
-                            <li class="so-page-item"><a class="so-page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                <nav aria-label="Page navigation" class="so-mb-4">
+                    <ul class="so-pagination">
+                        <li class="so-page-item"><a class="so-page-link" href="#">Previous</a></li>
+                        <li class="so-page-item"><a class="so-page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
 
                 <!-- Code Tabs -->
                 <?= so_code_tabs('pagination-simple', [

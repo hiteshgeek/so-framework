@@ -29,14 +29,12 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <button class="so-btn so-btn-primary so-mb-3" type="button" data-so-toggle="collapse" data-so-target="#collapseDemo">
-                        Toggle Content
-                    </button>
-                    <div class="so-collapse" id="collapseDemo">
-                        <div class="so-card so-card-body">
-                            This is collapsible content. It can contain any HTML elements including text, images, forms, and other components.
-                        </div>
+                <button class="so-btn so-btn-primary so-mb-3" type="button" data-so-toggle="collapse" data-so-target="#collapseDemo">
+                    Toggle Content
+                </button>
+                <div class="so-collapse" id="collapseDemo">
+                    <div class="so-card so-card-body">
+                        This is collapsible content. It can contain any HTML elements including text, images, forms, and other components.
                     </div>
                 </div>
 
@@ -112,14 +110,12 @@ bsCollapse.hide();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <a class="so-btn so-btn-link" data-so-toggle="collapse" href="#collapseLinkDemo">
-                        Show More <span class="material-icons so-align-middle">expand_more</span>
-                    </a>
-                    <div class="so-collapse" id="collapseLinkDemo">
-                        <div class="so-mt-3 so-p-3 so-bg-white so-rounded so-border">
-                            Additional content revealed when the link is clicked. This pattern is useful for "read more" functionality.
-                        </div>
+                <a class="so-btn so-btn-link" data-so-toggle="collapse" href="#collapseLinkDemo">
+                    Show More <span class="material-icons so-align-middle">expand_more</span>
+                </a>
+                <div class="so-collapse" id="collapseLinkDemo">
+                    <div class="so-mt-3 so-p-3 so-bg-white so-rounded so-border">
+                        Additional content revealed when the link is clicked. This pattern is useful for "read more" functionality.
                     </div>
                 </div>
 
@@ -165,15 +161,13 @@ document.getElementById('container').innerHTML =
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <button class="so-btn so-btn-primary so-mb-3" type="button" data-so-toggle="collapse" data-so-target="#collapseHorizontal">
-                        Toggle Width
-                    </button>
-                    <div style="min-height:100px;">
-                        <div class="so-collapse so-collapse-horizontal" id="collapseHorizontal">
-                            <div class="so-card so-card-body" style="width:300px;">
-                                This collapses horizontally instead of vertically!
-                            </div>
+                <button class="so-btn so-btn-primary so-mb-3" type="button" data-so-toggle="collapse" data-so-target="#collapseHorizontal">
+                    Toggle Width
+                </button>
+                <div style="min-height:100px;">
+                    <div class="so-collapse so-collapse-horizontal" id="collapseHorizontal">
+                        <div class="so-card so-card-body" style="width:300px;">
+                            This collapses horizontally instead of vertically!
                         </div>
                     </div>
                 </div>
@@ -218,29 +212,23 @@ const collapse = UiEngine.collapse('sidebar')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-d-flex so-gap-2 so-mb-3">
-                        <button class="so-btn so-btn-primary" type="button" data-so-toggle="collapse" data-so-target="#multiCollapse1">
-                            Toggle First
-                        </button>
-                        <button class="so-btn so-btn-secondary" type="button" data-so-toggle="collapse" data-so-target="#multiCollapse2">
-                            Toggle Second
-                        </button>
-                        <button class="so-btn so-btn-success" type="button" data-so-toggle="collapse" data-so-target=".multi-collapse">
-                            Toggle Both
-                        </button>
+                <div class="so-d-flex so-gap-2 so-mb-3">
+                    <button class="so-btn so-btn-primary" type="button" data-so-toggle="collapse" data-so-target="#multiCollapse1">
+                        Toggle First
+                    </button>
+                    <button class="so-btn so-btn-secondary" type="button" data-so-toggle="collapse" data-so-target="#multiCollapse2">
+                        Toggle Second
+                    </button>
+                    <button class="so-btn so-btn-success" type="button" data-so-toggle="collapse" data-so-target=".multi-collapse">
+                        Toggle Both
+                    </button>
+                </div>
+                <div class="so-grid so-grid-cols-2">
+                    <div class="so-collapse multi-collapse" id="multiCollapse1">
+                        <div class="so-card so-card-body">First collapsible element</div>
                     </div>
-                    <div class="so-row">
-                        <div class="so-col">
-                            <div class="so-collapse multi-collapse" id="multiCollapse1">
-                                <div class="so-card so-card-body">First collapsible element</div>
-                            </div>
-                        </div>
-                        <div class="so-col">
-                            <div class="so-collapse multi-collapse" id="multiCollapse2">
-                                <div class="so-card so-card-body">Second collapsible element</div>
-                            </div>
-                        </div>
+                    <div class="so-collapse multi-collapse" id="multiCollapse2">
+                        <div class="so-card so-card-body">Second collapsible element</div>
                     </div>
                 </div>
 

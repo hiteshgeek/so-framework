@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-date">Select Date</label>
-                        <input type="date" class="so-form-control" id="demo-date" name="date">
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-date">Select Date</label>
+                    <input type="date" class="so-form-control" id="demo-date" name="date">
                 </div>
 
                 <!-- Code Tabs -->
@@ -79,12 +77,10 @@ document.getElementById('container').innerHTML = datePicker.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-booking">Booking Date</label>
-                        <input type="date" class="so-form-control" id="demo-booking" min="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d', strtotime('+30 days')) ?>">
-                        <small class="so-form-text so-text-muted">Select a date within the next 30 days</small>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-booking">Booking Date</label>
+                    <input type="date" class="so-form-control" id="demo-booking" min="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d', strtotime('+30 days')) ?>">
+                    <div class="so-form-hint">Select a date within the next 30 days</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -127,16 +123,14 @@ document.getElementById('container').innerHTML = datePicker.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-md-6">
-                            <label class="so-form-label" for="demo-start">Start Date</label>
-                            <input type="date" class="so-form-control" id="demo-start" name="start_date">
-                        </div>
-                        <div class="so-col-md-6">
-                            <label class="so-form-label" for="demo-end">End Date</label>
-                            <input type="date" class="so-form-control" id="demo-end" name="end_date">
-                        </div>
+                <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-start">Start Date</label>
+                        <input type="date" class="so-form-control" id="demo-start" name="start_date">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-end">End Date</label>
+                        <input type="date" class="so-form-control" id="demo-end" name="end_date">
                     </div>
                 </div>
 
@@ -252,11 +246,9 @@ UiEngine.datePicker('long_date')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-default">Event Date</label>
-                        <input type="date" class="so-form-control" id="demo-default" value="<?= date('Y-m-d') ?>">
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-default">Event Date</label>
+                    <input type="date" class="so-form-control" id="demo-default" value="<?= date('Y-m-d') ?>">
                 </div>
 
                 <!-- Code Tabs -->

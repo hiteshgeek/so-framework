@@ -29,13 +29,11 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-dropzone so-p-5 so-border so-border-dashed so-rounded so-text-center" style="border-color: #dee2e6;">
-                        <span class="material-icons so-text-muted" style="font-size: 48px;">cloud_upload</span>
-                        <p class="so-mt-2 so-mb-1">Drag and drop files here</p>
-                        <p class="so-text-muted so-small">or click to browse</p>
-                        <input type="file" class="so-d-none" multiple>
-                    </div>
+                <div class="so-dropzone so-p-5 so-border so-border-dashed so-rounded so-text-center" style="border-color: #dee2e6;">
+                    <span class="material-icons so-text-muted" style="font-size: 48px;">cloud_upload</span>
+                    <p class="so-mt-2 so-mb-1">Drag and drop files here</p>
+                    <p class="so-text-muted so-small">or click to browse</p>
+                    <input type="file" class="so-d-none" multiple>
                 </div>
 
                 <!-- Code Tabs -->
@@ -92,12 +90,10 @@ document.getElementById('container').innerHTML = dropzone.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-dropzone so-p-5 so-border so-border-dashed so-rounded so-text-center" style="border-color: #dee2e6;">
-                        <span class="material-icons so-text-muted" style="font-size: 48px;">image</span>
-                        <p class="so-mt-2 so-mb-1">Drop images here</p>
-                        <p class="so-text-muted so-small">Accepts: JPG, PNG, GIF (max 5MB)</p>
-                    </div>
+                <div class="so-dropzone so-p-5 so-border so-border-dashed so-rounded so-text-center" style="border-color: #dee2e6;">
+                    <span class="material-icons so-text-muted" style="font-size: 48px;">image</span>
+                    <p class="so-mt-2 so-mb-1">Drop images here</p>
+                    <p class="so-text-muted so-small">Accepts: JPG, PNG, GIF (max 5MB)</p>
                 </div>
 
                 <!-- Code Tabs -->

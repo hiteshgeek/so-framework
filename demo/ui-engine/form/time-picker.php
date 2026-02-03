@@ -29,11 +29,9 @@ require_once '../../includes/navbar.php';
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-time">Select Time</label>
-                        <input type="time" class="so-form-control" id="demo-time" name="time">
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-time">Select Time</label>
+                    <input type="time" class="so-form-control" id="demo-time" name="time">
                 </div>
 
                 <!-- Code Tabs -->
@@ -79,12 +77,10 @@ document.getElementById('container').innerHTML = timePicker.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-form-group">
-                        <label class="so-form-label" for="demo-business">Business Hours</label>
-                        <input type="time" class="so-form-control" id="demo-business" min="09:00" max="17:00">
-                        <small class="so-form-text so-text-muted">Select a time between 9:00 AM and 5:00 PM</small>
-                    </div>
+                <div class="so-form-group">
+                    <label class="so-form-label" for="demo-business">Business Hours</label>
+                    <input type="time" class="so-form-control" id="demo-business" min="09:00" max="17:00">
+                    <div class="so-form-hint">Select a time between 9:00 AM and 5:00 PM</div>
                 </div>
 
                 <!-- Code Tabs -->
@@ -124,20 +120,18 @@ document.getElementById('container').innerHTML = timePicker.toHtml();"
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-md-4">
-                            <label class="so-form-label">15 minute steps</label>
-                            <input type="time" class="so-form-control" step="900">
-                        </div>
-                        <div class="so-col-md-4">
-                            <label class="so-form-label">30 minute steps</label>
-                            <input type="time" class="so-form-control" step="1800">
-                        </div>
-                        <div class="so-col-md-4">
-                            <label class="so-form-label">1 hour steps</label>
-                            <input type="time" class="so-form-control" step="3600">
-                        </div>
+                <div class="so-grid so-grid-cols-3 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label">15 minute steps</label>
+                        <input type="time" class="so-form-control" step="900">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">30 minute steps</label>
+                        <input type="time" class="so-form-control" step="1800">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label">1 hour steps</label>
+                        <input type="time" class="so-form-control" step="3600">
                     </div>
                 </div>
 
@@ -246,16 +240,14 @@ UiEngine.timePicker('time_seconds')
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
-                <div class="so-demo-preview so-mb-4 so-p-4 so-bg-light so-rounded">
-                    <div class="so-row so-g-3">
-                        <div class="so-col-md-6">
-                            <label class="so-form-label" for="demo-start-time">Start Time</label>
-                            <input type="time" class="so-form-control" id="demo-start-time" name="start_time">
-                        </div>
-                        <div class="so-col-md-6">
-                            <label class="so-form-label" for="demo-end-time">End Time</label>
-                            <input type="time" class="so-form-control" id="demo-end-time" name="end_time">
-                        </div>
+                <div class="so-grid so-grid-cols-2 so-grid-cols-sm-1">
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-start-time">Start Time</label>
+                        <input type="time" class="so-form-control" id="demo-start-time" name="start_time">
+                    </div>
+                    <div class="so-form-group">
+                        <label class="so-form-label" for="demo-end-time">End Time</label>
+                        <input type="time" class="so-form-control" id="demo-end-time" name="end_time">
                     </div>
                 </div>
 
