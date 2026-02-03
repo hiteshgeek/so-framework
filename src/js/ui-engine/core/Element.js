@@ -515,7 +515,9 @@ class Element extends SOComponent {
     _escapeHtml(str) {
         const div = document.createElement('div');
         div.textContent = str;
-        return div.innerHTML;
+        // innerHTML escapes <, >, & but not quotes
+        // We need to also escape quotes for attribute values
+        return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     }
 
     /**

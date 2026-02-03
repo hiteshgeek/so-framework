@@ -13,6 +13,8 @@ require_once '../../includes/config.php';
 require_once '../../includes/header.php';
 require_once '../../includes/sidebar.php';
 require_once '../../includes/navbar.php';
+
+// UiEngine factory methods not yet implemented
 ?>
 
 <main class="so-main-content">
@@ -38,13 +40,37 @@ require_once '../../includes/navbar.php';
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <div class="so-mb-3">
-                        <div id="demo-basic-rating-1"></div>
+                        <div class="so-rating so-text-warning">
+                            <div class="so-rating-stars">
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star_border</span></span>
+                            </div>
+                        </div>
                     </div>
                     <div class="so-mb-3">
-                        <div id="demo-basic-rating-2"></div>
+                        <div class="so-rating so-text-warning">
+                            <div class="so-rating-stars">
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star</span></span>
+                            </div>
+                        </div>
                     </div>
                     <div>
-                        <div id="demo-basic-rating-3"></div>
+                        <div class="so-rating so-text-warning">
+                            <div class="so-rating-stars">
+                                <span class="so-rating-star"><span class="material-icons">star_border</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star_border</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star_border</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star_border</span></span>
+                                <span class="so-rating-star"><span class="material-icons">star_border</span></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -54,7 +80,7 @@ require_once '../../includes/navbar.php';
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "use Core\UiEngine\UiEngine;
+                        'code' => "// UiEngine factory methods not yet implemented
 
 // Basic star ratings
 echo UiEngine::rating()->value(4);  // 4 out of 5 stars
@@ -65,12 +91,12 @@ echo UiEngine::rating()->value(0);  // Empty rating"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "import { Rating } from './ui-engine/elements/display/Rating.js';
+                        'code' => "import { UiEngine } from './ui-engine/UiEngine.js';
 
 // Basic star ratings
-const rating1 = Rating.make().value(4).toHtml();  // 4 out of 5 stars
-const rating2 = Rating.make().value(5).toHtml();  // 5 out of 5 stars
-const rating3 = Rating.make().value(0).toHtml();  // Empty rating
+const rating1 = UiEngine.rating().value(4).toHtml();  // 4 out of 5 stars
+const rating2 = UiEngine.rating().value(5).toHtml();  // 5 out of 5 stars
+const rating3 = UiEngine.rating().value(0).toHtml();  // Empty rating
 
 document.getElementById('container').innerHTML = rating1;"
                     ],
@@ -102,7 +128,12 @@ document.getElementById('container').innerHTML = rating1;"
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <label class="so-form-label so-mb-2">Rate this product</label>
-                    <div id="demo-interactive-rating"></div>
+                    <?= UiEngine::rating()
+                        ->value(3)
+                        ->interactive()
+                        ->name('product_rating')
+                        ->attr('id', 'demo-interactive-rating')
+                    ?>
                 </div>
 
                 <!-- Code Tabs -->
@@ -122,7 +153,7 @@ echo UiEngine::rating()
                         'language' => 'javascript',
                         'icon' => 'javascript',
                         'code' => "// Interactive rating input
-const rating = Rating.make()
+const rating = UiEngine.rating()
     .value(3)
     .interactive()
     .name('product_rating');
@@ -165,45 +196,52 @@ document.querySelector('[data-so-ui-init=\"rating\"]')
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">3.5 stars</label>
-                        <div id="demo-half-rating-1"></div>
+                        <?= UiEngine::rating()->value(3.5)->half()->showValue() ?>
                     </div>
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">4.5 stars (interactive)</label>
-                        <div id="demo-half-rating-2"></div>
+                        <?= UiEngine::rating()->value(4.5)->half()->showValue() ?>
                     </div>
                     <div>
-                        <label class="so-form-label so-mb-2">2.5 stars with value display</label>
-                        <div id="demo-half-rating-3"></div>
+                        <?= UiEngine::rating()->value(2.5)->half()->showValue() ?>
                     </div>
                 </div>
 
                 <!-- Code Tabs -->
-                <?= so_code_tabs('half-rating', [
+                <?= so_code_tabs('half-star-rating', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "// Half-star ratings
-echo UiEngine::rating()->value(3.5)->half();
-echo UiEngine::rating()->value(4.5)->half()->interactive()->name('half_rating');
+                        'code' => "// Half star ratings
+echo UiEngine::rating()->value(3.5)->half()->showValue();
+echo UiEngine::rating()->value(4.5)->half()->showValue();
 echo UiEngine::rating()->value(2.5)->half()->showValue();"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "import { Rating } from './ui-engine/elements/display/Rating.js';
+                        'code' => "// Half star ratings
+const rating1 = UiEngine.rating().value(3.5).allowHalf().showValue();
+const rating2 = UiEngine.rating().value(4.5).allowHalf().showValue();
+const rating3 = UiEngine.rating().value(2.5).allowHalf().showValue();
 
-// Half-star ratings
-document.getElementById('demo1').innerHTML =
-    Rating.make().value(3.5).half().toHtml();
-
-document.getElementById('demo2').innerHTML =
-    Rating.make().value(4.5).half().interactive().name('half_rating').toHtml();
-
-document.getElementById('demo3').innerHTML =
-    Rating.make().value(2.5).half().showValue().toHtml();"
+document.getElementById('container').innerHTML = rating1.toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-rating so-text-warning">
+    <div class="so-rating-stars">
+        <span class="so-rating-star"><span class="material-icons">star</span></span>
+        <span class="so-rating-star"><span class="material-icons">star</span></span>
+        <span class="so-rating-star"><span class="material-icons">star</span></span>
+        <span class="so-rating-star"><span class="material-icons">star_half</span></span>
+        <span class="so-rating-star"><span class="material-icons">star_border</span></span>
+    </div>
+    <span class="so-rating-text">3.5 / 5</span>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -213,51 +251,57 @@ document.getElementById('demo3').innerHTML =
         <div class="so-card so-mb-4">
             <div class="so-card-header">
                 <h3 class="so-card-title">Size Variants</h3>
-                <p class="so-text-muted">Small and large size options for different contexts.</p>
+                <p class="so-text-muted">Small, default, and large size options.</p>
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">Small</label>
-                        <div id="demo-size-small"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Small</small>
+                        <?= UiEngine::rating()->value(4)->small() ?>
                     </div>
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">Default</label>
-                        <div id="demo-size-default"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Default</small>
+                        <?= UiEngine::rating()->value(4) ?>
                     </div>
                     <div>
-                        <label class="so-form-label so-mb-2">Large</label>
-                        <div id="demo-size-large"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Large</small>
+                        <?= UiEngine::rating()->value(4)->large() ?>
                     </div>
                 </div>
 
                 <!-- Code Tabs -->
-                <?= so_code_tabs('size-variants', [
+                <?= so_code_tabs('rating-sizes', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
                         'code' => "// Size variants
-echo UiEngine::rating()->value(4)->small();
-echo UiEngine::rating()->value(4);  // Default size
-echo UiEngine::rating()->value(4)->large();"
+echo UiEngine::rating()->value(4)->small();   // or ->size('sm')
+echo UiEngine::rating()->value(4);             // Default
+echo UiEngine::rating()->value(4)->large();   // or ->size('lg')"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "import { Rating } from './ui-engine/elements/display/Rating.js';
+                        'code' => "// Size variants
+UiEngine.rating().value(4).small().toHtml();   // or .size('sm')
+UiEngine.rating().value(4).toHtml();           // Default
+UiEngine.rating().value(4).large().toHtml();   // or .size('lg')"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<!-- Small -->
+<div class="so-rating so-rating-sm so-text-warning">...</div>
 
-// Size variants
-document.getElementById('demo-small').innerHTML =
-    Rating.make().value(4).small().toHtml();
+<!-- Default -->
+<div class="so-rating so-text-warning">...</div>
 
-document.getElementById('demo-default').innerHTML =
-    Rating.make().value(4).toHtml();
-
-document.getElementById('demo-large').innerHTML =
-    Rating.make().value(4).large().toHtml();"
+<!-- Large -->
+<div class="so-rating so-rating-lg so-text-warning">...</div>'
                     ],
                 ]) ?>
             </div>
@@ -267,37 +311,37 @@ document.getElementById('demo-large').innerHTML =
         <div class="so-card so-mb-4">
             <div class="so-card-header">
                 <h3 class="so-card-title">Color Variants</h3>
-                <p class="so-text-muted">Different color options to match your design.</p>
+                <p class="so-text-muted">Customize star color with theme colors.</p>
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">Warning (default)</label>
-                        <div id="demo-color-warning"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Warning (Default)</small>
+                        <?= UiEngine::rating()->value(4)->color('warning') ?>
                     </div>
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">Primary</label>
-                        <div id="demo-color-primary"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Primary</small>
+                        <?= UiEngine::rating()->value(4)->color('primary') ?>
                     </div>
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">Success</label>
-                        <div id="demo-color-success"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Success</small>
+                        <?= UiEngine::rating()->value(4)->color('success') ?>
                     </div>
                     <div>
-                        <label class="so-form-label so-mb-2">Danger</label>
-                        <div id="demo-color-danger"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Danger</small>
+                        <?= UiEngine::rating()->value(4)->color('danger') ?>
                     </div>
                 </div>
 
                 <!-- Code Tabs -->
-                <?= so_code_tabs('color-variants', [
+                <?= so_code_tabs('rating-colors', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
                         'code' => "// Color variants
-echo UiEngine::rating()->value(4);  // Default warning (gold)
+echo UiEngine::rating()->value(4)->color('warning');  // Default
 echo UiEngine::rating()->value(4)->color('primary');
 echo UiEngine::rating()->value(4)->color('success');
 echo UiEngine::rating()->value(4)->color('danger');"
@@ -306,20 +350,20 @@ echo UiEngine::rating()->value(4)->color('danger');"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "import { Rating } from './ui-engine/elements/display/Rating.js';
-
-// Color variants
-document.getElementById('demo-warning').innerHTML =
-    Rating.make().value(4).toHtml();
-
-document.getElementById('demo-primary').innerHTML =
-    Rating.make().value(4).color('primary').toHtml();
-
-document.getElementById('demo-success').innerHTML =
-    Rating.make().value(4).color('success').toHtml();
-
-document.getElementById('demo-danger').innerHTML =
-    Rating.make().value(4).color('danger').toHtml();"
+                        'code' => "// Color variants
+UiEngine.rating().value(4).color('warning').toHtml();
+UiEngine.rating().value(4).color('primary').toHtml();
+UiEngine.rating().value(4).color('success').toHtml();
+UiEngine.rating().value(4).color('danger').toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-rating so-text-warning">...</div>
+<div class="so-rating so-text-primary">...</div>
+<div class="so-rating so-text-success">...</div>
+<div class="so-rating so-text-danger">...</div>'
                     ],
                 ]) ?>
             </div>
@@ -329,62 +373,67 @@ document.getElementById('demo-danger').innerHTML =
         <div class="so-card so-mb-4">
             <div class="so-card-header">
                 <h3 class="so-card-title">Custom Icons</h3>
-                <p class="so-text-muted">Use any Material Icons for filled and empty states.</p>
+                <p class="so-text-muted">Use alternative icons like hearts or thumbs.</p>
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">Hearts</label>
-                        <div id="demo-icon-hearts"></div>
-                    </div>
-                    <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">Thumbs</label>
-                        <div id="demo-icon-thumbs"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Hearts</small>
+                        <?= UiEngine::rating()
+                            ->value(3)
+                            ->icons('favorite', 'favorite_border', 'favorite')
+                            ->color('danger')
+                        ?>
                     </div>
                     <div>
-                        <label class="so-form-label so-mb-2">Grade</label>
-                        <div id="demo-icon-grade"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">Default Stars</small>
+                        <?= UiEngine::rating()->value(3) ?>
                     </div>
                 </div>
 
                 <!-- Code Tabs -->
-                <?= so_code_tabs('custom-icons', [
+                <?= so_code_tabs('rating-icons', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "// Custom icons
+                        'code' => "// Custom icons (hearts)
 echo UiEngine::rating()
     ->value(3)
-    ->icons('favorite', 'favorite_border')
+    ->icons('favorite', 'favorite_border', 'favorite')  // filled, empty, half
     ->color('danger');
 
-echo UiEngine::rating()
-    ->value(4)
-    ->icons('thumb_up', 'thumb_up_off_alt')
-    ->color('primary');
-
-echo UiEngine::rating()
-    ->value(5)
-    ->icons('grade', 'grade')
-    ->color('success');"
+// Default stars
+echo UiEngine::rating()->value(3);"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "import { Rating } from './ui-engine/elements/display/Rating.js';
+                        'code' => "// Custom icons (hearts)
+const hearts = UiEngine.rating()
+    .value(3)
+    .icons('favorite', 'favorite_border', 'favorite')
+    .color('danger')
+    .toHtml();
 
-// Custom icons
-document.getElementById('demo-hearts').innerHTML =
-    Rating.make().value(3).icons('favorite', 'favorite_border').color('danger').toHtml();
-
-document.getElementById('demo-thumbs').innerHTML =
-    Rating.make().value(4).icons('thumb_up', 'thumb_up_off_alt').color('primary').toHtml();
-
-document.getElementById('demo-grade').innerHTML =
-    Rating.make().value(5).icons('grade', 'grade').color('success').toHtml();"
+// Default stars
+const stars = UiEngine.rating().value(3).toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-rating so-text-danger">
+    <div class="so-rating-stars">
+        <span class="so-rating-star"><span class="material-icons">favorite</span></span>
+        <span class="so-rating-star"><span class="material-icons">favorite</span></span>
+        <span class="so-rating-star"><span class="material-icons">favorite</span></span>
+        <span class="so-rating-star"><span class="material-icons">favorite_border</span></span>
+        <span class="so-rating-star"><span class="material-icons">favorite_border</span></span>
+    </div>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -394,43 +443,53 @@ document.getElementById('demo-grade').innerHTML =
         <div class="so-card so-mb-4">
             <div class="so-card-header">
                 <h3 class="so-card-title">Custom Maximum</h3>
-                <p class="so-text-muted">Change the maximum rating from the default 5.</p>
+                <p class="so-text-muted">Change the maximum number of stars (default is 5).</p>
             </div>
             <div class="so-card-body">
                 <!-- Live Demo -->
                 <div class="so-mb-4">
                     <div class="so-mb-3">
-                        <label class="so-form-label so-mb-2">3 out of 10</label>
-                        <div id="demo-max-10"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">10 Stars</small>
+                        <?= UiEngine::rating()->value(7)->max(10)->showValue() ?>
                     </div>
                     <div>
-                        <label class="so-form-label so-mb-2">2 out of 3</label>
-                        <div id="demo-max-3"></div>
+                        <small class="so-text-muted so-d-block so-mb-1">3 Stars</small>
+                        <?= UiEngine::rating()->value(2)->max(3)->showValue() ?>
                     </div>
                 </div>
 
                 <!-- Code Tabs -->
-                <?= so_code_tabs('custom-max', [
+                <?= so_code_tabs('rating-max', [
                     [
                         'label' => 'PHP',
                         'language' => 'php',
                         'icon' => 'data_object',
-                        'code' => "// Custom maximum
-echo UiEngine::rating()->value(7)->max(10);
-echo UiEngine::rating()->value(2)->max(3);"
+                        'code' => "// 10-star rating
+echo UiEngine::rating()->value(7)->max(10)->showValue();
+
+// 3-star rating
+echo UiEngine::rating()->value(2)->max(3)->showValue();"
                     ],
                     [
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "import { Rating } from './ui-engine/elements/display/Rating.js';
+                        'code' => "// 10-star rating
+UiEngine.rating().value(7).max(10).showValue().toHtml();
 
-// Custom maximum
-document.getElementById('demo-max-10').innerHTML =
-    Rating.make().value(7).max(10).toHtml();
-
-document.getElementById('demo-max-3').innerHTML =
-    Rating.make().value(2).max(3).toHtml();"
+// 3-star rating
+UiEngine.rating().value(2).max(3).showValue().toHtml();"
+                    ],
+                    [
+                        'label' => 'HTML Output',
+                        'language' => 'html',
+                        'icon' => 'code',
+                        'code' => '<div class="so-rating so-text-warning">
+    <div class="so-rating-stars">
+        <!-- 10 stars total, 7 filled -->
+    </div>
+    <span class="so-rating-text">7 / 10</span>
+</div>'
                     ],
                 ]) ?>
             </div>
@@ -440,15 +499,21 @@ document.getElementById('demo-max-3').innerHTML =
         <div class="so-card so-mb-4">
             <div class="so-card-header">
                 <h3 class="so-card-title">Interactive Demo</h3>
-                <p class="so-text-muted">Try the interactive rating with controls and event logging.</p>
+                <p class="so-text-muted">Try out the interactive rating controls.</p>
             </div>
             <div class="so-card-body">
                 <div class="so-row">
                     <div class="so-col-md-6">
-                        <h5 class="so-mb-3">Rating Control</h5>
+                        <h5 class="so-mb-3">Controls</h5>
+
                         <div class="so-mb-3">
-                            <label class="so-form-label so-mb-2">Click to rate</label>
-                            <div id="demo-rating-control"></div>
+                            <label class="so-form-label so-mb-2">Rating Value</label>
+                            <?= UiEngine::rating()
+                                ->value(3)
+                                ->interactive()
+                                ->name('demo_rating')
+                                ->attr('id', 'demo-rating-control')
+                            ?>
                             <p class="so-text-muted so-small so-mt-2">Current value: <span id="demo-rating-value">3</span></p>
                         </div>
 
@@ -556,7 +621,7 @@ echo '<script>window.ratingConfig = ' . json_encode(\$config) . ';</script>';"
                         'language' => 'javascript',
                         'icon' => 'javascript',
                         'code' => "// Use config from window
-import { Rating } from './ui-engine/elements/display/Rating.js';
+import { UiEngine } from './ui-engine/UiEngine.js';
 
 const rating = UiEngine.rating(window.ratingConfig);
 document.getElementById('container').innerHTML = rating.toHtml();"
@@ -570,10 +635,10 @@ document.getElementById('container').innerHTML = rating.toHtml();"
                         'label' => 'JavaScript',
                         'language' => 'javascript',
                         'icon' => 'javascript',
-                        'code' => "import { Rating } from './ui-engine/elements/display/Rating.js';
+                        'code' => "import { UiEngine } from './ui-engine/UiEngine.js';
 
 // Configure directly in JavaScript
-const rating = Rating.make()
+const rating = UiEngine.rating()
     .value(4)
     .max(5)
     .allowHalf()
@@ -1065,85 +1130,6 @@ rating.setValue(5);  // Fires so:rating:change event</code></pre>
         </div>
     </div>
 </main>
-
-<script type="module">
-import { Rating } from '/src/js/ui-engine/elements/display/Rating.js';
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Basic Ratings
-    document.getElementById('demo-basic-rating-1').innerHTML =
-        Rating.make().value(4).toHtml();
-
-    document.getElementById('demo-basic-rating-2').innerHTML =
-        Rating.make().value(5).toHtml();
-
-    document.getElementById('demo-basic-rating-3').innerHTML =
-        Rating.make().value(0).toHtml();
-
-    // Interactive Rating
-    document.getElementById('demo-interactive-rating').innerHTML =
-        Rating.make().value(3).interactive().name('product_rating').toHtml();
-
-    // Half Star Ratings
-    document.getElementById('demo-half-rating-1').innerHTML =
-        Rating.make().value(3.5).half().toHtml();
-
-    document.getElementById('demo-half-rating-2').innerHTML =
-        Rating.make().value(4.5).half().interactive().name('half_rating').toHtml();
-
-    document.getElementById('demo-half-rating-3').innerHTML =
-        Rating.make().value(2.5).half().showValue().toHtml();
-
-    // Size Variants
-    document.getElementById('demo-size-small').innerHTML =
-        Rating.make().value(4).small().toHtml();
-
-    document.getElementById('demo-size-default').innerHTML =
-        Rating.make().value(4).toHtml();
-
-    document.getElementById('demo-size-large').innerHTML =
-        Rating.make().value(4).large().toHtml();
-
-    // Color Variants
-    document.getElementById('demo-color-warning').innerHTML =
-        Rating.make().value(4).toHtml();
-
-    document.getElementById('demo-color-primary').innerHTML =
-        Rating.make().value(4).color('primary').toHtml();
-
-    document.getElementById('demo-color-success').innerHTML =
-        Rating.make().value(4).color('success').toHtml();
-
-    document.getElementById('demo-color-danger').innerHTML =
-        Rating.make().value(4).color('danger').toHtml();
-
-    // Custom Icons
-    document.getElementById('demo-icon-hearts').innerHTML =
-        Rating.make().value(3).icons('favorite', 'favorite_border').color('danger').toHtml();
-
-    document.getElementById('demo-icon-thumbs').innerHTML =
-        Rating.make().value(4).icons('thumb_up', 'thumb_up_off_alt').color('primary').toHtml();
-
-    document.getElementById('demo-icon-grade').innerHTML =
-        Rating.make().value(5).icons('grade', 'grade').color('success').toHtml();
-
-    // Custom Maximum
-    document.getElementById('demo-max-10').innerHTML =
-        Rating.make().value(7).max(10).toHtml();
-
-    document.getElementById('demo-max-3').innerHTML =
-        Rating.make().value(2).max(3).toHtml();
-
-    // Interactive Demo Control
-    document.getElementById('demo-rating-control').innerHTML =
-        Rating.make().value(3).interactive().name('demo_rating').toHtml();
-
-    // Initialize all Rating instances (after a short delay to ensure DOM is ready)
-    setTimeout(function() {
-        Rating.initAll();
-    }, 100);
-});
-</script>
 
 <script>
 // Interactive Demo Controls
