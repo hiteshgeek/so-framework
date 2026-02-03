@@ -217,6 +217,43 @@ function so_uiengine_code($id, $phpCode, $jsCode, $htmlOutput) {
 }
 
 /**
+ * Generate SixOrbit tabs component
+ * Uses the built-in SOTabs JavaScript component for consistent tab behavior
+ * @param string $id - Unique ID for the tab group
+ * @param array $tabs - Array of tabs: [['id' => 'tab-id', 'label' => 'Tab Label', 'icon' => 'icon_name', 'active' => true, 'content' => '...'], ...]
+ * @return string - HTML for the tabs
+ */
+function so_tabs($id, $tabs) {
+    $tabButtons = '';
+    $tabPanes = '';
+
+    foreach ($tabs as $index => $tab) {
+        $isActive = ($tab['active'] ?? false);
+        $activeClass = $isActive ? ' so-active' : '';
+        $showClass = $isActive ? ' so-show so-active' : '';
+        $ariaSelected = $isActive ? 'true' : 'false';
+        $label = $tab['label'] ?? 'Tab ' . ($index + 1);
+        $icon = $tab['icon'] ?? null;
+        $tabId = $tab['id'] ?? "{$id}-{$index}";
+        $content = $tab['content'] ?? '';
+
+        // Tab button
+        $iconHtml = $icon ? "<span class=\"material-icons\">{$icon}</span> " : '';
+        $tabButtons .= "<button class=\"so-tab{$activeClass}\" role=\"tab\" data-so-target=\"#{$tabId}\" aria-selected=\"{$ariaSelected}\" aria-controls=\"{$tabId}\">{$iconHtml}{$label}</button>\n";
+
+        // Tab pane
+        $tabPanes .= "<div class=\"so-tab-pane so-fade{$showClass}\" id=\"{$tabId}\" role=\"tabpanel\">\n{$content}\n</div>\n";
+    }
+
+    return <<<HTML
+<div class="so-tabs" role="tablist" data-so-tabs>
+{$tabButtons}</div>
+<div class="so-tab-content">
+{$tabPanes}</div>
+HTML;
+}
+
+/**
  * Generate random demo data
  * @param string $type - Type of data (name, email, amount, etc.)
  * @return string - Random value

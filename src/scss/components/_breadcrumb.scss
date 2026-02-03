@@ -33,6 +33,7 @@
 .#{$so-prefix}breadcrumb-item {
   display: flex;
   align-items: center;
+  margin-bottom: 0; // Override global list styling
 
   // Add divider before items (except first)
   + .#{$so-prefix}breadcrumb-item {

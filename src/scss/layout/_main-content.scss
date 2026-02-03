@@ -164,55 +164,8 @@ body.sidebar-collapsed .#{$so-prefix}main-content {
 }
 
 // ============================================
-// BREADCRUMB (standalone / legacy)
+// BREADCRUMB - Component styles in _breadcrumb.scss
 // ============================================
-
-.#{$so-prefix}breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: spacing('1');
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.#{$so-prefix}breadcrumb-item {
-  display: flex;
-  align-items: center;
-  gap: spacing('1');
-  color: css-var('text-secondary');
-
-  a {
-    color: css-var('text-secondary');
-    text-decoration: none;
-    transition: color $so-transition-base;
-
-    &:hover {
-      color: css-var('accent-primary');
-    }
-  }
-
-  &.active {
-    color: css-var('text-primary');
-  }
-
-  // Separator
-  &:not(:last-child)::after {
-    content: '/';
-    margin-left: spacing('1');
-    color: css-var('text-muted');
-  }
-}
-
-.#{$so-prefix}breadcrumb-separator {
-  display: flex;
-  align-items: center;
-  color: css-var('text-muted');
-
-  .material-icons {
-    font-size: 14px;
-  }
-}
 
 // ============================================
 // PAGE HEADER CARD (profile header style)

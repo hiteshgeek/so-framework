@@ -450,23 +450,13 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                 <h3 class="so-card-title">API Reference</h3>
             </div>
             <div class="so-card-body">
-                <!-- Tabs for different API sections -->
-                <ul class="so-nav so-nav-tabs so-mb-3" role="tablist">
-                    <li class="so-nav-item" role="presentation">
-                        <button class="so-nav-link so-active" data-so-toggle="tab" data-so-target="#api-config" type="button" role="tab">Configuration Methods</button>
-                    </li>
-                    <li class="so-nav-item" role="presentation">
-                        <button class="so-nav-link" data-so-toggle="tab" data-so-target="#api-interactive" type="button" role="tab">Interactivity Methods</button>
-                    </li>
-                    <li class="so-nav-item" role="presentation">
-                        <button class="so-nav-link" data-so-toggle="tab" data-so-target="#api-events" type="button" role="tab">Events</button>
-                    </li>
-                </ul>
-
-                <div class="so-tab-content">
-                    <!-- Configuration Methods -->
-                    <div class="so-tab-pane so-fade so-show so-active" id="api-config" role="tabpanel">
-                        <div class="so-table-responsive">
+                <?= so_tabs('accordion-api-tabs', [
+                    [
+                        'id' => 'configuration-methods',
+                        'label' => 'Configuration Methods',
+                        'icon' => 'settings',
+                        'active' => true,
+                        'content' => '<div class="so-table-responsive">
                             <table class="so-table so-table-bordered">
                                 <thead class="so-table-light">
                                     <tr>
@@ -503,12 +493,13 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-
-                    <!-- Interactivity Methods (JS only) -->
-                    <div class="so-tab-pane so-fade" id="api-interactive" role="tabpanel">
-                        <p class="so-text-muted so-mb-3">These methods are available in JavaScript for runtime manipulation:</p>
+                        </div>'
+                    ],
+                    [
+                        'id' => 'interactivity-methods',
+                        'label' => 'Interactivity Methods',
+                        'icon' => 'touch_app',
+                        'content' => '<p class="so-text-muted so-mb-3">These methods are available in JavaScript for runtime manipulation:</p>
                         <div class="so-table-responsive">
                             <table class="so-table so-table-bordered">
                                 <thead class="so-table-light">
@@ -566,8 +557,7 @@ document.getElementById('container').innerHTML = accordion.toHtml();"
                             </table>
                         </div>
 
-                        <!-- Interactivity Example -->
-                        <?= so_code_tabs('accordion-interactivity', [
+                        ' . so_code_tabs('accordion-interactivity', [
                             [
                                 'label' => 'JavaScript',
                                 'language' => 'javascript',
@@ -594,12 +584,13 @@ if (accordion.isExpanded(1)) {
 accordion.expandAll();
 accordion.collapseAll();"
                             ],
-                        ]) ?>
-                    </div>
-
-                    <!-- Events -->
-                    <div class="so-tab-pane so-fade" id="api-events" role="tabpanel">
-                        <p class="so-text-muted so-mb-3">Accordion dispatches custom events with the <code>so:</code> prefix:</p>
+                        ])
+                    ],
+                    [
+                        'id' => 'events',
+                        'label' => 'Events',
+                        'icon' => 'event',
+                        'content' => '<p class="so-text-muted so-mb-3">Accordion dispatches custom events with the <code>so:</code> prefix:</p>
                         <div class="so-table-responsive">
                             <table class="so-table so-table-bordered">
                                 <thead class="so-table-light">
@@ -669,8 +660,7 @@ accordion.collapseAll();"
                             </table>
                         </div>
 
-                        <!-- Events Example -->
-                        <?= so_code_tabs('accordion-events', [
+                        ' . so_code_tabs('accordion-events', [
                             [
                                 'label' => 'JavaScript',
                                 'language' => 'javascript',
@@ -697,9 +687,9 @@ accordion.element.addEventListener('so:accordion:show', (e) => {
     console.log('Show event:', e.detail);
 });"
                             ],
-                        ]) ?>
-                    </div>
-                </div>
+                        ])
+                    ]
+                ]) ?>
             </div>
         </div>
 

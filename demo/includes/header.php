@@ -226,35 +226,7 @@ $includeSearch = $includeSearch ?? true;
             color: var(--so-accent-primary);
         }
 
-        /* Breadcrumb */
-        .so-breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 13px;
-        }
-
-        .so-breadcrumb-item {
-            color: var(--so-text-secondary);
-            text-decoration: none;
-        }
-
-        .so-breadcrumb-item:hover {
-            color: var(--so-accent-primary);
-        }
-
-        .so-breadcrumb-item.active {
-            color: var(--so-text-primary);
-            font-weight: 500;
-        }
-
-        .so-breadcrumb-separator {
-            color: var(--so-text-muted);
-        }
-
-        .so-breadcrumb-separator .material-icons {
-            font-size: 16px;
-        }
+        /* Breadcrumb - Component styles are in SCSS */
 
         /* LMS Styles */
         .so-lms-header {
